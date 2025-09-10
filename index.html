@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link id='favicon' rel="shortcut icon" href='images/favicon.png'>
+    <title>Run Recap</title>
+    <link rel="stylesheet" href="https://myekul.github.io/shared-assets/styles/styles.css">
+    <link rel="stylesheet" href="https://myekul.github.io/shared-assets/myekul/myekul.css">
+    <link rel="stylesheet" href="https://myekul.github.io/shared-assets/styles/grades.css">
+    <link rel="stylesheet" href="https://myekul.github.io/shared-assets/cuphead/cuphead.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://myekul.github.io/shared-assets/utils.js"></script>
+    <script src="https://myekul.github.io/shared-assets/cuphead/cuphead.js"></script>
+    <script src="https://myekul.github.io/shared-assets/myekul/src.js"></script>
+</head>
+
+<body>
+    <div id="bodyContent">
+        <header>
+            <div class='container' style="gap:10px;padding-top:5px">
+                <img src="images/kahl.png" style="height:70px">
+                <div class="font2" style="font-size:220%">Run Recap</div>
+            </div>
+        </header>
+        <main>
+            <div class="sticky">
+                <div id="headerRow" class="container">
+                    <div class="font2" style="margin-right:8px">Comm Best</div>
+                    <!-- <div onclick="showTab('commBestILs')" class="grade-a button" style="width:70px">
+                        ILs</div> -->
+                    <div onclick="showTab('commBestSplits')" class="grade-a button" style="width:70px">Splits
+                    </div>
+                    <div id='loader' class="loader" style="position:absolute;left:10px"></div>
+                </div>
+                <div id="progress"></div>
+                <div id="tabsDiv"></div>
+                <div id="commBestILsSection" class='container'
+                    style="position:absolute;left:20px;top:55px;align-items: flex-start;">
+                    <div id="commBestILsVersionTabs">
+                        <div id='commBestILs_onePointOne' onclick="getCommBestILs('1.1+')" class="button onePointOne">
+                            1.1+
+                        </div>
+                        <div id='commBestILs_legacy' onclick="getCommBestILs('Legacy')" class="button legacy">Legacy
+                        </div>
+                        <div id='commBestILs_nmg' onclick="getCommBestILs('NMG')" class="button nmg">NMG</div>
+                        <div id='commBestILs_dlc' onclick="getCommBestILs('DLC')" class="button dlc">DLC</div>
+                        <div id='commBestILs_dlcbase' onclick="getCommBestILs('DLC+Base')" class="button dlcbase">
+                            DLC+Base
+                        </div>
+                    </div>
+                    <div id="loadouts" style="left:120px"></div>
+                </div>
+                <div id="musicDiv" class='grow' onclick="runRecapMusic()"
+                    style="position:absolute;right:20px;top:55px;">
+                    <img src="images/gramophone.png" style="height:80px">
+                </div>
+            </div>
+            <div id="pageTitle"></div>
+            <div id="bossSelect"></div>
+            <div id="boardTitleDiv" class="sticky" style="top:80px;max-width: 50%;margin:0 auto;padding:10px 0">
+                <div class="container" style="max-width:50%">
+                    <div>
+                        <div class="container" style="gap:8px">
+                            <div id="boardTitle"></div>
+                            <div id='closeBoardTitle' class='grow' style='display:none' onclick="showDefault()"><i
+                                    class="fa fa-close"></i>
+                            </div>
+                        </div>
+                        <div id='viableDiv' class='container' style="margin-top:5px">
+                            <input id="checkbox_viable" onchange="getCommBestILs()" type="checkbox" checked>Run viable
+                        </div>
+                    </div>
+                    <div id='runRecap_details' class='container' style='padding-left:25px;margin:0;gap:20px'>
+                        <input id='input_runRecap_time' type='text' placeholder='XX:XX'
+                            style='display:none;width:65px;font-size:100%'>
+                        <div id='runRecap_time' onclick="showInput('runRecap_time')" class='container grow'
+                            style='margin:0;gap:8px'></div>
+                        <div id='runRecap_player' class='container' style='margin:0;gap:8px'></div>
+                        <div id="runRecap_example_div" style="display:none">EXAMPLE</div>
+                        <div id="runRecap_theoretical_div" style="display:none">THEORETICAL</div>
+                    </div>
+                </div>
+            </div>
+            <div id="content"></div>
+            <div id="runRecapTab" style="display:none">
+                <div id="runRecap_home" class='runRecap_section'>
+                    <div class="container">
+                        <div>
+                            <div id='runRecap_welcome'>
+                                <div class="container" style="padding:20px 0">
+                                    <div class='textBlock'>
+                                        Welcome to <span class="myekulColor">Run Recap</span>! This tool allows you
+                                        to upload
+                                        a <span class="myekulColor">Cuphead .sav</span>
+                                        and a <span class="myekulColor">LiveSplit .lss</span> file
+                                        to gain valuable insights about your recent run performance.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='container'>
+                                <div class="rrSec">.sav</div>
+                                <div class='textBlock' style="font-size:80%;color:darkgray">
+                                    You can either upload an existing .sav file from %appdata% to automatically
+                                    retrieve
+                                    IL times, or
+                                    create an empty file and insert IL times manually.
+                                </div>
+                            </div>
+                            <br>
+                            <div class='container'>
+                                <div class="rrSec">.lss</div>
+                                <div class='textBlock' style="font-size:80%;color:darkgray">
+                                    To ensure file compatibility, please upload a .lss with the standard split
+                                    configuration, as
+                                    seen <span class="myekulColor clickable" style="text-decoration: underline;"><a
+                                            href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ"
+                                            target="_blank">here</a></span>. Also, please note that comm best
+                                    comparisons will not work when splitting after scorecard.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container" style="padding:25px 0;gap:20px">
+                        <div style="padding-right:20px">
+                            <div class="container">View Example:</div>
+                            <div id="runRecap_examples" class="container"></div>
+                        </div>
+                        <div id="runRecap_dropBox_sav"></div>
+                        <div id="runRecap_dropBox_lss"></div>
+                    </div>
+                    <div id='runRecapError' class='container' style='display:none'>Error!</div>
+                </div>
+                <div id="runRecap_content" class='runRecap_section' style="display:none">
+                    <div id='runRecap_chart' class='container' style='width:900px;height:100px'></div>
+                    <div id='runRecap_options_button' class='options'>
+                    </div>
+                    <div id="runRecap_options" class="container" style="display:none">
+                        <input id='checkbox_runRecap_harsh' onclick="action()" type="checkbox" checked>Harsh Grading
+                    </div>
+                    <div class="container" style='padding-bottom:3px'>
+                        <div id="runRecap_lss_comparison" class="container hide" style="margin: 0">
+                            <div class='font2' style="padding-right:10px">.lss</div>
+                            <select id="dropdown_runRecap_lss_current" class="onePointOne">
+                                <option class='lss_yourPB' value="yourPB" selected>Your PB</option>
+                                <optgroup label="Theoretical">
+                                    <option value="yourBest">Best Pace Ever</option>
+                                    <option value="sob">Sum of Best</option>
+                                    <option value="theoryRun">Your "Theory Run"</option>
+                                </optgroup>
+                                <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
+                            </select>
+                            <div>&Delta;</div>
+                            <select id="dropdown_runRecap_lss_comparison">
+                                <option class="lss_yourPB" value="yourPB">Your PB</option>
+                                <option id="lss_prevPB">Previous PB</option>
+                                <optgroup label="Theoretical">
+                                    <option value="yourBest" selected>Best Pace Ever</option>
+                                    <option value="sob">Sum of Best</option>
+                                    <option value="theoryRun">Your "Theory Run"</option>
+                                </optgroup>
+                                <optgroup label="Comm Best Sheet">
+                                    <option value="wr">World Record</option>
+                                    <option value="commBest">Comm Best</option>
+                                    <option value="commSoB">Comm SoB</option>
+                                </optgroup>
+                                <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
+                            </select>
+                        </div>
+                        <div id='runRecap_sav_tabs' class="container" style="margin:0">
+                            <div id='runRecap_times' class="button" style="width:70px" onclick="generate_sav('times')">
+                                Times</div>
+                            <div id='runRecap_sums' class="button" style="width:70px" onclick="generate_sav('sums')">
+                                Sums</div>
+                            <div id='runRecap_grid' class="button" style="width:70px" onclick="generate_sav('grid')">
+                                Grid</div>
+                        </div>
+                        <div id="runRecap_sav_comparison" class="container" style="margin: 0">
+                            <div id="runRecap_divider" class="divider"></div>
+                            <div class='font2' style="padding-right:10px">.sav</div>&Delta;
+                            <select id="dropdown_runRecap_sav_comparison">
+                                <option value="top" disabled>Top 10 Average</option>
+                                <option value="top3" selected>Top 3 Average</option>
+                                <option value="topBest">Top Bests</option>
+                                <option value="theoryRun">"Theory Run"</option>
+                                <option value="commBest">Comm Best</option>
+                                <optgroup id='runRecap_optgroup' label="Players"></optgroup>
+                            </select>
+                            <i class='fa fa-info-circle grow'
+                                onclick="playSound('move');toggleVisibility('comparisonInfo')"
+                                style='padding-left:5px'></i>
+                            <img id="runRecap_ghost" class="hide" style="height:40px;padding-left:20px">
+                            <div id="runRecap_numDeaths" style="padding-left:5px"></div>
+                        </div>
+                    </div>
+                    <div id='comparisonInfo' class='textBlock container' style='display:none;font-size:75%'></div>
+                    <div id='runRecap' style="padding:10px 0"></div>
+                    <div class='container' style='padding-top:20px'>
+                        <div class='button cuphead' onclick="runRecapViewPage('home')" style='width:100px'>
+                            <i class="fa fa-reply"></i>&nbsp;Go back
+                        </div>
+                        <div id="runRecap_sav_download" class="container" style="margin:0">
+                            <div class='divider'></div>
+                            <div class='button cuphead' onclick="runRecapDownload()" style='width:135px'><i
+                                    class="fa fa-download"></i>&nbsp;Download .sav</div>
+                            <div class='divider'></div>
+                            <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
+                                    class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
+                            <div id="runRecap_upload_div" class="container" style="display:none">
+                                <div class='divider'></div>
+                                <div class='button cuphead pulseSize' onclick="runRecapUploadButton()"
+                                    style='width:190px;height:30px;font-size:90%'><i
+                                        class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+
+<script src="constants/constants.js"></script>
+<script src="constants/commBest.js"></script>
+<script src="code/variables.js"></script>
+
+<script src="code/runRecap.js"></script>
+<script src="code/runRecap_sav.js"></script>
+<script src="code/runRecap_lss.js"></script>
+
+<script src="code/api/firebase.js" type="module"></script>
+<script src="code/api/sheets.js"></script>
+
+<script src="code/tabs/commBestILs.js"></script>
+<script src="code/tabs/commBestSplits.js"></script>
+
+<script src="code/general.js"></script>
+
+<script src="code/general.js"></script>
+
+<script src="code/main.js"></script>
+
+</html>
