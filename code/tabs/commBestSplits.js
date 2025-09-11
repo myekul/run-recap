@@ -56,7 +56,7 @@ function generateCommBestSplits() {
         HTMLContent += `</div>`
         HTMLContent += `</div>`
     } else {
-        HTMLContent += `<div>Category not supported!</div>`
+        HTMLContent += `<div class='container'>Category not supported!</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
 }

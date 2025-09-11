@@ -12,13 +12,25 @@ document.addEventListener('DOMContentLoaded', function () {
     getCommBestILs()
 })
 function action() {
-    hide('loader')
+    if (['home'].includes(globalTab)) {
+        hide('pageTitle')
+    } else {
+        show('pageTitle')
+        setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
+    }
+    if (['commBestILs'].includes(globalTab)) {
+        show('viableDiv')
+    } else {
+        hide('viableDiv')
+    }
     if (globalTab == 'home') {
         show('runRecapTab')
         hide('content')
+        show('runRecap_details')
     } else {
         hide('runRecapTab')
         show('content')
+        hide('runRecap_details')
     }
     switch (globalTab) {
         case 'home':
@@ -101,6 +113,10 @@ function updateLoadouts(categoryName) {
     document.getElementById('loadouts').innerHTML = HTMLContent
 }
 function done() {
+    loadSheets()
+    categories.forEach((category, categoryIndex) => {
+        assignRuns(category, categoryIndex)
+    })
     assignRuns(globalCategory)
     if (commBestILsCategory.extraRuns || commBestILsCategory.extraPlayers) {
         const morePlayers = []
@@ -138,13 +154,7 @@ function done() {
     runRecapViewPage('home')
 }
 function assignRuns(category, categoryIndex) {
-    category.runs.forEach((run, runIndex) => {
-        if (runIndex == 0) {
-            run.first = true
-            if (category.runs[runIndex + 1]?.place > 1 || category.runs.length == 1) {
-                run.untied = true
-            }
-        }
+    category.runs.forEach(run => {
         const runPlayer = run.player
         let thePlayer = ''
         for (const player of players) {

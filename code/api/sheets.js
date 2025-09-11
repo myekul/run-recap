@@ -166,11 +166,11 @@ function loadSheets() {
             tabMap[name] = gid;
         });
         url += '/edit?gid=' + tabMap[commBestILsCategory.tabName]
-        loadSheetIcon(url, true)
+        loadSheetIcon(url)
     });
 }
-function loadSheetIcon(url, flash) {
+function loadSheetIcon(url) {
     const boardTitleSrc = document.getElementById('boardTitleSrc')
-    boardTitleSrc.innerHTML = `<div class='grow ${flash ? 'flash' : ''}'>${getAnchor(url)}${sharedAssetsImg('sheets')}</div>`
-    boardTitleSrc.innerHTML += `<div style='margin-left:5px'>${getSRCicon()}</div>`
+    boardTitleSrc.innerHTML = `<div class='grow flash'>${getAnchor(url)}${sharedAssetsImg('sheets')}</div>`
+    boardTitleSrc.innerHTML += `<div style='margin-left:5px'>${getAnchor('https://www.speedrun.com/cuphead') + `<div class='grow'>${sharedAssetsImg('src')}</div>`}</div>`
 }

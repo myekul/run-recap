@@ -55,3 +55,17 @@ function getPlayerDisplay(player) {
     HTMLContent += `<td style='text-align:left;font-weight: bold;font-size:80%;padding-right:5px'>${getPlayerName(player)}</td>`
     return HTMLContent
 }
+function bigPlayerDisplay(player) {
+    let HTMLContent = ''
+    if (player.extra) {
+        const grade = getLetterGrade(player.extra.percentage)
+        const trophy = getTrophy(player.extra.place)
+        HTMLContent += `<td class='${grade.className}' style='font-size:75%;text-align:left'>${grade.grade}</td>`
+        HTMLContent += `<td class='${commBestILsCategory.className} ${placeClass[player.extra.place]}' style='font-size:75%;padding:0 1px;'>${trophy ? `<div class='trophy'>${trophy}</div>` : player.extra.place}</td>`
+        HTMLContent += `<td class='${commBestILsCategory.className} ${placeClass[player.extra.place]}' style='padding: 0 3px'>${secondsToHMS(player.extra.score)}</td>`
+    } else {
+        HTMLContent += `<td></td>`.repeat(3)
+    }
+    HTMLContent += getPlayerDisplay(player)
+    return HTMLContent
+}

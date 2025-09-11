@@ -336,9 +336,7 @@ function runRecapGrid() {
     commBestILsCategory.runs.forEach((run, index) => {
         const player = players[index]
         HTMLContent += `<tr class='${getRowColor(index)} hover'>`
-        // HTMLContent += parseRun(player, index, extraCategory, null, true)
-        HTMLContent+=`<td></td><td></td><td></td>`
-        HTMLContent += getPlayerDisplay(player)
+        HTMLContent += bigPlayerDisplay(player)
         categories.forEach((category, categoryIndex) => {
             const ILtime = run[categoryIndex]
             const comparisonTime = getComparisonTime(categoryIndex)
