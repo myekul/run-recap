@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <link id='favicon' rel="shortcut icon" href='images/favicon.png'>
+    <link rel="shortcut icon" href='images/favicon.png'>
     <title>Run Recap</title>
     <link rel="stylesheet" href="https://myekul.github.io/shared-assets/styles/styles.css">
     <link rel="stylesheet" href="https://myekul.github.io/shared-assets/myekul/myekul.css">
@@ -15,6 +13,7 @@
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://myekul.github.io/shared-assets/utils.js"></script>
     <script src="https://myekul.github.io/shared-assets/cuphead/cuphead.js"></script>
+    <script src="https://myekul.github.io/shared-assets/cuphead/commBest.js"></script>
     <script src="https://myekul.github.io/shared-assets/myekul/src.js"></script>
 </head>
 
@@ -90,6 +89,62 @@
                     </div>
                 </div>
             </div>
+            <div id="runRecap_bar">
+                <div id='runRecap_chart' class='container' style='display:none;width:900px;height:100px'></div>
+                <div id='runRecap_options_button' class='options'>
+                </div>
+                <div id="runRecap_options" class="container" style="display:none">
+                    <input id='checkbox_runRecap_harsh' onclick="action()" type="checkbox" checked>Harsh Grading
+                </div>
+                <div class="container" style='padding-bottom:3px'>
+                    <div id="runRecap_lss_comparison" class="container" style="margin:0;display:none">
+                        <div class='font2' style="padding-right:10px">.lss</div>
+                        <select id="dropdown_runRecap_lss_current" class="onePointOne">
+                            <option class='lss_yourPB' value="yourPB" selected>Your PB</option>
+                            <optgroup label="Theoretical">
+                                <option value="yourBest">Best Pace Ever</option>
+                                <option value="sob">Sum of Best</option>
+                                <option value="theoryRun">Your "Theory Run"</option>
+                            </optgroup>
+                            <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
+                        </select>
+                        <div>&Delta;</div>
+                        <select id="dropdown_runRecap_lss_comparison">
+                            <option class="lss_yourPB" value="yourPB">Your PB</option>
+                            <option id="lss_prevPB">Previous PB</option>
+                            <optgroup label="Theoretical">
+                                <option value="yourBest" selected>Best Pace Ever</option>
+                                <option value="sob">Sum of Best</option>
+                                <option value="theoryRun">Your "Theory Run"</option>
+                            </optgroup>
+                            <optgroup label="Comm Best Sheet">
+                                <option value="wr">World Record</option>
+                                <option value="commBest">Comm Best</option>
+                                <option value="commSoB">Comm SoB</option>
+                            </optgroup>
+                            <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
+                        </select>
+                    </div>
+                    <div id="runRecap_sav_comparison" class="container" style="margin:0;display:none">
+                        <div id="runRecap_divider" class="divider"></div>
+                        <div class='font2' style="padding-right:10px">.sav</div>&Delta;
+                        <select id="dropdown_runRecap_sav_comparison">
+                            <option value="top" disabled>Top 10 Average</option>
+                            <option value="top3" selected>Top 3 Average</option>
+                            <option value="topBest">Top Bests</option>
+                            <option value="theoryRun">"Theory Run"</option>
+                            <option value="commBest">Comm Best</option>
+                            <option value="tas" disabled>TAS</option>
+                            <optgroup id='runRecap_optgroup' label="Players"></optgroup>
+                        </select>
+                        <i class='fa fa-info-circle grow' onclick="playSound('move');toggleVisibility('comparisonInfo')"
+                            style='padding-left:5px'></i>
+                        <img id="runRecap_ghost" class="hide" style="height:40px;padding-left:20px">
+                        <div id="runRecap_numDeaths" style="padding-left:5px"></div>
+                    </div>
+                </div>
+                <div id='comparisonInfo' class='textBlock container' style='display:none;font-size:75%'></div>
+            </div>
             <div id="content"></div>
             <div id="runRecapTab" style="display:none">
                 <div id="runRecap_home" class='runRecap_section'>
@@ -134,79 +189,27 @@
                             <div class="container">View Example:</div>
                             <div id="runRecap_examples" class="container"></div>
                         </div>
-                        <div id="runRecap_dropBox_sav"></div>
-                        <div id="runRecap_dropBox_lss"></div>
+                        <div id="dropbox">
+                            <div class="container">
+                                <input type='file' id='runRecap_input' onchange="runRecapHandleFile(event)"
+                                    style='display:none'>
+                                <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'>
+                                    <i class="fa fa-upload"></i>&nbsp;Upload file
+                                </div>
+                                <div onclick="openModal(runRecapInfo(), 'INFO')" class='grow' style="padding-left:5px">
+                                    <i class="fa fa-info-circle"></i>
+                                </div>
+                                <div class='divider'></div>
+                                <div onclick="processSavFile()" class="button cuphead" style="width:110px">
+                                    <i class="fa fa-plus"></i>&nbsp;Empty .sav
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div id='runRecapError' class='container' style='display:none'>Error!</div>
                 </div>
                 <div id="runRecap_content" class='runRecap_section' style="display:none">
-                    <div id='runRecap_chart' class='container' style='width:900px;height:100px'></div>
-                    <div id='runRecap_options_button' class='options'>
-                    </div>
-                    <div id="runRecap_options" class="container" style="display:none">
-                        <input id='checkbox_runRecap_harsh' onclick="action()" type="checkbox" checked>Harsh Grading
-                    </div>
-                    <div class="container" style='padding-bottom:3px'>
-                        <div id="runRecap_lss_comparison" class="container hide" style="margin: 0">
-                            <div class='font2' style="padding-right:10px">.lss</div>
-                            <select id="dropdown_runRecap_lss_current" class="onePointOne">
-                                <option class='lss_yourPB' value="yourPB" selected>Your PB</option>
-                                <optgroup label="Theoretical">
-                                    <option value="yourBest">Best Pace Ever</option>
-                                    <option value="sob">Sum of Best</option>
-                                    <option value="theoryRun">Your "Theory Run"</option>
-                                </optgroup>
-                                <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
-                            </select>
-                            <div>&Delta;</div>
-                            <select id="dropdown_runRecap_lss_comparison">
-                                <option class="lss_yourPB" value="yourPB">Your PB</option>
-                                <option id="lss_prevPB">Previous PB</option>
-                                <optgroup label="Theoretical">
-                                    <option value="yourBest" selected>Best Pace Ever</option>
-                                    <option value="sob">Sum of Best</option>
-                                    <option value="theoryRun">Your "Theory Run"</option>
-                                </optgroup>
-                                <optgroup label="Comm Best Sheet">
-                                    <option value="wr">World Record</option>
-                                    <option value="commBest">Comm Best</option>
-                                    <option value="commSoB">Comm SoB</option>
-                                </optgroup>
-                                <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
-                            </select>
-                        </div>
-                        <div id='runRecap_sav_tabs' class="container" style="margin:0">
-                            <div id='runRecap_times' class="button" style="width:70px" onclick="generate_sav('times')">
-                                Times</div>
-                            <div id='runRecap_sums' class="button" style="width:70px" onclick="generate_sav('sums')">
-                                Sums</div>
-                            <div id='runRecap_grid' class="button" style="width:70px" onclick="generate_sav('grid')">
-                                Grid</div>
-                        </div>
-                        <div id="runRecap_sav_comparison" class="container" style="margin: 0">
-                            <div id="runRecap_divider" class="divider"></div>
-                            <div class='font2' style="padding-right:10px">.sav</div>&Delta;
-                            <select id="dropdown_runRecap_sav_comparison">
-                                <option value="top" disabled>Top 10 Average</option>
-                                <option value="top3" selected>Top 3 Average</option>
-                                <option value="topBest">Top Bests</option>
-                                <option value="theoryRun">"Theory Run"</option>
-                                <option value="commBest">Comm Best</option>
-                                <optgroup id='runRecap_optgroup' label="Players"></optgroup>
-                            </select>
-                            <i class='fa fa-info-circle grow'
-                                onclick="playSound('move');toggleVisibility('comparisonInfo')"
-                                style='padding-left:5px'></i>
-                            <img id="runRecap_ghost" class="hide" style="height:40px;padding-left:20px">
-                            <div id="runRecap_numDeaths" style="padding-left:5px"></div>
-                        </div>
-                    </div>
-                    <div id='comparisonInfo' class='textBlock container' style='display:none;font-size:75%'></div>
-                    <div id='runRecap' style="padding:10px 0"></div>
                     <div class='container' style='padding-top:20px'>
-                        <div class='button cuphead' onclick="runRecapViewPage('home')" style='width:100px'>
-                            <i class="fa fa-reply"></i>&nbsp;Go back
-                        </div>
                         <div id="runRecap_sav_download" class="container" style="margin:0">
                             <div class='divider'></div>
                             <div class='button cuphead' onclick="runRecapDownload()" style='width:135px'><i
@@ -214,12 +217,12 @@
                             <div class='divider'></div>
                             <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
                                     class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
-                            <div id="runRecap_upload_div" class="container" style="display:none">
+                            <!-- <div id="runRecap_upload_div" class="container" style="display:none">
                                 <div class='divider'></div>
                                 <div class='button cuphead pulseSize' onclick="runRecapUploadButton()"
                                     style='width:190px;height:30px;font-size:90%'><i
                                         class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -229,21 +232,20 @@
     </div>
 </body>
 
-<script src="constants/constants.js"></script>
-<script src="constants/commBest.js"></script>
 <script src="code/variables.js"></script>
 
 <script src="code/runRecap.js"></script>
-<script src="code/runRecap_sav.js"></script>
-<script src="code/runRecap_lss.js"></script>
 
 <script src="code/api/firebase.js" type="module"></script>
 <script src="code/api/sheets.js"></script>
 
+<script src="code/tabs/sav.js"></script>
+<script src="code/tabs/lss.js"></script>
+<script src="code/tabs/sums.js"></script>
+<script src="code/tabs/grid.js"></script>
+<script src="code/tabs/ballpit.js"></script>
 <script src="code/tabs/commBestILs.js"></script>
 <script src="code/tabs/commBestSplits.js"></script>
-
-<script src="code/general.js"></script>
 
 <script src="code/general.js"></script>
 

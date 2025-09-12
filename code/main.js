@@ -1,22 +1,137 @@
 gapi.load("client", loadClient);
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
+setTabs(['home', null, [
+    `<div id='savButton' onclick="playSound('category_select');showTab('sav')" class="font2 button"
+        style="width:80px;font-size:120%;gap:4px;background-color:var(--cuphead)">
+        <img src="images/sav.png" style="height:21px">.sav
+    </div>
+    <div id='lssButton' onclick="playSound('category_select');showTab('lss')" class="font2 button grayedOut"
+        style="width:80px;font-size:120%;gap:4px;background-color:var(--cuphead)">
+        <img src="images/lss.png" style="height:21px">.lss
+    </div>`
+], null, 'sums', 'grid', null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
-generateDropbox('sav')
-generateDropbox('lss')
 runRecapDefault()
-// setTabs(['home', null, 'ballpit'])
-setTabs(['home'])
+const dropbox = document.getElementById('dropbox');
+const dropboxClass = 'dropboxHover'
+dropbox.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    dropbox.classList.add(dropboxClass);
+});
+dropbox.addEventListener('dragleave', () => {
+    dropbox.classList.remove(dropboxClass);
+});
+dropbox.addEventListener('drop', (event) => {
+    event.preventDefault();
+    dropbox.classList.remove(dropboxClass);
+    const files = event.dataTransfer.files;
+    runRecapHandleFile(files[0])
+});
 document.addEventListener('DOMContentLoaded', function () {
+    commBestILsCategory = commBestILs['1.1+']
     getCommBestILs()
 })
 function action() {
-    if (['home'].includes(globalTab)) {
+    switch (globalTab) {
+        case 'home':
+            if (runRecapExample) {
+                runRecapDefault()
+                runRecapUnload('sav', true)
+                runRecapUnload('lss', true)
+                runRecapExample = false
+                hide('runRecap_example_div')
+            }
+            if (localStorage.getItem('username')) {
+                document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap_player')
+            }
+            hide('runRecap_chart')
+            break
+        case 'sav':
+            generate_sav()
+            break
+        case 'lss':
+            generate_lss()
+            break
+        case 'sums':
+            generateSums()
+            break
+        case 'grid':
+            generateGrid()
+            break
+        case 'ballpit':
+            generateBallpit()
+            break
+        case 'commBestILs':
+            generateCommBestILs()
+            break
+        case 'commBestSplits':
+            generateCommBestSplits()
+            break
+    }
+    if (runRecap_savFile) {
+        document.getElementById('savButton').classList.add('pulseSize')
+    } else {
+        document.getElementById('savButton').classList.remove('pulseSize')
+    }
+    if (runRecap_lssFile.pbSplits) {
+        document.getElementById('lssButton').classList.add('pulseSize')
+        document.getElementById('lssButton').classList.remove('grayedOut')
+    } else {
+        document.getElementById('lssButton').classList.remove('pulseSize')
+        document.getElementById('lssButton').classList.add('grayedOut')
+    }
+    updateComparisonInfo()
+    if (globalTab == 'sav') {
+        show('runRecap_sav_download')
+    } else {
+        hide('runRecap_sav_download')
+    }
+    if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile)) {
+        show('runRecap_sav_comparison')
+    } else {
+        hide('runRecap_sav_comparison')
+    }
+    if (globalTab == 'lss') {
+        if (runRecapExample) {
+            hide('runRecap_lss_comparison')
+        } else {
+            show('runRecap_lss_comparison')
+        }
+    } else {
+        hide('runRecap_lss_comparison')
+    }
+    if (globalTab == 'lss' && runRecap_savFile && !runRecapExample) {
+        show('runRecap_divider')
+    } else {
+        hide('runRecap_divider')
+    }
+    if (runRecapExample) {
+        show('runRecap_example_div')
+        // hide('runRecap_upload_div')
+    } else {
+        hide('runRecap_example_div')
+        // show('runRecap_upload_div')
+    }
+    if (globalTab == 'lss' && runRecapTheoretical) {
+        show('runRecap_theoretical_div')
+    } else {
+        hide('runRecap_theoretical_div')
+    }
+    if (!['home', 'commBestILs', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+        show('runRecap_bar')
+    } else {
+        hide('runRecap_bar')
+    }
+    if (runRecap_savFile && !['home', 'commBestILs', 'commBestSplits', 'ballpit', 'lss'].includes(globalTab)) runRecap_chart()
+    if (['home', 'sav', 'lss'].includes(globalTab)) {
         hide('pageTitle')
     } else {
         show('pageTitle')
-        setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
+        if (fontAwesomeSet[globalTab]) {
+            setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
+        }
     }
     if (['commBestILs'].includes(globalTab)) {
         show('viableDiv')
@@ -26,22 +141,14 @@ function action() {
     if (globalTab == 'home') {
         show('runRecapTab')
         hide('content')
-        show('runRecap_details')
     } else {
         hide('runRecapTab')
         show('content')
-        hide('runRecap_details')
     }
-    switch (globalTab) {
-        case 'home':
-            runRecapViewPage()
-            break
-        case 'commBestILs':
-            generateCommBestILs()
-            break
-        case 'commBestSplits':
-            generateCommBestSplits()
-            break
+    if (!['commBestILs', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+        show('runRecap_details')
+    } else {
+        hide('runRecap_details')
     }
 }
 document.querySelectorAll('select').forEach(elem => {
@@ -55,8 +162,10 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     const dropdown = document.getElementById('dropdown_runRecap_sav_comparison')
     if (commBestILsCategory.name == '1.1+') {
         dropdown.options[0].disabled = false
+        dropdown.options[5].disabled = false
     } else {
         dropdown.options[0].disabled = true
+        dropdown.options[5].disabled = true
     }
     updateLoadouts(categoryName)
     buttonClick('commBestILs_' + commBestILsCategory.className, 'commBestILsVersionTabs', 'selected')
@@ -151,7 +260,12 @@ function done() {
             }
         })
     }
-    runRecapViewPage('home')
+    runRecapExamples()
+    let HTMLContent = ''
+    for (let i = 0; i < commBestILsCategory.numRuns; i++) {
+        HTMLContent += `<option value="player_${i}">${i + 1}. ${fullgamePlayer(i)}</option>`
+    }
+    document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
 }
 function assignRuns(category, categoryIndex) {
     category.runs.forEach(run => {

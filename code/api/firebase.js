@@ -26,5 +26,22 @@ window.firebaseUtils = {
         } catch (error) {
             console.error("Error fetching documents: ", error)
         }
-    }
+    },
+    firestoreWriteRR: async () => {
+        const obj = {
+            sav: runRecap_savFile,
+            username: localStorage.getItem('username'),
+            category: commBestILsCategory.name,
+            time: runRecapTime,
+            date: new Date()
+        }
+        console.log(obj)
+        // await addDoc(collection(db, 'runRecap'), obj)
+        //     .then(() => {
+        //         console.log(`Run Recap written`);
+        //     })
+        //     .catch((error) => {
+        //         console.error(`Error writing document ${i}: `, error);
+        //     });
+    },
 }

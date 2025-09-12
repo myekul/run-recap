@@ -1,15 +1,14 @@
-let commBestILsCategory = commBestILs['1.1+']
+const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
+const MYEKUL_SHEET_ID = '14l1hkW337uiyCRkNz61MNq99AEoidZdqaQUIpH5FlGU'
 
 const myekulSheets = {}
 const markinSheets = {}
+let commBestILsCategory
 let globalCache
 let runRecap_savFile
 let runRecap_lssFile = {}
 let runRecap_markin
-let runRecapView = 'home'
-let runRecapElem = 'sav'
 let runRecapTime
-let runRecapTab = 'times'
 let runRecapExample = false
 let runRecapTheoretical = false
 let splitInfo = []

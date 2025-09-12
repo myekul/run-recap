@@ -36,11 +36,11 @@ function hideInput(elem) {
     if (elem == 'username') {
         localStorage.setItem('username', input.trim() ? input : localStorage.getItem('username'))
         startElem.innerHTML = runRecapPlayer(elem)
-        action()
     } else {
         startElem.innerHTML = runRecapTimeElem(runRecapTime)
     }
     show(startElem)
+    action()
 }
 function runRecapPlayer(elem) {
     const playerString = runRecapExample ? players[globalPlayerIndex].name : localStorage.getItem('username')
@@ -57,60 +57,6 @@ function runRecapPlayer(elem) {
 function runRecapTimeElem(time) {
     return `<div style='font-size:150%'>${time}</div>`
 }
-function generateDropbox(elem) {
-    const dropBoxID = 'runRecap_dropBox_' + elem
-    const dropBoxInnerID = dropBoxID + '_inner'
-    const unsupported = elem == 'lss' && !commBestILsCategory.markin
-    const fileUploaded = !unsupported && (elem == 'sav' && runRecap_savFile || elem == 'lss' && runRecap_lssFile.pbSplits)
-    let HTMLContent = ''
-    HTMLContent += `<div id='${dropBoxInnerID}' class="dropBox ${fileUploaded ? commBestILsCategory.className + ' flash' : ''}">
-                        <div>
-                            <div class="container font2" style="font-size:150%">.${elem}&nbsp;`
-    if (fileUploaded) {
-        HTMLContent += fontAwesome('check')
-    }
-    HTMLContent += `</div>
-                    <div class="container">
-                        <input type='file' id='runRecap_${elem}_input' ${elem == 'lss' ? "accept='lss'" : ''} onchange="runRecapHandleFile(event,'${elem}')" style='display:none'>`
-    if (unsupported) {
-        HTMLContent += `<div>Category not supported!</div>`
-    } else {
-        HTMLContent += `<div onclick="document.getElementById('runRecap_${elem}_input').click()" class='button cuphead'>${fontAwesome('upload')}&nbsp;Upload file</div>`
-    }
-
-    if (elem == 'sav') {
-        HTMLContent += `<div onclick="openModal(runRecapInfo(), 'INFO')" class='grow' style="padding-left:5px">${fontAwesome('info-circle')}</div>`
-        HTMLContent += `<div class='divider'></div>
-    <div onclick="processSavFile()" class="button cuphead" style="width:110px">${fontAwesome('plus')}&nbsp;Empty file</div>`
-    }
-    HTMLContent += `</div>`
-    if (fileUploaded) {
-        cellContent = elem == 'sav' ? fontAwesome('folder') : `<img src="images/livesplit.png" style="width:30px">`
-        HTMLContent += `<div class='container' style='padding-top:20px'>
-        <div onclick="runRecapViewPage('content','${elem}')" class='button cuphead pulseSize font2 clickable' style="font-size:150%;width:200px;height:50px">${cellContent}&nbsp;View .${elem}</div>
-        </div>`
-        HTMLContent += `<div onclick="runRecapUnload('${elem}')" class='grow' style='position:absolute;bottom:8px;right:10px;font-size:130%'>${fontAwesome('trash')}</div>`
-    }
-    HTMLContent += `</div>
-                    </div>`
-    const dropBox = document.getElementById(dropBoxID);
-    dropBox.innerHTML = HTMLContent
-    const dropBoxInner = document.getElementById(dropBoxInnerID);
-    const className = 'dropBoxHover'
-    dropBoxInner.addEventListener('dragover', (event) => {
-        event.preventDefault();
-        dropBoxInner.classList.add(className);
-    });
-    dropBoxInner.addEventListener('dragleave', () => {
-        dropBoxInner.classList.remove(className);
-    });
-    dropBoxInner.addEventListener('drop', (event) => {
-        event.preventDefault();
-        dropBoxInner.classList.remove(className);
-        const files = event.dataTransfer.files;
-        runRecapHandleFile(files[0], elem)
-    });
-}
 function runRecapUnload(elem, shh) {
     if (!shh) playSound('carddown')
     if (elem == 'sav') {
@@ -118,17 +64,16 @@ function runRecapUnload(elem, shh) {
     } else {
         runRecap_lssFile = {}
     }
-    generateDropbox(elem)
 }
-async function runRecapHandleFile(event, elem) {
+async function runRecapHandleFile(event) {
     const file = event.target?.files ? event.target.files[0] : event;
     if (file) {
         try {
             const content = await file.text()
-            playSound('cardup')
+            playSound('ready')
             const checkbox_runRecap_harsh = document.getElementById('checkbox_runRecap_harsh')
-            checkbox_runRecap_harsh.checked = !(runRecapTime != 'XX:XX' && getScore(extraCategory, convertToSeconds(runRecapTime)) < 90)
-            if (elem == 'sav') {
+            checkbox_runRecap_harsh.checked = !(runRecapTime != 'XX:XX' && getScore(globalCategory, convertToSeconds(runRecapTime)) < 90)
+            if (!(file.name.split('.').pop().toLowerCase() == 'lss')) {
                 runRecap_savFile = JSON.parse(content)
                 let category
                 if ('isPlayer1Mugman' in runRecap_savFile) {
@@ -163,6 +108,7 @@ async function runRecapHandleFile(event, elem) {
                     }
                 }
                 getCommBestILs(category)
+                showTab('sav')
             } else {
                 read_lss(content)
             }
@@ -197,7 +143,7 @@ function runRecapUploadButton() {
     if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {
         window.firebaseUtils.firestoreWriteRR()
     } else {
-        openModal(runRecapUpload(), 'UPLOAD', '', true)
+        openModal(runRecapUpload(), 'UPLOAD')
     }
     function runRecapUpload() {
         let HTMLContent = ''
@@ -207,76 +153,113 @@ function runRecapUploadButton() {
         return HTMLContent
     }
 }
-function runRecapViewPage(page = runRecapView, elem, shh) {
-    runRecapView = page
-    document.querySelectorAll('.runRecap_section').forEach(elem => {
-        hide(elem)
-    })
-    if (elem) {
-        runRecapElem = elem
-        if (!shh) playSound('ready')
+function runRecapGrade(delta) {
+    let score = 100 - (delta * 4)
+    if (!document.getElementById('checkbox_runRecap_harsh').checked) {
+        score = 100 - delta
     }
-    updateComparisonInfo()
-    show('runRecap_' + runRecapView)
-    if (runRecapView == 'home') {
-        runRecapUpdateComparison()
-        runRecapHome()
-    } else {
-        if (runRecap_savFile) {
-            show('runRecap_sav_download')
-            show('runRecap_sav_comparison')
-        } else {
-            hide('runRecap_sav_download')
-            hide('runRecap_sav_comparison')
-        }
-        if (runRecapElem == 'sav') {
-            show('runRecap_sav_tabs')
-            hide('runRecap_lss_comparison')
-            generate_sav()
-        } else {
-            hide('runRecap_sav_tabs')
-            show('runRecap_lss_comparison')
-            generate_lss()
-        }
-    }
-    if (runRecapElem == 'lss' && !runRecapExample) show('runRecap_lss_comparison')
-    if (runRecapElem == 'lss' && (!runRecap_savFile || runRecapExample)) {
-        hide('runRecap_divider')
-    } else {
-        show('runRecap_divider')
-    }
-    if (runRecapExample) {
-        show('runRecap_example_div')
-        // hide('runRecap_upload_div')
-    } else {
-        hide('runRecap_example_div')
-        // show('runRecap_upload_div')
-    }
-    if (runRecapView != 'home' && runRecapTheoretical) show('runRecap_theoretical_div')
+    return getLetterGrade(score)
 }
-function runRecapUpdateComparison() {
-    let HTMLContent = ''
-    for (let i = 0; i < commBestILsCategory.numRuns; i++) {
-        HTMLContent += `<option value="player_${i}">${i + 1}. ${fullgamePlayer(i)}</option>`
-    }
-    document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
+function runRecapDelta(runTime, comparisonTime) {
+    return Math.floor(runTime) - Math.floor(comparisonTime)
 }
-function runRecapHome() {
-    if (runRecapExample) {
-        runRecapDefault()
-        runRecapUnload('sav', true)
-        runRecapUnload('lss', true)
-        runRecapExample = false
-        hide('runRecap_example_div')
+function runRecap_chart(times, deltas, lss) {
+    if (runRecap_savFile && !lss) {
+        times = []
+        deltas = []
+        categories.forEach((category, categoryIndex) => {
+            const level = getCupheadLevel(categoryIndex)
+            const runTime = level?.bestTime
+            category.runTime = runTime
+            const prevCategory = categories[categoryIndex - 1]
+            if (prevCategory) category.runTime += prevCategory.runTime
+            times.push(category.runTime)
+            const comparisonTime = getComparisonTime(categoryIndex)
+            const delta = runRecapDelta(runTime, comparisonTime)
+            deltas.push(delta)
+        })
     }
-    if (localStorage.getItem('username')) {
-        document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap_player')
+    if (runRecap_savFile || lss) {
+        show('runRecap_chart')
+        const data = new google.visualization.DataTable()
+        data.addColumn('number', 'Times')
+        data.addColumn('number', 'Delta')
+        data.addColumn({ type: 'string', role: 'style' })
+        // data.addColumn({ role: 'annotation' })
+        const rows = []
+        const startingIndex = lss ? getOffset() : 1
+        for (let i = 0; i < startingIndex; i++) {
+            rows.push([0, 0, ''])
+        }
+        times.forEach((time, index) => {
+            let colorClass
+            if (lss) {
+                colorClass = index >= getOffset() ? splitInfo[index].id : ''
+            } else {
+                colorClass = categories[index].info.id
+            }
+            const color = colorClass ? getColorFromClass(colorClass) : ''
+            // rows.push([split, deltas[index], `point { fill-color: ${color}; }`, getDelta(deltas[index])])
+            rows.push([time, deltas[index], `point { fill-color: ${color}; }`])
+        })
+        data.addRows(rows)
+        const font = getComputedStyle(document.documentElement).getPropertyValue('--font')
+        const options = {
+            // curveType: 'function', // Smooth curves
+            chartArea: { height: '90%' },
+            legend: { position: 'none' },
+            backgroundColor: 'transparent',
+            pointSize: 9,
+            lineWidth: 2,
+            series: { 0: { color: 'gray' } },
+            hAxis: {
+                textStyle: {
+                    color: 'transparent',
+                    fontName: font
+                },
+                minValue: 0,
+                gridlines: { count: 0 }
+            },
+            vAxis: {
+                textStyle: {
+                    color: 'transparent',
+                    fontName: font
+                },
+                gridlines: { count: 0 },
+                baselineColor: 'gray'
+            },
+            tooltip: { trigger: 'none' },
+            // annotations: {
+            //     style: 'none',
+            //     textStyle: {
+            //         fontName: font
+            //     }
+            // },
+        };
+        const chart = new google.visualization.LineChart(document.getElementById('runRecap_chart'));
+        chart.draw(data, options);
+    } else {
+        hide('runRecap_chart')
     }
+}
+function runRecapDefault() {
+    document.getElementById('runRecap_time').innerHTML = `
+    <div style='font-size:150%'>XX:XX</div>
+    <div style='font-size:160%'>${fontAwesome('edit')}</div>`
+    runRecapTime = 'XX:XX'
+}
+function runRecapMusic() {
+    const src = ['DLC', 'DLC+Base'].includes(commBestILsCategory.name) ? `https://www.youtube.com/embed/L6T3fpUGSmE?si=CY3h0TbNYkQ003eZ` : `https://www.youtube.com/embed/cdvSNkW3Uyk?si=VcZ9Du_FsD5A8O6g`
+    document.getElementById('musicDiv').innerHTML = `
+    <iframe width="150" height="150" src="${src}&amp;controls=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    `
+}
+function runRecapExamples() {
     let HTMLContent = `<div><table class='shadow'>`
     players.slice(0, commBestILsCategory.numRuns).forEach((player, playerIndex) => {
         if (player.extra) {
             HTMLContent += `<tr class='${getRowColor(playerIndex)} clickable' onclick="processSavFile(${playerIndex});playSound('category_select')">`
-            HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex}</td>`
+            HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
             HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
             HTMLContent += `<td>${getPlayerFlag(player, 12)}</td>`
             HTMLContent += `<td style='padding:0 3px'>${getPlayerIcon(player, 28)}</td>`
@@ -294,85 +277,4 @@ function runRecapHome() {
     // </div>`
     HTMLContent += `</div>`
     document.getElementById('runRecap_examples').innerHTML = HTMLContent
-}
-function runRecapGrade(delta) {
-    let score = 100 - (delta * 4)
-    if (!document.getElementById('checkbox_runRecap_harsh').checked) {
-        score = 100 - delta
-    }
-    return getLetterGrade(score)
-}
-function runRecapDelta(runTime, comparisonTime) {
-    return Math.floor(runTime) - Math.floor(comparisonTime)
-}
-function runRecap_chart(times, deltas, lss) {
-    const data = new google.visualization.DataTable()
-    data.addColumn('number', 'Times')
-    data.addColumn('number', 'Delta')
-    data.addColumn({ type: 'string', role: 'style' })
-    // data.addColumn({ role: 'annotation' })
-    const rows = []
-    const startingIndex = lss ? getOffset() : 1
-    for (let i = 0; i < startingIndex; i++) {
-        rows.push([0, 0, ''])
-    }
-    times.forEach((time, index) => {
-        let colorClass
-        if (lss) {
-            colorClass = index >= getOffset() ? splitInfo[index].id : ''
-        } else {
-            colorClass = categories[index].info.id
-        }
-        const color = colorClass ? getColorFromClass(colorClass) : ''
-        // rows.push([split, deltas[index], `point { fill-color: ${color}; }`, getDelta(deltas[index])])
-        rows.push([time, deltas[index], `point { fill-color: ${color}; }`])
-    })
-    data.addRows(rows)
-    const font = getComputedStyle(document.documentElement).getPropertyValue('--font')
-    const options = {
-        // curveType: 'function', // Smooth curves
-        chartArea: { height: '90%' },
-        legend: { position: 'none' },
-        backgroundColor: 'transparent',
-        pointSize: 9,
-        lineWidth: 2,
-        series: { 0: { color: 'gray' } },
-        hAxis: {
-            textStyle: {
-                color: 'transparent',
-                fontName: font
-            },
-            minValue: 0,
-            gridlines: { count: 0 }
-        },
-        vAxis: {
-            textStyle: {
-                color: 'transparent',
-                fontName: font
-            },
-            gridlines: { count: 0 },
-            baselineColor: 'gray'
-        },
-        tooltip: { trigger: 'none' },
-        // annotations: {
-        //     style: 'none',
-        //     textStyle: {
-        //         fontName: font
-        //     }
-        // },
-    };
-    const chart = new google.visualization.LineChart(document.getElementById('runRecap_chart'));
-    chart.draw(data, options);
-}
-function runRecapDefault() {
-    document.getElementById('runRecap_time').innerHTML = `
-    <div style='font-size:150%'>XX:XX</div>
-    <div style='font-size:160%'>${fontAwesome('edit')}</div>`
-    runRecapTime = 'XX:XX'
-}
-function runRecapMusic() {
-    const src = ['DLC', 'DLC+Base'].includes(commBestILsCategory.name) ? `https://www.youtube.com/embed/L6T3fpUGSmE?si=CY3h0TbNYkQ003eZ` : `https://www.youtube.com/embed/cdvSNkW3Uyk?si=VcZ9Du_FsD5A8O6g`
-    document.getElementById('musicDiv').innerHTML = `
-    <iframe width="150" height="150" src="${src}&amp;controls=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    `
 }

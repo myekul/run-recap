@@ -29,9 +29,9 @@ th {
     max-width: 700px;
 }
 
-.dropBox {
-    width: 370px;
-    height: 250px;
+#dropbox {
+    width: 450px;
+    height: 300px;
     border: 3px dashed white;
     border-radius: 15px;
     display: flex;
@@ -42,11 +42,11 @@ th {
     position: relative;
 }
 
-.dropBoxHover {
+.dropboxHover {
     background-color: var(--gray) !important;
 }
 
-.pulseSize {
+.pulseSize:not(.activeBanner) {
     animation: pulseSize 1s infinite;
 }
 
@@ -56,7 +56,7 @@ th {
     }
 
     50% {
-        transform: scale(1.05);
+        transform: scale(1.1);
     }
 
     100% {
@@ -105,4 +105,8 @@ th {
 .trophy {
     filter: drop-shadow(0.5px 1px 0 black) drop-shadow(-0.5px -0.5px 0 black);
     padding: 0 3px
+}
+
+#tabs {
+    width: 500px !important
 }

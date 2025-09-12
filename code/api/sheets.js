@@ -136,13 +136,6 @@ function loadMyekul() {
             commBestILsCategory.theoryRun.push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
         })
     }
-    if (globalTab == 'home') {
-        if (runRecapExample) processSavFile(0, true)
-        generateDropbox('sav')
-        generateDropbox('lss')
-    } else if (runRecapExample) {
-        runRecapViewPage('home')
-    }
     if (commBestILsCategory.markin) {
         fetchCuphead(true)
     } else {
