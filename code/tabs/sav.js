@@ -66,18 +66,22 @@ function processSavFile(playerIndex, display) {
         .then(response => response.json())
         .then(data => {
             runRecap_savFile = data
-            runRecapUnload('lss', true)
             if (playerIndex != null) {
+                runRecapUnload('lss', true)
                 runRecapExample = true
                 const player = players[playerIndex]
                 globalPlayerIndex = playerIndex
                 document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap_player')
                 const time = secondsToHMS(player.extra.score)
                 runRecapTime = time
+                setRunRecapTime(runRecapTime)
+                document.getElementById('input_runRecap_time').value = time
                 document.getElementById('input_runRecap_time').value = time
                 categories.forEach((category, categoryIndex) => {
                     const level = getCupheadLevel(categoryIndex)
                     level.bestTime = commBestILsCategory.runs[playerIndex][categoryIndex]
+                    level.played = true
+                    level.completed = true
                 })
                 if (playerIndex == 0 && commBestILsCategory.markin) {
                     bootMarkinExample()
@@ -134,7 +138,7 @@ function extraLevel(name, time) {
         </div>`
 }
 function isleHeader(isle) {
-    return `<div><table class='shadow'><tr><td colspan=4 class='${isle.className}'>${isle.name}</td></td>`
+    return `<div><table class='shadow'><tr><th colspan=4 class='${isle.className}'>${isle.name}</th></td>`
 }
 function runRecapCategory(categoryIndex) {
     const category = categories[categoryIndex]
@@ -160,7 +164,7 @@ function runRecapCategory(categoryIndex) {
     HTMLContent += done ? `<td class='${grade.className}' style='text-align:left;padding:0 2px'>${grade.grade}</td>` : `<td></td>`
     HTMLContent += `<td class='container ${category.info.id}'>${getImage(category.info.id)}</td>`
     HTMLContent += `<td id='runRecap_${categoryIndex}' class='${category.info.id}'>${done ? runRecapIL(runTime, categoryIndex) : runRecapInput(categoryIndex)}</td>`
-    HTMLContent += done ? `<td class='${grade.className}' style='font-size:90%'>${getDelta(delta)}</td>` : `<td></td>`
+    HTMLContent += done ? `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${getDelta(delta)}</td>` : `<td></td>`
     HTMLContent += done ? `<td style='font-size:90%;color:var(--gray);padding:0 2px'>${comparisonContent}</td>` : `<td></td>`
     HTMLContent += `</tr>`
     return HTMLContent

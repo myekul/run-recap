@@ -28,10 +28,12 @@
         <main>
             <div class="sticky">
                 <div id="headerRow" class="container">
-                    <div class="font2" style="margin-right:8px">Comm Best</div>
-                    <div onclick="showTab('commBestILs')" class="grade-a button" style="width:70px">
-                        ILs</div>
-                    <div onclick="showTab('commBestSplits')" class="grade-a button" style="width:70px">Splits
+                    <div class="container" style="position:absolute;right:10px">
+                        <div class="font2" style="margin-right:8px">Comm Best</div>
+                        <div onclick="showTab('commBestILs')" class="grade-a button" style="width:70px">
+                            ILs</div>
+                        <div onclick="showTab('commBestSplits')" class="grade-a button" style="width:70px">Splits
+                        </div>
                     </div>
                     <div style="width:70px">
                         <div id="boardTitleSrc" class="container">
@@ -133,96 +135,107 @@
                             <option value="top3" selected>Top 3 Average</option>
                             <option value="topBest">Top Bests</option>
                             <option value="theoryRun">"Theory Run"</option>
-                            <option value="commBest">Comm Best</option>
+                            <option value="commBest">Comm Best ILs</option>
                             <option value="tas" disabled>TAS</option>
                             <optgroup id='runRecap_optgroup' label="Players"></optgroup>
                         </select>
                         <i class='fa fa-info-circle grow' onclick="playSound('move');toggleVisibility('comparisonInfo')"
                             style='padding-left:5px'></i>
-                        <img id="runRecap_ghost" class="hide" style="height:40px;padding-left:20px">
+                        <div class="divider"></div>
+                        <div class="container" style="margin:0;gap:8px;font-size:70%">
+                            <div class="grade grade-a-plus" style="padding:3px">-1</div>
+                            <div id='deltaToggle' class="grow" style="font-size:200%" onclick="deltaToggle()">
+                                <i class="fa fa-toggle-off"></i>
+                            </div>
+                            <div class='delta-green background1' style="padding:3px">-1</div>
+                        </div>
+                        <img id="runRecap_ghost" style="height:40px;padding-left:20px">
                         <div id="runRecap_numDeaths" style="padding-left:5px"></div>
                     </div>
                 </div>
-                <div id='comparisonInfo' class='textBlock container' style='display:none;font-size:75%'></div>
+                <div id='comparisonInfo' class='textBlock container'
+                    style='display:none;font-size:75%;margin-bottom:8px'></div>
             </div>
             <div id="content"></div>
             <div id="runRecapTab" style="display:none">
-                <div id="runRecap_home" class='runRecap_section'>
-                    <div class="container">
-                        <div>
-                            <div id='runRecap_welcome'>
-                                <div class="container" style="padding:20px 0">
-                                    <div class='textBlock'>
-                                        Welcome to <span class="myekulColor">Run Recap</span>! This tool allows you
-                                        to upload
-                                        a <span class="myekulColor">Cuphead .sav</span>
-                                        and a <span class="myekulColor">LiveSplit .lss</span> file
-                                        to gain valuable insights about your recent run performance.
-                                    </div>
+                <div class="container">
+                    <div>
+                        <div id='runRecap_welcome'>
+                            <div class="container" style="padding:20px 0">
+                                <div class='textBlock'>
+                                    Welcome to <span class="myekulColor">Run Recap</span>! This tool allows you
+                                    to upload
+                                    a <span class="myekulColor">Cuphead .sav</span>
+                                    and a <span class="myekulColor">LiveSplit .lss</span> file
+                                    to gain valuable insights about your recent run performance.
                                 </div>
                             </div>
-                            <div class='container'>
-                                <div class="rrSec">.sav</div>
-                                <div class='textBlock' style="font-size:80%;color:darkgray">
-                                    You can either upload an existing .sav file from %appdata% to automatically
-                                    retrieve
-                                    IL times, or
-                                    create an empty file and insert IL times manually.
-                                </div>
+                        </div>
+                        <div class='container'>
+                            <div class="rrSec">.sav</div>
+                            <div class='textBlock' style="font-size:80%;color:darkgray">
+                                You can either upload an existing .sav file from %appdata% to automatically
+                                retrieve
+                                IL times, or
+                                create an empty file and insert IL times manually.
                             </div>
-                            <br>
-                            <div class='container'>
-                                <div class="rrSec">.lss</div>
-                                <div class='textBlock' style="font-size:80%;color:darkgray">
-                                    To ensure file compatibility, please upload a .lss with the standard split
-                                    configuration, as
-                                    seen <span class="myekulColor clickable" style="text-decoration: underline;"><a
-                                            href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ"
-                                            target="_blank">here</a></span>. Also, please note that comm best
-                                    comparisons will not work when splitting after scorecard.
-                                </div>
+                        </div>
+                        <br>
+                        <div class='container'>
+                            <div class="rrSec">.lss</div>
+                            <div class='textBlock' style="font-size:80%;color:darkgray">
+                                To ensure file compatibility, please upload a .lss with the standard split
+                                configuration, as
+                                seen <span class="myekulColor clickable" style="text-decoration: underline;"><a
+                                        href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ"
+                                        target="_blank">here</a></span>. Also, please note that comm best
+                                comparisons will not work when splitting after scorecard.
                             </div>
                         </div>
                     </div>
-                    <div class="container" style="padding:25px 0;gap:20px">
-                        <div style="padding-right:20px">
-                            <div class="container">View Example:</div>
-                            <div id="runRecap_examples" class="container"></div>
-                        </div>
-                        <div id="dropbox">
-                            <div class="container">
-                                <input type='file' id='runRecap_input' onchange="runRecapHandleFile(event)"
-                                    style='display:none'>
-                                <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'>
-                                    <i class="fa fa-upload"></i>&nbsp;Upload file
-                                </div>
-                                <div onclick="openModal(runRecapInfo(), 'INFO')" class='grow' style="padding-left:5px">
-                                    <i class="fa fa-info-circle"></i>
-                                </div>
-                                <div class='divider'></div>
-                                <div onclick="processSavFile()" class="button cuphead" style="width:110px">
-                                    <i class="fa fa-plus"></i>&nbsp;Empty .sav
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id='runRecapError' class='container' style='display:none'>Error!</div>
                 </div>
-                <div id="runRecap_content" class='runRecap_section' style="display:none">
-                    <div class='container' style='padding-top:20px'>
-                        <div id="runRecap_sav_download" class="container" style="margin:0">
+                <div class="container" style="padding:25px 0;gap:20px">
+                    <div style="padding-right:20px">
+                        <div class="container">View Example:</div>
+                        <div id="runRecap_examples" class="container"></div>
+                    </div>
+                    <div id="dropbox">
+                        <div class="container">
+                            <input type='file' id='runRecap_input' onchange="runRecapHandleFile(event)"
+                                style='display:none'>
+                            <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'>
+                                <i class="fa fa-upload"></i>&nbsp;Upload file
+                            </div>
+                            <div onclick="openModal(runRecapInfo(), 'INFO')" class='grow' style="padding-left:5px">
+                                <i class="fa fa-info-circle"></i>
+                            </div>
                             <div class='divider'></div>
-                            <div class='button cuphead' onclick="runRecapDownload()" style='width:135px'><i
-                                    class="fa fa-download"></i>&nbsp;Download .sav</div>
+                            <div onclick="processSavFile()" class="button cuphead" style="width:110px">
+                                <i class="fa fa-plus"></i>&nbsp;Empty .sav
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id='runRecapError' class='container' style='display:none'>Error!</div>
+            </div>
+            <div id="runRecap_content" style="display:none">
+                <div class='container' style='padding-top:20px'>
+                    <div class="container" style="margin:0">
+                        <div class='button cuphead' onclick="showTab('home')"
+                            style='width:110px;height:30px;font-size:90%'>
+                            <i class="fa fa-reply"></i>&nbsp;Go back
+                        </div>
+                        <div class='divider'></div>
+                        <div class='button cuphead' onclick="runRecapDownload()" style='width:135px'><i
+                                class="fa fa-download"></i>&nbsp;Download .sav</div>
+                        <div class='divider'></div>
+                        <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
+                                class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
+                        <div id="runRecap_upload_div" class="container" style="display:none">
                             <div class='divider'></div>
-                            <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
-                                    class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
-                            <!-- <div id="runRecap_upload_div" class="container" style="display:none">
-                                <div class='divider'></div>
-                                <div class='button cuphead pulseSize' onclick="runRecapUploadButton()"
-                                    style='width:190px;height:30px;font-size:90%'><i
-                                        class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
-                            </div> -->
+                            <div class='button cuphead brightPulse' onclick="runRecapUploadButton()"
+                                style='width:190px;height:30px;font-size:90%'><i
+                                    class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
                         </div>
                     </div>
                 </div>

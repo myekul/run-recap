@@ -14,3 +14,5 @@ let runRecapTheoretical = false
 let splitInfo = []
 
 let globalCategory = {}
+
+let deltaType

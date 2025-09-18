@@ -43,20 +43,12 @@ function generateSums() {
         HTMLContent += bigPlayerDisplay(players[index])
         isles.forEach(isle => {
             sum += isle.sum
-            if (isle.sum) {
-                const delta = isle.sum - isle.comparisonSum
-                const grade = runRecapGrade(delta)
-                HTMLContent += `
-                <td class='${grade.className}' style='text-align:left'>${grade.grade}</td>
-                <td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>
-                <td class='${grade.className}' style='font-size:90%'>${getDelta(delta)}</td>
-                <td style='width:20px'></td>`
-            }
+            HTMLContent += getIsleSum(isle)
         })
         const delta = sum - comparisonSum
         HTMLContent += `
         <td>${secondsToHMS(sum)}</td>
-        <td style='${redGreen(delta)}'>${getDelta(delta)}</td>
+        <td class='${redGreen(delta)}'>${getDelta(delta)}</td>
         <td></td>
         <td>${secondsToHMS(players[index].extra.score - sum)}</td>`
         HTMLContent += `</tr>`
@@ -84,31 +76,38 @@ function generateSums() {
             })
         })
         HTMLContent += `<tr><th colspan=6 style='text-align:right'>Your run</th>`
-        let flag = true
         isles.forEach(isle => {
             sum += isle.sum
-            if (isle.sum) {
-                const delta = isle.sum - isle.comparisonSum
-                const grade = runRecapGrade(delta)
-                HTMLContent += `
-                <td class='${grade.className}' style='text-align:left'>${grade.grade}</td>
-                <td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>
-                <td class='${grade.className}' style='font-size:90%'>${getDelta(delta)}</td>
-                <td style='width:20px'></td>`
-            } else {
-                flag = false
-            }
+            HTMLContent += getIsleSum(isle)
         })
-        if (flag) {
+        if (getCupheadLevel(categories.length - 1).completed) {
             const delta = sum - comparisonSum
             HTMLContent += `
             <td>${secondsToHMS(sum)}</td>
-            <td style='${redGreen(delta)}'>${getDelta(delta)}</td>
-            <td></td>
-            <td>${secondsToHMS(runRecapTime - sum)}</td>`
+            <td class='${redGreen(delta)}'>${getDelta(delta)}</td>
+            <td></td>`
+            if (runRecapTime != 'XX:XX') {
+                HTMLContent += `<td>${secondsToHMS(convertToSeconds(runRecapTime) - sum)}</td>`
+            }
         }
         HTMLContent += `</tr>`
     }
     HTMLContent += `</table></div>`
+    if (runRecap_savFile && !runRecapExample && runRecapTime == 'XX:XX' && getCupheadLevel(categories.length - 1).completed) {
+        HTMLContent += `<div class='container' style='margin-top:10px'>Insert your run time in XX:XX above!</div>`
+    }
     document.getElementById('content').innerHTML = HTMLContent
+}
+function getIsleSum(isle) {
+    let HTMLContent = ''
+    if (isle.sum) {
+        const delta = isle.sum - isle.comparisonSum
+        const grade = runRecapGrade(delta)
+        HTMLContent += `
+                <td class='${grade.className}' style='text-align:left'>${grade.grade}</td>
+                <td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>
+                <td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${getDelta(delta)}</td>
+                <td style='width:20px'></td>`
+    }
+    return HTMLContent
 }

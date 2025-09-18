@@ -1,70 +1,3 @@
-function showInput(elem) {
-    playSound('move')
-    hide(elem)
-    const input_elem = document.getElementById('input_' + elem)
-    show(input_elem)
-    input_elem.focus()
-    input_elem.select()
-    if (elem == 'runRecap_time') playSound('win_time_loop')
-    let handled = false;
-    input_elem.addEventListener('change', () => {
-        if (!handled) {
-            hideInput(elem);
-            handled = true;
-            if (elem == 'runRecap_time') playSound('win_time_loop_end');
-        }
-    });
-    input_elem.addEventListener('blur', () => {
-        if (!handled) {
-            hideInput(elem);
-            handled = true;
-            if (elem == 'runRecap_time') playSound('win_time_loop_end');
-        }
-    });
-}
-function hideInput(elem) {
-    const input_elem = document.getElementById('input_' + elem)
-    const input = input_elem.value
-    hide(input_elem)
-    if (elem == 'username') {
-        playSound('category_select')
-    } else if (elem == 'runRecap_time') {
-        stopSound('win_time_loop')
-        runRecapTime = input.trim() ? input : runRecapTime
-    }
-    const startElem = document.getElementById(elem)
-    if (elem == 'username') {
-        localStorage.setItem('username', input.trim() ? input : localStorage.getItem('username'))
-        startElem.innerHTML = runRecapPlayer(elem)
-    } else {
-        startElem.innerHTML = runRecapTimeElem(runRecapTime)
-    }
-    show(startElem)
-    action()
-}
-function runRecapPlayer(elem) {
-    const playerString = runRecapExample ? players[globalPlayerIndex].name : localStorage.getItem('username')
-    const player = players.find(player => player.name == playerString)
-    globalPlayerIndex = player ? player.rank - 1 : -1
-    const playerName = player ? getPlayerName(player) : playerString
-    let HTMLContent = `<div class='container' style='gap:8px;margin:0'>`
-    HTMLContent += player ? `<div>${getPlayerIcon(player, elem == 'username' ? 28 : 40)}</div>` : ''
-    HTMLContent += `<div style='font-size:${elem == 'username' ? '110' : '130'}%'>${playerName}</div>`
-    HTMLContent += player ? `<div>${getPlayerFlag(player, elem == 'username' ? 14 : 18)}</div>` : ''
-    HTMLContent += `</div>`
-    return HTMLContent
-}
-function runRecapTimeElem(time) {
-    return `<div style='font-size:150%'>${time}</div>`
-}
-function runRecapUnload(elem, shh) {
-    if (!shh) playSound('carddown')
-    if (elem == 'sav') {
-        runRecap_savFile = null
-    } else {
-        runRecap_lssFile = {}
-    }
-}
 async function runRecapHandleFile(event) {
     const file = event.target?.files ? event.target.files[0] : event;
     if (file) {
@@ -111,6 +44,7 @@ async function runRecapHandleFile(event) {
                 showTab('sav')
             } else {
                 read_lss(content)
+                showTab('lss')
             }
         } catch (error) {
             show('runRecapError')
@@ -121,6 +55,72 @@ async function runRecapHandleFile(event) {
     }
     if (event.target?.files) {
         event.target.value = ''
+    }
+}
+function showInput(elem) {
+    playSound('move')
+    hide(elem)
+    const input_elem = document.getElementById('input_' + elem)
+    show(input_elem)
+    input_elem.focus()
+    input_elem.select()
+    if (elem == 'runRecap_time') playSound('win_time_loop')
+    let handled = false;
+    input_elem.addEventListener('change', () => {
+        if (!handled) {
+            hideInput(elem);
+            handled = true;
+            if (elem == 'runRecap_time') playSound('win_time_loop_end');
+        }
+    });
+    input_elem.addEventListener('blur', () => {
+        if (!handled) {
+            hideInput(elem);
+            handled = true;
+            if (elem == 'runRecap_time') playSound('win_time_loop_end');
+        }
+    });
+}
+function hideInput(elem) {
+    const input_elem = document.getElementById('input_' + elem)
+    const input = input_elem.value
+    hide(input_elem)
+    if (elem == 'username') {
+        playSound('category_select')
+    } else if (elem == 'runRecap_time') {
+        stopSound('win_time_loop')
+        runRecapTime = input.trim() ? input : runRecapTime
+        setRunRecapTime(runRecapTime)
+    }
+    const startElem = document.getElementById(elem)
+    if (elem == 'username') {
+        localStorage.setItem('username', input.trim() ? input : localStorage.getItem('username'))
+        startElem.innerHTML = runRecapPlayer(elem)
+    }
+    show(startElem)
+    action()
+}
+function setRunRecapTime(time) {
+    document.getElementById('runRecap_time').innerHTML = `<div style='font-size:150%'>${time}</div>`
+}
+function runRecapPlayer(elem) {
+    const playerString = runRecapExample ? players[globalPlayerIndex].name : localStorage.getItem('username')
+    const player = players.find(player => player.name == playerString)
+    globalPlayerIndex = player ? player.rank - 1 : -1
+    const playerName = player ? getPlayerName(player) : playerString
+    let HTMLContent = `<div class='container' style='gap:8px;margin:0'>`
+    HTMLContent += player ? `<div>${getPlayerIcon(player, elem == 'username' ? 28 : 40)}</div>` : ''
+    HTMLContent += `<div style='font-size:${elem == 'username' ? '110' : '130'}%'>${playerName}</div>`
+    HTMLContent += player ? `<div>${getPlayerFlag(player, elem == 'username' ? 14 : 18)}</div>` : ''
+    HTMLContent += `</div>`
+    return HTMLContent
+}
+function runRecapUnload(elem, shh) {
+    if (!shh) playSound('carddown')
+    if (elem == 'sav') {
+        runRecap_savFile = null
+    } else {
+        runRecap_lssFile = {}
     }
 }
 function runRecapInfo() {

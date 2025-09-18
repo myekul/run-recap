@@ -46,7 +46,7 @@ function generate_lss() {
             const grade = runRecapGrade(trueDelta)
             const className = splitInfo[index].id
             const image = `<td class='${className}'><div class='container'>${getImage(className, 24)}</div></td>`
-            HTMLContent += `<tr class='${getRowColor(index)} ${!runRecapExample ? `clickable' onclick='openModal(runRecapSegment(${index}), 'SEGMENT INFO')` : ''}'>`
+            HTMLContent += `<tr class='${getRowColor(index)} ${!runRecapExample ? `clickable' onclick="openModal(runRecapSegment(${index}), 'SEGMENT INFO')"` : ''}'>`
             // HTMLContent += `<tr class='${getRowColor(index)} clickable'>`
             const currentSplit = splitComparison(currentRun, index)
             splits.push(currentSplit)
@@ -56,14 +56,14 @@ function generate_lss() {
             deltas.push(trueSplitDelta)
             HTMLContent += image
             HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSplit, true)}</td>`
-            HTMLContent += `<td style='padding:0 5px;font-size:90%;${redGreen(trueSplitDelta)}'>${getDelta(trueSplitDelta)}</td>`
+            HTMLContent += `<td class='${redGreen(trueSplitDelta)}' style='padding:0 5px;font-size:90%'>${getDelta(trueSplitDelta)}</td>`
             HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('split', index, comparisonSplit, comparison)}</td>`
             HTMLContent += `<td style='padding:0 20px'></td>`
             const compareCustom = !isNaN(comparison) || comparison == 'yourPB'
             HTMLContent += `<td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'>${compareCustom ? '' : grade.grade}</td>`
             HTMLContent += image
             HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSegment, true)}</td>`
-            HTMLContent += `<td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;font-size:90%;${compareCustom ? redGreen(trueDelta) : ''}'>${getDelta(trueDelta)}</td>`
+            HTMLContent += `<td class='${compareCustom ? redGreen(trueDelta) : grade.className}' style='padding:0 5px;font-size:90%'>${getDelta(trueDelta)}</td>`
             HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
             if (runRecap_savFile) {
                 HTMLContent += `<td style='padding:0 20px'></td>`
@@ -86,7 +86,7 @@ function generate_lss() {
                     HTMLContent += `<td class='${ILgrade.className}' style='padding:0 5px;text-align:left'>${ILgrade.grade}</td>`
                     HTMLContent += image
                     HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>`
-                    HTMLContent += `<td class='${ILgrade.className}' style='padding:0 5px;font-size:90%'>${runTime == nullTime ? '-' : getDelta(delta)}</td>`
+                    HTMLContent += `<td class='${deltaType ? redGreen(delta) : ILgrade.className}' style='padding:0 5px;font-size:90%'>${runTime == nullTime ? '-' : getDelta(delta)}</td>`
                     HTMLContent += `<td style='padding:0 10px;font-size:90%;color:var(--gray)'>${comparisonContents}</td>`
                 } else if (index == 2) {
                     HTMLContent += `<td colspan=5></td>`
@@ -112,6 +112,8 @@ function generate_lss() {
         }
         HTMLContent += `</table></div>`
         runRecap_chart(splits, deltas, true)
+    }else{
+        HTMLContent+=`<div class='container'>No .lss file uploaded!</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
@@ -293,7 +295,7 @@ function comparisonContent(type, index, time, comparison) {
 function segmentComparison(comparison, index, current) {
     if (comparison == 'yourBest') {
         if (current) {
-            setRunRecapTime('bestSplits')
+            setRunRecapTime2('bestSplits')
         }
         if (index == null) {
             return 'Your Golds'
@@ -301,7 +303,7 @@ function segmentComparison(comparison, index, current) {
         return runRecap_lssFile.bestSegments[index]
     } else if (comparison == 'sob') {
         if (current) {
-            setRunRecapTime('sob')
+            setRunRecapTime2('sob')
         }
         if (index == null) {
             return 'Your Golds'
@@ -309,7 +311,7 @@ function segmentComparison(comparison, index, current) {
         return runRecap_lssFile.bestSegments[index]
     } else if (comparison == 'theoryRun') {
         if (current) {
-            setRunRecapTime('theorySplits')
+            setRunRecapTime2('theorySplits')
         }
         if (index == null) {
             return 'Theory'
@@ -317,7 +319,7 @@ function segmentComparison(comparison, index, current) {
         return runRecap_lssFile.theorySegments[index]
     } else if (comparison == 'yourPB') {
         if (current) {
-            setRunRecapTime('pbSplits')
+            setRunRecapTime2('pbSplits')
         }
         if (index == null) {
             return 'Your PB'
@@ -340,17 +342,13 @@ function segmentComparison(comparison, index, current) {
         return runRecap_markin.bestSegments[index]
     } else {
         const attempt = runRecap_lssFile.attemptHistory.find(attempt => attempt.id == comparison)
-        if (current) {
-            document.getElementById('runRecap_time').innerHTML = runRecapTimeElem(secondsToHMS(attempt.gameTime))
-        }
-        if (index == null) {
-            return secondsToHMS(attempt.gameTime)
-        }
+        if (current) setRunRecapTime(secondsToHMS(attempt.gameTime))
+        if (index == null) return secondsToHMS(attempt.gameTime)
         return attempt.segments[index]
     }
 }
-function setRunRecapTime(src) {
-    document.getElementById('runRecap_time').innerHTML = runRecapTimeElem(secondsToHMS(runRecap_lssFile[src].at(-1)))
+function setRunRecapTime2(src) {
+    setRunRecapTime(secondsToHMS(runRecap_lssFile[src].at(-1)))
 }
 function splitComparison(comparison, index) {
     if (comparison == 'yourBest') {
@@ -412,7 +410,7 @@ function runRecapSegment(index) {
     }
     const numResets = Math.abs(prevSegment - thisSegment)
     const segmentAttemptCount = index == 0 ? runRecap_lssFile.attemptCount : thisSegment
-    const resetRate = getPercentage(numResets / segmentAttemptCount)
+    const resetRate = 100 * (numResets / segmentAttemptCount)
     const display = resetRate ? displayPercentage(resetRate) : 0
     const grade = getLetterGrade(100 - resetRate)
     HTMLContent += `<div class='container' style='gap:8px'>`

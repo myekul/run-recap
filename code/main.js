@@ -84,9 +84,9 @@ function action() {
     }
     updateComparisonInfo()
     if (globalTab == 'sav') {
-        show('runRecap_sav_download')
+        show('runRecap_content')
     } else {
-        hide('runRecap_sav_download')
+        hide('runRecap_content')
     }
     if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile)) {
         show('runRecap_sav_comparison')
