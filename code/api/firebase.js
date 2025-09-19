@@ -22,7 +22,14 @@ window.firebaseUtils = {
             querySnapshot.forEach(doc => {
                 globalCache.push(doc.data());
             });
-            letsGo()
+            // gapi.load("client", loadClient);
+            gapi.load('client', () => loadClient2())
+            async function loadClient2() {
+                gapi.client.setApiKey(API_KEY);
+                await gapi.client.load('https://sheets.googleapis.com/$discovery/rest?version=v4')
+                console.log("GAPI client loaded for API");
+                fetchCuphead()
+            }
         } catch (error) {
             console.error("Error fetching documents: ", error)
         }

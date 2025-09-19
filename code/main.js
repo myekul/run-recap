@@ -1,4 +1,3 @@
-gapi.load("client", loadClient);
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
 setTabs(['home', null, [
@@ -31,7 +30,7 @@ dropbox.addEventListener('drop', (event) => {
 });
 document.addEventListener('DOMContentLoaded', function () {
     commBestILsCategory = commBestILs['1.1+']
-    getCommBestILs()
+    window.firebaseUtils.firestoreRead()
 })
 function action() {
     switch (globalTab) {
@@ -174,11 +173,7 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     const category = commBestILsCategory.category
     updateBoardTitle()
     if (category > -1) {
-        if (globalCache) {
-            letsGo()
-        } else {
-            window.firebaseUtils.firestoreRead()
-        }
+        letsGo()
     } else {
         let variables = `var-${category.var}=${category.subcat}`
         if (category.var2) variables += `&var-${category.var2}=${category.subcat2}`
@@ -199,7 +194,7 @@ function letsGo() {
             return true
         }
     })
-    fetchCuphead()
+    loadMyekul()
 }
 function updateLoadouts(categoryName) {
     let HTMLContent = ''

@@ -2,32 +2,32 @@ function fetchCuphead(markin) {
     const sheetSrc = markin ? markinSheets : myekulSheets
     const sheetID = markin ? '1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ' : MYEKUL_SHEET_ID
     const sheetContent = markin ? 'formattedValue' : 'userEnteredValue,textFormatRuns'
-    if (Object.keys(sheetSrc).length == 0) {
-        return gapi.client.sheets.spreadsheets.get({
-            spreadsheetId: sheetID,
-            fields: `sheets(properties.title,data(rowData(values(${sheetContent}))))`
-        }).then(response => {
-            const sheets = response.result.sheets
-            sheets.forEach(sheet => {
-                const sheetName = sheet.properties.title
-                let rowData = sheet.data[0].rowData
-                if (markin) {
-                    rowData = rowData.slice(3)
-                    rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].formattedValue)
+    return gapi.client.sheets.spreadsheets.get({
+        spreadsheetId: sheetID,
+        fields: `sheets(properties.title,data(rowData(values(${sheetContent}))))`
+    }).then(response => {
+        const sheets = response.result.sheets
+        sheets.forEach(sheet => {
+            const sheetName = sheet.properties.title
+            let rowData = sheet.data[0].rowData
+            if (markin) {
+                rowData = rowData.slice(3)
+                rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].formattedValue)
+            }
+            rowData.forEach(row => {
+                if (row.values) {
+                    const startIndex = markin ? 1 : 2
+                    row.values = row.values.slice(startIndex)
                 }
-                rowData.forEach(row => {
-                    if (row.values) {
-                        const startIndex = markin ? 1 : 2
-                        row.values = row.values.slice(startIndex)
-                    }
-                })
-                sheetSrc[sheetName] = rowData
             })
-            markin ? loadMarkin() : loadMyekul()
-        }, (err) => console.error("Execute error", err));
-    } else {
-        markin ? loadMarkin() : loadMyekul()
-    }
+            sheetSrc[sheetName] = rowData
+        })
+        if (!markin) {
+            fetchCuphead(true)
+        } else {
+            getCommBestILs()
+        }
+    })
 }
 function loadMyekul() {
     const values = myekulSheets[commBestILsCategory.tabName]
@@ -137,7 +137,7 @@ function loadMyekul() {
         })
     }
     if (commBestILsCategory.markin) {
-        fetchCuphead(true)
+        loadMarkin()
     } else {
         action()
     }

@@ -21,7 +21,7 @@ function generateGrid() {
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
             HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`
-            HTMLContent += `<td style='color:gray'>${secondsToHMS(ILtime)}</td>`
+            HTMLContent += `<td style='color:${ILtime == commBestILsCategory.topBest[categoryIndex] ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
         HTMLContent += `</tr>`
     })

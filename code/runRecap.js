@@ -4,8 +4,6 @@ async function runRecapHandleFile(event) {
         try {
             const content = await file.text()
             playSound('ready')
-            const checkbox_runRecap_harsh = document.getElementById('checkbox_runRecap_harsh')
-            checkbox_runRecap_harsh.checked = !(runRecapTime != 'XX:XX' && getScore(globalCategory, convertToSeconds(runRecapTime)) < 90)
             if (!(file.name.split('.').pop().toLowerCase() == 'lss')) {
                 runRecap_savFile = JSON.parse(content)
                 let category
@@ -154,11 +152,7 @@ function runRecapUploadButton() {
     }
 }
 function runRecapGrade(delta) {
-    let score = 100 - (delta * 4)
-    if (!document.getElementById('checkbox_runRecap_harsh').checked) {
-        score = 100 - delta
-    }
-    return getLetterGrade(score)
+    return getLetterGrade(100 - (delta * 4))
 }
 function runRecapDelta(runTime, comparisonTime) {
     return Math.floor(runTime) - Math.floor(comparisonTime)
