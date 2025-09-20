@@ -112,8 +112,8 @@ function generate_lss() {
         }
         HTMLContent += `</table></div>`
         runRecap_chart(splits, deltas, true)
-    }else{
-        HTMLContent+=`<div class='container'>No .lss file uploaded!</div>`
+    } else {
+        HTMLContent += `<div class='container'>No .lss file uploaded!</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
 }

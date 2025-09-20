@@ -1,7 +1,7 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
 setTabs(['home', null, [
-    `<div id='savButton' onclick="playSound('category_select');showTab('sav')" class="font2 button"
+    `<div id='savButton' onclick="playSound('category_select');showTab('sav')" class="font2 button grayedOut"
         style="width:80px;font-size:120%;gap:4px;background-color:var(--cuphead)">
         <img src="images/sav.png" style="height:21px">.sav
     </div>
@@ -46,6 +46,8 @@ function action() {
                 document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap')
             }
             hide('runRecap_chart')
+            show('uploadButton')
+            hide('uploadCheck')
             break
         case 'sav':
             generate_sav()
@@ -71,8 +73,10 @@ function action() {
     }
     if (runRecap_savFile) {
         document.getElementById('savButton').classList.add('pulseSize')
+        document.getElementById('savButton').classList.remove('grayedOut')
     } else {
         document.getElementById('savButton').classList.remove('pulseSize')
+        document.getElementById('savButton').classList.add('grayedOut')
     }
     if (runRecap_lssFile.pbSplits) {
         document.getElementById('lssButton').classList.add('pulseSize')
@@ -137,8 +141,16 @@ function action() {
         hide('runRecap_bar')
     }
     if (runRecap_savFile && !['home', 'commBestILs', 'commBestSplits', 'ballpit', 'lss'].includes(globalTab)) runRecap_chart()
-    if (['home', 'sav', 'lss'].includes(globalTab)) {
+    if (['home'].includes(globalTab)) {
         hide('pageTitle')
+
+    } else if (['sav', 'lss'].includes(globalTab)) {
+        show('pageTitle')
+        let HTMLContent = `<div class='font2 container' style='gap:12px;font-size:200%;padding:15px 0'>
+        <img src='images/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
+        .${globalTab}
+        </div>`
+        document.getElementById('pageTitle').innerHTML = HTMLContent
     } else {
         show('pageTitle')
         if (fontAwesomeSet[globalTab]) {
@@ -280,6 +292,9 @@ function done() {
         document.getElementById('username').innerHTML = runRecapPlayer('username')
     }
     show('username')
+}
+function fullgamePlayer(playerIndex) {
+    return commBestILsCategory.players ? commBestILsCategory.players[playerIndex] : players[playerIndex].name
 }
 function assignRuns(category, categoryIndex) {
     category.runs.forEach(run => {

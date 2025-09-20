@@ -257,7 +257,6 @@ function openDatabase() {
     let HTMLContent = `<table style='padding:5px'>`
     database.forEach((run, index) => {
         const category = commBestILs[run.category]
-        const player = players.find(player => player.name == run.player)
         const playerIndex = players.findIndex(player => player.name == run.player)
         HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="processDatabaseFile(${index},'${playerIndex}','${run.time}','${category.tabName}')">
         <td>${generateBoardTitle(category)}</td>
@@ -273,14 +272,10 @@ function runRecapUploadButton() {
     if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {
         window.firebaseUtils.firestoreWriteRR()
     } else {
-        openModal(runRecapUpload(), 'UPLOAD')
-    }
-    function runRecapUpload() {
-        let HTMLContent = ''
-        HTMLContent += `
+        let HTMLContent = `
     <div style='margin-bottom:20px'>${myekulColor(fontAwesome('warning'))} Please insert your run time and username.</div>
     <div>Fraudulent or duplicate submissions are subject to deletion.</div>`
-        return HTMLContent
+        openModal(HTMLContent, 'UPLOAD')
     }
 }
 function processDatabaseFile(databaseIndex, playerIndex, time, categoryName) {

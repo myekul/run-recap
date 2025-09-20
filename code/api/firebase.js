@@ -8,7 +8,7 @@ const firebaseConfig = {
 };
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import { getFirestore, getDocs, collection, query, doc, getDoc, addDoc } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
+import { getFirestore, getDocs, collection, query, addDoc } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
@@ -45,10 +45,11 @@ window.firebaseUtils = {
             time: runRecapTime,
             date: new Date().toISOString().slice(0, 10)
         }
-        console.log(obj)
         await addDoc(collection(db, 'runRecap'), obj)
             .then(() => {
                 console.log(`Run Recap written`);
+                hide('uploadButton')
+                show('uploadCheck')
             })
             .catch((error) => {
                 console.error(`Error writing document ${i}: `, error);
@@ -68,5 +69,5 @@ window.firebaseUtils = {
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }
-    },
+    }
 }

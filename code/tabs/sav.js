@@ -57,7 +57,7 @@ function generate_sav() {
         })
         HTMLContent += `</div>`
     } else {
-        processSavFile()
+        HTMLContent += `<div class='container'>No .sav file uploaded!</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
@@ -117,9 +117,6 @@ function runRecapDownload() {
     a.click()
     document.body.removeChild(a)
     URL.revokeObjectURL(url)
-}
-function fullgamePlayer(playerIndex) {
-    return commBestILsCategory.players ? commBestILsCategory.players[playerIndex] : players[playerIndex].name
 }
 function assignIsles() {
     isles.forEach(isle => {
