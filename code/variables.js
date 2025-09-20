@@ -16,3 +16,5 @@ let splitInfo = []
 let globalCategory = {}
 
 let deltaType
+
+let database

@@ -70,12 +70,10 @@ function processSavFile(playerIndex, display) {
                 runRecapUnload('lss', true)
                 runRecapExample = true
                 const player = players[playerIndex]
-                globalPlayerIndex = playerIndex
-                document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap_player')
+                document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap', playerIndex)
                 const time = secondsToHMS(player.extra.score)
                 runRecapTime = time
                 setRunRecapTime(runRecapTime)
-                document.getElementById('input_runRecap_time').value = time
                 document.getElementById('input_runRecap_time').value = time
                 categories.forEach((category, categoryIndex) => {
                     const level = getCupheadLevel(categoryIndex)

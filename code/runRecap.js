@@ -101,10 +101,9 @@ function hideInput(elem) {
 function setRunRecapTime(time) {
     document.getElementById('runRecap_time').innerHTML = `<div style='font-size:150%'>${time}</div>`
 }
-function runRecapPlayer(elem) {
-    const playerString = runRecapExample ? players[globalPlayerIndex].name : localStorage.getItem('username')
+function runRecapPlayer(elem, playerIndex) {
+    const playerString = playerIndex ? players[playerIndex].name : localStorage.getItem('username')
     const player = players.find(player => player.name == playerString)
-    globalPlayerIndex = player ? player.rank - 1 : -1
     const playerName = player ? getPlayerName(player) : playerString
     let HTMLContent = `<div class='container' style='gap:8px;margin:0'>`
     HTMLContent += player ? `<div>${getPlayerIcon(player, elem == 'username' ? 28 : 40)}</div>` : ''
@@ -131,25 +130,6 @@ function runRecapInfo() {
                         <br>Mac: ${myekulColor(`/Users/<span class='runRecapInfoName'>${playerName}</span>/Library/Application\\ Support/unity.Studio\\ MDHR.Cuphead/Cuphead`)}
                     </div>`
     return HTMLContent
-}
-function runRecapDatabase() {
-    let HTMLContent = ''
-    HTMLContent += `<div>Coming soon!</div>`
-    return HTMLContent
-}
-function runRecapUploadButton() {
-    if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {
-        window.firebaseUtils.firestoreWriteRR()
-    } else {
-        openModal(runRecapUpload(), 'UPLOAD')
-    }
-    function runRecapUpload() {
-        let HTMLContent = ''
-        HTMLContent += `
-    <div style='margin-bottom:20px'>${myekulColor(fontAwesome('warning'))} Please insert your run time and username.</div>
-    <div>Fraudulent or duplicate submissions are subject to deletion.</div>`
-        return HTMLContent
-    }
 }
 function runRecapGrade(delta) {
     return getLetterGrade(100 - (delta * 4))
@@ -222,13 +202,7 @@ function runRecap_chart(times, deltas, lss) {
                 gridlines: { count: 0 },
                 baselineColor: 'gray'
             },
-            tooltip: { trigger: 'none' },
-            // annotations: {
-            //     style: 'none',
-            //     textStyle: {
-            //         fontName: font
-            //     }
-            // },
+            tooltip: { trigger: 'none' }
         };
         const chart = new google.visualization.LineChart(document.getElementById('runRecap_chart'));
         chart.draw(data, options);
@@ -262,13 +236,73 @@ function runRecapExamples() {
         }
     })
     HTMLContent += `</table>`
-    // HTMLContent += `
-    // <div class='container' style='margin-top:10px'>
-    //     <div class='button cuphead' style='gap:5px;width:170px' onclick="openModal(runRecapDatabase(), 'DATABASE')">
-    //         ${fontAwesome('cloud')}
-    //         Browse database
-    //     </div>
-    // </div>`
+    HTMLContent += `
+    <div class='container' style='margin-top:10px'>
+        <div class='button cuphead' style='gap:5px;width:170px' onclick="runRecapDatabase()">
+            ${fontAwesome('cloud')}
+            Browse database
+        </div>
+    </div>`
     HTMLContent += `</div>`
     document.getElementById('runRecap_examples').innerHTML = HTMLContent
+}
+function runRecapDatabase() {
+    if (!database) {
+        window.firebaseUtils.firestoreReadRR()
+    } else {
+        openDatabase()
+    }
+}
+function openDatabase() {
+    let HTMLContent = `<table style='padding:5px'>`
+    database.forEach((run, index) => {
+        const category = commBestILs[run.category]
+        const player = players.find(player => player.name == run.player)
+        const playerIndex = players.findIndex(player => player.name == run.player)
+        HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="processDatabaseFile(${index},'${playerIndex}','${run.time}','${category.tabName}')">
+        <td>${generateBoardTitle(category)}</td>
+        <td>${run.date}</td>
+        <td class='${category.className}'>${run.time}</td>
+        <td>${runRecapPlayer('username', playerIndex)}</td>
+        </tr>`
+    })
+    HTMLContent += `</table>`
+    openModal(HTMLContent, 'DATABASE')
+}
+function runRecapUploadButton() {
+    if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {
+        window.firebaseUtils.firestoreWriteRR()
+    } else {
+        openModal(runRecapUpload(), 'UPLOAD')
+    }
+    function runRecapUpload() {
+        let HTMLContent = ''
+        HTMLContent += `
+    <div style='margin-bottom:20px'>${myekulColor(fontAwesome('warning'))} Please insert your run time and username.</div>
+    <div>Fraudulent or duplicate submissions are subject to deletion.</div>`
+        return HTMLContent
+    }
+}
+function processDatabaseFile(databaseIndex, playerIndex, time, categoryName) {
+    fetch('https://myekul.github.io/shared-assets/cuphead/sav.json')
+        .then(response => response.json())
+        .then(data => {
+            runRecap_savFile = data
+            runRecapUnload('lss', true)
+            runRecapExample = true
+            document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap', playerIndex)
+            runRecapTime = time
+            setRunRecapTime(runRecapTime)
+            document.getElementById('input_runRecap_time').value = time
+            globalTab = 'sav'
+            getCommBestILs(categoryName)
+            categories.forEach((category, categoryIndex) => {
+                const level = getCupheadLevel(categoryIndex)
+                level.bestTime = database[databaseIndex].sav[categoryIndex]
+                level.played = true
+                level.completed = true
+            })
+            showTab('sav')
+            closeModal()
+        })
 }

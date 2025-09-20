@@ -43,7 +43,7 @@ function action() {
                 hide('runRecap_example_div')
             }
             if (localStorage.getItem('username')) {
-                document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap_player')
+                document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap')
             }
             hide('runRecap_chart')
             break
@@ -108,10 +108,23 @@ function action() {
     }
     if (runRecapExample) {
         show('runRecap_example_div')
-        // hide('runRecap_upload_div')
+        hide('runRecap_upload_div')
     } else {
         hide('runRecap_example_div')
-        // show('runRecap_upload_div')
+        if (runRecap_savFile) {
+            if (getCupheadLevel(categories.length - 1).completed) {
+                show('runRecap_upload_div')
+            } else {
+                hide('runRecap_upload_div')
+            }
+        }
+    }
+    if (runRecap_savFile) {
+        if (getCupheadLevel(categories.length - 1).completed) {
+            show('completedRun')
+        }
+    } else {
+        hide('completedRun')
     }
     if (globalTab == 'lss' && runRecapTheoretical) {
         show('runRecap_theoretical_div')
@@ -261,6 +274,12 @@ function done() {
         HTMLContent += `<option value="player_${i}">${i + 1}. ${fullgamePlayer(i)}</option>`
     }
     document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
+    const username = localStorage.getItem('username')
+    if (username) {
+        document.getElementById('input_username').value = username
+        document.getElementById('username').innerHTML = runRecapPlayer('username')
+    }
+    show('username')
 }
 function assignRuns(category, categoryIndex) {
     category.runs.forEach(run => {
@@ -298,15 +317,4 @@ function assignRuns(category, categoryIndex) {
         }
         run.playerName = thePlayer ? thePlayer.name : null
     })
-}
-function updateBoardTitle(category = commBestILsCategory) {
-    let HTMLContent = ''
-    const shotSize = 30
-    HTMLContent += boardTitleCell(category.className, category.name)
-    HTMLContent += category.shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
-    HTMLContent += category.shot1 ? cupheadShot(category.shot1, shotSize) : ''
-    HTMLContent += category.shot2 ? cupheadShot(category.shot2, shotSize) : ''
-    HTMLContent += category.shot1 ? `</td>` : ''
-    HTMLContent += category.subcat ? boardTitleCell('', category.subcat) : ''
-    document.getElementById('boardTitle').innerHTML = boardTitleWrapper(HTMLContent)
 }

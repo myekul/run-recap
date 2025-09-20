@@ -82,3 +82,17 @@ function deltaToggle() {
     action()
     document.getElementById('deltaToggle').innerHTML = fontAwesome('toggle-' + toggle)
 }
+function generateBoardTitle(category = commBestILsCategory) {
+    let HTMLContent = ''
+    const shotSize = 30
+    HTMLContent += boardTitleCell(category.className, category.name)
+    HTMLContent += category.shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
+    HTMLContent += category.shot1 ? cupheadShot(category.shot1, shotSize) : ''
+    HTMLContent += category.shot2 ? cupheadShot(category.shot2, shotSize) : ''
+    HTMLContent += category.shot1 ? `</td>` : ''
+    HTMLContent += category.subcat ? boardTitleCell('', category.subcat) : ''
+    return boardTitleWrapper(HTMLContent)
+}
+function updateBoardTitle() {
+    document.getElementById('boardTitle').innerHTML = generateBoardTitle()
+}

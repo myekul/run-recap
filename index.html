@@ -28,7 +28,7 @@
         <main>
             <div class="sticky">
                 <div id="headerRow" class="container">
-                    <div class="container" style="position:absolute;right:10px">
+                    <div class="container" style="position:absolute;left:10px">
                         <div class="font2" style="margin-right:8px">Comm Best</div>
                         <div onclick="showTab('commBestILs')" class="grade-a button" style="width:70px">
                             ILs</div>
@@ -39,6 +39,13 @@
                         <div id="boardTitleSrc" class="container">
                             <div class="loader"></div>
                         </div>
+                    </div>
+                    <input id='input_username' type='text' placeholder='Your SRC username'
+                        style='display:none;width:200px;font-size:100%;position:absolute;right:40px;top:4px;'>
+                    <div id='username' onclick="showInput('username')" class='container grow'
+                        style='display:none;position:absolute;right:40px;color:white;gap:8px'>
+                        Your Username...
+                        <i class="fa fa-edit" style="font-size:130%"></i>
                     </div>
                 </div>
                 <div id="progress"></div>
@@ -223,14 +230,16 @@
                         <div class='divider'></div>
                         <div class='button cuphead' onclick="runRecapDownload()" style='width:135px'><i
                                 class="fa fa-download"></i>&nbsp;Download .sav</div>
-                        <div class='divider'></div>
-                        <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
-                                class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
-                        <div id="runRecap_upload_div" class="container" style="display:none">
+                        <div id="completedRun" class="container" style="margin:0">
                             <div class='divider'></div>
-                            <div class='button cuphead brightPulse' onclick="runRecapUploadButton()"
-                                style='width:190px;height:30px;font-size:90%'><i
-                                    class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
+                            <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
+                                    class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
+                            <div id="runRecap_upload_div" class="container" style="display:none">
+                                <div class='divider'></div>
+                                <div class='button cuphead pulseSize' onclick="runRecapUploadButton()"
+                                    style='width:190px;height:30px;font-size:90%'><i
+                                        class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
+                            </div>
                         </div>
                     </div>
                 </div>

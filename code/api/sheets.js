@@ -136,14 +136,14 @@ function loadMyekul() {
             commBestILsCategory.theoryRun.push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
         })
     }
+    categories.forEach(category => {
+        category.info.levelID = bossIDs[category.info.id]
+    })
     if (commBestILsCategory.markin) {
         loadMarkin()
     } else {
         action()
     }
-    categories.forEach(category => {
-        category.info.levelID = bossIDs[category.info.id]
-    })
 }
 function loadSheets() {
     let url = 'https://docs.google.com/spreadsheets/d/' + MYEKUL_SHEET_ID
