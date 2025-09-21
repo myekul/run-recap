@@ -20,7 +20,7 @@ function openDatabase(sav) {
         }
     })
     HTMLContent += `</table>`
-    if (!sav) playSound('category_select')
+    if (sav) playSound('category_select')
     openModal(HTMLContent, 'DATABASE', '', sav)
 }
 function databaseComparison(sav, player, time) {
@@ -45,7 +45,6 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
     fetch('https://myekul.github.io/shared-assets/cuphead/sav.json')
         .then(response => response.json())
         .then(data => {
-            runRecap_savFile = data
             runRecapUnload('lss', true)
             runRecapExample = true
             document.getElementById('runRecap_player').innerHTML = runRecapPlayer(player)
@@ -54,6 +53,7 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
             document.getElementById('input_runRecap_time').value = time
             globalTab = 'sav'
             getCommBestILs(categoryName)
+            runRecap_savFile = data
             categories.forEach((category, categoryIndex) => {
                 const level = getCupheadLevel(categoryIndex)
                 level.bestTime = database[databaseIndex].sav[categoryIndex]
