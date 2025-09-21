@@ -45,11 +45,14 @@ window.firebaseUtils = {
             time: runRecapTime,
             date: new Date().toISOString().slice(0, 10)
         }
+        const uploadCheck = document.getElementById('uploadCheck')
+        uploadCheck.innerHTML = `<div class='loader'></div>`
+        hide('uploadButton')
+        show('uploadCheck')
         await addDoc(collection(db, 'runRecap'), obj)
             .then(() => {
                 console.log(`Run Recap written`);
-                hide('uploadButton')
-                show('uploadCheck')
+                uploadCheck.innerHTML = fontAwesome('check')
             })
             .catch((error) => {
                 console.error(`Error writing document ${i}: `, error);
@@ -62,9 +65,12 @@ window.firebaseUtils = {
             const querySnapshot = await getDocs(q);
             const results = [];
             querySnapshot.forEach(docSnap => {
-                results.push(docSnap.data());
+                results.push({ id: docSnap.id, ...docSnap.data() });
             });
-            database = results
+            database = results.sort((a, b) => new Date(b.date) - new Date(a.date))
+            database = database.sort((a, b) => a.player.localeCompare(b.player, undefined, { sensitivity: "base" }))
+            database = database.sort((a, b) => a.time.localeCompare(b.time, undefined, { sensitivity: "base" }))
+            database = database.sort((a, b) => a.category.localeCompare(b.category, undefined, { sensitivity: "base" }))
             openDatabase()
         } catch (error) {
             console.error('Error reading runRecap documents:', error)

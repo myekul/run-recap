@@ -43,7 +43,7 @@ function action() {
                 hide('runRecap_example_div')
             }
             if (localStorage.getItem('username')) {
-                document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap')
+                document.getElementById('runRecap_player').innerHTML = runRecapPlayer()
             }
             hide('runRecap_chart')
             show('uploadButton')
@@ -283,13 +283,13 @@ function done() {
     runRecapExamples()
     let HTMLContent = ''
     for (let i = 0; i < commBestILsCategory.numRuns; i++) {
-        HTMLContent += `<option value="player_${i}">${i + 1}. ${fullgamePlayer(i)}</option>`
+        HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(globalCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
     document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
     const username = localStorage.getItem('username')
     if (username) {
         document.getElementById('input_username').value = username
-        document.getElementById('username').innerHTML = runRecapPlayer('username')
+        document.getElementById('username').innerHTML = runRecapPlayer()
     }
     show('username')
 }

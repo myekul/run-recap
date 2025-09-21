@@ -90,25 +90,23 @@ function hideInput(elem) {
         runRecapTime = input.trim() ? input : runRecapTime
         setRunRecapTime(runRecapTime)
     }
-    const startElem = document.getElementById(elem)
     if (elem == 'username') {
         localStorage.setItem('username', input.trim() ? input : localStorage.getItem('username'))
-        startElem.innerHTML = runRecapPlayer(elem)
+        document.getElementById('username').innerHTML = runRecapPlayer(elem)
     }
-    show(startElem)
+    show(elem)
     action()
 }
 function setRunRecapTime(time) {
     document.getElementById('runRecap_time').innerHTML = `<div style='font-size:150%'>${time}</div>`
 }
-function runRecapPlayer(elem, playerIndex) {
-    const playerString = playerIndex ? players[playerIndex].name : localStorage.getItem('username')
+function runRecapPlayer(playerString = localStorage.getItem('username')) {
     const player = players.find(player => player.name == playerString)
     const playerName = player ? getPlayerName(player) : playerString
     let HTMLContent = `<div class='container' style='gap:8px;margin:0'>`
-    HTMLContent += player ? `<div>${getPlayerIcon(player, elem == 'username' ? 28 : 40)}</div>` : ''
-    HTMLContent += `<div style='font-size:${elem == 'username' ? '110' : '130'}%'>${playerName}</div>`
-    HTMLContent += player ? `<div>${getPlayerFlag(player, elem == 'username' ? 14 : 18)}</div>` : ''
+    HTMLContent += player ? `<div>${getPlayerIcon(player, 28)}</div>` : ''
+    HTMLContent += `<div style='font-size:110%'>${playerName}</div>`
+    HTMLContent += player ? `<div>${getPlayerFlag(player, 14)}</div>` : ''
     HTMLContent += `</div>`
     return HTMLContent
 }
@@ -245,59 +243,4 @@ function runRecapExamples() {
     </div>`
     HTMLContent += `</div>`
     document.getElementById('runRecap_examples').innerHTML = HTMLContent
-}
-function runRecapDatabase() {
-    if (!database) {
-        window.firebaseUtils.firestoreReadRR()
-    } else {
-        openDatabase()
-    }
-}
-function openDatabase() {
-    let HTMLContent = `<table style='padding:5px'>`
-    database.forEach((run, index) => {
-        const category = commBestILs[run.category]
-        const playerIndex = players.findIndex(player => player.name == run.player)
-        HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="processDatabaseFile(${index},'${playerIndex}','${run.time}','${category.tabName}')">
-        <td>${generateBoardTitle(category)}</td>
-        <td>${run.date}</td>
-        <td class='${category.className}'>${run.time}</td>
-        <td>${runRecapPlayer('username', playerIndex)}</td>
-        </tr>`
-    })
-    HTMLContent += `</table>`
-    openModal(HTMLContent, 'DATABASE')
-}
-function runRecapUploadButton() {
-    if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {
-        window.firebaseUtils.firestoreWriteRR()
-    } else {
-        let HTMLContent = `
-    <div style='margin-bottom:20px'>${myekulColor(fontAwesome('warning'))} Please insert your run time and username.</div>
-    <div>Fraudulent or duplicate submissions are subject to deletion.</div>`
-        openModal(HTMLContent, 'UPLOAD')
-    }
-}
-function processDatabaseFile(databaseIndex, playerIndex, time, categoryName) {
-    fetch('https://myekul.github.io/shared-assets/cuphead/sav.json')
-        .then(response => response.json())
-        .then(data => {
-            runRecap_savFile = data
-            runRecapUnload('lss', true)
-            runRecapExample = true
-            document.getElementById('runRecap_player').innerHTML = runRecapPlayer('runRecap', playerIndex)
-            runRecapTime = time
-            setRunRecapTime(runRecapTime)
-            document.getElementById('input_runRecap_time').value = time
-            globalTab = 'sav'
-            getCommBestILs(categoryName)
-            categories.forEach((category, categoryIndex) => {
-                const level = getCupheadLevel(categoryIndex)
-                level.bestTime = database[databaseIndex].sav[categoryIndex]
-                level.played = true
-                level.completed = true
-            })
-            showTab('sav')
-            closeModal()
-        })
 }
