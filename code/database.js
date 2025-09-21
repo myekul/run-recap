@@ -1,23 +1,35 @@
-function runRecapDatabase() {
+function runRecapDatabase(sav) {
     if (!database) {
-        window.firebaseUtils.firestoreReadRR()
+        window.firebaseUtils.firestoreReadRR(sav)
     } else {
-        openDatabase()
+        openDatabase(sav)
     }
 }
-function openDatabase() {
-    let HTMLContent = `<table style='padding:5px'>`
+function openDatabase(sav) {
+    let HTMLContent = `<table style='padding:10px'>`
     database.forEach((run, index) => {
-        const category = commBestILs[run.category]
-        HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')">
+        if (!(sav && commBestILsCategory.tabName != run.category)) {
+            const category = commBestILs[run.category]
+            const onclick = sav ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
+            HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="${onclick}">
         <td><div class='container'>${generateBoardTitle(category)}</div></td>
         <td style='padding:0 5px'><div>${run.date}</div><div style='font-size:60%'>${daysAgo(getDateDif(new Date(), new Date(run.date)))}</div></td>
         <td class='${category.className}' style='font-size:120%;padding:0 5px'>${run.time}</td>
         <td>${runRecapPlayer(run.player)}</td>
         </tr>`
+        }
     })
     HTMLContent += `</table>`
-    openModal(HTMLContent, 'DATABASE')
+    if (!sav) playSound('category_select')
+    openModal(HTMLContent, 'DATABASE', '', sav)
+}
+function databaseComparison(sav, player, time) {
+    commBestILsCategory.database = []
+    sav.split(',').forEach((time, index) => {
+        commBestILsCategory.database[index] = time
+    })
+    changeComparison('database', player, time)
+    action()
 }
 function runRecapUploadButton() {
     if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {

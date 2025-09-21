@@ -12,6 +12,7 @@ function generate_sav() {
             document.getElementById('runRecap_ghost').src = `images/ghost_${char}.png`
         } else {
             document.getElementById('runRecap_numDeaths').innerHTML = ''
+            hide('runRecap_ghost')
         }
         assignIsles()
         HTMLContent += `<div class='container' style='gap:25px'>`
@@ -147,7 +148,7 @@ function runRecapCategory(categoryIndex) {
     const delta = runRecapDelta(runTime, comparisonTime)
     const grade = runRecapGrade(delta)
     let comparisonContent = `<div>${secondsToHMS(comparisonTime)}</div>`
-    if (document.getElementById('dropdown_runRecap_sav_comparison').value == 'topBest') {
+    if (savComparison == 'Top Bests') {
         comparisonContent += `<div class='container'>`
         commBestILsCategory.topBestPlayers[categoryIndex].forEach(playerIndex => {
             const player = players[playerIndex]
@@ -165,22 +166,22 @@ function runRecapCategory(categoryIndex) {
     return HTMLContent
 }
 function getComparisonTime(categoryIndex) {
-    const dropdown_runRecap_sav_comparison = document.getElementById('dropdown_runRecap_sav_comparison')
-    const comparison = dropdown_runRecap_sav_comparison ? dropdown_runRecap_sav_comparison.value : 'top3'
-    if (comparison == 'top') {
+    if (savComparison == 'Top 10 Average') {
         return commBestILsCategory.top[categoryIndex]
-    } else if (comparison == 'top3') {
+    } else if (savComparison == 'Top 3 Average') {
         return commBestILsCategory.top3[categoryIndex]
-    } else if (comparison == 'topBest') {
+    } else if (savComparison == 'Top Bests') {
         return commBestILsCategory.topBest[categoryIndex]
-    } else if (comparison == 'theoryRun') {
+    } else if (savComparison == 'Theory Run') {
         return commBestILsCategory.theoryRun[categoryIndex]
-    } else if (comparison == 'commBest') {
+    } else if (savComparison == 'Comm Best ILs') {
         return categories[categoryIndex].runs[0].score
-    } else if (comparison == 'tas') {
+    } else if (savComparison == 'TAS') {
         return commBestILsCategory.tas[categoryIndex]
-    } else if (comparison.split('_')[0] == 'player') {
-        return commBestILsCategory.runs[parseInt(comparison.split('_')[1])][categoryIndex]
+    } else if (savComparison.split('_')[0] == 'player') {
+        return commBestILsCategory.runs[parseInt(savComparison.split('_')[1])][categoryIndex]
+    } else if (savComparison.split('_')[0] == 'database') {
+        return commBestILsCategory.database[categoryIndex]
     }
 }
 function getCupheadLevel(param, other) {
@@ -215,36 +216,6 @@ function runRecapPlaceholder(runTime, categoryIndex) {
     input.focus()
     input.setSelectionRange(0, input.value.length)
 }
-function updateComparisonInfo() {
-    const comparison = document.getElementById('dropdown_runRecap_sav_comparison')?.value
-    let HTMLContent = ''
-    switch (comparison) {
-        case 'top':
-            HTMLContent = "Average of top 10 players' boss times in their PBs"
-            break
-        case 'top3':
-            HTMLContent = "Average of top 3 players' boss times in their PBs"
-            break
-        case 'topBest':
-            HTMLContent = "Best of top players' boss times in their PBs"
-            break
-        case 'theoryRun':
-            HTMLContent = "Top 3 players' PB boss times averaged with comm best ILs"
-            break
-        case 'commBest':
-            HTMLContent = "Community best ILs"
-            break
-        case 'tas':
-            HTMLContent = "Tool-Assisted Speedrun (by SBDWolf)"
-            break
-        default:
-            if (!commBestILsCategory.players) {
-                const player = players[parseInt(comparison.split('_')[1])]
-                HTMLContent = 'Boss times in&nbsp;' + getPlayerName(player) + "'s " + secondsToHMS(player.extra.score)
-            }
-    }
-    document.getElementById('comparisonInfo').innerHTML = HTMLContent
-}
 function runRecapCopy() {
     let clipboardContent = ''
     categories.forEach(category => {
@@ -258,4 +229,44 @@ function runRecapCopy() {
         .then(() => {
             // Success!
         })
+}
+const savComparisonInfo = {
+    'Top 10 Average': "Average of top 10 players' boss times in their PBs",
+    'Top 3 Average': "Average of top 3 players' boss times in their PBs",
+    'Top Bests': "Best of top players' boss times in their PBs",
+    'Theory Run': "Top 3 players' PB boss times averaged with Comm Best ILs",
+    'Comm Best ILs': "Community best ILs",
+    'TAS': "Tool-Assisted Speedrun (by SBDWolf)"
+}
+function savComparisonModal() {
+    let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
+    ['Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Comm Best ILs', 'TAS'].forEach((option, index) => {
+        if (!(!['1.1+'].includes(commBestILsCategory.name) && ['Top 10 Average', 'TAS'].includes(option))) {
+            HTMLContent += `
+        <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="optionClick('${option}')">
+        <div>${option}</div>
+        <div style='color:gray;font-size:70%;'>${savComparisonInfo[option]}</div>
+        </div>`
+        }
+    })
+    HTMLContent += `</div>`
+    HTMLContent += runRecapExamples(true)
+    HTMLContent += `</div>`
+    openModal(HTMLContent, 'SAV COMPARISON')
+    return HTMLContent
+}
+function optionClick(option) {
+    changeComparison(option)
+    action()
+}
+function changeComparison(comparison, playerName, time) {
+    let HTMLContent = comparison
+    if (playerName && time) {
+        HTMLContent = playerName + ' - ' + time
+        deltaToggle(true)
+    }
+    document.getElementById('savComparison').innerText = HTMLContent;
+    savComparison = comparison;
+    closeModal(true)
+    if (!(playerName && !time)) playSound('cardflip')
 }

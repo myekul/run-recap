@@ -220,11 +220,12 @@ function runRecapMusic() {
     <iframe width="150" height="150" src="${src}&amp;controls=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     `
 }
-function runRecapExamples() {
-    let HTMLContent = `<div><table class='shadow'>`
+function runRecapExamples(sav) {
+    let HTMLContent = `<div><table>`
     players.slice(0, commBestILsCategory.numRuns).forEach((player, playerIndex) => {
         if (player.extra) {
-            HTMLContent += `<tr class='${getRowColor(playerIndex)} clickable' onclick="processSavFile(${playerIndex});playSound('category_select')">`
+            const onclick = sav ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('category_select')`
+            HTMLContent += `<tr class='${getRowColor(playerIndex)} grow' onclick="${onclick}">`
             HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
             HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
             HTMLContent += `<td>${getPlayerFlag(player, 12)}</td>`
@@ -236,11 +237,15 @@ function runRecapExamples() {
     HTMLContent += `</table>`
     HTMLContent += `
     <div class='container' style='margin-top:10px'>
-        <div class='button cuphead' style='gap:5px;width:170px' onclick="runRecapDatabase()">
+        <div class='button cuphead' style='gap:5px;width:170px' onclick="runRecapDatabase(${sav})">
             ${fontAwesome('cloud')}
             Browse database
         </div>
     </div>`
     HTMLContent += `</div>`
-    document.getElementById('runRecap_examples').innerHTML = HTMLContent
+    return HTMLContent
+}
+function playerComparison(playerIndex, playerName, time) {
+    changeComparison('player_' + playerIndex, playerName, time)
+    action()
 }

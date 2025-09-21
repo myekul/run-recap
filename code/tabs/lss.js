@@ -74,7 +74,7 @@ function generate_lss() {
                     const delta = runRecapDelta(runTime, comparisonTime)
                     const ILgrade = runRecapGrade(delta)
                     let comparisonContents = `<div class='container'>`
-                    if (document.getElementById('dropdown_runRecap_sav_comparison').value == 'topBest') {
+                    if (savComparison == 'Top Bests') {
                         comparisonContents += `<div class='container' style='padding-right:6px'>`
                         commBestILsCategory.topBestPlayers[categoryIndex].forEach(playerIndex => {
                             const player = players[playerIndex]

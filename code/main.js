@@ -85,16 +85,15 @@ function action() {
         document.getElementById('lssButton').classList.remove('pulseSize')
         document.getElementById('lssButton').classList.add('grayedOut')
     }
-    updateComparisonInfo()
     if (globalTab == 'sav') {
         show('runRecap_content')
     } else {
         hide('runRecap_content')
     }
     if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile)) {
-        show('runRecap_sav_comparison')
+        show('runRecap_sav_section')
     } else {
-        hide('runRecap_sav_comparison')
+        hide('runRecap_sav_section')
     }
     if (globalTab == 'lss') {
         if (runRecapExample) {
@@ -106,9 +105,9 @@ function action() {
         hide('runRecap_lss_comparison')
     }
     if (globalTab == 'lss' && runRecap_savFile && !runRecapExample) {
-        show('runRecap_divider')
+        show('sav_divider')
     } else {
-        hide('runRecap_divider')
+        hide('sav_divider')
     }
     if (runRecapExample) {
         show('runRecap_example_div')
@@ -183,20 +182,14 @@ document.querySelectorAll('select').forEach(elem => {
 })
 function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     commBestILsCategory = commBestILs[categoryName]
-    const dropdown = document.getElementById('dropdown_runRecap_sav_comparison')
-    if (commBestILsCategory.name == '1.1+') {
-        dropdown.options[0].disabled = false
-        dropdown.options[5].disabled = false
-    } else {
-        dropdown.options[0].disabled = true
-        dropdown.options[5].disabled = true
-    }
     updateLoadouts(categoryName)
     buttonClick('commBestILs_' + commBestILsCategory.className, 'commBestILsVersionTabs', 'selected')
     players = []
     playerNames = new Set()
+    changeComparison('Top 3 Average', true)
     const category = commBestILsCategory.category
     updateBoardTitle()
+    if (runRecapExample) showTab('home')
     if (category > -1) {
         letsGo()
     } else {
@@ -280,12 +273,12 @@ function done() {
             }
         })
     }
-    runRecapExamples()
+    document.getElementById('runRecap_examples').innerHTML = runRecapExamples()
     let HTMLContent = ''
     for (let i = 0; i < commBestILsCategory.numRuns; i++) {
         HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(globalCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
-    document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
+    // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
     const username = localStorage.getItem('username')
     if (username) {
         document.getElementById('input_username').value = username

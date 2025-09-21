@@ -58,7 +58,7 @@ window.firebaseUtils = {
                 console.error(`Error writing document ${i}: `, error);
             });
     },
-    firestoreReadRR: async () => {
+    firestoreReadRR: async (sav) => {
         try {
             const collectionRef = collection(db, 'runRecap');
             const q = query(collectionRef);
@@ -71,7 +71,7 @@ window.firebaseUtils = {
             database = database.sort((a, b) => a.player.localeCompare(b.player, undefined, { sensitivity: "base" }))
             database = database.sort((a, b) => a.time.localeCompare(b.time, undefined, { sensitivity: "base" }))
             database = database.sort((a, b) => a.category.localeCompare(b.category, undefined, { sensitivity: "base" }))
-            openDatabase()
+            openDatabase(sav)
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }

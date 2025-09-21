@@ -69,16 +69,16 @@ function bigPlayerDisplay(player) {
     HTMLContent += getPlayerDisplay(player)
     return HTMLContent
 }
-function deltaToggle() {
+function deltaToggle(on) {
     let toggle
-    if (deltaType) {
+    if (deltaType && !on) {
         deltaType = false
         toggle = 'off'
     } else {
         deltaType = true
         toggle = 'on'
     }
-    playSound('move')
+    if (!on) playSound('move')
     action()
     document.getElementById('deltaToggle').innerHTML = fontAwesome('toggle-' + toggle)
 }

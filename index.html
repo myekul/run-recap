@@ -20,7 +20,7 @@
 <body>
     <div id="bodyContent">
         <header>
-            <div class='container grow' style="padding-top:5px" onclick="showTab('home')">
+            <div class='container grow' style="padding-top:5px" onclick="showTab('home');playSound('category_select')">
                 <img src="images/favicon.png" style="height:70px">
                 <div class="font2" style="font-size:220%">RUN RECAP</div>
             </div>
@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div id="runRecap_bar">
-                <div class="container" style='padding-bottom:3px'>
+                <div class="container" style='padding-bottom:10px'>
                     <div id="runRecap_lss_comparison" class="container" style="margin:0;display:none">
                         <div class='font2' style="padding-right:10px">.lss</div>
                         <select id="dropdown_runRecap_lss_current" class="onePointOne">
@@ -125,34 +125,20 @@
                             <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
                         </select>
                     </div>
-                    <div id="runRecap_sav_comparison" class="container" style="margin:0;display:none">
-                        <div id="runRecap_divider" class="divider"></div>
-                        <div class='font2' style="padding-right:10px">.sav</div>&Delta;
-                        <select id="dropdown_runRecap_sav_comparison">
-                            <option value="top" disabled>Top 10 Average</option>
-                            <option value="top3" selected>Top 3 Average</option>
-                            <option value="topBest">Top Bests</option>
-                            <option value="theoryRun">"Theory Run"</option>
-                            <option value="commBest">Comm Best ILs</option>
-                            <option value="tas" disabled>TAS</option>
-                            <optgroup id='runRecap_optgroup' label="Players"></optgroup>
-                        </select>
-                        <i class='fa fa-info-circle grow' onclick="playSound('move');toggleVisibility('comparisonInfo')"
-                            style='padding-left:5px'></i>
-                        <div class="divider"></div>
-                        <div class="container" style="margin:0;gap:8px;font-size:70%">
-                            <div class="grade grade-a-plus" style="padding:3px">-1</div>
-                            <div id='deltaToggle' class="grow" style="font-size:200%" onclick="deltaToggle()">
-                                <i class="fa fa-toggle-off"></i>
-                            </div>
-                            <div class='delta-green background1' style="padding:3px">-1</div>
+                    <div id="runRecap_sav_section" class="container" style="margin:0;display:none">
+                        <div id="sav_divider" class="divider"></div>
+                        <div class="container grow" style="margin:0;gap:10px;color:gray" onclick="savComparisonModal()">
+                            <i class="fa fa-exchange"></i>
+                            <div id="savComparison">Top 3 Average</div>
+                        </div>
+                        <div id='deltaToggle' class="grow" style="font-size:180%;color:gray;margin-left:10px"
+                            onclick="deltaToggle()">
+                            <i class="fa fa-toggle-off"></i>
                         </div>
                         <img id="runRecap_ghost" style="height:40px;padding-left:20px">
                         <div id="runRecap_numDeaths" style="padding-left:5px"></div>
                     </div>
                 </div>
-                <div id='comparisonInfo' class='textBlock container'
-                    style='display:none;font-size:75%;margin-bottom:8px'></div>
             </div>
             <div id="content"></div>
             <div id="runRecapTab" style="display:none">

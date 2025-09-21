@@ -18,3 +18,5 @@ let globalCategory = {}
 let deltaType
 
 let database
+
+let savComparison
