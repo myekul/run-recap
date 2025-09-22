@@ -127,13 +127,14 @@
                     </div>
                     <div id="runRecap_sav_section" class="container" style="margin:0;display:none">
                         <div id="sav_divider" class="divider"></div>
-                        <div class="container grow" style="margin:0;gap:10px;color:gray" onclick="savComparisonModal()">
-                            <i class="fa fa-exchange"></i>
+                        <div class="container grow" style="margin:0;gap:10px;color:gray"
+                            onclick="openModal(savComparisonContent(),'SAV COMPARISON')">
+                            &Delta;
                             <div id="savComparison">Top 3 Average</div>
                         </div>
-                        <div id='deltaToggle' class="grow" style="font-size:180%;color:gray;margin-left:10px"
-                            onclick="deltaToggle()">
-                            <i class="fa fa-toggle-off"></i>
+                        <div id='deltaToggle' class="grow" style="font-size:150%;color:gray;margin-left:10px"
+                            onclick="deltaType=!deltaType;playSound('move');action()">
+                            <i class="fa fa-exchange"></i>
                         </div>
                         <img id="runRecap_ghost" style="height:40px;padding-left:20px">
                         <div id="runRecap_numDeaths" style="padding-left:5px"></div>

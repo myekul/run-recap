@@ -69,19 +69,6 @@ function bigPlayerDisplay(player) {
     HTMLContent += getPlayerDisplay(player)
     return HTMLContent
 }
-function deltaToggle(on) {
-    let toggle
-    if (deltaType && !on) {
-        deltaType = false
-        toggle = 'off'
-    } else {
-        deltaType = true
-        toggle = 'on'
-    }
-    if (!on) playSound('move')
-    action()
-    document.getElementById('deltaToggle').innerHTML = fontAwesome('toggle-' + toggle)
-}
 function generateBoardTitle(category = commBestILsCategory) {
     let HTMLContent = ''
     const shotSize = 30

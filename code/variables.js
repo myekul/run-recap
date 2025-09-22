@@ -20,3 +20,5 @@ let deltaType
 let database
 
 let savComparison
+
+let savComparisonView
