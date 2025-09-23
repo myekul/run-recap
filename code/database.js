@@ -61,6 +61,7 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
                 level.completed = true
             })
             showTab('sav')
-            closeModal()
+            playSound('ready')
+            closeModal(true)
         })
 }

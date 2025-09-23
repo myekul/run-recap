@@ -31,14 +31,14 @@ function generate_sav() {
             const isle = isles[4]
             HTMLContent += isleHeader(isle)
             isle.runRecapCategories.forEach(object => {
-                HTMLContent += runRecapCategory(object)
+                HTMLContent += savBoss(object)
             })
             HTMLContent += `</table></div>`
         }
         isles.slice(0, 4).forEach((isle, index) => {
             HTMLContent += isle.runRecapCategories.length ? isleHeader(isle) : ''
             isle.runRecapCategories.forEach(object => {
-                HTMLContent += runRecapCategory(object)
+                HTMLContent += savBoss(object)
             })
             HTMLContent += `</table>`
             const levels = [['forestfollies', 'treetoptrouble'], ['funfairfever', 'funhousefrazzle'], ['ruggedridge', 'perilouspiers']]
@@ -141,7 +141,7 @@ function extraLevel(name, time) {
 function isleHeader(isle) {
     return `<div><table class='shadow'><tr><th colspan=4 class='${isle.className}'>${isle.name}</th></td>`
 }
-function runRecapCategory(categoryIndex) {
+function savBoss(categoryIndex) {
     const category = categories[categoryIndex]
     const level = getCupheadLevel(categoryIndex)
     const runTime = level?.bestTime

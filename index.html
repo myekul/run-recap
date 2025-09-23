@@ -20,7 +20,7 @@
 <body>
     <div id="bodyContent">
         <header>
-            <div class='container grow' style="padding-top:5px" onclick="showTab('home');playSound('category_select')">
+            <div class='container' style="padding-top:5px">
                 <img src="images/favicon.png" style="height:70px">
                 <div class="font2" style="font-size:220%">RUN RECAP</div>
             </div>
@@ -81,6 +81,9 @@
                         </div>
                         <div id='viableDiv' class='container' style="display:none;margin-top:5px">
                             <input id="checkbox_viable" onchange="getCommBestILs()" type="checkbox" checked>Run viable
+                            <div class="grow" style="margin-left:8px" onclick="runViableInfo()">
+                                <i class="fa fa-question-circle"></i>
+                            </div>
                         </div>
                     </div>
                     <div id='runRecap_details' class='container'

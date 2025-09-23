@@ -224,7 +224,7 @@ function runRecapExamples(sav) {
     let HTMLContent = `<div><table>`
     players.slice(0, commBestILsCategory.numRuns).forEach((player, playerIndex) => {
         if (player.extra) {
-            const onclick = sav ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('category_select')`
+            const onclick = sav ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('ready')`
             HTMLContent += `<tr class='${savComparison.split('_')[1] == playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
             HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
             HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
