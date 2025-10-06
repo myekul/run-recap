@@ -371,14 +371,24 @@ function splitComparison(comparison, index) {
 }
 function loadMarkin() {
     const values = markinSheets[commBestILsCategory.markin]
-    runRecap_markin = { tabName: commBestILsCategory.tabName, bestSplits: [], bestSplitsPlayers: [], wrSplits: [], bestSegments: [], bestSegmentsPlayers: [], wrSegments: [], commSoB: [] }
+    runRecap_markin = { tabName: commBestILsCategory.tabName, bestSplits: [], bestSplitsURLs: [], bestSplitsPlayers: [], wrSplits: [], bestSegments: [], bestSegmentsURLs: [], bestSegmentsPlayers: [], wrSegments: [], commSoB: [] }
     values.forEach((row, index) => {
-        runRecap_markin.bestSplits.push(convertToSeconds(row.values[0].formattedValue))
-        runRecap_markin.bestSplitsPlayers.push(row.values[1].formattedValue)
-        runRecap_markin.wrSplits.push(convertToSeconds(row.values[2].formattedValue))
-        runRecap_markin.bestSegments.push(convertToSeconds(row.values[3].formattedValue))
-        runRecap_markin.bestSegmentsPlayers.push(row.values[4].formattedValue)
-        runRecap_markin.wrSegments.push(convertToSeconds(row.values[5].formattedValue))
+        let url
+        runRecap_markin.bestSplits.push(convertToSeconds(row.values[0].userEnteredValue.stringValue || row.values[0].userEnteredValue.numberValue || row.values[0].userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]))
+        if (row.values[0].userEnteredValue.formulaValue) {
+            url = row.values[0].userEnteredValue.formulaValue.slice(12).split('"')[0]
+        }
+        runRecap_markin.bestSplitsURLs.push(url)
+        runRecap_markin.bestSplitsPlayers.push(row.values[1].userEnteredValue.stringValue)
+        runRecap_markin.wrSplits.push(convertToSeconds(row.values[2].userEnteredValue.stringValue || row.values[2].userEnteredValue.numberValue))
+        let url2
+        runRecap_markin.bestSegments.push(convertToSeconds(row.values[3].userEnteredValue.stringValue || row.values[3].userEnteredValue.numberValue || row.values[3].userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]))
+        if (row.values[3].userEnteredValue.formulaValue) {
+            url2 = row.values[3].userEnteredValue.formulaValue.slice(12).split('"')[0]
+        }
+        runRecap_markin.bestSegmentsURLs.push(url2)
+        runRecap_markin.bestSegmentsPlayers.push(row.values[4].userEnteredValue.stringValue)
+        runRecap_markin.wrSegments.push(convertToSeconds(row.values[5].userEnteredValue.stringValue || row.values[5].userEnteredValue.numberValue))
         const bestSegment = runRecap_markin.bestSegments[index]
         runRecap_markin.commSoB.push(index == 0 ? bestSegment : runRecap_markin.commSoB[index - 1] + bestSegment)
     })

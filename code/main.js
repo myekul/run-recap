@@ -157,9 +157,9 @@ function action() {
         }
     }
     if (['commBestILs'].includes(globalTab)) {
-        show('viableDiv')
+        show('metaDiv')
     } else {
-        hide('viableDiv')
+        hide('metaDiv')
     }
     if (globalTab == 'home') {
         show('runRecapTab')

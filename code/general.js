@@ -20,7 +20,7 @@ function displayDecimals(value, raw) {
     return '';
 }
 function convertToSeconds(time) {
-    if (time.includes(":")) {
+    if (time?.toString().includes(":")) {
         const [minutes, seconds] = time.split(":").map(Number);
         return minutes * 60 + seconds;
     } else {

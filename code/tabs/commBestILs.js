@@ -1,5 +1,17 @@
 function generateCommBestILs() {
-    let HTMLContent = `<div class='container'><table><tr>`
+    let HTMLContent = `<div class='container'><table>`
+    if (alt[commBestILsCategory.name]) {
+        HTMLContent += `<tr><td colspan=6></td>`
+        categories.forEach((category, categoryIndex) => {
+            if (alt[commBestILsCategory.name][category.info.id]) {
+                HTMLContent += `<td class='clickable' style='color:gray;font-size:80%' onclick="altStrats(${categoryIndex})">${fontAwesome('exclamation-circle')}</td>`
+            } else {
+                HTMLContent += `<td></td>`
+            }
+        })
+        HTMLContent += `</tr>`
+    }
+    HTMLContent += `<tr>`
     HTMLContent += `<td colspan=6></td>`
     categories.forEach(category => {
         HTMLContent += `<td class='${category.info.id}' style='width:36px'>${getImage(category.info.id)}</td>`
@@ -26,6 +38,25 @@ function generateCommBestILs() {
     HTMLContent += `</table></div>`
     document.getElementById('content').innerHTML = HTMLContent
 }
+function altStrats(categoryIndex) {
+    const category = categories[categoryIndex]
+    let HTMLContent = `<div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div><table style='margin:0 auto'>`
+    alt[commBestILsCategory.name][category.info.id].forEach((strat, index) => {
+        HTMLContent += `<tr class='${getRowColor(index)}'>
+        <td style='text-align:left;padding-right:8px'>${strat.name}</td>
+        <td class='${category.info.id}' style='padding:0 5px'>${secondsToHMS(strat.time)}</td>`
+        strat.runs.forEach(run => {
+            const player = players.find(player => player.name == run.player.split('*')[1] || player.name == run.player)
+            HTMLContent += `
+            <td class='clickable'>
+            ${getAnchor(run.url)}<div class='container' style='gap:5px;justify-content:left'>${getPlayerIcon(player, 21)}${getPlayerName(player)}</div></a>
+            </td>`
+        })
+        HTMLContent += `</tr>`
+    })
+    HTMLContent += `</table>`
+    openModal(HTMLContent, 'ALTERNATE STRATS')
+}
 // if (['DLC', 'DLC+Base'].includes(commBestILsCategory.tabName) && !commBestILsCategory.extraPlayers) {
 //     if (player.extra?.percentage >= 90) {
 //         HTMLContent += `<td>${cupheadShot(determineShot1(player), 20, true)}</td>`
@@ -42,7 +73,7 @@ function generateCommBestILs() {
 //         return 'charge'
 //     }
 // }
-function runViableInfo() {
+function metaInfo() {
     let HTMLContent = ''
     HTMLContent += `<div ${runViableStyle}>What is a "run viable" IL?</div>
     <div class='textBlock'>
@@ -66,7 +97,7 @@ function runViableInfo() {
     <div class='textBlock'>
     SHUT UP!
     </div>
-    <div ${runViableStyle}>What are the nonviable tricks?</div>
+    <div ${runViableStyle}>What are the nonviable strats?</div>
     <div class='textBlock'>
     ${generateBoardTitle(commBestILs['1.1+'])}
     ${bossImage('cagneycarnation', 'Down lunge EX')}
@@ -80,8 +111,6 @@ function runViableInfo() {
     ${bossImage('goopylegrande', 'Doubles (besides quad)')}
     ${bossImage('drkahlsrobot', "TAS EX")}
     ${bossImage('wernerwerman', 'Doubles (besides quad)')}
-    ${generateBoardTitle(commBestILs['DLC L/S'])}
-    ${bossImage('moonshinemob', 'Lunar Eclipse')}
     ${generateBoardTitle(commBestILs['DLC C/S'])}
     ${bossImage('thehowlingaces', 'First laser guess')}
     ${bossImage('chefsaltbaker', 'Willy-nilly Chargimate')}

@@ -1,10 +1,9 @@
 function fetchCuphead(markin) {
     const sheetSrc = markin ? markinSheets : myekulSheets
     const sheetID = markin ? '1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ' : MYEKUL_SHEET_ID
-    const sheetContent = markin ? 'formattedValue' : 'userEnteredValue,textFormatRuns'
     return gapi.client.sheets.spreadsheets.get({
         spreadsheetId: sheetID,
-        fields: `sheets(properties.title,data(rowData(values(${sheetContent}))))`
+        fields: `sheets(properties.title,data(rowData(values(userEnteredValue,textFormatRuns))))`
     }).then(response => {
         const sheets = response.result.sheets
         sheets.forEach(sheet => {
@@ -12,7 +11,7 @@ function fetchCuphead(markin) {
             let rowData = sheet.data[0].rowData
             if (markin) {
                 rowData = rowData.slice(3)
-                rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].formattedValue)
+                rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].userEnteredValue)
             }
             rowData.forEach(row => {
                 if (row.values) {
@@ -61,21 +60,21 @@ function loadMyekul() {
         lastIndex = valueIndex
     })
     if (!ILindex) ILindex = lastIndex + 1
-    const viable = new Array(categories.length).fill(true)
+    const meta = new Array(categories.length).fill(true)
     categories.forEach((category, categoryIndex) => {
-        if (values[categoryIndex].values[ILindex + 1]) viable[categoryIndex] = false
+        if (values[categoryIndex].values[ILindex + 1]) meta[categoryIndex] = false
     })
     const numRuns = commBestILsCategory.numRuns
-    const checkbox_viable = document.getElementById('checkbox_viable').checked
+    const checkbox_meta = document.getElementById('checkbox_meta').checked
     categories.forEach((category, categoryIndex) => {
-        const viableCheck = !checkbox_viable && !viable[categoryIndex]
+        const metaCheck = !checkbox_meta && !meta[categoryIndex]
         category.difficulty = 'regular'
         if (values[categoryIndex]) {
             if (values[categoryIndex].values) {
                 if (values[categoryIndex].values[numRuns]) {
-                    const rawTime = values[categoryIndex].values[viableCheck ? ILindex + 1 : numRuns].userEnteredValue?.numberValue
+                    const rawTime = values[categoryIndex].values[metaCheck ? ILindex + 1 : numRuns].userEnteredValue?.numberValue
                     const time = convertToSeconds(secondsToHMS(Math.round(rawTime * 24 * 60)))
-                    const runs = viableCheck ? values[categoryIndex].values.slice(ILindex + 2) : values[categoryIndex].values.slice(numRuns + 1, ILindex)
+                    const runs = metaCheck ? values[categoryIndex].values.slice(ILindex + 2) : values[categoryIndex].values.slice(numRuns + 1, ILindex)
                     runs.forEach(column => {
                         if (column.userEnteredValue) {
                             let playerName = column.userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]

@@ -14,6 +14,7 @@
     <script src="https://myekul.github.io/shared-assets/utils.js"></script>
     <script src="https://myekul.github.io/shared-assets/cuphead/cuphead.js"></script>
     <script src="https://myekul.github.io/shared-assets/cuphead/commBest.js"></script>
+    <script src="https://myekul.github.io/shared-assets/cuphead/alt.js"></script>
     <script src="https://myekul.github.io/shared-assets/myekul/src.js"></script>
 </head>
 
@@ -79,11 +80,11 @@
                                     class="fa fa-close"></i>
                             </div>
                         </div>
-                        <div id='viableDiv' class='container' style="display:none;margin-top:5px">
-                            <input id="checkbox_viable" onchange="getCommBestILs()" type="checkbox" checked>Run viable
-                            <div class="grow" style="margin-left:8px" onclick="runViableInfo()">
+                        <div id='metaDiv' class='container' style="display:none;margin-top:5px">
+                            <input id="checkbox_meta" onchange="getCommBestILs()" type="checkbox" checked>Current meta
+                            <!-- <div class="grow" style="margin-left:8px" onclick="metaInfo()">
                                 <i class="fa fa-question-circle"></i>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div id='runRecap_details' class='container'
@@ -135,10 +136,10 @@
                             &Delta;
                             <div id="savComparison">Top 3 Average</div>
                         </div>
-                        <div id='deltaToggle' class="grow" style="font-size:150%;color:gray;margin-left:10px"
+                        <!-- <div id='deltaToggle' class="grow" style="font-size:150%;color:gray;margin-left:10px"
                             onclick="deltaType=!deltaType;playSound('move');action()">
                             <i class="fa fa-exchange"></i>
-                        </div>
+                        </div> -->
                         <img id="runRecap_ghost" style="height:40px;padding-left:20px">
                         <div id="runRecap_numDeaths" style="padding-left:5px"></div>
                     </div>
