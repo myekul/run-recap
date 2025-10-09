@@ -245,12 +245,13 @@ const savComparisonInfo = {
 }
 function savComparisonContent() {
     let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
+    // ['None', 'Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Comm Best ILs', 'TAS'].forEach((option, index) => {
     ['Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Comm Best ILs', 'TAS'].forEach((option, index) => {
         if (!(!['1.1+'].includes(commBestILsCategory.name) && ['Top 10 Average', 'TAS'].includes(option))) {
             HTMLContent += `
         <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('${option}');action()">
         <div>${option}</div>
-        <div style='color:gray;font-size:70%;'>${savComparisonInfo[option]}</div>
+        <div style='color:gray;font-size:70%;'>${savComparisonInfo[option] || ''}</div>
         </div>`
         }
     })

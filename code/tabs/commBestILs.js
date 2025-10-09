@@ -1,10 +1,11 @@
 function generateCommBestILs() {
     let HTMLContent = `<div class='container'><table>`
-    if (alt[commBestILsCategory.name]) {
+    if (alt[commBestILsCategory.tabName]) {
         HTMLContent += `<tr><td colspan=6></td>`
         categories.forEach((category, categoryIndex) => {
-            if (alt[commBestILsCategory.name][category.info.id]) {
-                HTMLContent += `<td class='clickable' style='color:gray;font-size:80%' onclick="altStrats(${categoryIndex})">${fontAwesome('exclamation-circle')}</td>`
+            const altTest = alt[commBestILsCategory.name][category.info.id]
+            if (altTest) {
+                HTMLContent += `<td class='clickable' style='color:${altTest.length > 1 ? 'white' : 'gray'};font-size:80%' onclick="altStrats(${categoryIndex})">${fontAwesome('info-circle')}</td>`
             } else {
                 HTMLContent += `<td></td>`
             }
@@ -40,18 +41,18 @@ function generateCommBestILs() {
 }
 function altStrats(categoryIndex) {
     const category = categories[categoryIndex]
-    let HTMLContent = `<div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div><table style='margin:0 auto'>`
+    let HTMLContent = `
+    <div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div>
+    <table style='margin:0 auto;padding:10px'>`
     alt[commBestILsCategory.name][category.info.id].forEach((strat, index) => {
-        HTMLContent += `<tr class='${getRowColor(index)}'>
+        HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;padding-right:8px'>${strat.name}</td>
-        <td class='${category.info.id}' style='padding:0 5px'>${secondsToHMS(strat.time)}</td>`
-        strat.runs.forEach(run => {
-            const player = players.find(player => player.name == run.player.split('*')[1] || player.name == run.player)
-            HTMLContent += `
-            <td class='clickable'>
-            ${getAnchor(run.url)}<div class='container' style='gap:5px;justify-content:left'>${getPlayerIcon(player, 21)}${getPlayerName(player)}</div></a>
+        <td class='${category.info.id}' style='padding:0 5px'>${strat.time}</td>`
+        const player = players.find(player => player.name == strat.player)
+        HTMLContent += `
+            <td>
+            <div class='container' style='gap:5px;justify-content:left'>${getPlayerIcon(player, 21)}${getPlayerName(player)}</div>
             </td>`
-        })
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table>`
@@ -126,4 +127,110 @@ function bossImage(boss, text) {
     <img src='https://myekul.github.io/shared-assets/cuphead/images/${boss}.png' style='height:36px'>
     <div>${text}</div>
     </div>`
+}
+function modalSubmitIL() {
+    let bossSelectHTML = ''
+    categories.forEach((category, categoryIndex) => {
+        bossSelectHTML += `<option value='${categoryIndex}'>${category.info.name}</option>`
+    })
+    let inputty = [
+        {
+            name: 'Boss',
+            html: `<select id="dropdown_commBestILs_boss" onchange="handleBossDropdown()">
+            <option value='none' selected>-- Select a Boss --</option>
+            ${bossSelectHTML}
+            </select>`
+        },
+        {
+            name: 'Time',
+            html: `<input id='input_commBestILs_time' type='text' placeholder='XX.XX' style='font-size:100%;width:80px' onchange="checkSubmittable()">`
+        },
+        {
+            name: 'Alt Strat',
+            html: `<select id='dropdown_commBestILs_altStrat' onchange="handleAltStratDropdown()"></select>`
+        },
+        {
+            name: 'Other',
+            html: `<input id='input_commBestILs_other' type='text' style='font-size:100%;width:250px' onchange="checkSubmittable()">`
+        },
+        {
+            name: 'URL',
+            html: `<input id='input_commBestILs_url' type='text' style='font-size:100%;width:250px' onchange="checkSubmittable()">`
+        }
+    ]
+    let HTMLContent = ''
+    HTMLContent += `
+    <div class='container' style='gap:12px;margin:10px'>
+    ${generateBoardTitle()}
+    ${runRecapPlayer()}
+    </div>`
+    HTMLContent += `<table id='commBestILsSubmit' style='margin:0 auto'>`
+    inputty.forEach(elem => {
+        HTMLContent += `<tr id='commBestILs_row_${elem.name}' style='height:36px;${elem.name == 'Other' ? 'display:none' : ''}'>
+        <td>${elem.name}</td>`
+        HTMLContent += `<td id='commBestILs_${elem.name.trim().toLowerCase()}'><div class='container' style='justify-content:left'><div id='commBestILs_boss_cell3'></div>${elem.html}</div></td>
+        </tr>`
+    })
+    HTMLContent += `</table>
+    <div class='container' style='height:50px'>
+        <div id='commBestILs_uploadButton' class='button cuphead grayedOut' style='margin:15px' onclick="submitIL()">Submit IL</div>
+        <div id='commBestILs_uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
+    </div>
+    <div class='textBlock' style='color:gray;font-size:80%;padding:10px 0'>
+    -Debug mode, Lobber EX crits, and RNG manip are allowed.
+    <br>-For video proof, game audio and full scorecard are preferred.
+    <br>-Submissions will be manually verified by myekul.
+    <br><br>Coming soon: Pending ILs queue
+    </div>`
+    openModal(HTMLContent, 'COMM BEST IL SUBMISSION')
+}
+function handleBossDropdown() {
+    checkSubmittable()
+    playSound('cardflip')
+    const boss = document.getElementById('dropdown_commBestILs_boss').value
+    if (boss >= 0) {
+        const category = categories[boss]
+        document.getElementById('dropdown_commBestILs_boss').className = category.info.id
+        document.getElementById('commBestILs_boss').className = category.info.id
+        document.getElementById('commBestILs_boss_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(category.info.id, 32)}</div>`
+        let altStratHTML = `<option value='none'>None</option>`
+        alt[commBestILsCategory.tabName][category.info.id].forEach((strat, index) => {
+            if (strat.name) altStratHTML += `<option value='${index}'>${strat.name}</option>`
+        })
+        altStratHTML += `<option value='other'>Other...</option>`
+        document.getElementById('dropdown_commBestILs_altStrat').innerHTML = altStratHTML
+    } else {
+        document.getElementById('dropdown_commBestILs_boss').className = ''
+        document.getElementById('commBestILs_boss').className = ''
+        document.getElementById('commBestILs_boss_cell3').innerHTML = ''
+    }
+}
+function handleAltStratDropdown() {
+    checkSubmittable()
+    playSound('cardflip')
+    if (document.getElementById('dropdown_commBestILs_altStrat').value == 'other') {
+        show('commBestILs_row_Other')
+    } else {
+        hide('commBestILs_row_Other')
+    }
+}
+function checkSubmittable() {
+    const button = document.getElementById('commBestILs_uploadButton')
+    if (localStorage.getItem('username') && document.getElementById('dropdown_commBestILs_boss').value != 'none' && document.getElementById('input_commBestILs_time').value && !(document.getElementById('dropdown_commBestILs_altStrat').value == 'other' && !document.getElementById('input_commBestILs_other').value) && document.getElementById('input_commBestILs_url').value) {
+        button.classList.remove('grayedOut')
+        button.classList.add('pulseSize')
+        commbestILs_ready = true
+    } else {
+        button.classList.add('grayedOut')
+        button.classList.remove('pulseSize')
+        commbestILs_ready = false
+    }
+}
+function submitIL() {
+    if (commbestILs_ready) {
+        playSound('ready')
+        window.firebaseUtils.firestoreWriteCommBestILs()
+    } else {
+        playSound('locked')
+    }
 }

@@ -7,4 +7,8 @@
 - Comm Best splits isle sums
 - .lss isle sums
 
-- 1:15 Djimmi meta?
+- Comm best ILs section for best down to ms
+
+- Move Top ILs from sheet to GitHub
+
+- None comparison

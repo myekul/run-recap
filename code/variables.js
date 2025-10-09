@@ -22,3 +22,7 @@ let database
 let savComparison
 
 let savComparisonView
+
+let loaded
+
+let commbestILs_ready

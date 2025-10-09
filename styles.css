@@ -110,3 +110,11 @@ th {
 #tabs {
     width: 500px !important
 }
+
+#commBestILsSubmit td {
+    text-align: left;
+    font-size:100%
+}
+#commBestILsSubmit select{
+    font-size: 100%;
+}

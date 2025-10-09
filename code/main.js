@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.firebaseUtils.firestoreRead()
 })
 function action() {
+    loaded = true
     switch (globalTab) {
         case 'home':
             if (runRecapExample) {
@@ -158,8 +159,10 @@ function action() {
     }
     if (['commBestILs'].includes(globalTab)) {
         show('metaDiv')
+        show('commBestSubmit')
     } else {
         hide('metaDiv')
+        hide('commBestSubmit')
     }
     if (globalTab == 'home') {
         show('runRecapTab')
@@ -326,3 +329,9 @@ function assignRuns(category, categoryIndex) {
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }
+const reloadTimeout = setTimeout(() => {
+    // If the page hasn't finished loading, reload
+    if (!loaded) {
+        location.reload();
+    }
+}, 3000);

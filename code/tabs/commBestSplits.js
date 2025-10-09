@@ -20,7 +20,7 @@ function generateCommBestSplits() {
             HTMLContent += `<td style='font-size:70%;color:var(--gray)'>${secondsToHMS(wrSplit, true)}</td>`
             HTMLContent += `<td class='container ${split.id}'>${getImage(split.id, 24)}</td>`
             HTMLContent += `<td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin.bestSplits[index], true)}</td>`
-            HTMLContent += `<td style='color:gray;padding:0 3px'>${url?fontAwesome('video-camera'):''}</td>`
+            HTMLContent += `<td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>`
             HTMLContent += getPlayerDisplay(player)
             HTMLContent += `</tr>`
             const nextIsle = splitInfo[index + 1]?.isle
@@ -47,7 +47,7 @@ function generateCommBestSplits() {
             HTMLContent += `<td style='font-size:70%;color:var(--gray)'>${secondsToHMS(wrSegment, true)}</td>`
             HTMLContent += `<td class='container ${split.id}'>${getImage(split.id, 24)}</td>`
             HTMLContent += `<td class='${split.id}' style='padding:0 5px'>${secondsToHMS(bestSegment, true)}</td>`
-            HTMLContent += `<td style='color:gray;padding:0 3px'>${url?fontAwesome('video-camera'):''}</td>`
+            HTMLContent += `<td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>`
             HTMLContent += getPlayerDisplay(player ? player : playerName)
             HTMLContent += `</tr>`
             const nextIsle = splitInfo[index + 1]?.isle

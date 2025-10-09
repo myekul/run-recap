@@ -92,7 +92,7 @@ function hideInput(elem) {
     }
     if (elem == 'username') {
         localStorage.setItem('username', input.trim() ? input : localStorage.getItem('username'))
-        document.getElementById('username').innerHTML = runRecapPlayer(elem)
+        document.getElementById('username').innerHTML = runRecapPlayer()
     }
     show(elem)
     action()
@@ -121,12 +121,12 @@ function runRecapUnload(elem, shh) {
 function runRecapInfo() {
     const player = players[globalPlayerIndex]
     const playerName = player ? getPlayerName(player) : `<span style='color:white'>${localStorage.getItem('username')}</span>`
-    let HTMLContent = ''
-    HTMLContent += `<div>
-                        SAVE FILE LOCATIONS:
-                        <br>Windows: ${myekulColor(`C:\\Users\\<span class='runRecapInfoName'>${playerName}</span>\\AppData\\Roaming\\Cuphead`)}
-                        <br>Mac: ${myekulColor(`/Users/<span class='runRecapInfoName'>${playerName}</span>/Library/Application\\ Support/unity.Studio\\ MDHR.Cuphead/Cuphead`)}
-                    </div>`
+    let HTMLContent = `
+    <div>
+        SAVE FILE LOCATIONS:
+        <br>Windows: ${myekulColor(`C:\\Users\\<span class='runRecapInfoName'>${playerName}</span>\\AppData\\Roaming\\Cuphead`)}
+        <br>Mac: ${myekulColor(`/Users/<span class='runRecapInfoName'>${playerName}</span>/Library/Application\\ Support/unity.Studio\\ MDHR.Cuphead/Cuphead`)}
+    </div>`
     return HTMLContent
 }
 function runRecapGrade(delta) {

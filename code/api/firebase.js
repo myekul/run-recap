@@ -75,5 +75,29 @@ window.firebaseUtils = {
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }
-    }
+    },
+    firestoreWriteCommBestILs: async () => {
+        const obj = {
+            player: localStorage.getItem('username'),
+            category: commBestILsCategory.tabName,
+            boss: categories[document.getElementById('dropdown_commBestILs_boss').value].info.id,
+            time: document.getElementById('input_commBestILs_time').value,
+            altstrat: document.getElementById('dropdown_commBestILs_altStrat').value,
+            other: document.getElementById('input_commBestILs_other').value,
+            url: document.getElementById('input_commBestILs_url').value,
+            date: new Date().toISOString().slice(0, 10)
+        }
+        const uploadCheck = document.getElementById('commBestILs_uploadCheck')
+        uploadCheck.innerHTML = `<div class='loader'></div>`
+        hide('commBestILs_uploadButton')
+        show('commBestILs_uploadCheck')
+        await addDoc(collection(db, 'commBestILs'), obj)
+            .then(() => {
+                console.log(`Comm Best IL submitted`);
+                uploadCheck.innerHTML = fontAwesome('check')
+            })
+            .catch((error) => {
+                console.error(`Error writing document ${i}: `, error);
+            });
+    },
 }

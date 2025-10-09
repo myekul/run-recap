@@ -48,7 +48,7 @@ function generateSums() {
         const delta = sum - comparisonSum
         HTMLContent += `
         <td>${secondsToHMS(sum)}</td>
-        <td class='${redGreen(delta)}'>${getDelta(delta)}</td>
+        <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
         <td></td>
         <td>${secondsToHMS(players[index].extra.score - sum)}</td>`
         HTMLContent += `</tr>`
@@ -61,7 +61,7 @@ function generateSums() {
         }
     })
     HTMLContent += `
-    <th>${secondsToHMS(comparisonSum)}</th>
+    <th>${savComparison != 'None' ? secondsToHMS(comparisonSum) : ''}</th>
     <td></td>
     </tr>`
     if (runRecap_savFile) {
@@ -84,11 +84,9 @@ function generateSums() {
             const delta = sum - comparisonSum
             HTMLContent += `
             <td>${secondsToHMS(sum)}</td>
-            <td class='${redGreen(delta)}'>${getDelta(delta)}</td>
+            <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
             <td></td>`
-            if (runRecapTime != 'XX:XX') {
-                HTMLContent += `<td>${secondsToHMS(convertToSeconds(runRecapTime) - sum)}</td>`
-            }
+            if (runRecapTime != 'XX:XX') HTMLContent += `<td>${secondsToHMS(convertToSeconds(runRecapTime) - sum)}</td>`
         }
         HTMLContent += `</tr>`
     }
@@ -103,11 +101,10 @@ function getIsleSum(isle) {
     if (isle.sum) {
         const delta = isle.sum - isle.comparisonSum
         const grade = runRecapGrade(delta)
-        HTMLContent += `
-                <td class='${grade.className}' style='text-align:left'>${grade.grade}</td>
-                <td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>
-                <td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${getDelta(delta)}</td>
-                <td style='width:20px'></td>`
+        HTMLContent += `<td class='${grade.className}' style='text-align:left'>${savComparison != 'None' ? grade.grade : ''}</td>`
+        HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>`
+        HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
+        HTMLContent += `<td style='width:20px'></td>`
     }
     return HTMLContent
 }
