@@ -64,17 +64,17 @@ function loadMyekul() {
     categories.forEach((category, categoryIndex) => {
         if (values[categoryIndex].values[ILindex + 1]) meta[categoryIndex] = false
     })
-    const numRuns = commBestILsCategory.numRuns
+    const numRuns = commBestILsCategory.topRuns.length
     const checkbox_meta = document.getElementById('checkbox_meta').checked
     categories.forEach((category, categoryIndex) => {
         const metaCheck = !checkbox_meta && !meta[categoryIndex]
         category.difficulty = 'regular'
         if (values[categoryIndex]) {
             if (values[categoryIndex].values) {
-                if (values[categoryIndex].values[numRuns]) {
-                    const rawTime = values[categoryIndex].values[metaCheck ? ILindex + 1 : numRuns].userEnteredValue?.numberValue
+                if (values[categoryIndex].values[0]) {
+                    const rawTime = values[categoryIndex].values[metaCheck ? ILindex + 1 : 0].userEnteredValue?.numberValue
                     const time = convertToSeconds(secondsToHMS(Math.round(rawTime * 24 * 60)))
-                    const runs = metaCheck ? values[categoryIndex].values.slice(ILindex + 2) : values[categoryIndex].values.slice(numRuns + 1, ILindex)
+                    const runs = metaCheck ? values[categoryIndex].values.slice(ILindex + 2) : values[categoryIndex].values.slice(1, ILindex)
                     runs.forEach(column => {
                         if (column.userEnteredValue) {
                             let playerName = column.userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]
@@ -102,39 +102,29 @@ function loadMyekul() {
             }
         }
     })
-    if (!commBestILsCategory.runs) {
-        commBestILsCategory.runs = new Array(numRuns).fill().map(() => [])
-        categories.forEach((category, categoryIndex) => {
-            for (let i = 0; i < numRuns; i++) {
-                const rawTime = values[categoryIndex].values[i].userEnteredValue?.numberValue
-                const time = convertToSeconds(secondsToHMS(Math.round(rawTime * 24 * 60)))
-                commBestILsCategory.runs[i].push(time)
+    commBestILsCategory.top = []
+    commBestILsCategory.top3 = []
+    commBestILsCategory.topBest = new Array(commBestILsCategory.topRuns[0].length).fill(Infinity)
+    commBestILsCategory.topBestPlayers = new Array(commBestILsCategory.topRuns[0].length).fill(null)
+    commBestILsCategory.theoryRun = []
+    categories.forEach((category, categoryIndex) => {
+        let topSum = 0
+        let top3Sum = 0
+        commBestILsCategory.topRuns.forEach((run, index) => {
+            const time = run[categoryIndex]
+            topSum += time
+            if (index < 3) top3Sum += time
+            if (time < commBestILsCategory.topBest[categoryIndex]) {
+                commBestILsCategory.topBest[categoryIndex] = time
+                commBestILsCategory.topBestPlayers[categoryIndex] = [index]
+            } else if (time == commBestILsCategory.topBest[categoryIndex]) {
+                commBestILsCategory.topBestPlayers[categoryIndex].push(index)
             }
         })
-        commBestILsCategory.top = []
-        commBestILsCategory.top3 = []
-        commBestILsCategory.topBest = new Array(commBestILsCategory.runs[0].length).fill(Infinity)
-        commBestILsCategory.topBestPlayers = new Array(commBestILsCategory.runs[0].length).fill(null)
-        commBestILsCategory.theoryRun = []
-        categories.forEach((category, categoryIndex) => {
-            let topSum = 0
-            let top3Sum = 0
-            commBestILsCategory.runs.forEach((run, index) => {
-                const time = run[categoryIndex]
-                topSum += time
-                if (index < 3) top3Sum += time
-                if (time < commBestILsCategory.topBest[categoryIndex]) {
-                    commBestILsCategory.topBest[categoryIndex] = time
-                    commBestILsCategory.topBestPlayers[categoryIndex] = [index]
-                } else if (time == commBestILsCategory.topBest[categoryIndex]) {
-                    commBestILsCategory.topBestPlayers[categoryIndex].push(index)
-                }
-            })
-            commBestILsCategory.top.push(topSum / numRuns)
-            commBestILsCategory.top3.push(top3Sum / (numRuns > 3 ? 3 : numRuns))
-            commBestILsCategory.theoryRun.push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
-        })
-    }
+        commBestILsCategory.top.push(topSum / numRuns)
+        commBestILsCategory.top3.push(top3Sum / (numRuns > 3 ? 3 : numRuns))
+        commBestILsCategory.theoryRun.push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
+    })
     categories.forEach(category => {
         category.info.levelID = bossIDs[category.info.id]
     })

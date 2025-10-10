@@ -28,7 +28,7 @@ function generateSums() {
     <td style='width:20px'></td>
     <th>Residual</th>
     </tr>`
-    commBestILsCategory.runs.forEach((run, index) => {
+    commBestILsCategory.topRuns.forEach((run, index) => {
         sum = 0
         isles.forEach(isle => {
             isle.sum = 0

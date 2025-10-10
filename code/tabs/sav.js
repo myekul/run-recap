@@ -83,7 +83,7 @@ function processSavFile(playerIndex, display) {
                 document.getElementById('input_runRecap_time').value = time
                 categories.forEach((category, categoryIndex) => {
                     const level = getCupheadLevel(categoryIndex)
-                    level.bestTime = commBestILsCategory.runs[playerIndex][categoryIndex]
+                    level.bestTime = commBestILsCategory.topRuns[playerIndex][categoryIndex]
                     level.played = true
                     level.completed = true
                 })
@@ -184,7 +184,7 @@ function getComparisonTime(categoryIndex) {
     } else if (savComparison == 'TAS') {
         return commBestILsCategory.tas[categoryIndex]
     } else if (savComparison.split('_')[0] == 'player') {
-        return commBestILsCategory.runs[parseInt(savComparison.split('_')[1])][categoryIndex]
+        return commBestILsCategory.topRuns[parseInt(savComparison.split('_')[1])][categoryIndex]
     } else if (savComparison.split('_')[0] == 'database') {
         return commBestILsCategory.database[categoryIndex]
     }

@@ -11,7 +11,7 @@ function generateGrid() {
         HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(getComparisonTime(categoryIndex))}</th>`
     })
     HTMLContent += `</tr>`
-    commBestILsCategory.runs.forEach((run, index) => {
+    commBestILsCategory.topRuns.forEach((run, index) => {
         const player = players[index]
         HTMLContent += `<tr class='${getRowColor(index)} hover'>`
         HTMLContent += bigPlayerDisplay(player)
@@ -25,7 +25,7 @@ function generateGrid() {
         })
         HTMLContent += `</tr>`
     })
-    if (commBestILsCategory.numRuns > 3) {
+    if (commBestILsCategory.topRuns.length > 3) {
         HTMLContent += `<tr><th colspan=6 style='text-align:right'>&Delta;</th>`
         categories.forEach((category, categoryIndex) => {
             HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(getComparisonTime(categoryIndex))}</th>`

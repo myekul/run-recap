@@ -3,7 +3,7 @@ function generateCommBestILs() {
     if (alt[commBestILsCategory.tabName]) {
         HTMLContent += `<tr><td colspan=6></td>`
         categories.forEach((category, categoryIndex) => {
-            const altTest = alt[commBestILsCategory.name][category.info.id]
+            const altTest = alt[commBestILsCategory.tabName][category.info.id]
             if (altTest) {
                 HTMLContent += `<td class='clickable' style='color:${altTest.length > 1 ? 'white' : 'gray'};font-size:80%' onclick="altStrats(${categoryIndex})">${fontAwesome('info-circle')}</td>`
             } else {
@@ -43,8 +43,13 @@ function altStrats(categoryIndex) {
     const category = categories[categoryIndex]
     let HTMLContent = `
     <div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div>
-    <table style='margin:0 auto;padding:10px'>`
-    alt[commBestILsCategory.name][category.info.id].forEach((strat, index) => {
+    <table style='margin:0 auto;padding:10px'>
+    <tr>
+    <th class='gray'>Pattern / Strat</th>
+    <th class='gray'>IGT</th>
+    <th class='gray'>Player</th>
+    </tr>`
+    alt[commBestILsCategory.tabName][category.info.id].forEach((strat, index) => {
         HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;padding-right:8px'>${strat.name}</td>
         <td class='${category.info.id}' style='padding:0 5px'>${strat.time}</td>`
@@ -177,8 +182,11 @@ function modalSubmitIL() {
         <div id='commBestILs_uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
     </div>
     <div class='textBlock' style='color:gray;font-size:80%;padding:10px 0'>
-    -Debug mode, Lobber EX crits, and RNG manip are allowed.
+    -Debug mod, Lobber EX crits, and RNG manip are allowed.
     <br>-For video proof, game audio and full scorecard are preferred.
+    <br>-Unobstructed gameplay is preferred.
+    <br>-V-sync must be turned off.
+    <br>-Pause buffers must be less than 1s.
     <br>-Submissions will be manually verified by myekul.
     <br><br>Coming soon: Pending ILs queue
     </div>`
@@ -194,9 +202,14 @@ function handleBossDropdown() {
         document.getElementById('commBestILs_boss').className = category.info.id
         document.getElementById('commBestILs_boss_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(category.info.id, 32)}</div>`
         let altStratHTML = `<option value='none'>None</option>`
-        alt[commBestILsCategory.tabName][category.info.id].forEach((strat, index) => {
-            if (strat.name) altStratHTML += `<option value='${index}'>${strat.name}</option>`
-        })
+        const altTest = alt[commBestILsCategory.tabName]
+        if (altTest) {
+            if (altTest[category.info.id]) {
+                altTest[category.info.id].forEach((strat, index) => {
+                    if (strat.name) altStratHTML += `<option value='${index}'>${strat.name}</option>`
+                })
+            }
+        }
         altStratHTML += `<option value='other'>Other...</option>`
         document.getElementById('dropdown_commBestILs_altStrat').innerHTML = altStratHTML
     } else {

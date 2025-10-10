@@ -222,7 +222,7 @@ function runRecapMusic() {
 }
 function runRecapExamples(sav) {
     let HTMLContent = `<div><table>`
-    players.slice(0, commBestILsCategory.numRuns).forEach((player, playerIndex) => {
+    players.slice(0, commBestILsCategory.topRuns.length).forEach((player, playerIndex) => {
         if (player.extra) {
             const onclick = sav ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('ready')`
             HTMLContent += `<tr class='${savComparison.split('_')[1] == playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`

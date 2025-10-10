@@ -278,7 +278,7 @@ function done() {
     }
     document.getElementById('runRecap_examples').innerHTML = runRecapExamples()
     let HTMLContent = ''
-    for (let i = 0; i < commBestILsCategory.numRuns; i++) {
+    for (let i = 0; i < commBestILsCategory.topRuns.length; i++) {
         HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(globalCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
     // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
@@ -334,4 +334,4 @@ const reloadTimeout = setTimeout(() => {
     if (!loaded) {
         location.reload();
     }
-}, 3000);
+}, 3000)

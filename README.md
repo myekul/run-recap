@@ -12,3 +12,5 @@
 - Move Top ILs from sheet to GitHub
 
 - None comparison
+
+- Devil and Baroness alt sort
