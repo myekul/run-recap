@@ -155,6 +155,17 @@ function action() {
         show('pageTitle')
         if (fontAwesomeSet[globalTab]) {
             setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
+            if (globalTab == 'commBestSplits') {
+                const pageTitle = document.getElementById('pageTitle')
+                let HTMLContent = ''
+                HTMLContent += `
+                <div class='container' style='position:absolute;top:22px;right:100px;gap:8px'>
+                <div>by</div>
+                <img src='https://www.speedrun.com/static/user/8l0yyz28/image?v=6e8c7d2' style='height:32px;border-radius:50%'>
+                <div>${getPlayerName(players.find(player => player.name == 'MarkinSws') || 'MarkinSws')}</div>
+                </div>`
+                pageTitle.innerHTML += HTMLContent
+            }
         }
     }
     if (['commBestILs'].includes(globalTab)) {
@@ -330,7 +341,6 @@ function assignRuns(category, categoryIndex) {
     })
 }
 const reloadTimeout = setTimeout(() => {
-    // If the page hasn't finished loading, reload
     if (!loaded) {
         location.reload();
     }

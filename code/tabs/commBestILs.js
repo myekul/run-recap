@@ -45,14 +45,21 @@ function altStrats(categoryIndex) {
     <div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div>
     <table style='margin:0 auto;padding:10px'>
     <tr>
-    <th class='gray'>Pattern / Strat</th>
-    <th class='gray'>IGT</th>
-    <th class='gray'>Player</th>
-    </tr>`
+    <th class='gray'>Pattern / Strat</th>`
+    // if (category.info.id == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') {
+    //     HTMLContent += `<th class='gray'></th>`
+    // }
+    HTMLContent += `<th class='gray'>IGT</th>`
+    const RTAcheck = alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.rta)
+    if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
+    HTMLContent += `<th class='gray'>Player</th></tr>`
     alt[commBestILsCategory.tabName][category.info.id].forEach((strat, index) => {
         HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;padding-right:8px'>${strat.name}</td>
         <td class='${category.info.id}' style='padding:0 5px'>${strat.time}</td>`
+        if (RTAcheck) {
+            HTMLContent += `<td class='${category.info.id}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
+        }
         const player = players.find(player => player.name == strat.player)
         HTMLContent += `
             <td>
@@ -187,6 +194,7 @@ function modalSubmitIL() {
     <br>-Unobstructed gameplay is preferred.
     <br>-V-sync must be turned off.
     <br>-Pause buffers must be less than 1s.
+    <br>-Submitting ILs on behalf of other players is encouraged.
     <br>-Submissions will be manually verified by myekul.
     <br><br>Coming soon: Pending ILs queue
     </div>`
