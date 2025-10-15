@@ -546,6 +546,12 @@
                 "time": "1:16.83",
                 "player": "Quincely0",
                 "url": "https://youtu.be/5GDd1k1g_og"
+            },
+            {
+                "name": "Cats",
+                "time": "1:16.90",
+                "player": "Lewzr",
+                "url": "https://www.twitch.tv/videos/2592795352"
             }
         ],
         "beppitheclown": [
@@ -600,10 +606,10 @@
             },
             {
                 "name": "Blue Gem",
-                "time": 41.93,
-                "rta": 42.66,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/UFn71NypSZg"
+                "time": 41.87,
+                "rta": 42.60,
+                "player": "Quincely0",
+                "url": "https://youtu.be/j7teMOTCZgk"
             }
         ],
         "sallystageplay": [
@@ -765,18 +771,31 @@
         ],
         "calamaria": [
             {
-                "name": "Red Fish, Pufferfish (Parries)",
+                "title": "Parries"
+            },
+            {
+                "name": "Red Fish, Pufferfish",
                 "time": 50.96,
                 "rta": 52.06,
                 "player": "Lewzr",
                 "url": "https://youtu.be/WHPWKFNR1wY"
             },
             {
-                "name": "Seahorse, Red Fish, Pufferfish (Parries)",
+                "name": "Seahorse, Red Fish, Pufferfish",
                 "time": 51.53,
                 "rta": 52.56,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/TDRTnzhNqL4"
+            },
+            {
+                "name": "Red Fish, Seahorse",
+                "time": 53.96,
+                "rta": 54.51,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/PmNedNNnw5g"
+            },
+            {
+                "title": "Parryless"
             },
             {
                 "name": "Yellow Fish, Turtle",

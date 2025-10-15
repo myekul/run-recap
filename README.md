@@ -11,11 +11,6 @@
 
 - None comparison
 
-- Devil and Baroness alt sort
-
 - Alt strats landing page
-    - Top contributors
     - Ideas
     - Queue
-
-- Convert alt.js to JSON
