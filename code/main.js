@@ -29,48 +29,30 @@ dropbox.addEventListener('drop', (event) => {
     runRecapHandleFile(files[0])
 });
 document.addEventListener('DOMContentLoaded', function () {
+    fetch('resources/alt.json')
+        .then(response => response.json())
+        .then(data => {
+            alt = data
+        })
     commBestILsCategory = commBestILs['1.1+']
     window.firebaseUtils.firestoreRead()
 })
 function action() {
     loaded = true
-    switch (globalTab) {
-        case 'home':
-            if (runRecapExample) {
-                runRecapDefault()
-                runRecapUnload('sav', true)
-                runRecapUnload('lss', true)
-                runRecapExample = false
-                hide('runRecap_example_div')
-            }
-            if (localStorage.getItem('username')) {
-                document.getElementById('runRecap_player').innerHTML = runRecapPlayer()
-            }
-            hide('runRecap_chart')
-            show('uploadButton')
-            hide('uploadCheck')
-            break
-        case 'sav':
-            generate_sav()
-            break
-        case 'lss':
-            generate_lss()
-            break
-        case 'sums':
-            generateSums()
-            break
-        case 'grid':
-            generateGrid()
-            break
-        case 'ballpit':
-            generateBallpit()
-            break
-        case 'commBestILs':
-            generateCommBestILs()
-            break
-        case 'commBestSplits':
-            generateCommBestSplits()
-            break
+    const tabActions = {
+        home: generateHome,
+        sav: generate_sav,
+        lss: generate_lss,
+        sums: generateSums,
+        grid: generateGrid,
+        ballpit: generateBallpit,
+        commBestILs: generateCommBestILs,
+        altStrats: generateAltStrats,
+        commBestSplits: generateCommBestSplits
+    }
+    tabActions[globalTab]?.()
+    if (localStorage.getItem('username') && !runRecapExample) {
+        document.getElementById('runRecap_player').innerHTML = runRecapPlayer()
     }
     if (runRecap_savFile) {
         document.getElementById('savButton').classList.add('pulseSize')
@@ -86,6 +68,10 @@ function action() {
         document.getElementById('lssButton').classList.remove('pulseSize')
         document.getElementById('lssButton').classList.add('grayedOut')
     }
+    ['commBestILs', 'altStrats', 'commBestSplits'].forEach(page => {
+        document.getElementById(page + 'Button').classList.remove('activeBanner')
+        document.getElementById(globalTab + 'Button').classList.add('activeBanner')
+    })
     if (globalTab == 'sav') {
         show('runRecap_content')
     } else {
@@ -168,12 +154,15 @@ function action() {
             }
         }
     }
-    if (['commBestILs'].includes(globalTab)) {
-        show('metaDiv')
+    if (['commBestILs', 'altStrats'].includes(globalTab)) {
         show('commBestSubmit')
     } else {
-        hide('metaDiv')
         hide('commBestSubmit')
+    }
+    if (globalTab == 'commBestILs') {
+        show('metaDiv')
+    } else {
+        hide('metaDiv')
     }
     if (globalTab == 'home') {
         show('runRecapTab')
@@ -182,7 +171,7 @@ function action() {
         hide('runRecapTab')
         show('content')
     }
-    if (!['commBestILs', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+    if (!['commBestILs', 'altStrats', 'commBestSplits', 'ballpit'].includes(globalTab)) {
         show('runRecap_details')
     } else {
         hide('runRecap_details')
@@ -201,6 +190,7 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     players = []
     playerNames = new Set()
     changeComparison('Top 3 Average', true)
+    altStratIndex = -1
     const category = commBestILsCategory.category
     updateBoardTitle()
     if (runRecapExample) showTab('home')
@@ -231,10 +221,8 @@ function letsGo() {
 function updateLoadouts(categoryName) {
     let HTMLContent = ''
     let fullgameCategories = []
-    if (commBestILsCategory.name == 'NMG') {
-        fullgameCategories.push('NMG', 'NMG P/S')
-    } else if (commBestILsCategory.name == 'DLC') {
-        fullgameCategories.push('DLC', 'DLC L/S', 'DLC C/S', 'DLC C/T', 'DLC Low%', 'DLC Expert')
+    if (commBestILsCategory.name == 'DLC') {
+        fullgameCategories.push('DLC', 'DLC L/S', 'DLC C/S')
     } else if (commBestILsCategory.name == 'DLC+Base') {
         fullgameCategories.push('DLC+Base', 'DLC+Base L/S', 'DLC+Base C/S')
     }

@@ -26,3 +26,7 @@ let savComparisonView
 let loaded
 
 let commbestILs_ready
+
+let altStratIndex = -1
+
+let alt

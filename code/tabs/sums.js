@@ -39,11 +39,11 @@ function generateSums() {
                 isle.sum += bestTime != nullTime ? Math.floor(bestTime) : 0
             })
         })
-        HTMLContent += `<tr class='${getRowColor(index)}'>`
+        HTMLContent += `<tr class='hover ${getRowColor(index)}'>`
         HTMLContent += bigPlayerDisplay(players[index])
-        isles.forEach(isle => {
+        isles.forEach((isle, isleIndex) => {
             sum += isle.sum
-            HTMLContent += getIsleSum(isle)
+            HTMLContent += getIsleSum(isle, index, isleIndex)
         })
         const delta = sum - comparisonSum
         HTMLContent += `
@@ -96,7 +96,7 @@ function generateSums() {
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
-function getIsleSum(isle) {
+function getIsleSum(isle, index, isleIndex) {
     let HTMLContent = ''
     if (isle.sum) {
         const delta = isle.sum - isle.comparisonSum
@@ -104,7 +104,7 @@ function getIsleSum(isle) {
         HTMLContent += `<td class='${grade.className}' style='text-align:left'>${savComparison != 'None' ? grade.grade : ''}</td>`
         HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>`
         HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
-        HTMLContent += `<td style='width:20px'></td>`
+        HTMLContent += commBestILsCategory.name == '1.1+' && isleIndex < 3 ? `<td style='color:gray;font-size:70%;padding:0 3px'>${commBestILsCategory.splits[index][isleIndex]}</td>` : `<td style='width:20px'></td>`
     }
     return HTMLContent
 }

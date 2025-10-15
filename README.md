@@ -7,10 +7,15 @@
 - Comm Best splits isle sums
 - .lss isle sums
 
-- Comm best ILs section for best down to ms
-
 - Move Top ILs from sheet to GitHub
 
 - None comparison
 
 - Devil and Baroness alt sort
+
+- Alt strats landing page
+    - Top contributors
+    - Ideas
+    - Queue
+
+- Convert alt.js to JSON

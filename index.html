@@ -13,8 +13,6 @@
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://myekul.github.io/shared-assets/utils.js"></script>
     <script src="https://myekul.github.io/shared-assets/cuphead/cuphead.js"></script>
-    <script src="https://myekul.github.io/shared-assets/cuphead/commBest.js"></script>
-    <script src="https://myekul.github.io/shared-assets/cuphead/alt.js"></script>
     <script src="https://myekul.github.io/shared-assets/myekul/src.js"></script>
 </head>
 
@@ -30,12 +28,17 @@
             <div class="sticky">
                 <div id="headerRow" class="container">
                     <div class="font2" style="margin-right:8px">Comm Best</div>
-                    <div onclick="showTab('commBestILs')" class="grade-a button"
-                        style="width:80px;gap:6px;font-size:85%">
+                    <div id='commBestILsButton' onclick="showTab('commBestILs')" class="button"
+                        style="width:60px;gap:6px;font-size:85%;background-color: limegreen">
                         <i class="fa fa-trophy"></i>ILs
                     </div>
-                    <div onclick="showTab('commBestSplits')" class="grade-a button"
-                        style="width:80px;gap:6px;font-size:85%">
+                    <div id='altStratsButton' onclick="altStratIndex=-1;showTab('altStrats')" class="button"
+                        style="width:60px;gap:6px;font-size:85%;background-color: limegreen">
+                        <i class="fa fa-database"></i>Alt
+                    </div>
+                    <div class="dot"></div>
+                    <div id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button"
+                        style="width:80px;gap:6px;font-size:85%;background-color: limegreen">
                         <i class="fa fa-tasks"></i>Splits
                     </div>
                     <div style="width:70px">
@@ -245,6 +248,8 @@
     </div>
 </body>
 
+<script src="resources/commBest.js"></script>
+
 <script src="code/variables.js"></script>
 
 <script src="code/runRecap.js"></script>
@@ -252,12 +257,14 @@
 <script src="code/api/firebase.js" type="module"></script>
 <script src="code/api/sheets.js"></script>
 
+<script src="code/tabs/home.js"></script>
 <script src="code/tabs/sav.js"></script>
 <script src="code/tabs/lss.js"></script>
 <script src="code/tabs/sums.js"></script>
 <script src="code/tabs/grid.js"></script>
 <script src="code/tabs/ballpit.js"></script>
 <script src="code/tabs/commBestILs.js"></script>
+<script src="code/tabs/altStrats.js"></script>
 <script src="code/tabs/commBestSplits.js"></script>
 
 <script src="code/database.js"></script>
