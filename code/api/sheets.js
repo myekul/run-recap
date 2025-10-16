@@ -82,7 +82,7 @@ function loadMyekul() {
                             let debug = false
                             if (playerName.startsWith("*")) {
                                 playerName = playerName.slice(1);
-                                debug = true
+                                // debug = true
                             }
                             addPlayer({ name: playerName })
                             function addPlayer(player) {

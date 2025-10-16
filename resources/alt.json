@@ -68,8 +68,14 @@
                 "url": "https://youtu.be/gstVx9ibTKY"
             },
             {
+                "name": "5 Flies Regular Skip, Tigers",
+                "time": 42.39,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/b2BcfRaU3yI"
+            },
+            {
                 "name": "6 Flies Regular Skip, Snakes",
-                "time": 42.4,
+                "time": "42.40",
                 "player": "Quincely0",
                 "url": "https://youtu.be/68pJU4KHDxA"
             },
@@ -269,21 +275,21 @@
             },
             {
                 "name": "Waffle, Gumball, Candy Corn",
-                "time": 34.95,
+                "time": 32.18,
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=qiwwM5kJ9x7VpI04&t=643"
+                "url": "https://youtu.be/KSbHs-ETPEg"
             },
             {
                 "name": "Waffle, Gumball, Cupcake",
-                "time": 34.59,
+                "time": 32.78,
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=4HTuGj1ZYap5wAsi&t=678"
+                "url": "https://youtu.be/b1Zq29xrnG4"
             },
             {
                 "name": "Waffle, Gumball, Jawbreaker",
-                "time": 36.96,
+                "time": 34.56,
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=PEBO2xT7gsoJEXE1&t=713"
+                "url": "https://youtu.be/TceKMM_M4yw"
             },
             {
                 "name": "Waffle, Jawbreaker, Candy Corn",
@@ -329,9 +335,9 @@
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
-                "time": 34.25,
-                "player": "myekul",
-                "url": "https://youtu.be/huSfyl-WhDU"
+                "time": 33.67,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/llWCLULTppk"
             },
             {
                 "name": "Cupcake, Waffle, Jawbreaker",
@@ -523,9 +529,9 @@
         "wallywarbles": [
             {
                 "name": "",
-                "time": 46.77,
-                "player": "Quincely0",
-                "url": "https://youtu.be/hsDpiF7xC4s"
+                "time": 46.44,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/yP0lTtLRPzU"
             },
             {
                 "name": "Nuke",
@@ -636,9 +642,9 @@
             },
             {
                 "name": "Cherry Bombs, Charge",
-                "time": 37.98,
-                "player": "Lewzr",
-                "url": "https://youtu.be/J6MKRHmAvpo"
+                "time": 36.96,
+                "player": "Quincely0",
+                "url": "https://youtu.be/3WyF0cd09Qk"
             },
             {
                 "name": "Cherry Bombs, Catapult",
@@ -863,11 +869,18 @@
         ],
         "kingdice": [
             {
-                "name": "",
+                "name": "Best RNG",
                 "time": "1:44.69",
                 "rta": "1:46.47",
                 "player": "Quincely0",
                 "url": "https://youtu.be/stxsgl3xDsM"
+            },
+            {
+                "name": "Worst RNG",
+                "time": "1:52.46",
+                "rta": "1:54.97",
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/YLyUa0CcUrM"
             }
         ],
         "thedevil": [
