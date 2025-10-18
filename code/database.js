@@ -46,13 +46,11 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
         .then(response => response.json())
         .then(data => {
             runRecapUnload('lss', true)
-            document.getElementById('runRecap_player').innerHTML = runRecapPlayer(player)
             runRecapTime = time
             setRunRecapTime(runRecapTime)
             document.getElementById('input_runRecap_time').value = time
             globalTab = 'sav'
             getCommBestILs(categoryName)
-            runRecapExample = true
             runRecap_savFile = data
             categories.forEach((category, categoryIndex) => {
                 const level = getCupheadLevel(categoryIndex)
@@ -60,6 +58,8 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
                 level.played = true
                 level.completed = true
             })
+            runRecapExample = true
+            document.getElementById('runRecap_player').innerHTML = runRecapPlayer(player)
             showTab('sav')
             playSound('ready')
             closeModal(true)

@@ -39,7 +39,8 @@ function generateAltStrats() {
                 count
             }));
             countArray.sort((a, b) => b.count - a.count)
-            HTMLContent += `<div class='container' style='margin-top:20px'><table>
+            HTMLContent += `<div class='container' style='margin-top:20px;gap:30px'>
+            <table>
             <tr><td colspan=5 class='font2 gray' style='font-size:150%;padding:5px'>Top Contributors</td></tr>`
             countArray.forEach((player, index) => {
                 HTMLContent += `<tr class='${getRowColor(index)}'>
@@ -47,7 +48,16 @@ function generateAltStrats() {
                 <td>${player.count}</td>
                 </tr>`
             })
-            HTMLContent += `</table></div>`
+            HTMLContent += `</table>
+            <div class='textBlock' style='width:450px'>
+            Welcome to the ${myekulColor('Alternate Strats')} page!
+            This is a comprehensive database of ILs for EVERY notable pattern / strat variation on EVERY boss in EVERY main category.
+            <br><br>
+            The alt strats database serves as a resource for runners to study the best times and strategies for all possible scenarios.
+            Got an idea for a new alt strat?
+            ${myekulColor('Submissions are always open!')}
+            </div>
+            </div>`
         } else {
             HTMLContent += alt[commBestILsCategory.tabName][categories[altStratIndex].info.id] ? altStrats(altStratIndex) : `<div class='container' style='margin-top:20px'>No alt strats...</div>`
         }
