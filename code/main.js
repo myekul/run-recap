@@ -9,7 +9,7 @@ setTabs(['home', null, [
         style="width:80px;font-size:120%;gap:4px;background-color:var(--cuphead)">
         <img src="images/lss.png" style="height:21px">.lss
     </div>`
-], null, 'sums', 'grid', null, 'ballpit'])
+], null, 'sums', 'residual', 'grid', null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
@@ -44,6 +44,7 @@ function action() {
         sav: generate_sav,
         lss: generate_lss,
         sums: generateSums,
+        residual: generateResidual,
         grid: generateGrid,
         ballpit: generateBallpit,
         commBestILs: generateCommBestILs,
@@ -126,7 +127,7 @@ function action() {
     } else {
         hide('runRecap_bar')
     }
-    if (runRecap_savFile && !['home', 'commBestILs', 'commBestSplits', 'ballpit', 'lss'].includes(globalTab)) runRecap_chart()
+    if (runRecap_savFile && ['sav', 'sums', 'grid'].includes(globalTab)) runRecap_chart()
     if (['home'].includes(globalTab)) {
         hide('pageTitle')
 
@@ -193,7 +194,7 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     altStratIndex = -1
     const category = commBestILsCategory.category
     updateBoardTitle()
-    if (runRecapExample) showTab('home')
+    // if (runRecapExample) showTab('home')
     if (category > -1) {
         letsGo()
     } else {
@@ -281,8 +282,9 @@ function done() {
         HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(globalCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
     // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
-    const username = localStorage.getItem('username')
+    const username = localStorage.getItem('username').trim()
     if (username) {
+        localStorage.setItem('username', username)
         document.getElementById('input_username').value = username
         document.getElementById('username').innerHTML = runRecapPlayer()
     }

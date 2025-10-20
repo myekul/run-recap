@@ -46,6 +46,15 @@
                             <div class="loader"></div>
                         </div>
                     </div>
+                    <div class='button cuphead' style='gap:5px;width:120px;position:absolute;left:10px'
+                        onclick="runRecapDatabase()">
+                        <i class="fa fa-cloud"></i>
+                        Database
+                    </div>
+                    <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'
+                        style="width:120px;position:absolute;left:140px">
+                        <i class="fa fa-upload"></i>&nbsp;Upload
+                    </div>
                     <input id='input_username' type='text' placeholder='Your SRC username'
                         style='display:none;width:200px;font-size:100%;position:absolute;right:40px;top:4px;'>
                     <div id='username' onclick="showInput('username')" class='container grow'
@@ -261,6 +270,7 @@
 <script src="code/tabs/sav.js"></script>
 <script src="code/tabs/lss.js"></script>
 <script src="code/tabs/sums.js"></script>
+<script src="code/tabs/residual.js"></script>
 <script src="code/tabs/grid.js"></script>
 <script src="code/tabs/ballpit.js"></script>
 <script src="code/tabs/commBestILs.js"></script>

@@ -25,8 +25,6 @@ function generateSums() {
     HTMLContent += `
     <th>TOTAL</th>
     <td></td>
-    <td style='width:20px'></td>
-    <th>Residual</th>
     </tr>`
     commBestILsCategory.topRuns.forEach((run, index) => {
         sum = 0
@@ -49,9 +47,7 @@ function generateSums() {
         HTMLContent += `
         <td>${secondsToHMS(sum)}</td>
         <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
-        <td></td>
-        <td>${secondsToHMS(players[index].extra.score - sum)}</td>`
-        HTMLContent += `</tr>`
+        </tr>`
     })
     HTMLContent += `<tr style='color:gray'><th colspan=6 style='text-align:right'>&Delta;</th>`
     isles.forEach(isle => {
@@ -84,16 +80,11 @@ function generateSums() {
             const delta = sum - comparisonSum
             HTMLContent += `
             <td>${secondsToHMS(sum)}</td>
-            <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
-            <td></td>`
-            if (runRecapTime != 'XX:XX') HTMLContent += `<td>${secondsToHMS(convertToSeconds(runRecapTime) - sum)}</td>`
+            <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
         }
         HTMLContent += `</tr>`
     }
     HTMLContent += `</table></div>`
-    if (runRecap_savFile && !runRecapExample && runRecapTime == 'XX:XX' && getCupheadLevel(categories.length - 1).completed) {
-        HTMLContent += `<div class='container' style='margin-top:10px'>Insert your run time in XX:XX above!</div>`
-    }
     document.getElementById('content').innerHTML = HTMLContent
 }
 function getIsleSum(isle, index, isleIndex) {

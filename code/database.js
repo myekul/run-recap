@@ -49,7 +49,6 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
             runRecapTime = time
             setRunRecapTime(runRecapTime)
             document.getElementById('input_runRecap_time').value = time
-            globalTab = 'sav'
             getCommBestILs(categoryName)
             runRecap_savFile = data
             categories.forEach((category, categoryIndex) => {
@@ -60,7 +59,11 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
             })
             runRecapExample = true
             document.getElementById('runRecap_player').innerHTML = runRecapPlayer(player)
-            showTab('sav')
+            if (!['sums', 'residual', 'grid'].includes(globalTab)) {
+                showTab('sav')
+            } else {
+                action()
+            }
             playSound('ready')
             closeModal(true)
         })

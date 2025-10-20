@@ -19,7 +19,48 @@
                 "player": "Yuka",
                 "url": "https://youtu.be/ZPR2PWzL9gI"
             }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 16.58,
+                "player": "Yuka",
+                "url": "https://youtu.be/KMAPzlswXvY"
+            }
+        ],
+        "hildaberg": [
+            {
+                "name": "",
+                "time": 54.77,
+                "player": "Yuka",
+                "url": "https://youtu.be/sZbSs7PGUMc"
+            }
+        ],
+        "wallywarbles": [
+            {
+                "name": "",
+                "time": 34.93,
+                "player": "Yuka",
+                "url": "https://youtu.be/7SVMkg8D43A"
+            }
+        ],
+        "drkahlsrobot": [
+            {
+                "name": "No Luigi Swaps",
+                "time": 13.85,
+                "player": "Fintan0",
+                "url": "https://youtu.be/dTRHOJZYp0s"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": 51.25,
+                "player": "Yuka",
+                "url": "https://youtu.be/LNQiCkaGvgA"
+            }
         ]
+        
     },
     "1.1+": {
         "therootpack": [
@@ -591,9 +632,9 @@
             },
             {
                 "name": "Orbs",
-                "time": 40.92,
-                "player": "Grondious",
-                "url": "https://youtu.be/agOxv114yyc"
+                "time": 40.66,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Uc3LLM0TX8Y"
             },
             {
                 "name": "Triangles",
@@ -928,9 +969,9 @@
             },
             {
                 "name": "Bubbles Dragon",
-                "time": 40.87,
+                "time": 40.38,
                 "player": "Lewzr",
-                "url": "https://youtu.be/z51F-XWMpTA"
+                "url": "https://youtu.be/aujKp7d02VI"
             },
             {
                 "name": "Ring Dragon (4 Quads)",
@@ -1100,15 +1141,65 @@
         ]
     },
     "DLC": {
+        "glumstonethegiant": [
+            {
+                "name": "",
+                "time": "45.61",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/xbgLtQvpbOs"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "Whale",
+                "time": "40.20",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/kkpeKDb7344"
+            },
+            {
+                "name": "Cards",
+                "time": "41.86",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/_21Nw01dCR8"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 43.63,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/uf0yhInpcW8"
+            }
+        ],
         "estherwinchester": [
             {
                 "name": "1 Nuke",
                 "time": 59.34,
+                "rta": "1:01.71",
                 "player": "Quincely0",
                 "url": "https://youtu.be/mFQMrdYSZyA"
+            },
+            {
+                "name": "3 Nuke",
+                "time": 58.98,
+                "rta": "1:03.18",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/zT6kz83BEO4"
             }
         ],
         "moonshinemob": [
+            {
+                "name": "Lunar Eclipse, 2-cycle",
+                "time": "43.50",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/2AO5ASAtGeA"
+            },
+            {
+                "name": "Lunar Eclipse, 3-cycle",
+                "time": 35.44,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/Pwuu1oLkPZM"
+            },
             {
                 "name": "No Lunar Eclipse",
                 "time": 37.61,
@@ -1118,6 +1209,18 @@
         ],
         "chefsaltbaker": [
             {
+                "name": "4+1 Shakers",
+                "time": 49.76,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/hajyDdpLwyA"
+            },
+            {
+                "name": "5+1 Shakers",
+                "time": 51.70,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/CtMC5x4yBrM"
+            },
+            {
                 "name": "Strawberries",
                 "time": 52.49,
                 "player": "MarkinSws",
@@ -1126,12 +1229,36 @@
         ]
     },
     "DLC C/S": {
+        "glumstonethegiant": [
+            {
+                "name": "Geese",
+                "time": 47.39,
+                "player": "myekul",
+                "url": "https://youtu.be/S9XKGm-XAWk"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 38.15,
+                "player": "myekul",
+                "url": "https://youtu.be/ycEX2EKm3rc"
+            }
+        ],
         "estherwinchester": [
             {
                 "name": "1 Nuke",
                 "time": 59.34,
+                "rta": "1:01.71",
                 "player": "Quincely0",
                 "url": "https://youtu.be/mFQMrdYSZyA"
+            },
+            {
+                "name": "3 Nuke",
+                "time": 58.98,
+                "rta": "1:03.18",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/zT6kz83BEO4"
             }
         ],
         "chefsaltbaker": [
@@ -1144,6 +1271,14 @@
         ]
     },
     "DLC+Base": {
+        "estherwinchester": [
+            {
+                "name": "Luigis",
+                "time": "53.XX",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/CpZI5-umKgg"
+            }
+        ],
         "drkahlsrobot": [
             {
                 "name": "Chalice, 1 Nuke",

@@ -14,3 +14,5 @@
 - Alt strats landing page
     - Ideas
     - Queue
+
+- Organize Run Recap database

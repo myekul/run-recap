@@ -1,8 +1,7 @@
 function generateAltStrats() {
     let HTMLContent = ''
     if (alt[commBestILsCategory.tabName]) {
-        HTMLContent += `<div class='container' style='gap:10px'>
-        <div class='button grade-a' style='width:40px;font-size:110%' onclick="playSound('category_select');altStratIndex=-1;action()">${fontAwesome('home')}</div>`
+        HTMLContent += `<div class='container' style='gap:10px'>`
         assignIsles()
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
@@ -50,8 +49,8 @@ function generateAltStrats() {
             })
             HTMLContent += `</table>
             <div class='textBlock' style='width:450px'>
-            Welcome to the ${myekulColor('Alternate Strats')} page!
-            This is a comprehensive database of ILs for EVERY notable pattern / strat variation on EVERY boss in EVERY main category.
+            Welcome to the ${myekulColor('Alternate Strats')} database!
+            This is a comprehensive collection of ILs for EVERY notable pattern / strat variation on EVERY boss in EVERY main category.
             <br><br>
             The alt strats database serves as a resource for runners to study the best times and strategies for all possible scenarios.
             Got an idea for a new alt strat?
@@ -73,7 +72,9 @@ function altStratClick(index) {
 }
 function altStrats(categoryIndex) {
     const category = categories[categoryIndex]
-    let HTMLContent = `
+    let HTMLContent = ''
+    HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratIndex=-1;action()">${fontAwesome('reply')}</div>`
+    HTMLContent += `
     <div class='container'><table style='margin:10px'>
     <tr><td colspan=5><div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div></td></tr>`
     const baronessCheck = category.info.id == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+'

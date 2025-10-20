@@ -39,7 +39,11 @@ async function runRecapHandleFile(event) {
                     }
                 }
                 getCommBestILs(category)
-                showTab('sav')
+                if (['sums', 'residual', 'grid'].includes(globalTab)) {
+                    action()
+                } else {
+                    showTab('sav')
+                }
             } else {
                 read_lss(content)
                 showTab('lss')
