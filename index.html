@@ -23,6 +23,10 @@
                 <img src="images/favicon.png" style="height:70px">
                 <div class="font2" style="font-size:220%">RUN RECAP</div>
             </div>
+            <div class='cuphead button'
+                style="position:absolute;left:20px;top:13px;font-size:200%;width:50px;height:50px"
+                onclick="runRecapDatabase()"><i class="fa fa-globe"></i>
+            </div>
         </header>
         <main>
             <div class="sticky">
@@ -46,14 +50,9 @@
                             <div class="loader"></div>
                         </div>
                     </div>
-                    <div class='button cuphead' style='gap:5px;width:120px;position:absolute;left:10px'
-                        onclick="runRecapDatabase()">
-                        <i class="fa fa-cloud"></i>
-                        Database
-                    </div>
                     <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'
-                        style="width:120px;position:absolute;left:140px">
-                        <i class="fa fa-upload"></i>&nbsp;Upload
+                        style="width:120px;position:absolute;left:15px">
+                        <i class="fa fa-folder-open"></i>&nbsp;Open file
                     </div>
                     <input id='input_username' type='text' placeholder='Your SRC username'
                         style='display:none;width:200px;font-size:100%;position:absolute;right:40px;top:4px;'>
@@ -211,7 +210,7 @@
                             <input type='file' id='runRecap_input' onchange="runRecapHandleFile(event)"
                                 style='display:none'>
                             <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'>
-                                <i class="fa fa-upload"></i>&nbsp;Upload file
+                                <i class="fa fa-folder-open"></i>&nbsp;Open file
                             </div>
                             <div onclick="openModal(runRecapInfo(), 'INFO')" class='grow' style="padding-left:5px">
                                 <i class="fa fa-info-circle"></i>

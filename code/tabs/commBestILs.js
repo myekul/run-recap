@@ -1,17 +1,5 @@
 function generateCommBestILs() {
     let HTMLContent = `<div class='container'><table>`
-    if (alt[commBestILsCategory.tabName]) {
-        HTMLContent += `<tr><td colspan=6></td>`
-        categories.forEach((category, categoryIndex) => {
-            const altTest = alt[commBestILsCategory.tabName][category.info.id]
-            if (altTest) {
-                HTMLContent += `<td class='clickable' style='color:${altTest.length > 1 ? 'white' : 'gray'};font-size:80%' onclick="openModal(altStrats(${categoryIndex}),'ALTERNATE STRATS')">${fontAwesome('plus-circle')}</td>`
-            } else {
-                HTMLContent += `<td></td>`
-            }
-        })
-        HTMLContent += `</tr>`
-    }
     HTMLContent += `<tr>`
     HTMLContent += `<td colspan=6></td>`
     categories.forEach(category => {

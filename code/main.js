@@ -127,10 +127,13 @@ function action() {
     } else {
         hide('runRecap_bar')
     }
-    if (runRecap_savFile && ['sav', 'sums', 'grid'].includes(globalTab)) runRecap_chart()
+    if (runRecap_savFile && ['sav', 'sums', 'grid'].includes(globalTab)){
+        runRecap_chart()
+    }else{
+        hide('runRecap_chart')
+    }
     if (['home'].includes(globalTab)) {
         hide('pageTitle')
-
     } else if (['sav', 'lss'].includes(globalTab)) {
         show('pageTitle')
         let HTMLContent = `<div class='font2 container' style='gap:12px;font-size:200%;padding:15px 0'>
