@@ -142,7 +142,11 @@ function modalSubmitIL() {
     })
     HTMLContent += `</table>
     <div class='container' style='height:50px'>
-        <div id='commBestILs_uploadButton' class='button cuphead grayedOut' style='margin:15px' onclick="submitIL()">Submit IL</div>
+        <div id='commBestILs_uploadButton' class="button cuphead grayedOut"
+                                style="width:120px;gap:8px;font-size:90%;margin:20px auto"
+                                onclick="submitIL()">
+                                <i class="fa fa-plus"></i>Submit IL
+                            </div>
         <div id='commBestILs_uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
     </div>
     <div class='textBlock' style='color:gray;font-size:80%;padding:10px 0'>
@@ -153,7 +157,6 @@ function modalSubmitIL() {
     <br>-Pause buffers must be less than 1s.
     <br>-Submitting ILs on behalf of other players is encouraged.
     <br>-Submissions will be manually verified by myekul.
-    <br><br>Coming soon: Pending ILs queue
     </div>`
     openModal(HTMLContent, 'COMM BEST IL SUBMISSION')
 }

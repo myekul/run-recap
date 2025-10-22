@@ -60,7 +60,6 @@
                 "url": "https://youtu.be/LNQiCkaGvgA"
             }
         ]
-        
     },
     "1.1+": {
         "therootpack": [
@@ -127,6 +126,12 @@
                 "url": "https://youtu.be/huuc7qQPy9I"
             },
             {
+                "name": "Punches, Tigers",
+                "time": 44.41,
+                "player": "Lewzr",
+                "url": "https://youtu.be/xxMWtyn_2g4"
+            },
+            {
                 "name": "Punches, Snakes",
                 "time": 44.99,
                 "player": "Lewzr",
@@ -160,9 +165,9 @@
             },
             {
                 "name": "Sneeze",
-                "time": 22.45,
-                "player": "Yuka",
-                "url": "https://youtu.be/UaZ4xqejmR4"
+                "time": "22.20",
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/xF4GGSoNOuc?si=X765NQFW-ywsMlKq&t=264"
             }
         ],
         "hildaberg": [
@@ -298,9 +303,9 @@
             },
             {
                 "name": "Waffle, Cupcake, Candy Corn",
-                "time": 32.19,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=gCCH83aDT-pXS-Rj&t=540"
+                "time": 31.66,
+                "player": "Lewzr",
+                "url": "https://youtu.be/Ev8GA77NiCQ"
             },
             {
                 "name": "Waffle, Cupcake, Gumball",
@@ -621,6 +626,12 @@
                 "time": 48.51,
                 "player": "Quincely0",
                 "url": "https://youtu.be/3NaYiHs_O3U"
+            },
+            {
+                "name": "2 Lasers, 3 Meteors",
+                "time": 49.23,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/xF4GGSoNOuc?si=vmaQ2FjFuQTvuaTN&t=863"
             }
         ],
         "rumorhoneybottoms": [
@@ -669,11 +680,17 @@
         ],
         "wernerwerman": [
             {
-                "name": "Catapult, Charge (Parries)",
+                "title": "Parries"
+            },
+            {
+                "name": "Catapult, Charge (P)",
                 "time": 34.17,
                 "rta": 34.89,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/izDrJFDhWOk"
+            },
+            {
+                "title": "Parryless"
             },
             {
                 "name": "Catapult, Charge",
@@ -781,9 +798,9 @@
             },
             {
                 "name": "Shark, Shark",
-                "time": 42.91,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/GTFKgePScBA"
+                "time": 42.38,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/drt9FU4kVLo"
             },
             {
                 "name": "Shark, Dogfish",
@@ -853,18 +870,18 @@
         ],
         "phantomexpress": [
             {
+                "name": "2 Triples, Left Pumpkin",
+                "time": 57.01,
+                "rta": 58.67,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/WYv48lZEi5o"
+            },
+            {
                 "name": "1 Triple, Left Pumpkin, Left Cart Final",
                 "time": 57.48,
                 "rta": 59.12,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/L82I_PlmAuw"
-            },
-            {
-                "name": "2 Triples, Left Pumpkin",
-                "time": 57.7,
-                "rta": 59.34,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/Fw05Vx5NOR8"
             },
             {
                 "name": "1 Triple, Left Pumpkin",
@@ -929,16 +946,16 @@
                 "title": "No Freeze"
             },
             {
+                "name": "Pinwheel Dragon",
+                "time": 45.64,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/0hlrM62-gNQ"
+            },
+            {
                 "name": "Ring Dragon (3 Quads)",
                 "time": "46.80",
                 "player": "myekul",
                 "url": "https://youtu.be/c3muDgZht_M"
-            },
-            {
-                "name": "Pinwheel Dragon",
-                "time": 47.47,
-                "player": "myekul",
-                "url": "https://youtu.be/1HxKGWSZqPA"
             },
             {
                 "name": "Clap Dragon",
@@ -948,9 +965,15 @@
             },
             {
                 "name": "Dragon Clap",
-                "time": 49.54,
+                "time": 49.03,
                 "player": "myekul",
-                "url": "https://youtu.be/W4lcHJRARJA"
+                "url": "https://youtu.be/G7MFQgavT40"
+            },
+            {
+                "name": "Spider First",
+                "time": 50.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/00lelICyxe4"
             },
             {
                 "name": "Clap Ring Clap",
@@ -996,6 +1019,12 @@
                 "time": 42.91,
                 "player": "Lewzr",
                 "url": "https://youtu.be/ZlNonqNSZ0Q"
+            },
+            {
+                "name": "Pinwheel Clap Dragon",
+                "time": 43.67,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dJ214ywBwW8"
             },
             {
                 "name": "Clap Bubbles Dragon",
@@ -1103,6 +1132,13 @@
         ],
         "phantomexpress": [
             {
+                "name": "Left Pumpkin, 2 Doubles",
+                "time": 57.88,
+                "rta": 59.54,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/nhdBoVEdlIA"
+            },
+            {
                 "name": "Right Pumpkin, Safe Phase 3",
                 "time": "1:00.59",
                 "rta": "1:02.59",
@@ -1190,7 +1226,7 @@
         "moonshinemob": [
             {
                 "name": "Lunar Eclipse, 2-cycle",
-                "time": "43.50",
+                "time": "34.50",
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/2AO5ASAtGeA"
             },
@@ -1245,6 +1281,26 @@
                 "url": "https://youtu.be/ycEX2EKm3rc"
             }
         ],
+        "thehowlingaces": [
+            {
+                "name": "Two Cycle, Laser Guess",
+                "time": 42.26,
+                "player": "myekul",
+                "url": "https://youtu.be/zO_UJUw2zV4"
+            },
+            {
+                "name": "Phase 2 Snipe",
+                "time": 42.99,
+                "player": "myekul",
+                "url": "https://youtu.be/Xvi7cDHAJb0"
+            },
+            {
+                "name": "Standard Strats",
+                "time": 43.26,
+                "player": "myekul",
+                "url": "https://youtu.be/88w45xtVt5I?si=0sW4ZkzrQSyg-dVB&t=30"
+            }
+        ],
         "estherwinchester": [
             {
                 "name": "1 Nuke",
@@ -1261,7 +1317,39 @@
                 "url": "https://youtu.be/zT6kz83BEO4"
             }
         ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 37.62,
+                "player": "myekul",
+                "url": "https://youtu.be/UH473RCWW8g"
+            }
+        ],
         "chefsaltbaker": [
+            {
+                "title": "5+3 Shakers"
+            },
+            {
+                "name": "2 Parries",
+                "time": 51.25,
+                "player": "myekul",
+                "url": "https://youtu.be/YX-NBn8AEbs"
+            },
+            {
+                "name": "1 Parry",
+                "time": 51.41,
+                "player": "Musically_dECLINED",
+                "url": "https://youtu.be/q1p4E3J7rKg"
+            },
+            {
+                "title": "4+3 Shakers"
+            },
+            {
+                "name": "",
+                "time": 50.42,
+                "player": "myekul",
+                "url": "https://youtu.be/BQ_izsT3P5c"
+            },
             {
                 "name": "Strawberries",
                 "time": 53.26,
@@ -1273,7 +1361,7 @@
     "DLC+Base": {
         "estherwinchester": [
             {
-                "name": "Luigis",
+                "name": "Luigi Swaps",
                 "time": "53.XX",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/CpZI5-umKgg"

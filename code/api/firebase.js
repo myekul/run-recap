@@ -100,4 +100,18 @@ window.firebaseUtils = {
                 console.error(`Error writing document ${i}: `, error);
             });
     },
+    firestoreReadCommBestILs: async () => {
+        try {
+            const collectionRef = collection(db, 'commBestILs');
+            const q = query(collectionRef);
+            const querySnapshot = await getDocs(q);
+            const results = [];
+            querySnapshot.forEach(docSnap => {
+                results.push({ id: docSnap.id, ...docSnap.data() });
+            });
+            document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results)
+        } catch (error) {
+            console.error('Error reading runRecap documents:', error)
+        }
+    },
 }
