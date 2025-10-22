@@ -1,12 +1,12 @@
 function generateGrid() {
     let HTMLContent = `<div class='container' style='overflow-x:auto'>`
     HTMLContent += `<table class='shadow'>`
-    HTMLContent += `<tr><td colspan=6></td>`
+    HTMLContent += `<tr><td colspan=4></td>`
     categories.forEach(category => {
         HTMLContent += `<td colspan=2 class='${category.info.id}'>${getImage(category.info.id)}</td>`
     })
     HTMLContent += `</tr>`
-    HTMLContent += `<tr><th colspan=6 style='text-align:right'>&Delta;</th>`
+    HTMLContent += `<tr><th colspan=4 style='text-align:right'>&Delta;</th>`
     categories.forEach((category, categoryIndex) => {
         HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(getComparisonTime(categoryIndex))}</th>`
     })
@@ -26,19 +26,19 @@ function generateGrid() {
         HTMLContent += `</tr>`
     })
     if (commBestILsCategory.topRuns.length > 3) {
-        HTMLContent += `<tr><th colspan=6 style='text-align:right'>&Delta;</th>`
+        HTMLContent += `<tr><th colspan=4 style='text-align:right'>&Delta;</th>`
         categories.forEach((category, categoryIndex) => {
             HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(getComparisonTime(categoryIndex))}</th>`
         })
         HTMLContent += `</tr>`
-        HTMLContent += `<tr><td colspan=6></td>`
+        HTMLContent += `<tr><td colspan=4></td>`
         categories.forEach(category => {
             HTMLContent += `<td colspan=2 class='${category.info.id}'>${getImage(category.info.id)}</td>`
         })
         HTMLContent += `</tr>`
     }
     if (runRecap_savFile) {
-        HTMLContent += `<tr><th colspan=6 style='text-align:right'>Your run</th>`
+        HTMLContent += `<tr><th colspan=4 style='text-align:right'>Your run</th>`
         categories.forEach((category, categoryIndex) => {
             let ILtime = getCupheadLevel(categoryIndex)?.bestTime
             if (ILtime == nullTime) ILtime = NaN

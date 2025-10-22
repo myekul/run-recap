@@ -95,6 +95,7 @@ window.firebaseUtils = {
             .then(() => {
                 console.log(`Comm Best IL submitted`);
                 uploadCheck.innerHTML = fontAwesome('check')
+                if (altStratIndex == -1) window.firebaseUtils.firestoreReadCommBestILs()
             })
             .catch((error) => {
                 console.error(`Error writing document ${i}: `, error);

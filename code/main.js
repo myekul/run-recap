@@ -127,9 +127,9 @@ function action() {
     } else {
         hide('runRecap_bar')
     }
-    if (runRecap_savFile && ['sav', 'sums', 'grid'].includes(globalTab)){
+    if (runRecap_savFile && ['sav', 'sums', 'grid'].includes(globalTab)) {
         runRecap_chart()
-    }else{
+    } else {
         hide('runRecap_chart')
     }
     if (['home'].includes(globalTab)) {
@@ -163,11 +163,11 @@ function action() {
     } else {
         hide('commBestSubmit')
     }
-    if (globalTab == 'commBestILs') {
-        show('metaDiv')
-    } else {
-        hide('metaDiv')
-    }
+    // if (globalTab == 'commBestILs') {
+    //     show('metaDiv')
+    // } else {
+    //     hide('metaDiv')
+    // }
     if (globalTab == 'home') {
         show('runRecapTab')
         hide('content')
@@ -190,7 +190,7 @@ document.querySelectorAll('select').forEach(elem => {
 function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     commBestILsCategory = commBestILs[categoryName]
     updateLoadouts(categoryName)
-    buttonClick('commBestILs_' + commBestILsCategory.className, 'commBestILsVersionTabs', 'selected')
+    buttonClick(commBestILsCategory.className + 'Button', 'categoryTabs', 'selected')
     players = []
     playerNames = new Set()
     changeComparison('Top 3 Average', true)

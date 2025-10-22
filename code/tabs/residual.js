@@ -30,7 +30,7 @@ function generateResidual() {
     HTMLContent += `<div>`
     HTMLContent += `<table>
     <tr>
-    <th colspan=6></th>
+    <th colspan=4></th>
     <th style='color:gray'>IGT Sum</th>
     <th style='padding:0 10px'>Residual</th>
     </tr>`

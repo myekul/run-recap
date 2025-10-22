@@ -15,7 +15,7 @@ function generateSums() {
     })
     let HTMLContent = ''
     HTMLContent += `<div class='container'><table>`
-    HTMLContent += `<tr style='color:gray'><td colspan=6></td>`
+    HTMLContent += `<tr style='color:gray'><td colspan=4></td>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
             HTMLContent += `<th colspan=3 class='${isle.className}'>${isle.name}</th>`
@@ -49,7 +49,7 @@ function generateSums() {
         <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
         </tr>`
     })
-    HTMLContent += `<tr style='color:gray'><th colspan=6 style='text-align:right'>&Delta;</th>`
+    HTMLContent += `<tr style='color:gray'><th colspan=4 style='text-align:right'>&Delta;</th>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
             HTMLContent += `<th colspan=3>${secondsToHMS(isle.comparisonSum)}</th>`
@@ -71,7 +71,7 @@ function generateSums() {
                 isle.sum += bestTime != nullTime ? Math.floor(bestTime) : 0
             })
         })
-        HTMLContent += `<tr><th colspan=6 style='text-align:right'>Your run</th>`
+        HTMLContent += `<tr><th colspan=4 style='text-align:right'>Your run</th>`
         isles.forEach(isle => {
             sum += isle.sum
             HTMLContent += getIsleSum(isle)

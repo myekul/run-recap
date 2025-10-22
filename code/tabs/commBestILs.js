@@ -1,13 +1,13 @@
 function generateCommBestILs() {
     let HTMLContent = `<div class='container'><table>`
     HTMLContent += `<tr>`
-    HTMLContent += `<td colspan=6></td>`
+    HTMLContent += `<td colspan=4></td>`
     categories.forEach(category => {
         HTMLContent += `<td class='${category.info.id}' style='width:36px'>${getImage(category.info.id)}</td>`
     })
     HTMLContent += `</tr>`
     HTMLContent += `<tr>`
-    HTMLContent += `<td colspan=6></td>`
+    HTMLContent += `<td colspan=4></td>`
     categories.forEach(category => {
         HTMLContent += `<th class='cuphead'>${secondsToHMS(category.runs[0].score)}</th>`
     })

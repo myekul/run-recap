@@ -49,10 +49,12 @@ function getTrophy(place) {
     return ''
 }
 function getPlayerDisplay(player, exception) {
-    let HTMLContent = ''
-    HTMLContent += ['commBestSplits'].includes(globalTab) || exception ? '' : `<td>${getPlayerFlag(player, 12)}</td>`
-    HTMLContent += `<td><div class='container'>${getPlayerIcon(player, 21)}</div></td>`
-    HTMLContent += `<td style='text-align:left;font-weight: bold;font-size:80%;padding-right:5px'>${getPlayerName(player)}</td>`
+    let HTMLContent = `<td style='text-align:left;font-weight: bold;font-size:80%;padding:0 3px'>
+    <div class='container' style='justify-content:left;gap:4px'>`
+    HTMLContent += ['commBestSplits'].includes(globalTab) || exception ? '' : `<div style='width:18px'>${getPlayerFlag(player, 12)}</div>`
+    HTMLContent += `${getPlayerIcon(player, 21)}`
+    HTMLContent += `${getPlayerName(player)}`
+    HTMLContent += `</div></td>`
     return HTMLContent
 }
 function bigPlayerDisplay(player) {

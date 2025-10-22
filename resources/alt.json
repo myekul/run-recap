@@ -46,10 +46,24 @@
         ],
         "drkahlsrobot": [
             {
+                "name": "",
+                "time": 12.63,
+                "player": "Fintan0",
+                "url": "https://youtu.be/BvVKWxC9Ctk"
+            },
+            {
                 "name": "No Luigi Swaps",
                 "time": 13.85,
                 "player": "Fintan0",
                 "url": "https://youtu.be/dTRHOJZYp0s"
+            }
+        ],
+        "calamaria": [
+            {
+                "name": "",
+                "time": 36.73,
+                "player": "Fintan0",
+                "url": "https://youtu.be/w529zPn3L2M"
             }
         ],
         "phantomexpress": [

@@ -32,13 +32,13 @@
             <div class="sticky">
                 <div id="headerRow" class="container">
                     <div class="font2" style="margin-right:8px">Comm Best</div>
-                    <div id='commBestILsButton' onclick="showTab('commBestILs')" class="button"
-                        style="width:60px;gap:6px;font-size:85%;background-color: limegreen">
-                        <i class="fa fa-trophy"></i>ILs
-                    </div>
                     <div id='altStratsButton' onclick="altStratIndex=-1;showTab('altStrats')" class="button"
                         style="width:60px;gap:6px;font-size:85%;background-color: limegreen">
-                        <i class="fa fa-database"></i>Alt
+                        <i class="fa fa-database"></i>ILs
+                    </div>
+                    <div id='commBestILsButton' onclick="altStratIndex=-1;showTab('commBestILs')" class="button"
+                        style="width:30px;gap:6px;font-size:85%;background-color: limegreen">
+                        <i class="fa fa-trophy"></i>
                     </div>
                     <div class="dot"></div>
                     <div id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button"
@@ -64,17 +64,16 @@
                 </div>
                 <div id="progress"></div>
                 <div id="tabsDiv"></div>
-                <div id="commBestILsSection" class='container'
-                    style="position:absolute;left:20px;top:55px;align-items: flex-start;">
-                    <div id="commBestILsVersionTabs">
-                        <div id='commBestILs_onePointOne' onclick="getCommBestILs('1.1+')" class="button onePointOne">
+                <div class='container' style="position:absolute;left:20px;top:55px;align-items: flex-start;">
+                    <div id="categoryTabs">
+                        <div id='onePointOneButton' onclick="getCommBestILs('1.1+')" class="button onePointOne">
                             1.1+
                         </div>
-                        <div id='commBestILs_legacy' onclick="getCommBestILs('Legacy')" class="button legacy">Legacy
+                        <div id='legacyButton' onclick="getCommBestILs('Legacy')" class="button legacy">Legacy
                         </div>
-                        <div id='commBestILs_nmg' onclick="getCommBestILs('NMG')" class="button nmg">NMG</div>
-                        <div id='commBestILs_dlc' onclick="getCommBestILs('DLC')" class="button dlc">DLC</div>
-                        <div id='commBestILs_dlcbase' onclick="getCommBestILs('DLC+Base')" class="button dlcbase">
+                        <div id='nmgButton' onclick="getCommBestILs('NMG')" class="button nmg">NMG</div>
+                        <div id='dlcButton' onclick="getCommBestILs('DLC')" class="button dlc">DLC</div>
+                        <div id='dlcbaseButton' onclick="getCommBestILs('DLC+Base')" class="button dlcbase">
                             DLC+Base
                         </div>
                     </div>
@@ -99,9 +98,9 @@
                         </div>
                         <div id='metaDiv' class='container' style="display:none;margin-top:5px">
                             <input id="checkbox_meta" onchange="getCommBestILs()" type="checkbox" checked>Current meta
-                            <!-- <div class="grow" style="margin-left:8px" onclick="metaInfo()">
+                            <div class="grow" style="margin-left:8px" onclick="metaInfo()">
                                 <i class="fa fa-question-circle"></i>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                     <div id='runRecap_details' class='container'

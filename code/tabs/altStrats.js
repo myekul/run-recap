@@ -5,7 +5,7 @@ function generateAltStrats() {
         assignIsles()
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
-                HTMLContent += `<table><tr>`
+                HTMLContent += `<table><tr class='background2'>`
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
                     let numStrats = 0
@@ -119,11 +119,11 @@ function generateAltStrats() {
             </table>`
             }
             HTMLContent += `</div>`
-            HTMLContent += `<div><div class='textBlock' style='width:450px'>
-            Welcome to the ${myekulColor('Alternate Strats')} database!
+            HTMLContent += `<div><div class='textBlock' style='width:460px'>
+            Welcome to the ${myekulColor('Comm Best ILs')} database!
             This is a comprehensive collection of ILs for EVERY notable pattern / strat variation on EVERY boss in EVERY main Any% category.
             <br><br>
-            The alt strats database serves as a resource for runners to study the best times and strategies for all possible scenarios.
+            The ${myekulColor('Alternate Strats')} database serves as a resource for runners to study the best times and strategies for all possible scenarios.
             Got an idea for a new alt strat?
             ${myekulColor('Submissions are always open!')}
             </div>
@@ -240,16 +240,18 @@ function pendingSubmissions(submissions = new Array(10).fill(null)) {
     HTMLContent += `<tr><td colspan=6 class='font2 gray' style='font-size:120%;padding:5px'>Pending Submissions</td></tr>`
     for (let i = 0; i < 7; i++) {
         const submission = submissions[i]
-        HTMLContent += `<tr class='${getRowColor(i)}'>`
+        HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')"` : ''}>`
         if (submission) {
-            const strat = submission.altstrat == 'other' ? submission.other : submission.altstrat
+            let strat
+            if (submission.altstrat != 'none') {
+                submission.altstrat == 'other' ? submission.other : submission.altstrat
+            }
             HTMLContent += `
-            <td>${submission.category}</td>
-            ${getPlayerDisplay(players.find(player => player.name == submission.player), true)}
+            <td class='${commBestILs[submission.category].className}'>${submission.category}</td>
             <td class='${submission.boss}'><div class='container'>${getImage(submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
-            <td>${strat}</td>
-                `
+            <td>${strat || ''}</td>
+            ${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}`
         } else {
             HTMLContent += `<td colspan=6>&nbsp;</td>`
         }
