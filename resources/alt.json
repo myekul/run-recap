@@ -134,6 +134,12 @@
                 "url": "https://youtu.be/68pJU4KHDxA"
             },
             {
+                "name": "7 Flies Regular Skip, Bulls",
+                "time": "42.53",
+                "player": "Taylz",
+                "url": "https://youtu.be/kxmyR1Mhh2k"
+            },
+            {
                 "name": "Punches, Bulls",
                 "time": "43.80",
                 "player": "Lewzr",
@@ -622,10 +628,64 @@
         ],
         "beppitheclown": [
             {
+                "title": "3-cycle"
+            },
+            {
                 "name": "",
                 "time": 38.26,
                 "player": "Lewzr",
                 "url": "https://youtu.be/diUqcbv3y1g"
+            },
+            {
+                "title": "2-cycle"
+            },
+            {
+                "name": "5B, 3B++",
+                "time": 39.32,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=3fqG6b9228_6qE3y"
+            },
+            {
+                "name": "3B++, 5B",
+                "time": 39.08,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=PPGs-fzlCp33jQxr&t=42"
+            },
+            {
+                "name": "5B, 4B+",
+                "time": 38.89,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=GREtKpoY-VmIi9yi&t=84"
+            },
+            {
+                "name": "4B+, 2B+",
+                "time": 38.51,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=mtgrbnuHm5a1zaVr&t=126"
+            },
+            {
+                "name": "4B+, 5B+",
+                "time": 39.64,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=kWT0uYwMJxmFXfJI&t=209"
+            },
+            {
+                "name": "5B+, 3B",
+                "time": 39.19,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=kS8ZywhmYzhW6wW7&t=252"
+            },
+            {
+                "name": "3B, 2B+",
+                "time": 36.88,
+                "player": "Lewzr",
+                "url": "https://youtu.be/_cbtoL2mzs8"
+            },
+            {
+                "name": "2B+, 5B",
+                "time": 38.79,
+                "player": "Lewzr",
+                "url": "https://youtu.be/dRBf65r1Nq0?si=u-bdLbI3SMFSknqz&t=168"
             }
         ],
         "grimmatchstick": [
@@ -726,6 +786,9 @@
             }
         ],
         "captainbrineybeard": [
+            {
+                "title": "3-cycle"
+            },
             {
                 "name": "2-Gun, Gun",
                 "time": 36.71,
@@ -845,6 +908,21 @@
                 "time": 45.79,
                 "player": "ClipBoardGuy",
                 "url": "https://www.twitch.tv/videos/2356808319"
+            },
+            {
+                "title": "2-cycle"
+            },
+            {
+                "name": "4-Gun",
+                "time": 36.45,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/41RoQj0EIMQ"
+            },
+            {
+                "name": "Dogfish",
+                "time": 38.50,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/MIrq29m1L4M"
             }
         ],
         "calamaria": [
@@ -1017,7 +1095,7 @@
                 "url": "https://youtu.be/SeaoWgXfEbA"
             },
             {
-                "name": "Pinwheel Dragon",
+                "name": "Pinwheel Dragon (4 Quads)",
                 "time": 45.95,
                 "player": "Lewzr",
                 "url": "https://youtu.be/uYw2UUCSgZ0"
@@ -1108,8 +1186,8 @@
         "ribbyandcroaks": [
             {
                 "name": "Punches Bulls",
-                "time": 47.40,
-                "player": "Jason2890",
+                "time": "47.40",
+                "player": "MarkinSws",
                 "url": "https://youtu.be/mSnNzC5SRtk"
             },
             {
@@ -1126,9 +1204,29 @@
                 "rta": 27.36,
                 "player": "Yuka",
                 "url": "https://youtu.be/qhAG8U9AYNA"
+            },
+            {
+                "name": "Doubles",
+                "time": 27.50,
+                "player": "Quincely0",
+                "url": "https://youtu.be/PnlKwelRnHU"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "Doubles",
+                "time": 34.99,
+                "player": "Quincely0",
+                "url": "https://youtu.be/HSCJaqXeZVc"
             }
         ],
         "baronessvonbonbon": [
+            {
+                "name": "Waffle, Candy Corn, Cupcake",
+                "time": 32.33,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/UhQv8RiVBvA"
+            },
             {
                 "name": "Waffle, Cupcake, Gumball",
                 "time": 34.68,
@@ -1138,10 +1236,25 @@
         ],
         "beppitheclown": [
             {
+                "name": "Parries",
+                "time": 57.81,
+                "rta": "58.37",
+                "player": "Quincely0",
+                "url": "https://youtu.be/DqzELZLfmho"
+            },
+            {
                 "name": "Parryless",
                 "time": 59.87,
                 "player": "myekul",
                 "url": "https://youtu.be/50AoT_hFBE0?si=cl6oQ5HBLYYadLEH&t=29s"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "Doubles",
+                "time": 43.78,
+                "player": "Quincely0",
+                "url": "https://youtu.be/4EwmIvZSv24"
             }
         ],
         "phantomexpress": [
@@ -1167,6 +1280,12 @@
                 "rta": "1:55.99",
                 "player": "Quincely0",
                 "url": "https://youtu.be/5dRO8Ye9PRE"
+            },
+            {
+                "name": "3-5-7, Doubles",
+                "time": "1:51",
+                "player": "Quincely0",
+                "url": "https://youtu.be/P8FTg7l0wok"
             },
             {
                 "name": "3-4-8",
@@ -1297,7 +1416,7 @@
         ],
         "thehowlingaces": [
             {
-                "name": "Two Cycle, Laser Guess",
+                "name": "One Cycle, Laser Guess",
                 "time": 42.26,
                 "player": "myekul",
                 "url": "https://youtu.be/zO_UJUw2zV4"
@@ -1309,26 +1428,10 @@
                 "url": "https://youtu.be/Xvi7cDHAJb0"
             },
             {
-                "name": "Standard Strats",
+                "name": "Standard Fight",
                 "time": 43.26,
                 "player": "myekul",
                 "url": "https://youtu.be/88w45xtVt5I?si=0sW4ZkzrQSyg-dVB&t=30"
-            }
-        ],
-        "estherwinchester": [
-            {
-                "name": "1 Nuke",
-                "time": 59.34,
-                "rta": "1:01.71",
-                "player": "Quincely0",
-                "url": "https://youtu.be/mFQMrdYSZyA"
-            },
-            {
-                "name": "3 Nuke",
-                "time": 58.98,
-                "rta": "1:03.18",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/zT6kz83BEO4"
             }
         ],
         "moonshinemob": [
@@ -1387,6 +1490,16 @@
                 "time": 43.83,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/hNf3fEyQHak?si=CLqp1ytnQvgTqVU9"
+            }
+        ]
+    },
+    "DLC+Base C/S": {
+        "phantomexpress": [
+            {
+                "name": "One-cycle",
+                "time": 59.67,
+                "player": "myekul",
+                "url": "https://youtu.be/Sr_aSrkt9Kw"
             }
         ]
     }

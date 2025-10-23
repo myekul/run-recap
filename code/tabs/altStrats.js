@@ -47,7 +47,7 @@ function generateAltStrats() {
                 count
             }));
             countArray.sort((a, b) => b.count - a.count)
-            HTMLContent += `<div class='container' style='margin-top:20px;gap:30px'>`
+            HTMLContent += `<div class='container' style='margin-top:20px;gap:30px;align-items:flex-start'>`
             HTMLContent += `
             <div>
             <table>
@@ -63,7 +63,19 @@ function generateAltStrats() {
                 const myekulIdeas = [
                     {
                         boss: 'ribbyandcroaks',
-                        name: '7 Flies Regular Skip'
+                        name: '6 Flies Regular Skip, Bulls'
+                    },
+                    {
+                        boss: 'ribbyandcroaks',
+                        name: '6 Flies Regular Skip, Tigers'
+                    },
+                    {
+                        boss: 'ribbyandcroaks',
+                        name: '7 Flies Regular Skip, Tigers'
+                    },
+                    {
+                        boss: 'ribbyandcroaks',
+                        name: '7 Flies Regular Skip, Snakes'
                     },
                     {
                         boss: 'hildaberg',
@@ -123,7 +135,7 @@ function generateAltStrats() {
             Welcome to the ${myekulColor('Comm Best ILs')} database!
             This is a comprehensive collection of ILs for EVERY notable pattern / strat variation on EVERY boss in EVERY main Any% category.
             <br><br>
-            The ${myekulColor('Alternate Strats')} database serves as a resource for runners to study the best times and strategies for all possible scenarios.
+            The ${myekulColor('Alternate Strats')} collection serves as a resource for runners to study the best times and strategies for all possible scenarios.
             Got an idea for a new alt strat?
             ${myekulColor('Submissions are always open!')}
             </div>
@@ -134,11 +146,12 @@ function generateAltStrats() {
                             </div>
             <div id='commBest_queue'>${pendingSubmissions()}</div>
             </div>`
-            if (commBestILsCategory.tabName == '1.1+') {
-                HTMLContent += `<table>`
-                HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
-                categories.forEach((category, categoryIndex) => {
-                    const altGroup = alt[commBestILsCategory.tabName][category.info.id]
+            // Best Times
+            HTMLContent += `<table>`
+            HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
+            categories.forEach((category, categoryIndex) => {
+                const altGroup = alt[commBestILsCategory.tabName][category.info.id]
+                if (altGroup) {
                     let fastest = altGroup[0]
                     altGroup.forEach(strat => {
                         if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
@@ -148,13 +161,19 @@ function generateAltStrats() {
                     HTMLContent += `
                     <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
                     <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}'>${fastest.time}</td>
+                    <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
                     ${getPlayerDisplay(players.find(player => player.name == fastest.player), true)}
                     </tr>`
-                })
-                HTMLContent += `</table>`
-            }
-
+                } else {
+                    HTMLContent += `
+                    <tr class='${getRowColor(categoryIndex)}'>
+                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
+                    <td class='${category.info.id}'></td>
+                    <td></td>
+                    </tr>`
+                }
+            })
+            HTMLContent += `</table>`
             HTMLContent += `</div>`
         } else {
             HTMLContent += alt[commBestILsCategory.tabName][categories[altStratIndex].info.id] ? altStrats(altStratIndex) : `<div class='container' style='margin-top:20px'>No alt strats...</div>`
@@ -177,7 +196,7 @@ function altStrats(categoryIndex) {
     HTMLContent += `
     <div class='container'><table style='margin:10px'>
     <tr><td colspan=5><div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div></td></tr>`
-    const baronessCheck = category.info.id == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+'
+    const baronessCheck = category.info.id == 'baronessvonbonbon'
     const devilCheck = category.info.id == 'thedevil' && commBestILsCategory.name == '1.1+'
     const RTAcheck = alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.rta)
     if (!alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.title)) {
@@ -236,21 +255,22 @@ function altStrats(categoryIndex) {
     return HTMLContent
 }
 function pendingSubmissions(submissions = new Array(10).fill(null)) {
-    let HTMLContent = `<div class='container'><table style='width:400px;margin-top:20px'>`
+    let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
     HTMLContent += `<tr><td colspan=6 class='font2 gray' style='font-size:120%;padding:5px'>Pending Submissions</td></tr>`
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 10; i++) {
         const submission = submissions[i]
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')"` : ''}>`
         if (submission) {
             let strat
+            console.log(submission)
             if (submission.altstrat != 'none') {
-                submission.altstrat == 'other' ? submission.other : submission.altstrat
+                strat = submission.altstrat == 'other' ? submission.other : submission.altstrat
             }
             HTMLContent += `
             <td class='${commBestILs[submission.category].className}'>${submission.category}</td>
             <td class='${submission.boss}'><div class='container'>${getImage(submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
-            <td>${strat || ''}</td>
+            <td style='text-align:left'>${strat || ''}</td>
             ${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}`
         } else {
             HTMLContent += `<td colspan=6>&nbsp;</td>`

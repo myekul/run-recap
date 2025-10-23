@@ -163,11 +163,6 @@ function action() {
     } else {
         hide('commBestSubmit')
     }
-    // if (globalTab == 'commBestILs') {
-    //     show('metaDiv')
-    // } else {
-    //     hide('metaDiv')
-    // }
     if (globalTab == 'home') {
         show('runRecapTab')
         hide('content')

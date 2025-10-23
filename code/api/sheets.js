@@ -53,28 +53,15 @@ function loadMyekul() {
     players.forEach(player => {
         player.runs = new Array(categories.length).fill(0)
     })
-    let ILindex = 0
-    let lastIndex = 0
-    values[0].values.forEach((value, valueIndex) => {
-        if (value.userEnteredValue?.formulaValue?.includes('=INDEX')) ILindex = valueIndex
-        lastIndex = valueIndex
-    })
-    if (!ILindex) ILindex = lastIndex + 1
-    const meta = new Array(categories.length).fill(true)
-    categories.forEach((category, categoryIndex) => {
-        if (values[categoryIndex].values[ILindex + 1]) meta[categoryIndex] = false
-    })
     const numRuns = commBestILsCategory.topRuns.length
-    const checkbox_meta = document.getElementById('checkbox_meta').checked
     categories.forEach((category, categoryIndex) => {
-        const metaCheck = !checkbox_meta && !meta[categoryIndex]
         category.difficulty = 'regular'
         if (values[categoryIndex]) {
             if (values[categoryIndex].values) {
                 if (values[categoryIndex].values[0]) {
-                    const rawTime = values[categoryIndex].values[metaCheck ? ILindex + 1 : 0].userEnteredValue?.numberValue
+                    const rawTime = values[categoryIndex].values[0].userEnteredValue?.numberValue
                     const time = convertToSeconds(secondsToHMS(Math.round(rawTime * 24 * 60)))
-                    const runs = metaCheck ? values[categoryIndex].values.slice(ILindex + 2) : values[categoryIndex].values.slice(1, ILindex)
+                    const runs = values[categoryIndex].values.slice(1)
                     runs.forEach(column => {
                         if (column.userEnteredValue) {
                             let playerName = column.userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]
