@@ -20,6 +20,14 @@
                 "url": "https://youtu.be/ZPR2PWzL9gI"
             }
         ],
+        "ribbyandcroaks": [
+            {
+                "name": "7 Flies Super Skip",
+                "time": 33.23,
+                "player": "Yuka",
+                "url": "https://youtu.be/xB_6_lNowd0"
+            }
+        ],
         "goopylegrande": [
             {
                 "name": "",
@@ -36,12 +44,60 @@
                 "url": "https://youtu.be/sZbSs7PGUMc"
             }
         ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 21.96,
+                "player": "Yuka",
+                "url": "https://youtu.be/PYMSFVo4CvQ?si=8MffcgOzBU6qQ-BN&t=33"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Waffle, Candy Corn, Cupcake",
+                "time": 25.33,
+                "player": "Yuka",
+                "url": "https://youtu.be/_Syd5_MMP00"
+            }
+        ],
         "wallywarbles": [
             {
                 "name": "",
                 "time": 34.93,
                 "player": "Yuka",
                 "url": "https://youtu.be/7SVMkg8D43A"
+            }
+        ],
+        "djimmithegreat": [
+            {
+                "name": "",
+                "time": 48.83,
+                "player": "Fintan0",
+                "url": "https://youtu.be/mVG_Z6znivE"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": 27.84,
+                "player": "Yuka",
+                "url": "https://youtu.be/LWPXjnXrT98"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": 29.99,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/mEJMFlwY1Wo"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "",
+                "time": 27.81,
+                "player": "Yuka",
+                "url": "https://youtu.be/n3-8ElQV7m8"
             }
         ],
         "drkahlsrobot": [
@@ -58,6 +114,30 @@
                 "url": "https://youtu.be/dTRHOJZYp0s"
             }
         ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 34.68,
+                "player": "Yuka",
+                "url": "https://youtu.be/APbvKumxndo?si=ojuhgnFdjsJAADet&t=42"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "",
+                "time": 27.15,
+                "player": "Yuka",
+                "url": "https://youtu.be/Z0npuy1gYJE"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "",
+                "time": 26.45,
+                "player": "Yuka",
+                "url": "https://youtu.be/I8mkWoEROm4"
+            }
+        ],
         "calamaria": [
             {
                 "name": "",
@@ -72,6 +152,76 @@
                 "time": 51.25,
                 "player": "Yuka",
                 "url": "https://youtu.be/LNQiCkaGvgA"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "2-4-9",
+                "time": "1:26.16",
+                "player": "Yuka",
+                "url": "https://youtu.be/b_QhqaYQqdA?si=DpUJGL89VdPwgQ4y&t=1330"
+            }
+        ],
+        "thedevil": [
+            {
+                "title": "Freeze"
+            },
+            {
+                "name": "Dragon R",
+                "time": 30.97,
+                "player": "Yuka",
+                "url": "https://youtu.be/BM4PxSUpz48"
+            },
+            {
+                "name": "Clap Dragon L",
+                "time": 33.52,
+                "player": "Yuka",
+                "url": "https://youtu.be/vpDIXkZrJQw"
+            },
+            {
+                "name": "Dragon R Clap",
+                "time": 35.11,
+                "player": "Yuka",
+                "url": "https://youtu.be/h3Bv13EZFVY"
+            },
+            {
+                "name": "Clap Spider",
+                "time": 37.25,
+                "player": "Yuka",
+                "url": "https://youtu.be/Nj3V4xIMN9s"
+            },
+            {
+                "title": "Devil's Kiss"
+            },
+            {
+                "name": "Ring Dragon R",
+                "time": 26.54,
+                "player": "Yuka",
+                "url": "https://youtu.be/YmRmhdDfb9s"
+            },
+            {
+                "name": "Clap Dragon R",
+                "time": 27.85,
+                "player": "Yuka",
+                "url": "https://youtu.be/urC70JVICcQ?si=G_R2K8lAZuv2DEAd&t=14"
+            },
+            {
+                "name": "Bubbles Spider",
+                "time": 28.88,
+                "player": "Yuka",
+                "url": "https://youtu.be/SH90DKta1qw"
+            },
+            {
+                "name": "Clap Spider",
+                "time": 31.61,
+                "player": "Yuka",
+                "url": "https://youtu.be/GnlyfM6EEdY"
+            },
+            {
+                "name": "Clap Ring Dragon R",
+                "time": 31.79,
+                "player": "Yuka",
+                "url": "https://youtu.be/MBF6Qtq0UBU"
             }
         ]
     },
