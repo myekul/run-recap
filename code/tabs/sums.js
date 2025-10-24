@@ -34,7 +34,7 @@ function generateSums() {
         isles.forEach(isle => {
             isle.runRecapCategories.forEach(categoryIndex => {
                 const bestTime = run[categoryIndex]
-                isle.sum += bestTime != nullTime ? Math.floor(bestTime) : 0
+                isle.sum += bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
             })
         })
         HTMLContent += `<tr class='hover ${getRowColor(index)}'>`
@@ -43,16 +43,16 @@ function generateSums() {
             sum += isle.sum
             HTMLContent += getIsleSum(isle, index, isleIndex)
         })
-        const delta = sum - comparisonSum
+        const delta = Math.floor(sum - comparisonSum)
         HTMLContent += `
-        <td>${secondsToHMS(sum)}</td>
+        <td>${secondsToHMS(sum, decimalsCriteria())}</td>
         <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
         </tr>`
     })
     HTMLContent += `<tr style='color:gray'><th colspan=4 style='text-align:right'>&Delta;</th>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
-            HTMLContent += `<th colspan=3>${secondsToHMS(isle.comparisonSum)}</th>`
+            HTMLContent += `<th colspan=3>${secondsToHMS(isle.comparisonSum, decimalsCriteria())}</th>`
             HTMLContent += `<td></td>`
         }
     })
@@ -68,7 +68,7 @@ function generateSums() {
         isles.forEach(isle => {
             isle.runRecapCategories.forEach(categoryIndex => {
                 const bestTime = getCupheadLevel(categoryIndex).bestTime
-                isle.sum += bestTime != nullTime ? Math.floor(bestTime) : 0
+                isle.sum += bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
             })
         })
         HTMLContent += `<tr><th colspan=4 style='text-align:right'>Your run</th>`
@@ -77,9 +77,9 @@ function generateSums() {
             HTMLContent += getIsleSum(isle)
         })
         if (getCupheadLevel(categories.length - 1).completed) {
-            const delta = sum - comparisonSum
+            const delta = Math.floor(sum - comparisonSum)
             HTMLContent += `
-            <td>${secondsToHMS(sum)}</td>
+            <td>${secondsToHMS(sum, decimalsCriteria())}</td>
             <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
         }
         HTMLContent += `</tr>`
@@ -90,10 +90,10 @@ function generateSums() {
 function getIsleSum(isle, index, isleIndex) {
     let HTMLContent = ''
     if (isle.sum) {
-        const delta = isle.sum - isle.comparisonSum
+        const delta = Math.floor(isle.sum - isle.comparisonSum)
         const grade = runRecapGrade(delta)
         HTMLContent += `<td class='${grade.className}' style='text-align:left'>${savComparison != 'None' ? grade.grade : ''}</td>`
-        HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum)}</td>`
+        HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, decimalsCriteria())}</td>`
         HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
         HTMLContent += commBestILsCategory.name == '1.1+' && isleIndex < 3 ? `<td style='color:gray;font-size:70%;padding:0 3px'>${commBestILsCategory.splits[index][isleIndex]}</td>` : `<td style='width:20px'></td>`
     }

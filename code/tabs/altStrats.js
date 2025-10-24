@@ -197,7 +197,7 @@ function altStrats(categoryIndex) {
     <div class='container'><table style='margin:10px'>
     <tr><td colspan=5><div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div></td></tr>`
     const baronessCheck = category.info.id == 'baronessvonbonbon'
-    const devilCheck = category.info.id == 'thedevil' && commBestILsCategory.name == '1.1+'
+    const devilCheck = category.info.id == 'thedevil'
     const RTAcheck = alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.rta)
     if (!alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.title)) {
         HTMLContent += `<tr>

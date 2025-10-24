@@ -6,7 +6,6 @@ function generateResidual() {
     you get your ${myekulColor('Residual')} timeloss.
     Your ${myekulColor('Residual')} is the time spent everywhere outside of boss fights.
     This includes:
-    
     <div class='container' style='gap:20px'>
         <div>
             <br>-${myekulColor("Run 'n Guns")}*
@@ -31,8 +30,8 @@ function generateResidual() {
     HTMLContent += `<table>
     <tr>
     <th colspan=4></th>
-    <th style='color:gray'>IGT Sum</th>
-    <th style='padding:0 10px'>Residual</th>
+    <th style='color:gray;padding:0 10px'>IGT Sum</th>
+    <th class='gray' style='padding:0 10px'>Residual</th>
     </tr>`
     commBestILsCategory.topRuns.forEach((run, index) => {
         let sum = 0
@@ -42,23 +41,35 @@ function generateResidual() {
         HTMLContent += `
         <tr class='${getRowColor(index)}'>
         ${bigPlayerDisplay(players[index])}
-        <td style='color:gray;font-size:80%'>${secondsToHMS(sum)}</td>
-        <td>${secondsToHMS(globalCategory.runs[index].score - sum)}</td>
+        <td style='color:gray;font-size:80%'>${secondsToHMS(sum, commBestILsCategory.name == '1.1+')}</td>
+        <td>${secondsToHMS(Math.floor(globalCategory.runs[index].score) - sum, commBestILsCategory.name == '1.1+')}</td>
         </tr>`
     })
     HTMLContent += `</table>`
     if (runRecap_savFile) {
         let residual = '???'
-        if (runRecapTime != 'XX:XX' && getCupheadLevel(categories.length - 1).completed) {
-            let sum = 0
+        let sum = 0
+        if (getCupheadLevel(categories.length - 1).completed) {
             categories.forEach((category, categoryIndex) => {
-                sum += Math.floor(getCupheadLevel(categoryIndex).bestTime)
+                const time = commBestILsCategory.name == '1.1+' ? getCupheadLevel(categoryIndex).bestTime : Math.floor(getCupheadLevel(categoryIndex).bestTime)
+                sum += time
             })
-            residual = secondsToHMS(convertToSeconds(runRecapTime) - sum)
+            if (runRecapTime != 'XX:XX') {
+                residual = secondsToHMS(convertToSeconds(runRecapTime) - sum, commBestILsCategory.name == '1.1+')
+            }
         }
         HTMLContent += `<div class='container' style='margin-top:30px;gap:10px'>
-    <div>Your residual:</div>
-    <div style='font-size:150%'>${residual}</div>
+    <div>Your run:</div>
+    <table>
+    <tr>
+    <th style='color:gray'>IGT Sum</th>
+    <th class='gray'>Residual</th>
+    </tr>
+    <tr>
+    <td class='background2' style='color:gray;padding:0 10px'>${secondsToHMS(sum, commBestILsCategory.name == '1.1+')}</td>
+    <td class='background2' style='font-size:150%'>${residual}</td>
+    </tr>
+    </table>
     </div>`
         if (!runRecapExample && runRecapTime == 'XX:XX' && getCupheadLevel(categories.length - 1).completed) {
             HTMLContent += `<div class='container' style='margin-top:10px;gap:8px'>
@@ -70,14 +81,14 @@ function generateResidual() {
     HTMLContent += `</div>`
     HTMLContent += `</div>`
     HTMLContent += `<div class='container'>
-    <div style='width:650px;margin-top:20px'>
+    <div style='width:680px;margin-top:20px'>
     *<span style='color:gray;font-size:70%'>
     The Cuphead .sav contains IL information for Run 'n Guns and Mausoleum 1,
     but I've decided to exclude them from the default IGT Sum calculation because they are not required in Any% categories.
     </span>
     <br><br>
     **<span style='color:gray;font-size:70%'>
-    The default Residual calculation uses Math.floor() on every IL time, which chops off the decimals.
+    For all categories except 1.1+, Residual calculation uses Math.floor() on every IL time, which chops off the decimals.
     This is done to remain consistent with the Top ${commBestILsCategory.topRuns.length} example ILs, which do not contain decimals.
     This can cause unexpected Residual variance between runs.
     For this reason, take the Residual with a grain of salt.

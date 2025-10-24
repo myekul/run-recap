@@ -223,12 +223,13 @@ function runRecapPlaceholder(runTime, categoryIndex) {
 }
 function runRecapCopy() {
     let clipboardContent = ''
-    categories.forEach(category => {
-        let time = secondsToHMS(category.runTime, true, true)
-        if (!runRecapExample) {
-            time = time.replace(/^0:/, "");
-        }
-        clipboardContent += `[${time}] ${category.name}\n`
+    categories.forEach((category, categoryIndex) => {
+        // let time = secondsToHMS(category.runTime, true, true)
+        // if (!runRecapExample) {
+        //     time = time.replace(/^0:/, "");
+        // }
+        // clipboardContent += `[${time}] ${category.name}\n`
+        clipboardContent += `${getCupheadLevel(categoryIndex).bestTime.toString().split('.')[0] + '.' + getCupheadLevel(categoryIndex).bestTime.toString().split('.')[1].slice(0, 2)}${categoryIndex == categories.length - 1 ? '' : ', '}`
     })
     navigator.clipboard.writeText(clipboardContent)
         .then(() => {
