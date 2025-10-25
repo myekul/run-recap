@@ -50,15 +50,18 @@ function generateAltStrats() {
             HTMLContent += `<div class='container' style='margin-top:20px;gap:30px;align-items:flex-start'>`
             HTMLContent += `
             <div>
-            <table>
+            <div class='container'><table>
             <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
+            let sum = 0
             countArray.forEach((player, index) => {
+                sum += player.count
                 HTMLContent += `<tr class='${getRowColor(index)}'>
                 ${getPlayerDisplay(players.find(player2 => player2.name == player.player))}
                 <td>${player.count}</td>
                 </tr>`
             })
-            HTMLContent += `</table>`
+            HTMLContent += `</table></div>
+            <div class='container' style='color:gray;font-size:80%'>TOTAL: ${sum}</div>`
             if (commBestILsCategory.tabName == '1.1+') {
                 const myekulIdeas = [
                     {
@@ -68,18 +71,6 @@ function generateAltStrats() {
                     {
                         boss: 'ribbyandcroaks',
                         name: '6 Flies Regular Skip, Tigers'
-                    },
-                    {
-                        boss: 'ribbyandcroaks',
-                        name: '7 Flies Regular Skip, Tigers'
-                    },
-                    {
-                        boss: 'ribbyandcroaks',
-                        name: '7 Flies Regular Skip, Snakes'
-                    },
-                    {
-                        boss: 'hildaberg',
-                        name: 'Parryless'
                     },
                     {
                         boss: 'hildaberg',

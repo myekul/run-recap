@@ -59,9 +59,21 @@
             },
             {
                 "name": "7 Flies Regular Skip, Bulls",
-                "time": "42.53",
-                "player": "Taylz",
-                "url": "https://youtu.be/kxmyR1Mhh2k"
+                "time": 41.87,
+                "player": "Lewzr",
+                "url": "https://youtu.be/Oxx_9UvsLjc"
+            },
+            {
+                "name": "7 Flies Regular Skip, Tigers",
+                "time": 42.69,
+                "player": "Lewzr",
+                "url": "https://youtu.be/43RIramGUE4"
+            },
+            {
+                "name": "7 Flies Regular Skip, Snakes",
+                "time": 42.96,
+                "player": "Lewzr",
+                "url": "https://youtu.be/S10kNJalpxU"
             },
             {
                 "name": "Punches, Bulls",
@@ -118,14 +130,27 @@
             {
                 "name": "Gemini",
                 "time": 59.55,
+                "rta": "1:00.11",
                 "player": "Quincely0",
                 "url": "https://youtu.be/PThx8scpvck"
             },
             {
                 "name": "Sagittarius",
-                "time": "~1:00.99",
+                "time": "1:00.XX",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/SKcVXh-sUwc"
+            },
+            {
+                "name": "Gemini (Parryless)",
+                "time": "1:02.61",
+                "player": "Quincely0",
+                "url": "https://youtu.be/rEwMpQT93-Q"
+            },
+            {
+                "name": "Sagittarius (Parryless)",
+                "time": "1:03.80",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/_cCNp2fvkdY"
             }
         ],
         "cagneycarnation": [
@@ -620,16 +645,16 @@
                 "url": "https://youtu.be/wADPxhZkybg"
             },
             {
+                "name": "2 Lasers, 3 Meteors",
+                "time": 48.34,
+                "player": "Quincely0",
+                "url": "https://youtu.be/Dy3DPwLm028"
+            },
+            {
                 "name": "3 Lasers, 2 Meteors",
                 "time": 48.51,
                 "player": "Quincely0",
                 "url": "https://youtu.be/3NaYiHs_O3U"
-            },
-            {
-                "name": "2 Lasers, 3 Meteors",
-                "time": 49.23,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/xF4GGSoNOuc?si=vmaQ2FjFuQTvuaTN&t=863"
             }
         ],
         "rumorhoneybottoms": [
@@ -893,48 +918,48 @@
                 "url": "https://youtu.be/WYv48lZEi5o"
             },
             {
-                "name": "1 Triple, Left Pumpkin, Left Cart Final",
+                "name": "1 Triple, L Pumpkin, L Cart Final",
                 "time": 57.48,
                 "rta": 59.12,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/L82I_PlmAuw"
             },
             {
-                "name": "1 Triple, Left Pumpkin",
+                "name": "1 Triple, L Pumpkin",
                 "time": 57.7,
                 "rta": 59.36,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/cif5WQOacxA"
             },
             {
-                "name": "1 Triple, Right Pumpkin",
+                "name": "1 Triple, R Pumpkin",
                 "time": 58.44,
                 "rta": 60.27,
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/IOELMRgBIh4"
             },
             {
-                "name": "1 Double, Left Pumpkin",
+                "name": "1 Double, L Pumpkin",
                 "time": 58.57,
                 "rta": 60.41,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/Q2yE0RMxHfc"
             },
             {
-                "name": "1 Double, Right Pumpkin",
+                "name": "1 Double, R Pumpkin",
                 "time": 58.69,
                 "rta": 60.52,
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/Mzw5eDoeoZE"
             },
             {
-                "name": "1 Single, Right Pumpkin",
+                "name": "1 Single, R Pumpkin",
                 "time": 59.44,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/BFdOWkxh47o"
             },
             {
-                "name": "Safe Phase 1, 1 Triple, Left Pumpkin",
+                "name": "Safe Phase 1, 1 Triple, L Pumpkin",
                 "time": 59.99,
                 "rta": 62.21,
                 "player": "Grondious",
@@ -1121,10 +1146,16 @@
         ],
         "ribbyandcroaks": [
             {
-                "name": "7 Flies Super Skip",
-                "time": 33.23,
+                "name": "7 Flies Super Skip, Bulls",
+                "time": 32.71,
                 "player": "Yuka",
-                "url": "https://youtu.be/xB_6_lNowd0"
+                "url": "https://youtu.be/dsHMDo_vKbs"
+            },
+            {
+                "name": "7 Flies Super Skip, Tigers",
+                "time": 33.60,
+                "player": "Yuka",
+                "url": "https://youtu.be/shYqplW41Mc?si=jj19H6TGJApp_kau&t=7"
             }
         ],
         "goopylegrande": [
@@ -1296,7 +1327,7 @@
                 "url": "https://youtu.be/Nj3V4xIMN9s"
             },
             {
-                "title": "Devil's Kiss"
+                "title": "Kiss"
             },
             {
                 "name": "Ring Dragon R",
@@ -1321,6 +1352,12 @@
                 "time": 31.61,
                 "player": "Yuka",
                 "url": "https://youtu.be/GnlyfM6EEdY"
+            },
+            {
+                "name": "Ring Clap Dragon R",
+                "time": 30.78,
+                "player": "Fintan0",
+                "url": "https://youtu.be/MBF6Qtq0UBU"
             },
             {
                 "name": "Clap Ring Dragon R",
@@ -1384,6 +1421,12 @@
                 "url": "https://youtu.be/UhQv8RiVBvA"
             },
             {
+                "name": "Candy Corn, Waffle, Cupcake",
+                "time": 33.66,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/b4EY5kpeMcE"
+            },
+            {
                 "name": "Waffle, Cupcake, Gumball",
                 "time": 34.68,
                 "player": "HappyWolf",
@@ -1415,14 +1458,20 @@
         ],
         "phantomexpress": [
             {
-                "name": "Left Pumpkin, 2 Doubles",
+                "name": "L Pumpkin, 2 Doubles",
                 "time": 57.88,
                 "rta": 59.54,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/nhdBoVEdlIA"
             },
             {
-                "name": "Right Pumpkin, Safe Phase 3",
+                "name": "R Pumpkin, 1 Single",
+                "time": 59.44,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/BFdOWkxh47o"
+            },
+            {
+                "name": "R Pumpkin, Safe Phase 3",
                 "time": "1:00.59",
                 "rta": "1:02.59",
                 "player": "HappyWolf",
@@ -1498,6 +1547,13 @@
         ],
         "estherwinchester": [
             {
+                "name": "Nukeless",
+                "time": 59.72,
+                "rta": "1:00.99",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/4nrjrwTZHw8"
+            },
+            {
                 "name": "1 Nuke",
                 "time": 59.34,
                 "rta": "1:01.71",
@@ -1541,9 +1597,9 @@
             },
             {
                 "name": "5+1 Shakers",
-                "time": 51.70,
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/CtMC5x4yBrM"
+                "time": 51.15,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/XCph9LTdJHU"
             },
             {
                 "name": "Strawberries",

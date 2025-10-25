@@ -171,7 +171,7 @@ function savBoss(categoryIndex) {
     return HTMLContent
 }
 function getComparisonTime(categoryIndex) {
-    if (savComparison == 'Top 10 Average') {
+    if (savComparison == 'Top Average') {
         return commBestILsCategory.top[categoryIndex]
     } else if (savComparison == 'Top 3 Average') {
         return commBestILsCategory.top3[categoryIndex]
@@ -179,7 +179,7 @@ function getComparisonTime(categoryIndex) {
         return commBestILsCategory.topBest[categoryIndex]
     } else if (savComparison == 'Theory Run') {
         return commBestILsCategory.theoryRun[categoryIndex]
-    } else if (savComparison == 'Comm Best ILs') {
+    } else if (savComparison == 'Run Viable ILs') {
         return categories[categoryIndex].runs[0].score
     } else if (savComparison == 'TAS') {
         return commBestILsCategory.tas[categoryIndex]
@@ -236,19 +236,19 @@ function runRecapCopy() {
             // Success!
         })
 }
-const savComparisonInfo = {
-    'Top 10 Average': "Average of top 10 players' boss times in their PBs",
-    'Top 3 Average': "Average of top 3 players' boss times in their PBs",
-    'Top Bests': "Best of top players' boss times in their PBs",
-    'Theory Run': "Top 3 players' PB boss times averaged with Comm Best ILs",
-    'Comm Best ILs': "Community best ILs",
-    'TAS': "Tool-Assisted Speedrun (by SBDWolf)"
-}
 function savComparisonContent() {
+    const savComparisonInfo = {
+        'Top Average': `Average of top ${commBestILsCategory.topRuns.length} players' boss times in their PBs`,
+        'Top 3 Average': "Average of top 3 players' boss times in their PBs",
+        'Top Bests': "Best of top players' boss times in their PBs",
+        'Theory Run': "Top 3 players' PB boss times averaged with Run Viable ILs",
+        'Run Viable ILs': "Community best ILs with run viable strategies",
+        'TAS': "Tool-Assisted Speedrun (by SBDWolf)"
+    }
     let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
-    // ['None', 'Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Comm Best ILs', 'TAS'].forEach((option, index) => {
-    ['Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Comm Best ILs', 'TAS'].forEach((option, index) => {
-        if (!(!['1.1+'].includes(commBestILsCategory.name) && ['Top 10 Average', 'TAS'].includes(option))) {
+    // ['None', 'Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
+    ['Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
+        if (!(!['1.1+'].includes(commBestILsCategory.name) && ['TAS'].includes(option))) {
             HTMLContent += `
         <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('${option}');action()">
         <div>${option}</div>
