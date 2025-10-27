@@ -106,6 +106,12 @@
                 "url": "https://youtu.be/QOIONGQ2FS4"
             },
             {
+                "name": "7 Flies Super Skip, Tigers",
+                "time": 45.63,
+                "player": "Lewzr",
+                "url": "https://youtu.be/wKK_x36BdSw"
+            },
+            {
                 "name": "7 Flies Super Skip, Snakes",
                 "time": 46.99,
                 "player": "Quincely0",
@@ -655,6 +661,12 @@
                 "time": 48.51,
                 "player": "Quincely0",
                 "url": "https://youtu.be/3NaYiHs_O3U"
+            },
+            {
+                "name": "3 Lasers, 2 Meteors (Grim Glitch)",
+                "time": 47.64,
+                "player": "Quincely0",
+                "url": "https://youtu.be/DCe8My83EtQ"
             }
         ],
         "rumorhoneybottoms": [
@@ -907,6 +919,12 @@
                 "time": 54.82,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/15x3FcMpTk0"
+            },
+            {
+                "name": "Yellow Fish, Pufferfish",
+                "time": 56.73,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/CScRqSmExQU"
             }
         ],
         "phantomexpress": [
@@ -1238,10 +1256,16 @@
         ],
         "drkahlsrobot": [
             {
-                "name": "",
+                "name": "TAS EX",
                 "time": 12.63,
                 "player": "Fintan0",
                 "url": "https://youtu.be/BvVKWxC9Ctk"
+            },
+            {
+                "name": "Luigi Swaps",
+                "time": 13.26,
+                "player": "Yuka",
+                "url": "https://youtu.be/4lpkJ5VExks"
             },
             {
                 "name": "No Luigi Swaps",
