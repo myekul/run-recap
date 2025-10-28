@@ -36,13 +36,14 @@ function generateResidual() {
     commBestILsCategory.topRuns.forEach((run, index) => {
         let sum = 0
         run.forEach(time => {
-            sum += time
+            const newTime = decimalsCriteria() ? time : Math.floor(time)
+            sum += newTime
         })
         HTMLContent += `
         <tr class='${getRowColor(index)}'>
         ${bigPlayerDisplay(players[index])}
-        <td style='color:gray;font-size:80%'>${secondsToHMS(sum, commBestILsCategory.name == '1.1+')}</td>
-        <td>${secondsToHMS(Math.floor(globalCategory.runs[index].score) - sum, commBestILsCategory.name == '1.1+')}</td>
+        <td style='color:gray;font-size:80%'>${secondsToHMS(sum, decimalsCriteria())}</td>
+        <td>${secondsToHMS(Math.floor(globalCategory.runs[index].score) - sum, decimalsCriteria())}</td>
         </tr>`
     })
     HTMLContent += `</table>`
@@ -51,11 +52,11 @@ function generateResidual() {
         let sum = 0
         if (getCupheadLevel(categories.length - 1).completed) {
             categories.forEach((category, categoryIndex) => {
-                const time = commBestILsCategory.name == '1.1+' ? getCupheadLevel(categoryIndex).bestTime : Math.floor(getCupheadLevel(categoryIndex).bestTime)
+                const time = decimalsCriteria() ? getCupheadLevel(categoryIndex).bestTime : Math.floor(getCupheadLevel(categoryIndex).bestTime)
                 sum += time
             })
             if (runRecapTime != 'XX:XX') {
-                residual = secondsToHMS(convertToSeconds(runRecapTime) - sum, commBestILsCategory.name == '1.1+')
+                residual = secondsToHMS(convertToSeconds(runRecapTime) - sum, decimalsCriteria())
             }
         }
         HTMLContent += `<div class='container' style='margin-top:30px;gap:10px'>
@@ -66,7 +67,7 @@ function generateResidual() {
     <th class='gray'>Residual</th>
     </tr>
     <tr>
-    <td class='background2' style='color:gray;padding:0 10px'>${secondsToHMS(sum, commBestILsCategory.name == '1.1+')}</td>
+    <td class='background2' style='color:gray;padding:0 10px'>${secondsToHMS(sum, decimalsCriteria())}</td>
     <td class='background2' style='font-size:150%'>${residual}</td>
     </tr>
     </table>

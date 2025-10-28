@@ -99,14 +99,15 @@ function bossImage(boss, text) {
 }
 function modalSubmitIL() {
     let bossSelectHTML = ''
-    categories.forEach((category, categoryIndex) => {
-        bossSelectHTML += `<option value='${categoryIndex}'>${category.info.name}</option>`
+    categories.forEach(category => {
+        bossSelectHTML += `<option value='${category.info.id}'>${category.info.name}</option>`
     })
     let inputty = [
         {
-            name: 'Boss',
-            html: `<select id="dropdown_commBestILs_boss" onchange="handleBossDropdown()">
-            <option value='none' selected>-- Select a Boss --</option>
+            name: 'Level',
+            html: `<select id="dropdown_commBestILs_level" onchange="handleBossDropdown()">
+            <option value='none' selected>-- Select a Level --</option>
+            <option value='forestfollies'>Forest Follies</option>
             ${bossSelectHTML}
             </select>`
         },
@@ -137,7 +138,7 @@ function modalSubmitIL() {
     inputty.forEach(elem => {
         HTMLContent += `<tr id='commBestILs_row_${elem.name}' style='height:36px;${elem.name == 'Other' ? 'display:none' : ''}'>
         <td>${elem.name}</td>`
-        HTMLContent += `<td id='commBestILs_${elem.name.trim().toLowerCase()}'><div class='container' style='justify-content:left'><div id='commBestILs_boss_cell3'></div>${elem.html}</div></td>
+        HTMLContent += `<td id='commBestILs_${elem.name.trim().toLowerCase()}'><div class='container' style='justify-content:left'><div id='commBestILs_level_cell3'></div>${elem.html}</div></td>
         </tr>`
     })
     HTMLContent += `</table>
@@ -163,27 +164,31 @@ function modalSubmitIL() {
 function handleBossDropdown() {
     checkSubmittable()
     playSound('cardflip')
-    const boss = document.getElementById('dropdown_commBestILs_boss').value
-    if (boss >= 0) {
-        const category = categories[boss]
-        document.getElementById('dropdown_commBestILs_boss').className = category.info.id
-        document.getElementById('commBestILs_boss').className = category.info.id
-        document.getElementById('commBestILs_boss_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(category.info.id, 32)}</div>`
-        let altStratHTML = `<option value='none'>None</option>`
+    const level = document.getElementById('dropdown_commBestILs_level').value
+    if (level != 'none') {
+        document.getElementById('dropdown_commBestILs_level').className = level
+        document.getElementById('commBestILs_level').className = level
+        document.getElementById('commBestILs_level_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(level == 'forestfollies' ? 'other/forestfollies' : level, 32)}</div>`
+        let altStratHTML = `
+        <option value='none'>-- None --</option>
+        <option value='other'>++ New alt strat ++</option>`
         const altTest = alt[commBestILsCategory.tabName]
         if (altTest) {
-            if (altTest[category.info.id]) {
-                altTest[category.info.id].forEach(strat => {
+            if (altTest[level]) {
+                let prevStrat
+                altTest[level].forEach(strat => {
+                    if (strat.title) altStratHTML += `<optgroup label='${strat.title}'>`
                     if (strat.name) altStratHTML += `<option value='${strat.name}'>${strat.name}</option>`
+                    prevStrat = strat
+                    if (prevStrat.title) altStratHTML += `</optgroup>`
                 })
             }
         }
-        altStratHTML += `<option value='other'>Other...</option>`
         document.getElementById('dropdown_commBestILs_altStrat').innerHTML = altStratHTML
     } else {
-        document.getElementById('dropdown_commBestILs_boss').className = ''
-        document.getElementById('commBestILs_boss').className = ''
-        document.getElementById('commBestILs_boss_cell3').innerHTML = ''
+        document.getElementById('dropdown_commBestILs_level').className = ''
+        document.getElementById('commBestILs_level').className = ''
+        document.getElementById('commBestILs_level_cell3').innerHTML = ''
     }
 }
 function handleAltStratDropdown() {
@@ -197,7 +202,7 @@ function handleAltStratDropdown() {
 }
 function checkSubmittable() {
     const button = document.getElementById('commBestILs_uploadButton')
-    if (localStorage.getItem('username') && document.getElementById('dropdown_commBestILs_boss').value != 'none' && document.getElementById('input_commBestILs_time').value && !(document.getElementById('dropdown_commBestILs_altStrat').value == 'other' && !document.getElementById('input_commBestILs_other').value) && document.getElementById('input_commBestILs_url').value) {
+    if (localStorage.getItem('username') && document.getElementById('dropdown_commBestILs_level').value != 'none' && document.getElementById('input_commBestILs_time').value && !(document.getElementById('dropdown_commBestILs_altStrat').value == 'other' && !document.getElementById('input_commBestILs_other').value) && document.getElementById('input_commBestILs_url').value) {
         button.classList.remove('grayedOut')
         button.classList.add('pulseSize')
         commbestILs_ready = true

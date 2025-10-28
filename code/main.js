@@ -33,6 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             alt = data
+            alt['Legacy'].forestfollies = alt['1.1+'].forestfollies
+            alt['NMG'].hildaberg = alt['1.1+'].hildaberg
+            alt['NMG'].grimmatchstick = alt['1.1+'].grimmatchstick
+            alt['DLC C/S'].estherwinchester = alt['DLC'].estherwinchester
+            alt['DLC+Base'].hildaberg = alt['NMG'].hildaberg
+            alt['DLC+Base'].cagneycarnation = alt['NMG'].cagneycarnation
+            alt['DLC+Base'].baronessvonbonbon = alt['NMG'].baronessvonbonbon
+            alt['DLC+Base C/S'].hildaberg = alt['DLC+Base'].hildaberg
+            alt['DLC+Base C/S'].wallywarbles = alt['DLC+Base'].wallywarbles
+            alt['DLC+Base C/S'].djimmithegreat = alt['DLC+Base'].djimmithegreat
+            alt['DLC+Base C/S'].drkahlsrobot = alt['DLC+Base'].drkahlsrobot
+            alt['DLC+Base C/S'].calamaria = alt['DLC+Base'].calamaria
+            copyDLC('DLC', 'DLC+Base')
+            copyDLC('DLC C/S', 'DLC+Base C/S')
+            function copyDLC(copy, paste) {
+                const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
+                dlc.forEach(boss => {
+                    alt[paste][boss] = alt[copy][boss]
+                })
+            }
         })
     commBestILsCategory = commBestILs['1.1+']
     window.firebaseUtils.firestoreRead()

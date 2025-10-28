@@ -80,7 +80,7 @@ window.firebaseUtils = {
         const obj = {
             player: localStorage.getItem('username'),
             category: commBestILsCategory.tabName,
-            boss: categories[document.getElementById('dropdown_commBestILs_boss').value].info.id,
+            boss: document.getElementById('dropdown_commBestILs_level').value,
             time: document.getElementById('input_commBestILs_time').value,
             altstrat: document.getElementById('dropdown_commBestILs_altStrat').value,
             other: document.getElementById('input_commBestILs_other').value,
@@ -110,7 +110,9 @@ window.firebaseUtils = {
             querySnapshot.forEach(docSnap => {
                 results.push({ id: docSnap.id, ...docSnap.data() });
             });
-            document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results)
+            if (altStratIndex == -1) {
+                document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results)
+            }
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }

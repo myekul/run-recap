@@ -1,5 +1,19 @@
 {
     "1.1+": {
+        "forestfollies": [
+            {
+                "name": "Parry, Both Ledge Clips",
+                "time": 31.99,
+                "player": "Quincely0",
+                "url": "https://youtu.be/AP-yUBmASz4"
+            },
+            {
+                "name": "Parryless",
+                "time": 32.65,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/f47J9BaBkS4"
+            }
+        ],
         "therootpack": [
             {
                 "name": "TAStato, 2 Onion Triples",
@@ -34,46 +48,52 @@
         ],
         "ribbyandcroaks": [
             {
-                "name": "5 Flies Regular Skip, Bulls",
+                "title": "Flies Regular Skip"
+            },
+            {
+                "name": "5 Flies, Bulls",
                 "time": 40.79,
                 "player": "Grondious",
                 "url": "https://youtu.be/-KvAjbtm56E"
             },
             {
-                "name": "5 Flies Regular Skip, Snakes",
+                "name": "5 Flies, Snakes",
                 "time": 41.81,
                 "player": "Quincely0",
                 "url": "https://youtu.be/gstVx9ibTKY"
             },
             {
-                "name": "5 Flies Regular Skip, Tigers",
+                "name": "5 Flies, Tigers",
                 "time": 42.39,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/b2BcfRaU3yI"
             },
             {
-                "name": "6 Flies Regular Skip, Snakes",
+                "name": "6 Flies, Snakes",
                 "time": "42.40",
                 "player": "Quincely0",
                 "url": "https://youtu.be/68pJU4KHDxA"
             },
             {
-                "name": "7 Flies Regular Skip, Bulls",
+                "name": "7 Flies, Bulls",
                 "time": 41.87,
                 "player": "Lewzr",
                 "url": "https://youtu.be/Oxx_9UvsLjc"
             },
             {
-                "name": "7 Flies Regular Skip, Tigers",
+                "name": "7 Flies, Tigers",
                 "time": 42.69,
                 "player": "Lewzr",
                 "url": "https://youtu.be/43RIramGUE4"
             },
             {
-                "name": "7 Flies Regular Skip, Snakes",
+                "name": "7 Flies, Snakes",
                 "time": 42.96,
                 "player": "Lewzr",
                 "url": "https://youtu.be/S10kNJalpxU"
+            },
+            {
+                "title": "Punches Regular Skip"
             },
             {
                 "name": "Punches, Bulls",
@@ -94,25 +114,28 @@
                 "url": "https://youtu.be/6tt6L1itrvU"
             },
             {
-                "name": "5 Flies Super Skip, Snakes",
+                "title": "Flies Super Skip"
+            },
+            {
+                "name": "5 Flies, Snakes",
                 "time": 45.37,
                 "player": "Quincely0",
                 "url": "https://youtu.be/kTm8n9F8BAY"
             },
             {
-                "name": "6 Flies Super Skip, Snakes",
+                "name": "6 Flies, Snakes",
                 "time": 45.74,
                 "player": "Quincely0",
                 "url": "https://youtu.be/QOIONGQ2FS4"
             },
             {
-                "name": "7 Flies Super Skip, Tigers",
+                "name": "7 Flies, Tigers",
                 "time": 45.63,
                 "player": "Lewzr",
                 "url": "https://youtu.be/wKK_x36BdSw"
             },
             {
-                "name": "7 Flies Super Skip, Snakes",
+                "name": "7 Flies, Snakes",
                 "time": 46.99,
                 "player": "Quincely0",
                 "url": "https://youtu.be/PkdpDejrXQM"
@@ -155,7 +178,7 @@
             {
                 "name": "Sagittarius (Parryless)",
                 "time": "1:03.80",
-                "player": "MarkinSws",
+                "player": "Quincely0",
                 "url": "https://youtu.be/_cCNp2fvkdY"
             }
         ],
@@ -651,6 +674,18 @@
                 "url": "https://youtu.be/wADPxhZkybg"
             },
             {
+                "name": "3 Lasers, 1 Laser",
+                "time": 46.63,
+                "player": "Quincely0",
+                "url": "https://youtu.be/BFZQibo9bJs"
+            },
+            {
+                "name": "2 Lasers, 4 Meteors",
+                "time": 47.89,
+                "player": "Quincely0",
+                "url": "https://youtu.be/rRsjLpKbFyY"
+            },
+            {
                 "name": "2 Lasers, 3 Meteors",
                 "time": 48.34,
                 "player": "Quincely0",
@@ -1005,7 +1040,7 @@
                 "title": "No Freeze"
             },
             {
-                "name": "Pinwheel Dragon",
+                "name": "Pinwheel Dragon (3 Quads)",
                 "time": 45.64,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/0hlrM62-gNQ"
@@ -1138,6 +1173,18 @@
                 "time": 38.79,
                 "player": "Grondious",
                 "url": "https://youtu.be/FuAtHLS56Ms"
+            },
+            {
+                "name": "Clap Ring Clap Spider",
+                "time": 42.61,
+                "player": "holrre",
+                "url": "https://youtu.be/73CS4yrCk7E"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider",
+                "time": 45.38,
+                "player": "holrre",
+                "url": "https://youtu.be/zv99sW-ZhtI"
             }
         ]
     },
@@ -1163,6 +1210,12 @@
             }
         ],
         "ribbyandcroaks": [
+            {
+                "name": "6 Flies Super Skip, Bulls",
+                "time": 31.77,
+                "player": "Yuka",
+                "url": "https://youtu.be/DMt3Ph4F8CU"
+            },
             {
                 "name": "7 Flies Super Skip, Bulls",
                 "time": 32.71,
@@ -1409,9 +1462,9 @@
             },
             {
                 "name": "Punches Snakes",
-                "time": "49.XX",
-                "player": "Jason2890",
-                "url": "https://youtu.be/I3b9GXHC5vA"
+                "time": "47.89",
+                "player": "Quincely0",
+                "url": "https://youtu.be/6lPCn0ScQEs"
             }
         ],
         "goopylegrande": [
@@ -1440,9 +1493,9 @@
         "baronessvonbonbon": [
             {
                 "name": "Waffle, Candy Corn, Cupcake",
-                "time": 32.33,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/UhQv8RiVBvA"
+                "time": 31.67,
+                "player": "Quincely0",
+                "url": "https://youtu.be/8w8ZzhYGUCo"
             },
             {
                 "name": "Candy Corn, Waffle, Cupcake",
@@ -1529,6 +1582,12 @@
                 "time": 49.87,
                 "player": "myekul",
                 "url": "https://youtu.be/e9iuDrmwC78"
+            },
+            {
+                "name": "Bubbles Dragon",
+                "time": 50.18,
+                "player": "myekul",
+                "url": "https://youtu.be/8SuwbKgrJ-c"
             },
             {
                 "name": "Clap Dragon",
@@ -1640,6 +1699,18 @@
                 "time": 47.39,
                 "player": "myekul",
                 "url": "https://youtu.be/S9XKGm-XAWk"
+            },
+            {
+                "name": "Cauldron, Parries",
+                "time": 46.25,
+                "player": "myekul",
+                "url": "https://youtu.be/DIH3GtVWBMg"
+            },
+            {
+                "name": "Cauldron",
+                "time": 47.92,
+                "player": "myekul",
+                "url": "https://youtu.be/se8orpxqpEE"
             }
         ],
         "mortimerfreeze": [
@@ -1720,12 +1791,42 @@
                 "url": "https://youtu.be/CpZI5-umKgg"
             }
         ],
+        "wallywarbles": [
+            {
+                "name": "",
+                "time": 47,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/eDIzwacK1QM"
+            }
+        ],
+        "djimmithegreat": [
+            {
+                "name": "Secret Phase",
+                "time": "1:14.80",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/ropB_3XDZBU"
+            }
+        ],
         "drkahlsrobot": [
+            {
+                "name": "Cup/Mug",
+                "time": 41.84,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/OTYbNuwYO-M"
+            },
             {
                 "name": "Chalice, 1 Nuke",
                 "time": 43.83,
                 "player": "MarkinSws",
-                "url": "https://youtu.be/hNf3fEyQHak?si=CLqp1ytnQvgTqVU9"
+                "url": "https://youtu.be/hNf3fEyQHak"
+            }
+        ],
+        "calamaria": [
+            {
+                "name": "",
+                "time": 49.86,
+                "player": "Quincely0",
+                "url": "https://youtu.be/HLQ8oXjoD4g"
             }
         ]
     },

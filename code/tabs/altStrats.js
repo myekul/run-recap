@@ -3,6 +3,10 @@ function generateAltStrats() {
     if (alt[commBestILsCategory.tabName]) {
         HTMLContent += `<div class='container' style='gap:10px'>`
         assignIsles()
+        HTMLContent += `<table>
+        <tr><td class='background2' style='font-size:80%;color:gray'>${alt[commBestILsCategory.tabName].forestfollies?.length || '&nbsp;'}</td></tr>
+        <tr><td class='grow' onclick="altStratClick(-2)"><div>${getImage('other/forestfollies')}</div></td></tr>
+        </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
                 HTMLContent += `<table><tr class='background2'>`
@@ -75,14 +79,6 @@ function generateAltStrats() {
                     {
                         boss: 'hildaberg',
                         name: 'Double Trollnado'
-                    },
-                    {
-                        boss: 'grimmatchstick',
-                        name: '2 Lasers, 4 Meteors'
-                    },
-                    {
-                        boss: 'grimmatchstick',
-                        name: '3 Lasers, 1 Laser'
                     },
                     {
                         boss: 'drkahlsrobot',
@@ -167,7 +163,10 @@ function generateAltStrats() {
             HTMLContent += `</table>`
             HTMLContent += `</div>`
         } else {
-            HTMLContent += alt[commBestILsCategory.tabName][categories[altStratIndex].info.id] ? altStrats(altStratIndex) : `<div class='container' style='margin-top:20px'>No alt strats...</div>`
+            const category = categories[altStratIndex]
+            const location = category ? category.info.id : 'forestfollies'
+            HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratIndex=-1;action()">${fontAwesome('reply')}</div>`
+            HTMLContent += alt[commBestILsCategory.tabName][location] ? altStrats(altStratIndex) : `<div class='container' style='margin-top:20px'>No alt strats...</div>`
         }
     } else {
         HTMLContent += `<div class='container'>No alt strats...</div>`
@@ -182,15 +181,17 @@ function altStratClick(index) {
 }
 function altStrats(categoryIndex) {
     const category = categories[categoryIndex]
+    const query = category ? category.info.id : 'forestfollies'
+    const img = category ? category.info.id : 'other/forestfollies'
+    const name = category ? category.info.name : 'Forest Follies'
     let HTMLContent = ''
-    HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratIndex=-1;action()">${fontAwesome('reply')}</div>`
     HTMLContent += `
     <div class='container'><table style='margin:10px'>
-    <tr><td colspan=5><div class='container ${category.info.id}' style='gap:8px;padding:5px;font-size:120%'>${getImage(category.info.id)}${category.info.name}</div></td></tr>`
-    const baronessCheck = category.info.id == 'baronessvonbonbon'
-    const devilCheck = category.info.id == 'thedevil'
-    const RTAcheck = alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.rta)
-    if (!alt[commBestILsCategory.tabName][category.info.id].some(strat => strat.title)) {
+    <tr><td colspan=5><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
+    const baronessCheck = query == 'baronessvonbonbon'
+    const devilCheck = query == 'thedevil'
+    const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
+    if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
         HTMLContent += `<tr>
     <th class='gray'>Pattern / Strat</th>`
         if (baronessCheck) {
@@ -208,7 +209,7 @@ function altStrats(categoryIndex) {
         'Jawbreaker': 'jawbreaker'
     }
     const attacks = ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
-    alt[commBestILsCategory.tabName][category.info.id].forEach((strat, index) => {
+    alt[commBestILsCategory.tabName][query].forEach((strat, index) => {
         if (strat.title) {
             HTMLContent += `
             <tr><td style='height:10px'></td></tr>
@@ -233,9 +234,9 @@ function altStrats(categoryIndex) {
                 })
                 HTMLContent += `</div></td>`
             }
-            HTMLContent += `<td class='${category.info.id}' style='padding:0 5px'>${strat.time}</td>`
+            HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
             if (RTAcheck) {
-                HTMLContent += `<td class='${category.info.id}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
+                HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
             }
             const player = players.find(player => player.name == strat.player)
             HTMLContent += getPlayerDisplay(player, true)
@@ -253,13 +254,12 @@ function pendingSubmissions(submissions = new Array(10).fill(null)) {
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')"` : ''}>`
         if (submission) {
             let strat
-            console.log(submission)
             if (submission.altstrat != 'none') {
                 strat = submission.altstrat == 'other' ? submission.other : submission.altstrat
             }
             HTMLContent += `
             <td class='${commBestILs[submission.category].className}'>${submission.category}</td>
-            <td class='${submission.boss}'><div class='container'>${getImage(submission.boss, 21)}</div></td>
+            <td class='${submission.boss}'><div class='container'>${getImage(submission.boss == 'forestfollies' ? 'other/forestfollies' : submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
             <td style='text-align:left'>${strat || ''}</td>
             ${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}`
