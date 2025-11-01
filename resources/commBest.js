@@ -49,6 +49,21 @@ const commBestILs = {
             ['6:53.59', '13:55.48', '23:18.03'], // Misterbutter444
             ['6:54.68', '14:03.18', '23:19.37'], // ExclamationMarkYT
             ['6:59.23', '14:07.90', '23:34.89'] // Yuka
+        ],
+        starSkips: [
+            []
+        ],
+        thedevil: [
+            'Bubbles Clap Dragon', // Quincely0
+            'Clap Ring Dragon', // Grondious
+            'Clap Pinwheel Dragon', // SBDWolf
+            'Dragon Clap Ring', // ClipBoardGuy
+            'Dragon Clap', // myekul
+            'Ring Clap Spider', // GamerAttack27
+            'Pinwheel Dragon', // Lewzr
+            'Clap Dragon', // Misterbutter444
+            'Pinwheel Clap Dragon', // ExclamationMarkYT
+            'Bubbles Spider' // Yuka
         ]
     },
     Legacy: {
@@ -84,6 +99,9 @@ const commBestILs = {
             [38.02, 48.46, 30.08, 64.07, 38.09, 38.25, 56.12, 85.54, 60.91, 52.11, 40.50, 51.69, 50.21, 47.99, 45.61, 66.02, 67.48, 116.56, 57.87], // Lewzr
             [37, 50, 31, 63, 39, 37, 56, 86, 60, 51, 42, 50, 52, 45, 44, 63, 65, 117, 58], // ScoopOfButter
             [38.08, 49.28, 31.92, 64.62, 40.16, 41.50, 57.12, 85.75, 64.46, 54.06, 46.26, 52.88, 51.16, 46.69, 43.17, 63.98, 63.29, 118.44, 56.58], // myekul
+            [39, 50, 33, 67, 38, 38, 53, 85, 58, 53, 49, 46, 51, 47, 43, 61, 66, 117, 58], // Jason2890
+            [39, 50, 31, 65, 37, 46, 54, 85, 61, 53, 40, 48, 53, 46, 43, 64, 63, 118, 64], // Uramatsu
+            [38, 48, 34, 62, 38, 42, 56, 87, 64, 53, 42, 53, 51, 50, 44, 65, 62, 120, 61] // Grondious
         ]
     },
     'NMG P/S': {

@@ -13,7 +13,8 @@ function generateCommBestSplits() {
         <th colspan=5 class='gray'>Comm Best Splits</th>
         </tr>`
         splitInfo.forEach((split, index) => {
-            const player = players.find(player => player.name == runRecap_markin.bestSplitsPlayers[index].split('/')[0])
+            const playerName = runRecap_markin.bestSplitsPlayers[index].split('/')[0]
+            const player = players.find(player => player.name == playerName) || playerName
             const wrSplit = runRecap_markin.wrSplits[index]
             const url = runRecap_markin.bestSplitsURLs[index]
             HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'clickable' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>`
@@ -24,9 +25,7 @@ function generateCommBestSplits() {
             HTMLContent += getPlayerDisplay(player)
             HTMLContent += `</tr>`
             const nextIsle = splitInfo[index + 1]?.isle
-            if (nextIsle != split.isle) {
-                HTMLContent += `<tr style='height:16px'></tr>`
-            }
+            if (nextIsle != split.isle) HTMLContent += `<tr style='height:16px'></tr>`
         })
         HTMLContent += `</table>`
         // Segments
@@ -38,7 +37,7 @@ function generateCommBestSplits() {
         let sum = 0
         splitInfo.forEach((split, index) => {
             const playerName = runRecap_markin.bestSegmentsPlayers[index].split('/')[0]
-            const player = players.find(player => player.name == playerName)
+            const player = players.find(player => player.name == playerName) || playerName
             const bestSegment = runRecap_markin.bestSegments[index]
             const wrSegment = runRecap_markin.wrSegments[index]
             const url = runRecap_markin.bestSegmentsURLs[index]

@@ -21,8 +21,9 @@ function generateGrid() {
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
             HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`
-            HTMLContent += `<td style='color:${ILtime == commBestILsCategory.topBest[categoryIndex] ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
+            HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(commBestILsCategory.topBest[categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
+        if (commBestILsCategory.name == '1.1+') HTMLContent += devilPattern(commBestILsCategory.thedevil[index])
         HTMLContent += `</tr>`
     })
     if (commBestILsCategory.topRuns.length > 3) {

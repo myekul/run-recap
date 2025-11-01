@@ -45,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function () {
             alt['DLC+Base C/S'].djimmithegreat = alt['DLC+Base'].djimmithegreat
             alt['DLC+Base C/S'].drkahlsrobot = alt['DLC+Base'].drkahlsrobot
             alt['DLC+Base C/S'].calamaria = alt['DLC+Base'].calamaria
+            alt['DLC C/S'].forestfollies = alt['DLC'].forestfollies
+            alt['DLC+Base'].forestfollies = alt['DLC'].forestfollies
+            alt['DLC+Base C/S'].forestfollies = alt['DLC'].forestfollies
             copyDLC('DLC', 'DLC+Base')
             copyDLC('DLC C/S', 'DLC+Base C/S')
             function copyDLC(copy, paste) {
@@ -204,8 +207,11 @@ document.querySelectorAll('select').forEach(elem => {
 })
 function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     commBestILsCategory = commBestILs[categoryName]
-    updateLoadouts(categoryName)
-    buttonClick(commBestILsCategory.className + 'Button', 'categoryTabs', 'selected')
+    let buttonName = commBestILsCategory.className
+    if (['dlc', 'dlcbase'].includes(buttonName) && commBestILsCategory.shot1) {
+        buttonName = commBestILsCategory.className + (commBestILsCategory.shot1?.charAt(0) || '') + (commBestILsCategory.shot2?.charAt(0) || '')
+    }
+    buttonClick(buttonName + 'Button', 'categoryTabs', 'selected')
     players = []
     playerNames = new Set()
     changeComparison('Top 3 Average', true)
@@ -236,24 +242,6 @@ function letsGo() {
         }
     })
     loadMyekul()
-}
-function updateLoadouts(categoryName) {
-    let HTMLContent = ''
-    let fullgameCategories = []
-    if (commBestILsCategory.name == 'DLC') {
-        fullgameCategories.push('DLC', 'DLC L/S', 'DLC C/S')
-    } else if (commBestILsCategory.name == 'DLC+Base') {
-        fullgameCategories.push('DLC+Base', 'DLC+Base L/S', 'DLC+Base C/S')
-    }
-    fullgameCategories.forEach(category => {
-        const thisCategory = commBestILs[category]
-        HTMLContent += `<div onclick="playSound('category_select');getCommBestILs('${category}')" class="button ${commBestILsCategory.className} container ${categoryName == category ? 'selected' : ''}">`
-        HTMLContent += thisCategory.shot1 ? cupheadShot(thisCategory.shot1) : ''
-        HTMLContent += thisCategory.shot2 ? cupheadShot(thisCategory.shot2) : ''
-        HTMLContent += thisCategory.subcat ? thisCategory.subcat : ''
-        HTMLContent += `</div>`
-    })
-    document.getElementById('loadouts').innerHTML = HTMLContent
 }
 function done() {
     loadSheets()
@@ -353,3 +341,18 @@ const reloadTimeout = setTimeout(() => {
         location.reload();
     }
 }, 3000)
+document.querySelectorAll('.lobber').forEach(button => {
+    button.innerHTML = cupheadShot('lobber', 21)
+})
+document.querySelectorAll('.charge').forEach(button => {
+    button.innerHTML = cupheadShot('charge', 21)
+})
+// const allButtons = document.querySelector('#categoryTabs').querySelectorAll('.button')
+// allButtons.forEach(button => {
+//     button.addEventListener('click', () => {
+//         allButtons.forEach(button2 => {
+//             button2.classList.remove('selected')
+//         })
+//         button.classList.add('selected')
+//     });
+// })

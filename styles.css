@@ -18,10 +18,14 @@ th {
     opacity: 0.8;
 }
 
-#categoryTabs div {
+#categoryTabs .button {
     height: 25px;
     width: 100px;
     font-size: 100%;
+}
+
+#categoryTabs .container {
+    justify-content: flex-start;
 }
 
 .textBlock {
@@ -118,4 +122,13 @@ th {
 
 #commBestILsSubmit select {
     font-size: 100%;
+}
+
+.sumPlayer div {
+    justify-content: left;
+}
+
+.lobber,
+.charge {
+    width: 30px !important
 }

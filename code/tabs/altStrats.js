@@ -73,10 +73,6 @@ function generateAltStrats() {
                         name: '6 Flies Regular Skip, Bulls'
                     },
                     {
-                        boss: 'ribbyandcroaks',
-                        name: '6 Flies Regular Skip, Tigers'
-                    },
-                    {
                         boss: 'hildaberg',
                         name: 'Double Trollnado'
                     },
@@ -194,9 +190,7 @@ function altStrats(categoryIndex) {
     if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
         HTMLContent += `<tr>
     <th class='gray'>Pattern / Strat</th>`
-        if (baronessCheck) {
-            HTMLContent += `<th class='gray'></th>`
-        }
+        if (baronessCheck) HTMLContent += `<th class='gray'></th>`
         HTMLContent += `<th class='gray'>IGT</th>`
         if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
         HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
@@ -208,7 +202,6 @@ function altStrats(categoryIndex) {
         'Gumball': 'gumball',
         'Jawbreaker': 'jawbreaker'
     }
-    const attacks = ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
     alt[commBestILsCategory.tabName][query].forEach((strat, index) => {
         if (strat.title) {
             HTMLContent += `
@@ -225,15 +218,7 @@ function altStrats(categoryIndex) {
                 })
                 HTMLContent += `</div></td>`
             }
-            if (devilCheck) {
-                HTMLContent += `<td class='gray'><div class='container'>`
-                strat.name.split(' ').forEach(attack => {
-                    if (attacks.includes(attack)) {
-                        HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/thedevil/${attack}.png' style='height:21px'></div>`
-                    }
-                })
-                HTMLContent += `</div></td>`
-            }
+            if (devilCheck) HTMLContent += devilPattern(strat.name)
             HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
             if (RTAcheck) {
                 HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
@@ -269,5 +254,16 @@ function pendingSubmissions(submissions = new Array(10).fill(null)) {
         HTMLContent += `</tr>`
     }
     HTMLContent += `</table></div>`
+    return HTMLContent
+}
+function devilPattern(name) {
+    let HTMLContent = ''
+    HTMLContent += `<td class='gray'><div class='container'>`
+    name.split(' ').forEach(attack => {
+        if (['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'].includes(attack)) {
+            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/thedevil/${attack}.png' style='height:21px'></div>`
+        }
+    })
+    HTMLContent += `</div></td>`
     return HTMLContent
 }

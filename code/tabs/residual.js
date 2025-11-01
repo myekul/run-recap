@@ -43,7 +43,7 @@ function generateResidual() {
         <tr class='${getRowColor(index)}'>
         ${bigPlayerDisplay(players[index])}
         <td style='color:gray;font-size:80%'>${secondsToHMS(sum, decimalsCriteria())}</td>
-        <td>${secondsToHMS(Math.floor(globalCategory.runs[index].score) - sum, decimalsCriteria())}</td>
+        <td>${secondsToHMS(Math.floor(players[index].extra.score) - sum, decimalsCriteria())}</td>
         </tr>`
     })
     HTMLContent += `</table>`

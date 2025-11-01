@@ -66,18 +66,32 @@
                 <div id="tabsDiv"></div>
                 <div class='container' style="position:absolute;left:20px;top:55px;align-items: flex-start;">
                     <div id="categoryTabs">
-                        <div id='onePointOneButton' onclick="getCommBestILs('1.1+')" class="button onePointOne">
-                            1.1+
+                        <div class="container">
+                            <div id='onePointOneButton' onclick="getCommBestILs('1.1+')" class="button onePointOne">
+                                1.1+
+                            </div>
                         </div>
-                        <div id='legacyButton' onclick="getCommBestILs('Legacy')" class="button legacy">Legacy
+                        <div class="container">
+                            <div id='legacyButton' onclick="getCommBestILs('Legacy')" class="button legacy">Legacy
+                            </div>
                         </div>
-                        <div id='nmgButton' onclick="getCommBestILs('NMG')" class="button nmg">NMG</div>
-                        <div id='dlcButton' onclick="getCommBestILs('DLC')" class="button dlc">DLC</div>
-                        <div id='dlcbaseButton' onclick="getCommBestILs('DLC+Base')" class="button dlcbase">
-                            DLC+Base
+                        <div class="container">
+                            <div id='nmgButton' onclick="getCommBestILs('NMG')" class="button nmg">NMG</div>
+                        </div>
+                        <div class="container">
+                            <div id='dlcButton' onclick="getCommBestILs('DLC')" class="button dlc">DLC</div>
+                            <!-- <div class="dlc lobber button" onclick="getCommBestILs('DLC L/S')></div> -->
+                            <div id='dlccsButton' class="dlc charge button" onclick="getCommBestILs('DLC C/S')"></div>
+                        </div>
+                        <div class="container">
+                            <div id='dlcbaseButton' onclick="getCommBestILs('DLC+Base')" class="button dlcbase">
+                                DLC+Base
+                            </div>
+                            <!-- <div class="dlcbase lobber button" onclick="getCommBestILs('DLC+Base L/S')"></div> -->
+                            <div id='dlcbasecsButton' class="dlcbase charge button"
+                                onclick="getCommBestILs('DLC+Base C/S')"></div>
                         </div>
                     </div>
-                    <div id="loadouts" style="left:120px"></div>
                 </div>
                 <div id="musicDiv" class='grow' onclick="runRecapMusic()"
                     style="position:absolute;right:20px;top:55px;">

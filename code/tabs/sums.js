@@ -2,6 +2,7 @@ function generateSums() {
     isles.forEach(isle => {
         isle.sum = 0
         isle.comparisonSum = 0
+        isle.sums = []
     })
     assignIsles()
     let sum = 0
@@ -30,18 +31,21 @@ function generateSums() {
         sum = 0
         isles.forEach(isle => {
             isle.sum = 0
+            isle.sums[index] = 0
         })
         isles.forEach(isle => {
             isle.runRecapCategories.forEach(categoryIndex => {
                 const bestTime = run[categoryIndex]
-                isle.sum += bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
+                const content = bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
+                isle.sum += content
+                isle.sums[index] += content
             })
         })
         HTMLContent += `<tr class='hover ${getRowColor(index)}'>`
         HTMLContent += bigPlayerDisplay(players[index])
-        isles.forEach((isle, isleIndex) => {
+        isles.forEach(isle => {
             sum += isle.sum
-            HTMLContent += getIsleSum(isle, index, isleIndex)
+            HTMLContent += getIsleSum(isle)
         })
         const delta = Math.floor(sum - comparisonSum)
         HTMLContent += `
@@ -85,9 +89,49 @@ function generateSums() {
         HTMLContent += `</tr>`
     }
     HTMLContent += `</table></div>`
+    if (commBestILsCategory.name == '1.1+') {
+        HTMLContent += `<div class='container' style='margin-top:20px'><table>
+        <tr>
+        <td></td>
+        <th class='isle1'>Isle 1</th>
+        <th class='expert'>Isle 2</th>
+        <th class='isle3'>Isle 3</th>
+        <th class='hell'>Hell</th>
+        </tr>`
+        commBestILsCategory.splits.forEach((run, index) => {
+            if (run.length == 3) run.push(globalCategory.runs[index].score)
+        })
+        commBestILsCategory.splits.forEach((split, index) => {
+            HTMLContent += `<tr class='hover ${getRowColor(index)}'>
+            <td class='sumPlayer'>${runRecapPlayer(players[index].name)}</td>`
+            let sum = 0
+            split.forEach((time, isleIndex) => {
+                const isleRTA = convertToSeconds(time) - convertToSeconds(split[isleIndex - 1])
+                const isleIGT = isles[isleIndex].sums[index]
+                sum += isleIGT
+                HTMLContent += `<td class='${isles[isleIndex].className}' style='padding:3px'>
+                <div class='container' style='gap:8px'>
+                    <div>
+                        <div style='font-size:80%'>RTA</div>
+                        <div>${isleIndex > 0 ? secondsToHMS(isleRTA, true) : ''}</div>
+                        <div>${secondsToHMS(convertToSeconds(time), true)}</div>
+                    </div>
+                    <div>
+                        <div style='font-size:80%'>IGT</div>
+                        <div>${isleIndex > 0 ? secondsToHMS(isleIGT, true) : ''}</div>
+                        <div>${secondsToHMS(sum, true)}</div>
+                    </div>
+                </div>
+                <div style='font-size:80%'>R: ${secondsToHMS((isleRTA || convertToSeconds(time)) - isleIGT, true)}</div>
+                </td>`
+            })
+            HTMLContent += `</tr>`
+        })
+        HTMLContent += `</table></div>`
+    }
     document.getElementById('content').innerHTML = HTMLContent
 }
-function getIsleSum(isle, index, isleIndex) {
+function getIsleSum(isle) {
     let HTMLContent = ''
     if (isle.sum) {
         const delta = Math.floor(isle.sum - isle.comparisonSum)
@@ -95,7 +139,7 @@ function getIsleSum(isle, index, isleIndex) {
         HTMLContent += `<td class='${grade.className}' style='text-align:left'>${savComparison != 'None' ? grade.grade : ''}</td>`
         HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, decimalsCriteria())}</td>`
         HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
-        HTMLContent += commBestILsCategory.name == '1.1+' && isleIndex < 3 ? `<td style='color:gray;font-size:70%;padding:0 3px'>${commBestILsCategory.splits[index][isleIndex]}</td>` : `<td style='width:20px'></td>`
+        HTMLContent += `<td style='width:20px'></td>`
     }
     return HTMLContent
 }
