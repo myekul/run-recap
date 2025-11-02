@@ -186,15 +186,16 @@ function altStrats(categoryIndex) {
     <tr><td colspan=5><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
     const devilCheck = query == 'thedevil'
+    const calaCheck = query == 'calamaria'
     const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
-    if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
-        HTMLContent += `<tr>
-    <th class='gray'>Pattern / Strat</th>`
-        if (baronessCheck) HTMLContent += `<th class='gray'></th>`
-        HTMLContent += `<th class='gray'>IGT</th>`
-        if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
-        HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
-    }
+    // if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
+    //     HTMLContent += `<tr>
+    // <th class='gray'>Pattern / Strat</th>`
+    //     if (baronessCheck) HTMLContent += `<th class='gray'></th>`
+    //     HTMLContent += `<th class='gray'>IGT</th>`
+    //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
+    //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
+    // }
     const minibosses = {
         'Candy Corn': 'candycorn',
         'Waffle': 'waffle',
@@ -219,6 +220,7 @@ function altStrats(categoryIndex) {
                 HTMLContent += `</div></td>`
             }
             if (devilCheck) HTMLContent += devilPattern(strat.name)
+            if (calaCheck) HTMLContent += calaPattern(strat.name)
             HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
             if (RTAcheck) {
                 HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
@@ -262,6 +264,17 @@ function devilPattern(name) {
     name.split(' ').forEach(attack => {
         if (['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'].includes(attack)) {
             HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/thedevil/${attack}.png' style='height:21px'></div>`
+        }
+    })
+    HTMLContent += `</div></td>`
+    return HTMLContent
+}
+function calaPattern(name) {
+    let HTMLContent = ''
+    HTMLContent += `<td class='gray'><div class='container'>`
+    name.split(', ').forEach(attack => {
+        if (['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'].includes(attack)) {
+            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/calamaria/${attack}.png' style='height:21px'></div>`
         }
     })
     HTMLContent += `</div></td>`

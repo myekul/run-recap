@@ -766,6 +766,9 @@
         ],
         "drkahlsrobot": [
             {
+                "title": "Standard Strats"
+            },
+            {
                 "name": "Red Gem",
                 "time": 41.35,
                 "rta": 42.27,
@@ -778,6 +781,15 @@
                 "rta": 42.60,
                 "player": "Quincely0",
                 "url": "https://youtu.be/j7teMOTCZgk"
+            },
+            {
+                "title": "Other"
+            },
+            {
+                "name": "Phase 2 Nuke",
+                "time": 44.65,
+                "player": "Lewzr",
+                "url": "https://youtu.be/WUWPp9uZqo8"
             }
         ],
         "sallystageplay": [
@@ -845,9 +857,9 @@
             },
             {
                 "name": "2-Gun, Dogfish",
-                "time": 40.88,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/tybLSjBjbTE"
+                "time": 39.69,
+                "player": "Lewzr",
+                "url": "https://youtu.be/q4mNAwocGyY"
             },
             {
                 "name": "4-Gun, Gun",
@@ -966,21 +978,21 @@
                 "title": "Parries"
             },
             {
-                "name": "Red Fish, Pufferfish",
+                "name": "Red Fish, Pufferfish, Ghosts",
                 "time": 50.96,
                 "rta": 52.06,
                 "player": "Lewzr",
                 "url": "https://youtu.be/WHPWKFNR1wY"
             },
             {
-                "name": "Seahorse, Red Fish, Pufferfish",
+                "name": "Seahorse, Red Fish, Pufferfish, Ghosts",
                 "time": 51.53,
                 "rta": 52.56,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/TDRTnzhNqL4"
             },
             {
-                "name": "Red Fish, Seahorse",
+                "name": "Red Fish, Seahorse, Ghosts",
                 "time": 53.96,
                 "rta": 54.51,
                 "player": "ClipBoardGuy",
@@ -990,21 +1002,39 @@
                 "title": "Parryless"
             },
             {
-                "name": "Yellow Fish, Turtle",
+                "name": "Yellow Fish, Turtle, Ghosts",
                 "time": 54.82,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/15x3FcMpTk0"
             },
             {
-                "name": "Yellow Fish, Pufferfish",
+                "name": "Pufferfish, Ghosts, Turtle, Yellow Fish",
+                "time": 56.15,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/QrulNSkxffM"
+            },
+            {
+                "name": "Pufferfish, Ghosts, Turtle, Red Fish",
+                "time": 56.30,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/nUnVW7aX4zQ"
+            },
+            {
+                "name": "Yellow Fish, Pufferfish, Ghosts",
                 "time": 56.73,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/CScRqSmExQU"
+            },
+            {
+                "name": "Ghosts, Pufferfish, Yellow Fish",
+                "time": 56.88,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/bn0M8OYK_oQ"
             }
         ],
         "phantomexpress": [
             {
-                "name": "2 Triples, Left Pumpkin",
+                "name": "2 Triples, L Pumpkin",
                 "time": 57.01,
                 "rta": 58.67,
                 "player": "GamerAttack27",
@@ -1406,7 +1436,7 @@
         ],
         "calamaria": [
             {
-                "name": "",
+                "name": "Ghosts, Seahorse",
                 "time": 36.73,
                 "player": "Fintan0",
                 "url": "https://youtu.be/w529zPn3L2M"
@@ -1890,7 +1920,7 @@
         ],
         "calamaria": [
             {
-                "name": "",
+                "name": "Ghosts, Seahorse, Red Fish",
                 "time": 49.86,
                 "player": "Quincely0",
                 "url": "https://youtu.be/HLQ8oXjoD4g"
