@@ -22,6 +22,9 @@
         ],
         "therootpack": [
             {
+                "title": "Triples"
+            },
+            {
                 "name": "TAStato, 2 Onion Triples",
                 "time": 33.86,
                 "player": "ExclamationMarkYT",
@@ -32,6 +35,9 @@
                 "time": 34.36,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/5XuoQ9-PDu4"
+            },
+            {
+                "title": "Doubles"
             },
             {
                 "name": "TAStato, 1 Double 1 Triple",
@@ -155,16 +161,28 @@
         ],
         "goopylegrande": [
             {
+                "title": "Triples"
+            },
+            {
                 "name": "Sneeze Skip",
-                "time": 21.93,
-                "player": "Quincely0",
-                "url": "https://youtu.be/lpWutnyKGlY"
+                "time": 21.87,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/kLY3ItaoqEg"
             },
             {
                 "name": "Sneeze",
                 "time": "22.20",
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/xF4GGSoNOuc?si=X765NQFW-ywsMlKq&t=264"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Sneeze Skip",
+                "time": "24.42",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/CFr6D14yACY"
             }
         ],
         "hildaberg": [
@@ -202,13 +220,16 @@
         ],
         "cagneycarnation": [
             {
-                "name": "Lunge EX",
+                "title": "Triples"
+            },
+            {
+                "name": "Double Lunge, Lunge EX",
                 "time": 30.77,
                 "player": "Quincely0",
                 "url": "https://youtu.be/aYvapz6VaFc"
             },
             {
-                "name": "No Lunge EX",
+                "name": "Double Lunge, No Lunge EX",
                 "time": 32.52,
                 "player": "Quincely0",
                 "url": "https://youtu.be/_1xtRopi5Qc"
@@ -224,6 +245,15 @@
                 "time": 35.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/rdF5WbS-qX4"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Double Lunge",
+                "time": 35.92,
+                "player": "Quincely0",
+                "url": "https://youtu.be/HSCJaqXeZVc"
             }
         ],
         "baronessvonbonbon": [
@@ -571,7 +601,7 @@
             },
             {
                 "name": "Jawbreaker, Gumball, Candy Corn",
-                "time": 35.9,
+                "time": "35.90",
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/-g2EcwDh5Ho?si=JTEC0bcPWuzy2Snr&t=2053"
             },
@@ -788,16 +818,23 @@
             {
                 "name": "Phase 2 Nuke",
                 "time": 44.65,
+                "rta": 46.88,
                 "player": "Lewzr",
                 "url": "https://youtu.be/WUWPp9uZqo8"
             }
         ],
         "sallystageplay": [
             {
-                "name": "",
+                "name": "Triples",
                 "time": 44.56,
                 "player": "Quincely0",
                 "url": "https://youtu.be/T3S9ayCReF8"
+            },
+            {
+                "name": "Doubles",
+                "time": 47.74,
+                "player": "Quincely0",
+                "url": "https://youtu.be/VSN6AroJlW0"
             }
         ],
         "wernerwerman": [
@@ -1091,6 +1128,9 @@
         ],
         "kingdice": [
             {
+                "title": "Triples"
+            },
+            {
                 "name": "Best RNG",
                 "time": "1:44.69",
                 "rta": "1:46.47",
@@ -1105,7 +1145,16 @@
                 "url": "https://youtu.be/YLyUa0CcUrM"
             },
             {
-                "name": "Worst RNG, No Triples",
+                "title": "Doubles"
+            },
+            {
+                "name": "Best RNG",
+                "time": "1:51",
+                "player": "Quincely0",
+                "url": "https://youtu.be/P8FTg7l0wok"
+            },
+            {
+                "name": "Worst RNG",
                 "time": "1:55.61",
                 "rta": "1:58.31",
                 "player": "ExclamationMarkYT",
@@ -1538,14 +1587,14 @@
         ],
         "ribbyandcroaks": [
             {
-                "name": "Punches Bulls",
+                "name": "Punches, Bulls",
                 "time": "47.40",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/mSnNzC5SRtk"
             },
             {
-                "name": "Punches Snakes",
-                "time": "47.89",
+                "name": "Punches, Snakes",
+                "time": 47.89,
                 "player": "Quincely0",
                 "url": "https://youtu.be/6lPCn0ScQEs"
             }
@@ -1566,6 +1615,12 @@
             }
         ],
         "cagneycarnation": [
+            {
+                "name": "Spread EXs",
+                "time": 35.57,
+                "player": "Quincely0",
+                "url": "https://youtu.be/S2iW1ebfbq8"
+            },
             {
                 "name": "Doubles",
                 "time": 34.99,
@@ -1593,6 +1648,23 @@
                 "url": "https://youtu.be/CDO4WD1o8HI"
             }
         ],
+        "wallywarbles": [
+            {
+                "name": "1 Nuke",
+                "time": 50.75,
+                "rta": 53.04,
+                "player": "Quincely0",
+                "url": "https://youtu.be/92kJ31-4xkY"
+            }
+        ],
+        "djimmithegreat": [
+            {
+                "name": "",
+                "time": "1:22.95",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/VJF6aXTrHtk"
+            }
+        ],
         "beppitheclown": [
             {
                 "name": "Parries",
@@ -1608,12 +1680,46 @@
                 "url": "https://youtu.be/50AoT_hFBE0?si=cl6oQ5HBLYYadLEH&t=29s"
             }
         ],
+        "drkahlsrobot": [
+            {
+                "name": "2 Nukes",
+                "time": 44.94,
+                "rta": 48.47,
+                "player": "Quincely0",
+                "url": "https://youtu.be/VAtge70sCE8"
+            },
+            {
+                "name": "1 Nuke",
+                "time": 45,
+                "player": "Quincely0",
+                "url": "https://youtu.be/nlv-sKUku8U?si=_hKvJmVaABZ7YkHG&t=1050"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "Doubles",
+                "time": 47.74,
+                "player": "Quincely0",
+                "url": "https://youtu.be/VSN6AroJlW0"
+            }
+        ],
         "wernerwerman": [
             {
                 "name": "Doubles",
                 "time": 43.78,
                 "player": "Quincely0",
                 "url": "https://youtu.be/4EwmIvZSv24"
+            }
+        ],
+        "calamaria": [
+            {
+                "title": "2 Nukes"
+            },
+            {
+                "name": "Red Fish, Pufferfish, Ghosts",
+                "time": 57.76,
+                "player": "Quincely0",
+                "url": "https://youtu.be/YT1TIyVvLa0"
             }
         ],
         "phantomexpress": [
@@ -1792,22 +1898,29 @@
     "DLC C/S": {
         "glumstonethegiant": [
             {
+                "title": "Parryless"
+            },
+            {
                 "name": "Geese",
                 "time": 47.39,
                 "player": "myekul",
                 "url": "https://youtu.be/S9XKGm-XAWk"
             },
             {
-                "name": "Cauldron, Parries",
-                "time": 46.25,
-                "player": "myekul",
-                "url": "https://youtu.be/DIH3GtVWBMg"
-            },
-            {
                 "name": "Cauldron",
                 "time": 47.92,
                 "player": "myekul",
                 "url": "https://youtu.be/se8orpxqpEE"
+            },
+            {
+                "title": "Parries"
+            },
+            {
+                "name": "Cauldron",
+                "time": 46.25,
+                "rta": "47.00",
+                "player": "myekul",
+                "url": "https://youtu.be/DIH3GtVWBMg"
             }
         ],
         "mortimerfreeze": [
@@ -1946,7 +2059,7 @@
         ],
         "goopylegrande": [
             {
-                "name": "7 Flies Regular Skip",
+                "name": "",
                 "time": 29.91,
                 "player": "Quincely0",
                 "url": "https://youtu.be/BqIo0vxKddk"
@@ -1990,6 +2103,18 @@
                 "time": 37.66,
                 "player": "Quincely0",
                 "url": "https://youtu.be/cwPNInBvRVs"
+            },
+            {
+                "name": "Orbs",
+                "time": 40.62,
+                "player": "myekul",
+                "url": "https://youtu.be/Smgv9UX38hA"
+            },
+            {
+                "name": "Triangles",
+                "time": 41.71,
+                "player": "myekul",
+                "url": "https://youtu.be/beZ9pkc8wdY"
             }
         ],
         "sallystageplay": [
