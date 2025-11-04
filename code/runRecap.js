@@ -123,7 +123,7 @@ function runRecapUnload(elem, shh) {
     }
 }
 function runRecapInfo() {
-    const player = players[globalPlayerIndex]
+    const player = players.find(player => player.name == localStorage.getItem('username'))
     const playerName = player ? getPlayerName(player) : `<span style='color:white'>${localStorage.getItem('username')}</span>`
     let HTMLContent = `
     <div>
