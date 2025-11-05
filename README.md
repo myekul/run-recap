@@ -12,3 +12,5 @@
 - None comparison
 
 - Organize Run Recap database
+
+- Find player or display player name

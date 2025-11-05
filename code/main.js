@@ -33,21 +33,26 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             alt = data
-            alt['Legacy'].forestfollies = alt['1.1+'].forestfollies
-            alt['NMG'].hildaberg = alt['1.1+'].hildaberg
-            alt['NMG'].grimmatchstick = alt['1.1+'].grimmatchstick
-            alt['DLC C/S'].estherwinchester = alt['DLC'].estherwinchester
-            alt['DLC+Base'].hildaberg = alt['NMG'].hildaberg
-            alt['DLC+Base'].cagneycarnation = alt['NMG'].cagneycarnation
-            alt['DLC+Base'].baronessvonbonbon = alt['NMG'].baronessvonbonbon
-            alt['DLC+Base C/S'].hildaberg = alt['DLC+Base'].hildaberg
-            alt['DLC+Base C/S'].wallywarbles = alt['DLC+Base'].wallywarbles
-            alt['DLC+Base C/S'].djimmithegreat = alt['DLC+Base'].djimmithegreat
-            alt['DLC+Base C/S'].drkahlsrobot = alt['DLC+Base'].drkahlsrobot
-            alt['DLC+Base C/S'].calamaria = alt['DLC+Base'].calamaria
-            alt['DLC C/S'].forestfollies = alt['DLC'].forestfollies
-            alt['DLC+Base'].forestfollies = alt['DLC'].forestfollies
-            alt['DLC+Base C/S'].forestfollies = alt['DLC'].forestfollies
+            const chunks = [
+                ['1.1+', 'Legacy', 'forestfollies'],
+                ['1.1+', 'NMG', 'hildaberg'],
+                ['1.1+', 'NMG', 'grimmatchstick'],
+                ['DLC', 'DLC C/S', 'estherwinchester'],
+                ['NMG', 'DLC+Base', 'hildaberg'],
+                ['NMG', 'DLC+Base', 'cagneycarnation'],
+                ['NMG', 'DLC+Base', 'baronessvonbonbon'],
+                ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
+                ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
+                ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
+                ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
+                ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
+                ['DLC', 'DLC C/S', 'forestfollies'],
+                ['DLC', 'DLC+Base', 'forestfollies'],
+                ['DLC', 'DLC+Base C/S', 'forestfollies']
+            ]
+            for (const [copy, paste, boss] of chunks) {
+                alt[paste][boss] = alt[copy][boss]
+            }
             copyDLC('DLC', 'DLC+Base')
             copyDLC('DLC C/S', 'DLC+Base C/S')
             function copyDLC(copy, paste) {

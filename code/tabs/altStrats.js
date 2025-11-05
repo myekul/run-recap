@@ -37,9 +37,19 @@ function generateAltStrats() {
         })
         HTMLContent += `</div>`
         if (altStratIndex == -1) {
+            let totalSum = 0
+            for (const category in alt) {
+                for (const boss in alt[category]) {
+                    for (const obj of alt[category][boss]) {
+                        if (!obj.title) {
+                            totalSum++
+                        }
+                    }
+                }
+            }
             const counts = {};
-            for (const category in alt[commBestILsCategory.tabName]) {
-                for (const obj of alt[commBestILsCategory.tabName][category]) {
+            for (const boss in alt[commBestILsCategory.tabName]) {
+                for (const obj of alt[commBestILsCategory.tabName][boss]) {
                     if (!obj.title) {
                         const player = obj.player;
                         counts[player] = (counts[player] || 0) + 1;
@@ -123,10 +133,13 @@ function generateAltStrats() {
             ${myekulColor('Submissions are always open!')}
             </div>
             <div class="button cuphead"
-                                style="width:120px;gap:8px;font-size:90%;margin:20px auto"
-                                onclick="modalSubmitIL()">
-                                <i class="fa fa-plus"></i>Submit IL
-                            </div>
+                style="width:120px;gap:8px;font-size:90%;margin:20px auto"
+                onclick="modalSubmitIL()">
+                <i class="fa fa-plus"></i>Submit IL
+            </div>
+            <div class='textBlock' style='width:460px'>
+            Across all categories, we have accumulated ${myekulColor(totalSum)} ILs. Thank you for the continued support!
+            </div>
             <div id='commBest_queue'>${pendingSubmissions()}</div>
             </div>`
             // Best Times
@@ -226,7 +239,7 @@ function altStrats(categoryIndex) {
                 HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
             }
             const player = players.find(player => player.name == strat.player)
-            HTMLContent += getPlayerDisplay(player, true)
+            HTMLContent += getPlayerDisplay(player || strat.player, true)
         }
         HTMLContent += `</tr>`
     })
