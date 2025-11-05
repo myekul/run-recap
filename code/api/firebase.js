@@ -110,9 +110,7 @@ window.firebaseUtils = {
             querySnapshot.forEach(docSnap => {
                 results.push({ id: docSnap.id, ...docSnap.data() });
             });
-            if (altStratIndex == -1) {
-                document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results)
-            }
+            document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results, true)
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }

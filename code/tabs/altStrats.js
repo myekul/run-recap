@@ -60,7 +60,7 @@ function generateAltStrats() {
             countArray.forEach((player, index) => {
                 sum += player.count
                 HTMLContent += `<tr class='${getRowColor(index)}'>
-                ${getPlayerDisplay(players.find(player2 => player2.name == player.player))}
+                ${getPlayerDisplay(players.find(player2 => player2.name == player.player) || player.player)}
                 <td>${player.count}</td>
                 </tr>`
             })
@@ -168,7 +168,7 @@ function generateAltStrats() {
         HTMLContent += `<div class='container'>No alt strats...</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
-    window.firebaseUtils.firestoreReadCommBestILs()
+    if (altStratIndex == -1) window.firebaseUtils.firestoreReadCommBestILs()
 }
 function altStratClick(index) {
     altStratIndex = index
@@ -233,9 +233,12 @@ function altStrats(categoryIndex) {
     HTMLContent += `</table></div>`
     return HTMLContent
 }
-function pendingSubmissions(submissions = new Array(10).fill(null)) {
+function pendingSubmissions(submissions = new Array(10).fill(null), done) {
     let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
-    HTMLContent += `<tr><td colspan=6 class='font2 gray' style='font-size:120%;padding:5px'>Pending Submissions</td></tr>`
+    HTMLContent += `<tr><td colspan=6 class='font2 gray' style='font-size:120%;padding:5px;position:relative'>
+    ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
+    Pending Submissions
+    </td></tr>`
     for (let i = 0; i < 10; i++) {
         const submission = submissions[i]
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')"` : ''}>`
@@ -251,6 +254,9 @@ function pendingSubmissions(submissions = new Array(10).fill(null)) {
             <td style='text-align:left'>${strat || ''}</td>
             ${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}`
         } else {
+            // if (done && i == 3 && !submissions[0]) {
+            //     HTMLContent += `<td colspan=5 style='font-size:80%;color:gray'></td>`
+            // }
             HTMLContent += `<td colspan=6>&nbsp;</td>`
         }
         HTMLContent += `</tr>`
