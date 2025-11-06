@@ -98,7 +98,7 @@ function loadMyekul() {
         let topSum = 0
         let top3Sum = 0
         commBestILsCategory.topRuns.forEach((run, index) => {
-            const time = run[categoryIndex]
+            const time = run.runRecap[categoryIndex]
             topSum += time
             if (index < 3) top3Sum += time
             if (time < commBestILsCategory.topBest[categoryIndex]) {

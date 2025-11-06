@@ -162,7 +162,7 @@
                 "title": "Punches Super Skip"
             },
             {
-                "name": "Punches, 5 Flies, Snakes",
+                "name": "5 Flies, Snakes",
                 "time": 43.98,
                 "player": "Lewzr",
                 "url": "https://youtu.be/esyIzOefrX4"
@@ -229,28 +229,43 @@
         ],
         "cagneycarnation": [
             {
-                "title": "Triples"
+                "title": "Lunge EX"
             },
             {
-                "name": "Double Lunge, Lunge EX",
+                "name": "Lunge, Lunge, Pod Hands",
                 "time": 30.77,
                 "player": "Quincely0",
                 "url": "https://youtu.be/aYvapz6VaFc"
             },
             {
-                "name": "Double Lunge, No Lunge EX",
+                "title": "Triples"
+            },
+            {
+                "name": "Lunge, Lunge, Pod Hands",
                 "time": 32.52,
                 "player": "Quincely0",
                 "url": "https://youtu.be/_1xtRopi5Qc"
             },
             {
-                "name": "Seeds",
+                "name": "Seeds, Pod Hands",
                 "time": 33.96,
                 "player": "Grondious",
                 "url": "https://youtu.be/wBCzMTzm2dE"
             },
             {
-                "name": "Seeds Lunge Seeds",
+                "name": "Lunge, Pod Hands, Seeds",
+                "time": 34.35,
+                "player": "SBDWolf",
+                "url": "https://www.youtube.com/live/1WMRr4ZbHxI?si=T6cuHPtkDKoZYIsD&t=5160"
+            },
+            {
+                "name": "Lunge, Pod Hands, Pod Hands",
+                "time": 35.83,
+                "player": "SBDWolf",
+                "url": "https://www.youtube.com/live/1WMRr4ZbHxI?si=x9JSMUD2yXP_E2y6&t=7712"
+            },
+            {
+                "name": "Seeds, Lunge, Seeds",
                 "time": 35.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/rdF5WbS-qX4"
@@ -629,10 +644,22 @@
         ],
         "wallywarbles": [
             {
-                "name": "",
+                "title": "Standard Strats"
+            },
+            {
+                "name": "Down Eggs",
                 "time": 46.44,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/yP0lTtLRPzU"
+            },
+            {
+                "name": "Up Eggs",
+                "time": 48.86,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/xES9CYHLFpQ"
+            },
+            {
+                "title": "Other"
             },
             {
                 "name": "Nuke",
@@ -723,16 +750,19 @@
                 "url": "https://youtu.be/dRBf65r1Nq0?si=u-bdLbI3SMFSknqz&t=168"
             },
             {
-                "title": "No Beppi Skip"
+                "title": "Other"
             },
             {
-                "name": "",
+                "name": "No Beppi Skip",
                 "time": 53.91,
                 "player": "Quincely0",
                 "url": "https://youtu.be/IezOzs0CiDM"
             }
         ],
         "grimmatchstick": [
+            {
+                "title": "Standard Strats"
+            },
             {
                 "name": "3 Lasers, 2 Lasers",
                 "time": 45.89,
@@ -764,7 +794,10 @@
                 "url": "https://youtu.be/3NaYiHs_O3U"
             },
             {
-                "name": "3 Lasers, 2 Meteors (Grim Glitch)",
+                "title": "Grim Glitch"
+            },
+            {
+                "name": "3 Lasers, 2 Meteors",
                 "time": 47.64,
                 "player": "Quincely0",
                 "url": "https://youtu.be/DCe8My83EtQ"
@@ -1110,6 +1143,12 @@
                 "time": 56.30,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/nUnVW7aX4zQ"
+            },
+            {
+                "name": "Pufferfish, Red Fish, Turtle, Ghosts",
+                "time": 56.60,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/vp-2gvKboSk"
             }
         ],
         "phantomexpress": [
@@ -1179,6 +1218,12 @@
                 "rta": "1:46.47",
                 "player": "Quincely0",
                 "url": "https://youtu.be/stxsgl3xDsM"
+            },
+            {
+                "name": "No Hearts",
+                "time": "1:47.59",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/tUIhvBo437M?si=cKtYiPFCENfqG01I&t=1664"
             },
             {
                 "name": "Worst RNG",
@@ -1366,6 +1411,12 @@
                 "time": 38.79,
                 "player": "Grondious",
                 "url": "https://youtu.be/FuAtHLS56Ms"
+            },
+            {
+                "name": "Bubbles Clap Spider",
+                "time": 41.93,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/wmvDccZy624"
             },
             {
                 "name": "Clap Ring Clap Spider",

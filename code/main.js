@@ -29,41 +29,45 @@ dropbox.addEventListener('drop', (event) => {
     runRecapHandleFile(files[0])
 });
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('resources/alt.json')
-        .then(response => response.json())
+    fetch('resources/categoryData.json').then(response => response.json())
         .then(data => {
-            alt = data
-            const chunks = [
-                ['1.1+', 'Legacy', 'forestfollies'],
-                ['1.1+', 'NMG', 'hildaberg'],
-                ['1.1+', 'NMG', 'grimmatchstick'],
-                ['DLC', 'DLC C/S', 'estherwinchester'],
-                ['NMG', 'DLC+Base', 'hildaberg'],
-                ['NMG', 'DLC+Base', 'cagneycarnation'],
-                ['NMG', 'DLC+Base', 'baronessvonbonbon'],
-                ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
-                ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
-                ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
-                ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
-                ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
-                ['DLC', 'DLC C/S', 'forestfollies'],
-                ['DLC', 'DLC+Base', 'forestfollies'],
-                ['DLC', 'DLC+Base C/S', 'forestfollies']
-            ]
-            for (const [copy, paste, boss] of chunks) {
-                alt[paste][boss] = alt[copy][boss]
-            }
-            copyDLC('DLC', 'DLC+Base')
-            copyDLC('DLC C/S', 'DLC+Base C/S')
-            function copyDLC(copy, paste) {
-                const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
-                dlc.forEach(boss => {
-                    alt[paste][boss] = alt[copy][boss]
+            commBestILs = data
+            fetch('resources/alt.json')
+                .then(response => response.json())
+                .then(data => {
+                    alt = data
+                    const chunks = [
+                        ['1.1+', 'Legacy', 'forestfollies'],
+                        ['1.1+', 'NMG', 'hildaberg'],
+                        ['1.1+', 'NMG', 'grimmatchstick'],
+                        ['DLC', 'DLC C/S', 'estherwinchester'],
+                        ['NMG', 'DLC+Base', 'hildaberg'],
+                        ['NMG', 'DLC+Base', 'cagneycarnation'],
+                        ['NMG', 'DLC+Base', 'baronessvonbonbon'],
+                        ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
+                        ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
+                        ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
+                        ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
+                        ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
+                        ['DLC', 'DLC C/S', 'forestfollies'],
+                        ['DLC', 'DLC+Base', 'forestfollies'],
+                        ['DLC', 'DLC+Base C/S', 'forestfollies']
+                    ]
+                    for (const [copy, paste, boss] of chunks) {
+                        alt[paste][boss] = alt[copy][boss]
+                    }
+                    copyDLC('DLC', 'DLC+Base')
+                    copyDLC('DLC C/S', 'DLC+Base C/S')
+                    function copyDLC(copy, paste) {
+                        const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
+                        dlc.forEach(boss => {
+                            alt[paste][boss] = alt[copy][boss]
+                        })
+                    }
                 })
-            }
+            commBestILsCategory = commBestILs['1.1+']
+            window.firebaseUtils.firestoreRead()
         })
-    commBestILsCategory = commBestILs['1.1+']
-    window.firebaseUtils.firestoreRead()
 })
 function action() {
     loaded = true
@@ -341,11 +345,11 @@ function assignRuns(category, categoryIndex) {
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }
-const reloadTimeout = setTimeout(() => {
-    if (!loaded) {
-        location.reload();
-    }
-}, 3000)
+// const reloadTimeout = setTimeout(() => {
+//     if (!loaded) {
+//         location.reload();
+//     }
+// }, 3000)
 document.querySelectorAll('.lobber').forEach(button => {
     button.innerHTML = cupheadShot('lobber', 21)
 })

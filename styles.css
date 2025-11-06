@@ -124,10 +124,6 @@ th {
     font-size: 100%;
 }
 
-.sumPlayer div {
-    justify-content: left;
-}
-
 .lobber,
 .charge {
     width: 30px !important

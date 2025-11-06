@@ -35,7 +35,7 @@ function generateResidual() {
     </tr>`
     commBestILsCategory.topRuns.forEach((run, index) => {
         let sum = 0
-        run.forEach(time => {
+        run.runRecap.forEach(time => {
             const newTime = decimalsCriteria() ? time : Math.floor(time)
             sum += newTime
         })
@@ -43,8 +43,16 @@ function generateResidual() {
         <tr class='${getRowColor(index)}'>
         ${bigPlayerDisplay(players[index])}
         <td style='color:gray;font-size:80%'>${secondsToHMS(sum, decimalsCriteria())}</td>
-        <td>${secondsToHMS(Math.floor(players[index].extra.score) - sum, decimalsCriteria())}</td>
-        </tr>`
+        <td>${secondsToHMS(Math.floor(players[index].extra.score) - sum, decimalsCriteria())}</td>`
+        if (commBestILsCategory.name == '1.1+') {
+            HTMLContent += `<td style='font-size:70%;color:gray'>
+            <div class='container' style='justify-content:left;gap:2px'>
+            ${fontAwesome('star')}
+            ${run.starSkips.reduce((acc, num) => acc + num, 0)}
+            </div>
+        </td>`
+        }
+        HTMLContent += `</tr>`
     })
     HTMLContent += `</table>`
     if (runRecap_savFile) {

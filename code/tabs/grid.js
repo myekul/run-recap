@@ -16,14 +16,14 @@ function generateGrid() {
         HTMLContent += `<tr class='${getRowColor(index)} hover'>`
         HTMLContent += bigPlayerDisplay(player)
         categories.forEach((category, categoryIndex) => {
-            const ILtime = run[categoryIndex]
+            const ILtime = run.runRecap[categoryIndex]
             const comparisonTime = getComparisonTime(categoryIndex)
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
             HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`
             HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(commBestILsCategory.topBest[categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
-        if (commBestILsCategory.name == '1.1+') HTMLContent += devilPattern(commBestILsCategory.thedevil[index])
+        if (commBestILsCategory.name == '1.1+') HTMLContent += devilPattern(run.thedevil)
         HTMLContent += `</tr>`
     })
     if (commBestILsCategory.topRuns.length > 3) {

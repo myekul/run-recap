@@ -29,6 +29,7 @@ let commbestILs_ready
 
 let altStratIndex = -1
 
+let commBestILs
 let alt
 
 function decimalsCriteria() {
