@@ -37,16 +37,6 @@ function generateAltStrats() {
         })
         HTMLContent += `</div>`
         if (altStratIndex == -1) {
-            let totalSum = 0
-            for (const category in alt) {
-                for (const boss in alt[category]) {
-                    for (const obj of alt[category][boss]) {
-                        if (!obj.title) {
-                            totalSum++
-                        }
-                    }
-                }
-            }
             const counts = {};
             for (const boss in alt[commBestILsCategory.tabName]) {
                 for (const obj of alt[commBestILsCategory.tabName][boss]) {
@@ -78,10 +68,6 @@ function generateAltStrats() {
             <div class='container' style='color:gray;font-size:80%'>TOTAL: ${sum}</div>`
             if (commBestILsCategory.tabName == '1.1+') {
                 const myekulIdeas = [
-                    {
-                        boss: 'ribbyandcroaks',
-                        name: '6 Flies Regular Skip, Bulls'
-                    },
                     {
                         boss: 'hildaberg',
                         name: 'Double Trollnado'
@@ -138,7 +124,7 @@ function generateAltStrats() {
                 <i class="fa fa-plus"></i>Submit IL
             </div>
             <div class='textBlock' style='width:460px'>
-            Across all categories, we have accumulated ${myekulColor(totalSum)} ILs. Thank you for the continued support!
+            Across all categories, we have accumulated ${myekulColor(commBestILSum)} ILs. Thank you for the continued support!
             </div>
             <div id='commBest_queue'>${pendingSubmissions()}</div>
             </div>`
@@ -199,7 +185,6 @@ function altStrats(categoryIndex) {
     <tr><td colspan=5><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
     const devilCheck = query == 'thedevil'
-    const calaCheck = query == 'calamaria'
     const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
     // if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
     //     HTMLContent += `<tr>
@@ -232,8 +217,7 @@ function altStrats(categoryIndex) {
                 })
                 HTMLContent += `</div></td>`
             }
-            if (devilCheck) HTMLContent += devilPattern(strat.name)
-            if (calaCheck) HTMLContent += calaPattern(strat.name)
+            if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
             HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
             if (RTAcheck) {
                 HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
@@ -277,23 +261,18 @@ function pendingSubmissions(submissions = new Array(10).fill(null), done) {
     HTMLContent += `</table></div>`
     return HTMLContent
 }
-function devilPattern(name) {
+function bossPattern(boss, pattern) {
     let HTMLContent = ''
     HTMLContent += `<td class='gray'><div class='container'>`
-    name.split(' ').forEach(attack => {
-        if (['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'].includes(attack)) {
-            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/thedevil/${attack}.png' style='height:21px'></div>`
-        }
-    })
-    HTMLContent += `</div></td>`
-    return HTMLContent
-}
-function calaPattern(name) {
-    let HTMLContent = ''
-    HTMLContent += `<td class='gray'><div class='container'>`
-    name.split(', ').forEach(attack => {
-        if (['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'].includes(attack)) {
-            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/calamaria/${attack}.png' style='height:21px'></div>`
+    let split = boss == 'thedevil' ? ' ' : ', '
+    const attacks = {
+        cagneycarnation: ['Lunge', 'Pod Hands', 'Seeds'],
+        calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
+        thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
+    }
+    pattern.split(split).forEach(attack => {
+        if (attacks[boss].includes(attack)) {
+            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/${boss}/${attack}.png' style='height:21px'></div>`
         }
     })
     HTMLContent += `</div></td>`

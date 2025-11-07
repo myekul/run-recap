@@ -36,6 +36,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(response => response.json())
                 .then(data => {
                     alt = data
+                    for (const category in alt) {
+                        for (const boss in alt[category]) {
+                            for (const obj of alt[category][boss]) {
+                                if (!obj.title) {
+                                    commBestILSum++
+                                }
+                            }
+                        }
+                    }
                     const chunks = [
                         ['1.1+', 'Legacy', 'forestfollies'],
                         ['1.1+', 'NMG', 'hildaberg'],
@@ -345,23 +354,14 @@ function assignRuns(category, categoryIndex) {
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }
-// const reloadTimeout = setTimeout(() => {
-//     if (!loaded) {
-//         location.reload();
-//     }
-// }, 3000)
+const reloadTimeout = setTimeout(() => {
+    if (!loaded) {
+        location.reload();
+    }
+}, 3000)
 document.querySelectorAll('.lobber').forEach(button => {
     button.innerHTML = cupheadShot('lobber', 21)
 })
 document.querySelectorAll('.charge').forEach(button => {
     button.innerHTML = cupheadShot('charge', 21)
 })
-// const allButtons = document.querySelector('#categoryTabs').querySelectorAll('.button')
-// allButtons.forEach(button => {
-//     button.addEventListener('click', () => {
-//         allButtons.forEach(button2 => {
-//             button2.classList.remove('selected')
-//         })
-//         button.classList.add('selected')
-//     });
-// })

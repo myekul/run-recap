@@ -23,7 +23,7 @@ function generateGrid() {
             HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`
             HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(commBestILsCategory.topBest[categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
-        if (commBestILsCategory.name == '1.1+') HTMLContent += devilPattern(run.thedevil)
+        if (commBestILsCategory.name == '1.1+') HTMLContent += bossPattern('thedevil', run.thedevil)
         HTMLContent += `</tr>`
     })
     if (commBestILsCategory.topRuns.length > 3) {

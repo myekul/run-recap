@@ -18,6 +18,12 @@
                 "time": 33.57,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/zhDYWdYTK7A"
+            },
+            {
+                "name": "TSSMTIC",
+                "time": 33.61,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
             }
         ],
         "therootpack": [
@@ -79,6 +85,12 @@
                 "time": 42.39,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/b2BcfRaU3yI"
+            },
+            {
+                "name": "6 Flies, Bulls",
+                "time": 40.95,
+                "player": "Lewzr",
+                "url": "https://youtu.be/AoI7G94NLRY"
             },
             {
                 "name": "6 Flies, Snakes",
@@ -274,10 +286,19 @@
                 "title": "Doubles"
             },
             {
-                "name": "Double Lunge",
+                "name": "Lunge, Lunge, Pod Hands",
                 "time": 35.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/HSCJaqXeZVc"
+            },
+            {
+                "title": "Spread EXs"
+            },
+            {
+                "name": "Lunge, Lunge, Pod Hands",
+                "time": 35.57,
+                "player": "Quincely0",
+                "url": "https://youtu.be/S2iW1ebfbq8"
             }
         ],
         "baronessvonbonbon": [
@@ -1014,7 +1035,8 @@
             },
             {
                 "name": "Dogfish, Gun",
-                "time": 41.98,
+                "time": 41.95,
+                "rta": 42.52,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/_f84Id17otQ"
             },
@@ -1153,52 +1175,57 @@
         ],
         "phantomexpress": [
             {
-                "name": "2 Triples, L Pumpkin",
-                "time": 57.01,
-                "rta": 58.67,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/WYv48lZEi5o"
+                "title": "Triple"
             },
             {
-                "name": "1 Triple, L Pumpkin, L Cart Final",
+                "name": "L Pumpkin, L Cart Final",
                 "time": 57.48,
                 "rta": 59.12,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/L82I_PlmAuw"
             },
             {
-                "name": "1 Triple, L Pumpkin",
+                "name": "L Pumpkin",
                 "time": 57.7,
                 "rta": 59.36,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/cif5WQOacxA"
             },
             {
-                "name": "1 Triple, R Pumpkin",
-                "time": 58.44,
-                "rta": 60.27,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/IOELMRgBIh4"
+                "name": "R Pumpkin",
+                "time": 57.99,
+                "rta": 59.83,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/HkICMu2Db4Y"
             },
             {
-                "name": "1 Double, L Pumpkin",
+                "title": "Double"
+            },
+            {
+                "name": "L Pumpkin",
                 "time": 58.57,
                 "rta": 60.41,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/Q2yE0RMxHfc"
             },
             {
-                "name": "1 Double, R Pumpkin",
+                "name": "R Pumpkin",
                 "time": 58.69,
                 "rta": 60.52,
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/Mzw5eDoeoZE"
             },
             {
-                "name": "1 Single, R Pumpkin",
+                "title": "Single"
+            },
+            {
+                "name": "R Pumpkin",
                 "time": 59.44,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/BFdOWkxh47o"
+            },
+            {
+                "title": "Other"
             },
             {
                 "name": "Safe Phase 1, 1 Triple, L Pumpkin",
@@ -1206,6 +1233,13 @@
                 "rta": 62.21,
                 "player": "Grondious",
                 "url": "https://youtu.be/x_2IL7qJpVk"
+            },
+            {
+                "name": "2 Triples, L Pumpkin",
+                "time": 57.01,
+                "rta": 58.67,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/WYv48lZEi5o"
             }
         ],
         "kingdice": [
@@ -1273,9 +1307,9 @@
             },
             {
                 "name": "Dragon Clap",
-                "time": 49.03,
-                "player": "myekul",
-                "url": "https://youtu.be/G7MFQgavT40"
+                "time": 48.88,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/uuCLFW2Vl6M"
             },
             {
                 "name": "Spider First",
@@ -1666,7 +1700,7 @@
                 "name": "Clap Dragon R",
                 "time": 27.85,
                 "player": "Yuka",
-                "url": "https://youtu.be/urC70JVICcQ?si=G_R2K8lAZuv2DEAd&t=14"
+                "url": "https://youtu.be/urC70JVICcQ?si=fgJRIKN9J0iKApok&t=32"
             },
             {
                 "name": "Bubbles Spider",
@@ -1695,6 +1729,14 @@
         ]
     },
     "NMG": {
+        "forestfollies": [
+            {
+                "name": "TSSMTIC",
+                "time": 33.61,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
+            }
+        ],
         "therootpack": [
             {
                 "name": "3 Doubles",
@@ -1917,6 +1959,12 @@
                 "time": 33.57,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/zhDYWdYTK7A"
+            },
+            {
+                "name": "TSSMTIC",
+                "time": 33.61,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
             }
         ],
         "glumstonethegiant": [
@@ -2125,6 +2173,42 @@
                 "url": "https://youtu.be/CpZI5-umKgg"
             }
         ],
+        "therootpack": [
+            {
+                "name": "",
+                "time": 35.72,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/rwB_nGITe2A"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "title": "Regular Skip"
+            },
+            {
+                "name": "7 Flies, Snakes",
+                "time": 46,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/EOVr6rSl25I"
+            },
+            {
+                "title": "Super Skip"
+            },
+            {
+                "name": "Punches, 5 Flies, Bulls",
+                "time": 47.67,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/Yc22tnK95G0"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 28.30,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/c5-l2z3rrew"
+            }
+        ],
         "wallywarbles": [
             {
                 "name": "",
@@ -2141,6 +2225,14 @@
                 "url": "https://youtu.be/ropB_3XDZBU"
             }
         ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": 41.77,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/B9NZZadZvNg"
+            }
+        ],
         "drkahlsrobot": [
             {
                 "name": "Cup/Mug",
@@ -2155,12 +2247,34 @@
                 "url": "https://youtu.be/hNf3fEyQHak"
             }
         ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 34.14,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/euyX2ipNpYI"
+            }
+        ],
         "calamaria": [
             {
                 "name": "Ghosts, Seahorse, Red Fish",
                 "time": 49.86,
                 "player": "Quincely0",
                 "url": "https://youtu.be/HLQ8oXjoD4g"
+            },
+            {
+                "name": "Turtle, Red Fish, Seahorse",
+                "time": 49.95,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/MrPwmMw-sP0"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "",
+                "time": "1:49",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/NOD--56j5Oo"
             }
         ]
     },

@@ -26,7 +26,7 @@ window.firebaseUtils = {
             async function loadClient2() {
                 gapi.client.setApiKey(API_KEY);
                 await gapi.client.load('https://sheets.googleapis.com/$discovery/rest?version=v4')
-                console.log("GAPI client loaded for API");
+                console.log("GAPI loaded");
                 fetchCuphead()
             }
         } catch (error) {

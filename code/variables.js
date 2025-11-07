@@ -32,6 +32,8 @@ let altStratIndex = -1
 let commBestILs
 let alt
 
+let commBestILSum = 0
+
 function decimalsCriteria() {
     return commBestILsCategory.name == '1.1+'
 }
