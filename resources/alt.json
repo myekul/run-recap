@@ -863,10 +863,10 @@
             },
             {
                 "name": "Red Gem",
-                "time": 41.35,
-                "rta": 42.27,
+                "time": 41.26,
+                "rta": 42.17,
                 "player": "ClipBoardGuy",
-                "url": "https://youtu.be/n8NT-7Uey2c"
+                "url": "https://youtu.be/MP9pBaEjtm0"
             },
             {
                 "name": "Blue Gem",
@@ -1364,9 +1364,9 @@
             },
             {
                 "name": "Clap Ring Dragon",
-                "time": 42.22,
-                "player": "Lewzr",
-                "url": "https://youtu.be/Ndr9l_q3tJc"
+                "time": 41.35,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/zqiYj4CIhLQ"
             },
             {
                 "name": "Clap Pinwheel Dragon",
@@ -1747,6 +1747,18 @@
         ],
         "ribbyandcroaks": [
             {
+                "title": "Flies Regular Skip"
+            },
+            {
+                "name": "7 Flies, Snakes",
+                "time": 46.64,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/B2mk7bPkEmY"
+            },
+            {
+                "title": "Punches Regular Skip"
+            },
+            {
                 "name": "Punches, Bulls",
                 "time": "47.40",
                 "player": "MarkinSws",
@@ -1757,6 +1769,21 @@
                 "time": 47.89,
                 "player": "Quincely0",
                 "url": "https://youtu.be/6lPCn0ScQEs"
+            },
+            {
+                "name": "Punches, Tigers",
+                "time": 48.03,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/4fVsVD-EokY"
+            },
+            {
+                "title": "Flies Super Skip"
+            },
+            {
+                "name": "5 Flies, Bulls",
+                "time": 49.30,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/n6OeOjZ_Qg8"
             }
         ],
         "goopylegrande": [
