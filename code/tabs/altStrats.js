@@ -82,15 +82,23 @@ function generateAltStrats() {
                     },
                     {
                         boss: 'thedevil',
-                        name: 'Pinwheel Clap Dragon'
+                        name: 'Clap Bubbles Dragon (Slower)'
+                    },
+                    {
+                        boss: 'thedevil',
+                        name: 'Clap Bubbles Dragon (Slowest)'
+                    },
+                    {
+                        boss: 'thedevil',
+                        name: 'Bubbles Clap Dragon (Slower)'
+                    },
+                    {
+                        boss: 'thedevil',
+                        name: 'Bubbles Clap Dragon (Slowest)'
                     },
                     {
                         boss: 'thedevil',
                         name: 'Clap Bubbles Clap'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Pinwheel Spider'
                     },
                     {
                         boss: 'thedevil',
@@ -180,11 +188,16 @@ function altStrats(categoryIndex) {
     const img = category ? category.info.id : 'other/forestfollies'
     const name = category ? category.info.name : 'Forest Follies'
     let HTMLContent = ''
+    if (query == 'thedevil' && commBestILsCategory.name == '1.1+') {
+        HTMLContent += `<div class='container'>
+        <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
+        </div>`
+    }
     HTMLContent += `
-    <div class='container'><table style='margin:10px'>
+    <div class='container'>
+    <table style='margin:10px'>
     <tr><td colspan=5><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
-    const devilCheck = query == 'thedevil'
     const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
     // if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
     //     HTMLContent += `<tr>
@@ -202,28 +215,31 @@ function altStrats(categoryIndex) {
         'Jawbreaker': 'jawbreaker'
     }
     alt[commBestILsCategory.tabName][query].forEach((strat, index) => {
-        if (strat.title) {
+        if (strat.title && !(strat.title == 'Head Skip' && commBestILsCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
             HTMLContent += `
             <tr><td style='height:10px'></td></tr>
             <tr><th colspan='5' class='gray' style='margin-top:10px'>${strat.title}</th>`
         } else {
-            HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
+            if (!(commBestILsCategory.name == '1.1+' && query == 'thedevil' && isolatePatterns && !strat.odds)) {
+                HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
-            if (baronessCheck) {
-                HTMLContent += `<td><div class='container'>`
-                strat.name.split(',').forEach(miniboss => {
-                    miniboss = miniboss.trim()
-                    HTMLContent += `<div class='container' style='width:25px'><img src='https://myekul.github.io/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'></div>`
-                })
-                HTMLContent += `</div></td>`
+                if (baronessCheck) {
+                    HTMLContent += `<td><div class='container'>`
+                    strat.name.split(',').forEach(miniboss => {
+                        miniboss = miniboss.trim()
+                        HTMLContent += `<div class='container' style='width:25px'><img src='https://myekul.github.io/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'></div>`
+                    })
+                    HTMLContent += `</div></td>`
+                }
+                HTMLContent += query == 'thedevil' && commBestILsCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${((strat.odds.split('/')[0] / strat.odds.split('/')[1]) * 100).toFixed(1)}%</td>` : ''
+                if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
+                HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
+                if (RTAcheck) {
+                    HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
+                }
+                const player = players.find(player => player.name == strat.player)
+                HTMLContent += getPlayerDisplay(player || strat.player, true)
             }
-            if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
-            HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
-            if (RTAcheck) {
-                HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
-            }
-            const player = players.find(player => player.name == strat.player)
-            HTMLContent += getPlayerDisplay(player || strat.player, true)
         }
         HTMLContent += `</tr>`
     })

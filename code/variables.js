@@ -34,6 +34,8 @@ let alt
 
 let commBestILSum = 0
 
+let isolatePatterns
+
 function decimalsCriteria() {
     return commBestILsCategory.name == '1.1+'
 }

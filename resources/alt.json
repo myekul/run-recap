@@ -1167,6 +1167,12 @@
                 "url": "https://youtu.be/nUnVW7aX4zQ"
             },
             {
+                "name": "Pufferfish, Ghosts, Seahorse, Yellow Fish",
+                "time": 56.25,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/WIzdEkrm4x0"
+            },
+            {
                 "name": "Pufferfish, Red Fish, Turtle, Ghosts",
                 "time": 56.60,
                 "player": "ClipBoardGuy",
@@ -1285,7 +1291,22 @@
         ],
         "thedevil": [
             {
-                "title": "No Freeze"
+                "title": "Head Skip"
+            },
+            {
+                "name": "Clap Ring Clap",
+                "time": 51.49,
+                "player": "myekul",
+                "url": "https://youtu.be/7Bk3o0pRUZ8"
+            },
+            {
+                "name": "Clap Pinwheel Clap",
+                "time": 52.69,
+                "player": "myekul",
+                "url": "https://youtu.be/EXK3Ki0Lkso"
+            },
+            {
+                "title": "Freezeless Dragon"
             },
             {
                 "name": "Pinwheel Dragon (3 Quads)",
@@ -1303,52 +1324,39 @@
                 "name": "Clap Dragon",
                 "time": 47.68,
                 "player": "myekul",
-                "url": "https://youtu.be/l9cyRO-um9w"
+                "url": "https://youtu.be/l9cyRO-um9w",
+                "odds": "1/14"
             },
             {
                 "name": "Dragon Clap",
                 "time": 48.88,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/uuCLFW2Vl6M"
+                "url": "https://youtu.be/uuCLFW2Vl6M",
+                "odds": "1/7"
             },
             {
-                "name": "Spider First",
-                "time": 50.92,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/00lelICyxe4"
-            },
-            {
-                "name": "Clap Ring Clap",
-                "time": 51.49,
-                "player": "myekul",
-                "url": "https://youtu.be/7Bk3o0pRUZ8"
-            },
-            {
-                "name": "Clap Pinwheel Clap",
-                "time": 52.69,
-                "player": "myekul",
-                "url": "https://youtu.be/EXK3Ki0Lkso"
-            },
-            {
-                "title": "Dragon Freeze"
+                "title": "Freeze Dragon"
             },
             {
                 "name": "Bubbles Dragon",
                 "time": 39.96,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/hYe-Jyq-ksE"
+                "url": "https://youtu.be/hYe-Jyq-ksE",
+                "odds": "1/55"
             },
             {
                 "name": "Bubbles Dragon (Slower)",
                 "time": 41.77,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/p015gV3xBuk"
+                "url": "https://youtu.be/p015gV3xBuk",
+                "odds": "3/385"
             },
             {
                 "name": "Bubbles Dragon (Slowest)",
                 "time": 41.35,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/zdkiIrRID9A"
+                "url": "https://youtu.be/zdkiIrRID9A",
+                "odds": "1/385"
             },
             {
                 "name": "Ring Dragon (4 Quads)",
@@ -1369,6 +1377,12 @@
                 "url": "https://youtu.be/zqiYj4CIhLQ"
             },
             {
+                "name": "Ring Clap Dragon",
+                "time": 41.27,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/EKJTvJiG8Qc"
+            },
+            {
                 "name": "Clap Pinwheel Dragon",
                 "time": 41.07,
                 "player": "SBDWolf",
@@ -1376,21 +1390,23 @@
             },
             {
                 "name": "Pinwheel Clap Dragon",
-                "time": 43.67,
-                "player": "Lewzr",
-                "url": "https://youtu.be/dJ214ywBwW8"
+                "time": 41.12,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/iMmPMKVbh6o"
             },
             {
                 "name": "Clap Bubbles Dragon",
                 "time": 44.01,
                 "player": "Lewzr",
-                "url": "https://youtu.be/N5kU6mmnnVU"
+                "url": "https://youtu.be/N5kU6mmnnVU",
+                "odds": "1/55"
             },
             {
                 "name": "Bubbles Clap Dragon",
                 "time": 44.67,
                 "player": "Lewzr",
-                "url": "https://youtu.be/15BGNHK4n9s"
+                "url": "https://youtu.be/15BGNHK4n9s",
+                "odds": "1/55"
             },
             {
                 "name": "Clap Ring Clap Dragon",
@@ -1408,16 +1424,33 @@
                 "name": "Clap Bubbles Clap Dragon",
                 "time": 50.9,
                 "player": "Lewzr",
-                "url": "https://youtu.be/tqBsk49aoxs"
+                "url": "https://youtu.be/tqBsk49aoxs",
+                "odds": "1/55"
             },
             {
-                "title": "Spider Freeze"
+                "title": "Freezeless Spider"
+            },
+            {
+                "name": "Spider",
+                "time": 50.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/00lelICyxe4",
+                "odds": "1/7"
+            },
+            {
+                "title": "Freeze Spider"
+            },
+            {
+                "name": "Pinwheel Spider",
+                "time": 40.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/2TYubrghMUE"
             },
             {
                 "name": "Ring Spider",
-                "time": 42.55,
-                "player": "Lewzr",
-                "url": "https://youtu.be/6JbHoh9RxFo"
+                "time": 40.94,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/1-PlZ5oj3NI"
             },
             {
                 "name": "Bubbles Spider",
@@ -1759,12 +1792,6 @@
                 "title": "Punches Regular Skip"
             },
             {
-                "name": "Punches, Bulls",
-                "time": "47.40",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/mSnNzC5SRtk"
-            },
-            {
                 "name": "Punches, Snakes",
                 "time": 47.89,
                 "player": "Quincely0",
@@ -1775,6 +1802,21 @@
                 "time": 48.03,
                 "player": "HappyWolf",
                 "url": "https://youtu.be/4fVsVD-EokY"
+            },
+            {
+                "name": "Punches, Snakes",
+                "time": 48.25,
+                "player": "Quincely0",
+                "url": "https://youtu.be/WRk_19zWiLE"
+            },
+            {
+                "title": "Punches Super Skip"
+            },
+            {
+                "name": "5 Flies, Bulls",
+                "time": "47.40",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/mSnNzC5SRtk"
             },
             {
                 "title": "Flies Super Skip"

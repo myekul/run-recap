@@ -40,13 +40,13 @@ function loadMyekul() {
     }
     bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0));
     // OOB Route
-    // if (commBestILsCategory.tabName == 'DLC+Base') {
-    //     const elementsToMove = bossesCopy.slice(0, 6);
-    //     bossesCopy.splice(0, 6);
-    //     bossesCopy.splice(8, 0, ...elementsToMove);
-    //     const elem = bossesCopy.splice(2, 1)[0];
-    //     bossesCopy.unshift(elem);
-    // }
+    if (commBestILsCategory.tabName == 'DLC+Base 2') {
+        const elementsToMove = bossesCopy.slice(0, 6);
+        bossesCopy.splice(0, 6);
+        bossesCopy.splice(8, 0, ...elementsToMove);
+        const elem = bossesCopy.splice(2, 1)[0];
+        bossesCopy.unshift(elem);
+    }
     bossesCopy.forEach(boss => {
         categories.push({ name: boss.name, info: boss, runs: [] })
     })

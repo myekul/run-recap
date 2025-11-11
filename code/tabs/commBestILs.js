@@ -177,7 +177,7 @@ function handleBossDropdown() {
             if (altTest[level]) {
                 let prevStrat
                 altTest[level].forEach(strat => {
-                    if (strat.title) altStratHTML += `<optgroup label='${strat.title}'>`
+                    if (strat.title) altStratHTML += `<optgroup label='-- ${strat.title} --'>`
                     if (strat.name) altStratHTML += `<option value='${strat.name}'>${strat.name}</option>`
                     prevStrat = strat
                     if (prevStrat.title) altStratHTML += `</optgroup>`

@@ -929,7 +929,8 @@
         "markin": "DLC Any% (L/S)",
         "className": "dlc",
         "category": 3,
-        "subcat": "Any%",
+        "shot1": "lobber",
+        "shot2": "spread",
         "topRuns": [
             {
                 "name": "MarkinSws",
@@ -1196,7 +1197,48 @@
         "markin": "DLC+BG Any% (L/S)",
         "className": "dlcbase",
         "category": 4,
-        "subcat": "Any%",
+        "shot1": "lobber",
+        "shot2": "spread",
+        "topRuns": [
+            {
+                "name": "MarkinSws",
+                "runRecap": [
+                    49,
+                    45,
+                    47,
+                    63,
+                    42,
+                    61,
+                    36,
+                    48,
+                    31,
+                    66,
+                    37,
+                    38,
+                    48,
+                    77,
+                    45,
+                    47,
+                    41,
+                    51,
+                    39,
+                    47,
+                    39,
+                    53,
+                    59,
+                    113,
+                    52
+                ]
+            }
+        ]
+    },
+    "DLC+Base II": {
+        "name": "DLC+Base",
+        "tabName": "DLC+Base II",
+        "markin": "DLC+BG Any% (L/S)",
+        "className": "dlcbase",
+        "category": 4,
+        "subcat": "Route II",
         "topRuns": [
             {
                 "name": "MarkinSws",
@@ -1236,8 +1278,6 @@
         "markin": "DLC+BG Any% (L/S)",
         "className": "dlcbase",
         "category": 4,
-        "shot1": "lobber",
-        "shot2": "spread",
         "topRuns": [
             {
                 "name": "MarkinSws",
@@ -1273,7 +1313,7 @@
         "extraRuns": [
             {
                 "date": "2025-01-03",
-                "score": "38:16.45",
+                "score": "38:23.18",
                 "playerName": "GamerAttack27",
                 "url": "https://youtu.be/LvZxBu8y4rk"
             }
@@ -1392,6 +1432,12 @@
         ],
         "extraRuns": [
             {
+                "date": "2024-08-06",
+                "score": "38:16.45",
+                "playerName": "GamerAttack27",
+                "url": "https://youtu.be/BOJ_SwZK8kg"
+            },
+            {
                 "date": "2024-06-21",
                 "score": "38:53.36",
                 "playerName": "Quincely0",
@@ -1400,11 +1446,9 @@
         ],
         "extraPlayers": [
             "myekul",
-            "GamerAttack27",
             "Kirthar",
             "Musically_dECLINED",
             "Jason2890",
-            "Yuka",
             "Kaleva",
             "Lewzr",
             "halfword",
