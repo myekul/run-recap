@@ -216,9 +216,16 @@ function altStrats(categoryIndex) {
     }
     alt[commBestILsCategory.tabName][query].forEach((strat, index) => {
         if (strat.title && !(strat.title == 'Head Skip' && commBestILsCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
-            HTMLContent += `
-            <tr><td style='height:10px'></td></tr>
-            <tr><th colspan='5' class='gray' style='margin-top:10px'>${strat.title}</th>`
+            HTMLContent += `<tr><td style='height:10px'></td></tr>
+            <tr>`
+            if (isolatePatterns && strat.odds) {
+                HTMLContent += `<th></th>
+                <th class='gray'>${getOdds(strat.odds)}</th>
+                <th colspan='2' class='gray' style='margin-top:10px'>${strat.title}</th>`
+            } else {
+                HTMLContent += `<th colspan='5' class='gray' style='margin-top:10px'>${strat.title}</th>`
+            }
+            HTMLContent+=`</tr>`
         } else {
             if (!(commBestILsCategory.name == '1.1+' && query == 'thedevil' && isolatePatterns && !strat.odds)) {
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
@@ -231,7 +238,7 @@ function altStrats(categoryIndex) {
                     })
                     HTMLContent += `</div></td>`
                 }
-                HTMLContent += query == 'thedevil' && commBestILsCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${((strat.odds.split('/')[0] / strat.odds.split('/')[1]) * 100).toFixed(1)}%</td>` : ''
+                HTMLContent += query == 'thedevil' && commBestILsCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
                 if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
                 HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                 if (RTAcheck) {
@@ -245,6 +252,9 @@ function altStrats(categoryIndex) {
     })
     HTMLContent += `</table></div>`
     return HTMLContent
+    function getOdds(odds) {
+        return ((odds.split('/')[0] / odds.split('/')[1]) * 100).toFixed(1) + '%'
+    }
 }
 function pendingSubmissions(submissions = new Array(10).fill(null), done) {
     let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`

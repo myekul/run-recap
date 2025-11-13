@@ -133,9 +133,9 @@
             },
             {
                 "name": "Punches, Tigers",
-                "time": 44.41,
-                "player": "Lewzr",
-                "url": "https://youtu.be/xxMWtyn_2g4"
+                "time": 44.39,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/2mi59rpv80g"
             },
             {
                 "name": "Punches, Snakes",
@@ -1294,6 +1294,12 @@
                 "title": "Head Skip"
             },
             {
+                "name": "Clap Bubbles",
+                "time": 49.75,
+                "player": "myekul",
+                "url": "https://youtu.be/Jiw6U1wW2IE"
+            },
+            {
                 "name": "Clap Ring Clap",
                 "time": 51.49,
                 "player": "myekul",
@@ -1306,7 +1312,8 @@
                 "url": "https://youtu.be/EXK3Ki0Lkso"
             },
             {
-                "title": "Freezeless Dragon"
+                "title": "Freezeless Dragon",
+                "odds": "9/35"
             },
             {
                 "name": "Pinwheel Dragon (3 Quads)",
@@ -1335,7 +1342,8 @@
                 "odds": "1/7"
             },
             {
-                "title": "Freeze Dragon"
+                "title": "Freeze Dragon",
+                "odds": "17/70"
             },
             {
                 "name": "Bubbles Dragon",
@@ -1589,9 +1597,9 @@
         "djimmithegreat": [
             {
                 "name": "",
-                "time": 48.64,
+                "time": 47.98,
                 "player": "Yuka",
-                "url": "https://youtu.be/fOcQjb5cFgc"
+                "url": "https://youtu.be/CHqMHvTawog"
             }
         ],
         "beppitheclown": [
@@ -1831,10 +1839,10 @@
         "goopylegrande": [
             {
                 "name": "Parries + Doubles",
-                "time": 26.99,
-                "rta": 27.36,
-                "player": "Yuka",
-                "url": "https://youtu.be/qhAG8U9AYNA"
+                "time": 26.44,
+                "rta": 26.80,
+                "player": "myekul",
+                "url": "https://youtu.be/V6UeJRCQOhU"
             },
             {
                 "name": "Doubles",
@@ -2302,6 +2310,22 @@
                 "url": "https://youtu.be/B9NZZadZvNg"
             }
         ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": 46,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/wsPFg12OtdQ"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "",
+                "time": 37.84,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/2O7feKGn2HQ"
+            }
+        ],
         "drkahlsrobot": [
             {
                 "name": "Cup/Mug",
@@ -2324,6 +2348,22 @@
                 "url": "https://youtu.be/euyX2ipNpYI"
             }
         ],
+        "wernerwerman": [
+            {
+                "name": "",
+                "time": 43.34,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/1HNToGP1aYw"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "",
+                "time": 37.98,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/esv0BG2bPUI"
+            }
+        ],
         "calamaria": [
             {
                 "name": "Ghosts, Seahorse, Red Fish",
@@ -2338,12 +2378,28 @@
                 "url": "https://youtu.be/MrPwmMw-sP0"
             }
         ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": 57,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/Z8Ry9h0sCn0"
+            }
+        ],
         "kingdice": [
             {
                 "name": "",
                 "time": "1:49",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/NOD--56j5Oo"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Ring Dragon",
+                "time": 49.41,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/dyoUz_VljuQ"
             }
         ]
     },
@@ -2359,9 +2415,9 @@
         "ribbyandcroaks": [
             {
                 "name": "7 Flies Regular Skip",
-                "time": "47.60",
-                "player": "Lewzr",
-                "url": "https://youtu.be/_OFp5Ou9FHs"
+                "time": "47.50",
+                "player": "myekul",
+                "url": "https://youtu.be/W3MMDbYBLNg"
             }
         ],
         "goopylegrande": [
