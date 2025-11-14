@@ -259,6 +259,12 @@
                 "url": "https://youtu.be/_1xtRopi5Qc"
             },
             {
+                "name": "Lunge, Lunge, Seeds",
+                "time": 33.78,
+                "player": "Lewzr",
+                "url": "https://youtu.be/nz71EPKJ_xg"
+            },
+            {
                 "name": "Seeds, Pod Hands",
                 "time": 33.96,
                 "player": "Grondious",
@@ -526,9 +532,9 @@
             },
             {
                 "name": "Gumball, Candy Corn, Cupcake",
-                "time": 33.42,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=cOWSArEE5nDu1zRx&t=1323"
+                "time": 32.95,
+                "player": "Lewzr",
+                "url": "https://youtu.be/-57YSCzHIWo"
             },
             {
                 "name": "Gumball, Candy Corn, Jawbreaker",
@@ -1087,17 +1093,17 @@
             },
             {
                 "name": "Red Fish, Turtle, Ghosts",
-                "time": 53.60,
-                "rta": 54.14,
-                "player": "Taylz",
-                "url": "https://youtu.be/KQ18dLF6L7c"
+                "time": 53.35,
+                "rta": 53.90,
+                "player": "Lewzr",
+                "url": "https://youtu.be/DG_wH-wNZ38"
             },
             {
                 "name": "Red Fish, Seahorse, Ghosts",
-                "time": 53.96,
-                "rta": 54.51,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/PmNedNNnw5g"
+                "time": 53.62,
+                "rta": 54.20,
+                "player": "Lewzr",
+                "url": "https://youtu.be/tYAF4zQ-8VU"
             },
             {
                 "name": "Seahorse, Red Fish, Pufferfish, Ghosts",
@@ -1261,9 +1267,10 @@
             },
             {
                 "name": "No Hearts",
-                "time": "1:47.59",
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/tUIhvBo437M?si=cKtYiPFCENfqG01I&t=1664"
+                "time": "1:46.12",
+                "rta": "1:48.28",
+                "player": "Lewzr",
+                "url": "https://youtu.be/LUQ7mQnuqh4"
             },
             {
                 "name": "Worst RNG",
@@ -1404,35 +1411,35 @@
             },
             {
                 "name": "Clap Bubbles Dragon",
-                "time": 44.01,
-                "player": "Lewzr",
-                "url": "https://youtu.be/N5kU6mmnnVU",
+                "time": 42.65,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/JVOAjTHOJKI",
                 "odds": "1/55"
             },
             {
                 "name": "Bubbles Clap Dragon",
-                "time": 44.67,
-                "player": "Lewzr",
-                "url": "https://youtu.be/15BGNHK4n9s",
+                "time": 42.68,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/I-YcCwsKyWw",
                 "odds": "1/55"
             },
             {
                 "name": "Clap Ring Clap Dragon",
-                "time": 47.55,
-                "player": "Lewzr",
-                "url": "https://youtu.be/hE9MjoNtnGM"
+                "time": 45.70,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/YCurAXaGDGc"
             },
             {
                 "name": "Clap Pinwheel Clap Dragon",
-                "time": 47.62,
-                "player": "Lewzr",
-                "url": "https://youtu.be/yDOCP1QhrYk"
+                "time": 45.55,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/U5EQbN-aNYA"
             },
             {
                 "name": "Clap Bubbles Clap Dragon",
-                "time": 50.9,
-                "player": "Lewzr",
-                "url": "https://youtu.be/tqBsk49aoxs",
+                "time": 48.36,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/3q-tb6tuEfg",
                 "odds": "1/55"
             },
             {
@@ -1467,16 +1474,52 @@
                 "url": "https://youtu.be/oYO-G9jognc"
             },
             {
+                "name": "Bubbles Clap Spider",
+                "time": 45.55,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/5Hs8Jvs2lFw"
+            },
+            {
                 "name": "Ring Clap Spider",
-                "time": 58.25,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/tUIhvBo437M?si=VT6Wqi9mZuHT2VqR&t=1861"
+                "time": 43.63,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/I_2GzvKytxI"
+            },
+            {
+                "name": "Clap Ring Spider",
+                "time": 43.83,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/nNMnDhrUhF8"
+            },
+            {
+                "name": "Pinwheel Clap Spider",
+                "time": 43.75,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/3ZWyPGR1HVs"
+            },
+            {
+                "name": "Clap Pinwheel Spider",
+                "time": 43.84,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/rhOxqYH_cno"
             },
             {
                 "name": "Clap Ring Clap Spider",
-                "time": 53.26,
+                "time": 48.13,
                 "player": "SBDWolf",
-                "url": "https://www.youtube.com/live/TTASsiwHCXc?si=NBcCHKqHVfcoZxpf&t=5921"
+                "url": "https://youtu.be/srbUeriKqJE"
+            },
+            {
+                "name": "Clap Pinwheel Clap Spider",
+                "time": 48.14,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/NyWqpEPK-KE"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider",
+                "time": 51.07,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Tqj8eXzo4Kc"
             },
             {
                 "title": "Spider's Kiss"
