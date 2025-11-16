@@ -58,7 +58,7 @@ function generate_sav() {
         })
         HTMLContent += `</div>`
         HTMLContent += `
-        <div class='container grow' style='color:gray;font-size:120%' onclick="savComparisonView=!savComparisonView;playSound('move');action()">
+        <div class='container grow' style='color:gray;font-size:120%;width:50px' onclick="savComparisonView=!savComparisonView;playSound('move');action()">
         ${fontAwesome('ellipsis-h')}
         </div>`
         if (savComparisonView) HTMLContent += savComparisonContent()

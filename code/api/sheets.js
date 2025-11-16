@@ -91,8 +91,8 @@ function loadMyekul() {
     })
     commBestILsCategory.top = []
     commBestILsCategory.top3 = []
-    commBestILsCategory.topBest = new Array(commBestILsCategory.topRuns[0].length).fill(Infinity)
-    commBestILsCategory.topBestPlayers = new Array(commBestILsCategory.topRuns[0].length).fill(null)
+    commBestILsCategory.topBest = new Array(categories.length).fill(Infinity)
+    commBestILsCategory.topBestPlayers = new Array(categories.length).fill(null)
     commBestILsCategory.theoryRun = []
     categories.forEach((category, categoryIndex) => {
         let topSum = 0
@@ -101,10 +101,10 @@ function loadMyekul() {
             const time = run.runRecap[categoryIndex]
             topSum += time
             if (index < 3) top3Sum += time
-            if (time < commBestILsCategory.topBest[categoryIndex]) {
-                commBestILsCategory.topBest[categoryIndex] = time
+            if (Math.floor(time) < commBestILsCategory.topBest[categoryIndex]) {
+                commBestILsCategory.topBest[categoryIndex] = Math.floor(time)
                 commBestILsCategory.topBestPlayers[categoryIndex] = [index]
-            } else if (time == commBestILsCategory.topBest[categoryIndex]) {
+            } else if (Math.floor(time) == commBestILsCategory.topBest[categoryIndex]) {
                 commBestILsCategory.topBestPlayers[categoryIndex].push(index)
             }
         })

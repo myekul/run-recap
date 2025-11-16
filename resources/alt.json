@@ -70,9 +70,9 @@
             },
             {
                 "name": "5 Flies, Bulls",
-                "time": 40.79,
-                "player": "Grondious",
-                "url": "https://youtu.be/-KvAjbtm56E"
+                "time": 39.99,
+                "player": "Lewzr",
+                "url": "https://youtu.be/4r2BLAk6iw0"
             },
             {
                 "name": "5 Flies, Snakes",
@@ -241,43 +241,40 @@
         ],
         "cagneycarnation": [
             {
-                "title": "Lunge EX"
-            },
-            {
-                "name": "Lunge, Lunge, Pod Hands",
-                "time": 30.77,
-                "player": "Quincely0",
-                "url": "https://youtu.be/aYvapz6VaFc"
-            },
-            {
                 "title": "Triples"
             },
             {
-                "name": "Lunge, Lunge, Pod Hands",
-                "time": 32.52,
-                "player": "Quincely0",
-                "url": "https://youtu.be/_1xtRopi5Qc"
+                "name": "Lunge, Lunge, Pods 3x",
+                "time": "30.40",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/i8vd7vISkeQ"
+            },
+            {
+                "name": "Lunge, Lunge, Pods 2x",
+                "time": 31.74,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/ULFT1djfNq4"
             },
             {
                 "name": "Lunge, Lunge, Seeds",
-                "time": 33.78,
-                "player": "Lewzr",
-                "url": "https://youtu.be/nz71EPKJ_xg"
+                "time": 32.29,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Fsttqj6NFyE"
             },
             {
-                "name": "Seeds, Pod Hands",
+                "name": "Seeds, Pods",
                 "time": 33.96,
                 "player": "Grondious",
                 "url": "https://youtu.be/wBCzMTzm2dE"
             },
             {
-                "name": "Lunge, Pod Hands, Seeds",
+                "name": "Lunge, Pods, Seeds",
                 "time": 34.35,
                 "player": "SBDWolf",
                 "url": "https://www.youtube.com/live/1WMRr4ZbHxI?si=T6cuHPtkDKoZYIsD&t=5160"
             },
             {
-                "name": "Lunge, Pod Hands, Pod Hands",
+                "name": "Lunge, Pods, Pods",
                 "time": 35.83,
                 "player": "SBDWolf",
                 "url": "https://www.youtube.com/live/1WMRr4ZbHxI?si=x9JSMUD2yXP_E2y6&t=7712"
@@ -292,7 +289,7 @@
                 "title": "Doubles"
             },
             {
-                "name": "Lunge, Lunge, Pod Hands",
+                "name": "Lunge, Lunge, Pods",
                 "time": 35.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/HSCJaqXeZVc"
@@ -301,10 +298,19 @@
                 "title": "Spread EXs"
             },
             {
-                "name": "Lunge, Lunge, Pod Hands",
+                "name": "Lunge, Lunge, Pods",
                 "time": 35.57,
                 "player": "Quincely0",
                 "url": "https://youtu.be/S2iW1ebfbq8"
+            },
+            {
+                "title": "Quincely EX"
+            },
+            {
+                "name": "Lunge, Lunge, Pods",
+                "time": 30.77,
+                "player": "Quincely0",
+                "url": "https://youtu.be/aYvapz6VaFc"
             }
         ],
         "baronessvonbonbon": [
@@ -502,9 +508,9 @@
             },
             {
                 "name": "Cupcake, Gumball, Jawbreaker",
-                "time": 36.73,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=6sixBDoa4N6nakmN&t=1138"
+                "time": 36.25,
+                "player": "myekul",
+                "url": "https://youtu.be/PYZ1euAqGN4"
             },
             {
                 "name": "Cupcake, Jawbreaker, Candy Corn",
@@ -514,9 +520,9 @@
             },
             {
                 "name": "Cupcake, Jawbreaker, Gumball",
-                "time": 37.73,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=tGRrVhLDoJLmvJqa&t=1213"
+                "time": 37.48,
+                "player": "myekul",
+                "url": "https://youtu.be/4hfr1eBDhkU"
             },
             {
                 "name": "Cupcake, Jawbreaker, Waffle",
@@ -784,6 +790,12 @@
                 "time": 53.91,
                 "player": "Quincely0",
                 "url": "https://youtu.be/IezOzs0CiDM"
+            },
+            {
+                "name": "Super Beppi Skip",
+                "time": 46.73,
+                "player": "Yuka",
+                "url": "https://youtu.be/knhwgvoDpuI"
             }
         ],
         "grimmatchstick": [
@@ -1453,6 +1465,12 @@
                 "odds": "1/7"
             },
             {
+                "name": "Clap Spider 3B",
+                "time": 49.25,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/6C9dO0JKQI4"
+            },
+            {
                 "title": "Freeze Spider"
             },
             {
@@ -1469,15 +1487,21 @@
             },
             {
                 "name": "Bubbles Spider",
-                "time": 43.39,
-                "player": "Lewzr",
-                "url": "https://youtu.be/oYO-G9jognc"
+                "time": 41.64,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/rFuC7Cufa6Y"
             },
             {
                 "name": "Bubbles Clap Spider",
                 "time": 45.55,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/5Hs8Jvs2lFw"
+            },
+            {
+                "name": "Clap Bubbles Spider",
+                "time": 45.76,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Q_zXAoQ8Lyc"
             },
             {
                 "name": "Ring Clap Spider",
@@ -1502,6 +1526,12 @@
                 "time": 43.84,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/rhOxqYH_cno"
+            },
+            {
+                "name": "Clap Spider 5B",
+                "time": 44.07,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/PlR1qjUzHLc"
             },
             {
                 "name": "Clap Ring Clap Spider",
@@ -1573,22 +1603,34 @@
         ],
         "ribbyandcroaks": [
             {
-                "name": "6 Flies Super Skip, Bulls",
+                "title": "Super Skip"
+            },
+            {
+                "name": "6 Flies, Bulls",
                 "time": 31.77,
                 "player": "Yuka",
                 "url": "https://youtu.be/DMt3Ph4F8CU"
             },
             {
-                "name": "7 Flies Super Skip, Bulls",
+                "name": "7 Flies, Bulls",
                 "time": 32.71,
                 "player": "Yuka",
                 "url": "https://youtu.be/dsHMDo_vKbs"
             },
             {
-                "name": "7 Flies Super Skip, Tigers",
+                "name": "7 Flies, Tigers",
                 "time": 33.60,
                 "player": "Yuka",
                 "url": "https://youtu.be/shYqplW41Mc?si=jj19H6TGJApp_kau&t=7"
+            },
+            {
+                "title": "Regular Skip"
+            },
+            {
+                "name": "5 Flies, Bulls",
+                "time": 38.66,
+                "player": "Lewzr",
+                "url": "https://youtu.be/DD2wlQ3TfyA"
             }
         ],
         "goopylegrande": [
@@ -2069,6 +2111,12 @@
                 "time": 51.64,
                 "player": "myekul",
                 "url": "https://youtu.be/olimvJ8WeF0"
+            },
+            {
+                "name": "Clap Pinwheel Clap",
+                "time": 54.69,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/2CGuMiA6eQM"
             }
         ]
     },

@@ -99,10 +99,6 @@ function generateAltStrats() {
                     {
                         boss: 'thedevil',
                         name: 'Clap Bubbles Clap'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Clap Spider'
                     }
                 ]
                 HTMLContent += `
@@ -292,7 +288,7 @@ function bossPattern(boss, pattern) {
     HTMLContent += `<td class='gray'><div class='container'>`
     let split = boss == 'thedevil' ? ' ' : ', '
     const attacks = {
-        cagneycarnation: ['Lunge', 'Pod Hands', 'Seeds'],
+        cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
         calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
         thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
     }
