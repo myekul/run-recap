@@ -109,8 +109,8 @@ function runRecapPlayer(playerString = localStorage.getItem('username'), excepti
     const playerName = player ? getPlayerName(player) : playerString
     let HTMLContent = `<div class='container' style='gap:6px;margin:0 3px'>`
     HTMLContent += player && !exception ? `<div style='width:20px'>${getPlayerFlag(player, 13)}</div>` : ''
-    HTMLContent += player ? `<div>${getPlayerIcon(player, 28)}</div>` : ''
-    HTMLContent += `<div style='font-size:105%'>${playerName}</div>`
+    HTMLContent += player ? `<div>${getPlayerIcon(player, 27)}</div>` : ''
+    HTMLContent += `<div style='font-size:100%'>${playerName}</div>`
     HTMLContent += `</div>`
     return HTMLContent
 }

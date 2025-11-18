@@ -46,11 +46,20 @@ function generateResidual() {
         <td>${secondsToHMS(Math.floor(players[index].extra.score) - sum, decimalsCriteria())}</td>`
         if (commBestILsCategory.name == '1.1+') {
             HTMLContent += `<td style='font-size:70%;color:gray'>
-            <div class='container' style='justify-content:left;gap:2px'>
+            <div class='container' style='justify-content:left;gap:2px;padding:0 3px'>
             ${fontAwesome('star')}
             ${run.starSkips.reduce((acc, num) => acc + num, 0)}
             </div>
-        </td>`
+            </td>
+            <td>
+            ${run.framerule[0] ? diceSmart() : ''}
+            </td>
+            <td>
+            ${run.framerule[1] ? diceSmart() : ''}
+            </td>`
+            function diceSmart(){
+                return `<div style='filter:grayscale(100%);opacity:0.7'><img src='images/dicesmart.png' style='height:17px;width:17px'></div>`
+            }
         }
         HTMLContent += `</tr>`
     })

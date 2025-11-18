@@ -16,3 +16,5 @@
 - Find player or display player name
 
 - DLC L/S Routes
+
+- JSON editor

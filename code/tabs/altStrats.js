@@ -59,7 +59,7 @@ function generateAltStrats() {
             let sum = 0
             countArray.forEach((player, index) => {
                 sum += player.count
-                HTMLContent += `<tr class='${getRowColor(index)}'>
+                HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
                 ${getPlayerDisplay(players.find(player2 => player2.name == player.player) || player.player)}
                 <td>${player.count}</td>
                 </tr>`
@@ -221,7 +221,7 @@ function altStrats(categoryIndex) {
             } else {
                 HTMLContent += `<th colspan='5' class='gray' style='margin-top:10px'>${strat.title}</th>`
             }
-            HTMLContent+=`</tr>`
+            HTMLContent += `</tr>`
         } else {
             if (!(commBestILsCategory.name == '1.1+' && query == 'thedevil' && isolatePatterns && !strat.odds)) {
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
@@ -293,10 +293,40 @@ function bossPattern(boss, pattern) {
         thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
     }
     pattern.split(split).forEach(attack => {
+        if (boss == 'cagneycarnation') attack = attack.split(' ')[0]
         if (attacks[boss].includes(attack)) {
             HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/${boss}/${attack}.png' style='height:21px'></div>`
         }
     })
     HTMLContent += `</div></td>`
+    return HTMLContent
+}
+function userContributions(playerName) {
+    let HTMLContent = ''
+    HTMLContent += runRecapPlayer(playerName)
+    HTMLContent += `<table style='margin-top:10px'>`
+    let strats = []
+    for (const level in alt[commBestILsCategory.tabName]) {
+        let title = ''
+        for (const obj of alt[commBestILsCategory.tabName][level]) {
+            if (!obj.title) {
+                if (playerName == obj.player) {
+                    strats.push({ ...obj, level: level, title: title })
+                }
+            } else {
+                title = obj.title
+            }
+        }
+    }
+    strats.forEach((strat, index) => {
+        HTMLContent += `
+        <tr class='${getRowColor(index)}'>
+        <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
+        <td class='${strat.level}'><div class='container'>${getImage(strat.level == 'forestfollies' ? 'other/forestfollies' : strat.level, 21)}</div></td>
+        <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>
+        <td style='text-align:left' style='padding:0 3px'>${strat.name}</td>
+        </tr>`
+    })
+    HTMLContent += `</table>`
     return HTMLContent
 }

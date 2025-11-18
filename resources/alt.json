@@ -256,6 +256,12 @@
                 "url": "https://youtu.be/ULFT1djfNq4"
             },
             {
+                "name": "Lunge, Lunge, Pods 1x",
+                "time": 32.52,
+                "player": "Quincely0",
+                "url": "https://youtu.be/_1xtRopi5Qc"
+            },
+            {
                 "name": "Lunge, Lunge, Seeds",
                 "time": 32.29,
                 "player": "SBDWolf",
@@ -703,22 +709,19 @@
         ],
         "djimmithegreat": [
             {
-                "name": "Gems, Phase 2 Extra Bullets",
+                "title": "Phase 2 Extra Bullets"
+            },
+            {
+                "name": "Gems",
                 "time": "1:14.96",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/35_5D9qWfLA"
             },
             {
-                "name": "Swords, Phase 2 Extra Bullets",
+                "name": "Cats / Swords",
                 "time": "1:16.83",
                 "player": "Quincely0",
                 "url": "https://youtu.be/5GDd1k1g_og"
-            },
-            {
-                "name": "Cats",
-                "time": "1:16.90",
-                "player": "Lewzr",
-                "url": "https://www.twitch.tv/videos/2592795352"
             }
         ],
         "beppitheclown": [
@@ -1087,7 +1090,7 @@
             },
             {
                 "name": "Dogfish",
-                "time": 38.50,
+                "time": "38.50",
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/MIrq29m1L4M"
             }
@@ -1437,7 +1440,7 @@
             },
             {
                 "name": "Clap Ring Clap Dragon",
-                "time": 45.70,
+                "time": "45.70",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/YCurAXaGDGc"
             },
@@ -1465,7 +1468,7 @@
                 "odds": "1/7"
             },
             {
-                "name": "Clap Spider 3B",
+                "name": "Clap Spider 4B",
                 "time": 49.25,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/6C9dO0JKQI4"
