@@ -35,6 +35,7 @@ let alt
 let commBestILSum = 0
 
 let isolatePatterns
+let residualExtra
 
 function decimalsCriteria() {
     return commBestILsCategory.name == '1.1+'

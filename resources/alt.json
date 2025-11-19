@@ -484,15 +484,15 @@
             },
             {
                 "name": "Cupcake, Waffle, Candy Corn",
-                "time": 32.92,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=8v0zW4qJlix6A7QZ&t=964"
+                "time": 32.77,
+                "player": "myekul",
+                "url": "https://youtu.be/yTmjj2kfhlA"
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
-                "time": 33.67,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/llWCLULTppk"
+                "time": 33.57,
+                "player": "myekul",
+                "url": "https://youtu.be/4ShC1y-op5A"
             },
             {
                 "name": "Cupcake, Waffle, Jawbreaker",
@@ -520,21 +520,21 @@
             },
             {
                 "name": "Cupcake, Jawbreaker, Candy Corn",
-                "time": 36.94,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=ld8KNeyl61ZPh1qX&t=1176"
+                "time": 36.48,
+                "player": "myekul",
+                "url": "https://youtu.be/ngNSuJDmjL4"
             },
             {
                 "name": "Cupcake, Jawbreaker, Gumball",
-                "time": 37.48,
+                "time": 36.81,
                 "player": "myekul",
-                "url": "https://youtu.be/4hfr1eBDhkU"
+                "url": "https://youtu.be/W_z54CUiG9s"
             },
             {
                 "name": "Cupcake, Jawbreaker, Waffle",
-                "time": 35.94,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=zzmweMrZrsBnbSzM&t=1252"
+                "time": 35.03,
+                "player": "myekul",
+                "url": "https://youtu.be/BjrJGBXzIq0"
             },
             {
                 "name": "Gumball, Candy Corn, Waffle",
@@ -598,19 +598,19 @@
             },
             {
                 "name": "Gumball, Jawbreaker, Waffle",
-                "time": 36.68,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=WvcwH9XjQo_lNSJV&t=1646"
+                "time": 35.98,
+                "player": "myekul",
+                "url": "https://youtu.be/MEmSmcUnaAM"
             },
             {
                 "name": "Gumball, Jawbreaker, Cupcake",
-                "time": 37.33,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=kgZ57H3wHxV96m0k&t=1684"
+                "time": 36.69,
+                "player": "myekul",
+                "url": "https://youtu.be/qI5r6jafRcU"
             },
             {
                 "name": "Jawbreaker, Candy Corn, Waffle",
-                "time": "34.38",
+                "time": 34.38,
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/baQi4Q1c4kA"
             },
@@ -2332,6 +2332,15 @@
                 "time": 53.26,
                 "player": "myekul",
                 "url": "https://youtu.be/nyD7tfeUwXM"
+            },
+            {
+                "title": "Other"
+            },
+            {
+                "name": "2.5-cycle",
+                "time": 53.16,
+                "player": "myekul",
+                "url": "https://youtu.be/H_DfufgPJOI"
             }
         ]
     },
