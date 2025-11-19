@@ -51,7 +51,7 @@ function modalSubmitIL() {
                             </div>
         <div id='commBestILs_uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
     </div>
-    <div class='textBlock' style='color:gray;font-size:80%;padding:10px 0'>
+    <div class='textBlock dim' style='font-size:80%;padding:10px 0'>
     -Debug mod, Lobber EX crits, and RNG manip are allowed.
     <br>-For video proof, game audio and full scorecard are preferred.
     <br>-Unobstructed gameplay is preferred.

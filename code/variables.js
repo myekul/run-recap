@@ -37,6 +37,16 @@ let commBestILSum = 0
 let isolatePatterns
 let residualExtra
 
+let globalStarSkips = 0
+let kd1
+let kd2
+let globalFollies
+let globalCala
+let globalWerner
+let globalKD
+
+let globalResidual
+
 function decimalsCriteria() {
     return commBestILsCategory.name == '1.1+'
 }

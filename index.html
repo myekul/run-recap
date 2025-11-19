@@ -118,8 +118,8 @@
                         <div id='runRecap_time' onclick="showInput('runRecap_time')" class='container grow'
                             style='margin:0;gap:8px'></div>
                         <div id='runRecap_player' class='container' style='margin:0;gap:8px'></div>
-                        <div id="runRecap_example_div" style="display:none;color:gray">EXAMPLE</div>
-                        <div id="runRecap_theoretical_div" style="display:none;color:gray">THEORETICAL</div>
+                        <div id="runRecap_example_div" class='dim' style="display:none">EXAMPLE</div>
+                        <div id="runRecap_theoretical_div" class='dim' style="display:none">THEORETICAL</div>
                     </div>
                 </div>
             </div>
@@ -155,12 +155,12 @@
                     </div>
                     <div id="runRecap_sav_section" class="container" style="margin:0;display:none">
                         <div id="sav_divider" class="divider"></div>
-                        <div class="container grow" style="margin:0;gap:10px;color:gray"
+                        <div class="container grow dim" style="margin:0;gap:10px"
                             onclick="openModal(savComparisonContent(),'SAV COMPARISON')">
                             &Delta;
                             <div id="savComparison">Top 3 Average</div>
                         </div>
-                        <!-- <div id='deltaToggle' class="grow" style="font-size:150%;color:gray;margin-left:10px"
+                        <!-- <div id='deltaToggle' class="grow dim" style="font-size:150%;margin-left:10px"
                             onclick="deltaType=!deltaType;playSound('move');action()">
                             <i class="fa fa-exchange"></i>
                         </div> -->
@@ -210,7 +210,7 @@
                 </div>
                 <div class='container'>
                     <div class="rrSec">.sav</div>
-                    <div class='textBlock' style="font-size:80%;color:gray">
+                    <div class='textBlock dim' style="font-size:80%">
                         You can either upload an existing .sav file from %appdata% to automatically
                         retrieve
                         IL times, or
@@ -220,7 +220,7 @@
                 <br>
                 <div class='container'>
                     <div class="rrSec">.lss</div>
-                    <div class='textBlock' style="font-size:80%;color:gray">
+                    <div class='textBlock dim' style="font-size:80%">
                         To ensure file compatibility, please upload a .lss with the standard split
                         configuration, as
                         seen <span class="myekulColor clickable" style="text-decoration: underline;"><a

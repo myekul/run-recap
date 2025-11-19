@@ -19,7 +19,7 @@ function openDatabase(sav) {
             const category = commBestILs[run.category]
             const onclick = sav ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
             HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="${onclick}">
-        <td style='font-size:70%;color:gray'>${index + 1}</td>
+        <td class='dim' style='font-size:70%'>${index + 1}</td>
         <td><div class='container'>${generateBoardTitle(category)}</div></td>
         <td style='padding:0 5px'><div>${run.date}</div><div style='font-size:60%'>${daysAgo(getDateDif(new Date(), new Date(run.date)))}</div></td>
         <td class='${category.className}' style='font-size:120%;padding:0 5px'>${run.time}</td>
