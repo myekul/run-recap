@@ -1,7 +1,7 @@
 function generateResidual() {
     let HTMLContent = ''
     if (commBestILsCategory.name == '1.1+' && residualExtra) {
-        HTMLContent += `<div class='button cuphead' style='width:180px;margin:0 auto;margin-bottom:20px' onclick="residualExtra=!residualExtra;action();playSound('move')">Hide True Residual</div>`
+        HTMLContent += `<div class='button cuphead' style='margin:0 auto;margin-bottom:20px;gap:8px;width:95px' onclick="residualExtra=!residualExtra;action();playSound('move')">${fontAwesome('reply')} Go back</div>`
     }
     HTMLContent += `<div class='container' style='gap:30px'>`
     if (!(commBestILsCategory.name == '1.1+' && residualExtra)) {
@@ -101,7 +101,7 @@ function generateResidual() {
     ${myekulColor('0/3 HP on KD')} (0.8s).
     The resulting value represents every other Residual timeloss.
     <br>
-    <span class='dim'>Calculations may be inaccurate.</span>
+    <span class='dim'>Calculations may contain inaccuracies.</span>
     </span>
     </div>
     </div>`
@@ -210,6 +210,6 @@ function calculateTrueResidual(residual, starSkipTime, framerule, follies, cala,
     follies = follies ? 0.96 : 0
     cala = cala ? 0.96 : 0
     werner = werner ? 0.96 : 0
-    kd = kd ? 0.8 : 0
+    kd = kd ? 0 : 0.8
     return secondsToHMS(residual - starSkipTime - frameruleTime - follies - cala - werner - kd, true)
 }
