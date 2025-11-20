@@ -207,7 +207,7 @@ function calculateTrueResidual(residual, starSkipTime, framerule, follies, cala,
     framerule.forEach(house => {
         if (!house) frameruleTime += 0.7
     })
-    follies = follies ? 0.96 : 0
+    follies = follies ? 0 : 0.96
     cala = cala ? 0.96 : 0
     werner = werner ? 0.96 : 0
     kd = kd ? 0 : 0.8

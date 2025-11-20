@@ -82,22 +82,6 @@ function generateAltStrats() {
                     },
                     {
                         boss: 'thedevil',
-                        name: 'Clap Bubbles Dragon (Slower)'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Clap Bubbles Dragon (Slowest)'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Bubbles Clap Dragon (Slower)'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Bubbles Clap Dragon (Slowest)'
-                    },
-                    {
-                        boss: 'thedevil',
                         name: 'Clap Bubbles Clap'
                     }
                 ]
@@ -252,13 +236,13 @@ function altStrats(categoryIndex) {
         return ((odds.split('/')[0] / odds.split('/')[1]) * 100).toFixed(1) + '%'
     }
 }
-function pendingSubmissions(submissions = new Array(10).fill(null), done) {
+function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
     HTMLContent += `<tr><td colspan=6 class='font2 gray' style='font-size:120%;padding:5px;position:relative'>
     ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
     Pending Submissions
     </td></tr>`
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 16; i++) {
         const submission = submissions[i]
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')"` : ''}>`
         if (submission) {
