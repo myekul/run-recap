@@ -306,7 +306,8 @@ function done() {
         HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(globalCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
     // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
-    const username = localStorage.getItem('username')?.trim()
+    const usernameAttempt = localStorage.getItem('username')
+    const username = usernameAttempt ? localStorage.getItem('username').trim() : ''
     if (username) {
         localStorage.setItem('username', username)
         document.getElementById('input_username').value = username
