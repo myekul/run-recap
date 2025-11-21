@@ -128,3 +128,31 @@ th {
 .charge {
     width: 30px !important
 }
+
+.tooltip {
+    position: relative;
+    /* display: inline-block; */
+    cursor: pointer;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    background-color: var(--background1);
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    border: 3px solid var(--banner);
+    bottom: 100%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

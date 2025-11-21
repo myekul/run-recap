@@ -29,7 +29,7 @@ function convertToSeconds(time) {
 }
 function getImage(image, heightParam) {
     const height = heightParam ? heightParam : 36
-    const src = `https://myekul.github.io/shared-assets/cuphead/images/${image}.png`
+    const src = `https://myekul.com/shared-assets/cuphead/images/${image}.png`
     return `<img src='${src}' style='height:${height}px;width:auto'>`
 }
 function getTrophy(place) {

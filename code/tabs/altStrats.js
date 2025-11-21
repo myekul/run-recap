@@ -87,7 +87,7 @@ function generateAltStrats() {
                 ]
                 HTMLContent += `
             <table style='margin-top:20px'>
-            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'><div class='container' style='gap:8px'><img src='https://myekul.github.io/shared-assets/images/myekul.png' style='height:36px'><div>myekul's ideas</div></div></td></tr>`
+            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'><div class='container' style='gap:8px'><img src='https://myekul.com/shared-assets/images/myekul.png' style='height:36px'><div>myekul's ideas</div></div></td></tr>`
                 myekulIdeas.forEach((idea, index) => {
                     HTMLContent += `<tr class='${getRowColor(index)}'>
                 <td class='${idea.boss}'><div class='container'>${getImage(idea.boss, 21)}</div></td>
@@ -214,7 +214,7 @@ function altStrats(categoryIndex) {
                     HTMLContent += `<td><div class='container'>`
                     strat.name.split(',').forEach(miniboss => {
                         miniboss = miniboss.trim()
-                        HTMLContent += `<div class='container' style='width:25px'><img src='https://myekul.github.io/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'></div>`
+                        HTMLContent += `<div class='container' style='width:25px'><img src='https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'></div>`
                     })
                     HTMLContent += `</div></td>`
                 }

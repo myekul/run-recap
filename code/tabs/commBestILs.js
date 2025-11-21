@@ -93,7 +93,7 @@ function generateCommBestILs() {
 // const runViableStyle = 'class="myekulColor font2" style="font-size:120%;margin-top:10px"'
 // function bossImage(boss, text) {
 //     return `<div class='container ${boss}' style='border-radius:5px;justify-content:left;gap:8px;width:300px;margin:5px;margin-left:15px;padding-left:5px'>
-//     <img src='https://myekul.github.io/shared-assets/cuphead/images/${boss}.png' style='height:36px'>
+//     <img src='https://myekul.com/shared-assets/cuphead/images/${boss}.png' style='height:36px'>
 //     <div>${text}</div>
 //     </div>`
 // }

@@ -50,7 +50,7 @@ function runRecapUploadButton() {
     }
 }
 function processDatabaseFile(databaseIndex, player, time, categoryName) {
-    fetch('https://myekul.github.io/shared-assets/cuphead/sav.json')
+    fetch('https://myekul.com/shared-assets/cuphead/sav.json')
         .then(response => response.json())
         .then(data => {
             runRecapUnload('lss', true)

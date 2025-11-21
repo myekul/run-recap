@@ -72,14 +72,8 @@ function generateResidual() {
             </div>
             </td>`
             if (residualExtra) {
-                HTMLContent += `
-            <td>${run.framerule[0] ? residualImage('dicesmart') : ''}</td>
-            <td>${run.framerule[1] ? residualImage('dicesmart') : ''}</td>
-            <td>${run.follies ? getImage('other/forestfollies', 16) : ''}</td>
-            <td>${run.cala ? residualImage('wutface') : ''}</td>
-            <td>${run.werner ? residualImage('tomatosoup') : ''}</td>
-            <td>${run.kd ? getImage('kingdice', 16) : ''}</td>
-            <td class='myekulColor'>${trueResidual}</td>`
+                HTMLContent += residualIcons(run)
+                HTMLContent += `<td class='myekulColor'>${trueResidual}</td>`
             }
             if (index == 0 && !residualExtra) {
                 HTMLContent += `<td rowspan=10 class='clickable gray' onclick="residualExtra=!residualExtra;action();playSound('move')">${fontAwesome('chevron-right')}</td>`
@@ -100,7 +94,6 @@ function generateResidual() {
     and
     ${myekulColor('0/3 HP on KD')} (0.8s).
     The resulting value represents every other Residual timeloss.
-    <br>
     <span class='dim'>Calculations may contain inaccuracies.</span>
     </span>
     </div>
@@ -127,12 +120,7 @@ function generateResidual() {
     <th class='gray'>Residual</th>`
         if (commBestILsCategory.name == '1.1+' && residualExtra) {
             HTMLContent += `<th class='dim'>Star Skips</th>
-            <th>${residualImage('dicesmart')}</th>
-            <th>${residualImage('dicesmart')}</th>
-            <th><div class='container'>${getImage('other/forestfollies', 16)}</div></th>
-            <th>${residualImage('wutface')}</th>
-            <th>${residualImage('tomatosoup')}</th>
-            <th><div class='container'>${getImage('kingdice', 16)}</div></th>
+            ${residualIcons()}
             <th class='gray' style='padding:0 3px'>True Residual</th>`
         }
         HTMLContent += `</tr>
@@ -212,4 +200,17 @@ function calculateTrueResidual(residual, starSkipTime, framerule, follies, cala,
     werner = werner ? 0.96 : 0
     kd = kd ? 0 : 0.8
     return secondsToHMS(residual - starSkipTime - frameruleTime - follies - cala - werner - kd, true)
+}
+function residualIcons(run) {
+    let HTMLContent = ''
+    HTMLContent += residualThing(run ? run.framerule[0] : true, residualImage('dicesmart'), 'KD Framerule 1')
+    HTMLContent += residualThing(run ? run.framerule[1] : true, residualImage('dicesmart'), 'KD Framerule 2')
+    HTMLContent += residualThing(run ? run.follies : true, getImage('other/forestfollies', 16), 'Follies 0/3')
+    HTMLContent += residualThing(run ? run.cala : true, residualImage('wutface'), 'Cala Parries')
+    HTMLContent += residualThing(run ? run.werner || false : true, residualImage('tomatosoup'), 'Werner Parries')
+    HTMLContent += residualThing(run ? run.kd : true, getImage('kingdice', 16), 'KD 0/3 HP')
+    return HTMLContent
+    function residualThing(criteria = true, content, tooltip) {
+        return `<td class='${criteria ? 'tooltip' : ''}'>${criteria ? content + `<span class='tooltiptext'>${tooltip}</span>` : ''}</td>`
+    }
 }

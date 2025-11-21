@@ -68,7 +68,7 @@ function generate_sav() {
     document.getElementById('content').innerHTML = HTMLContent
 }
 function processSavFile(playerIndex, display) {
-    fetch('https://myekul.github.io/shared-assets/cuphead/sav.json')
+    fetch('https://myekul.com/shared-assets/cuphead/sav.json')
         .then(response => response.json())
         .then(data => {
             runRecap_savFile = data
