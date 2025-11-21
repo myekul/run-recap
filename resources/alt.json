@@ -147,6 +147,12 @@
                 "title": "Flies Super Skip"
             },
             {
+                "name": "5 Flies, Tigers",
+                "time": 45.31,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/iB2aqkzM3Fg"
+            },
+            {
                 "name": "5 Flies, Snakes",
                 "time": 45.37,
                 "player": "Quincely0",
@@ -484,9 +490,9 @@
             },
             {
                 "name": "Cupcake, Waffle, Candy Corn",
-                "time": 32.77,
-                "player": "myekul",
-                "url": "https://youtu.be/yTmjj2kfhlA"
+                "time": 32.46,
+                "player": "Lewzr",
+                "url": "https://youtu.be/FYJwLEgbYdY"
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
@@ -692,6 +698,12 @@
                 "url": "https://youtu.be/yP0lTtLRPzU"
             },
             {
+                "name": "Down Gun",
+                "time": 48.66,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/E3Z5Ba3KczM"
+            },
+            {
                 "name": "Up Eggs",
                 "time": 48.86,
                 "player": "ClipBoardGuy",
@@ -763,15 +775,15 @@
             },
             {
                 "name": "4B+, 5B+",
-                "time": 39.64,
+                "time": 37.61,
                 "player": "Lewzr",
-                "url": "https://youtu.be/dRBf65r1Nq0?si=kWT0uYwMJxmFXfJI&t=209"
+                "url": "https://youtu.be/Kb36FJ3rSTs"
             },
             {
                 "name": "5B+, 3B",
-                "time": 39.19,
+                "time": 37.86,
                 "player": "Lewzr",
-                "url": "https://youtu.be/dRBf65r1Nq0?si=kS8ZywhmYzhW6wW7&t=252"
+                "url": "https://youtu.be/i-gll-2XR-Y"
             },
             {
                 "name": "3B, 2B+",
@@ -891,10 +903,10 @@
             },
             {
                 "name": "Blue Gem",
-                "time": 41.87,
-                "rta": 42.60,
-                "player": "Quincely0",
-                "url": "https://youtu.be/j7teMOTCZgk"
+                "time": 41.84,
+                "rta": 42.56,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/I020yvXSs3k"
             },
             {
                 "title": "Other"
@@ -1351,9 +1363,9 @@
             },
             {
                 "name": "Clap Dragon",
-                "time": 47.68,
-                "player": "myekul",
-                "url": "https://youtu.be/l9cyRO-um9w",
+                "time": 46.99,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/ZQrl-XxPJNo",
                 "odds": "1/14"
             },
             {
@@ -1437,6 +1449,34 @@
                 "player": "SBDWolf",
                 "url": "https://youtu.be/I-YcCwsKyWw",
                 "odds": "1/55"
+            },
+            {
+                "name": "Clap Bubbles Dragon (Slower)",
+                "time": 47.23,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/rhvBA3yXMBU",
+                "odds": "3/385"
+            },
+            {
+                "name": "Bubbles Clap Dragon (Slower)",
+                "time": 44.85,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/T8C40264xHk",
+                "odds": "3/385"
+            },
+            {
+                "name": "Clap Bubbles Dragon (Slowest)",
+                "time": 48.99,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/w38nmqKg_-w",
+                "odds": "1/385"
+            },
+            {
+                "name": "Bubbles Clap Dragon (Slowest)",
+                "time": 45.89,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/1SCq5in4mQc",
+                "odds": "1/385"
             },
             {
                 "name": "Clap Ring Clap Dragon",
@@ -2213,6 +2253,9 @@
         ],
         "chefsaltbaker": [
             {
+                "title": "Standard Strats"
+            },
+            {
                 "name": "4+1 Shakers",
                 "time": 49.76,
                 "player": "MarkinSws",
@@ -2229,6 +2272,21 @@
                 "time": 52.49,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/RRHoTUQKf4o"
+            },
+            {
+                "title": "2.5-cycle"
+            },
+            {
+                "name": "Limes, Limes",
+                "time": 52.71,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/tlDmwt23V1k"
+            },
+            {
+                "name": "Limes, Sugar",
+                "time": 53.08,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/RRyPkfHkqTw"
             }
         ]
     },
@@ -2334,7 +2392,7 @@
                 "url": "https://youtu.be/nyD7tfeUwXM"
             },
             {
-                "title": "Other"
+                "title": "2.5-cycle"
             },
             {
                 "name": "2.5-cycle",

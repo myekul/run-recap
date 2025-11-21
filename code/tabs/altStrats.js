@@ -73,6 +73,10 @@ function generateAltStrats() {
                         name: 'Double Trollnado'
                     },
                     {
+                        boss: 'wallywarbles',
+                        name: 'Heart'
+                    },
+                    {
                         boss: 'drkahlsrobot',
                         name: 'One Damage Boost'
                     },
@@ -83,6 +87,14 @@ function generateAltStrats() {
                     {
                         boss: 'thedevil',
                         name: 'Clap Bubbles Clap'
+                    },
+                    {
+                        boss: 'thedevil',
+                        name: 'Clap Bubbles Clap Dragon (Slower)'
+                    },
+                    {
+                        boss: 'thedevil',
+                        name: 'Clap Bubbles Clap Dragon (Slowest)'
                     }
                 ]
                 HTMLContent += `
