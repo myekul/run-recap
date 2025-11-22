@@ -274,12 +274,6 @@
                 "url": "https://youtu.be/Fsttqj6NFyE"
             },
             {
-                "name": "Seeds, Pods",
-                "time": 33.96,
-                "player": "Grondious",
-                "url": "https://youtu.be/wBCzMTzm2dE"
-            },
-            {
                 "name": "Lunge, Pods, Seeds",
                 "time": 34.35,
                 "player": "SBDWolf",
@@ -292,10 +286,28 @@
                 "url": "https://www.youtube.com/live/1WMRr4ZbHxI?si=x9JSMUD2yXP_E2y6&t=7712"
             },
             {
+                "name": "Seeds, Lunge",
+                "time": 32.46,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/zKwkMUTtsy4"
+            },
+            {
+                "name": "Seeds, Lunge, Pods",
+                "time": "34.50",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/EkGSUk8zO1Y"
+            },
+            {
                 "name": "Seeds, Lunge, Seeds",
                 "time": 35.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/rdF5WbS-qX4"
+            },
+            {
+                "name": "Seeds, Pods",
+                "time": 33.96,
+                "player": "Grondious",
+                "url": "https://youtu.be/wBCzMTzm2dE"
             },
             {
                 "title": "Doubles"
@@ -2362,31 +2374,46 @@
         ],
         "chefsaltbaker": [
             {
-                "title": "5+3 Shakers"
+                "title": "M-Swap 5+3"
             },
             {
-                "name": "2 Parries",
+                "name": "SLD 2P",
                 "time": 51.25,
                 "player": "myekul",
                 "url": "https://youtu.be/YX-NBn8AEbs"
             },
             {
-                "name": "1 Parry",
+                "name": "SLD 1P",
                 "time": 51.41,
                 "player": "Musically_dECLINED",
                 "url": "https://youtu.be/q1p4E3J7rKg"
             },
             {
-                "title": "4+3 Shakers"
+                "title": "Baby Chargimate"
             },
             {
-                "name": "",
+                "name": "L-LD 5+3",
+                "time": 53.47,
+                "player": "myekul",
+                "url": "https://youtu.be/DVHcisMA0PA"
+            },
+            {
+                "name": "LSL 7+3",
+                "time": 55.91,
+                "player": "myekul",
+                "url": "https://youtu.be/zvhuxEeZc1I"
+            },
+            {
+                "title": "4+3"
+            },
+            {
+                "name": "LSL",
                 "time": 50.42,
                 "player": "myekul",
                 "url": "https://youtu.be/BQ_izsT3P5c"
             },
             {
-                "name": "Strawberries",
+                "name": "L-LD",
                 "time": 53.26,
                 "player": "myekul",
                 "url": "https://youtu.be/nyD7tfeUwXM"
@@ -2395,10 +2422,19 @@
                 "title": "2.5-cycle"
             },
             {
-                "name": "2.5-cycle",
+                "name": "L-S 9+3",
                 "time": 53.16,
                 "player": "myekul",
                 "url": "https://youtu.be/H_DfufgPJOI"
+            },
+            {
+                "title": "Half Chargimate"
+            },
+            {
+                "name": "SLD",
+                "time": 55.66,
+                "player": "myekul",
+                "url": "https://youtu.be/D5lo6fQWUmo"
             }
         ]
     },
