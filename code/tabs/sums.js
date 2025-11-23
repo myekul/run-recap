@@ -89,49 +89,6 @@ function generateSums() {
         HTMLContent += `</tr>`
     }
     HTMLContent += `</table></div>`
-    if (commBestILsCategory.name == '1.1+') {
-        HTMLContent += `<div class='container' style='margin-top:20px'><table>
-        <tr>
-        <td colspan=4></td>
-        <th colspan=3 class='isle1'>Isle 1</th>
-        <th colspan=5 class='expert'>Isle 2</th>
-        <th colspan=5 class='isle3'>Isle 3</th>
-        <th colspan=5 class='hell'>Hell</th>
-        </tr>
-        <tr>
-        <td colspan=4>
-        <th class='gray'>RTA</th>
-        <th class='gray'>IGT</th>
-        <th class='gray'>Resid</th>`
-        for (let i = 0; i < 3; i++) {
-            HTMLContent += `
-            <th class='gray'>RTA</th>
-            <th class='gray'>IGT</th>
-            <th colspan=2 class='gray'>Sum</th>
-            <th class='gray'>Resid</th>`
-        }
-        commBestILsCategory.topRuns.forEach((run, index) => {
-            if (run.splits.length == 3) run.splits.push(globalCategory.runs[index].score)
-        })
-        commBestILsCategory.topRuns.forEach((run, index) => {
-            HTMLContent += `<tr class='hover ${getRowColor(index)}'>
-            ${bigPlayerDisplay(players[index])}`
-            let sum = 0
-            run.splits.forEach((time, isleIndex) => {
-                const isle = isles[isleIndex]
-                const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])
-                const isleIGT = isle.sums[index]
-                sum += isleIGT
-                HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(isleRTA || convertToSeconds(time), true)}</td>`
-                HTMLContent += `<td class='${isle.className}' style='font-size:80%;opacity:80%'>${secondsToHMS(isleIGT, true)}</td>`
-                HTMLContent += isleIndex > 0 ? `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(convertToSeconds(time), true)}</td>` : ''
-                HTMLContent += isleIndex > 0 ? `<td style='font-size:80%;opacity:80%' class='${isle.className}'>${secondsToHMS(sum, true)}</td>` : ''
-                HTMLContent += `<td style='font-size:80%'>${secondsToHMS((isleRTA || convertToSeconds(time)) - isleIGT, true)}</td>`
-            })
-            HTMLContent += `</tr>`
-        })
-        HTMLContent += `</table></div>`
-    }
     document.getElementById('content').innerHTML = HTMLContent
 }
 function getIsleSum(isle) {

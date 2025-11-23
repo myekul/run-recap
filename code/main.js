@@ -90,7 +90,8 @@ function action() {
         ballpit: generateBallpit,
         commBestILs: generateCommBestILs,
         altStrats: generateAltStrats,
-        commBestSplits: generateCommBestSplits
+        commBestSplits: generateCommBestSplits,
+        top10: generateTop10
     }
     tabActions[globalTab]?.()
     if (localStorage.getItem('username') && !runRecapExample) {
@@ -110,7 +111,7 @@ function action() {
         document.getElementById('lssButton').classList.remove('pulseSize')
         document.getElementById('lssButton').classList.add('grayedOut')
     }
-    ['commBestILs', 'altStrats', 'commBestSplits'].forEach(page => {
+    ['commBestILs', 'altStrats', 'commBestSplits', 'top10'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
         document.getElementById(globalTab + 'Button').classList.add('activeBanner')
     })
@@ -211,7 +212,7 @@ function action() {
         hide('runRecapTab')
         show('content')
     }
-    if (!['commBestILs', 'altStrats', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+    if (!['commBestILs', 'altStrats', 'commBestSplits', 'top10', 'ballpit'].includes(globalTab)) {
         show('runRecap_details')
     } else {
         hide('runRecap_details')
@@ -233,7 +234,7 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     players = []
     playerNames = new Set()
     changeComparison('Top 3 Average', true)
-    altStratIndex = -1
+    altStratLevel = null
     const category = commBestILsCategory.category
     updateBoardTitle()
     // if (runRecapExample) showTab('home')

@@ -5,7 +5,7 @@ function generateAltStrats() {
         assignIsles()
         HTMLContent += `<table>
         <tr><td class='background2' style='font-size:80%;color:gray'>${alt[commBestILsCategory.tabName].forestfollies?.length || '&nbsp;'}</td></tr>
-        <tr><td class='grow' onclick="altStratClick(-2)"><div>${getImage('other/forestfollies')}</div></td></tr>
+        <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('other/forestfollies')}</div></td></tr>
         </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
@@ -28,7 +28,7 @@ function generateAltStrats() {
                 HTMLContent += `</tr><tr>`
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
-                    HTMLContent += `<td style='width:36px' class='grow ${category.info.id} ${categoryIndex == altStratIndex ? 'selected' : ''}' onclick="altStratClick(${categoryIndex})">
+                    HTMLContent += `<td style='width:36px' class='grow ${category.info.id} ${category.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${category.info.id}')">
             <div>${getImage(category.info.id)}</div>
             </td>`
                 })
@@ -36,7 +36,7 @@ function generateAltStrats() {
             }
         })
         HTMLContent += `</div>`
-        if (altStratIndex == -1) {
+        if (!altStratLevel) {
             const counts = {};
             for (const boss in alt[commBestILsCategory.tabName]) {
                 for (const obj of alt[commBestILsCategory.tabName][boss]) {
@@ -60,7 +60,7 @@ function generateAltStrats() {
             countArray.forEach((player, index) => {
                 sum += player.count
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
-                ${getPlayerDisplay(players.find(player2 => player2.name == player.player) || player.player)}
+                <td>${getPlayerDisplay(players.find(player2 => player2.name == player.player) || player.player)}</td>
                 <td>${player.count}</td>
                 </tr>`
             })
@@ -144,7 +144,7 @@ function generateAltStrats() {
                     <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
                     <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                     <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
-                    ${getPlayerDisplay(players.find(player => player.name == fastest.player), true)}
+                    <td>${getPlayerDisplay(players.find(player => player.name == fastest.player), true)}</td>
                     </tr>`
                 } else {
                     HTMLContent += `
@@ -158,27 +158,47 @@ function generateAltStrats() {
             HTMLContent += `</table>`
             HTMLContent += `</div>`
         } else {
-            const category = categories[altStratIndex]
-            const location = category ? category.info.id : 'forestfollies'
-            HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratIndex=-1;action()">${fontAwesome('reply')}</div>`
-            HTMLContent += alt[commBestILsCategory.tabName][location] ? altStrats(altStratIndex) : `<div class='container' style='margin-top:20px'>No alt strats...</div>`
+            HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
+            if (alt[commBestILsCategory.tabName][altStratLevel]) {
+                HTMLContent += altStrats(altStratLevel)
+                if (commBestILsCategory.name == '1.1+' && altStratLevel == 'kingdice') {
+                    ['mrwheezy', 'hopuspocus', 'pirouletta', 'kingdice2'].forEach(miniboss => {
+                        HTMLContent += altStrats(miniboss)
+                    })
+                }
+            } else {
+                HTMLContent += `<div class='container' style='margin-top:20px'>No alt strats...</div>`
+            }
         }
     } else {
         HTMLContent += `<div class='container'>No alt strats...</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
-    if (altStratIndex == -1) window.firebaseUtils.firestoreReadCommBestILs()
+    if (!altStratLevel) window.firebaseUtils.firestoreReadCommBestILs()
 }
-function altStratClick(index) {
-    altStratIndex = index
+function altStratClick(level) {
+    altStratLevel = level
     playSound('move')
     action()
 }
-function altStrats(categoryIndex) {
-    const category = categories[categoryIndex]
-    const query = category ? category.info.id : 'forestfollies'
-    const img = category ? category.info.id : 'other/forestfollies'
-    const name = category ? category.info.name : 'Forest Follies'
+function altStrats(query) {
+    const otherNames = {
+        forestfollies: 'Forest Follies',
+        mrwheezy: 'Mr. Wheezy',
+        hopuspocus: 'Hopus Pocus',
+        pirouletta: 'Pirouletta',
+        kingdice2: 'King Dice (Final)'
+    }
+    const imgLocation = {
+        forestfollies: 'other/forestfollies',
+        mrwheezy: 'phase/kingdice3',
+        hopuspocus: 'phase/kingdice5',
+        pirouletta: 'phase/kingdice7',
+        kingdice2: 'kingdice'
+    }
+    const category = categories.find(category => category.info.id == query)
+    const img = category ? query : imgLocation[query]
+    const name = category ? category.info.name : otherNames[query]
     let HTMLContent = ''
     if (query == 'thedevil' && commBestILsCategory.name == '1.1+') {
         HTMLContent += `<div class='container'>
@@ -187,7 +207,7 @@ function altStrats(categoryIndex) {
     }
     HTMLContent += `
     <div class='container'>
-    <table style='margin:10px'>
+    <div style='margin:0;position:relative'><table style='margin:10px'>
     <tr><td colspan=5><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
     const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
@@ -237,12 +257,32 @@ function altStrats(categoryIndex) {
                     HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
                 }
                 const player = players.find(player => player.name == strat.player)
-                HTMLContent += getPlayerDisplay(player || strat.player, true)
+                HTMLContent += `<td>${getPlayerDisplay(player || strat.player, true)}</td>`
             }
         }
         HTMLContent += `</tr>`
     })
-    HTMLContent += `</table></div>`
+    HTMLContent += `</table>`
+    if (commBestILsCategory.name == '1.1+' && category) {
+        const categoryIndex = categories.findIndex(category => category.info.id == query)
+        HTMLContent += `<table style='position:absolute;left:110%;top:12px'>
+        <tr>
+        <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
+        </tr>
+        <tr>
+        <td class='${query}' style='padding:0 5px'>${commBestILsCategory.tas[categoryIndex]}</td>
+        </tr>`;
+        ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
+            HTMLContent += `<tr>
+            <td colspan=2 class='background2 grow' style='font-size:90%'>
+            ${getAnchor(commBestILsCategory.tasLinks[vidIndex] + '&t=' + commBestILsCategory.tasTimestamps[categoryIndex] + 's')}
+            <span class='dim'>${fontAwesome('video-camera')}</span> ${vid}</a>
+            </td>
+            </tr>`
+        })
+        HTMLContent += `</table>`
+    }
+    HTMLContent += `</div></div>`
     return HTMLContent
     function getOdds(odds) {
         return ((odds.split('/')[0] / odds.split('/')[1]) * 100).toFixed(1) + '%'
@@ -267,7 +307,7 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
             <td class='${submission.boss}'><div class='container'>${getImage(submission.boss == 'forestfollies' ? 'other/forestfollies' : submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
             <td style='text-align:left'>${strat || ''}</td>
-            ${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}`
+            <td>${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}</td>`
         } else {
             // if (done && i == 3 && !submissions[0]) {
             //     HTMLContent += `<td colspan=5 style='font-size:80%;color:gray'></td>`

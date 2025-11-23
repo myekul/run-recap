@@ -32,18 +32,21 @@
             <div class="sticky">
                 <div id="headerRow" class="container">
                     <div class="font2" style="margin-right:8px">Comm Best</div>
-                    <div id='altStratsButton' onclick="altStratIndex=-1;showTab('altStrats')" class="button"
-                        style="width:60px;gap:6px;font-size:85%;background-color: limegreen">
+                    <div id='altStratsButton' onclick="altStratLevel=null;showTab('altStrats')"
+                        class="button headerButton" style="width:60px">
                         <i class="fa fa-database"></i>ILs
                     </div>
-                    <div id='commBestILsButton' onclick="altStratIndex=-1;showTab('commBestILs')" class="button"
-                        style="width:30px;gap:6px;font-size:85%;background-color: limegreen">
+                    <div id='commBestILsButton' onclick="altStratLevel=null;showTab('commBestILs')"
+                        class="button headerButton" style="width:30px">
                         <i class="fa fa-trophy"></i>
                     </div>
                     <div class="dot"></div>
-                    <div id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button"
-                        style="width:80px;gap:6px;font-size:85%;background-color: limegreen">
+                    <div id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button headerButton"
+                        style="width:80px">
                         <i class="fa fa-tasks"></i>Splits
+                    </div>
+                    <div id='top10Button' onclick="showTab('top10')" class="button headerButton" style="width:30px">
+                        <i class="fa fa-bullseye"></i>
                     </div>
                     <div style="width:70px">
                         <div id="boardTitleSrc" class="container">
@@ -280,6 +283,7 @@
 <script src="code/tabs/commBestILs.js"></script>
 <script src="code/tabs/altStrats.js"></script>
 <script src="code/tabs/commBestSplits.js"></script>
+<script src="code/tabs/top10.js"></script>
 
 <script src="code/submitIL.js"></script>
 <script src="code/database.js"></script>

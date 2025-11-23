@@ -156,3 +156,25 @@ th {
     visibility: visible;
     opacity: 1;
 }
+
+.headerButton {
+    gap: 6px;
+    font-size: 85%;
+    background-color: limegreen
+}
+
+.mrwheezy {
+    background-color: saddlebrown;
+}
+
+.hopuspocus {
+    background-color: royalblue;
+}
+
+.pirouletta {
+    background-color: forestgreen;
+}
+
+.kingdice2 {
+    background-color: rebeccapurple;
+}

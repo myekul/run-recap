@@ -62,6 +62,21 @@
                 "time": 35.55,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/yyBm3pYhAVo"
+            },
+            {
+                "title": "Carrot TAS Lobber"
+            },
+            {
+                "name": "TAStato, 2 Onion Triples",
+                "time": 33.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/6whLLEFdttU"
+            },
+            {
+                "name": "3 Doubles",
+                "time": 35.38,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/_2VeQY5Lc64"
             }
         ],
         "ribbyandcroaks": [
@@ -284,6 +299,12 @@
                 "time": 35.83,
                 "player": "SBDWolf",
                 "url": "https://www.youtube.com/live/1WMRr4ZbHxI?si=x9JSMUD2yXP_E2y6&t=7712"
+            },
+            {
+                "name": "Lunge, Pods",
+                "time": 32.89,
+                "player": "Lewzr",
+                "url": "https://youtu.be/j2vhaWtTZBo"
             },
             {
                 "name": "Seeds, Lunge",
@@ -701,7 +722,7 @@
         ],
         "wallywarbles": [
             {
-                "title": "Standard Strats"
+                "title": "Right Garbage"
             },
             {
                 "name": "Down Eggs",
@@ -720,6 +741,15 @@
                 "time": 48.86,
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/xES9CYHLFpQ"
+            },
+            {
+                "title": "Heart"
+            },
+            {
+                "name": "Down Eggs",
+                "time": 48.87,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/r0H3T41dgUA"
             },
             {
                 "title": "Other"
@@ -1333,6 +1363,80 @@
                 "rta": "1:58.31",
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/eKWOeYdjTQM"
+            }
+        ],
+        "mrwheezy": [
+            {
+                "title": "Triples"
+            },
+            {
+                "name": "1 Flame, 2 EXs",
+                "time": 17.91,
+                "player": "Grondious",
+                "url": "https://youtu.be/0OyBZFzT6BA?si=k7eF3WLVbEeIuVpW&t=20"
+            },
+            {
+                "name": "3 Flame, 2 EXs",
+                "time": 20.56,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/YLyUa0CcUrM?si=8qWBacDgrOAFyzuK&t=14"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "1 Flame, 2 EXs",
+                "time": 19.65,
+                "player": "Quincely0",
+                "url": "https://youtu.be/P8FTg7l0wok?si=OeI57B-zMah1ddTT&t=16"
+            },
+            {
+                "name": "3 Flame, 3 EXs",
+                "time": 20.58,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/eKWOeYdjTQM?si=pjmCrLU41OjKdZcE&t=14"
+            }
+        ],
+        "hopuspocus": [
+            {
+                "name": "Parry, 2 Spread EXs",
+                "time": 21.79,
+                "player": "Quincely0",
+                "url": "https://youtu.be/stxsgl3xDsM?si=JUpWr-JM2VcEubRV&t=55"
+            }
+        ],
+        "pirouletta": [
+            {
+                "title": "Triples"
+            },
+            {
+                "name": "Spin, 5 Cards",
+                "time": 9.91,
+                "player": "Quincely0",
+                "url": "https://youtu.be/xwzo4FBYGtc"
+            },
+            {
+                "name": "Charge-5, 4.5 Cards, 2 HP",
+                "time": 14.25,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/YLyUa0CcUrM?si=dM89PXdLk7u7RfEe&t=100"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Charge-5, 4.5 Cards, 2 HP",
+                "time": 15.33,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/eKWOeYdjTQM?si=J1dMoAEY94110Mkt&t=104"
+            }
+        ],
+        "kingdice2": [
+            {
+                "name": "<1 Card",
+                "time": 25.55,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/YLyUa0CcUrM?si=T5sws7Ym5INODkV8&t=122"
             }
         ],
         "thedevil": [

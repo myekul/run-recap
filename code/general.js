@@ -49,12 +49,12 @@ function getTrophy(place) {
     return ''
 }
 function getPlayerDisplay(player, exception) {
-    let HTMLContent = `<td style='text-align:left;font-weight: bold;font-size:80%;padding:0 3px'>
-    <div class='container' style='justify-content:left;gap:4px'>`
+    let HTMLContent = `
+    <div class='container' style='justify-content:left;gap:4px;text-align:left;font-weight: bold;font-size:80%;padding:0 3px'>`
     HTMLContent += ['commBestSplits'].includes(globalTab) || exception ? '' : `<div style='width:18px'>${getPlayerFlag(player, 12)}</div>`
     HTMLContent += `${getPlayerIcon(player, 21)}`
     HTMLContent += `${getPlayerName(player)}`
-    HTMLContent += `</div></td>`
+    HTMLContent += `</div>`
     return HTMLContent
 }
 function bigPlayerDisplay(player) {
@@ -68,7 +68,7 @@ function bigPlayerDisplay(player) {
     } else {
         HTMLContent += `<td colspan=3></td>`
     }
-    HTMLContent += getPlayerDisplay(player)
+    HTMLContent += `<td>${getPlayerDisplay(player)}</td>`
     return HTMLContent
 }
 function generateBoardTitle(category = commBestILsCategory) {

@@ -13,7 +13,7 @@ function openDatabase(sav) {
     To view a .sav, simply click on an entry.
     </div>
     </div>
-    <table style='padding:10px'>`
+    <table style='padding:10px;margin:0 auto'>`
     database.forEach((run, index) => {
         if (!(sav && commBestILsCategory.tabName != run.category)) {
             const category = commBestILs[run.category]
