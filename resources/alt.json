@@ -1370,6 +1370,12 @@
                 "title": "Triples"
             },
             {
+                "name": "1 Flame, 3 EXs",
+                "time": 17.73,
+                "player": "Quincely0",
+                "url": "https://youtu.be/stxsgl3xDsM?si=f2VCLUxJbRy_fZii&t=15"
+            },
+            {
                 "name": "1 Flame, 2 EXs",
                 "time": 17.91,
                 "player": "Grondious",
@@ -1395,9 +1401,48 @@
                 "time": 20.58,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/eKWOeYdjTQM?si=pjmCrLU41OjKdZcE&t=14"
+            },
+            {
+                "title": "Safe Strat"
+            },
+            {
+                "name": "1 Flame, 2 EXs",
+                "time": 19.93,
+                "player": "myekul",
+                "url": "https://youtu.be/hTyVGenStQM"
+            },
+            {
+                "name": "2 Flame, 2 EXs",
+                "time": 20.45,
+                "player": "myekul",
+                "url": "https://youtu.be/hTyVGenStQM?si=0PUn6kAIzunFAbHz&t=26"
+            },
+            {
+                "name": "3 Flame, 2 EXs",
+                "time": 20.91,
+                "player": "myekul",
+                "url": "https://youtu.be/hTyVGenStQM?si=0PUn6kAIzunFAbHz&t=53"
             }
         ],
         "hopuspocus": [
+            {
+                "title": "Triple Skulls"
+            },
+            {
+                "name": "2 EXs",
+                "time": 21.61,
+                "player": "myekul",
+                "url": "https://youtu.be/oQHQVUQbJJM?si=Ao3pRqP7jVhOuyXz&t=29"
+            },
+            {
+                "name": "1 EX",
+                "time": "22.20",
+                "player": "myekul",
+                "url": "https://youtu.be/oQHQVUQbJJM"
+            },
+            {
+                "title": "Double Parry"
+            },
             {
                 "name": "Parry, 2 Spread EXs",
                 "time": 21.79,
@@ -1416,6 +1461,12 @@
                 "url": "https://youtu.be/xwzo4FBYGtc"
             },
             {
+                "name": "Charge, 4 Cards, 3 HP",
+                "time": 12.35,
+                "player": "myekul",
+                "url": "https://youtu.be/zHNas_6wCqw"
+            },
+            {
                 "name": "Charge-5, 4.5 Cards, 2 HP",
                 "time": 14.25,
                 "player": "Misterbutter444",
@@ -1423,6 +1474,12 @@
             },
             {
                 "title": "Doubles"
+            },
+            {
+                "name": "Charge, 5 Cards, 3 HP",
+                "time": 12.96,
+                "player": "myekul",
+                "url": "https://youtu.be/De3j4IuZZnQ"
             },
             {
                 "name": "Charge-5, 4.5 Cards, 2 HP",
@@ -1733,9 +1790,9 @@
             },
             {
                 "name": "Clap Bubbles Clap Spider",
-                "time": 45.38,
-                "player": "holrre",
-                "url": "https://youtu.be/zv99sW-ZhtI"
+                "time": 44.87,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/RZZwIHGnIAQ"
             }
         ]
     },
@@ -2227,17 +2284,18 @@
         ],
         "kingdice": [
             {
-                "name": "3-5-7",
-                "time": "1:53.45",
-                "rta": "1:55.99",
-                "player": "Quincely0",
-                "url": "https://youtu.be/5dRO8Ye9PRE"
+                "name": "3-5-7, Spread EXs",
+                "time": "1:51.98",
+                "rta": "1:53.98",
+                "player": "myekul",
+                "url": "https://youtu.be/v9qGwwhLNuI"
             },
             {
                 "name": "3-5-7, Doubles",
-                "time": "1:51",
-                "player": "Quincely0",
-                "url": "https://youtu.be/P8FTg7l0wok"
+                "time": "1:50.51",
+                "rta": "1:52.11",
+                "player": "myekul",
+                "url": "https://youtu.be/Cv2ikEwMsLU"
             },
             {
                 "name": "3-4-8",
@@ -2322,9 +2380,18 @@
                 "time": 43.63,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/uf0yhInpcW8"
+            },
+            {
+                "name": "Parryless",
+                "time": 45.84,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/CAHuJPlUW-c"
             }
         ],
         "estherwinchester": [
+            {
+                "title": "Parries"
+            },
             {
                 "name": "Nukeless",
                 "time": 59.72,
@@ -2340,11 +2407,28 @@
                 "url": "https://youtu.be/mFQMrdYSZyA"
             },
             {
+                "name": "2 Nuke",
+                "time": 59.83,
+                "rta": "1:02.94",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/3nABn2LDEes"
+            },
+            {
                 "name": "3 Nuke",
                 "time": 58.98,
                 "rta": "1:03.18",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/zT6kz83BEO4"
+            },
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "2 Nuke, Parryless",
+                "time": "1:00.87",
+                "rta": "1:03.06",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/SGEEvnoNd04"
             }
         ],
         "moonshinemob": [
@@ -2394,9 +2478,9 @@
             },
             {
                 "name": "Limes, Limes",
-                "time": 52.71,
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/tlDmwt23V1k"
+                "time": "51.80",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/ARbNnh0vRJQ"
             },
             {
                 "name": "Limes, Sugar",

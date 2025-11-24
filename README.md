@@ -18,3 +18,5 @@
 - DLC L/S Routes
 
 - JSON editor
+
+- More graphs
