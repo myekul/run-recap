@@ -505,21 +505,21 @@
             },
             {
                 "name": "Cupcake, Candy Corn, Waffle",
-                "time": 32.48,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=QLGif1pMAPvSin6N&t=860"
+                "time": 32.20,
+                "player": "myekul",
+                "url": "https://youtu.be/uFdVT5Lf5K0"
             },
             {
                 "name": "Cupcake, Candy Corn, Gumball",
-                "time": 33.88,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=T0tvNwKwnxb3wnoZ&t=893"
+                "time": 33.41,
+                "player": "myekul",
+                "url": "https://youtu.be/IkB7cWCAPgU"
             },
             {
                 "name": "Cupcake, Candy Corn, Jawbreaker",
-                "time": 35.14,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=7gj84AyNeebsTgcC&t=928"
+                "time": 34.95,
+                "player": "myekul",
+                "url": "https://youtu.be/Ya7BYZRq1RQ"
             },
             {
                 "name": "Cupcake, Waffle, Candy Corn",
@@ -535,9 +535,9 @@
             },
             {
                 "name": "Cupcake, Waffle, Jawbreaker",
-                "time": 35.4,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=VVoG__7uMFNF1ZJs&t=1034"
+                "time": 34.38,
+                "player": "myekul",
+                "url": "https://youtu.be/lX4yGmABI-Y"
             },
             {
                 "name": "Cupcake, Gumball, Candy Corn",
@@ -547,9 +547,9 @@
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
-                "time": 33.95,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=MGWn1xXF4t-lfCcl&t=1104"
+                "time": 33.74,
+                "player": "myekul",
+                "url": "https://youtu.be/rTw7xZTzwEs"
             },
             {
                 "name": "Cupcake, Gumball, Jawbreaker",
@@ -607,9 +607,9 @@
             },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
-                "time": 36.58,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=_3AWOvXGUdl_QELl&t=1464"
+                "time": 35.41,
+                "player": "myekul",
+                "url": "https://youtu.be/FPELYv2Flp4"
             },
             {
                 "name": "Gumball, Cupcake, Candy Corn",
@@ -1353,9 +1353,10 @@
             },
             {
                 "name": "Best RNG",
-                "time": "1:51",
-                "player": "Quincely0",
-                "url": "https://youtu.be/P8FTg7l0wok"
+                "time": "1:49.54",
+                "rta": "1:51.52",
+                "player": "myekul",
+                "url": "https://youtu.be/fUMnuMlpTCM"
             },
             {
                 "name": "Worst RNG",
@@ -1363,6 +1364,15 @@
                 "rta": "1:58.31",
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/eKWOeYdjTQM"
+            },
+            {
+                "title": "Other"
+            },
+            {
+                "name": "3-4-8",
+                "time": "1:55",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/1GQjn0cuuI0"
             }
         ],
         "mrwheezy": [
@@ -1426,7 +1436,7 @@
         ],
         "hopuspocus": [
             {
-                "title": "Triple Skulls"
+                "title": "Triple Skull"
             },
             {
                 "name": "2 EXs",
@@ -2292,10 +2302,10 @@
             },
             {
                 "name": "3-5-7, Doubles",
-                "time": "1:50.51",
-                "rta": "1:52.11",
+                "time": "1:49.54",
+                "rta": "1:51.52",
                 "player": "myekul",
-                "url": "https://youtu.be/Cv2ikEwMsLU"
+                "url": "https://youtu.be/fUMnuMlpTCM"
             },
             {
                 "name": "3-4-8",

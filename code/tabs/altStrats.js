@@ -181,21 +181,21 @@ function altStratClick(level) {
     playSound('move')
     action()
 }
+const otherNames = {
+    forestfollies: 'Forest Follies',
+    mrwheezy: 'Mr. Wheezy',
+    hopuspocus: 'Hopus Pocus',
+    pirouletta: 'Pirouletta',
+    kingdice2: 'King Dice (Final)'
+}
+const imgLocation = {
+    forestfollies: 'other/forestfollies',
+    mrwheezy: 'phase/kingdice3',
+    hopuspocus: 'phase/kingdice5',
+    pirouletta: 'phase/kingdice7',
+    kingdice2: 'kingdice'
+}
 function altStrats(query) {
-    const otherNames = {
-        forestfollies: 'Forest Follies',
-        mrwheezy: 'Mr. Wheezy',
-        hopuspocus: 'Hopus Pocus',
-        pirouletta: 'Pirouletta',
-        kingdice2: 'King Dice (Final)'
-    }
-    const imgLocation = {
-        forestfollies: 'other/forestfollies',
-        mrwheezy: 'phase/kingdice3',
-        hopuspocus: 'phase/kingdice5',
-        pirouletta: 'phase/kingdice7',
-        kingdice2: 'kingdice'
-    }
     const category = categories.find(category => category.info.id == query)
     const img = category ? query : imgLocation[query]
     const name = category ? category.info.name : otherNames[query]
@@ -358,7 +358,7 @@ function userContributions(playerName) {
         HTMLContent += `
         <tr class='${getRowColor(index)}'>
         <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
-        <td class='${strat.level}'><div class='container'>${getImage(strat.level == 'forestfollies' ? 'other/forestfollies' : strat.level, 21)}</div></td>
+        <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
         <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>
         <td style='text-align:left' style='padding:0 3px'>${strat.name}</td>
         </tr>`
