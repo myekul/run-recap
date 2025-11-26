@@ -174,7 +174,48 @@ function generateAltStrats() {
         HTMLContent += `<div class='container'>No alt strats...</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
+    if (altStratLevel == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') drawChart()
     if (!altStratLevel) window.firebaseUtils.firestoreReadCommBestILs()
+}
+function drawChart() {
+    let data = [['Value']]
+    alt[commBestILsCategory.tabName].baronessvonbonbon.forEach(strat => {
+        data.push([parseFloat(strat.time)])
+    })
+    data = google.visualization.arrayToDataTable(data);
+    const font = getComputedStyle(document.documentElement).getPropertyValue('--font')
+    var options = {
+        chartArea: { height: '75%', width: '90%' },
+        legend: { position: 'none' },
+        colors: ["hotpink"],
+        backgroundColor: 'transparent',
+        histogram: {
+            bucketSize: 0.5
+        },
+        hAxis: {
+            viewWindow: { min: 29, max: 38 },
+            ticks: [29, 30, 31, 32, 33, 34, 35, 36, 37],
+            textStyle: {
+                color: 'gray',
+                fontName: font
+            },
+        },
+        vAxis: {
+            textStyle: {
+                color: 'transparent'
+            },
+            gridlines: { color: "transparent" }
+        },
+        tooltip: {
+            textStyle: {
+                fontName: font
+            }
+        }
+    };
+    var chart = new google.visualization.Histogram(
+        document.getElementById("chart_baroness")
+    );
+    chart.draw(data, options);
 }
 function altStratClick(level) {
     altStratLevel = level
@@ -195,11 +236,90 @@ const imgLocation = {
     pirouletta: 'phase/kingdice7',
     kingdice2: 'kingdice'
 }
+const minibosses = {
+    'Candy Corn': 'candycorn',
+    'Waffle': 'waffle',
+    'Cupcake': 'cupcake',
+    'Gumball': 'gumball',
+    'Jawbreaker': 'jawbreaker'
+}
 function altStrats(query) {
     const category = categories.find(category => category.info.id == query)
     const img = category ? query : imgLocation[query]
     const name = category ? category.info.name : otherNames[query]
     let HTMLContent = ''
+    if (query == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') {
+        HTMLContent += `<div class='container' style='gap:10px'>
+        <div id='chart_baroness' style='width:350px;margin:0'></div>
+        <table>
+        </tr>
+        <td></td>`
+        if (baronessExtra) HTMLContent += `<td></td>`
+        minibossArray = []
+        for (const miniboss in minibosses) {
+            const minibossInfo = { name: miniboss, overall: [], minion1: [], minion2: [], minion3: [] }
+            HTMLContent += `<td class='${minibosses[miniboss]}'>${getImage('phase/baronessvonbonbon' + minibosses[miniboss])}</td>`
+            for (const obj of alt[commBestILsCategory.tabName].baronessvonbonbon) {
+                obj.name.split(', ').forEach((name, index) => {
+                    if (name == miniboss) {
+                        minibossInfo.overall.push(obj)
+                        if (index == 0) minibossInfo.minion1.push(obj)
+                        if (index == 1) minibossInfo.minion2.push(obj)
+                        if (index == 2) minibossInfo.minion3.push(obj)
+                    }
+                })
+            }
+            minibossArray.push(minibossInfo)
+        }
+        HTMLContent += bonbonRow('overall', 'Overall')
+        if (baronessExtra) {
+            HTMLContent += bonbonRow('minion1', '1st')
+            HTMLContent += bonbonRow('minion2', '2nd')
+            HTMLContent += bonbonRow('minion3', '3rd')
+        }
+        HTMLContent += `<td colspan=7 class='gray clickable' onclick="baronessExtra=!baronessExtra;playSound('move');action()">${fontAwesome(baronessExtra ? 'close' : 'chevron-down')}</td>`
+        HTMLContent += `</table></div>`
+        function bonbonRow(field, label) {
+            let HTMLContent = ''
+            HTMLContent += `<tr>`
+            if (baronessExtra) HTMLContent += `<td rowspan=5 class='gray' style='padding:5px'>${label}</td>`
+            HTMLContent += `<td class='myekulColor'>Mean</td>`
+            minibossArray.forEach(miniboss => {
+                const average = math.mean(miniboss[field].map(entry => parseFloat(entry.time)))
+                HTMLContent += `<td class='baronessvonbonbon' style='padding:0 3px'>${average.toFixed(2)}</td>`
+            })
+            HTMLContent += `</tr>`
+            HTMLContent += `<tr class='background2' style='font-size:80%'>
+            <td>Std. Dev</td>`
+            minibossArray.forEach(miniboss => {
+                const average = math.std(miniboss[field].map(entry => parseFloat(entry.time)))
+                HTMLContent += `<td class='dim'>${average.toFixed(2)}s</td>`
+            })
+            HTMLContent += `</tr>`
+            HTMLContent += `<tr class='background2' style='font-size:80%'>
+            <td>Median</td>`
+            minibossArray.forEach(miniboss => {
+                const average = math.median(miniboss[field].map(entry => parseFloat(entry.time)))
+                HTMLContent += `<td>${average.toFixed(2)}</td>`
+            })
+            HTMLContent += `</tr>`
+            HTMLContent += `<tr style='font-size:80%'>
+            <td>Min</td>`
+            minibossArray.forEach(miniboss => {
+                const min = Math.min(...miniboss[field].map(entry => parseFloat(entry.time)))
+                HTMLContent += `<td>${min.toFixed(2)}</td>`
+            })
+            HTMLContent += `</tr>`
+            HTMLContent += `<tr class='background2' style='font-size:80%'>
+            <td>Max</td>`
+            minibossArray.forEach(miniboss => {
+                const max = Math.max(...miniboss[field].map(entry => parseFloat(entry.time)))
+                HTMLContent += `<td>${max}</td>`
+            })
+            HTMLContent += `</tr>`
+            return HTMLContent
+        }
+    }
     if (query == 'thedevil' && commBestILsCategory.name == '1.1+') {
         HTMLContent += `<div class='container'>
         <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
@@ -219,13 +339,6 @@ function altStrats(query) {
     //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
     //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
     // }
-    const minibosses = {
-        'Candy Corn': 'candycorn',
-        'Waffle': 'waffle',
-        'Cupcake': 'cupcake',
-        'Gumball': 'gumball',
-        'Jawbreaker': 'jawbreaker'
-    }
     alt[commBestILsCategory.tabName][query].forEach((strat, index) => {
         if (strat.title && !(strat.title == 'Head Skip' && commBestILsCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
             HTMLContent += `<tr><td style='height:10px'></td></tr>

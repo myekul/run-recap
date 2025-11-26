@@ -191,7 +191,6 @@ function runRecap_chart(times, deltas, lss) {
             hAxis: {
                 textStyle: {
                     color: 'transparent',
-                    fontName: font
                 },
                 minValue: 0,
                 gridlines: { count: 0 }
@@ -199,12 +198,13 @@ function runRecap_chart(times, deltas, lss) {
             vAxis: {
                 textStyle: {
                     color: 'transparent',
-                    fontName: font
                 },
                 gridlines: { count: 0 },
                 baselineColor: 'gray'
             },
-            tooltip: { trigger: 'none' }
+            tooltip: {
+                trigger: 'none'
+            }
         };
         const chart = new google.visualization.LineChart(document.getElementById('runRecap_chart'));
         chart.draw(data, options);

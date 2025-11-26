@@ -36,6 +36,7 @@ let commBestILSum = 0
 
 let isolatePatterns
 let residualExtra
+let baronessExtra
 
 let globalStarSkips = 0
 let kd1
@@ -46,6 +47,8 @@ let globalWerner
 let globalKD
 
 let globalResidual
+
+let minibossArray = []
 
 function decimalsCriteria() {
     return commBestILsCategory.name == '1.1+'
