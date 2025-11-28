@@ -31,13 +31,13 @@
                 "title": "Triples"
             },
             {
-                "name": "TAStato, 2 Onion Triples",
+                "name": "3 EXs",
                 "time": 33.86,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/jKPwTRLunOM"
             },
             {
-                "name": "TAStato, 1 Onion Triple",
+                "name": "2 EXs",
                 "time": 34.36,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/5XuoQ9-PDu4"
@@ -47,9 +47,9 @@
             },
             {
                 "name": "TAStato, 1 Double 1 Triple",
-                "time": 34.91,
+                "time": 34.76,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/m26QlGWif0c"
+                "url": "https://youtu.be/cBF9TGXFvvg"
             },
             {
                 "name": "Double, 2 Onion Triples",
@@ -67,7 +67,7 @@
                 "title": "Carrot TAS Lobber"
             },
             {
-                "name": "TAStato, 2 Onion Triples",
+                "name": "3 Triples",
                 "time": 33.92,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/6whLLEFdttU"
@@ -225,6 +225,12 @@
                 "time": "24.42",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/CFr6D14yACY"
+            },
+            {
+                "name": "Sneeze",
+                "time": "27.50",
+                "player": "Quincely0",
+                "url": "https://youtu.be/PnlKwelRnHU"
             }
         ],
         "hildaberg": [
@@ -601,9 +607,9 @@
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
-                "time": 34.29,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=9WB9uWqyKEb16mYF&t=1429"
+                "time": 33.62,
+                "player": "myekul",
+                "url": "https://youtu.be/TpcSeQrKkSk"
             },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
@@ -738,9 +744,9 @@
             },
             {
                 "name": "Up Eggs",
-                "time": 48.86,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/xES9CYHLFpQ"
+                "time": 47.87,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/9DOc7T8A7s0"
             },
             {
                 "title": "Heart"
@@ -1312,14 +1318,17 @@
                 "url": "https://youtu.be/BFdOWkxh47o"
             },
             {
-                "title": "Other"
+                "title": "Safe Phase 1"
             },
             {
-                "name": "Safe Phase 1, 1 Triple, L Pumpkin",
+                "name": "L Pumpkin, 1 Triple",
                 "time": 59.99,
                 "rta": 62.21,
                 "player": "Grondious",
                 "url": "https://youtu.be/x_2IL7qJpVk"
+            },
+            {
+                "title": "Other"
             },
             {
                 "name": "2 Triples, L Pumpkin",
@@ -1335,10 +1344,10 @@
             },
             {
                 "name": "Best RNG",
-                "time": "1:44.69",
-                "rta": "1:46.47",
+                "time": "1:43.71",
+                "rta": "1:45.70",
                 "player": "Quincely0",
-                "url": "https://youtu.be/stxsgl3xDsM"
+                "url": "https://youtu.be/ScylBzfLMjk"
             },
             {
                 "name": "No Hearts",
@@ -1423,21 +1432,21 @@
             },
             {
                 "name": "1 Flame, 2 EXs",
-                "time": 19.93,
-                "player": "myekul",
-                "url": "https://youtu.be/hTyVGenStQM"
+                "time": 19.74,
+                "player": "Quincely0",
+                "url": "https://youtu.be/rk0TFlxQYss"
             },
             {
                 "name": "2 Flame, 2 EXs",
-                "time": 20.45,
-                "player": "myekul",
-                "url": "https://youtu.be/hTyVGenStQM?si=0PUn6kAIzunFAbHz&t=26"
+                "time": 20.19,
+                "player": "Quincely0",
+                "url": "https://youtu.be/wD6N2BXQMHU"
             },
             {
                 "name": "3 Flame, 2 EXs",
-                "time": 20.91,
-                "player": "myekul",
-                "url": "https://youtu.be/hTyVGenStQM?si=0PUn6kAIzunFAbHz&t=53"
+                "time": 20.73,
+                "player": "Quincely0",
+                "url": "https://youtu.be/Glp2RRDSfD0"
             }
         ],
         "hopuspocus": [
@@ -1461,9 +1470,9 @@
             },
             {
                 "name": "Parry, 2 Spread EXs",
-                "time": 21.79,
+                "time": 21.62,
                 "player": "Quincely0",
-                "url": "https://youtu.be/stxsgl3xDsM?si=JUpWr-JM2VcEubRV&t=55"
+                "url": "https://youtu.be/OeXWoqgEDTE"
             }
         ],
         "pirouletta": [
@@ -1472,9 +1481,15 @@
             },
             {
                 "name": "Spin, 5 Cards",
-                "time": 9.91,
+                "time": 9.78,
                 "player": "Quincely0",
-                "url": "https://youtu.be/xwzo4FBYGtc"
+                "url": "https://youtu.be/Sx7ScN0CIDk"
+            },
+            {
+                "name": "Charge, 5 Cards, 3 HP",
+                "time": 10.88,
+                "player": "Quincely0",
+                "url": "https://youtu.be/_IX5qo9yW-k"
             },
             {
                 "name": "Charge, 4 Cards, 3 HP",
@@ -1641,9 +1656,9 @@
             },
             {
                 "name": "Clap Bubbles Dragon (Slower)",
-                "time": 47.23,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/rhvBA3yXMBU",
+                "time": 46.89,
+                "player": "myekul",
+                "url": "https://youtu.be/zpSLXbRsPO4",
                 "odds": "3/385"
             },
             {
@@ -2101,6 +2116,12 @@
                 "time": 35.55,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/yyBm3pYhAVo"
+            },
+            {
+                "name": "3 Doubles, TAS Lobber",
+                "time": 35.38,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/_2VeQY5Lc64"
             }
         ],
         "ribbyandcroaks": [
@@ -2623,6 +2644,15 @@
                 "url": "https://youtu.be/nyD7tfeUwXM"
             },
             {
+                "title": "3+3"
+            },
+            {
+                "name": "DLS",
+                "time": 50.37,
+                "player": "myekul",
+                "url": "https://youtu.be/v3PnOSJGOmo"
+            },
+            {
                 "title": "2.5-cycle"
             },
             {
@@ -2824,23 +2854,29 @@
                 "name": "7 Flies Regular Skip",
                 "time": "47.50",
                 "player": "myekul",
-                "url": "https://youtu.be/W3MMDbYBLNg"
+                "url": "https://youtu.be/0nbs4tY-8oU"
             }
         ],
         "goopylegrande": [
             {
                 "name": "",
-                "time": 29.82,
+                "time": 29.59,
                 "player": "myekul",
-                "url": "https://youtu.be/rEzRwsIcP3I"
+                "url": "https://youtu.be/JbUdVTEcSMo"
             }
         ],
         "cagneycarnation": [
             {
-                "name": "",
+                "name": "Lunge, Lunge, Pods",
                 "time": 34.86,
                 "player": "Quincely0",
                 "url": "https://youtu.be/qozAGjG2bCY"
+            },
+            {
+                "name": "Seeds, Pods",
+                "time": 34.87,
+                "player": "myekul",
+                "url": "https://youtu.be/nzQ7wNudfA8"
             }
         ],
         "baronessvonbonbon": [
@@ -2920,6 +2956,12 @@
             }
         ],
         "kingdice": [
+            {
+                "name": "3 Hearts",
+                "time": "1:50.28",
+                "player": "myekul",
+                "url": "https://youtu.be/L90GJH7EAxA"
+            },
             {
                 "name": "No Hearts",
                 "time": "1:51.32",

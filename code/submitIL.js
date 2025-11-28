@@ -33,7 +33,7 @@ function modalSubmitIL() {
     HTMLContent += `
     <div class='container' style='gap:12px;margin:10px'>
     ${generateBoardTitle()}
-    ${runRecapPlayer()}
+    ${playerDisplay()}
     </div>`
     HTMLContent += `<table id='commBestILsSubmit' style='margin:0 auto'>`
     inputty.forEach(elem => {

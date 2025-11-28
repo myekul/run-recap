@@ -95,7 +95,7 @@ function action() {
     }
     tabActions[globalTab]?.()
     if (localStorage.getItem('username') && !runRecapExample) {
-        document.getElementById('runRecap_player').innerHTML = runRecapPlayer()
+        document.getElementById('runRecap_player').innerHTML = playerDisplay()
     }
     if (runRecap_savFile) {
         document.getElementById('savButton').classList.add('pulseSize')
@@ -312,7 +312,7 @@ function done() {
     if (username) {
         localStorage.setItem('username', username)
         document.getElementById('input_username').value = username
-        document.getElementById('username').innerHTML = runRecapPlayer()
+        document.getElementById('username').innerHTML = playerDisplay()
     }
     show('username')
 }

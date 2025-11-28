@@ -96,23 +96,13 @@ function hideInput(elem) {
     }
     if (elem == 'username') {
         localStorage.setItem('username', input.trim() ? input : localStorage.getItem('username'))
-        document.getElementById('username').innerHTML = runRecapPlayer()
+        document.getElementById('username').innerHTML = playerDisplay()
     }
     show(elem)
     action()
 }
 function setRunRecapTime(time) {
     document.getElementById('runRecap_time').innerHTML = `<div style='font-size:150%'>${time}</div>`
-}
-function runRecapPlayer(playerString = localStorage.getItem('username'), exception) {
-    const player = players.find(player => player.name == playerString)
-    const playerName = player ? getPlayerName(player) : playerString
-    let HTMLContent = `<div class='container' style='gap:6px;margin:0 3px'>`
-    HTMLContent += player && !exception ? `<div style='width:20px'>${getPlayerFlag(player, 13)}</div>` : ''
-    HTMLContent += player ? `<div>${getPlayerIcon(player, 27)}</div>` : ''
-    HTMLContent += `<div style='font-size:100%'>${playerName}</div>`
-    HTMLContent += `</div>`
-    return HTMLContent
 }
 function runRecapUnload(elem, shh) {
     if (!shh) playSound('carddown')
@@ -232,7 +222,7 @@ function runRecapExamples(sav) {
             HTMLContent += `<tr class='${savComparison.split('_')[1] == playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
             HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
             HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
-            HTMLContent += `<td class='container' style='justify-content:left'>${runRecapPlayer(player.name)}</td>`
+            HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
             HTMLContent += `</tr>`
         }
     })

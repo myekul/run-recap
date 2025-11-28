@@ -23,7 +23,7 @@ function openDatabase(sav) {
         <td><div class='container'>${generateBoardTitle(category)}</div></td>
         <td style='padding:0 5px'><div>${run.date}</div><div style='font-size:60%'>${daysAgo(getDateDif(new Date(), new Date(run.date)))}</div></td>
         <td class='${category.className}' style='font-size:120%;padding:0 5px'>${run.time}</td>
-        <td>${runRecapPlayer(run.player, true)}</td>
+        <td>${playerDisplay(run.player, true)}</td>
         </tr>`
         }
     })
@@ -66,7 +66,7 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
                 level.completed = true
             })
             runRecapExample = true
-            document.getElementById('runRecap_player').innerHTML = runRecapPlayer(player)
+            document.getElementById('runRecap_player').innerHTML = playerDisplay(player)
             if (!['sums', 'residual', 'grid'].includes(globalTab)) {
                 showTab('sav')
             } else {

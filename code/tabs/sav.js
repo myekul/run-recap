@@ -76,7 +76,7 @@ function processSavFile(playerIndex, display) {
                 runRecapUnload('lss', true)
                 runRecapExample = true
                 const player = players[playerIndex]
-                document.getElementById('runRecap_player').innerHTML = runRecapPlayer(player.name)
+                document.getElementById('runRecap_player').innerHTML = playerDisplay(player.name)
                 const time = secondsToHMS(player.extra.score)
                 runRecapTime = time
                 setRunRecapTime(runRecapTime)
