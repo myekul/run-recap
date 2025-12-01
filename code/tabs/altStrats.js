@@ -73,6 +73,10 @@ function generateAltStrats() {
                         name: 'Double Trollnado'
                     },
                     {
+                        boss: 'hildaberg',
+                        name: 'No Damage Boosts'
+                    },
+                    {
                         boss: 'drkahlsrobot',
                         name: 'One Damage Boost'
                     },
