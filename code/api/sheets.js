@@ -112,9 +112,6 @@ function loadMyekul() {
         commBestILsCategory.top3.push(top3Sum / (numRuns > 3 ? 3 : numRuns))
         commBestILsCategory.theoryRun.push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
     })
-    categories.forEach(category => {
-        category.info.levelID = bossIDs[category.info.id]
-    })
     if (commBestILsCategory.markin) {
         loadMarkin()
     } else {
