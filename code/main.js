@@ -13,21 +13,7 @@ setTabs(['home', null, [
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
-const dropbox = document.getElementById('dropbox');
-const dropboxClass = 'dropboxHover'
-dropbox.addEventListener('dragover', (event) => {
-    event.preventDefault();
-    dropbox.classList.add(dropboxClass);
-});
-dropbox.addEventListener('dragleave', () => {
-    dropbox.classList.remove(dropboxClass);
-});
-dropbox.addEventListener('drop', (event) => {
-    event.preventDefault();
-    dropbox.classList.remove(dropboxClass);
-    const files = event.dataTransfer.files;
-    runRecapHandleFile(files[0])
-});
+setDropbox()
 document.addEventListener('DOMContentLoaded', function () {
     fetch('resources/categoryData.json').then(response => response.json())
         .then(data => {

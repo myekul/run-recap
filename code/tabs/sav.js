@@ -166,7 +166,7 @@ function savBoss(categoryIndex) {
     HTMLContent += `<td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>`
     HTMLContent += `<td id='runRecap_${categoryIndex}' class='${category.info.id}'>${done ? runRecapIL(runTime, categoryIndex) : runRecapInput(categoryIndex)}</td>`
     HTMLContent += done ? `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${getDelta(delta)}</td>` : `<td></td>`
-    HTMLContent += done ? `<td style='font-size:90%;color:var(--gray);padding:0 2px'>${comparisonContent}</td>` : `<td></td>`
+    HTMLContent += done ? `<td class='dim' style='font-size:90%;padding:0 2px'>${comparisonContent}</td>` : `<td></td>`
     HTMLContent += `</tr>`
     return HTMLContent
 }

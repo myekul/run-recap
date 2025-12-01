@@ -87,7 +87,7 @@ function generate_lss() {
                     HTMLContent += image
                     HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>`
                     HTMLContent += `<td class='${deltaType ? redGreen(delta) : ILgrade.className}' style='padding:0 5px;font-size:90%'>${runTime == nullTime ? '-' : getDelta(delta)}</td>`
-                    HTMLContent += `<td style='padding:0 10px;font-size:90%;color:var(--gray)'>${comparisonContents}</td>`
+                    HTMLContent += `<td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
                 } else if (index == 2) {
                     HTMLContent += `<td colspan=5></td>`
                 } else {
@@ -284,7 +284,7 @@ function getOffset() {
 }
 function comparisonContent(type, index, time, comparison) {
     const source = type == 'split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'
-    let HTMLContent = `<div class='container' style='gap:7px;justify-content:left;color:var(--gray);font-size:90%'>`
+    let HTMLContent = `<div class='container dim' style='gap:7px;justify-content:left;font-size:90%'>`
     if (comparison == null || comparison == 'commBest') {
         const player = players.find(player => player.name == runRecap_markin[source][index].split('/')[0])
         HTMLContent += player ? getPlayerIcon(player, 24) : ''

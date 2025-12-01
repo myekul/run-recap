@@ -73,10 +73,6 @@ function generateAltStrats() {
                         name: 'Double Trollnado'
                     },
                     {
-                        boss: 'wallywarbles',
-                        name: 'Heart'
-                    },
-                    {
                         boss: 'drkahlsrobot',
                         name: 'One Damage Boost'
                     },

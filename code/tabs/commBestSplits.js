@@ -9,7 +9,7 @@ function generateCommBestSplits() {
         <div class='container' style='gap:30px'>
         <table>
         <tr>
-        <th style='color:var(--gray)'>WR</th>
+        <th class='dim'>WR</th>
         <th colspan=5 class='gray'>Comm Best Splits</th>
         </tr>`
         splitInfo.forEach((split, index) => {
@@ -18,7 +18,7 @@ function generateCommBestSplits() {
             const wrSplit = runRecap_markin.wrSplits[index]
             const url = runRecap_markin.bestSplitsURLs[index]
             HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'clickable' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
-            <td style='font-size:70%;color:var(--gray)'>${secondsToHMS(wrSplit, true)}</td>
+            <td class='dim' style='font-size:70%'>${secondsToHMS(wrSplit, true)}</td>
             <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
             <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin.bestSplits[index], true)}</td>
             <td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>
@@ -32,7 +32,7 @@ function generateCommBestSplits() {
         HTMLContent += `
         <table>
         <tr>
-        <th style='color:var(--gray)'>WR</th>
+        <th class='dim'>WR</th>
         <th colspan=5 class='gray'>Comm Best Segments</th>
         </tr>`
         let sum = 0
@@ -44,7 +44,7 @@ function generateCommBestSplits() {
             const url = runRecap_markin.bestSegmentsURLs[index]
             sum += bestSegment
             HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'clickable' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
-            <td style='font-size:70%;color:var(--gray)'>${secondsToHMS(wrSegment, true)}</td>
+            <td class='dim' style='font-size:70%'>${secondsToHMS(wrSegment, true)}</td>
             <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
             <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(bestSegment, true)}</td>
             <td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>
@@ -53,7 +53,7 @@ function generateCommBestSplits() {
             const nextIsle = splitInfo[index + 1]?.isle
             if (nextIsle != split.isle) {
                 const content = index > 0 ? secondsToHMS(sum, true) : ''
-                HTMLContent += `<tr style='height:16px'><td></td><td></td><td style='font-size:70%;color:var(--gray)'>${content}</td></tr>`
+                HTMLContent += `<tr style='height:16px'><td></td><td></td><td class='dim' style='font-size:70%'>${content}</td></tr>`
             }
         })
         HTMLContent += `

@@ -54,7 +54,7 @@
                             <div class="loader"></div>
                         </div>
                     </div>
-                    <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'
+                    <div onclick="document.getElementById('input_upload').click()" class='button cuphead'
                         style="width:120px;position:absolute;left:15px">
                         <i class="fa fa-folder-open"></i>&nbsp;Open file
                     </div>
@@ -195,22 +195,7 @@
                         <div class="container">View Example:</div>
                         <div id="runRecap_examples" class="container"></div>
                     </div>
-                    <div id="dropbox">
-                        <div class="container">
-                            <input type='file' id='runRecap_input' onchange="runRecapHandleFile(event)"
-                                style='display:none'>
-                            <div onclick="document.getElementById('runRecap_input').click()" class='button cuphead'>
-                                <i class="fa fa-folder-open"></i>&nbsp;Open file
-                            </div>
-                            <div onclick="openModal(runRecapInfo(), 'INFO')" class='grow' style="padding-left:5px">
-                                <i class="fa fa-info-circle"></i>
-                            </div>
-                            <div class='divider'></div>
-                            <div onclick="processSavFile()" class="button cuphead" style="width:110px">
-                                <i class="fa fa-plus"></i>&nbsp;Empty .sav
-                            </div>
-                        </div>
-                    </div>
+                    <div id="dropbox"></div>
                 </div>
                 <div class='container'>
                     <div class="rrSec">.sav</div>
@@ -233,7 +218,7 @@
                         comparisons will not work when splitting after scorecard.
                     </div>
                 </div>
-                <div id='runRecapError' class='container' style='display:none'>Error!</div>
+                <div id='runRecapError' class='container' style='display:none;margin-top:20px'>Error!</div>
             </div>
             <div id="runRecap_content" style="display:none">
                 <div class='container' style='padding-top:20px'>

@@ -463,9 +463,9 @@
             },
             {
                 "name": "Waffle, Cupcake, Gumball",
-                "time": 33.37,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/QhJ6cLoV7MQ"
+                "time": 33.19,
+                "player": "Lewzr",
+                "url": "https://youtu.be/AzLWOGiaQaA"
             },
             {
                 "name": "Waffle, Cupcake, Jawbreaker",
@@ -879,27 +879,27 @@
             },
             {
                 "name": "3 Lasers, 1 Laser",
-                "time": 46.63,
-                "player": "Quincely0",
-                "url": "https://youtu.be/BFZQibo9bJs"
+                "time": "46.60",
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/U-5H2PewzoY"
             },
             {
                 "name": "2 Lasers, 4 Meteors",
-                "time": 47.89,
-                "player": "Quincely0",
-                "url": "https://youtu.be/rRsjLpKbFyY"
+                "time": 46.98,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/8ZxDKrV_01M"
             },
             {
                 "name": "2 Lasers, 3 Meteors",
-                "time": 48.34,
-                "player": "Quincely0",
-                "url": "https://youtu.be/Dy3DPwLm028"
+                "time": 47.82,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/bN4kwpSm2d0"
             },
             {
                 "name": "3 Lasers, 2 Meteors",
-                "time": 48.51,
-                "player": "Quincely0",
-                "url": "https://youtu.be/3NaYiHs_O3U"
+                "time": 47.94,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/Ov3hOhoqLLQ"
             },
             {
                 "title": "Grim Glitch"
@@ -909,6 +909,15 @@
                 "time": 47.64,
                 "player": "Quincely0",
                 "url": "https://youtu.be/DCe8My83EtQ"
+            },
+            {
+                "title": "Meatball Skip"
+            },
+            {
+                "name": "3 Lasers, 2 Meteors",
+                "time": 48.57,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/aB4jPMC63x8"
             }
         ],
         "rumorhoneybottoms": [
@@ -1234,6 +1243,12 @@
                 "time": 55.58,
                 "player": "Taylz",
                 "url": "https://youtu.be/Oshvp5E7jJc"
+            },
+            {
+                "name": "Red Fish, Pufferfish, Ghosts",
+                "time": 55.54,
+                "player": "SBDWolf",
+                "url": "https://www.youtube.com/live/TKqk-CQkGDQ?si=n-SaaPV5Pl3N8Mxk&t=6502"
             },
             {
                 "name": "Ghosts, Pufferfish, Yellow Fish, Turtle",
@@ -1896,10 +1911,25 @@
         ],
         "hildaberg": [
             {
-                "name": "",
-                "time": 54.77,
-                "player": "Yuka",
-                "url": "https://youtu.be/sZbSs7PGUMc"
+                "title": "Nukeless"
+            },
+            {
+                "name": "Ha-Ha",
+                "time": 54.46,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/YlwZYf2jgbQ"
+            },
+            {
+                "name": "Trollnado",
+                "time": 55.77,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/AgavAC1iIEA"
+            },
+            {
+                "name": "Ha-Trollnado",
+                "time": 55.86,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/dxuo5UhsDfU"
             }
         ],
         "cagneycarnation": [
@@ -1953,9 +1983,9 @@
         "rumorhoneybottoms": [
             {
                 "name": "",
-                "time": 27.81,
+                "time": 27.38,
                 "player": "Yuka",
-                "url": "https://youtu.be/n3-8ElQV7m8"
+                "url": "https://youtu.be/jwdp6Jlmst8"
             }
         ],
         "drkahlsrobot": [
@@ -1984,6 +2014,12 @@
                 "time": 34.68,
                 "player": "Yuka",
                 "url": "https://youtu.be/APbvKumxndo?si=ojuhgnFdjsJAADet&t=42"
+            },
+            {
+                "name": "TPOEX, Phase 4 K.O.",
+                "time": 34.90,
+                "player": "Yuka",
+                "url": "https://youtu.be/BYL8B1n343w"
             },
             {
                 "name": "Phase 4 K.O.",
@@ -2392,9 +2428,9 @@
         "glumstonethegiant": [
             {
                 "name": "",
-                "time": "45.61",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/xbgLtQvpbOs"
+                "time": "45.56",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/dfHqs6by1qk"
             }
         ],
         "mortimerfreeze": [

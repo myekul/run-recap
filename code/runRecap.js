@@ -1,4 +1,4 @@
-async function runRecapHandleFile(event) {
+async function handleFile(event) {
     const file = event.target?.files ? event.target.files[0] : event;
     if (file) {
         try {
@@ -111,17 +111,6 @@ function runRecapUnload(elem, shh) {
     } else {
         runRecap_lssFile = {}
     }
-}
-function runRecapInfo() {
-    const player = players.find(player => player.name == localStorage.getItem('username'))
-    const playerName = player ? getPlayerName(player) : `<span style='color:white'>${localStorage.getItem('username')}</span>`
-    let HTMLContent = `
-    <div>
-        SAVE FILE LOCATIONS:
-        <br>Windows: ${myekulColor(`C:\\Users\\<span class='runRecapInfoName'>${playerName}</span>\\AppData\\Roaming\\Cuphead`)}
-        <br>Mac: ${myekulColor(`/Users/<span class='runRecapInfoName'>${playerName}</span>/Library/Application\\ Support/unity.Studio\\ MDHR.Cuphead/Cuphead`)}
-    </div>`
-    return HTMLContent
 }
 function runRecapGrade(delta) {
     return getLetterGrade(100 - (delta * 4))

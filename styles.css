@@ -33,23 +33,6 @@ th {
     max-width: 700px;
 }
 
-#dropbox {
-    width: 450px;
-    height: 300px;
-    border: 3px dashed white;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: background-color 0.2s;
-    position: relative;
-}
-
-.dropboxHover {
-    background-color: var(--gray) !important;
-}
-
 .pulseSize:not(.activeBanner) {
     animation: pulseSize 1s infinite;
 }
