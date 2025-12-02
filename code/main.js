@@ -1,15 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', null, [
-    `<div id='savButton' onclick="playSound('category_select');showTab('sav')" class="font2 button grayedOut"
-        style="width:80px;font-size:120%;gap:4px;background-color:var(--cuphead)">
-        <img src="images/sav.png" style="height:21px">.sav
-    </div>
-    <div id='lssButton' onclick="playSound('category_select');showTab('lss')" class="font2 button grayedOut"
-        style="width:80px;font-size:120%;gap:4px;background-color:var(--cuphead)">
-        <img src="images/lss.png" style="height:21px">.lss
-    </div>`
-], null, 'sums', 'residual', 'grid', null, 'ballpit'])
+setTabs(['home', null, [fancyTab('sav'), fancyTab('lss')], null, 'sums', 'residual', 'grid', null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()

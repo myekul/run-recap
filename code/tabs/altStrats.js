@@ -348,7 +348,7 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
             }
             HTMLContent += `
             <td class='${commBestILs[submission.category].className}'>${submission.category}</td>
-            <td class='${submission.boss}'><div class='container'>${getImage(submission.boss == 'forestfollies' ? 'other/forestfollies' : submission.boss, 21)}</div></td>
+            <td class='${submission.boss}'><div class='container'>${getImage(imgLocation[submission.boss] ? imgLocation[submission.boss] : submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
             <td style='text-align:left'>${strat || ''}</td>
             <td>${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}</td>`

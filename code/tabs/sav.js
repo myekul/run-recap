@@ -9,7 +9,7 @@ function generate_sav() {
             if (['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
                 char = 'chalice'
             }
-            document.getElementById('runRecap_ghost').src = `images/ghost_${char}.png`
+            document.getElementById('runRecap_ghost').src = `https://myekul.com/shared-assets/cuphead/images/extra/ghost_${char}.png`
         } else {
             document.getElementById('runRecap_numDeaths').innerHTML = ''
             hide('runRecap_ghost')
@@ -111,18 +111,6 @@ function bootMarkinExample() {
     })
     document.getElementById('dropdown_runRecap_lss_current').value = 'yourPB'
     document.getElementById('dropdown_runRecap_lss_comparison').value = 'commBest'
-}
-function runRecapDownload() {
-    const jsonStr = JSON.stringify(runRecap_savFile, null, 2)
-    const blob = new Blob([jsonStr], { type: "application/json" })
-    const url = URL.createObjectURL(blob)
-    const a = document.createElement("a")
-    a.href = url;
-    a.download = 'cuphead_player_data_v1_slot_0.sav';
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-    URL.revokeObjectURL(url)
 }
 function assignIsles() {
     isles.forEach(isle => {

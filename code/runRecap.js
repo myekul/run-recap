@@ -10,17 +10,17 @@ async function handleFile(event) {
                 if ('isPlayer1Mugman' in runRecap_savFile) {
                     if (getCupheadLevel(mausoleumID, true).completed) {
                         if (runRecap_savFile.loadouts.playerOne.primaryWeapon == 1467024095) { // Lobber
-                            if (getCupheadLevel(bosses[0], true).completed) {
+                            if (getCupheadLevel(bosses[0].levelID, true).completed) {
                                 category = 'DLC+Base L/S'
                             } else {
                                 category = 'DLC L/S'
                             }
                         } else if (runRecap_savFile.loadouts.playerOne.primaryWeapon == 1466416941) { // Charge
-                            if (getCupheadLevel(bosses[0], true).completed) {
+                            if (getCupheadLevel(bosses[0].levelID, true).completed) {
                                 category = 'DLC+Base C/S'
                             } else if (runRecap_savFile.loadouts.playerOne.secondaryWeapon == 1568276855) { // Twist-Up
                                 category = 'DLC C/T'
-                            } else if (getCupheadLevel(bosses[19], true).difficultyBeaten == 2) {
+                            } else if (getCupheadLevel(bosses[19].levelID, true).difficultyBeaten == 2) {
                                 category = 'DLC Expert'
                             } else {
                                 category = 'DLC C/S'
