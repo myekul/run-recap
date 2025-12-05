@@ -156,7 +156,7 @@ function action() {
     } else if (['sav', 'lss'].includes(globalTab)) {
         show('pageTitle')
         let HTMLContent = `<div class='font2 container' style='gap:12px;font-size:200%;padding:15px 0'>
-        <img src='images/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
+        <img src='https://myekul.com/shared-assets/cuphead/images/extra/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
         .${globalTab}
         </div>`
         document.getElementById('pageTitle').innerHTML = HTMLContent

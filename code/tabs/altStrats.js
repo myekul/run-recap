@@ -237,8 +237,8 @@ const imgLocation = {
     kingdice2: 'kingdice'
 }
 const minibosses = {
-    'Candy Corn': 'candycorn',
     'Waffle': 'waffle',
+    'Candy Corn': 'candycorn',
     'Cupcake': 'cupcake',
     'Gumball': 'gumball',
     'Jawbreaker': 'jawbreaker'
@@ -259,7 +259,7 @@ function altStrats(query) {
     HTMLContent += `
     <div class='container'>
     <div style='margin:0;position:relative'><table style='margin:10px'>
-    <tr><td colspan=5><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
+    <tr><td colspan=10><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
     const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
     // if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
@@ -270,14 +270,40 @@ function altStrats(query) {
     //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
     //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
     // }
-    alt[commBestILsCategory.tabName][query].forEach((strat, index) => {
+    let altStrats = [...alt[commBestILsCategory.tabName][query]]
+    let min = 0
+    let max = Infinity
+    if (query == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') {
+        if (bonbonSort == 'Best') {
+            altStrats.sort((a, b) => a.time - b.time)
+        } else if (bonbonSort == 'Worst') {
+            altStrats.sort((a, b) => b.time - a.time)
+        }
+    }
+    min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
+    max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
+    function normalizeTime(time) {
+        return (time - min) / (max - min);
+    }
+    function getColor(normalized) {
+        let r, g;
+        if (normalized < 0.5) {
+            r = Math.round(255 * (normalized * 2))
+            g = 255;
+        } else {
+            r = 255;
+            g = Math.round(255 * (1 - (normalized - 0.5) * 2))
+        }
+        return `rgb(${r},${g},0)`;
+    }
+    altStrats.forEach((strat, index) => {
         if (strat.title && !(strat.title == 'Head Skip' && commBestILsCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
             HTMLContent += `<tr><td style='height:10px'></td></tr>
             <tr>`
             if (isolatePatterns && strat.odds) {
                 HTMLContent += `<th></th>
                 <th class='gray'>${getOdds(strat.odds)}</th>
-                <th colspan='2' class='gray' style='margin-top:10px'>${strat.title}</th>`
+                <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
             } else {
                 HTMLContent += `<th colspan='5' class='gray' style='margin-top:10px'>${strat.title}</th>`
             }
@@ -296,6 +322,7 @@ function altStrats(query) {
                 }
                 HTMLContent += query == 'thedevil' && commBestILsCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
                 if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
+                HTMLContent += `<td style='width:5px;background-color:${getColor(normalizeTime(strat.time))}'></td>`
                 HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                 if (RTAcheck) {
                     HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
@@ -445,6 +472,12 @@ function bonbonStuff() {
     }
     HTMLContent += `<td colspan=9 class='gray clickable' onclick="baronessExtra=!baronessExtra;playSound('move');action()">${fontAwesome(baronessExtra ? 'close' : 'chevron-down')}</td>`
     HTMLContent += `</table></div>`
+    HTMLContent += `<div class='container' style='gap:5px'>
+    <div>Sort:</div>`;
+    ['Standard', 'Best', 'Worst'].forEach(sort => {
+        HTMLContent += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
+    })
+    HTMLContent += `</div>`
     return HTMLContent
     function bonbonRow(field, label) {
         let HTMLContent = ''

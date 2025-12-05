@@ -7,8 +7,6 @@
 - Comm Best splits isle sums
 - .lss isle sums
 
-- Move Top ILs from sheet to GitHub
-
 - None comparison
 
 - Organize Run Recap database
@@ -17,6 +15,6 @@
 
 - DLC+Base L/S Routes
 
-- JSON editor
-
 - More graphs
+
+- Run n Guns

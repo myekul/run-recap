@@ -117,12 +117,12 @@ function generate_lss() {
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
-const NUM_SPLITS = 10
 function convertDateToISO(dateString) {
     const [month, day, year] = dateString.slice(0, 10).split('/')
     const date = new Date(`${year}-${month}-${day}`)
     return date.toISOString().split('T')[0]
 }
+const NUM_SPLITS = 10
 function read_lss(content) {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(content, "application/xml");
@@ -433,7 +433,7 @@ function runRecapSegment(index) {
         <div class='container'>${segmentAttemptCount} attempts</div>
     </div>`
     HTMLContent += `</div>`
-    HTMLContent += `<div class='container' style='gap:20px'>`
+    HTMLContent += `<div class='container' style='gap:20px;width:800px'>`
     const sortedSplits = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.split - b.split)
     HTMLContent += splitSegmentInfo(sortedSplits, index, 'Split')
     const sortedSegments = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.segment - b.segment)

@@ -37,6 +37,7 @@ let commBestILSum = 0
 let isolatePatterns
 let residualExtra
 let baronessExtra
+let bonbonSort = 'Standard'
 
 let globalStarSkips = 0
 let kd1
