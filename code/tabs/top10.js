@@ -42,7 +42,7 @@ function generateTop10() {
             <th class='gray'>Resid</th>`
     }
     commBestILsCategory.topRuns.forEach((run, index) => {
-        if (run.splits.length == 3) run.splits.push(globalCategory.runs[index].score)
+        if (run.splits.length == 3) run.splits.push(commBestILsCategory.runs[index].score)
     })
     commBestILsCategory.topRuns.forEach((run, index) => {
         HTMLContent += `<tr class='hover ${getRowColor(index)}'>

@@ -1,6 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', null, [fancyTab('sav'), fancyTab('lss')], null, 'sums', 'residual', 'grid', null, 'ballpit'])
+setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('xml')], null, 'sums', 'residual', 'grid', null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
@@ -59,12 +59,17 @@ function action() {
     loaded = true
     const tabActions = {
         home: generateHome,
+
         sav: generate_sav,
         lss: generate_lss,
+        xml: generate_xml,
+
         sums: generateSums,
         residual: generateResidual,
         grid: generateGrid,
+
         ballpit: generateBallpit,
+
         commBestILs: generateCommBestILs,
         altStrats: generateAltStrats,
         commBestSplits: generateCommBestSplits,
@@ -87,6 +92,13 @@ function action() {
     } else {
         document.getElementById('lssButton').classList.remove('pulseSize')
         document.getElementById('lssButton').classList.add('grayedOut')
+    }
+    if (runRecap_xmlFile.attemptHistory) {
+        document.getElementById('xmlButton').classList.add('pulseSize')
+        document.getElementById('xmlButton').classList.remove('grayedOut')
+    } else {
+        document.getElementById('xmlButton').classList.remove('pulseSize')
+        document.getElementById('xmlButton').classList.add('grayedOut')
     }
     ['commBestILs', 'altStrats', 'commBestSplits', 'top10'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
@@ -153,7 +165,7 @@ function action() {
     }
     if (['home'].includes(globalTab)) {
         hide('pageTitle')
-    } else if (['sav', 'lss'].includes(globalTab)) {
+    } else if (['sav', 'lss', 'xml'].includes(globalTab)) {
         show('pageTitle')
         let HTMLContent = `<div class='font2 container' style='gap:12px;font-size:200%;padding:15px 0'>
         <img src='https://myekul.com/shared-assets/cuphead/images/extra/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
@@ -224,10 +236,9 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     }
 }
 function letsGo() {
-    globalCategory.players = globalCache[commBestILsCategory.category].players
-    globalCategory.runs = globalCache[commBestILsCategory.category].runs
-    globalCategory.className = commBestILsCategory.className
-    globalCategory.players.forEach(player => {
+    commBestILsCategory.players = globalCache[commBestILsCategory.category].players
+    commBestILsCategory.runs = globalCache[commBestILsCategory.category].runs
+    commBestILsCategory.players.forEach(player => {
         const initialSize = playerNames.size
         playerNames.add(player.name)
         if (playerNames.size > initialSize) {
@@ -244,14 +255,14 @@ function done() {
     categories.forEach((category, categoryIndex) => {
         assignRuns(category, categoryIndex)
     })
-    assignRuns(globalCategory)
+    assignRuns(commBestILsCategory)
     if (commBestILsCategory.extraRuns || commBestILsCategory.extraPlayers) {
         const morePlayers = []
         commBestILsCategory.extraRuns?.forEach(run => {
             morePlayers.push(run.playerName)
         })
         players = players.filter(player => commBestILsCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name) || player.runs.some(run => run != 0))
-        const worldRecord = globalCategory.runs[0].score
+        const worldRecord = commBestILsCategory.runs[0].score
         commBestILsCategory.extraRuns?.forEach(run => {
             const player = players.find(player => player.name == run.playerName)
             run.score = run.score > 0 ? run.score : convertToSeconds(run.score)
@@ -281,7 +292,7 @@ function done() {
     document.getElementById('runRecap_examples').innerHTML = runRecapExamples()
     let HTMLContent = ''
     for (let i = 0; i < commBestILsCategory.topRuns.length; i++) {
-        HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(globalCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
+        HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(commBestILsCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
     // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
     const usernameAttempt = localStorage.getItem('username')

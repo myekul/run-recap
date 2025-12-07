@@ -16,8 +16,8 @@ function generate_sav() {
         }
         assignIsles()
         HTMLContent += `<div class='container' style='gap:25px'>`
-        const follies = getCupheadLevel(runNgunIDs['forestfollies'], true)
-        const treetop = getCupheadLevel(runNgunIDs['treetoptrouble'], true)
+        const follies = getCupheadLevel(runNguns[0].levelID, true)
+        const treetop = getCupheadLevel(runNguns[1].levelID, true)
         HTMLContent += `<div>`
         if (follies.bestTime != nullTime && treetop.bestTime == nullTime) {
             HTMLContent += extraLevel('forestfollies', follies.bestTime)
@@ -41,19 +41,19 @@ function generate_sav() {
                 HTMLContent += savBoss(object)
             })
             HTMLContent += `</table>`
-            const levels = [['forestfollies', 'treetoptrouble'], ['funfairfever', 'funhousefrazzle'], ['ruggedridge', 'perilouspiers']]
-            levels.forEach((levelPair, levelIndex) => {
-                if (index == levelIndex) {
-                    HTMLContent += `<div style='padding-top:15px'>`
-                    levelPair.forEach(level => {
-                        const levelObj = getCupheadLevel(runNgunIDs[level], true)
-                        if (levelObj.bestTime != nullTime && !(level == 'forestfollies' && treetop.bestTime == nullTime)) {
-                            HTMLContent += extraLevel(level, levelObj.bestTime)
-                        }
-                    })
-                    HTMLContent += `</div>`
-                }
-            })
+            // const levels = [['forestfollies', 'treetoptrouble'], ['funfairfever', 'funhousefrazzle'], ['ruggedridge', 'perilouspiers']]
+            // levels.forEach((levelPair, levelIndex) => {
+            //     if (index == levelIndex) {
+            //         HTMLContent += `<div style='padding-top:15px'>`
+            //         levelPair.forEach(level => {
+            //             const levelObj = getCupheadLevel(runNguns[level], true)
+            //             if (levelObj.bestTime != nullTime && !(level == 'forestfollies' && treetop.bestTime == nullTime)) {
+            //                 HTMLContent += extraLevel(level, levelObj.bestTime)
+            //             }
+            //         })
+            //         HTMLContent += `</div>`
+            //     }
+            // })
             HTMLContent += `</div>`
         })
         HTMLContent += `</div>`

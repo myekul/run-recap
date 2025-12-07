@@ -5,15 +5,18 @@ const myekulSheets = {}
 const markinSheets = {}
 let commBestILsCategory
 let globalCache
+
 let runRecap_savFile
 let runRecap_lssFile = {}
+let runRecap_xmlFile = {}
+
+let runRecap_xmlSnapshot = []
+
 let runRecap_markin
 let runRecapTime
 let runRecapExample = false
 let runRecapTheoretical = false
 let splitInfo = []
-
-let globalCategory = {}
 
 let deltaType
 

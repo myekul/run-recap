@@ -4,7 +4,14 @@ async function handleFile(event) {
         try {
             const content = await file.text()
             playSound('ready')
-            if (!(file.name.split('.').pop().toLowerCase() == 'lss')) {
+            const fileExtension = file.name.split('.').pop().toLowerCase()
+            if (fileExtension == 'xml') {
+                read_xml(content)
+                showTab('xml')
+            } else if (fileExtension == 'lss') {
+                read_lss(content)
+                showTab('lss')
+            } else {
                 runRecap_savFile = JSON.parse(content)
                 let category
                 if ('isPlayer1Mugman' in runRecap_savFile) {
@@ -44,9 +51,6 @@ async function handleFile(event) {
                 } else {
                     showTab('sav')
                 }
-            } else {
-                read_lss(content)
-                showTab('lss')
             }
         } catch (error) {
             show('runRecapError')
