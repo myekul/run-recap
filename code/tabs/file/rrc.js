@@ -1,8 +1,8 @@
 function generate_rrc() {
     let HTMLContent = ''
     if (runRecap_rrcFile.attempts) {
-        // const currentAttempt = runRecap_rrcFile.attempts[runRecap_rrcFile.attempts.length - 1]
-        const currentAttempt = runRecap_rrcFile.attempts[30]
+        const currentAttempt = runRecap_rrcFile.attempts[runRecap_rrcFile.attempts.length - 1]
+        // const currentAttempt = runRecap_rrcFile.attempts[30]
         currentAttempt.levels = []
         currentAttempt.intermissions = []
         currentAttempt.cutscenes = []
@@ -88,7 +88,7 @@ function generate_rrc() {
             </tr>`
         })
         HTMLContent += `</table>`
-        if (currentAttempt.scenes.length == 80&&currentAttempt.scenes[currentAttempt.scenes.length-1].name=='level_devil') {
+        if (currentAttempt.scenes.length == 80 && currentAttempt.scenes[currentAttempt.scenes.length - 1].name == 'level_devil') {
             HTMLContent += fancyScorecard(currentAttempt)
         }
         HTMLContent += `</div>`
