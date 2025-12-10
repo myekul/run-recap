@@ -1,0 +1,68 @@
+.spinning-div {
+    position: relative;
+    width: 600px;
+    height: 550px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinning-div::before {
+    content: "";
+    position: absolute;
+    top: -35%;
+    left: -35%;
+    width: 170%;
+    height: 170%;
+    background: url('../images/scorecard_bg.png') center/cover no-repeat;
+    animation: spin 27s linear infinite;
+    z-index: -1;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+#scorecardText {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 165px;
+    width: 340px;
+}
+
+#scorecardText p,
+#scorecardTimes p {
+    margin: 0px;
+    margin-bottom: 12px;
+    font-size: 135%;
+}
+
+#scorecardTimes {
+    position: absolute;
+    left: 360px;
+    top: 165px;
+}
+
+#scorecardLine {
+    height: 3.6px;
+    position: absolute;
+    top: 370px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#scorecardFinal {
+    position: absolute;
+    top: 380px;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 240%
+}

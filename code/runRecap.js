@@ -5,9 +5,9 @@ async function handleFile(event) {
             const content = await file.text()
             playSound('ready')
             const fileExtension = file.name.split('.').pop().toLowerCase()
-            if (fileExtension == 'xml') {
-                read_xml(content)
-                showTab('xml')
+            if (fileExtension == 'rrc') {
+                read_rrc(content)
+                showTab('rrc')
             } else if (fileExtension == 'lss') {
                 read_lss(content)
                 showTab('lss')

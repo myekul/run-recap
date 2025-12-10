@@ -18,3 +18,8 @@
 - More graphs
 
 - Run n Guns
+
+- RRC
+    - Top 10 RRCs
+
+- Info section

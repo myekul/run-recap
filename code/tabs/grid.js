@@ -20,7 +20,7 @@ function generateGrid() {
             const comparisonTime = getComparisonTime(categoryIndex)
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
-            HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`
+            HTMLContent += `<td class='${grade.className}' style='width:5px'></td>`
             HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(commBestILsCategory.topBest[categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
         HTMLContent += `</tr>`

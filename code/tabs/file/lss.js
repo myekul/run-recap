@@ -91,7 +91,7 @@ function generate_lss() {
                 } else if (index == 2) {
                     HTMLContent += `<td colspan=5></td>`
                 } else {
-                    const levelID = index == 0 ? runNguns[0].id : mausoleumID
+                    const levelID = index == 0 ? runNguns[0].levelID : mausoleumID
                     const level = getCupheadLevel(levelID, true)
                     HTMLContent += `
                 <td>${level.bestTime != nullTime ? image : ''}</td>

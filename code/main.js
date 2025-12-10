@@ -1,6 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('xml')], null, 'sums', 'residual', 'grid', null, 'ballpit'])
+setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'sums', 'residual', 'grid', null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
@@ -62,7 +62,7 @@ function action() {
 
         sav: generate_sav,
         lss: generate_lss,
-        xml: generate_xml,
+        rrc: generate_rrc,
 
         sums: generateSums,
         residual: generateResidual,
@@ -93,12 +93,12 @@ function action() {
         document.getElementById('lssButton').classList.remove('pulseSize')
         document.getElementById('lssButton').classList.add('grayedOut')
     }
-    if (runRecap_xmlFile.attemptHistory) {
-        document.getElementById('xmlButton').classList.add('pulseSize')
-        document.getElementById('xmlButton').classList.remove('grayedOut')
+    if (runRecap_rrcFile.attempts) {
+        document.getElementById('rrcButton').classList.add('pulseSize')
+        document.getElementById('rrcButton').classList.remove('grayedOut')
     } else {
-        document.getElementById('xmlButton').classList.remove('pulseSize')
-        document.getElementById('xmlButton').classList.add('grayedOut')
+        document.getElementById('rrcButton').classList.remove('pulseSize')
+        document.getElementById('rrcButton').classList.add('grayedOut')
     }
     ['commBestILs', 'altStrats', 'commBestSplits', 'top10'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
@@ -165,7 +165,7 @@ function action() {
     }
     if (['home'].includes(globalTab)) {
         hide('pageTitle')
-    } else if (['sav', 'lss', 'xml'].includes(globalTab)) {
+    } else if (['sav', 'lss', 'rrc'].includes(globalTab)) {
         show('pageTitle')
         let HTMLContent = `<div class='font2 container' style='gap:12px;font-size:200%;padding:15px 0'>
         <img src='https://myekul.com/shared-assets/cuphead/images/extra/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
