@@ -6,9 +6,17 @@ setAudio('cuphead')
 runRecapDefault()
 setDropbox()
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('resources/categoryData.json').then(response => response.json())
+    fetch('resources/categoryData.json')
+        .then(response => response.json())
         .then(data => {
             commBestILs = data
+            fetch('resources/topData.json')
+                .then(response => response.json())
+                .then(data => {
+                    for (const category in data) {
+                        commBestILs[category].topRuns = data[category]
+                    }
+                })
             fetch('resources/alt.json')
                 .then(response => response.json())
                 .then(data => {
@@ -167,7 +175,7 @@ function action() {
         hide('pageTitle')
     } else if (['sav', 'lss', 'rrc'].includes(globalTab)) {
         show('pageTitle')
-        let HTMLContent = `<div class='font2 container' style='gap:12px;font-size:200%;padding:15px 0'>
+        let HTMLContent = `<div class='font2 container' style='gap:8px;font-size:200%;padding:15px 0'>
         <img src='https://myekul.com/shared-assets/cuphead/images/extra/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
         .${globalTab}
         </div>`

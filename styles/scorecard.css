@@ -16,11 +16,11 @@
     width: 170%;
     height: 170%;
     background: url('../images/scorecard_bg.png') center/cover no-repeat;
-    animation: spin 27s linear infinite;
+    animation: reverseSpin 27s linear infinite;
     z-index: -1;
 }
 
-@keyframes spin {
+@keyframes reverseSpin {
     from {
         transform: rotate(0deg);
     }

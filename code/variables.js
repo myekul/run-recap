@@ -10,6 +10,8 @@ let runRecap_savFile
 let runRecap_lssFile = {}
 let runRecap_rrcFile = {}
 
+let rrcAttemptIndex = 0
+
 let runRecap_markin
 let runRecapTime
 let runRecapExample = false
