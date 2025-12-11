@@ -181,3 +181,7 @@ th {
 .jawbreaker {
     background-color: tomato;
 }
+
+#fileTypes div {
+    width: 300px
+}

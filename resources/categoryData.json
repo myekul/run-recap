@@ -2,7 +2,7 @@
     "1.1+": {
         "name": "1.1+",
         "tabName": "1.1+",
-        "markin": "1.1+ Any%",
+        "markin": "1.1+ Any% (Split Before)",
         "className": "onePointOne",
         "category": 0,
         "shot1": "lobber",
@@ -58,7 +58,7 @@
     "Legacy": {
         "name": "Legacy",
         "tabName": "Legacy",
-        "markin": "1.0 Any%",
+        "markin": "1.0 Any% (Split Before)",
         "className": "legacy",
         "category": 1,
         "shot1": "lobber",

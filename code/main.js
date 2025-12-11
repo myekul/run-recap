@@ -363,3 +363,34 @@ document.querySelectorAll('.lobber').forEach(button => {
 document.querySelectorAll('.charge').forEach(button => {
     button.innerHTML = cupheadShot('charge', 21)
 })
+const fileInfo = {
+    sav: `You can either upload an existing .sav file from %appdata% to automatically retrieve IL times,
+    or create an empty file and insert IL times manually.`,
+    lss: `To ensure file compatibility, please upload a .lss with the standard split configuration,
+    as seen
+    <span class="myekulColor clickable" style="text-decoration: underline;">
+    ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a>
+    </span>.
+    Also, please note that comm best comparisons will not work when splitting after scorecard.`,
+    rrc: `Hi`
+}
+const fileOrigin = {
+    sav: 'Cuphead',
+    lss: 'LiveSplit',
+    rrc: 'Run Recap'
+};
+// let HTMLContent = '';
+// ['sav', 'lss', 'rrc'].forEach(type => {
+//     HTMLContent += `<div>
+//                         <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
+//                         <div class='font2 container' style='gap:8px;font-size:200%'>
+//                             <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
+//                                 style='height:40px;filter: brightness(0) invert(1)'>
+//                             .${type}
+//                         </div>
+//                         <div class='textBlock dim' style="font-size:80%">
+//                         ${fileInfo[type]}
+//                         </div>
+//                     </div>`
+// })
+// document.getElementById('fileTypes').innerHTML = HTMLContent

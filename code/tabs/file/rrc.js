@@ -61,7 +61,7 @@ function generate_rrc() {
                     scene.trueScorecard = index < currentAttempt.scenes.length - 1 ? scene.scorecard.segment : 0
                     if (scene.scorecard?.hp) scene.trueScorecard -= 0.8
                     if (scene.scorecard?.parries) scene.trueScorecard -= 0.8
-                    if (scene.scorecard?.super) scene.trueScorecard -= 0.8
+                    if (scene.scorecard?.superMeter) scene.trueScorecard -= 0.8
                     if (scene.scorecard?.coins) scene.trueScorecard -= 0.8
                     currentAttempt.levels.push(scene)
                 }
@@ -113,7 +113,7 @@ function generate_rrc() {
             <td>${index < currentAttempt.levels.length - 1 ? secondsToHMS(scene.scorecard.segment, true) : ''}</td>
             <td>${index < currentAttempt.levels.length - 1 ? scene.scorecard.hp : ''}</td>
             <td>${index < currentAttempt.levels.length - 1 ? scene.scorecard.parries : ''}</td>
-            <td>${index < currentAttempt.levels.length - 1 ? scene.scorecard.super || scene.scorecard.coins : ''}</td>
+            <td>${index < currentAttempt.levels.length - 1 ? scene.scorecard.superMeter || scene.scorecard.coins : ''}</td>
             <td>${index < currentAttempt.levels.length - 1 ? secondsToHMS(scene.trueScorecard, true) : ''}</td>
             <td class='${level?.id}' style='padding:0 5px'>${splitBefore}</td>
             <td class='${level?.id}' style='padding:0 5px'>${split}</td>
@@ -172,35 +172,6 @@ function fancyScorecard(currentAttempt) {
         </div>
         </div>`
     return HTMLContent
-}
-function read_xml(content) {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(content, "application/xml");
-    runRecap_xmlFile = {}
-    runRecap_xmlFile.version = "1.0"
-    runRecap_xmlFile.attempts = [...xmlDoc.getElementsByTagName("Attempt")].map(attempt => {
-        const id = Number(attempt.getAttribute("id"))
-        const scenes = [...attempt.getElementsByTagName("Scene")].map(scene => {
-            const sceneObj = {
-                name: scene.getAttribute("name")
-            }
-            const levelTimeEl = scene.getElementsByTagName("LevelTime")[0]?.textContent
-            if (levelTimeEl) sceneObj.levelTime = Number(levelTimeEl)
-            const endTimeEl = scene.getElementsByTagName("EndTime")[0]?.textContent
-            if (endTimeEl) sceneObj.endTime = endTimeEl
-            const hpEl = scene.getElementsByTagName("HPBonus")[0]?.textContent
-            if (hpEl) sceneObj.hp = Number(hpEl)
-            const parriesEl = scene.getElementsByTagName("Parries")[0]?.textContent
-            if (parriesEl) sceneObj.parries = Number(parriesEl)
-            const superEl = scene.getElementsByTagName("SuperMeter")[0]?.textContent
-            if (superEl) sceneObj.super = Number(superEl)
-            const coinsEl = scene.getElementsByTagName("Coins")[0]?.textContent
-            if (coinsEl) sceneObj.coins = Number(coinsEl)
-            return sceneObj
-        })
-        return { id, scenes }
-    })
-    console.log(JSON.stringify(runRecap_xmlFile))
 }
 function read_rrc(content) {
     try {

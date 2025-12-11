@@ -21,5 +21,6 @@
 
 - RRC
     - Top 10 RRCs
+    - Upload
 
 - Info section
