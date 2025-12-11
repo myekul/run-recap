@@ -5,7 +5,7 @@ function generate_rrc() {
         <div class='grow ${rrcAttemptIndex == runRecap_rrcFile.attempts.length - 1 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex + 1})">${fontAwesome('chevron-left')}</div>
         <select onchange="rrcChangeIndex(parseInt(this.value),true)">`
         runRecap_rrcFile.attempts.forEach((attempt, index) => {
-            let content = attempt.id
+            let content = attempt.id + ' - ' + attempt.startedAt
             const lastScene = attempt.scenes.at(-1)
             if (lastScene.name == 'level_devil') {
                 content += ' - ' + secondsToHMS(lastScene.endTime)

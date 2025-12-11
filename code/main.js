@@ -364,33 +364,56 @@ document.querySelectorAll('.charge').forEach(button => {
     button.innerHTML = cupheadShot('charge', 21)
 })
 const fileInfo = {
-    sav: `You can either upload an existing .sav file from %appdata% to automatically retrieve IL times,
-    or create an empty file and insert IL times manually.`,
-    lss: `To ensure file compatibility, please upload a .lss with the standard split configuration,
+    sav: `The easiest way to get started.
+    When a Cuphead save file is created, all data is stored in a ${myekulColor('Cuphead .sav')}.
+    Locate and upload this file to view your boss times!
+    <br>
+    <span class='dim'>
+    You can either upload an existing .sav file from
+    <span class="myekulColor clickable" style="text-decoration:underline" onclick="openModal(savInfo(),'INFO')">
+    %appdata%</span>
+    to automatically retrieve IL times,
+    or create an empty file and insert IL times manually.
+    </span>`,
+    lss: `Upload your ${myekulColor('LiveSplit .lss')} splits file to view your attempt history,
+    browse your top segments,
+    compare against community best splits,
+    and more.
+    <br>
+    <span class='dim'>
+    To ensure file compatibility,
+    please upload a .lss with the standard split configuration,
     as seen
-    <span class="myekulColor clickable" style="text-decoration: underline;">
-    ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a>
-    </span>.
-    Also, please note that comm best comparisons will not work when splitting after scorecard.`,
-    rrc: `Hi`
+    <span class="myekulColor clickable" style="text-decoration: underline">
+    ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a></span>.`,
+    rrc: `A powerful new file type, ${myekulColor('Run Recap .rrc')}. Designed exclusively for detailed analysis of Cuphead runs.
+    Coming soon!
+    <br>
+    <span class='dim'>
+    This requires the
+    <span class="myekulColor clickable" style="text-decoration: underline">
+    ${getAnchor('https://github.com/SBDWolf/Run-Recap-Component')}Run Recap Component</a></span>
+    memory reader developed by SBDWolf.
+    </span>
+    `
 }
 const fileOrigin = {
     sav: 'Cuphead',
     lss: 'LiveSplit',
     rrc: 'Run Recap'
 };
-// let HTMLContent = '';
-// ['sav', 'lss', 'rrc'].forEach(type => {
-//     HTMLContent += `<div>
-//                         <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
-//                         <div class='font2 container' style='gap:8px;font-size:200%'>
-//                             <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
-//                                 style='height:40px;filter: brightness(0) invert(1)'>
-//                             .${type}
-//                         </div>
-//                         <div class='textBlock dim' style="font-size:80%">
-//                         ${fileInfo[type]}
-//                         </div>
-//                     </div>`
-// })
-// document.getElementById('fileTypes').innerHTML = HTMLContent
+let HTMLContent = '';
+['sav', 'lss', 'rrc'].forEach(type => {
+    HTMLContent += `<div>
+                        <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
+                        <div class='font2 container' style='gap:8px;font-size:200%;margin-bottom:5px'>
+                            <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
+                                style='height:40px;filter: brightness(0) invert(1)'>
+                            .${type}
+                        </div>
+                        <div class='fileType textBlock' style="font-size:90%">
+                        ${fileInfo[type]}
+                        </div>
+                    </div>`
+})
+document.getElementById('fileTypes').innerHTML = HTMLContent
