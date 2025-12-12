@@ -262,7 +262,7 @@ function runRecap_lss_splitInfo() {
     for (let index = 0; index < runRecap_markin.bestSplits.length && index < categories.length + getOffset(); index++) {
         const categoryIndex = index - getOffset()
         if (index == 0) {
-            splitInfo.push({ id: 'other/forestfollies', name: 'Forest Follies', isle: null })
+            splitInfo.push({ id: 'runnguns/forestfollies', name: 'Forest Follies', isle: null })
         } else if (index == 1 && ['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
             splitInfo.push({ id: 'other/mausoleum', name: 'Mausoleum', isle: null })
         } else if (index == 2 && commBestILsCategory.shot1 == 'charge') {

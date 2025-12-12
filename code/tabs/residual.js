@@ -205,7 +205,7 @@ function residualIcons(run) {
     let HTMLContent = ''
     HTMLContent += residualThing(run ? run.framerule[0] : true, residualImage('dicesmart'), 'KD Framerule 1')
     HTMLContent += residualThing(run ? run.framerule[1] : true, residualImage('dicesmart'), 'KD Framerule 2')
-    HTMLContent += residualThing(run ? run.follies : true, getImage('other/forestfollies', 16), 'Follies 0/3')
+    HTMLContent += residualThing(run ? run.follies : true, getImage('runnguns/forestfollies', 16), 'Follies 0/3')
     HTMLContent += residualThing(run ? run.cala : true, residualImage('wutface'), 'Cala Parries')
     HTMLContent += residualThing(run ? run.werner || false : true, residualImage('tomatosoup'), 'Werner Parries')
     HTMLContent += residualThing(run ? run.kd : true, getImage('kingdice', 16), 'KD 0/3 HP')

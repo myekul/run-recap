@@ -69,7 +69,7 @@ function handleBossDropdown() {
     if (level != 'none') {
         document.getElementById('dropdown_commBestILs_level').className = level
         document.getElementById('commBestILs_level').className = level
-        document.getElementById('commBestILs_level_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(level == 'forestfollies' ? 'other/forestfollies' : level, 32)}</div>`
+        document.getElementById('commBestILs_level_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(level == 'forestfollies' ? 'runnguns/forestfollies' : level, 32)}</div>`
         let altStratHTML = `
         <option value='none'>-- None --</option>
         <option value='other'>++ New alt strat ++</option>`

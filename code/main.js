@@ -214,6 +214,13 @@ function action() {
     } else {
         hide('runRecap_details')
     }
+    if (globalTab == 'rrc') {
+        show('rrcBrowser')
+        hide('runRecap_time')
+    } else {
+        hide('rrcBrowser')
+        show('runRecap_time')
+    }
 }
 document.querySelectorAll('select').forEach(elem => {
     elem.addEventListener('change', () => {

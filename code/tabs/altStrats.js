@@ -5,7 +5,7 @@ function generateAltStrats() {
         assignIsles()
         HTMLContent += `<table>
         <tr><td class='background2' style='font-size:80%;color:gray'>${alt[commBestILsCategory.tabName].forestfollies?.length || '&nbsp;'}</td></tr>
-        <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('other/forestfollies')}</div></td></tr>
+        <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td></tr>
         </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
@@ -230,7 +230,7 @@ const otherNames = {
     kingdice2: 'King Dice (Final)'
 }
 const imgLocation = {
-    forestfollies: 'other/forestfollies',
+    forestfollies: 'runnguns/forestfollies',
     mrwheezy: 'phase/kingdice3',
     hopuspocus: 'phase/kingdice5',
     pirouletta: 'phase/kingdice7',

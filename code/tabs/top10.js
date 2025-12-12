@@ -79,7 +79,7 @@ function generateTop10() {
         HTMLContent += `<td><div style='position:absolute;transform:rotate(-30deg) translate(-13px,-30px);transform-origin:bottom left'>${getPlayerDisplay(player, true)}</div></td>`
     })
     HTMLContent += `<tr>
-    <td><div class='container'>${getImage('other/forestfollies', 21)}</div></td>`
+    <td><div class='container'>${getImage('runnguns/forestfollies', 21)}</div></td>`
     commBestILsCategory.topRuns.forEach((run, index) => {
         let starSkip = ''
         if (run.starSkips[0]) starSkip = fontAwesome('star')
