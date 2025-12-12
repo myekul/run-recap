@@ -70,10 +70,6 @@ function generateAltStrats() {
                 const myekulIdeas = [
                     {
                         boss: 'hildaberg',
-                        name: 'Double Trollnado'
-                    },
-                    {
-                        boss: 'hildaberg',
                         name: 'No Damage Boosts'
                     },
                     {

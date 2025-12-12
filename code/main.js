@@ -117,7 +117,7 @@ function action() {
     } else {
         hide('runRecap_content')
     }
-    if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile)) {
+    if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile || globalTab == 'rrc')) {
         show('runRecap_sav_section')
     } else {
         hide('runRecap_sav_section')

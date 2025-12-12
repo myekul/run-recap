@@ -234,3 +234,22 @@ function playerComparison(playerIndex, playerName, time) {
     changeComparison('player_' + playerIndex, playerName, time)
     action()
 }
+function runRecapCopy() {
+    let clipboardContent = ''
+    if (globalTab == 'sav') {
+        categories.forEach((category, categoryIndex) => {
+            // let time = secondsToHMS(category.runTime, true, true)
+            // if (!runRecapExample) {
+            //     time = time.replace(/^0:/, "");
+            // }
+            // clipboardContent += `[${time}] ${category.name}\n`
+            clipboardContent += `${getCupheadLevel(categoryIndex).bestTime.toString().split('.')[0] + '.' + getCupheadLevel(categoryIndex).bestTime.toString().split('.')[1].slice(0, 2)}${categoryIndex == categories.length - 1 ? '' : ', '}`
+        })
+    } else {
+        clipboardContent = JSON.stringify(runRecap_rrcFile.attempts[rrcAttemptIndex].scenes)
+    }
+    navigator.clipboard.writeText(clipboardContent)
+        .then(() => {
+            // Success!
+        })
+}
