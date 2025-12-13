@@ -16,6 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
                     for (const category in data) {
                         commBestILs[category].topRuns = data[category]
                     }
+                    fetch('resources/rrcData.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            for (const category in data) {
+                                commBestILs[category].rrc = data[category]
+                            }
+                        })
                 })
             fetch('resources/alt.json')
                 .then(response => response.json())

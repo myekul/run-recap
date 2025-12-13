@@ -71,7 +71,7 @@ function savBoss(categoryIndex) {
     HTMLContent += `<td class='${grade.className}' style='text-align:left;width:24px'>${done ? deltaType ? '' : grade.grade : ''}</td>`
     HTMLContent += `<td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>`
     HTMLContent += `<td id='runRecap_${categoryIndex}' class='${done ? category.info.id : ''}' style='width:85px'>${cellContent}</td>`
-    HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade?.className}' style='font-size:90%;width:24px'>${done ? getDelta(delta) : ''}</td>`
+    HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade?.className}' style='font-size:90%;width:28px'>${done ? getDelta(delta) : ''}</td>`
     HTMLContent += `<td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>`
     HTMLContent += `</tr>`
     return HTMLContent

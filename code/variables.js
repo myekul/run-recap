@@ -12,6 +12,7 @@ let runRecap_rrcFile = {}
 
 let rrcAttemptIndex = 0
 let rrcGlobalAttempt = {}
+let rrcGlobalComparison = {}
 
 let runRecap_markin
 let runRecapTime
