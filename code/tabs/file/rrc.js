@@ -59,6 +59,7 @@ function rrcOrganize(attempt) {
         }
     })
 }
+rrcComparisonIndex = 1
 function generate_rrc() {
     let HTMLContent = ''
     if (runRecap_rrcFile.attempts) {
@@ -67,11 +68,11 @@ function generate_rrc() {
         rrcOrganize(rrcGlobalAttempt)
         rrcGlobalComparison = { scenes: [] }
         bossIndex = 0
-        commBestILsCategory.rrc[2].endTimes.forEach((endTime, index) => {
+        commBestILsCategory.rrc[rrcComparisonIndex].endTimes.forEach((endTime, index) => {
             const newScene = { name: rrc80[index], endTime: endTime }
             if (cupheadBosses[newScene.name]) {
                 if (!(newScene.name == 'level_dice_palace_main' && rrc80[index + 1] != 'win')) {
-                    newScene.levelTime = commBestILsCategory.topRuns[2].runRecap[bossIndex]
+                    newScene.levelTime = commBestILsCategory.topRuns[rrcComparisonIndex].runRecap[bossIndex]
                     bossIndex++
                 }
             }
@@ -79,7 +80,7 @@ function generate_rrc() {
         })
         rrcOrganize(rrcGlobalComparison)
         HTMLContent += classicView()
-        HTMLContent+=`<div class='dim container' style='margin-top:20px'>You vs. Grondious</div>`
+        HTMLContent += `<div class='dim container' style='margin-top:20px'>You vs. Quincely0</div>`
         HTMLContent += `<div class='container' style='gap:20px;align-items:flex-start;margin-top:20px'>`
         HTMLContent += `</div>`
         // Levels

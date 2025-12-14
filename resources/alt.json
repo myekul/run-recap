@@ -262,9 +262,9 @@
             },
             {
                 "name": "Gemini",
-                "time": "1:02.51",
+                "time": "1:01.88",
                 "player": "Taylz",
-                "url": "https://youtu.be/F9yqznGad8w"
+                "url": "https://youtu.be/6Ha3xjqJBI4"
             },
             {
                 "name": "Sagittarius",
@@ -985,10 +985,20 @@
             },
             {
                 "name": "Blue Gem",
-                "time": 41.47,
-                "rta": 42.20,
+                "time": 41.16,
+                "rta": 41.89,
                 "player": "ClipBoardGuy",
-                "url": "https://youtu.be/LaHWWxLauFk"
+                "url": "https://youtu.be/gRGA1k1HXA4"
+            },
+            {
+                "title": "Heart Clip"
+            },
+            {
+                "name": "Red Gem",
+                "time": 40.93,
+                "rta": 41.85,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/BOauylYSFDw"
             },
             {
                 "title": "Other"
@@ -1393,10 +1403,10 @@
             },
             {
                 "name": "Best RNG",
-                "time": "1:43.71",
-                "rta": "1:45.70",
-                "player": "Quincely0",
-                "url": "https://youtu.be/ScylBzfLMjk"
+                "time": "1:42.82",
+                "rta": "1:44.77",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/UguybSEYODk"
             },
             {
                 "name": "No Hearts",
@@ -1530,9 +1540,9 @@
             },
             {
                 "name": "Spin, 5 Cards",
-                "time": 9.78,
-                "player": "Quincely0",
-                "url": "https://youtu.be/Sx7ScN0CIDk"
+                "time": 9.54,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/XKClpuA9V_4"
             },
             {
                 "name": "Charge, 5 Cards, 3 HP",
@@ -1901,6 +1911,12 @@
                 "time": 28.81,
                 "player": "Yuka",
                 "url": "https://youtu.be/ZPR2PWzL9gI"
+            },
+            {
+                "name": "All Doubles",
+                "time": 27.47,
+                "player": "Yuka",
+                "url": "https://youtu.be/Yl8vNUhaX5Q"
             }
         ],
         "ribbyandcroaks": [
@@ -1955,9 +1971,9 @@
             },
             {
                 "name": "Ha-Ha",
-                "time": 54.46,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/YlwZYf2jgbQ"
+                "time": 53.74,
+                "player": "Yuka",
+                "url": "https://youtu.be/Z6VUJXOnHMg"
             },
             {
                 "name": "Trollnado",
@@ -1998,10 +2014,16 @@
         ],
         "djimmithegreat": [
             {
-                "name": "",
+                "name": "Gems",
                 "time": 47.98,
                 "player": "Yuka",
                 "url": "https://youtu.be/CHqMHvTawog"
+            },
+            {
+                "name": "Cats / Swords",
+                "time": 48.28,
+                "player": "Yuka",
+                "url": "https://youtu.be/Q2BlUzuwd1Y"
             }
         ],
         "beppitheclown": [
@@ -2015,17 +2037,17 @@
         "grimmatchstick": [
             {
                 "name": "",
-                "time": 29.99,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/mEJMFlwY1Wo"
+                "time": 29.68,
+                "player": "Yuka",
+                "url": "https://youtu.be/tpvTZ5YQ5a8"
             }
         ],
         "rumorhoneybottoms": [
             {
                 "name": "",
-                "time": 27.38,
+                "time": 27.05,
                 "player": "Yuka",
-                "url": "https://youtu.be/jwdp6Jlmst8"
+                "url": "https://youtu.be/0wxMiMR7F2A"
             }
         ],
         "drkahlsrobot": [
@@ -2095,9 +2117,9 @@
         "phantomexpress": [
             {
                 "name": "",
-                "time": 51.25,
+                "time": 50.89,
                 "player": "Yuka",
-                "url": "https://youtu.be/LNQiCkaGvgA"
+                "url": "https://youtu.be/W1F_oIS3O74"
             }
         ],
         "kingdice": [
@@ -2117,6 +2139,12 @@
                 "time": 30.97,
                 "player": "Yuka",
                 "url": "https://youtu.be/BM4PxSUpz48"
+            },
+            {
+                "name": "Clap Dragon R",
+                "time": 31.58,
+                "player": "Yuka",
+                "url": "https://youtu.be/YWYguyMVekk"
             },
             {
                 "name": "Clap Dragon L",

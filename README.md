@@ -22,5 +22,6 @@
 - RRC
     - Top 10 RRCs
     - Upload
+    - Comparison infrastructure
 
 - Info section
