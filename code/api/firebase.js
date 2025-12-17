@@ -41,7 +41,7 @@ window.firebaseUtils = {
         const obj = {
             sav: sav,
             player: localStorage.getItem('username'),
-            category: commBestILsCategory.tabName,
+            category: runRecapCategory.tabName,
             time: runRecapTime,
             date: new Date().toISOString().slice(0, 10)
         }
@@ -58,7 +58,7 @@ window.firebaseUtils = {
                 console.error(`Error writing document ${i}: `, error);
             });
     },
-    firestoreReadRR: async (sav) => {
+    firestoreReadRR: async (comparison) => {
         try {
             const collectionRef = collection(db, 'runRecap');
             const q = query(collectionRef);
@@ -71,7 +71,7 @@ window.firebaseUtils = {
             database = database.sort((a, b) => a.player.localeCompare(b.player, undefined, { sensitivity: "base" }))
             database = database.sort((a, b) => a.time.localeCompare(b.time, undefined, { sensitivity: "base" }))
             database = database.sort((a, b) => a.category.localeCompare(b.category, undefined, { sensitivity: "base" }))
-            openDatabase(sav)
+            openDatabase(comparison)
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }
@@ -79,7 +79,7 @@ window.firebaseUtils = {
     firestoreWriteCommBestILs: async () => {
         const obj = {
             player: localStorage.getItem('username'),
-            category: commBestILsCategory.tabName,
+            category: runRecapCategory.tabName,
             boss: document.getElementById('dropdown_commBestILs_level').value,
             time: document.getElementById('input_commBestILs_time').value,
             altstrat: document.getElementById('dropdown_commBestILs_altStrat').value,

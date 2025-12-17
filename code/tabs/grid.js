@@ -8,27 +8,27 @@ function generateGrid() {
     HTMLContent += `</tr>`
     HTMLContent += `<tr><th colspan=4 style='text-align:right'>&Delta;</th>`
     categories.forEach((category, categoryIndex) => {
-        HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(getComparisonTime(categoryIndex))}</th>`
+        HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(savComparisonCollection[savComparison][categoryIndex])}</th>`
     })
     HTMLContent += `</tr>`
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         const player = players[index]
         HTMLContent += `<tr class='${getRowColor(index)} hover'>`
         HTMLContent += bigPlayerDisplay(player)
         categories.forEach((category, categoryIndex) => {
             const ILtime = run.runRecap[categoryIndex]
-            const comparisonTime = getComparisonTime(categoryIndex)
+            const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
             HTMLContent += `<td class='${grade.className}' style='width:5px'></td>`
-            HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(commBestILsCategory.topBest[categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
+            HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(savComparisonCollection['Top Bests'][categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
         HTMLContent += `</tr>`
     })
-    if (commBestILsCategory.topRuns.length > 3) {
+    if (runRecapCategory.topRuns.length > 3) {
         HTMLContent += `<tr><th colspan=4 style='text-align:right'>&Delta;</th>`
         categories.forEach((category, categoryIndex) => {
-            HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(getComparisonTime(categoryIndex))}</th>`
+            HTMLContent += `<th colspan=2 class='cuphead'>${secondsToHMS(savComparisonCollection[savComparison][categoryIndex])}</th>`
         })
         HTMLContent += `</tr>`
         HTMLContent += `<tr><td colspan=4></td>`
@@ -42,7 +42,7 @@ function generateGrid() {
         categories.forEach((category, categoryIndex) => {
             let ILtime = getCupheadLevel(categoryIndex)?.bestTime
             if (ILtime == nullTime) ILtime = NaN
-            const comparisonTime = getComparisonTime(categoryIndex)
+            const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
             HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`

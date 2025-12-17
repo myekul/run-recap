@@ -27,7 +27,7 @@ function generateCommBestILs() {
     HTMLContent += `</table></div>`
     document.getElementById('content').innerHTML = HTMLContent
 }
-// if (['DLC', 'DLC+Base'].includes(commBestILsCategory.tabName) && !commBestILsCategory.extraPlayers) {
+// if (['DLC', 'DLC+Base'].includes(runRecapCategory.tabName) && !runRecapCategory.extraPlayers) {
 //     if (player.extra?.percentage >= 90) {
 //         HTMLContent += `<td>${cupheadShot(determineShot1(player), 20, true)}</td>`
 //         HTMLContent += `<td>${cupheadShot('spread', 20, true)}</td>`
@@ -36,7 +36,7 @@ function generateCommBestILs() {
 //     }
 // }
 // function determineShot1(player, categoryName) {
-//     const category = categoryName ? categoryName : commBestILsCategory.name
+//     const category = categoryName ? categoryName : runRecapCategory.name
 //     if (commBestILs[category + ' L/S'].extraPlayers?.includes(player.name)) {
 //         return 'lobber'
 //     } else if (commBestILs[category + ' C/S'].extraPlayers?.includes(player.name)) {

@@ -1,11 +1,11 @@
-function runRecapDatabase(sav) {
+function savDatabase(comparison) {
     if (!database) {
-        window.firebaseUtils.firestoreReadRR(sav)
+        window.firebaseUtils.firestoreReadRR(comparison)
     } else {
-        openDatabase(sav)
+        openDatabase(comparison)
     }
 }
-function openDatabase(sav) {
+function openDatabase(comparison) {
     let HTMLContent = `<div class='container'>
     <div class='textBlock'>
     Welcome to the ${myekulColor('Run Recap Database')}!
@@ -15,9 +15,9 @@ function openDatabase(sav) {
     </div>
     <table style='padding:10px;margin:0 auto'>`
     database.forEach((run, index) => {
-        if (!(sav && commBestILsCategory.tabName != run.category)) {
+        if (!(comparison && runRecapCategory.tabName != run.category)) {
             const category = commBestILs[run.category]
-            const onclick = sav ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
+            const onclick = comparison ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
             HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="${onclick}">
         <td class='dim' style='font-size:70%'>${index + 1}</td>
         <td><div class='container'>${generateBoardTitle(category)}</div></td>
@@ -28,15 +28,15 @@ function openDatabase(sav) {
         }
     })
     HTMLContent += `</table>`
-    if (sav) playSound('category_select')
-    openModal(HTMLContent, 'DATABASE', '', sav)
+    if (comparison) playSound('category_select')
+    openModal(HTMLContent, 'DATABASE', '', comparison)
 }
 function databaseComparison(sav, player, time) {
-    commBestILsCategory.database = []
+    savComparisonCollection['Database'] = []
     sav.split(',').forEach((time, index) => {
-        commBestILsCategory.database[index] = time
+        savComparisonCollection['Database'][index] = time
     })
-    changeComparison('database', player, time)
+    changeComparison('Database', player, time)
     action()
 }
 function runRecapUploadButton() {

@@ -1,12 +1,12 @@
 function generateTop10() {
-    if (commBestILsCategory.name != '1.1+') getCommBestILs('1.1+')
+    if (runRecapCategory.name != '1.1+') getCommBestILs('1.1+')
     isles.forEach(isle => {
         isle.sum = 0
         isle.comparisonSum = 0
         isle.sums = []
     })
     assignIsles()
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         isles.forEach(isle => {
             isle.sum = 0
             isle.sums[index] = 0
@@ -41,13 +41,18 @@ function generateTop10() {
             <th colspan=2 class='gray'>Sum</th>
             <th class='gray'>Resid</th>`
     }
-    commBestILsCategory.topRuns.forEach((run, index) => {
-        if (run.splits.length == 3) run.splits.push(commBestILsCategory.runs[index].score)
-    })
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         HTMLContent += `<tr class='hover ${getRowColor(index)}'>
             ${bigPlayerDisplay(players[index])}`
         let sum = 0
+        if (index) {
+            run.splits = [
+                convertToSeconds(runRecapCategory.topRuns[index].rrc.endTimes[22]) - 6.45,
+                convertToSeconds(runRecapCategory.topRuns[index].rrc.endTimes[40]) - 6.45,
+                convertToSeconds(runRecapCategory.topRuns[index].rrc.endTimes[64]) - 6.45,
+                runRecapCategory.runs[index].score
+            ]
+        }
         run.splits.forEach((time, isleIndex) => {
             const isle = isles[isleIndex]
             const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])
@@ -64,7 +69,7 @@ function generateTop10() {
     HTMLContent += `</table></div>
     <div class='container' style='margin-top:100px;gap:50px'>`
     HTMLContent += `<table>`
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         HTMLContent += `<tr class='${getRowColor(index)}'>
         <td>${getPlayerDisplay(players[index])}</td>
         ${residualIcons(run)}
@@ -80,7 +85,7 @@ function generateTop10() {
     })
     HTMLContent += `<tr>
     <td><div class='container'>${getImage('runnguns/forestfollies', 21)}</div></td>`
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         let starSkip = ''
         if (run.starSkips[0]) starSkip = fontAwesome('star')
         if (run.starSkips[0] == 1) starSkip += fontAwesome('star')
@@ -91,7 +96,7 @@ function generateTop10() {
         if (categoryIndex < categories.length - 1) {
             HTMLContent += `<tr>
             <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>`
-            commBestILsCategory.topRuns.forEach((run, index) => {
+            runRecapCategory.topRuns.forEach((run, index) => {
                 let starSkip = ''
                 if (run.starSkips[categoryIndex + 1]) starSkip = fontAwesome('star')
                 if (run.starSkips[categoryIndex + 1] == 1) starSkip += fontAwesome('star')
@@ -102,7 +107,7 @@ function generateTop10() {
     })
     HTMLContent += `<tr>
     <td></td>`
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         HTMLContent += `<td class='dim ${getRowColor(index)}'>${run.starSkips.reduce((acc, num) => acc + num, 0)}</td>`
     })
     HTMLContent += `</tr>

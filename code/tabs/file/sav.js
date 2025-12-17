@@ -6,7 +6,7 @@ function generate_sav() {
             show('runRecap_ghost')
             document.getElementById('runRecap_numDeaths').innerHTML = numDeaths
             let char = runRecap_savFile.isPlayer1Mugman ? 'mugman' : 'cuphead'
-            if (['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
+            if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
                 char = 'chalice'
             }
             document.getElementById('runRecap_ghost').src = `https://myekul.com/shared-assets/cuphead/images/extra/ghost_${char}.png`
@@ -21,7 +21,7 @@ function generate_sav() {
             HTMLContent += extraLevel('forestfollies', follies.bestTime)
         }
         const mausoleum = getCupheadLevel(mausoleumID, true)
-        if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
+        if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
             HTMLContent += extraLevel('mausoleum', mausoleum.bestTime)
         }
         HTMLContent += `</div>`
@@ -47,11 +47,11 @@ function processSavFile(playerIndex, display) {
                 document.getElementById('input_runRecap_time').value = time
                 categories.forEach((category, categoryIndex) => {
                     const level = getCupheadLevel(categoryIndex)
-                    level.bestTime = commBestILsCategory.topRuns[playerIndex].runRecap[categoryIndex]
+                    level.bestTime = runRecapCategory.topRuns[playerIndex].runRecap[categoryIndex]
                     level.played = true
                     level.completed = true
                 })
-                if (playerIndex == 0 && commBestILsCategory.markin) {
+                if (playerIndex == 0 && runRecapCategory.markin) {
                     bootMarkinExample()
                     if (display) {
                         showTab('lss')
@@ -59,7 +59,7 @@ function processSavFile(playerIndex, display) {
                         showTab('sav')
                     }
                 }
-                if (playerIndex > 0 || !commBestILsCategory.markin) {
+                if (playerIndex > 0 || !runRecapCategory.markin) {
                     showTab('sav')
                 }
             } else {

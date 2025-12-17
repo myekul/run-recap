@@ -213,9 +213,9 @@
             },
             {
                 "name": "Sneeze",
-                "time": "21.98",
-                "player": "SBDWolf",
-                "url": "https://www.youtube.com/live/5ZmciUW-3xA?si=r6TXwCX5vTUOoLOJ&t=1765"
+                "time": "21.94",
+                "player": "Lewzr",
+                "url": "https://youtu.be/g_OgLNKxaiU"
             },
             {
                 "title": "Doubles"
@@ -228,9 +228,9 @@
             },
             {
                 "name": "Sneeze",
-                "time": "27.50",
-                "player": "Quincely0",
-                "url": "https://youtu.be/PnlKwelRnHU"
+                "time": "24.03",
+                "player": "Lewzr",
+                "url": "https://youtu.be/G64vi7pxRgQ"
             }
         ],
         "hildaberg": [
@@ -458,9 +458,9 @@
             },
             {
                 "name": "Candy Corn, Waffle, Jawbreaker",
-                "time": 35.21,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=6ElG33mM5t1077jv&t=69"
+                "time": 34.83,
+                "player": "myekul",
+                "url": "https://youtu.be/AL7h5H86A60"
             },
             {
                 "name": "Candy Corn, Cupcake, Waffle",
@@ -808,16 +808,64 @@
                 "title": "3-cycle"
             },
             {
+                "name": "5B, 3B++, 5B",
+                "time": 40.14,
+                "player": "Lewzr",
+                "url": "https://youtu.be/aoeu3iwQCMI"
+            },
+            {
+                "name": "3B++, 5B, 4B+",
+                "time": 40.54,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=44s"
+            },
+            {
+                "name": "5B, 4B+, 2B+",
+                "time": 42.15,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=87s"
+            },
+            {
+                "name": "4B+, 2B+, 5B",
+                "time": 39.58,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=132s"
+            },
+            {
+                "name": "2B+, 5B, 4B+",
+                "time": "39.80",
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=175s"
+            },
+            {
+                "name": "5B, 4B+, 5B+",
+                "time": 42.27,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=218s"
+            },
+            {
+                "name": "4B+, 5B+, 3B",
+                "time": 40.92,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=263s"
+            },
+            {
+                "name": "5B+, 3B, 2B+",
+                "time": 39.91,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=306s"
+            },
+            {
                 "name": "3B, 2B+, 5B",
                 "time": 37.91,
                 "player": "Lewzr",
                 "url": "https://youtu.be/moBcYR2UqgQ"
             },
             {
-                "name": "4B+, 5B+, 3B",
-                "time": 41.42,
+                "name": "2B+, 5B, 3B++",
+                "time": 39.37,
                 "player": "Lewzr",
-                "url": "https://youtu.be/quYnRDU3B1Y"
+                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=391s"
             },
             {
                 "title": "2-cycle"
@@ -1064,9 +1112,10 @@
             },
             {
                 "name": "2-Gun, Gun",
-                "time": 36.71,
-                "player": "Quincely0",
-                "url": "https://youtu.be/N6EBTHs8yXg"
+                "time": 36.52,
+                "rta": "37.80",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/1tJDk7gscp8"
             },
             {
                 "name": "2-Gun, Squid",
@@ -1076,112 +1125,112 @@
             },
             {
                 "name": "2-Gun, Shark",
-                "time": 38.64,
+                "time": 38.49,
                 "player": "Quincely0",
-                "url": "https://youtu.be/CcbGnHQSQD4"
+                "url": "https://youtu.be/RdDpE3uSoRE"
             },
             {
                 "name": "2-Gun, Dogfish",
-                "time": 39.69,
-                "player": "Lewzr",
-                "url": "https://youtu.be/q4mNAwocGyY"
+                "time": 39.36,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/1jHORsRYgpk"
             },
             {
                 "name": "4-Gun, Gun",
-                "time": 41.58,
-                "player": "ClipBoardGuy",
-                "url": "https://www.twitch.tv/videos/2353665514"
+                "time": 41.21,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/iiACS0KYIrc"
             },
             {
                 "name": "4-Gun, Squid",
-                "time": 39.78,
-                "player": "ClipBoardGuy",
-                "url": "https://www.twitch.tv/videos/2353665514"
+                "time": 38.81,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/T1Lq_KTWyCQ"
             },
             {
                 "name": "4-Gun, Shark",
-                "time": 42.96,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/VM84dBH2oz4"
+                "time": "42.80",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/gXuQ0XQZFPk"
             },
             {
                 "name": "4-Gun, Dogfish",
-                "time": 44.38,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/DXj_7V1Z2EQ"
+                "time": 43.57,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/HARBGcVyDWY"
             },
             {
                 "name": "Squid, Gun",
-                "time": 38.98,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/cY4m9AAapnM"
+                "time": 37.81,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Ou5RBEl9gGA"
             },
             {
                 "name": "Squid, Squid",
-                "time": 41.72,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/sygpUQViNpg"
+                "time": 39.10,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/iqWvIKvZCt4"
             },
             {
                 "name": "Squid, Shark",
-                "time": 40.71,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/-tC2SKz4vWA"
+                "time": 39.25,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/JD1ETD36dWI"
             },
             {
                 "name": "Squid, Dogfish",
-                "time": 41.6,
-                "player": "Quincely0",
-                "url": "https://youtu.be/wzAJYBCsnHM"
+                "time": 39.38,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/HEuIKGkgNi4"
             },
             {
                 "name": "Shark, Gun",
-                "time": 40.91,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/ERgokq-2Jgw"
+                "time": 40.74,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/gpvctI8rHoI"
             },
             {
                 "name": "Shark, Squid",
-                "time": 39.48,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/Ihc9dYzvLB4"
+                "time": 38.99,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/D8J3kgeZ8XQ"
             },
             {
                 "name": "Shark, Shark",
-                "time": 42.38,
+                "time": 41.98,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/drt9FU4kVLo"
+                "url": "https://youtu.be/RFWacOkulls"
             },
             {
                 "name": "Shark, Dogfish",
-                "time": 43.51,
-                "player": "Quincely0",
-                "url": "https://youtu.be/9z2S_ualVYg"
+                "time": 43.39,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/OGkQ2Aj1F0w"
             },
             {
                 "name": "Dogfish, Gun",
-                "time": 41.95,
-                "rta": 42.52,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/_f84Id17otQ"
+                "time": 41.37,
+                "rta": 42.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/GgnnwXygKgA"
             },
             {
                 "name": "Dogfish, Squid",
-                "time": 40.91,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/yWaRv7YjaCY"
+                "time": 39.29,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Fb0cADjVnno"
             },
             {
                 "name": "Dogfish, Shark",
-                "time": 43.51,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/mxY7V8sA8Kk"
+                "time": 43.48,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/sM4s3bBgqhw"
             },
             {
                 "name": "Dogfish, Dogfish",
-                "time": 44.18,
-                "player": "Quincely0",
-                "url": "https://youtu.be/7paKejo7dtY"
+                "time": 42.16,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/tWmvLmoXSJk"
             },
             {
                 "title": "2-cycle"
@@ -1194,9 +1243,31 @@
             },
             {
                 "name": "Dogfish",
-                "time": "38.50",
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/MIrq29m1L4M"
+                "time": 37.08,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/lRxmudJjqto"
+            },
+            {
+                "title": "Other"
+            },
+            {
+                "name": "2-Gun, Gun (Best RTA)",
+                "time": 36.67,
+                "rta": 37.77,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/JzJJD3_PQzk"
+            },
+            {
+                "name": "2-2 Squid",
+                "time": 38.44,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/12I19u4F3b0"
+            },
+            {
+                "name": "Dogfish, Dogfish (Max)",
+                "time": 47.74,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/cVbN16YQ9bc"
             }
         ],
         "calamaria": [
@@ -1362,10 +1433,10 @@
             },
             {
                 "name": "R Pumpkin",
-                "time": 58.69,
-                "rta": 60.52,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/Mzw5eDoeoZE"
+                "time": 57.95,
+                "rta": 59.62,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/p2lPbw3BUuc"
             },
             {
                 "title": "Single"
@@ -1594,27 +1665,6 @@
         ],
         "thedevil": [
             {
-                "title": "Head Skip"
-            },
-            {
-                "name": "Clap Bubbles",
-                "time": 49.75,
-                "player": "myekul",
-                "url": "https://youtu.be/Jiw6U1wW2IE"
-            },
-            {
-                "name": "Clap Ring Clap",
-                "time": 51.49,
-                "player": "myekul",
-                "url": "https://youtu.be/7Bk3o0pRUZ8"
-            },
-            {
-                "name": "Clap Pinwheel Clap",
-                "time": 52.69,
-                "player": "myekul",
-                "url": "https://youtu.be/EXK3Ki0Lkso"
-            },
-            {
                 "title": "Freezeless Dragon",
                 "odds": "9/35"
             },
@@ -1657,16 +1707,16 @@
             },
             {
                 "name": "Bubbles Dragon (Slower)",
-                "time": 41.77,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/p015gV3xBuk",
+                "time": 40.74,
+                "player": "myekul",
+                "url": "https://youtu.be/_mwCwD0Os2o",
                 "odds": "3/385"
             },
             {
                 "name": "Bubbles Dragon (Slowest)",
-                "time": 41.35,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/zdkiIrRID9A",
+                "time": "40.40",
+                "player": "myekul",
+                "url": "https://youtu.be/bwF4W170ctc",
                 "odds": "1/385"
             },
             {
@@ -1889,6 +1939,27 @@
                 "time": 44.87,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/RZZwIHGnIAQ"
+            },
+            {
+                "title": "Head Skip"
+            },
+            {
+                "name": "Clap Bubbles",
+                "time": 49.75,
+                "player": "myekul",
+                "url": "https://youtu.be/Jiw6U1wW2IE"
+            },
+            {
+                "name": "Clap Ring Clap",
+                "time": 51.49,
+                "player": "myekul",
+                "url": "https://youtu.be/7Bk3o0pRUZ8"
+            },
+            {
+                "name": "Clap Pinwheel Clap",
+                "time": 52.69,
+                "player": "myekul",
+                "url": "https://youtu.be/EXK3Ki0Lkso"
             }
         ]
     },
@@ -2006,10 +2077,34 @@
         ],
         "wallywarbles": [
             {
-                "name": "",
-                "time": 34.93,
-                "player": "Yuka",
-                "url": "https://youtu.be/7SVMkg8D43A"
+                "title": "Right Garbage"
+            },
+            {
+                "name": "Up Gun",
+                "time": "33.70",
+                "player": "Lewzr",
+                "url": "https://youtu.be/aJaVEoQz8AY"
+            },
+            {
+                "name": "Down Gun Gun",
+                "time": "33.99",
+                "player": "Lewzr",
+                "url": "https://youtu.be/GhkU0ObLNXk"
+            },
+            {
+                "name": "Up Eggs",
+                "time": "34.65",
+                "player": "Lewzr",
+                "url": "https://youtu.be/NvJx-AhNDWw"
+            },
+            {
+                "title": "Left Garbage"
+            },
+            {
+                "name": "Up Gun",
+                "time": "34.61",
+                "player": "Lewzr",
+                "url": "https://youtu.be/T_eZRcOQq-E"
             }
         ],
         "djimmithegreat": [

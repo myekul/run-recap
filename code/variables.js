@@ -3,7 +3,7 @@ const MYEKUL_SHEET_ID = '14l1hkW337uiyCRkNz61MNq99AEoidZdqaQUIpH5FlGU'
 
 const myekulSheets = {}
 const markinSheets = {}
-let commBestILsCategory
+let runRecapCategory
 let globalCache
 
 let runRecap_savFile
@@ -11,8 +11,12 @@ let runRecap_lssFile = {}
 let runRecap_rrcFile = {}
 
 let rrcAttemptIndex = 0
-let rrcGlobalAttempt = {}
-let rrcGlobalComparison = {}
+let rrcCurrentAttempt = {}
+let rrcComparisonAttempt = {}
+
+let rrcComparisonCollection = { "Top Bests": new Array(80).fill(Infinity), }
+let rrcComparison
+let rrcComparisonIndex = 1
 
 let runRecap_markin
 let runRecapTime
@@ -24,6 +28,7 @@ let deltaType
 
 let database
 
+let savComparisonCollection = {}
 let savComparison
 
 let savComparisonView
@@ -32,17 +37,21 @@ let loaded
 
 let commbestILs_ready
 
+let commBestILs
+
+// Alt Strats
+
+let alt
+let altStratNum = 0
 let altStratLevel
 
-let commBestILs
-let alt
-
-let commBestILSum = 0
-
 let isolatePatterns
-let residualExtra
 let baronessExtra
 let bonbonSort = 'Standard'
+
+// True Residual
+
+let trueResidual
 
 let globalStarSkips = 0
 let kd1
@@ -57,5 +66,5 @@ let globalResidual
 let minibossArray = []
 
 function decimalsCriteria() {
-    return commBestILsCategory.name == '1.1+'
+    return runRecapCategory.name == '1.1+'
 }

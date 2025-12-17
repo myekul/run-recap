@@ -29,18 +29,18 @@ function fetchCuphead(markin) {
     })
 }
 function loadMyekul() {
-    const values = myekulSheets[commBestILsCategory.tabName]
+    const values = myekulSheets[runRecapCategory.tabName]
     // console.log(values)
     categories = []
     bossesCopy = [...bosses]
-    if (commBestILsCategory.name == 'DLC') {
+    if (runRecapCategory.name == 'DLC') {
         bossesCopy = bossesCopy.slice(19, 25)
-    } else if (commBestILsCategory.name != 'DLC+Base') {
+    } else if (runRecapCategory.name != 'DLC+Base') {
         bossesCopy = bossesCopy.slice(0, 19)
     }
     bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0));
     // OOB Route
-    if (commBestILsCategory.tabName == 'DLC+Base 2') {
+    if (runRecapCategory.tabName == 'DLC+Base 2') {
         const elementsToMove = bossesCopy.slice(0, 6);
         bossesCopy.splice(0, 6);
         bossesCopy.splice(8, 0, ...elementsToMove);
@@ -53,7 +53,7 @@ function loadMyekul() {
     players.forEach(player => {
         player.runs = new Array(categories.length).fill(0)
     })
-    const numRuns = commBestILsCategory.topRuns.length
+    const numRuns = runRecapCategory.topRuns.length
     categories.forEach((category, categoryIndex) => {
         category.difficulty = 'regular'
         if (values[categoryIndex]) {
@@ -89,30 +89,38 @@ function loadMyekul() {
             }
         }
     })
-    commBestILsCategory.top = []
-    commBestILsCategory.top3 = []
-    commBestILsCategory.topBest = new Array(categories.length).fill(Infinity)
-    commBestILsCategory.topBestPlayers = new Array(categories.length).fill(null)
-    commBestILsCategory.theoryRun = []
+    savComparisonCollection = {
+        "Top Average": [],
+        "Top 3 Average": [],
+        "Top Bests": new Array(categories.length).fill(Infinity),
+        topBestPlayers: new Array(categories.length).fill(null),
+        "Theory Run": [],
+        "Run Viable ILs": []
+    }
+    runRecapCategory.topRuns.forEach((run, index) => {
+        savComparisonCollection['Player ' + (index)] = run.runRecap
+    })
     categories.forEach((category, categoryIndex) => {
         let topSum = 0
         let top3Sum = 0
-        commBestILsCategory.topRuns.forEach((run, index) => {
+        runRecapCategory.topRuns.forEach((run, index) => {
             const time = run.runRecap[categoryIndex]
             topSum += time
             if (index < 3) top3Sum += time
-            if (Math.floor(time) < commBestILsCategory.topBest[categoryIndex]) {
-                commBestILsCategory.topBest[categoryIndex] = Math.floor(time)
-                commBestILsCategory.topBestPlayers[categoryIndex] = [index]
-            } else if (Math.floor(time) == commBestILsCategory.topBest[categoryIndex]) {
-                commBestILsCategory.topBestPlayers[categoryIndex].push(index)
+            if (Math.floor(time) < savComparisonCollection['Top Bests'][categoryIndex]) {
+                savComparisonCollection['Top Bests'][categoryIndex] = Math.floor(time)
+                savComparisonCollection.topBestPlayers[categoryIndex] = [index]
+            } else if (Math.floor(time) == savComparisonCollection['Top Bests'][categoryIndex]) {
+                savComparisonCollection.topBestPlayers[categoryIndex].push(index)
             }
         })
-        commBestILsCategory.top.push(topSum / numRuns)
-        commBestILsCategory.top3.push(top3Sum / (numRuns > 3 ? 3 : numRuns))
-        commBestILsCategory.theoryRun.push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
+        savComparisonCollection['Top Average'].push(topSum / numRuns)
+        savComparisonCollection['Top 3 Average'].push(top3Sum / (numRuns > 3 ? 3 : numRuns))
+        savComparisonCollection['Theory Run'].push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
+        savComparisonCollection['Run Viable ILs'].push(category.runs[0].score)
     })
-    if (commBestILsCategory.markin) {
+    if (runRecapCategory.name == '1.1+') savComparisonCollection['TAS'] = runRecapCategory.tas
+    if (runRecapCategory.markin) {
         loadMarkin()
     } else {
         action()
@@ -131,7 +139,7 @@ function loadSheets() {
             const gid = sheet.properties.sheetId;
             tabMap[name] = gid;
         });
-        url += '/edit?gid=' + tabMap[commBestILsCategory.tabName]
+        url += '/edit?gid=' + tabMap[runRecapCategory.tabName]
         loadSheetIcon(url)
     });
 }

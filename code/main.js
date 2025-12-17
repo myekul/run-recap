@@ -20,7 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
                         .then(response => response.json())
                         .then(data => {
                             for (const category in data) {
-                                commBestILs[category].rrc = data[category]
+                                data[category].forEach((rrc, index) => {
+                                    if (rrc.scenes) {
+                                        rrc.endTimes = []
+                                        rrc.scenes.forEach(scene => {
+                                            rrc.endTimes.push(scene.endTime)
+                                        })
+                                    }
+                                    commBestILs[category].topRuns[index].rrc = rrc
+                                    rrcComparisonCollection['Player ' + index] = rrc.endTimes
+                                    rrc.endTimes.forEach((endTime, index) => {
+                                        endTime = convertToSeconds(endTime)
+                                        if (endTime < rrcComparisonCollection['Top Bests'][index]) {
+                                            rrcComparisonCollection['Top Bests'][index] = endTime
+                                        }
+                                    })
+                                })
                             }
                         })
                 })
@@ -32,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         for (const boss in alt[category]) {
                             for (const obj of alt[category][boss]) {
                                 if (!obj.title) {
-                                    commBestILSum++
+                                    altStratNum++
                                 }
                             }
                         }
@@ -66,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         })
                     }
                 })
-            commBestILsCategory = commBestILs['1.1+']
+            runRecapCategory = commBestILs['1.1+']
             window.firebaseUtils.firestoreRead()
         })
 })
@@ -235,18 +250,18 @@ document.querySelectorAll('select').forEach(elem => {
         action()
     })
 })
-function getCommBestILs(categoryName = commBestILsCategory.tabName) {
-    commBestILsCategory = commBestILs[categoryName]
-    let buttonName = commBestILsCategory.className
-    if (['dlc', 'dlcbase'].includes(buttonName) && commBestILsCategory.shot1) {
-        buttonName = commBestILsCategory.className + (commBestILsCategory.shot1?.charAt(0) || '') + (commBestILsCategory.shot2?.charAt(0) || '')
+function getCommBestILs(categoryName = runRecapCategory.tabName) {
+    runRecapCategory = commBestILs[categoryName]
+    let buttonName = runRecapCategory.className
+    if (['dlc', 'dlcbase'].includes(buttonName) && runRecapCategory.shot1) {
+        buttonName = runRecapCategory.className + (runRecapCategory.shot1?.charAt(0) || '') + (runRecapCategory.shot2?.charAt(0) || '')
     }
     buttonClick(buttonName + 'Button', 'categoryTabs', 'selected')
     players = []
     playerNames = new Set()
     changeComparison('Top 3 Average', true)
     altStratLevel = null
-    const category = commBestILsCategory.category
+    const category = runRecapCategory.category
     updateBoardTitle()
     // if (runRecapExample) showTab('home')
     if (category > -1) {
@@ -258,9 +273,9 @@ function getCommBestILs(categoryName = commBestILsCategory.tabName) {
     }
 }
 function letsGo() {
-    commBestILsCategory.players = globalCache[commBestILsCategory.category].players
-    commBestILsCategory.runs = globalCache[commBestILsCategory.category].runs
-    commBestILsCategory.players.forEach(player => {
+    runRecapCategory.players = globalCache[runRecapCategory.category].players
+    runRecapCategory.runs = globalCache[runRecapCategory.category].runs
+    runRecapCategory.players.forEach(player => {
         const initialSize = playerNames.size
         playerNames.add(player.name)
         if (playerNames.size > initialSize) {
@@ -277,15 +292,15 @@ function done() {
     categories.forEach((category, categoryIndex) => {
         assignRuns(category, categoryIndex)
     })
-    assignRuns(commBestILsCategory)
-    if (commBestILsCategory.extraRuns || commBestILsCategory.extraPlayers) {
+    assignRuns(runRecapCategory)
+    if (runRecapCategory.extraRuns || runRecapCategory.extraPlayers) {
         const morePlayers = []
-        commBestILsCategory.extraRuns?.forEach(run => {
+        runRecapCategory.extraRuns?.forEach(run => {
             morePlayers.push(run.playerName)
         })
-        players = players.filter(player => commBestILsCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name) || player.runs.some(run => run != 0))
-        const worldRecord = commBestILsCategory.runs[0].score
-        commBestILsCategory.extraRuns?.forEach(run => {
+        players = players.filter(player => runRecapCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name) || player.runs.some(run => run != 0))
+        const worldRecord = runRecapCategory.runs[0].score
+        runRecapCategory.extraRuns?.forEach(run => {
             const player = players.find(player => player.name == run.playerName)
             run.score = run.score > 0 ? run.score : convertToSeconds(run.score)
             run.percentage = (worldRecord / run.score) * 100
@@ -313,8 +328,8 @@ function done() {
     }
     document.getElementById('runRecap_examples').innerHTML = runRecapExamples()
     let HTMLContent = ''
-    for (let i = 0; i < commBestILsCategory.topRuns.length; i++) {
-        HTMLContent += `<option value="player_${i}">${i + 1}. ${secondsToHMS(commBestILsCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
+    for (let i = 0; i < runRecapCategory.topRuns.length; i++) {
+        HTMLContent += `<option value="Player ${i}">${i + 1}. ${secondsToHMS(runRecapCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
     // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
     const usernameAttempt = localStorage.getItem('username')
@@ -327,7 +342,7 @@ function done() {
     show('username')
 }
 function fullgamePlayer(playerIndex) {
-    return commBestILsCategory.players ? commBestILsCategory.players[playerIndex] : players[playerIndex].name
+    return runRecapCategory.players ? runRecapCategory.players[playerIndex] : players[playerIndex].name
 }
 function assignRuns(category, categoryIndex) {
     category.runs.forEach(run => {
@@ -350,7 +365,7 @@ function assignRuns(category, categoryIndex) {
         if (categoryIndex != null) {
             thePlayer.runs ? thePlayer.runs[categoryIndex] = run : ''
         } else {
-            if (!(commBestILsCategory.extraRuns && !commBestILsCategory.extraPlayers?.includes(thePlayer.name))) {
+            if (!(runRecapCategory.extraRuns && !runRecapCategory.extraPlayers?.includes(thePlayer.name))) {
                 thePlayer.extra = run
             }
         }

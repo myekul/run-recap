@@ -1,10 +1,10 @@
 function generateAltStrats() {
     let HTMLContent = ''
-    if (alt[commBestILsCategory.tabName]) {
+    if (alt[runRecapCategory.tabName]) {
         HTMLContent += `<div class='container' style='gap:10px'>`
         assignIsles()
         HTMLContent += `<table>
-        <tr><td class='background2' style='font-size:80%;color:gray'>${alt[commBestILsCategory.tabName].forestfollies?.length || '&nbsp;'}</td></tr>
+        <tr><td class='background2' style='font-size:80%;color:gray'>${alt[runRecapCategory.tabName].forestfollies?.length || '&nbsp;'}</td></tr>
         <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td></tr>
         </table>`
         isles.forEach(isle => {
@@ -13,7 +13,7 @@ function generateAltStrats() {
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
                     let numStrats = 0
-                    const altTest = alt[commBestILsCategory.tabName][category.info.id]
+                    const altTest = alt[runRecapCategory.tabName][category.info.id]
                     if (altTest) {
                         altTest.forEach(strat => {
                             if (!strat.title) {
@@ -38,8 +38,8 @@ function generateAltStrats() {
         HTMLContent += `</div>`
         if (!altStratLevel) {
             const counts = {};
-            for (const boss in alt[commBestILsCategory.tabName]) {
-                for (const obj of alt[commBestILsCategory.tabName][boss]) {
+            for (const boss in alt[runRecapCategory.tabName]) {
+                for (const obj of alt[runRecapCategory.tabName][boss]) {
                     if (!obj.title) {
                         const player = obj.player;
                         counts[player] = (counts[player] || 0) + 1;
@@ -66,7 +66,7 @@ function generateAltStrats() {
             })
             HTMLContent += `</table></div>
             <div class='container' style='color:gray;font-size:80%'>TOTAL: ${sum}</div>`
-            if (commBestILsCategory.tabName == '1.1+') {
+            if (runRecapCategory.tabName == '1.1+') {
                 const myekulIdeas = [
                     {
                         boss: 'hildaberg',
@@ -120,7 +120,7 @@ function generateAltStrats() {
                 <i class="fa fa-plus"></i>Submit IL
             </div>
             <div class='textBlock' style='width:460px'>
-            Across all categories, we have accumulated ${myekulColor(commBestILSum)} ILs. Thank you for the continued support!
+            Across all categories, we have accumulated ${myekulColor(altStratNum)} ILs. Thank you for the continued support!
             </div>
             <div id='commBest_queue'>${pendingSubmissions()}</div>
             </div>`
@@ -128,7 +128,7 @@ function generateAltStrats() {
             HTMLContent += `<table>`
             HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
             categories.forEach((category, categoryIndex) => {
-                const altGroup = alt[commBestILsCategory.tabName][category.info.id]
+                const altGroup = alt[runRecapCategory.tabName][category.info.id]
                 if (altGroup) {
                     let fastest = altGroup[0]
                     altGroup.forEach(strat => {
@@ -155,9 +155,9 @@ function generateAltStrats() {
             HTMLContent += `</div>`
         } else {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
-            if (alt[commBestILsCategory.tabName][altStratLevel]) {
+            if (alt[runRecapCategory.tabName][altStratLevel]) {
                 HTMLContent += altStrats(altStratLevel)
-                if (commBestILsCategory.name == '1.1+' && altStratLevel == 'kingdice') {
+                if (runRecapCategory.name == '1.1+' && altStratLevel == 'kingdice') {
                     ['mrwheezy', 'hopuspocus', 'pirouletta', 'kingdice2'].forEach(miniboss => {
                         HTMLContent += altStrats(miniboss)
                     })
@@ -170,12 +170,12 @@ function generateAltStrats() {
         HTMLContent += `<div class='container'>No alt strats...</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
-    if (altStratLevel == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') drawChart()
+    if (altStratLevel == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') drawChart()
     if (!altStratLevel) window.firebaseUtils.firestoreReadCommBestILs()
 }
 function drawChart() {
     let data = [['Value']]
-    alt[commBestILsCategory.tabName].baronessvonbonbon.forEach(strat => {
+    alt[runRecapCategory.tabName].baronessvonbonbon.forEach(strat => {
         data.push([parseFloat(strat.time)])
     })
     data = google.visualization.arrayToDataTable(data);
@@ -244,10 +244,10 @@ function altStrats(query) {
     const img = category ? query : imgLocation[query]
     const name = category ? category.info.name : otherNames[query]
     let HTMLContent = ''
-    if (query == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') {
+    if (query == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') {
         HTMLContent += bonbonStuff()
     }
-    if (query == 'thedevil' && commBestILsCategory.name == '1.1+') {
+    if (query == 'thedevil' && runRecapCategory.name == '1.1+') {
         HTMLContent += `<div class='container'>
         <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
         </div>`
@@ -257,8 +257,8 @@ function altStrats(query) {
     <div style='margin:0;position:relative'><table style='margin:10px'>
     <tr><td colspan=10><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
-    const RTAcheck = alt[commBestILsCategory.tabName][query].some(strat => strat.rta)
-    // if (!alt[commBestILsCategory.tabName][query].some(strat => strat.title)) {
+    const RTAcheck = alt[runRecapCategory.tabName][query].some(strat => strat.rta)
+    // if (!alt[runRecapCategory.tabName][query].some(strat => strat.title)) {
     //     HTMLContent += `<tr>
     // <th class='gray'>Pattern / Strat</th>`
     //     if (baronessCheck) HTMLContent += `<th class='gray'></th>`
@@ -266,10 +266,10 @@ function altStrats(query) {
     //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
     //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
     // }
-    let altStrats = [...alt[commBestILsCategory.tabName][query]]
+    let altStrats = [...alt[runRecapCategory.tabName][query]]
     let min = 0
     let max = Infinity
-    if (query == 'baronessvonbonbon' && commBestILsCategory.name == '1.1+') {
+    if (query == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') {
         if (bonbonSort == 'Best') {
             altStrats.sort((a, b) => a.time - b.time)
         } else if (bonbonSort == 'Worst') {
@@ -293,7 +293,7 @@ function altStrats(query) {
         return `rgb(${r},${g},0)`;
     }
     altStrats.forEach((strat, index) => {
-        if (strat.title && !(strat.title == 'Head Skip' && commBestILsCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
+        if (strat.title && !(strat.title == 'Head Skip' && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
             HTMLContent += `<tr><td style='height:10px'></td></tr>
             <tr>`
             if (isolatePatterns && strat.odds) {
@@ -305,7 +305,7 @@ function altStrats(query) {
             }
             HTMLContent += `</tr>`
         } else {
-            if (!(commBestILsCategory.name == '1.1+' && query == 'thedevil' && isolatePatterns && !strat.odds)) {
+            if (!(runRecapCategory.name == '1.1+' && query == 'thedevil' && isolatePatterns && !strat.odds)) {
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
                 if (baronessCheck) {
@@ -316,7 +316,7 @@ function altStrats(query) {
                     })
                     HTMLContent += `</div></td>`
                 }
-                HTMLContent += query == 'thedevil' && commBestILsCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
+                HTMLContent += query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
                 if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
                 HTMLContent += `<td style='width:5px;background-color:${getColor(normalizeTime(strat.time))}'></td>`
                 HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
@@ -330,19 +330,19 @@ function altStrats(query) {
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table>`
-    if (commBestILsCategory.name == '1.1+' && category) {
+    if (runRecapCategory.name == '1.1+' && category) {
         const categoryIndex = categories.findIndex(category => category.info.id == query)
         HTMLContent += `<table style='position:absolute;left:110%;top:12px'>
         <tr>
         <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
         </tr>
         <tr>
-        <td class='${query}' style='padding:0 5px'>${commBestILsCategory.tas[categoryIndex]}</td>
+        <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
         </tr>`;
         ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
             HTMLContent += `<tr>
             <td colspan=2 class='background2 grow' style='font-size:90%'>
-            ${getAnchor(commBestILsCategory.tasLinks[vidIndex] + '&t=' + commBestILsCategory.tasTimestamps[categoryIndex] + 's')}
+            ${getAnchor(runRecapCategory.tasLinks[vidIndex] + '&t=' + runRecapCategory.tasTimestamps[categoryIndex] + 's')}
             <span class='dim'>${fontAwesome('video-camera')}</span> ${vid}</a>
             </td>
             </tr>`
@@ -409,9 +409,9 @@ function userContributions(playerName) {
     HTMLContent += playerDisplay(playerName)
     HTMLContent += `<table style='margin-top:10px'>`
     let strats = []
-    for (const level in alt[commBestILsCategory.tabName]) {
+    for (const level in alt[runRecapCategory.tabName]) {
         let title = ''
-        for (const obj of alt[commBestILsCategory.tabName][level]) {
+        for (const obj of alt[runRecapCategory.tabName][level]) {
             if (!obj.title) {
                 if (playerName == obj.player) {
                     strats.push({ ...obj, level: level, title: title })
@@ -445,7 +445,7 @@ function bonbonStuff() {
     for (const miniboss in minibosses) {
         const minibossInfo = { name: miniboss, overall: [], minion1: [], minion2: [], minion3: [] }
         HTMLContent += `<td class='${minibosses[miniboss]}'>${getImage('phase/baronessvonbonbon' + minibosses[miniboss])}</td>`
-        for (const obj of alt[commBestILsCategory.tabName].baronessvonbonbon) {
+        for (const obj of alt[runRecapCategory.tabName].baronessvonbonbon) {
             obj.name.split(', ').forEach((name, index) => {
                 if (name == miniboss) {
                     minibossInfo.overall.push(obj)
@@ -486,7 +486,7 @@ function bonbonStuff() {
             HTMLContent += `<td class='baronessvonbonbon' style='padding:0 3px'>${mean.toFixed(2)}</td>`
         })
         if (!label) {
-            const mean = math.mean(alt[commBestILsCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
+            const mean = math.mean(alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
             HTMLContent += `<td class='baronessvonbonbon' style='padding:0 3px'>${mean.toFixed(2)}</td>`
         }
         HTMLContent += `</tr>`
@@ -498,7 +498,7 @@ function bonbonStuff() {
             HTMLContent += `<td class='dim'>${std.toFixed(2)}s</td>`
         })
         if (!label) {
-            const std = math.std(alt[commBestILsCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
+            const std = math.std(alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
             HTMLContent += `<td class='dim'>${std.toFixed(2)}s</td>`
         }
         HTMLContent += `</tr>`
@@ -510,7 +510,7 @@ function bonbonStuff() {
             HTMLContent += `<td>${median.toFixed(2)}</td>`
         })
         if (!label) {
-            const median = math.median(alt[commBestILsCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
+            const median = math.median(alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
             HTMLContent += `<td>${median.toFixed(2)}</td>`
         }
         HTMLContent += `</tr>`
@@ -522,7 +522,7 @@ function bonbonStuff() {
             HTMLContent += `<td>${min.toFixed(2)}</td>`
         })
         if (!label) {
-            const min = Math.min(...alt[commBestILsCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
+            const min = Math.min(...alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
             HTMLContent += `<td>${min.toFixed(2)}</td>`
         }
         HTMLContent += `</tr>`
@@ -534,7 +534,7 @@ function bonbonStuff() {
             HTMLContent += `<td>${max}</td>`
         })
         if (!label) {
-            const max = Math.max(...alt[commBestILsCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
+            const max = Math.max(...alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
             HTMLContent += `<td>${max.toFixed(2)}</td>`
         }
         HTMLContent += `</tr>`

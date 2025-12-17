@@ -133,7 +133,7 @@ function runRecap_chart(times, deltas, lss) {
             const prevCategory = categories[categoryIndex - 1]
             if (prevCategory) category.runTime += prevCategory.runTime
             times.push(category.runTime)
-            const comparisonTime = getComparisonTime(categoryIndex)
+            const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(runTime, comparisonTime)
             deltas.push(delta)
         })
@@ -202,17 +202,17 @@ function runRecapDefault() {
     runRecapTime = 'XX:XX'
 }
 function runRecapMusic() {
-    const src = ['DLC', 'DLC+Base'].includes(commBestILsCategory.name) ? `https://www.youtube.com/embed/L6T3fpUGSmE?si=CY3h0TbNYkQ003eZ` : `https://www.youtube.com/embed/cdvSNkW3Uyk?si=VcZ9Du_FsD5A8O6g`
+    const src = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? `https://www.youtube.com/embed/L6T3fpUGSmE?si=CY3h0TbNYkQ003eZ` : `https://www.youtube.com/embed/cdvSNkW3Uyk?si=VcZ9Du_FsD5A8O6g`
     document.getElementById('musicDiv').innerHTML = `
     <iframe width="150" height="150" src="${src}&amp;controls=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     `
 }
-function runRecapExamples(sav) {
+function runRecapExamples(comparison) {
     let HTMLContent = `<div><table>`
-    players.slice(0, commBestILsCategory.topRuns.length).forEach((player, playerIndex) => {
+    players.slice(0, runRecapCategory.topRuns.length).forEach((player, playerIndex) => {
         if (player.extra) {
-            const onclick = sav ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('ready')`
-            HTMLContent += `<tr class='${savComparison.split('_')[1] == playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
+            const onclick = comparison ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('ready')`
+            HTMLContent += `<tr class='${savComparison == 'Player ' + playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
             HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
             HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
             HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
@@ -222,7 +222,7 @@ function runRecapExamples(sav) {
     HTMLContent += `</table>`
     HTMLContent += `
     <div class='container' style='margin-top:10px'>
-        <div class='button cuphead' style='gap:5px;width:170px' onclick="runRecapDatabase(${sav})">
+        <div class='button cuphead' style='gap:5px;width:170px' onclick="savDatabase(${comparison})">
             ${fontAwesome('cloud')}
             Browse database
         </div>
@@ -231,7 +231,7 @@ function runRecapExamples(sav) {
     return HTMLContent
 }
 function playerComparison(playerIndex, playerName, time) {
-    changeComparison('player_' + playerIndex, playerName, time)
+    changeComparison('Player ' + playerIndex, playerName, time)
     action()
 }
 function runRecapCopy() {

@@ -70,13 +70,13 @@ function generate_lss() {
                 if (index >= getOffset()) {
                     const level = getCupheadLevel(categoryIndex)
                     const runTime = level?.bestTime
-                    const comparisonTime = getComparisonTime(categoryIndex)
+                    const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
                     const delta = runRecapDelta(runTime, comparisonTime)
                     const ILgrade = runRecapGrade(delta)
                     let comparisonContents = `<div class='container'>`
                     if (savComparison == 'Top Bests') {
                         comparisonContents += `<div class='container' style='padding-right:6px'>`
-                        commBestILsCategory.topBestPlayers[categoryIndex].forEach(playerIndex => {
+                        savComparisonCollection.topBestPlayers[categoryIndex].forEach(playerIndex => {
                             const player = players[playerIndex]
                             comparisonContents += getPlayerIcon(player, 24)
                         })
@@ -263,9 +263,9 @@ function runRecap_lss_splitInfo() {
         const categoryIndex = index - getOffset()
         if (index == 0) {
             splitInfo.push({ id: 'runnguns/forestfollies', name: 'Forest Follies', isle: null })
-        } else if (index == 1 && ['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
+        } else if (index == 1 && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
             splitInfo.push({ id: 'other/mausoleum', name: 'Mausoleum', isle: null })
-        } else if (index == 2 && commBestILsCategory.shot1 == 'charge') {
+        } else if (index == 2 && runRecapCategory.shot1 == 'charge') {
             splitInfo.push({ id: 'other/chalicetutorial', name: 'Chalice Tutorial', isle: null })
         } else {
             const category = categories[categoryIndex]
@@ -277,8 +277,8 @@ function runRecap_lss_splitInfo() {
 }
 function getOffset() {
     let offset = 1
-    if (['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
-        offset = commBestILsCategory.shot1 == 'charge' ? 3 : 2
+    if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
+        offset = runRecapCategory.shot1 == 'charge' ? 3 : 2
     }
     return offset
 }
@@ -370,8 +370,8 @@ function splitComparison(comparison, index) {
     }
 }
 function loadMarkin() {
-    const values = markinSheets[commBestILsCategory.markin]
-    runRecap_markin = { tabName: commBestILsCategory.tabName, bestSplits: [], bestSplitsURLs: [], bestSplitsPlayers: [], wrSplits: [], bestSegments: [], bestSegmentsURLs: [], bestSegmentsPlayers: [], wrSegments: [], commSoB: [] }
+    const values = markinSheets[runRecapCategory.markin]
+    runRecap_markin = { tabName: runRecapCategory.tabName, bestSplits: [], bestSplitsURLs: [], bestSplitsPlayers: [], wrSplits: [], bestSegments: [], bestSegmentsURLs: [], bestSegmentsPlayers: [], wrSegments: [], commSoB: [] }
     values.forEach((row, index) => {
         let url
         runRecap_markin.bestSplits.push(convertToSeconds(row.values[0].userEnteredValue.stringValue || row.values[0].userEnteredValue.numberValue || row.values[0].userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]))
@@ -459,7 +459,7 @@ function splitSegmentInfo(array, index, type) {
         <td style='font-size:70%;text-align:right;padding:0 5px'>${date ? daysAgo(getDateDif(new Date(), new Date(date))) : ''}</td>
         <td class='${placeClass[segmentIndex + 1]}' style='font-size:70%;padding:0 3px'>${trophy ? `<div class='container trophy'>${trophy}` : segmentIndex + 1}</td>
         <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(time, true)}</td>
-        <td class='${run ? commBestILsCategory.className : ''}' style='font-size:80%;padding:0 5px'>${run ? secondsToHMS(run.gameTime, true) : ''}</td>
+        <td class='${run ? runRecapCategory.className : ''}' style='font-size:80%;padding:0 5px'>${run ? secondsToHMS(run.gameTime, true) : ''}</td>
         <td style='font-size:70%;padding:0 5px'>${date ? date : ''}</td>
         <td style='font-size:50%'>${arrayAttempt.id}</td>
         </tr>`

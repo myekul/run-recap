@@ -20,8 +20,9 @@
 - Run n Guns
 
 - RRC
-    - Top 10 RRCs
     - Upload
     - Comparison infrastructure
 
 - Info section
+
+- TAS comparison broken

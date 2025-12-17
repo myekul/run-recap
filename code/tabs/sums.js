@@ -9,7 +9,7 @@ function generateSums() {
     let comparisonSum = 0
     isles.forEach(isle => {
         isle.runRecapCategories.forEach(categoryIndex => {
-            isle.comparisonSum += getComparisonTime(categoryIndex)
+            isle.comparisonSum += savComparisonCollection[savComparison][categoryIndex]
         })
         isle.comparisonSum = Math.floor(isle.comparisonSum)
         comparisonSum += isle.comparisonSum
@@ -27,7 +27,7 @@ function generateSums() {
     <th>TOTAL</th>
     <td></td>
     </tr>`
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         sum = 0
         isles.forEach(isle => {
             isle.sum = 0

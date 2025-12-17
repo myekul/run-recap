@@ -1,10 +1,10 @@
 function generateResidual() {
     let HTMLContent = ''
-    if (commBestILsCategory.name == '1.1+' && residualExtra) {
-        HTMLContent += `<div class='button cuphead' style='margin:0 auto;margin-bottom:20px;gap:8px;width:95px' onclick="residualExtra=!residualExtra;action();playSound('move')">${fontAwesome('reply')} Go back</div>`
+    if (runRecapCategory.name == '1.1+' && trueResidual) {
+        HTMLContent += `<div class='button cuphead' style='margin:0 auto;margin-bottom:20px;gap:8px;width:95px' onclick="trueResidual=!trueResidual;action();playSound('move')">${fontAwesome('reply')} Go back</div>`
     }
     HTMLContent += `<div class='container' style='gap:30px'>`
-    if (!(commBestILsCategory.name == '1.1+' && residualExtra)) {
+    if (!(runRecapCategory.name == '1.1+' && trueResidual)) {
         HTMLContent += `<div class='textBlock' style='width:420px'>
     When you subtract your ${myekulColor('boss IL sum')} from your ${myekulColor('total run time')},
     you get your ${myekulColor('Residual')} timeloss.
@@ -37,12 +37,12 @@ function generateResidual() {
     <th colspan=4></th>
     <th class='dim' style='padding:0 10px'>IGT Sum</th>
     <th class='gray' style='padding:0 10px'>Residual</th>`
-    if (commBestILsCategory.name == '1.1+' && residualExtra) {
+    if (runRecapCategory.name == '1.1+' && trueResidual) {
         HTMLContent += `<th colspan=7></th>
         <th class='gray' style='padding:0 3px'>True Residual</th>`
     }
     HTMLContent += `</tr>`
-    commBestILsCategory.topRuns.forEach((run, index) => {
+    runRecapCategory.topRuns.forEach((run, index) => {
         let sum = 0
         run.runRecap.forEach(time => {
             const newTime = decimalsCriteria() ? time : Math.floor(time)
@@ -54,7 +54,7 @@ function generateResidual() {
         ${bigPlayerDisplay(players[index])}
         <td class='dim' style='font-size:80%'>${secondsToHMS(sum, decimalsCriteria())}</td>
         <td>${secondsToHMS(residual, decimalsCriteria())}</td>`
-        if (commBestILsCategory.name == '1.1+') {
+        if (runRecapCategory.name == '1.1+') {
             const starSkipCount = run.starSkips.reduce((acc, num) => acc + num, 0)
             let starSkipTime = 0
             run.starSkips.forEach(starSkip => {
@@ -71,18 +71,18 @@ function generateResidual() {
             ${starSkipCount}
             </div>
             </td>`
-            if (residualExtra) {
+            if (trueResidual) {
                 HTMLContent += residualIcons(run)
                 HTMLContent += `<td class='myekulColor'>${trueResidual}</td>`
             }
-            if (index == 0 && !residualExtra) {
-                HTMLContent += `<td rowspan=10 class='clickable gray' onclick="residualExtra=!residualExtra;action();playSound('move')">${fontAwesome('chevron-right')}</td>`
+            if (index == 0 && !trueResidual) {
+                HTMLContent += `<td rowspan=10 class='clickable gray' onclick="trueResidual=!trueResidual;action();playSound('move')">${fontAwesome('chevron-right')}</td>`
             }
         }
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table>`
-    if (commBestILsCategory.name == '1.1+' && residualExtra) {
+    if (runRecapCategory.name == '1.1+' && trueResidual) {
         HTMLContent += `<div class='container'>
     <div style='width:680px;margin-top:20px'>
     <span style='font-size:90%'>
@@ -118,7 +118,7 @@ function generateResidual() {
     <tr>
     <th class='dim'>IGT Sum</th>
     <th class='gray'>Residual</th>`
-        if (commBestILsCategory.name == '1.1+' && residualExtra) {
+        if (runRecapCategory.name == '1.1+' && trueResidual) {
             HTMLContent += `<th class='dim'>Star Skips</th>
             ${residualIcons()}
             <th class='gray' style='padding:0 3px'>True Residual</th>`
@@ -127,7 +127,7 @@ function generateResidual() {
     <tr class='background2'>
     <td class='dim' style='padding:0 10px'>${secondsToHMS(sum, decimalsCriteria())}</td>
     <td style='font-size:150%'>${residual}</td>`
-        if (commBestILsCategory.name == '1.1+' && residualExtra) {
+        if (runRecapCategory.name == '1.1+' && trueResidual) {
             let dropdownContent = ''
             for (let i = 0; i <= 19; i += 0.5) {
                 dropdownContent += `<option value='${i}' ${globalStarSkips == i ? 'selected' : ''}>${i}</option>`
@@ -169,7 +169,7 @@ function generateResidual() {
                 <br><br>
                     **<span class='dim' style='font-size:70%'>
                         For all categories except 1.1+, Residual calculation uses Math.floor() on every IL time, which chops off the decimals.
-                        This is done to remain consistent with the Top ${commBestILsCategory.topRuns.length} example ILs, which do not contain decimals.
+                        This is done to remain consistent with the Top ${runRecapCategory.topRuns.length} example ILs, which do not contain decimals.
                         This can cause unexpected Residual variance between runs.
                         For this reason, take the Residual with a grain of salt.
                     </span>

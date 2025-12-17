@@ -73,7 +73,7 @@ function handleBossDropdown() {
         let altStratHTML = `
         <option value='none'>-- None --</option>
         <option value='other'>++ New alt strat ++</option>`
-        const altTest = alt[commBestILsCategory.tabName]
+        const altTest = alt[runRecapCategory.tabName]
         if (altTest) {
             if (altTest[level]) {
                 let prevStrat

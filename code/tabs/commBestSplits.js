@@ -1,6 +1,6 @@
 function generateCommBestSplits() {
     let HTMLContent = ''
-    if (commBestILsCategory.markin) {
+    if (runRecapCategory.markin) {
         HTMLContent += `<div>`
         HTMLContent += `<div class='container' style='padding-bottom:10px;gap:10px'>
         <div class='button cuphead' style='width:180px' onclick="processSavFile(0,true);playSound('ready')">View WR Run Recap</div>

@@ -2,7 +2,7 @@ function classicView() {
     let HTMLContent = ''
     HTMLContent += `<div class='container' style='gap:25px'>`
     assignIsles()
-    if (['DLC', 'DLC+Base'].includes(commBestILsCategory.name)) {
+    if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
         const isle = isles[4]
         HTMLContent += isleHeader(isle)
         isle.runRecapCategories.forEach(object => {
@@ -47,19 +47,19 @@ function savBoss(categoryIndex) {
         level = getCupheadLevel(categoryIndex)
         runTime = level?.bestTime
     } else {
-        runTime = rrcGlobalAttempt.bosses[categoryIndex]?.levelTime
+        runTime = rrcCurrentAttempt.bosses[categoryIndex]?.levelTime
     }
     const prevCategory = categories[categoryIndex - 1]
     if (prevCategory) category.runTime += prevCategory.runTime
     let HTMLContent = ''
     const done = runTime && runTime != nullTime
-    const comparisonTime = getComparisonTime(categoryIndex)
+    const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
     const delta = runRecapDelta(runTime, comparisonTime)
     const grade = done ? runRecapGrade(delta) : ''
     let comparisonContent = `<div>${secondsToHMS(comparisonTime)}</div>`
     if (savComparison == 'Top Bests') {
         comparisonContent += `<div class='container'>`
-        commBestILsCategory.topBestPlayers[categoryIndex].forEach(playerIndex => {
+        savComparisonCollection.topBestPlayers[categoryIndex].forEach(playerIndex => {
             const player = players[playerIndex]
             comparisonContent += getPlayerIcon(player, 16)
         })
@@ -75,25 +75,6 @@ function savBoss(categoryIndex) {
     HTMLContent += `<td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>`
     HTMLContent += `</tr>`
     return HTMLContent
-}
-function getComparisonTime(categoryIndex) {
-    if (savComparison == 'Top Average') {
-        return commBestILsCategory.top[categoryIndex]
-    } else if (savComparison == 'Top 3 Average') {
-        return commBestILsCategory.top3[categoryIndex]
-    } else if (savComparison == 'Top Bests') {
-        return commBestILsCategory.topBest[categoryIndex]
-    } else if (savComparison == 'Theory Run') {
-        return commBestILsCategory.theoryRun[categoryIndex]
-    } else if (savComparison == 'Run Viable ILs') {
-        return categories[categoryIndex].runs[0].score
-    } else if (savComparison == 'TAS') {
-        return commBestILsCategory.tas[categoryIndex]
-    } else if (savComparison.split('_')[0] == 'player') {
-        return commBestILsCategory.topRuns[parseInt(savComparison.split('_')[1])].runRecap[categoryIndex]
-    } else if (savComparison.split('_')[0] == 'database') {
-        return commBestILsCategory.database[categoryIndex]
-    }
 }
 function extraLevel(name, time) {
     return `<div class='container'>
@@ -118,7 +99,7 @@ function runRecapPlaceholder(runTime, categoryIndex) {
 }
 function savComparisonContent() {
     const savComparisonInfo = {
-        'Top Average': `Average of top ${commBestILsCategory.topRuns.length} players' boss times in their PBs`,
+        'Top Average': `Average of top ${runRecapCategory.topRuns.length} players' boss times in their PBs`,
         'Top 3 Average': "Average of top 3 players' boss times in their PBs",
         'Top Bests': "Best of top players' boss times in their PBs",
         'Theory Run': "Top 3 players' PB boss times averaged with Run Viable ILs",
@@ -128,13 +109,32 @@ function savComparisonContent() {
     let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
     // ['None', 'Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
     ['Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
-        if (!(!['1.1+'].includes(commBestILsCategory.name) && ['TAS'].includes(option))) {
+        if (!(!['1.1+'].includes(runRecapCategory.name) && ['TAS'].includes(option))) {
             HTMLContent += `
         <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('${option}');action()">
         <div>${option}</div>
         <div style='color:gray;font-size:70%;'>${savComparisonInfo[option] || ''}</div>
         </div>`
         }
+    })
+    HTMLContent += `</div>`
+    HTMLContent += runRecapExamples(true)
+    HTMLContent += `</div>`
+    return HTMLContent
+}
+function rrcComparisonContent() {
+    const rrcComparisonInfo = {
+        'Top Average': `Average of top ${runRecapCategory.topRuns.length} players' segment times in their PBs`,
+        'Top 3 Average': "Average of top 3 players' segment times in their PBs",
+        'Top Bests': "Best of top players' segment times in their PBs"
+    }
+    let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
+    ['Top Average', 'Top 3 Average', 'Top Bests'].forEach((option, index) => {
+        HTMLContent += `
+        <div class='grow ${getRowColor(index)} ${rrcComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('${option}');action()">
+        <div>${option}</div>
+        <div style='color:gray;font-size:70%;'>${rrcComparisonInfo[option] || ''}</div>
+        </div>`
     })
     HTMLContent += `</div>`
     HTMLContent += runRecapExamples(true)
