@@ -37,7 +37,7 @@ function rrcOrganize(attempt) {
             attempt.intermissionTime += scene.segment
         } else if (boss) {
             attempt.bossTime += scene.segment
-            if (scene.levelTime) {
+            if (scene.levelTime && !scene.name.startsWith('level_dice_palace')) {
                 scene.map = mapTime
                 mapTime = 0
                 scene.scorecard = attempt.scenes[index + 1]
@@ -171,7 +171,7 @@ function generate_rrc() {
         HTMLContent += rrcExtraTable('cutscenes', cupheadCutscenes)
         HTMLContent += `</div>
         </div>`
-        if (rrcCurrentAttempt.scenes.at(-1).name == 'level_devil') {
+        if (rrcCurrentAttempt.scenes.at(-1)?.name == 'level_devil') {
             HTMLContent += fancyScorecard()
         }
         HTMLContent += `</div>`
@@ -192,7 +192,7 @@ function rrcUpdateBrowser() {
     runRecap_rrcFile.attempts.forEach((attempt, index) => {
         let content = attempt.id + ' - ' + attempt.startedAt
         const lastScene = attempt.scenes.at(-1)
-        if (lastScene.name == 'level_devil') {
+        if (lastScene?.name == 'level_devil') {
             content += ' - ' + secondsToHMS(lastScene.endTime)
         }
         HTMLContent += `<option value='${index}' ${rrcAttemptIndex == index ? 'selected' : ''}>${content}</option>`
@@ -206,7 +206,7 @@ function rrcUpdateBrowser() {
         if (attempt) {
             let className = ''
             if (attempt.scenes.length <= 3) className = 'dim'
-            if (attempt.scenes.at(-1).name == 'level_devil') className = 'myekulColor'
+            if (attempt.scenes.at(-1)?.name == 'level_devil') className = 'myekulColor'
             HTMLContent += `<div class='clickable ${className}' style='text-align:center;width:14px;font-size:${rrcAttemptIndex == i ? '80%' : '50%'}' onclick="rrcChangeIndex(${i})">${fontAwesome('circle')}</div>`
         } else {
             HTMLContent += `<div style='width:14px'></div>`

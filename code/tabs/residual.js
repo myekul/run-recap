@@ -64,7 +64,7 @@ function generateResidual() {
                     starSkipTime += 0.5
                 }
             })
-            const trueResidual = calculateTrueResidual(residual, starSkipTime, run.framerule, run.follies, run.cala, run.werner, run.kd)
+            const trueResidualValue = calculateTrueResidual(residual, starSkipTime, run.framerule, run.follies, run.cala, run.werner, run.kd)
             HTMLContent += `<td class='dim' style='font-size:70%'>
             <div class='container' style='justify-content:left;gap:2px;padding:0 3px'>
             ${fontAwesome('star')}
@@ -73,7 +73,7 @@ function generateResidual() {
             </td>`
             if (trueResidual) {
                 HTMLContent += residualIcons(run)
-                HTMLContent += `<td class='myekulColor'>${trueResidual}</td>`
+                HTMLContent += `<td class='myekulColor'>${trueResidualValue}</td>`
             }
             if (index == 0 && !trueResidual) {
                 HTMLContent += `<td rowspan=10 class='clickable gray' onclick="trueResidual=!trueResidual;action();playSound('move')">${fontAwesome('chevron-right')}</td>`

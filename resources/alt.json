@@ -1119,14 +1119,14 @@
             },
             {
                 "name": "2-Gun, Squid",
-                "time": 38.36,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/KYlqjQbUo8U"
+                "time": 37.35,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/clVwGnQHxQ4"
             },
             {
                 "name": "2-Gun, Shark",
                 "time": 38.49,
-                "player": "Quincely0",
+                "player": "SBDWolf",
                 "url": "https://youtu.be/RdDpE3uSoRE"
             },
             {
@@ -2024,10 +2024,16 @@
         ],
         "goopylegrande": [
             {
-                "name": "",
+                "name": "TAS Strat",
                 "time": 16.58,
                 "player": "Yuka",
                 "url": "https://youtu.be/KMAPzlswXvY"
+            },
+            {
+                "name": "Run Viable Strat",
+                "time": 17.58,
+                "player": "Yuka",
+                "url": "https://youtu.be/6GY9L_zVTno"
             },
             {
                 "name": "Parries",
@@ -2048,15 +2054,15 @@
             },
             {
                 "name": "Trollnado",
-                "time": 55.77,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/AgavAC1iIEA"
+                "time": 54.96,
+                "player": "Yuka",
+                "url": "https://youtu.be/UAay-LSNca8"
             },
             {
                 "name": "Ha-Trollnado",
-                "time": 55.86,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/dxuo5UhsDfU"
+                "time": 55.42,
+                "player": "Yuka",
+                "url": "https://youtu.be/xrE525etW14"
             }
         ],
         "cagneycarnation": [
