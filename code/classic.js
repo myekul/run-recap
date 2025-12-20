@@ -2,6 +2,19 @@ function classicView() {
     let HTMLContent = ''
     HTMLContent += `<div class='container' style='gap:25px'>`
     assignIsles()
+    if (globalTab == 'sav') {
+        const follies = getCupheadLevel(runNguns[0].levelID, true)
+        const treetop = getCupheadLevel(runNguns[1].levelID, true)
+        HTMLContent += `<div>`
+        if (follies.bestTime != nullTime && treetop.bestTime == nullTime) {
+            HTMLContent += extraLevel('forestfollies', follies.bestTime)
+        }
+        const mausoleum = getCupheadLevel(mausoleumID, true)
+        if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
+            HTMLContent += extraLevel('mausoleum', mausoleum.bestTime)
+        }
+        HTMLContent += `</div>`
+    }
     if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
         const isle = isles[4]
         HTMLContent += isleHeader(isle)
@@ -32,10 +45,10 @@ function classicView() {
         HTMLContent += `</div>`
     })
     HTMLContent += `</div>`
-    HTMLContent += `
-        <div class='container grow' style='color:gray;font-size:120%;width:50px' onclick="savComparisonView=!savComparisonView;playSound('move');action()">
-        ${fontAwesome('ellipsis-h')}
-        </div>`
+    // HTMLContent += `
+    //     <div class='container grow' style='color:gray;font-size:120%;width:50px' onclick="savComparisonView=!savComparisonView;playSound('move');action()">
+    //     ${fontAwesome('ellipsis-h')}
+    //     </div>`
     if (savComparisonView) HTMLContent += savComparisonContent()
     return HTMLContent
 }

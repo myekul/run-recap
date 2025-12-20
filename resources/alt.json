@@ -771,6 +771,12 @@
                 "url": "https://youtu.be/r0H3T41dgUA"
             },
             {
+                "name": "Down Gun",
+                "time": 49.56,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/OGaDL6KLeqg"
+            },
+            {
                 "name": "Up Eggs",
                 "time": 49.77,
                 "player": "Misterbutter444",
@@ -1258,7 +1264,7 @@
                 "url": "https://youtu.be/JzJJD3_PQzk"
             },
             {
-                "name": "2-2 Squid",
+                "name": "2-2 Squid, Gun",
                 "time": 38.44,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/12I19u4F3b0"
@@ -1402,10 +1408,10 @@
             },
             {
                 "name": "L Pumpkin, L Cart Final",
-                "time": 57.48,
-                "rta": 59.12,
+                "time": 56.64,
+                "rta": 58.30,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/L82I_PlmAuw"
+                "url": "https://youtu.be/cNlgq_i0x_c"
             },
             {
                 "name": "L Pumpkin",
@@ -1610,10 +1616,16 @@
                 "title": "Triples"
             },
             {
-                "name": "Spin, 5 Cards",
+                "name": "Spin, 5 Cards (Dash)",
                 "time": 9.54,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/XKClpuA9V_4"
+            },
+            {
+                "name": "Spin, 5 Cards",
+                "time": 9.74,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/UguybSEYODk?si=gRolEVqLq3rAT12K&t=97"
             },
             {
                 "name": "Charge, 5 Cards, 3 HP",
@@ -1622,16 +1634,16 @@
                 "url": "https://youtu.be/_IX5qo9yW-k"
             },
             {
+                "name": "Charge, 5 Cards, 2 HP",
+                "time": "12.60",
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/_xSJ4K-F3qA"
+            },
+            {
                 "name": "Charge, 4 Cards, 3 HP",
                 "time": 12.15,
                 "player": "HappyWolf",
                 "url": "https://youtube.com/clip/UgkxcLrqnIdG5w7qsBrSZSZ-I_GqdOn15U0f?si=Vj78I3tx8UNn9tFY"
-            },
-            {
-                "name": "Charge-5, 4.5 Cards, 2 HP",
-                "time": 14.25,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/YLyUa0CcUrM?si=dM89PXdLk7u7RfEe&t=100"
             },
             {
                 "title": "Doubles"
@@ -1649,10 +1661,10 @@
                 "url": "https://youtu.be/De3j4IuZZnQ"
             },
             {
-                "name": "Charge-5, 4.5 Cards, 2 HP",
-                "time": 15.33,
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/eKWOeYdjTQM?si=J1dMoAEY94110Mkt&t=104"
+                "name": "Charge-5, 5 Cards, 2 HP",
+                "time": 13.82,
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/nXuWSfMFWQU"
             }
         ],
         "kingdice2": [
@@ -1733,9 +1745,9 @@
             },
             {
                 "name": "Clap Ring Dragon",
-                "time": 41.35,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/zqiYj4CIhLQ"
+                "time": 41.31,
+                "player": "myekul",
+                "url": "https://youtu.be/9A_Ydc8biSg"
             },
             {
                 "name": "Ring Clap Dragon",

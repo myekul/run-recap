@@ -14,17 +14,6 @@ function generate_sav() {
             document.getElementById('runRecap_numDeaths').innerHTML = ''
             hide('runRecap_ghost')
         }
-        const follies = getCupheadLevel(runNguns[0].levelID, true)
-        const treetop = getCupheadLevel(runNguns[1].levelID, true)
-        HTMLContent += `<div style='margin-right:25px'>`
-        if (follies.bestTime != nullTime && treetop.bestTime == nullTime) {
-            HTMLContent += extraLevel('forestfollies', follies.bestTime)
-        }
-        const mausoleum = getCupheadLevel(mausoleumID, true)
-        if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
-            HTMLContent += extraLevel('mausoleum', mausoleum.bestTime)
-        }
-        HTMLContent += `</div>`
         HTMLContent += classicView()
     } else {
         HTMLContent += `<div class='container'>No .sav file uploaded!</div>`
