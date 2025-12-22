@@ -38,7 +38,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
             attempt.cutsceneTime += scene.segment
         } else if (boss || runNgun) {
             attempt.levelTime += scene.segment
-            if (runNgun || !(boss?.id == 'kingdice' && scenes[index + 1]?.name != 'win')) {
+            if ((scene.name == 'level_devil' && index == scenes.length - 1) || scenes[index + 1]?.name == 'win') {
                 scene.topBest.map = rrcTopBests[index - 1]
                 scene.topBest.scorecardSegment = rrcTopBests[index + 1]
                 scene.map = mapTime
