@@ -45,14 +45,12 @@ function generateTop10() {
         HTMLContent += `<tr class='hover ${getRowColor(index)}'>
             ${bigPlayerDisplay(players[index])}`
         let sum = 0
-        if (index) {
-            run.splits = [
-                convertToSeconds(runRecapCategory.topRuns[index].rrc[22].endTime) - 6.45,
-                convertToSeconds(runRecapCategory.topRuns[index].rrc[40].endTime) - 6.45,
-                convertToSeconds(runRecapCategory.topRuns[index].rrc[64].endTime) - 6.45,
-                runRecapCategory.runs[index].score
-            ]
-        }
+        run.splits = [
+            convertToSeconds(runRecapCategory.topRuns[index].rrc[22].endTime) - 6.45,
+            convertToSeconds(runRecapCategory.topRuns[index].rrc[40].endTime) - 6.45,
+            convertToSeconds(runRecapCategory.topRuns[index].rrc[64].endTime) - 6.45,
+            runRecapCategory.runs[index].score
+        ]
         run.splits.forEach((time, isleIndex) => {
             const isle = isles[isleIndex]
             const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])

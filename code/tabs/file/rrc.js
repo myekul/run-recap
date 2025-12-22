@@ -50,6 +50,8 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 if (scene.scorecard?.parries) scene.trueScorecard -= 0.8
                 if (scene.scorecard?.superMeter) scene.trueScorecard -= 0.8
                 if (scene.scorecard?.coins) scene.trueScorecard -= 0.8
+                // scene.split = scene.scorecardSegment?.endTime || scene.endTime
+                // scene.split = convertToSeconds(scene.split)
                 attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
@@ -98,15 +100,22 @@ function generate_rrc() {
                             <div>${rrcComparisonText}</div>
                         </div>`
         HTMLContent += `
-        <div class='container' style='align-items:flex-start;gap:30px'>
-            ${rrcExtraTable('Map Movement', 'map', cupheadBosses)
+        <div class='container'>
+            <div>
+                <div class='container' style='align-items:flex-start;gap:30px'>
+                    ${rrcExtraTable('Map Movement', 'map', cupheadBosses)
             + rrcExtraTable('Level RTA', 'levels', cupheadBosses)
             + rrcExtraTable('Scorecards', 'scorecard', cupheadBosses)}
-        </div>
-        <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
-            ${rrcExtraTable('Intermissions', 'intermissions', cupheadIntermissions)
+                </div>
+                <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
+                    ${rrcExtraTable('Intermissions', 'intermissions', cupheadIntermissions)
             + rrcExtraTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
-        </div>`
+                </div>
+            </div>`
+        // HTMLContent += `<div>
+        //             ${rrcExtraTable('SPLITS', 'split', cupheadBosses)}
+        //     </div>`
+        HTMLContent += `</div>`
         HTMLContent += `</div>`
         if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
             HTMLContent += fancyScorecard()
@@ -134,10 +143,12 @@ function rrcExtraTable(title, field, sceneNames) {
     let attemptField = field
     if (field == 'map') attemptField = 'levels'
     if (field == 'scorecard') attemptField = 'levels'
+    if (field == 'split') attemptField = 'levels'
     let thingToAnalyze = 'segment'
     if (field == 'levels') thingToAnalyze = 'rta'
     if (field == 'map') thingToAnalyze = 'map'
     if (field == 'scorecard') thingToAnalyze = 'scorecardSegment'
+    if (field == 'split') thingToAnalyze = 'split'
     rrcCurrentAttempt[attemptField].forEach((scene, index) => {
         const runNgun = cupheadRunNguns[scene.name]
         const level = cupheadBosses[scene.name] || cupheadRunNguns[scene.name]
@@ -165,10 +176,9 @@ function rrcExtraTable(title, field, sceneNames) {
 function rrcUpdateBrowser() {
     let HTMLContent = ''
     HTMLContent += `<div class='container'>
-        <div class='grow ${rrcAttemptIndex == runRecap_rrcFile.attempts.length - 1 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex + 1})">${fontAwesome('chevron-left')}</div>
         <select onchange="rrcChangeIndex(parseInt(this.value),true)">`
     runRecap_rrcFile.attempts.forEach((attempt, index) => {
-        let content = attempt.id + ' - ' + attempt.startedAt
+        let content = attempt.lssAttemptId + ' - ' + attempt.startedAt
         const lastScene = attempt.scenes.at(-1)
         if (lastScene?.name == 'level_devil') {
             content += ' - ' + secondsToHMS(lastScene.endTime)
@@ -176,9 +186,9 @@ function rrcUpdateBrowser() {
         HTMLContent += `<option value='${index}' ${rrcAttemptIndex == index ? 'selected' : ''}>${content}</option>`
     })
     HTMLContent += `</select>
-        <div class='grow ${rrcAttemptIndex == 0 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex - 1})">${fontAwesome('chevron-right')}</div>
         </div>`
-    HTMLContent += `<div class='container' style='gap:2px;margin:3px'>`
+    HTMLContent += `<div class='container' style='gap:2px;margin:3px'>
+            <div class='grow ${rrcAttemptIndex == runRecap_rrcFile.attempts.length - 1 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex + 1})">${fontAwesome('chevron-left')}</div>`
     for (let i = rrcAttemptIndex + 7; i >= rrcAttemptIndex - 7; i--) {
         const attempt = runRecap_rrcFile.attempts[i]
         if (attempt) {
@@ -190,7 +200,8 @@ function rrcUpdateBrowser() {
             HTMLContent += `<div style='width:14px'></div>`
         }
     }
-    HTMLContent += `</div>`
+    HTMLContent += `<div class='grow ${rrcAttemptIndex == 0 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex - 1})">${fontAwesome('chevron-right')}</div>
+    </div>`
     document.getElementById('rrcBrowser').innerHTML = HTMLContent
 }
 function rrcRaw() {
