@@ -1,4 +1,14 @@
-function rrcOrganize(attempt) {
+function rrcSegments(scenes) {
+    scenes.forEach((scene, index) => {
+        scene.segment = parseFloat(scene.endTime)
+        if (index) {
+            scene.segment = convertToSeconds(scene.endTime) - convertToSeconds(scenes[index - 1].endTime)
+        }
+    })
+}
+function rrcOrganize(attempt, scenes, doSegments) {
+    attempt.scenes = scenes
+    attempt.levels = []
     attempt.runNguns = []
     attempt.bosses = []
     attempt.intermissions = []
@@ -8,20 +18,17 @@ function rrcOrganize(attempt) {
     attempt.mapTime = 0
     attempt.cutsceneTime = 0
     attempt.scorecardTime = 0
-    attempt.scenes.forEach((scene, index) => {
-        scene.segment = parseFloat(scene.endTime)
-        if (index) {
-            scene.segment = convertToSeconds(scene.endTime) - convertToSeconds(attempt.scenes[index - 1].endTime)
-        }
-    })
+    if (doSegments) rrcSegments(scenes)
     let mapTime = 0
     let kdTotal = 0
-    attempt.scenes.forEach((scene, index) => {
+    // Separate bosses, map, scorecards?
+    scenes.forEach((scene, index) => {
+        scene.topBest = { segment: rrcTopBests[index] }
         const boss = cupheadBosses[scene.name]
         const runNgun = cupheadRunNguns[scene.name]
         if (scene.name.startsWith('level_dice_palace')) {
             kdTotal += scene.segment
-            if (attempt.scenes[index + 1].name == 'win') scene.kdTotal = kdTotal
+            if (scenes[index + 1].name == 'win') scene.kdTotal = kdTotal
         }
         if (scene.name.startsWith('map')) {
             mapTime += scene.segment
@@ -31,7 +38,9 @@ function rrcOrganize(attempt) {
             attempt.cutsceneTime += scene.segment
         } else if (boss || runNgun) {
             attempt.levelTime += scene.segment
-            if (runNgun || (scene.levelTime && !(boss?.id == 'kingdice' && attempt.scenes[index + 1]?.name != 'win'))) {
+            if (runNgun || !(boss?.id == 'kingdice' && scenes[index + 1]?.name != 'win')) {
+                scene.topBest.map = rrcTopBests[index - 1]
+                scene.topBest.scorecardSegment = rrcTopBests[index + 1]
                 scene.map = mapTime
                 mapTime = 0
                 scene.scorecard = attempt.scenes[index + 1]
@@ -41,8 +50,15 @@ function rrcOrganize(attempt) {
                 if (scene.scorecard?.parries) scene.trueScorecard -= 0.8
                 if (scene.scorecard?.superMeter) scene.trueScorecard -= 0.8
                 if (scene.scorecard?.coins) scene.trueScorecard -= 0.8
+                attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
+                scene.rta = scene.segment
+                scene.topBest.rta = rrcTopBests[index]
+                if (boss) {
+                    if (scene.scorecard) scene.rta -= 6.45
+                    if (scene.kdTotal) scene.rta = scene.kdTotal - 6.45 * 5
+                }
             }
         } else if (scene.name == 'win') {
             attempt.scorecardTime += scene.segment
@@ -52,6 +68,20 @@ function rrcOrganize(attempt) {
             attempt.intermissionTime += scene.segment
             attempt.intermissions.push(scene)
         }
+        attempt.scenes
+    })
+}
+function reconstructRRC(endTimes, playerIndex) {
+    bossIndex = 0
+    endTimes.forEach((endTime, index) => {
+        const newScene = { name: rrc80[index], endTime: endTime }
+        if (cupheadBosses[newScene.name]) {
+            if (!(newScene.name == 'level_dice_palace_main' && rrc80[index + 1] != 'win')) {
+                newScene.levelTime = runRecapCategory.topRuns[playerIndex].runRecap[bossIndex]
+                bossIndex++
+            }
+        }
+        runRecapCategory.topRuns[playerIndex].rrc.push(newScene)
     })
 }
 function generate_rrc() {
@@ -59,64 +89,25 @@ function generate_rrc() {
     if (runRecap_rrcFile.attempts) {
         rrcUpdateBrowser()
         rrcCurrentAttempt = { scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.map(s => ({ ...s })) }
-        rrcOrganize(rrcCurrentAttempt)
-        rrcComparisonAttempt = { scenes: [] }
-        bossIndex = 0
-        runRecapCategory.topRuns[rrcComparisonIndex].rrc.endTimes.forEach((endTime, index) => {
-            const newScene = { name: rrc80[index], endTime: endTime }
-            if (cupheadBosses[newScene.name]) {
-                if (!(newScene.name == 'level_dice_palace_main' && rrc80[index + 1] != 'win')) {
-                    newScene.levelTime = runRecapCategory.topRuns[rrcComparisonIndex].runRecap[bossIndex]
-                    bossIndex++
-                }
-            }
-            rrcComparisonAttempt.scenes.push(newScene)
-        })
-        rrcOrganize(rrcComparisonAttempt)
+        rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
+        if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
         HTMLContent += classicView()
-        // HTMLContent += `<div class="container grow dim" style="margin:0;gap:10px"
-        //                     onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
-        //                     &Delta;
-        //                     <div>${rrcComparison}</div>
-        //                 </div>`
-        HTMLContent += `<div class='container' style='gap:20px;align-items:flex-start;margin-top:20px'>`
-        HTMLContent += `</div>`
-        function levelSection(levels, source) {
-            let HTMLContent = ''
-            // Levels
-            HTMLContent += `<div class='container' style='align-items:flex-start;gap:30px'>
-        <div class='border background1' style='padding:8px'>
-        <div class='font2 container' style='font-size:150%'>Map Movement</div>`
-            HTMLContent += rrcExtraTable('map', levels, source)
-            HTMLContent += `</div>`
-            HTMLContent += `<div class='border background1' style='padding:8px'>
-        <div class='font2 container' style='font-size:150%'>Level RTA</div>`
-            HTMLContent += rrcExtraTable(source, levels, source)
-            HTMLContent += `</div>`
-            HTMLContent += `<div class='border background1' style='padding:8px'>
-        <div class='font2 container' style='font-size:150%'>Scorecards</div>`
-            HTMLContent += rrcExtraTable('scorecard', levels, source)
-            HTMLContent += `</div>`
-            HTMLContent += `</div>`
-            return HTMLContent
-        }
-        // HTMLContent += levelSection(cupheadRunNguns, 'runNguns')
-        HTMLContent += levelSection(cupheadBosses, 'bosses')
-        // Intermissions
+        HTMLContent += `<div class="container grow dim" style="margin:20px;gap:10px"
+                            onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
+                            &Delta;
+                            <div>${rrcComparisonText}</div>
+                        </div>`
         HTMLContent += `
+        <div class='container' style='align-items:flex-start;gap:30px'>
+            ${rrcExtraTable('Map Movement', 'map', cupheadBosses)
+            + rrcExtraTable('Level RTA', 'levels', cupheadBosses)
+            + rrcExtraTable('Scorecards', 'scorecard', cupheadBosses)}
+        </div>
         <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
-        <div class='border background1' style='padding:8px'>
-        <div class='font2 container' style='font-size:150%'>Intermissions</div>
-        <div class='container' style='align-items:flex-start;gap:20px'>`
-        HTMLContent += rrcExtraTable('intermissions', cupheadIntermissions)
-        HTMLContent += `</div>
+            ${rrcExtraTable('Intermissions', 'intermissions', cupheadIntermissions)
+            + rrcExtraTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
         </div>`
-        // Cutscenes
-        HTMLContent += `<div class='border background1' style='padding:8px'>
-        <div class='font2 container' style='font-size:150%'>Cutscenes</div>`
-        HTMLContent += rrcExtraTable('cutscenes', cupheadCutscenes)
-        HTMLContent += `</div>
-        </div>`
+        HTMLContent += `</div>`
         if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
             HTMLContent += fancyScorecard()
         }
@@ -130,40 +121,45 @@ function generate_rrc() {
     }
     document.getElementById('content').innerHTML = HTMLContent
 }
-function rrcExtraTable(field, sceneNames, levelType) {
+function rrcExtraTable(title, field, sceneNames) {
     let HTMLContent = ''
-    HTMLContent += `<table>
-            <tr class='gray'>
-            <td colspan=10 style='font-size:10%'>&nbsp;</td>
-            <tr>`
+    HTMLContent += `
+        <div class='border background1' style='padding:8px'>
+        <div class='font2 container' style='font-size:150%'>${title}</div>
+        <div class='container'><table>
+        <tr class='gray'>
+        <td colspan=10 style='font-size:10%'>&nbsp;</td>
+        <tr>`
     let deltaSum = 0
     let attemptField = field
-    if (field == 'map') attemptField = levelType
-    if (field == 'scorecard') attemptField = levelType
+    if (field == 'map') attemptField = 'levels'
+    if (field == 'scorecard') attemptField = 'levels'
     let thingToAnalyze = 'segment'
+    if (field == 'levels') thingToAnalyze = 'rta'
     if (field == 'map') thingToAnalyze = 'map'
     if (field == 'scorecard') thingToAnalyze = 'scorecardSegment'
     rrcCurrentAttempt[attemptField].forEach((scene, index) => {
+        const runNgun = cupheadRunNguns[scene.name]
+        const level = cupheadBosses[scene.name] || cupheadRunNguns[scene.name]
         let currentSegment = scene[thingToAnalyze]
-        if (field == 'bosses' && scene.name == 'level_dice_palace_main') currentSegment = scene.kdTotal - (6.45 * 4)
-        if (field == 'bosses' && scene.scorecard) currentSegment -= 6.45
         let comparisonSegment = rrcComparisonAttempt[attemptField][index][thingToAnalyze]
-        if (field == 'bosses' && scene.name == 'level_dice_palace_main') comparisonSegment = rrcComparisonAttempt[attemptField][index].kdTotal - (6.45 * 4)
-        if (field == 'bosses' && scene.scorecard) comparisonSegment -= 6.45
         const delta = (currentSegment - comparisonSegment) || 0
         deltaSum += delta
-        const content = attemptField == levelType ? getImage(sceneNames[scene.name].id, 21) : sceneNames[scene.name]
+        const content = level ? getImage(runNgun ? 'runnguns/' + level.id : level.id, 21) : sceneNames[scene.name]
         HTMLContent += `<tr class='${getRowColor(index)}'>
-            <td class='${attemptField == levelType ? 'container ' + sceneNames[scene.name].id : ''}' style='text-align:left'>${content}</td>
-            <td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>
-            <td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>
-            <td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>
-            </tr>`
+            <td class='${level ? 'container ' + level.id : ''}' style='text-align:left'>${content}</td>
+            <td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`
+        if (rrcComparison != 'None') {
+            HTMLContent +=
+                `<td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>
+            <td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>`
+        }
+        if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
+        HTMLContent += `</tr>`
     })
-    HTMLContent += `<tr>
-            <td colspan=10 class='${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</td>
-            </tr>
-            </table>`
+    HTMLContent += `</table></div>`
+    if (rrcComparison != 'None') HTMLContent += `<div class='container ${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</div>`
+    HTMLContent += `</div>`
     return HTMLContent
 }
 function rrcUpdateBrowser() {

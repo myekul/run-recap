@@ -11,12 +11,14 @@ let runRecap_lssFile = {}
 let runRecap_rrcFile = {}
 
 let rrcAttemptIndex = 0
+
 let rrcCurrentAttempt = {}
 let rrcComparisonAttempt = {}
 
-let rrcComparisonCollection = { "Top Bests": new Array(80).fill(Infinity), }
-let rrcComparison
-let rrcComparisonIndex = 1
+let rrcComparisonCollection = { "Top Bests": new Array(80).fill({ segment: Infinity }) }
+let rrcComparison = 'Top Bests'
+let rrcComparisonText = 'Top Bests'
+let rrcTopBests = []
 
 let runRecap_markin
 let runRecapTime

@@ -47,9 +47,9 @@ function generateTop10() {
         let sum = 0
         if (index) {
             run.splits = [
-                convertToSeconds(runRecapCategory.topRuns[index].rrc.endTimes[22]) - 6.45,
-                convertToSeconds(runRecapCategory.topRuns[index].rrc.endTimes[40]) - 6.45,
-                convertToSeconds(runRecapCategory.topRuns[index].rrc.endTimes[64]) - 6.45,
+                convertToSeconds(runRecapCategory.topRuns[index].rrc[22].endTime) - 6.45,
+                convertToSeconds(runRecapCategory.topRuns[index].rrc[40].endTime) - 6.45,
+                convertToSeconds(runRecapCategory.topRuns[index].rrc[64].endTime) - 6.45,
                 runRecapCategory.runs[index].score
             ]
         }

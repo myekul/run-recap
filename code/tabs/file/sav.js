@@ -1,24 +1,28 @@
 function generate_sav() {
     let HTMLContent = ''
     if (runRecap_savFile) {
-        const numDeaths = runRecap_savFile.statictics.playerOne.numDeaths
-        if (numDeaths) {
-            show('runRecap_ghost')
-            document.getElementById('runRecap_numDeaths').innerHTML = numDeaths
-            let char = runRecap_savFile.isPlayer1Mugman ? 'mugman' : 'cuphead'
-            if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
-                char = 'chalice'
-            }
-            document.getElementById('runRecap_ghost').src = `https://myekul.com/shared-assets/cuphead/images/extra/ghost_${char}.png`
-        } else {
-            document.getElementById('runRecap_numDeaths').innerHTML = ''
-            hide('runRecap_ghost')
-        }
+        handleNumDeaths()
         HTMLContent += classicView()
     } else {
+        // HTMLContent += `<div class='container'>${fileInfoCard('sav')}</div>`
         HTMLContent += `<div class='container'>No .sav file uploaded!</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
+}
+function handleNumDeaths() {
+    const numDeaths = runRecap_savFile.statictics.playerOne.numDeaths
+    if (numDeaths) {
+        show('runRecap_ghost')
+        document.getElementById('runRecap_numDeaths').innerHTML = numDeaths
+        let char = runRecap_savFile.isPlayer1Mugman ? 'mugman' : 'cuphead'
+        if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
+            char = 'chalice'
+        }
+        document.getElementById('runRecap_ghost').src = `https://myekul.com/shared-assets/cuphead/images/extra/ghost_${char}.png`
+    } else {
+        document.getElementById('runRecap_numDeaths').innerHTML = ''
+        hide('runRecap_ghost')
+    }
 }
 function processSavFile(playerIndex, display) {
     fetch('https://myekul.com/shared-assets/cuphead/sav.json')

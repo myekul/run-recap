@@ -207,33 +207,6 @@ function runRecapMusic() {
     <iframe width="150" height="150" src="${src}&amp;controls=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     `
 }
-function runRecapExamples(comparison) {
-    let HTMLContent = `<div><table>`
-    players.slice(0, runRecapCategory.topRuns.length).forEach((player, playerIndex) => {
-        if (player.extra) {
-            const onclick = comparison ? `playerComparison(${playerIndex},'${player.name}','${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('ready')`
-            HTMLContent += `<tr class='${savComparison == 'Player ' + playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
-            HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
-            HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
-            HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
-            HTMLContent += `</tr>`
-        }
-    })
-    HTMLContent += `</table>`
-    HTMLContent += `
-    <div class='container' style='margin-top:10px'>
-        <div class='button cuphead' style='gap:5px;width:170px' onclick="savDatabase(${comparison})">
-            ${fontAwesome('cloud')}
-            Browse database
-        </div>
-    </div>`
-    HTMLContent += `</div>`
-    return HTMLContent
-}
-function playerComparison(playerIndex, playerName, time) {
-    changeComparison('Player ' + playerIndex, playerName, time)
-    action()
-}
 function runRecapCopy() {
     let clipboardContent = ''
     if (globalTab == 'sav') {

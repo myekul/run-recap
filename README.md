@@ -21,7 +21,8 @@
 
 - RRC
     - Upload
-    - Comparison infrastructure
+    - Resets / Deaths
+    - Split before/after
 
 - Info section
 

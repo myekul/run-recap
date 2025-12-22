@@ -182,10 +182,6 @@ th {
     background-color: tomato;
 }
 
-#fileTypes div {
-    width: 330px
-}
-
 .fileType .dim {
     font-size: 80%
 }

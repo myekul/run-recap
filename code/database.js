@@ -36,7 +36,7 @@ function databaseComparison(sav, player, time) {
     sav.split(',').forEach((time, index) => {
         savComparisonCollection['Database'][index] = time
     })
-    changeComparison('Database', player, time)
+    changeComparison('sav', 'Database', player + ' - ' + time)
     action()
 }
 function runRecapUploadButton() {

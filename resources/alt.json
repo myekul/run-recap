@@ -1282,10 +1282,10 @@
             },
             {
                 "name": "Red Fish, Pufferfish, Ghosts",
-                "time": 50.96,
-                "rta": 52.06,
-                "player": "Lewzr",
-                "url": "https://youtu.be/WHPWKFNR1wY"
+                "time": 50.58,
+                "rta": 51.68,
+                "player": "Taylz",
+                "url": "https://youtu.be/M7EBKUvNAEs"
             },
             {
                 "name": "Red Fish, Turtle, Ghosts",
@@ -1511,10 +1511,10 @@
             },
             {
                 "name": "Worst RNG",
-                "time": "1:55.61",
-                "rta": "1:58.31",
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/eKWOeYdjTQM"
+                "time": "1:51.92",
+                "rta": "1:54.44",
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/L6aavF1k9eI"
             },
             {
                 "title": "Other"
@@ -1635,9 +1635,9 @@
             },
             {
                 "name": "Charge, 5 Cards, 2 HP",
-                "time": "12.60",
+                "time": 12.15,
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/_xSJ4K-F3qA"
+                "url": "https://youtu.be/wb9h6_BjHMo"
             },
             {
                 "name": "Charge, 4 Cards, 3 HP",
@@ -1662,17 +1662,17 @@
             },
             {
                 "name": "Charge-5, 5 Cards, 2 HP",
-                "time": 13.82,
+                "time": "13.80",
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/nXuWSfMFWQU"
+                "url": "https://www.youtube.com/watch?v=L6aavF1k9eI&t=103s"
             }
         ],
         "kingdice2": [
             {
                 "name": "<1 Card",
-                "time": 25.55,
+                "time": "25.30",
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/YLyUa0CcUrM?si=T5sws7Ym5INODkV8&t=122"
+                "url": "https://www.youtube.com/watch?v=L6aavF1k9eI&t=122s"
             }
         ],
         "thedevil": [
@@ -2091,6 +2091,24 @@
                 "time": 25.33,
                 "player": "Yuka",
                 "url": "https://youtu.be/_Syd5_MMP00"
+            },
+            {
+                "name": "Gumball, Waffle, Jawbreaker",
+                "time": 29.57,
+                "player": "Yuka",
+                "url": "https://youtu.be/VYbyvRwrLAs"
+            },
+            {
+                "name": "Gumball, Waffle, Cupcake",
+                "time": 26.48,
+                "player": "Yuka",
+                "url": "https://youtu.be/fFj-sp5GLoE"
+            },
+            {
+                "name": "Gumball, Waffle, Candy Corn",
+                "time": 26.98,
+                "player": "Yuka",
+                "url": "https://youtu.be/WTdoS7rc2dQ"
             }
         ],
         "wallywarbles": [

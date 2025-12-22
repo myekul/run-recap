@@ -20,19 +20,26 @@ document.addEventListener('DOMContentLoaded', function () {
                         .then(response => response.json())
                         .then(data => {
                             for (const category in data) {
+                                rrcTopBests = new Array(rrc80.length).fill([])
                                 data[category].forEach((rrc, index) => {
+                                    commBestILs[category].topRuns[index].rrc = []
                                     if (rrc.scenes) {
                                         rrc.endTimes = []
                                         rrc.scenes.forEach(scene => {
                                             rrc.endTimes.push(scene.endTime)
                                         })
+                                        runRecapCategory.topRuns[index].rrc = rrc.scenes
+                                    } else {
+                                        reconstructRRC(rrc.endTimes, index)
                                     }
-                                    commBestILs[category].topRuns[index].rrc = rrc
-                                    rrcComparisonCollection['Player ' + index] = rrc.endTimes
-                                    rrc.endTimes.forEach((endTime, index) => {
-                                        endTime = convertToSeconds(endTime)
-                                        if (endTime < rrcComparisonCollection['Top Bests'][index]) {
-                                            rrcComparisonCollection['Top Bests'][index] = endTime
+                                    rrcSegments(runRecapCategory.topRuns[index].rrc)
+                                    rrcComparisonCollection['Player ' + index] = commBestILs[category].topRuns[index].rrc
+                                    commBestILs[category].topRuns[index].rrc.forEach((scene, sceneIndex) => {
+                                        if (scene.segment < rrcComparisonCollection['Top Bests'][sceneIndex].segment) {
+                                            rrcComparisonCollection['Top Bests'][sceneIndex] = { name: scene.name, segment: scene.segment }
+                                            rrcTopBests[sceneIndex] = [index]
+                                        } else if (scene.segment == rrcComparisonCollection['Top Bests'][sceneIndex].segment) {
+                                            rrcTopBests[sceneIndex].push(index)
                                         }
                                     })
                                 })
@@ -43,48 +50,51 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(response => response.json())
                 .then(data => {
                     alt = data
-                    for (const category in alt) {
-                        for (const boss in alt[category]) {
-                            for (const obj of alt[category][boss]) {
-                                if (!obj.title) {
-                                    altStratNum++
-                                }
-                            }
-                        }
-                    }
-                    const chunks = [
-                        ['1.1+', 'Legacy', 'forestfollies'],
-                        ['1.1+', 'NMG', 'hildaberg'],
-                        ['1.1+', 'NMG', 'grimmatchstick'],
-                        ['DLC', 'DLC C/S', 'estherwinchester'],
-                        ['NMG', 'DLC+Base', 'hildaberg'],
-                        ['NMG', 'DLC+Base', 'cagneycarnation'],
-                        ['NMG', 'DLC+Base', 'baronessvonbonbon'],
-                        ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
-                        ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
-                        ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
-                        ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
-                        ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
-                        ['DLC', 'DLC C/S', 'forestfollies'],
-                        ['DLC', 'DLC+Base', 'forestfollies'],
-                        ['DLC', 'DLC+Base C/S', 'forestfollies']
-                    ]
-                    for (const [copy, paste, boss] of chunks) {
-                        alt[paste][boss] = alt[copy][boss]
-                    }
-                    copyDLC('DLC', 'DLC+Base')
-                    copyDLC('DLC C/S', 'DLC+Base C/S')
-                    function copyDLC(copy, paste) {
-                        const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
-                        dlc.forEach(boss => {
-                            alt[paste][boss] = alt[copy][boss]
-                        })
-                    }
+                    organizeAltStrats()
                 })
             runRecapCategory = commBestILs['1.1+']
             window.firebaseUtils.firestoreRead()
         })
 })
+function organizeAltStrats() {
+    for (const category in alt) {
+        for (const boss in alt[category]) {
+            for (const obj of alt[category][boss]) {
+                if (!obj.title) {
+                    altStratNum++
+                }
+            }
+        }
+    }
+    const chunks = [
+        ['1.1+', 'Legacy', 'forestfollies'],
+        ['1.1+', 'NMG', 'hildaberg'],
+        ['1.1+', 'NMG', 'grimmatchstick'],
+        ['DLC', 'DLC C/S', 'estherwinchester'],
+        ['NMG', 'DLC+Base', 'hildaberg'],
+        ['NMG', 'DLC+Base', 'cagneycarnation'],
+        ['NMG', 'DLC+Base', 'baronessvonbonbon'],
+        ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
+        ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
+        ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
+        ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
+        ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
+        ['DLC', 'DLC C/S', 'forestfollies'],
+        ['DLC', 'DLC+Base', 'forestfollies'],
+        ['DLC', 'DLC+Base C/S', 'forestfollies']
+    ]
+    for (const [copy, paste, boss] of chunks) {
+        alt[paste][boss] = alt[copy][boss]
+    }
+    copyDLC('DLC', 'DLC+Base')
+    copyDLC('DLC C/S', 'DLC+Base C/S')
+    function copyDLC(copy, paste) {
+        const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
+        dlc.forEach(boss => {
+            alt[paste][boss] = alt[copy][boss]
+        })
+    }
+}
 function action() {
     loaded = true
     const tabActions = {
@@ -259,7 +269,7 @@ function getCommBestILs(categoryName = runRecapCategory.tabName) {
     buttonClick(buttonName + 'Button', 'categoryTabs', 'selected')
     players = []
     playerNames = new Set()
-    changeComparison('Top 3 Average', true)
+    savComparison = 'Top 3 Average'
     altStratLevel = null
     const category = runRecapCategory.category
     updateBoardTitle()
@@ -433,16 +443,19 @@ const fileOrigin = {
 };
 let HTMLContent = '';
 ['sav', 'lss', 'rrc'].forEach(type => {
-    HTMLContent += `<div>
-                        <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
-                        <div class='font2 container' style='gap:8px;font-size:200%;margin-bottom:5px'>
-                            <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
-                                style='height:40px;filter: brightness(0) invert(1)'>
-                            .${type}
-                        </div>
-                        <div class='fileType textBlock' style="font-size:90%">
-                        ${fileInfo[type]}
-                        </div>
-                    </div>`
+    HTMLContent += fileInfoCard(type)
 })
 document.getElementById('fileTypes').innerHTML = HTMLContent
+function fileInfoCard(type) {
+    return `<div style='width:330px'>
+                <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
+                <div class='font2 container' style='gap:8px;font-size:200%;margin-bottom:5px'>
+                    <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
+                        style='height:40px;filter: brightness(0) invert(1)'>
+                    .${type}
+                </div>
+                <div class='fileType textBlock' style="font-size:90%">
+                ${fileInfo[type]}
+                </div>
+            </div>`
+}
