@@ -241,7 +241,7 @@ function action() {
         hide('runRecapTab')
         show('content')
     }
-    if (!['commBestILs', 'altStrats', 'commBestSplits', 'top10', 'ballpit'].includes(globalTab)) {
+    if (!['home', 'commBestILs', 'altStrats', 'commBestSplits', 'top10', 'ballpit'].includes(globalTab)) {
         show('runRecap_details')
     } else {
         hide('runRecap_details')
@@ -426,7 +426,6 @@ const fileInfo = {
     <span class="myekulColor clickable" style="text-decoration: underline">
     ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a></span>.`,
     rrc: `A powerful new file type, ${myekulColor('Run Recap .rrc')}. Designed exclusively for detailed analysis of Cuphead runs.
-    Coming soon!
     <br>
     <span class='dim'>
     This requires the

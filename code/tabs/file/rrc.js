@@ -283,8 +283,10 @@ function fancyScorecard() {
             <p>INTERMISSIONS ${". ".repeat(4)}</p>
             <p>MAP MOVEMENT ${". ".repeat(3)}</p>
             <p>CUTSCENES ${". ".repeat(8)}</p>
-            <p>SCORECARDS ${". ".repeat(6)}</p>`
-    // HTMLContent += `<p>STAR SKIPS ${". ".repeat(8)}</p>`
+            <p>SCORECARDS ${". ".repeat(6)}</p>
+            <div class='container'>
+            </div>
+            <p>STAR SKIPS ${". ".repeat(8)}</p>`
     HTMLContent += `</div>
             <div id='scorecardTimes' class='myekulColor'>
             <p>${secondsToHMS(rrcCurrentAttempt.levelTime, true)}</p>
@@ -292,6 +294,7 @@ function fancyScorecard() {
             <p>${secondsToHMS(rrcCurrentAttempt.mapTime, true)}</p>
             <p>${secondsToHMS(rrcCurrentAttempt.cutsceneTime, true)}</p>
             <p>${secondsToHMS(rrcCurrentAttempt.scorecardTime, true)}</p>
+            <p class='myekulColor'>${fontAwesome('star') + ` ???`}</p>
             </div>
             <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(rrcCurrentAttempt.scenes.at(-1).endTime, true)}</div>
         </div>

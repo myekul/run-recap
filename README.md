@@ -1,29 +1,28 @@
 # To do
-- Fix DLC Low% and DLC Expert
+- Support for other categories
 - Comm Best Any% DLC boards merge bug
-- Chalice Tutorial toggle?
-- Played as Chalice or Mugman
-
 - Comm Best splits isle sums
 - .lss isle sums
-
-- None comparison
-
 - Organize Run Recap database
-
 - Find player or display player name
-
 - DLC+Base L/S Routes
-
 - More graphs
-
-- Run n Guns
-
-- RRC
-    - Upload
-    - Resets / Deaths
-    - Split before/after
-
 - Info section
 
+### .sav
+- None comparison
+- Played as Chalice or Mugman
 - TAS comparison broken
+
+### .lss
+- Chalice Tutorial toggle?
+
+### .rrc
+- Upload
+- Resets / Deaths
+- Split before/after
+- Normalized Scorecards
+
+### Alt Strats
+- Run 'n Guns
+- Briney pattern images / stats

@@ -2093,6 +2093,18 @@
                 "url": "https://youtu.be/_Syd5_MMP00"
             },
             {
+                "name": "Waffle, Candy Corn, Gumball",
+                "time": 27.36,
+                "player": "Yuka",
+                "url": "https://youtu.be/YZTAQ8RziC4"
+            },
+            {
+                "name": "Waffle, Candy Corn, Jawbreaker",
+                "time": 29.88,
+                "player": "Yuka",
+                "url": "https://youtu.be/NziHSypPLaY?t=31"
+            },
+            {
                 "name": "Gumball, Waffle, Jawbreaker",
                 "time": 29.57,
                 "player": "Yuka",
@@ -2100,15 +2112,21 @@
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
-                "time": 26.48,
+                "time": 26.33,
                 "player": "Yuka",
-                "url": "https://youtu.be/fFj-sp5GLoE"
+                "url": "https://youtu.be/0yHwxqx9JWs"
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
                 "time": 26.98,
                 "player": "Yuka",
                 "url": "https://youtu.be/WTdoS7rc2dQ"
+            },
+            {
+                "name": "Gumball, Candy Corn, Waffle",
+                "time": 26.57,
+                "player": "Yuka",
+                "url": "https://youtu.be/Hz1fN0JqOhU"
             }
         ],
         "wallywarbles": [
@@ -2263,7 +2281,7 @@
         ],
         "thedevil": [
             {
-                "title": "Freeze"
+                "title": "Freeze Dragon"
             },
             {
                 "name": "Dragon R",
@@ -2290,13 +2308,16 @@
                 "url": "https://youtu.be/h3Bv13EZFVY"
             },
             {
+                "title": "Freeze Spider"
+            },
+            {
                 "name": "Clap Spider",
                 "time": 37.25,
                 "player": "Yuka",
                 "url": "https://youtu.be/Nj3V4xIMN9s"
             },
             {
-                "title": "Kiss"
+                "title": "Dragon Kiss"
             },
             {
                 "name": "Ring Dragon R",
@@ -2311,18 +2332,6 @@
                 "url": "https://youtu.be/urC70JVICcQ?si=fgJRIKN9J0iKApok&t=32"
             },
             {
-                "name": "Bubbles Spider",
-                "time": 28.88,
-                "player": "Yuka",
-                "url": "https://youtu.be/SH90DKta1qw"
-            },
-            {
-                "name": "Clap Spider",
-                "time": 31.61,
-                "player": "Yuka",
-                "url": "https://youtu.be/GnlyfM6EEdY"
-            },
-            {
                 "name": "Ring Clap Dragon R",
                 "time": 30.78,
                 "player": "Fintan0",
@@ -2333,6 +2342,27 @@
                 "time": 31.79,
                 "player": "Yuka",
                 "url": "https://youtu.be/MBF6Qtq0UBU"
+            },
+            {
+                "title": "Spider's Kiss"
+            },
+            {
+                "name": "Bubbles Spider",
+                "time": 28.88,
+                "player": "Yuka",
+                "url": "https://youtu.be/SH90DKta1qw"
+            },
+            {
+                "name": "Ring Clap Spider",
+                "time": 29.48,
+                "player": "Yuka",
+                "url": "https://youtu.be/J3FHqoyTHJM"
+            },
+            {
+                "name": "Clap Spider",
+                "time": 31.61,
+                "player": "Yuka",
+                "url": "https://youtu.be/GnlyfM6EEdY"
             }
         ]
     },

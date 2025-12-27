@@ -41,7 +41,7 @@
 #scorecardText p,
 #scorecardTimes p {
     margin: 0px;
-    margin-bottom: 12px;
+    margin-bottom: 6px;
     font-size: 135%;
 }
 
@@ -54,14 +54,14 @@
 #scorecardLine {
     height: 3.6px;
     position: absolute;
-    top: 370px;
+    top: 380px;
     left: 50%;
     transform: translate(-50%);
 }
 
 #scorecardFinal {
     position: absolute;
-    top: 380px;
+    top: 390px;
     left: 50%;
     transform: translate(-50%);
     font-size: 240%

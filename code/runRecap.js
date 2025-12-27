@@ -211,15 +211,17 @@ function runRecapCopy() {
     let clipboardContent = ''
     if (globalTab == 'sav') {
         categories.forEach((category, categoryIndex) => {
-            // let time = secondsToHMS(category.runTime, true, true)
-            // if (!runRecapExample) {
-            //     time = time.replace(/^0:/, "");
-            // }
-            // clipboardContent += `[${time}] ${category.name}\n`
             clipboardContent += `${getCupheadLevel(categoryIndex).bestTime.toString().split('.')[0] + '.' + getCupheadLevel(categoryIndex).bestTime.toString().split('.')[1].slice(0, 2)}${categoryIndex == categories.length - 1 ? '' : ', '}`
         })
     } else {
-        clipboardContent = JSON.stringify(runRecap_rrcFile.attempts[rrcAttemptIndex].scenes)
+        const scenes = runRecap_rrcFile.attempts[rrcAttemptIndex].scenes
+        // clipboardContent = JSON.stringify(scenes)
+        scenes.forEach((scene, sceneIndex) => {
+            if (cupheadBosses[scene.name] && !(scene.name == 'level_dice_palace_main' && scenes[sceneIndex + 1]?.name != 'win')) {
+                clipboardContent += scene.levelTime
+                if (!['level_devil', 'level_saltbaker'].includes(scene.name) && sceneIndex < scenes.length - 1) clipboardContent += ','
+            }
+        })
     }
     navigator.clipboard.writeText(clipboardContent)
         .then(() => {
