@@ -51,20 +51,6 @@ let isolatePatterns
 let baronessExtra
 let bonbonSort = 'Standard'
 
-// True Residual
-
-let trueResidual
-
-let globalStarSkips = 0
-let kd1
-let kd2
-let globalFollies
-let globalCala
-let globalWerner
-let globalKD
-
-let globalResidual
-
 let minibossArray = []
 
 function decimalsCriteria() {

@@ -45,7 +45,7 @@ function generateGrid() {
             const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
-            HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'>${grade.grade}</td>`
+            HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'></td>`
             HTMLContent += `<td class='${category.info.id}'>${ILtime ? secondsToHMS(ILtime) : ILtime}</td>`
         })
         HTMLContent += `</tr>`

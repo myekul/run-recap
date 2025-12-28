@@ -8,6 +8,7 @@
 - DLC+Base L/S Routes
 - More graphs
 - Info section
+- Ground vs. Plane
 
 ### .sav
 - None comparison
@@ -22,6 +23,8 @@
 - Resets / Deaths
 - Split before/after
 - Normalized Scorecards
+- Top 3 Avg
+- Personal Bests
 
 ### Alt Strats
 - Run 'n Guns

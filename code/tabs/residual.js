@@ -1,12 +1,8 @@
 function generateResidual() {
     let HTMLContent = ''
-    if (runRecapCategory.name == '1.1+' && trueResidual) {
-        HTMLContent += `<div class='button cuphead' style='margin:0 auto;margin-bottom:20px;gap:8px;width:95px' onclick="trueResidual=!trueResidual;action();playSound('move')">${fontAwesome('reply')} Go back</div>`
-    }
     HTMLContent += `<div class='container' style='gap:30px'>`
-    if (!(runRecapCategory.name == '1.1+' && trueResidual)) {
-        HTMLContent += `<div class='textBlock' style='width:420px'>
-    When you subtract your ${myekulColor('boss IL sum')} from your ${myekulColor('total run time')},
+    HTMLContent += `<div class='textBlock' style='width:420px'>
+    When you subtract your ${myekulColor('boss IGT sum')} from your ${myekulColor('total run time')},
     you get your ${myekulColor('Residual')} timeloss.
     Your ${myekulColor('Residual')} is the time spent everywhere outside of boss fights.
     This includes:
@@ -30,17 +26,12 @@ function generateResidual() {
     <br>Comparing your ${myekulColor('Residual')}
     to other runners can inform you about potential timelosses and opportunities to save time outside of boss fights.**
     </div>`
-    }
     HTMLContent += `<div>`
     HTMLContent += `<table>
     <tr>
     <th colspan=4></th>
     <th class='dim' style='padding:0 10px'>IGT Sum</th>
     <th class='gray' style='padding:0 10px'>Residual</th>`
-    if (runRecapCategory.name == '1.1+' && trueResidual) {
-        HTMLContent += `<th colspan=7></th>
-        <th class='gray' style='padding:0 3px'>True Residual</th>`
-    }
     HTMLContent += `</tr>`
     runRecapCategory.topRuns.forEach((run, index) => {
         let sum = 0
@@ -64,41 +55,16 @@ function generateResidual() {
                     starSkipTime += 0.5
                 }
             })
-            const trueResidualValue = calculateTrueResidual(residual, starSkipTime, run.framerule, run.follies, run.cala, run.werner, run.kd)
             HTMLContent += `<td class='dim' style='font-size:70%'>
             <div class='container' style='justify-content:left;gap:2px;padding:0 3px'>
             ${fontAwesome('star')}
             ${starSkipCount}
             </div>
             </td>`
-            if (trueResidual) {
-                HTMLContent += residualIcons(run)
-                HTMLContent += `<td class='myekulColor'>${trueResidualValue}</td>`
-            }
-            if (index == 0 && !trueResidual) {
-                HTMLContent += `<td rowspan=10 class='clickable gray' onclick="trueResidual=!trueResidual;action();playSound('move')">${fontAwesome('chevron-right')}</td>`
-            }
         }
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table>`
-    if (runRecapCategory.name == '1.1+' && trueResidual) {
-        HTMLContent += `<div class='container'>
-    <div style='width:680px;margin-top:20px'>
-    <span style='font-size:90%'>
-    The <span class='myekulColor'>True Residual</span>
-    calculator takes the default Residual time and attempts to normalize it by removing expected sources of variance:
-    ${myekulColor('star skips')} (0.516s / 1.016s),
-    ${myekulColor('KD framerules')} (0.7s),
-    ${myekulColor('Follies / Cala / Werner parries')} (0.96+),
-    and
-    ${myekulColor('0/3 HP on KD')} (0.8s).
-    The resulting value represents every other Residual timeloss.
-    <span class='dim'>Calculations may contain inaccuracies.</span>
-    </span>
-    </div>
-    </div>`
-    }
     if (runRecap_savFile) {
         let residual = '???'
         let sum = 0
@@ -108,8 +74,7 @@ function generateResidual() {
                 sum += time
             })
             if (runRecapTime != 'XX:XX') {
-                globalResidual = convertToSeconds(runRecapTime) - sum
-                residual = secondsToHMS(globalResidual, decimalsCriteria())
+                residual = secondsToHMS(convertToSeconds(runRecapTime) - sum, decimalsCriteria())
             }
         }
         HTMLContent += `<div class='container' style='margin-top:30px;gap:10px'>
@@ -117,38 +82,12 @@ function generateResidual() {
     <table>
     <tr>
     <th class='dim'>IGT Sum</th>
-    <th class='gray'>Residual</th>`
-        if (runRecapCategory.name == '1.1+' && trueResidual) {
-            HTMLContent += `<th class='dim'>Star Skips</th>
-            ${residualIcons()}
-            <th class='gray' style='padding:0 3px'>True Residual</th>`
-        }
-        HTMLContent += `</tr>
+    <th class='gray'>Residual</th>
+    </tr>
     <tr class='background2'>
     <td class='dim' style='padding:0 10px'>${secondsToHMS(sum, decimalsCriteria())}</td>
-    <td style='font-size:150%'>${residual}</td>`
-        if (runRecapCategory.name == '1.1+' && trueResidual) {
-            let dropdownContent = ''
-            for (let i = 0; i <= 19; i += 0.5) {
-                dropdownContent += `<option value='${i}' ${globalStarSkips == i ? 'selected' : ''}>${i}</option>`
-            }
-            HTMLContent += `<td class='dim' style='font-size:80%'>
-            <div class='container' style='justify-content:left;gap:2px;padding:0 3px'>
-            ${fontAwesome('star')}
-            <select id='dropdown_starSkips' onchange="checkTrueResidual();playSound('cardflip')">
-            ${dropdownContent}
-            </select>
-            </div>
-            </td>
-            <td><input id='checkbox_kd1' type='checkbox' onchange="checkTrueResidual();playSound('move')" ${kd1 ? 'checked' : ''}></td>
-            <td><input id='checkbox_kd2' type='checkbox' onchange="checkTrueResidual();playSound('move')" ${kd2 ? 'checked' : ''}></td>
-            <td><input id='checkbox_follies' type='checkbox' onchange="checkTrueResidual();playSound('move')" ${globalFollies ? 'checked' : ''}></td>
-            <td><input id='checkbox_cala' type='checkbox' onchange="checkTrueResidual();playSound('move')" ${globalCala ? 'checked' : ''}></td>
-            <td><input id='checkbox_werner' type='checkbox' onchange="checkTrueResidual();playSound('move')" ${globalWerner ? 'checked' : ''}></td>
-            <td><input id='checkbox_kd' type='checkbox' onchange="checkTrueResidual();playSound('move')" ${globalKD ? 'checked' : ''}></td>
-            <td id='trueResidual' class='myekulColor' style='font-size:150%'>???</td>`
-        }
-        HTMLContent += `</tr>
+    <td style='font-size:150%'>${residual}</td>
+    </tr>
     </table>
     </div>`
         if (!runRecapExample && runRecapTime == 'XX:XX' && getCupheadLevel(categories.length - 1).completed) {
@@ -176,41 +115,4 @@ function generateResidual() {
                 </div>
             </div>`
     document.getElementById('content').innerHTML = HTMLContent
-}
-function checkTrueResidual() {
-    globalStarSkips = document.getElementById('dropdown_starSkips').value
-    kd1 = document.getElementById('checkbox_kd1').checked
-    kd2 = document.getElementById('checkbox_kd2').checked
-    globalFollies = document.getElementById('checkbox_follies').checked
-    globalCala = document.getElementById('checkbox_cala').checked
-    globalWerner = document.getElementById('checkbox_werner').checked
-    globalKD = document.getElementById('checkbox_kd').checked
-    document.getElementById('trueResidual').innerHTML = calculateTrueResidual(globalResidual, 19 - globalStarSkips, [kd1, kd2], globalFollies, globalCala, globalWerner, globalKD)
-}
-function residualImage(symbol) {
-    return `<div><img src='images/${symbol}.png' style='height:15px;width:15px'></div>`
-}
-function calculateTrueResidual(residual, starSkipTime, framerule, follies, cala, werner, kd) {
-    let frameruleTime = 0
-    framerule.forEach(house => {
-        if (!house) frameruleTime += 0.7
-    })
-    follies = follies ? 0 : 0.8 + (100 / 6 / 100)
-    cala = cala ? 0.8 + (100 / 6 / 100) : 0
-    werner = werner ? 0.8 + (100 / 6 / 100) : 0
-    kd = kd ? 0 : 0.8
-    return secondsToHMS(residual - starSkipTime - frameruleTime - follies - cala - werner - kd, true)
-}
-function residualIcons(run) {
-    let HTMLContent = ''
-    HTMLContent += residualThing(run ? run.framerule[0] : true, residualImage('dicesmart'), 'KD Framerule 1')
-    HTMLContent += residualThing(run ? run.framerule[1] : true, residualImage('dicesmart'), 'KD Framerule 2')
-    HTMLContent += residualThing(run ? run.follies : true, getImage('runnguns/forestfollies', 16), 'Follies 0/3')
-    HTMLContent += residualThing(run ? run.cala : true, residualImage('wutface'), 'Cala Parries')
-    HTMLContent += residualThing(run ? run.werner || false : true, residualImage('tomatosoup'), 'Werner Parries')
-    HTMLContent += residualThing(run ? run.kd : true, getImage('kingdice', 16), 'KD 0/3 HP')
-    return HTMLContent
-    function residualThing(criteria = true, content, tooltip) {
-        return `<td class='${criteria ? 'tooltip' : ''}'>${criteria ? content + `<span class='tooltiptext'>${tooltip}</span>` : ''}</td>`
-    }
 }
