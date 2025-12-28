@@ -53,7 +53,7 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
     fetch('https://myekul.com/shared-assets/cuphead/sav.json')
         .then(response => response.json())
         .then(data => {
-            runRecapUnload('lss', true)
+            runRecapUnload('lss')
             runRecapTime = time
             setRunRecapTime(runRecapTime)
             document.getElementById('input_runRecap_time').value = time

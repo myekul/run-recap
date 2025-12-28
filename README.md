@@ -9,6 +9,7 @@
 - More graphs
 - Info section
 - Ground vs. Plane
+- Meatball skip?
 
 ### .sav
 - None comparison

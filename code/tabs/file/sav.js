@@ -30,7 +30,7 @@ function processSavFile(playerIndex, display) {
         .then(data => {
             runRecap_savFile = data
             if (playerIndex != null) {
-                runRecapUnload('lss', true)
+                runRecapUnload('lss')
                 runRecapExample = true
                 const player = players[playerIndex]
                 document.getElementById('runRecap_player').innerHTML = playerDisplay(player.name)
@@ -44,16 +44,25 @@ function processSavFile(playerIndex, display) {
                     level.played = true
                     level.completed = true
                 })
+                if (runRecapCategory.name == '1.1+') runRecap_rrcFile.attempts = [{ scenes: runRecapCategory.topRuns[playerIndex].rrc }]
                 if (playerIndex == 0 && runRecapCategory.markin) {
                     bootMarkinExample()
                     if (display) {
                         showTab('lss')
                     } else {
-                        showTab('sav')
+                        if (runRecapCategory.name == '1.1+') {
+                            showTab('rrc')
+                        } else {
+                            showTab('sav')
+                        }
                     }
                 }
                 if (playerIndex > 0 || !runRecapCategory.markin) {
-                    showTab('sav')
+                    if (runRecapCategory.name == '1.1+') {
+                        showTab('rrc')
+                    } else {
+                        showTab('sav')
+                    }
                 }
             } else {
                 showTab('sav')

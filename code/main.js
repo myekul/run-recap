@@ -246,7 +246,7 @@ function action() {
     } else {
         hide('runRecap_details')
     }
-    if (globalTab == 'rrc') {
+    if (globalTab == 'rrc' && !runRecapExample) {
         show('rrcBrowser')
         hide('runRecap_time')
     } else {

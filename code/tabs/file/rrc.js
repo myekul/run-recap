@@ -296,7 +296,7 @@ function fancyScorecard() {
             <p>${secondsToHMS(rrcCurrentAttempt.scorecardTime, true)}</p>
             <p class='myekulColor'>${fontAwesome('star') + ` ???`}</p>
             </div>
-            <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(rrcCurrentAttempt.scenes.at(-1).endTime, true)}</div>
+            <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(convertToSeconds(rrcCurrentAttempt.scenes.at(-1).endTime), true)}</div>
         </div>
         </div>`
     return HTMLContent

@@ -1,8 +1,9 @@
 function generateHome() {
     if (runRecapExample) {
         runRecapDefault()
-        runRecapUnload('sav', true)
-        runRecapUnload('lss', true)
+        runRecapUnload('sav')
+        runRecapUnload('lss')
+        runRecapUnload('rrc')
         runRecapExample = false
         hide('runRecap_example_div')
     }

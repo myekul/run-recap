@@ -109,12 +109,9 @@ function setRunRecapTime(time) {
     document.getElementById('runRecap_time').innerHTML = `<div style='font-size:150%'>${time}</div>`
 }
 function runRecapUnload(elem, shh) {
-    if (!shh) playSound('carddown')
-    if (elem == 'sav') {
-        runRecap_savFile = null
-    } else {
-        runRecap_lssFile = {}
-    }
+    if (elem == 'sav') runRecap_savFile = null
+    if (elem == 'lss') runRecap_lssFile = {}
+    if (elem == 'rrc') runRecap_rrcFile = {}
 }
 function runRecapGrade(delta) {
     return getLetterGrade(100 - (delta * 4))
