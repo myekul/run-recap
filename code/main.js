@@ -97,6 +97,13 @@ function organizeAltStrats() {
 }
 function action() {
     loaded = true
+    if (globalTab == 'home') {
+        show('runRecapTab')
+        hide('content')
+    } else {
+        hide('runRecapTab')
+        show('content')
+    }
     const tabActions = {
         home: generateHome,
 
@@ -233,13 +240,6 @@ function action() {
         show('commBestSubmit')
     } else {
         hide('commBestSubmit')
-    }
-    if (globalTab == 'home') {
-        show('runRecapTab')
-        hide('content')
-    } else {
-        hide('runRecapTab')
-        show('content')
     }
     if (!['home', 'commBestILs', 'altStrats', 'commBestSplits', 'top10', 'ballpit'].includes(globalTab)) {
         show('runRecap_details')

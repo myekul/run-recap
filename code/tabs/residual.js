@@ -116,3 +116,17 @@ function generateResidual() {
             </div>`
     document.getElementById('content').innerHTML = HTMLContent
 }
+function residualImage(symbol) {
+    return `<div><img src='images/${symbol}.png' style='height:15px;width:15px'></div>`
+}
+function residualIcons(run) {
+    let HTMLContent = ''
+    HTMLContent += residualThing(run ? run.follies : true, getImage('runnguns/forestfollies', 16), 'Follies 0/3')
+    HTMLContent += residualThing(run ? run.cala : true, residualImage('wutface'), 'Cala Parries')
+    HTMLContent += residualThing(run ? run.werner || false : true, residualImage('tomatosoup'), 'Werner Parries')
+    HTMLContent += residualThing(run ? run.kd : true, getImage('kingdice', 16), 'KD 0/3 HP')
+    return HTMLContent
+}
+function residualThing(criteria = true, content, tooltip) {
+    return `<td class='${criteria ? 'tooltip' : ''}'>${criteria ? content + `<span class='tooltiptext'>${tooltip}</span>` : ''}</td>`
+}

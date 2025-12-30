@@ -26,6 +26,10 @@
 - Normalized Scorecards
 - Top 3 Avg
 - Personal Bests
+- King Dice IGT
+- 800 grid
+- Top 10 chart tooltips
+- Top 10 chart comparisons
 
 ### Alt Strats
 - Run 'n Guns

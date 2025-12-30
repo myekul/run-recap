@@ -2,16 +2,28 @@
     "1.1+": {
         "forestfollies": [
             {
-                "name": "Parry, Both Ledge Clips",
-                "time": 31.99,
-                "player": "Quincely0",
-                "url": "https://youtu.be/AP-yUBmASz4"
+                "title": "Parryless"
             },
             {
-                "name": "Parryless, Ledge Clip",
+                "name": "Ledge Clip",
                 "time": 32.65,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/f47J9BaBkS4"
+            },
+            {
+                "name": "Pink Butterfly",
+                "time": 36.72,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/hoTmPanGOvU"
+            },
+            {
+                "title": "Parry"
+            },
+            {
+                "name": "Both Ledge Clips",
+                "time": 31.99,
+                "player": "Quincely0",
+                "url": "https://youtu.be/AP-yUBmASz4"
             },
             {
                 "name": "Ninja Clip",
@@ -24,6 +36,18 @@
                 "time": 33.61,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
+            },
+            {
+                "name": "TwoTone Hop",
+                "time": 34.91,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/J3DOLwLluSY?t=4"
+            },
+            {
+                "name": "Acorn Maker Kill",
+                "time": 36.91,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/RSTMc3EknGI"
             }
         ],
         "therootpack": [
@@ -745,9 +769,9 @@
             },
             {
                 "name": "Down Gun",
-                "time": 47.98,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/mNUlOrAhVMk"
+                "time": "47.00",
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/JiQH-S-grBo"
             },
             {
                 "name": "Up Eggs",
@@ -1032,10 +1056,10 @@
             },
             {
                 "name": "Red Gem",
-                "time": 41.19,
-                "rta": 42.10,
+                "time": 41.12,
+                "rta": 42.03,
                 "player": "ClipBoardGuy",
-                "url": "https://youtu.be/ZqSOqZBGL0w"
+                "url": "https://youtu.be/ZtcCc34xWlM"
             },
             {
                 "name": "Blue Gem",
@@ -1494,10 +1518,10 @@
             },
             {
                 "name": "Worst RNG",
-                "time": "1:52.46",
-                "rta": "1:54.97",
+                "time": "1:50.92",
+                "rta": "1:53.45",
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/YLyUa0CcUrM"
+                "url": "https://youtu.be/0pP6Qtdrwb4"
             },
             {
                 "title": "Doubles"
@@ -2105,6 +2129,24 @@
                 "url": "https://youtu.be/NziHSypPLaY?t=31"
             },
             {
+                "name": "Waffle, Cupcake, Gumball",
+                "time": 27.84,
+                "player": "Yuka",
+                "url": "https://youtu.be/S4k4175P8fY"
+            },
+            {
+                "name": "Waffle, Cupcake, Candy Corn",
+                "time": 26.51,
+                "player": "Yuka",
+                "url": "https://youtu.be/6Rb9BDF83wk"
+            },
+            {
+                "name": "Waffle, Cupcake, Jawbreaker",
+                "time": 26.82,
+                "player": "Yuka",
+                "url": "https://youtu.be/pLwo_Fp9kpA"
+            },
+            {
                 "name": "Gumball, Waffle, Jawbreaker",
                 "time": 29.57,
                 "player": "Yuka",
@@ -2369,10 +2411,34 @@
     "NMG": {
         "forestfollies": [
             {
+                "title": "Parryless"
+            },
+            {
+                "name": "Pink Butterfly",
+                "time": 36.72,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/hoTmPanGOvU"
+            },
+            {
+                "title": "Parry"
+            },
+            {
                 "name": "TSSMTIC",
                 "time": 33.61,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
+            },
+            {
+                "name": "TwoTone Hop",
+                "time": 34.91,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/J3DOLwLluSY?t=4"
+            },
+            {
+                "name": "Acorn Maker Kill",
+                "time": 36.91,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/RSTMc3EknGI"
             }
         ],
         "therootpack": [
@@ -2642,6 +2708,18 @@
     "DLC": {
         "forestfollies": [
             {
+                "title": "Parryless"
+            },
+            {
+                "name": "Pink Butterfly",
+                "time": 36.72,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/hoTmPanGOvU"
+            },
+            {
+                "title": "Parry"
+            },
+            {
                 "name": "Ninja Clip",
                 "time": 33.57,
                 "player": "SBDWolf",
@@ -2652,6 +2730,18 @@
                 "time": 33.61,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
+            },
+            {
+                "name": "TwoTone Hop",
+                "time": 34.91,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/J3DOLwLluSY?t=4"
+            },
+            {
+                "name": "Acorn Maker Kill",
+                "time": 36.91,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/RSTMc3EknGI"
             }
         ],
         "glumstonethegiant": [

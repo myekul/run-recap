@@ -69,10 +69,6 @@ function generateAltStrats() {
             if (runRecapCategory.tabName == '1.1+') {
                 const myekulIdeas = [
                     {
-                        boss: 'hildaberg',
-                        name: 'No Damage Boosts'
-                    },
-                    {
                         boss: 'drkahlsrobot',
                         name: 'One Damage Boost'
                     },

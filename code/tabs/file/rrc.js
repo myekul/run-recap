@@ -86,6 +86,13 @@ function reconstructRRC(endTimes, playerIndex) {
         runRecapCategory.topRuns[playerIndex].rrc.push(newScene)
     })
 }
+function rrcComparisonDisplay() {
+    return `<div class="container grow dim" style="margin:20px;gap:10px"
+                            onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
+                            &Delta;
+                            <div>${rrcComparisonText}</div>
+                        </div>`
+}
 function generate_rrc() {
     let HTMLContent = ''
     if (runRecap_rrcFile.attempts) {
@@ -94,11 +101,7 @@ function generate_rrc() {
         rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
         if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
         HTMLContent += classicView()
-        HTMLContent += `<div class="container grow dim" style="margin:20px;gap:10px"
-                            onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
-                            &Delta;
-                            <div>${rrcComparisonText}</div>
-                        </div>`
+        HTMLContent += rrcComparisonDisplay()
         HTMLContent += `
         <div class='container'>
             <div>
@@ -270,14 +273,15 @@ function rrcChangeIndex(index, dropdown) {
         playSound('locked')
     }
 }
+const rrcElems = ['levelTime', 'intermissionTime', 'mapTime', 'cutsceneTime', 'scorecardTime']
 function fancyScorecard() {
     let HTMLContent = ''
-    HTMLContent += `<div class='container' style='margin-top:20px'>
+    HTMLContent += `<div class='container' style='margin-top:20px;position:relative;width:600px'>
         <div class='spinning-div border'>
-        <div style='margin:0 auto;position:relative'>
+        <div style='position:relative'>
             <img class='container' src="images/results.gif" style='height:100px;margin-bottom:8px'>
             <img id='scorecardLine' class='container' src='images/scorecard_line.png'>
-            <img class='container' src="images/scorecard.png" style='height:400px'>
+            <img class='container' src="images/scorecard.png" style='height:400px;-webkit-user-drag: none'>
             <div id='scorecardText' style='color:floralwhite'>
             <p>LEVEL RTA ${". ".repeat(9)}</p>
             <p>INTERMISSIONS ${". ".repeat(4)}</p>
@@ -288,18 +292,34 @@ function fancyScorecard() {
             </div>
             <p>STAR SKIPS ${". ".repeat(8)}</p>`
     HTMLContent += `</div>
-            <div id='scorecardTimes' class='myekulColor'>
-            <p>${secondsToHMS(rrcCurrentAttempt.levelTime, true)}</p>
-            <p>${secondsToHMS(rrcCurrentAttempt.intermissionTime, true)}</p>
-            <p>${secondsToHMS(rrcCurrentAttempt.mapTime, true)}</p>
-            <p>${secondsToHMS(rrcCurrentAttempt.cutsceneTime, true)}</p>
-            <p>${secondsToHMS(rrcCurrentAttempt.scorecardTime, true)}</p>
-            <p class='myekulColor'>${fontAwesome('star') + ` ???`}</p>
-            </div>
             <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(convertToSeconds(rrcCurrentAttempt.scenes.at(-1).endTime), true)}</div>
         </div>
-        </div>`
+        </div>
+        <div class='scorecardTimes myekulColor'>
+            ${theResults(rrcCurrentAttempt)}
+            </div>`
+    if (rrcComparison != 'None') {
+        HTMLContent += `<div style='position:absolute;left:600px;top:130px;width:300px'>${rrcComparisonDisplay()}</div>`
+        HTMLContent += `<div class='scorecardTimes myekulColor' style='left:650px'>`
+        rrcElems.forEach(field => {
+            const delta = rrcCurrentAttempt[field] - rrcComparisonAttempt[field]
+            HTMLContent += `<p class='${redGreen(delta)}'>${getDelta(delta.toFixed(2))}</p>`
+        })
+        HTMLContent += `</div>
+        <div class='scorecardTimes dim' style='left:780px'>
+            ${theResults(rrcComparisonAttempt)}
+            </div>`
+    }
     return HTMLContent
+}
+function theResults(attempt) {
+    let HTMLContent = ''
+    rrcElems.forEach(elem => {
+        HTMLContent += `<p>${secondsToHMS(attempt[elem], true)}</p>`
+    })
+    HTMLContent += `<p class='myekulColor'>${fontAwesome('star') + ` ???`}</p>`
+    return HTMLContent
+
 }
 function read_rrc(content) {
     try {

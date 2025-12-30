@@ -48,10 +48,6 @@
                 1,
                 0
             ],
-            "framerule": [
-                1,
-                1
-            ],
             "thedevil": "Clap Pinwheel Dragon"
         },
         {
@@ -100,10 +96,6 @@
                 0.5,
                 0,
                 0
-            ],
-            "framerule": [
-                1,
-                1
             ],
             "thedevil": "Bubbles Clap Dragon"
         },
@@ -154,64 +146,56 @@
                 1,
                 0
             ],
-            "framerule": [
-                0,
-                0
-            ],
             "thedevil": "Clap Ring Dragon"
         },
         {
             "name": "ClipBoardGuy",
             "runRecap": [
-                35.37,
-                45.92,
-                22.2,
-                63.25,
-                35.4,
-                34.84,
-                50.22,
-                77.81,
-                43.49,
-                49.22,
-                41.62,
-                43.81,
-                51.68,
-                43.02,
-                40.83,
-                56.55,
-                59.08,
-                114,
-                56.31
+                36.37,
+                45.03,
+                23.05,
+                63.77,
+                38.19,
+                35.6,
+                48.52,
+                78.28,
+                43.46,
+                50.35,
+                43.93,
+                42.35,
+                48.2,
+                40.16,
+                41.44,
+                57.31,
+                59.86,
+                111.32,
+                51.37
             ],
             "follies": 0,
             "cala": 0,
-            "kd": 0,
+            "kd": 1,
             "starSkips": [
                 0,
                 0,
                 0,
+                0.5,
                 0,
+                1,
+                1,
+                0,
+                0.5,
+                1,
                 1,
                 1,
                 1,
                 0.5,
                 0,
                 1,
-                0,
-                1,
-                0.5,
-                1,
                 0.5,
                 0.5,
-                1,
-                0,
                 0
             ],
-            "framerule": [
-                1,
-                1
-            ],
-            "thedevil": "Dragon Clap Ring"
+            "thedevil": "Clap Dragon"
         },
         {
             "name": "Lewzr",
@@ -260,10 +244,6 @@
                 0,
                 0.5,
                 0.5
-            ],
-            "framerule": [
-                1,
-                0
             ],
             "thedevil": "Clap Ring Dragon"
         },
@@ -314,11 +294,7 @@
                 0,
                 1
             ],
-            "framerule": [
-                0,
-                0
-            ],
-            "thedevil": "Clap Dragon"
+            "thedevil": "Clap Bubbles Dragon"
         },
         {
             "name": "myekul",
@@ -367,10 +343,6 @@
                 0,
                 0.5
             ],
-            "framerule": [
-                1,
-                0
-            ],
             "thedevil": "Dragon Clap"
         },
         {
@@ -418,10 +390,6 @@
                 1,
                 0,
                 0,
-                1
-            ],
-            "framerule": [
-                1,
                 1
             ],
             "thedevil": "Ring Clap Spider"
@@ -473,10 +441,6 @@
                 0,
                 0.5
             ],
-            "framerule": [
-                0,
-                1
-            ],
             "thedevil": "Pinwheel Clap Dragon"
         },
         {
@@ -525,10 +489,6 @@
                 1,
                 0,
                 0
-            ],
-            "framerule": [
-                0,
-                1
             ],
             "thedevil": "Clap Ring Clap Dragon"
         }

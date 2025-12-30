@@ -39,16 +39,16 @@
 }
 
 #scorecardText p,
-#scorecardTimes p {
+.scorecardTimes p {
     margin: 0px;
     margin-bottom: 6px;
     font-size: 135%;
 }
 
-#scorecardTimes {
+.scorecardTimes {
     position: absolute;
-    left: 360px;
-    top: 165px;
+    left: 393px;
+    top: 189px;
 }
 
 #scorecardLine {
