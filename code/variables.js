@@ -16,15 +16,24 @@ let rrcCurrentAttempt = {}
 let rrcComparisonAttempt = {}
 
 let rrcComparisonCollection = {
+    'Top 3 Average': Array.from({ length: 80 }, () => ({
+        segment: 0,
+        endTime: 0
+    })),
+    'Top Average': Array.from({ length: 80 }, () => ({
+        segment: 0,
+        endTime: 0
+    })),
     "Top Bests": Array.from({ length: 80 }, () => ({
         segment: Infinity,
         endTime: Infinity
     })),
-    'Top 3 Average': []
 }
 let rrcComparison = 'Top Bests'
 let rrcComparisonText = 'Top Bests'
 let rrcTopBests = []
+
+let splitBefore
 
 let dropboxEligible
 let chartEligible

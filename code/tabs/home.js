@@ -24,6 +24,7 @@ function generateHome() {
         runRecapUnload('sav')
         runRecapUnload('lss')
         runRecapUnload('rrc')
+        rrcAttemptIndex = 0
         runRecapExample = false
         hide('runRecap_example_div')
     }
@@ -36,4 +37,10 @@ function generateHome() {
         HTMLContent += fileInfoCard(type)
     })
     document.getElementById('fileTypes').innerHTML = HTMLContent
+}
+function runRecapDefault() {
+    document.getElementById('runRecap_time').innerHTML = `
+    <div style='font-size:150%'>XX:XX</div>
+    <div style='font-size:160%'>${fontAwesome('edit')}</div>`
+    runRecapTime = 'XX:XX'
 }

@@ -108,7 +108,7 @@ function hideInput(elem) {
 function setRunRecapTime(time) {
     document.getElementById('runRecap_time').innerHTML = `<div style='font-size:150%'>${time}</div>`
 }
-function runRecapUnload(elem, shh) {
+function runRecapUnload(elem) {
     if (elem == 'sav') runRecap_savFile = null
     if (elem == 'lss') runRecap_lssFile = {}
     if (elem == 'rrc') runRecap_rrcFile = {}
@@ -190,12 +190,6 @@ function runRecap_chart(times, deltas, lss) {
     } else {
         hide('runRecap_chart')
     }
-}
-function runRecapDefault() {
-    document.getElementById('runRecap_time').innerHTML = `
-    <div style='font-size:150%'>XX:XX</div>
-    <div style='font-size:160%'>${fontAwesome('edit')}</div>`
-    runRecapTime = 'XX:XX'
 }
 function runRecapMusic() {
     const src = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? `https://www.youtube.com/embed/L6T3fpUGSmE?si=CY3h0TbNYkQ003eZ` : `https://www.youtube.com/embed/cdvSNkW3Uyk?si=VcZ9Du_FsD5A8O6g`

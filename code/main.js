@@ -47,6 +47,22 @@ document.addEventListener('DOMContentLoaded', function () {
                                         }
                                     })
                                 })
+                                for (let i = 0; i < rrc80.length; i++) {
+                                    rrcComparisonCollection['Top 3 Average'][i].name = rrc80[i]
+                                    rrcComparisonCollection['Top Average'][i].name = rrc80[i]
+                                    commBestILs[category].topRuns.forEach((run, index) => {
+                                        if (index < 3) {
+                                            rrcComparisonCollection['Top 3 Average'][i].endTime += run.rrc[i].endTime
+                                            rrcComparisonCollection['Top 3 Average'][i].segment += run.rrc[i].segment
+                                        }
+                                        rrcComparisonCollection['Top Average'][i].endTime += run.rrc[i].endTime
+                                        rrcComparisonCollection['Top Average'][i].segment += run.rrc[i].segment
+                                    })
+                                    rrcComparisonCollection['Top 3 Average'][i].endTime /= 3
+                                    rrcComparisonCollection['Top 3 Average'][i].segment /= 3
+                                    rrcComparisonCollection['Top Average'][i].endTime /= commBestILs[category].topRuns.length
+                                    rrcComparisonCollection['Top Average'][i].segment /= commBestILs[category].topRuns.length
+                                }
                             }
                         })
                 })
@@ -221,15 +237,7 @@ function action() {
         if (fontAwesomeSet[globalTab]) {
             setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
             if (globalTab == 'commBestSplits') {
-                const pageTitle = document.getElementById('pageTitle')
-                let HTMLContent = ''
-                HTMLContent += `
-                <div class='container' style='position:absolute;top:22px;right:100px;gap:8px'>
-                <div>by</div>
-                <img src='https://www.speedrun.com/static/user/8l0yyz28/image?v=6e8c7d2' style='height:32px;border-radius:50%'>
-                <div>${getPlayerName(players.find(player => player.name == 'MarkinSws') || 'MarkinSws')}</div>
-                </div>`
-                pageTitle.innerHTML += HTMLContent
+                tabCredit(getPlayerName(players.find(player => player.name == 'MarkinSws')) || 'MarkinSws', 'by', '8l0yyz28/image?v=6e8c7d2')
             }
         }
     }
@@ -244,7 +252,7 @@ function action() {
         hide('runRecap_details')
     }
     if (globalTab == 'rrc' && !runRecapExample) {
-        if (runRecap_rrcFile.attempts.length) show('rrcBrowser')
+        if (runRecap_rrcFile.attempts) show('rrcBrowser')
         hide('runRecap_time')
     } else {
         hide('rrcBrowser')

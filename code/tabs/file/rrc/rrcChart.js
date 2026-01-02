@@ -92,6 +92,8 @@ function rrcChart() {
             gridlines: {
                 color: 'dimgray'
             },
+            baseline: 0,
+            baselineColor: 'black'
         },
         legend: {
             position: 'none'

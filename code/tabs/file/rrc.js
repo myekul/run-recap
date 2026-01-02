@@ -21,7 +21,11 @@ function rrcView() {
     HTMLContent += rrcComparisonDisplay()
     HTMLContent += rrcRTA()
     if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
+        HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
+        HTMLContent += `<div style='width:270px'>${rrcExtraTable('SPLITS', 'split', cupheadBosses)}</div>`
         HTMLContent += fancyScorecard()
+        HTMLContent += `<div style='width:270px'></div>`
+        HTMLContent += `</div>`
     }
     HTMLContent += `</div>`
     if (runRecapCategory.name == '1.1+' && rrcCurrentAttempt.scenes.at(-1)?.endTime < 1680 && rrcCurrentAttempt.scenes.at(-1)?.name == 'level_devil' && rrcComparison != 'None') {
@@ -86,8 +90,10 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 if (scene.scorecard?.parries) scene.trueScorecard -= 0.8
                 if (scene.scorecard?.superMeter) scene.trueScorecard -= 0.8
                 if (scene.scorecard?.coins) scene.trueScorecard -= 0.8
-                // scene.split = scene.scorecardSegment?.endTime || scene.endTime
-                // scene.split = convertToSeconds(scene.split)
+                scene.split = scene.endTime
+                if (!['level_devil', 'level_saltbaker'].includes(scene.name)) scene.split -= 6.45
+                if (runNgun) scene.split = 0
+                if (!splitBefore) scene.split = scene.scorecardSegment ? scene.endTime + scene.scorecardSegment : scene.endTime
                 attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
@@ -144,9 +150,6 @@ function rrcRTA() {
         + rrcExtraTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
                 </div>
             </div>`
-    // HTMLContent += `<div>
-    //             ${rrcExtraTable('SPLITS', 'split', cupheadBosses)}
-    //     </div>`
     HTMLContent += `</div>`
     return HTMLContent
 }
@@ -154,7 +157,10 @@ function rrcExtraTable(title, field, sceneNames) {
     let HTMLContent = ''
     HTMLContent += `
         <div class='border background1' style='padding:8px'>
-        <div class='font2 container' style='font-size:150%'>${title}</div>
+        <div class='font2 container' style='font-size:150%;gap:8px'>
+            ${title}
+            ${title == 'SPLITS' ? `<div class='dim grow' onclick="splitBefore=!splitBefore;playSound('move');action()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
+        </div>
         <div class='container'><table>
         <tr class='gray'>
         <td colspan=10 style='font-size:10%'>&nbsp;</td>
@@ -189,7 +195,7 @@ function rrcExtraTable(title, field, sceneNames) {
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table></div>`
-    if (rrcComparison != 'None') HTMLContent += `<div class='container ${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</div>`
+    if (rrcComparison != 'None' && title != 'SPLITS') HTMLContent += `<div class='container ${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</div>`
     HTMLContent += `</div>`
     return HTMLContent
 }
@@ -293,27 +299,26 @@ function rrcChangeIndex(index, dropdown) {
 const rrcElems = ['levelTime', 'intermissionTime', 'mapTime', 'cutsceneTime', 'scorecardTime']
 function fancyScorecard() {
     let HTMLContent = ''
-    HTMLContent += `<div class='container' style='margin-top:20px;position:relative;width:600px'>
-        <div class='spinning-div border'>
-        <div style='position:relative'>
-            <img class='container' src="images/results.gif" style='height:100px;margin-bottom:8px'>
-            <img id='scorecardLine' class='container' src='images/scorecard_line.png'>
-            <img class='container' src="images/scorecard.png" style='height:400px;-webkit-user-drag: none'>
-            <div id='scorecardText' style='color:floralwhite'>
-            <p>LEVEL RTA ${". ".repeat(9)}</p>
-            <p>INTERMISSIONS ${". ".repeat(4)}</p>
-            <p>MAP MOVEMENT ${". ".repeat(3)}</p>
-            <p>CUTSCENES ${". ".repeat(8)}</p>
-            <p>SCORECARDS ${". ".repeat(6)}</p>
-            <div class='container'>
+    HTMLContent += `
+        <div class='container' style='position:relative;width:600px;margin:0'>
+            <div class='spinning-div border'>
+                <div style='position:relative'>
+                    <img class='container' src="images/results.gif" style='height:100px;margin-bottom:8px'>
+                    <img id='scorecardLine' class='container' src='images/scorecard_line.png'>
+                    <img class='container' src="images/scorecard.png" style='height:400px;-webkit-user-drag: none'>
+                    <div id='scorecardText' style='color:floralwhite'>
+                        <p>LEVEL RTA ${". ".repeat(9)}</p>
+                        <p>INTERMISSIONS ${". ".repeat(4)}</p>
+                        <p>MAP MOVEMENT ${". ".repeat(3)}</p>
+                        <p>CUTSCENES ${". ".repeat(8)}</p>
+                        <p>SCORECARDS ${". ".repeat(6)}</p>
+                        <p>STAR SKIPS ${". ".repeat(8)}</p>
+                    </div>
+                    <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(convertToSeconds(rrcCurrentAttempt.scenes.at(-1).endTime), true)}</div>
+                </div>
             </div>
-            <p>STAR SKIPS ${". ".repeat(8)}</p>`
-    HTMLContent += `</div>
-            <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(convertToSeconds(rrcCurrentAttempt.scenes.at(-1).endTime), true)}</div>
-        </div>
-        </div>
-        <div class='scorecardTimes myekulColor'>
-            ${theResults(rrcCurrentAttempt)}
+            <div class='scorecardTimes myekulColor'>
+                ${theResults(rrcCurrentAttempt)}
             </div>`
     if (rrcComparison != 'None') {
         HTMLContent += `<div style='position:absolute;left:600px;top:130px;width:300px'>${rrcComparisonDisplay()}</div>`
@@ -325,8 +330,9 @@ function fancyScorecard() {
         HTMLContent += `</div>
         <div class='scorecardTimes dim' style='left:780px'>
             ${theResults(rrcComparisonAttempt)}
-            </div>`
+        </div>`
     }
+    HTMLContent += `</div>`
     return HTMLContent
 }
 function theResults(attempt) {
@@ -340,6 +346,7 @@ function theResults(attempt) {
 }
 function read_rrc(content) {
     try {
+        rrcAttemptIndex = 0
         runRecap_rrcFile = JSON.parse(content)
         runRecap_rrcFile.attempts.forEach(attempt => {
             attempt.scenes.forEach(scene => {

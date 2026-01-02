@@ -20,13 +20,10 @@
 ### .rrc
 - Upload
 - Resets / Deaths
-- Split before/after
 - Normalized Scorecards
-- Top 3 Avg
 - Personal Bests
 - King Dice IGT
 - 800 grid
-- Top 10 chart line at 0
 
 ### Alt Strats
 - Run 'n Guns

@@ -25,12 +25,12 @@ function savComparisonContent() {
 }
 function rrcComparisonContent() {
     const rrcComparisonInfo = {
-        // 'Top Average': `Average of top ${runRecapCategory.topRuns.length} players' segment times in their PBs`,
-        // 'Top 3 Average': "Average of top 3 players' segment times in their PBs",
+        'Top Average': `Average of top ${runRecapCategory.topRuns.length} players' segment times in their PBs`,
+        'Top 3 Average': "Average of top 3 players' segment times in their PBs",
         'Top Bests': "Best of top players' segment times in their PBs"
     }
     let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
-    ['None', 'Top Bests'].forEach((option, index) => {
+    ['None', 'Top Average', 'Top 3 Average', 'Top Bests'].forEach((option, index) => {
         HTMLContent += `
         <div class='grow ${getRowColor(index)} ${rrcComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('rrc','${option}');action()">
             <div>${option}</div>
@@ -69,17 +69,14 @@ function runRecapExamples(type) {
             HTMLContent += `</tr>`
         }
     })
-    HTMLContent += `</table>`
-    if (type == 'sav') {
-        HTMLContent += `
+    HTMLContent += `</table>
     <div class='container' style='margin-top:10px'>
         <div class='button cuphead' style='gap:5px;width:170px' onclick="savDatabase('${type}')">
             ${fontAwesome('cloud')}
             Browse database
         </div>
+    </div>
     </div>`
-    }
-    HTMLContent += `</div>`
     return HTMLContent
 }
 function playerComparison(type, playerIndex) {
