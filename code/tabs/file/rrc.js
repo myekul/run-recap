@@ -1,3 +1,39 @@
+function generate_rrc() {
+    dropboxEligible = false
+    chartEligible = false
+    let HTMLContent = ''
+    if (runRecap_rrcFile.attempts) {
+        rrcUpdateBrowser()
+        HTMLContent += rrcView()
+    } else {
+        HTMLContent += emptyFile('rrc')
+    }
+    document.getElementById('content').innerHTML = HTMLContent
+    if (dropboxEligible) initializeDropbox()
+    if (chartEligible) rrcChart()
+}
+function rrcView() {
+    let HTMLContent = ''
+    rrcCurrentAttempt = { scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.map(s => ({ ...s })) }
+    rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
+    if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
+    HTMLContent += classicView()
+    HTMLContent += rrcComparisonDisplay()
+    HTMLContent += rrcRTA()
+    if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
+        HTMLContent += fancyScorecard()
+    }
+    HTMLContent += `</div>`
+    if (runRecapCategory.name == '1.1+' && rrcCurrentAttempt.scenes.at(-1)?.endTime < 1680 && rrcCurrentAttempt.scenes.at(-1)?.name == 'level_devil' && rrcComparison != 'None') {
+        chartEligible = true
+        HTMLContent += rrcChartSection()
+    }
+    HTMLContent += `<div class='container' style='gap:10px;margin-top:15px'>
+        <div class='button cuphead' onclick="rrcRaw()">Show raw</div>
+        <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
+        </div>`
+    return HTMLContent
+}
 function rrcSegments(scenes) {
     scenes.forEach((scene, index) => {
         scene.segment = parseFloat(scene.endTime)
@@ -76,7 +112,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
 function reconstructRRC(endTimes, playerIndex) {
     bossIndex = 0
     endTimes.forEach((endTime, index) => {
-        const newScene = { name: rrc80[index], endTime: endTime }
+        const newScene = { name: rrc80[index], endTime: convertToSeconds(endTime) }
         if (cupheadBosses[newScene.name]) {
             if (!(newScene.name == 'level_dice_palace_main' && rrc80[index + 1] != 'win')) {
                 newScene.levelTime = runRecapCategory.topRuns[playerIndex].runRecap[bossIndex]
@@ -93,45 +129,26 @@ function rrcComparisonDisplay() {
                             <div>${rrcComparisonText}</div>
                         </div>`
 }
-function generate_rrc() {
+function rrcRTA() {
     let HTMLContent = ''
-    if (runRecap_rrcFile.attempts) {
-        rrcUpdateBrowser()
-        rrcCurrentAttempt = { scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.map(s => ({ ...s })) }
-        rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
-        if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
-        HTMLContent += classicView()
-        HTMLContent += rrcComparisonDisplay()
-        HTMLContent += `
+    HTMLContent += `
         <div class='container'>
             <div>
                 <div class='container' style='align-items:flex-start;gap:30px'>
                     ${rrcExtraTable('Map Movement', 'map', cupheadBosses)
-            + rrcExtraTable('Level RTA', 'levels', cupheadBosses)
-            + rrcExtraTable('Scorecards', 'scorecard', cupheadBosses)}
+        + rrcExtraTable('Level RTA', 'levels', cupheadBosses)
+        + rrcExtraTable('Scorecards', 'scorecard', cupheadBosses)}
                 </div>
                 <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
                     ${rrcExtraTable('Intermissions', 'intermissions', cupheadIntermissions)
-            + rrcExtraTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
+        + rrcExtraTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
                 </div>
             </div>`
-        // HTMLContent += `<div>
-        //             ${rrcExtraTable('SPLITS', 'split', cupheadBosses)}
-        //     </div>`
-        HTMLContent += `</div>`
-        HTMLContent += `</div>`
-        if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
-            HTMLContent += fancyScorecard()
-        }
-        HTMLContent += `</div>`
-        HTMLContent += `<div class='container' style='gap:10px;margin-top:15px'>
-        <div class='button cuphead' onclick="rrcRaw()">Show raw</div>
-        <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
-        </div>`
-    } else {
-        HTMLContent += `<div class='container'>No .rrc file uploaded!</div>`
-    }
-    document.getElementById('content').innerHTML = HTMLContent
+    // HTMLContent += `<div>
+    //             ${rrcExtraTable('SPLITS', 'split', cupheadBosses)}
+    //     </div>`
+    HTMLContent += `</div>`
+    return HTMLContent
 }
 function rrcExtraTable(title, field, sceneNames) {
     let HTMLContent = ''
@@ -330,7 +347,6 @@ function read_rrc(content) {
             })
         })
         runRecap_rrcFile.attempts.reverse()
-        // console.log(JSON.stringify(runRecap_rrcFile))
     } catch (error) {
         console.error('Error parsing JSON file:', error)
     }

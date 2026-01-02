@@ -15,10 +15,19 @@ let rrcAttemptIndex = 0
 let rrcCurrentAttempt = {}
 let rrcComparisonAttempt = {}
 
-let rrcComparisonCollection = { "Top Bests": new Array(80).fill({ segment: Infinity }) }
+let rrcComparisonCollection = {
+    "Top Bests": Array.from({ length: 80 }, () => ({
+        segment: Infinity,
+        endTime: Infinity
+    })),
+    'Top 3 Average': []
+}
 let rrcComparison = 'Top Bests'
 let rrcComparisonText = 'Top Bests'
 let rrcTopBests = []
+
+let dropboxEligible
+let chartEligible
 
 let runRecap_markin
 let runRecapTime

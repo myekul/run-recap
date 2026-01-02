@@ -6,10 +6,8 @@
 - Organize Run Recap database
 - Find player or display player name
 - DLC+Base L/S Routes
-- More graphs
 - Info section
 - Ground vs. Plane
-- Meatball skip?
 
 ### .sav
 - None comparison
@@ -28,8 +26,7 @@
 - Personal Bests
 - King Dice IGT
 - 800 grid
-- Top 10 chart tooltips
-- Top 10 chart comparisons
+- Top 10 chart line at 0
 
 ### Alt Strats
 - Run 'n Guns

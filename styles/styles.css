@@ -185,3 +185,11 @@ th {
 .fileType .dim {
     font-size: 80%
 }
+
+.google-visualization-tooltip {
+    border: 3px solid var(--banner) !important;
+    background-color: var(--background1) !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    padding: 5px !important
+}

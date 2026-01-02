@@ -4,7 +4,6 @@ setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
-setDropbox()
 document.addEventListener('DOMContentLoaded', function () {
     fetch('resources/categoryData.json')
         .then(response => response.json())
@@ -35,11 +34,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                     rrcSegments(runRecapCategory.topRuns[index].rrc)
                                     rrcComparisonCollection['Player ' + index] = commBestILs[category].topRuns[index].rrc
                                     commBestILs[category].topRuns[index].rrc.forEach((scene, sceneIndex) => {
-                                        if (scene.segment < rrcComparisonCollection['Top Bests'][sceneIndex].segment) {
-                                            rrcComparisonCollection['Top Bests'][sceneIndex] = { name: scene.name, segment: scene.segment }
+                                        const topBestScene = rrcComparisonCollection['Top Bests'][sceneIndex]
+                                        if (scene.segment < topBestScene.segment) {
+                                            topBestScene.name = scene.name
+                                            topBestScene.segment = scene.segment
                                             rrcTopBests[sceneIndex] = [index]
-                                        } else if (scene.segment == rrcComparisonCollection['Top Bests'][sceneIndex].segment) {
+                                        } else if (scene.segment == topBestScene.segment) {
                                             rrcTopBests[sceneIndex].push(index)
+                                        }
+                                        if (scene.endTime < topBestScene.endTime) {
+                                            topBestScene.endTime = scene.endTime
                                         }
                                     })
                                 })
@@ -97,13 +101,6 @@ function organizeAltStrats() {
 }
 function action() {
     loaded = true
-    if (globalTab == 'home') {
-        show('runRecapTab')
-        hide('content')
-    } else {
-        hide('runRecapTab')
-        show('content')
-    }
     const tabActions = {
         home: generateHome,
 
@@ -128,24 +125,24 @@ function action() {
     }
     if (runRecap_savFile) {
         document.getElementById('savButton').classList.add('pulseSize')
-        document.getElementById('savButton').classList.remove('grayedOut')
+        document.getElementById('savButton').style.backgroundColor = 'var(--cuphead)'
     } else {
         document.getElementById('savButton').classList.remove('pulseSize')
-        document.getElementById('savButton').classList.add('grayedOut')
+        document.getElementById('savButton').style.backgroundColor = ''
     }
     if (runRecap_lssFile.pbSplits) {
         document.getElementById('lssButton').classList.add('pulseSize')
-        document.getElementById('lssButton').classList.remove('grayedOut')
+        document.getElementById('lssButton').style.backgroundColor = 'var(--cuphead)'
     } else {
         document.getElementById('lssButton').classList.remove('pulseSize')
-        document.getElementById('lssButton').classList.add('grayedOut')
+        document.getElementById('lssButton').style.backgroundColor = ''
     }
     if (runRecap_rrcFile.attempts) {
         document.getElementById('rrcButton').classList.add('pulseSize')
-        document.getElementById('rrcButton').classList.remove('grayedOut')
+        document.getElementById('rrcButton').style.backgroundColor = 'var(--cuphead)'
     } else {
         document.getElementById('rrcButton').classList.remove('pulseSize')
-        document.getElementById('rrcButton').classList.add('grayedOut')
+        document.getElementById('rrcButton').style.backgroundColor = ''
     }
     ['commBestILs', 'altStrats', 'commBestSplits', 'top10'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
@@ -247,7 +244,7 @@ function action() {
         hide('runRecap_details')
     }
     if (globalTab == 'rrc' && !runRecapExample) {
-        show('rrcBrowser')
+        if (runRecap_rrcFile.attempts.length) show('rrcBrowser')
         hide('runRecap_time')
     } else {
         hide('rrcBrowser')
@@ -336,7 +333,6 @@ function done() {
             }
         })
     }
-    document.getElementById('runRecap_examples').innerHTML = runRecapExamples()
     let HTMLContent = ''
     for (let i = 0; i < runRecapCategory.topRuns.length; i++) {
         HTMLContent += `<option value="Player ${i}">${i + 1}. ${secondsToHMS(runRecapCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
@@ -440,11 +436,6 @@ const fileOrigin = {
     lss: 'LiveSplit',
     rrc: 'Run Recap'
 };
-let HTMLContent = '';
-['sav', 'lss', 'rrc'].forEach(type => {
-    HTMLContent += fileInfoCard(type)
-})
-document.getElementById('fileTypes').innerHTML = HTMLContent
 function fileInfoCard(type) {
     return `<div style='width:330px'>
                 <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
@@ -457,4 +448,11 @@ function fileInfoCard(type) {
                 ${fileInfo[type]}
                 </div>
             </div>`
+}
+function emptyFile(type) {
+    dropboxEligible = true
+    return `<div class='container' style='gap:30px;margin-top:8px'>
+        ${fileInfoCard(type)}
+        <div id='dropbox'></div>
+        </div>`
 }

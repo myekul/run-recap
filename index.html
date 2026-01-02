@@ -17,6 +17,7 @@
     <script src="https://myekul.com/shared-assets/cuphead/cuphead.js"></script>
     <script src="https://myekul.com/shared-assets/cuphead/levels.js"></script>
     <script src="https://myekul.com/shared-assets/myekul/src.js"></script>
+    <script src="https://myekul.com/shared-assets/elements/dropbox/dropbox.js"></script>
 </head>
 
 <body>
@@ -167,42 +168,12 @@
                             &Delta;
                             <div id="savComparison">Top 3 Average</div>
                         </div>
-                        <!-- <div id='deltaToggle' class="grow dim" style="font-size:150%;margin-left:10px"
-                            onclick="deltaType=!deltaType;playSound('move');action()">
-                            <i class="fa fa-exchange"></i>
-                        </div> -->
                         <img id="runRecap_ghost" style="height:40px;padding-left:20px">
                         <div id="runRecap_numDeaths" style="padding-left:5px"></div>
                     </div>
                 </div>
             </div>
             <div id="content"></div>
-            <div id="runRecapTab" style="display:none">
-                <div class="container">
-                    <div>
-                        <div id='runRecap_welcome'>
-                            <div class="container" style="margin-top:20px">
-                                <div class='textBlock'>
-                                    Welcome to <span class="myekulColor">Run Recap</span>! This tool allows you
-                                    to upload
-                                    a <span class="myekulColor">Cuphead .sav</span>
-                                    and a <span class="myekulColor">LiveSplit .lss</span> file
-                                    to gain valuable insights about your recent run performance.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container" style="padding:25px 0;gap:20px">
-                    <div style="padding-right:20px">
-                        <div class="container">View Example:</div>
-                        <div id="runRecap_examples" class="container"></div>
-                    </div>
-                    <div id="dropbox"></div>
-                </div>
-                <div id='fileTypes' class="container" style="gap:30px;align-items:flex-start"></div>
-                <div id='runRecapError' class='container' style='display:none;margin-top:20px'>Error!</div>
-            </div>
             <div id="runRecap_content" style="display:none">
                 <div class='container' style='padding-top:20px'>
                     <div class="container" style="margin:0">
@@ -249,6 +220,8 @@
 <script src="code/tabs/file/sav.js"></script>
 <script src="code/tabs/file/lss.js"></script>
 <script src="code/tabs/file/rrc.js"></script>
+
+<script src="code/tabs/file/rrc/rrcChart.js"></script>
 
 <script src="code/tabs/sums.js"></script>
 <script src="code/tabs/residual.js"></script>

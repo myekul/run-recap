@@ -61,8 +61,8 @@ function runRecapExamples(type) {
     players.slice(0, runRecapCategory.topRuns.length).forEach((player, playerIndex) => {
         if (player.extra) {
             const comparison = type == 'sav' ? savComparison : rrcComparison
-            const onclick = type ? `playerComparison('${type}',${playerIndex},'${player.name} - ${secondsToHMS(player.extra.score)}')` : `processSavFile(${playerIndex});playSound('ready')`
-            HTMLContent += `<tr class='${comparison == 'Player ' + playerIndex ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
+            const onclick = type ? `playerComparison('${type}',${playerIndex})` : `processSavFile(${playerIndex});playSound('ready')`
+            HTMLContent += `<tr class='${comparison == 'Player ' + playerIndex && globalTab != 'home' ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
             HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
             HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
             HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
@@ -82,7 +82,8 @@ function runRecapExamples(type) {
     HTMLContent += `</div>`
     return HTMLContent
 }
-function playerComparison(type, playerIndex, custom) {
-    changeComparison(type, 'Player ' + playerIndex, custom)
+function playerComparison(type, playerIndex) {
+    const player = players[playerIndex]
+    changeComparison(type, 'Player ' + playerIndex, player.name + ' - ' + secondsToHMS(player.extra.score))
     action()
 }

@@ -1,13 +1,14 @@
 function generate_sav() {
+    dropboxEligible = false
     let HTMLContent = ''
     if (runRecap_savFile) {
         handleNumDeaths()
         HTMLContent += classicView()
     } else {
-        // HTMLContent += `<div class='container'>${fileInfoCard('sav')}</div>`
-        HTMLContent += `<div class='container'>No .sav file uploaded!</div>`
+        HTMLContent += emptyFile('sav')
     }
     document.getElementById('content').innerHTML = HTMLContent
+    if (dropboxEligible) initializeDropbox(true)
 }
 function handleNumDeaths() {
     const numDeaths = runRecap_savFile.statictics.playerOne.numDeaths

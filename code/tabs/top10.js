@@ -1,22 +1,7 @@
 let rrcChartSeries
 function generateTop10() {
+    chartEligible = (rrcComparison != 'None')
     if (runRecapCategory.name != '1.1+') getCommBestILs('1.1+')
-    rrcChartSeries = {};
-    const usedColors = new Set();
-    runRecapCategory.topRuns.forEach((playerRun, index) => {
-        let color = players[index]['name-style'].color2
-        if (usedColors.has(color)) {
-            color = players[index]['name-style'].color1
-        }
-        if (usedColors.has(color)) {
-            color = 'lightgreen'
-        }
-        if (usedColors.has(color)) {
-            color = 'salmon'
-        }
-        usedColors.add(color);
-        rrcChartSeries[index] = { color: color };
-    });
     isles.forEach(isle => {
         isle.sum = 0
         isle.comparisonSum = 0
@@ -38,21 +23,8 @@ function generateTop10() {
         })
     })
     let HTMLContent = ''
-    HTMLContent += `
-    <div class='container' style='gap:10px'>
-    <div id="rrcChart" class='border' style="width:1000px;height: 400px"></div>
-    <table>`
-    runRecapCategory.topRuns.forEach((run, index) => {
-        const colorCell = `<td style='background-color:${rrcChartSeries[index].color};width:10px'></td>`
-        HTMLContent += `<tr class='${getRowColor(index)}'>
-        ${colorCell}
-        <td>${getPlayerDisplay(players[index])}</td>
-        ${colorCell}
-        </tr>`
-    })
-    HTMLContent += `</table>
-    </div>
-    <div class='container' style='margin-top:20px'><table>
+    HTMLContent += chartEligible ? rrcChartSection() : ''
+    HTMLContent += `<div class='container' style='margin-top:20px'><table>
         <tr>
         <td colspan=4></td>
         <th colspan=3 class='isle1'>Isle 1</th>
@@ -144,88 +116,5 @@ function generateTop10() {
     HTMLContent += `</table>`
     HTMLContent += `</div>`
     document.getElementById('content').innerHTML = HTMLContent
-    drawChart()
-}
-function buildChartData() {
-    const data = [];
-    data.push([
-        'Time',
-        ...runRecapCategory.topRuns.map(r => r.name)
-    ]);
-    const pointsPerPlayer = runRecapCategory.topRuns.map(r => []);
-    for (let i = 0; i < 80; i++) {
-        runRecapCategory.topRuns.forEach((player, pIndex) => {
-            if (player.rrc[i]) {
-                const xTime = convertToSeconds(player.rrc[i].endTime);
-                const yDelta = xTime - rrcComparisonCollection['Player 0'][i]?.endTime || 0;
-                pointsPerPlayer[pIndex].push([xTime, yDelta])
-            }
-        });
-    }
-    const allRows = [];
-    const allXTimes = new Set();
-    pointsPerPlayer.forEach(points => points.forEach(p => allXTimes.add(p[0])));
-    const sortedXTimes = Array.from(allXTimes).sort((a, b) => a - b);
-
-    sortedXTimes.forEach(x => {
-        const row = [x];
-        pointsPerPlayer.forEach(points => {
-            const point = points.find(p => p[0] === x);
-            row.push(point ? point[1] : null);
-        });
-        allRows.push(row);
-    });
-
-    return [data[0], ...allRows];
-}
-function drawChart() {
-    // console.log(buildChartData())
-    const chartData = google.visualization.arrayToDataTable(buildChartData());
-    function formatSeconds(sec) {
-        const m = Math.floor(sec / 60);
-        const s = sec % 60;
-        return `${m}:${String(s).padStart(2, '0')}`;
-    }
-    const maxTime = 420 * 4
-    const ticks = [];
-    for (let t = 420; t <= maxTime; t += 420) {
-        ticks.push({
-            v: t,
-            f: formatSeconds(t)
-        });
-    }
-    const font = getComputedStyle(document.documentElement).getPropertyValue('--font')
-    const options = {
-        chartArea: { height: '80%', width: '80%' },
-        fontName: font,
-        hAxis: {
-            title: 'Segment Time',
-            ticks: ticks,
-            textStyle: { color: 'gray' },
-            titleTextStyle: { color: 'gray' },
-            gridlines: {
-                color: 'dimgray'
-            },
-        },
-        vAxis: {
-            title: 'Delta',
-            textStyle: { color: 'gray' },
-            titleTextStyle: { color: 'gray' },
-            gridlines: {
-                color: 'dimgray'
-            },
-        },
-        legend: {
-            position: 'none'
-        },
-        lineWidth: 2,
-        pointSize: 1,
-        interpolateNulls: true,
-        series: rrcChartSeries,
-        backgroundColor: '#343434',
-    };
-    const chart = new google.visualization.ScatterChart(
-        document.getElementById('rrcChart')
-    );
-    chart.draw(chartData, options);
+    if (chartEligible) rrcChart()
 }
