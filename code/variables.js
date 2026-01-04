@@ -34,6 +34,7 @@ let rrcComparisonText = 'Top Bests'
 let rrcTopBests = []
 
 let splitBefore
+let scorecardMode = 'Default'
 
 let dropboxEligible
 let chartEligible

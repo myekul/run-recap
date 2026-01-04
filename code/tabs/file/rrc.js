@@ -112,11 +112,11 @@ function rrcOrganize(attempt, scenes, doSegments) {
             attempt.intermissionTime += scene.segment
             attempt.intermissions.push(scene)
         }
-        attempt.scenes
     })
 }
 function reconstructRRC(endTimes, playerIndex) {
     bossIndex = 0
+    winIndex = 0
     endTimes.forEach((endTime, index) => {
         const newScene = { name: rrc80[index], endTime: convertToSeconds(endTime) }
         if (cupheadBosses[newScene.name]) {
@@ -124,6 +124,10 @@ function reconstructRRC(endTimes, playerIndex) {
                 newScene.levelTime = runRecapCategory.topRuns[playerIndex].runRecap[bossIndex]
                 bossIndex++
             }
+        }
+        if (newScene.name == 'win') {
+            newScene.starSkips = runRecapCategory.topRuns[playerIndex].starSkips[winIndex] * 2
+            winIndex++
         }
         runRecapCategory.topRuns[playerIndex].rrc.push(newScene)
     })
@@ -156,7 +160,7 @@ function rrcRTA() {
 function rrcExtraTable(title, field, sceneNames) {
     let HTMLContent = ''
     HTMLContent += `
-        <div class='border background1' style='padding:8px'>
+        <div class='border background1' style='padding:8px;position:relative;min-width:225px'>
         <div class='font2 container' style='font-size:150%;gap:8px'>
             ${title}
             ${title == 'SPLITS' ? `<div class='dim grow' onclick="splitBefore=!splitBefore;playSound('move');action()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
@@ -186,18 +190,42 @@ function rrcExtraTable(title, field, sceneNames) {
         HTMLContent += `<tr class='${getRowColor(index)}'>
             <td class='${level ? 'container ' + level.id : ''}' style='text-align:left'>${content}</td>
             <td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`
-        if (rrcComparison != 'None') {
+        if (rrcComparison != 'None' && !(title == 'Scorecards' && scorecardMode == 'Star Skips')) {
             HTMLContent +=
                 `<td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>
             <td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>`
+            if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
         }
-        if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
+        if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
+            HTMLContent += `<td>
+            <div class='myekulColor container' style='gap:3px;justify-content:left'>`
+            for (let i = 0; i < scene.scorecard?.starSkips; i++) {
+                HTMLContent += fontAwesome('star')
+            }
+            HTMLContent += `</div></td>`
+        }
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table></div>`
     if (rrcComparison != 'None' && title != 'SPLITS') HTMLContent += `<div class='container ${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</div>`
+    if (title == 'Scorecards') {
+        HTMLContent += `
+        <div style='position:absolute;left:255px;top:25px'>
+            <div class='scorecardButton button ${scorecardMode == 'Default' ? 'selected' : ''}' onclick="changeScorecardMode('Default')">${fontAwesome('tasks')}</div>
+            <div id='starSkipButton' class='scorecardButton button container ${scorecardMode == 'Star Skips' ? 'selected' : ''}' onclick="changeScorecardMode('Star Skips')">
+            ${fontAwesome('star')}
+            ${fontAwesome('star')}
+            </div>
+        </div>`
+        // <div class='scorecardButton button ${scorecardMode == 'Normalized' ? 'selected' : ''}' onclick="changeScorecardMode('Normalized')">${fontAwesome('balance-scale')}</div>
+    }
     HTMLContent += `</div>`
     return HTMLContent
+}
+function changeScorecardMode(mode) {
+    scorecardMode = mode
+    playSound('move')
+    action()
 }
 function rrcUpdateBrowser() {
     let HTMLContent = ''
@@ -254,7 +282,6 @@ function rrcRaw() {
         if (level.id == 'forestfollies') splitBefore = ''
         if (level.id == 'thedevil') splitBefore = split
         HTMLContent += `<tr class='${getRowColor(index)}'>
-                <td>${secondsToHMS(scene.map, true)}</td>
             <td class='container ${level?.id}'>${getImage(level.id, 21)}</td>
             <td class='${level?.id}'>${scene.levelTime ? secondsToHMS(scene.levelTime, true) : ''}</td>
             <td class='${level?.id}' style='font-size:80%'>${scene.levelTime ? level?.id == 'thedevil' ? secondsToHMS(scene.segment, true) : secondsToHMS(scene.segment - 6.45, true) : ''}</td>

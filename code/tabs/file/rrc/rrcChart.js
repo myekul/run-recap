@@ -136,7 +136,8 @@ function rrcChartSection() {
     <table>`
     runRecapCategory.topRuns.forEach((run, index) => {
         const colorCell = `<td style='background-color:${rrcChartSeries[index].color};width:10px'></td>`
-        HTMLContent += `<tr class='grow ${getRowColor(index)} ${rrcComparison.split(' ')[1] == index ? 'cuphead' : ''}' onclick="playerComparison('rrc',${index})">
+        const selected = rrcComparison.split(' ')[0] == 'Player' && rrcComparison.split(' ')[1] == index
+        HTMLContent += `<tr class='grow ${getRowColor(index)} ${selected ? 'cuphead' : ''}' onclick="playerComparison('rrc',${index})">
         ${colorCell}
         <td>${getPlayerDisplay(players[index])}</td>
         ${colorCell}

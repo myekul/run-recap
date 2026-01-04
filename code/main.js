@@ -24,8 +24,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                     commBestILs[category].topRuns[index].rrc = []
                                     if (rrc.scenes) {
                                         rrc.endTimes = []
+                                        let winIndex = 0
                                         rrc.scenes.forEach(scene => {
                                             rrc.endTimes.push(scene.endTime)
+                                            if (scene.name == 'win') {
+                                                scene.starSkips = commBestILs[category].topRuns[index].starSkips[winIndex] * 2
+                                                winIndex++
+                                            }
                                         })
                                         runRecapCategory.topRuns[index].rrc = rrc.scenes
                                     } else {

@@ -90,8 +90,9 @@ function savBoss(categoryIndex) {
     return HTMLContent
 }
 function extraLevel(name, time) {
+    const folder = name == 'mausoleum' ? 'other' : 'runnguns'
     return `<div class='container'>
-        <div>${getImage('runnguns/' + name, 36)}</div>
+        <div>${getImage(folder + '/' + name, 36)}</div>
         <div style='padding-left:8px;font-size:120%'>${secondsToHMS(time, true)}</div>
         </div>`
 }
