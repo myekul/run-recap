@@ -263,8 +263,6 @@ function altStrats(query) {
     //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
     // }
     let altStrats = [...alt[runRecapCategory.tabName][query]]
-    let min = 0
-    let max = Infinity
     if (query == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') {
         if (bonbonSort == 'Best') {
             altStrats.sort((a, b) => a.time - b.time)
@@ -272,22 +270,8 @@ function altStrats(query) {
             altStrats.sort((a, b) => b.time - a.time)
         }
     }
-    min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
-    max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
-    function normalizeTime(time) {
-        return (time - min) / (max - min);
-    }
-    function getColor(normalized) {
-        let r, g;
-        if (normalized < 0.5) {
-            r = Math.round(255 * (normalized * 2))
-            g = 255;
-        } else {
-            r = 255;
-            g = Math.round(255 * (1 - (normalized - 0.5) * 2))
-        }
-        return `rgb(${r},${g},0)`;
-    }
+    let min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
+    let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
     altStrats.forEach((strat, index) => {
         if (strat.title && !(strat.title == 'Head Skip' && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
             HTMLContent += `<tr><td style='height:10px'></td></tr>
@@ -314,7 +298,7 @@ function altStrats(query) {
                 }
                 HTMLContent += query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
                 if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
-                HTMLContent += `<td style='width:5px;background-color:${getColor(normalizeTime(strat.time))}'></td>`
+                HTMLContent += normalizedColorCell(strat.time, min, max)
                 HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                 if (RTAcheck) {
                     HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`

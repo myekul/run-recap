@@ -9,117 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             commBestILs = data
-            fetch('resources/topData.json')
-                .then(response => response.json())
-                .then(data => {
-                    for (const category in data) {
-                        commBestILs[category].topRuns = data[category]
-                    }
-                    fetch('resources/rrcData.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            for (const category in data) {
-                                rrcTopBests = new Array(rrc80.length).fill([])
-                                data[category].forEach((rrc, index) => {
-                                    commBestILs[category].topRuns[index].rrc = []
-                                    if (rrc.scenes) {
-                                        rrc.endTimes = []
-                                        let winIndex = 0
-                                        rrc.scenes.forEach(scene => {
-                                            rrc.endTimes.push(scene.endTime)
-                                            if (scene.name == 'win') {
-                                                scene.starSkips = commBestILs[category].topRuns[index].starSkips[winIndex] * 2
-                                                winIndex++
-                                            }
-                                        })
-                                        runRecapCategory.topRuns[index].rrc = rrc.scenes
-                                    } else {
-                                        reconstructRRC(rrc.endTimes, index)
-                                    }
-                                    rrcSegments(runRecapCategory.topRuns[index].rrc)
-                                    rrcComparisonCollection['Player ' + index] = commBestILs[category].topRuns[index].rrc
-                                    commBestILs[category].topRuns[index].rrc.forEach((scene, sceneIndex) => {
-                                        const topBestScene = rrcComparisonCollection['Top Bests'][sceneIndex]
-                                        if (scene.segment < topBestScene.segment) {
-                                            topBestScene.name = scene.name
-                                            topBestScene.segment = scene.segment
-                                            rrcTopBests[sceneIndex] = [index]
-                                        } else if (scene.segment == topBestScene.segment) {
-                                            rrcTopBests[sceneIndex].push(index)
-                                        }
-                                        if (scene.endTime < topBestScene.endTime) {
-                                            topBestScene.endTime = scene.endTime
-                                        }
-                                    })
-                                })
-                                for (let i = 0; i < rrc80.length; i++) {
-                                    rrcComparisonCollection['Top 3 Average'][i].name = rrc80[i]
-                                    rrcComparisonCollection['Top Average'][i].name = rrc80[i]
-                                    commBestILs[category].topRuns.forEach((run, index) => {
-                                        if (index < 3) {
-                                            rrcComparisonCollection['Top 3 Average'][i].endTime += run.rrc[i].endTime
-                                            rrcComparisonCollection['Top 3 Average'][i].segment += run.rrc[i].segment
-                                        }
-                                        rrcComparisonCollection['Top Average'][i].endTime += run.rrc[i].endTime
-                                        rrcComparisonCollection['Top Average'][i].segment += run.rrc[i].segment
-                                    })
-                                    rrcComparisonCollection['Top 3 Average'][i].endTime /= 3
-                                    rrcComparisonCollection['Top 3 Average'][i].segment /= 3
-                                    rrcComparisonCollection['Top Average'][i].endTime /= commBestILs[category].topRuns.length
-                                    rrcComparisonCollection['Top Average'][i].segment /= commBestILs[category].topRuns.length
-                                }
-                            }
-                        })
-                })
-            fetch('resources/alt.json')
-                .then(response => response.json())
-                .then(data => {
-                    alt = data
-                    organizeAltStrats()
-                })
+            prepareLocalData()
             runRecapCategory = commBestILs['1.1+']
             window.firebaseUtils.firestoreRead()
         })
 })
-function organizeAltStrats() {
-    for (const category in alt) {
-        for (const boss in alt[category]) {
-            for (const obj of alt[category][boss]) {
-                if (!obj.title) {
-                    altStratNum++
-                }
-            }
-        }
-    }
-    const chunks = [
-        ['1.1+', 'Legacy', 'forestfollies'],
-        ['1.1+', 'NMG', 'hildaberg'],
-        ['1.1+', 'NMG', 'grimmatchstick'],
-        ['DLC', 'DLC C/S', 'estherwinchester'],
-        ['NMG', 'DLC+Base', 'hildaberg'],
-        ['NMG', 'DLC+Base', 'cagneycarnation'],
-        ['NMG', 'DLC+Base', 'baronessvonbonbon'],
-        ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
-        ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
-        ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
-        ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
-        ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
-        ['DLC', 'DLC C/S', 'forestfollies'],
-        ['DLC', 'DLC+Base', 'forestfollies'],
-        ['DLC', 'DLC+Base C/S', 'forestfollies']
-    ]
-    for (const [copy, paste, boss] of chunks) {
-        alt[paste][boss] = alt[copy][boss]
-    }
-    copyDLC('DLC', 'DLC+Base')
-    copyDLC('DLC C/S', 'DLC+Base C/S')
-    function copyDLC(copy, paste) {
-        const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
-        dlc.forEach(boss => {
-            alt[paste][boss] = alt[copy][boss]
-        })
-    }
-}
 function action() {
     loaded = true
     const tabActions = {

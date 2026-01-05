@@ -21,8 +21,10 @@ function rrcView() {
     HTMLContent += rrcComparisonDisplay()
     HTMLContent += rrcRTA()
     if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
+        const finalTableName = segmentToggle ? 'SEGMENTS' : 'SPLITS'
+        const finalTableThing = segmentToggle ? 'trueSegment' : 'split'
         HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
-        HTMLContent += `<div style='width:270px'>${rrcExtraTable('SPLITS', 'split', cupheadBosses)}</div>`
+        HTMLContent += `<div style='width:270px'>${rtaTable(finalTableName, finalTableThing, cupheadBosses)}</div>`
         HTMLContent += fancyScorecard()
         HTMLContent += `<div style='width:270px'></div>`
         HTMLContent += `</div>`
@@ -84,16 +86,22 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 scene.map = mapTime
                 mapTime = 0
                 scene.scorecard = attempt.scenes[index + 1]
-                scene.scorecardSegment = scene.scorecard?.segment
-                scene.trueScorecard = index < attempt.scenes.length - 1 ? scene.scorecard.segment : 0
-                if (scene.scorecard?.hp) scene.trueScorecard -= 0.8
-                if (scene.scorecard?.parries) scene.trueScorecard -= 0.8
-                if (scene.scorecard?.superMeter) scene.trueScorecard -= 0.8
-                if (scene.scorecard?.coins) scene.trueScorecard -= 0.8
+                scene.scorecardSegment = calculateScorecard(scene.scorecard)
+                // Split
                 scene.split = scene.endTime
                 if (!['level_devil', 'level_saltbaker'].includes(scene.name)) scene.split -= 6.45
                 if (runNgun) scene.split = 0
                 if (!splitBefore) scene.split = scene.scorecardSegment ? scene.endTime + scene.scorecardSegment : scene.endTime
+                // Segment
+                scene.trueSegment = scene.scorecard?.endTime
+                if (scene.scorecard) {
+                    if (attempt.levels.length) scene.trueSegment = scene.scorecard.endTime - attempt.levels.at(-1).scorecard.endTime
+                } else {
+                    scene.trueSegment = scene.endTime - attempt.levels.at(-1).scorecard.endTime
+                }
+                if (!splitBefore) scene.trueSegment = scene.endTime - attempt.levels.at(-1)?.endTime
+                if (!splitBefore && ['level_devil', 'level_saltbaker'].includes(scene.name)) scene.trueSegment += 6.45
+                //
                 attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
@@ -114,30 +122,24 @@ function rrcOrganize(attempt, scenes, doSegments) {
         }
     })
 }
-function reconstructRRC(endTimes, playerIndex) {
-    bossIndex = 0
-    winIndex = 0
-    endTimes.forEach((endTime, index) => {
-        const newScene = { name: rrc80[index], endTime: convertToSeconds(endTime) }
-        if (cupheadBosses[newScene.name]) {
-            if (!(newScene.name == 'level_dice_palace_main' && rrc80[index + 1] != 'win')) {
-                newScene.levelTime = runRecapCategory.topRuns[playerIndex].runRecap[bossIndex]
-                bossIndex++
-            }
-        }
-        if (newScene.name == 'win') {
-            newScene.starSkips = runRecapCategory.topRuns[playerIndex].starSkips[winIndex] * 2
-            winIndex++
-        }
-        runRecapCategory.topRuns[playerIndex].rrc.push(newScene)
-    })
+function calculateScorecard(scorecard) {
+    if (scorecardMode != 'Normalized') return scorecard?.segment
+    let segment = scorecard?.segment
+    if (scorecard?.hp) segment -= 0.8
+    if (scorecard?.parries) segment -= 0.8
+    if (scorecard?.superMeter) segment -= 0.8
+    if (scorecard?.coins) segment -= 0.8
+    if (scorecard?.starSkips == 1) segment += 0.516
+    if (scorecard?.starSkips == 2) segment += 1.016
+    if (scorecard?.starSkips == 3) segment += 1.516
+    return segment
 }
 function rrcComparisonDisplay() {
     return `<div class="container grow dim" style="margin:20px;gap:10px"
-                            onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
-                            &Delta;
-                            <div>${rrcComparisonText}</div>
-                        </div>`
+                onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
+                &Delta;
+                <div>${rrcComparisonText}</div>
+            </div>`
 }
 function rrcRTA() {
     let HTMLContent = ''
@@ -145,25 +147,26 @@ function rrcRTA() {
         <div class='container'>
             <div>
                 <div class='container' style='align-items:flex-start;gap:30px'>
-                    ${rrcExtraTable('Map Movement', 'map', cupheadBosses)
-        + rrcExtraTable('Level RTA', 'levels', cupheadBosses)
-        + rrcExtraTable('Scorecards', 'scorecard', cupheadBosses)}
+                    ${rtaTable('Map Movement', 'map', cupheadBosses)
+        + rtaTable('Level RTA', 'levels', cupheadBosses)
+        + rtaTable('Scorecards', 'scorecard', cupheadBosses)}
                 </div>
                 <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
-                    ${rrcExtraTable('Intermissions', 'intermissions', cupheadIntermissions)
-        + rrcExtraTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
+                    ${rtaTable('Intermissions', 'intermissions', cupheadIntermissions)
+        + rtaTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
                 </div>
             </div>`
     HTMLContent += `</div>`
     return HTMLContent
 }
-function rrcExtraTable(title, field, sceneNames) {
+function rtaTable(title, field, sceneNames) {
     let HTMLContent = ''
     HTMLContent += `
         <div class='border background1' style='padding:8px;position:relative;min-width:225px'>
-        <div class='font2 container' style='font-size:150%;gap:8px'>
-            ${title}
-            ${title == 'SPLITS' ? `<div class='dim grow' onclick="splitBefore=!splitBefore;playSound('move');action()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
+        <div class='font2 container' style='font-size:150%'>
+            ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="segmentToggle=!segmentToggle;playSound('move');action()">${fontAwesome('exchange')}</div>` : ''}
+            <div class='container' style='min-width:165px;margin:0'>${title}</div>
+            ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="splitBefore=!splitBefore;playSound('move');action()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
         </div>
         <div class='container'><table>
         <tr class='gray'>
@@ -171,14 +174,19 @@ function rrcExtraTable(title, field, sceneNames) {
         <tr>`
     let deltaSum = 0
     let attemptField = field
-    if (field == 'map') attemptField = 'levels'
-    if (field == 'scorecard') attemptField = 'levels'
-    if (field == 'split') attemptField = 'levels'
+    if (['map', 'scorecard', 'split', 'trueSegment'].includes(field)) attemptField = 'levels'
     let thingToAnalyze = 'segment'
     if (field == 'levels') thingToAnalyze = 'rta'
     if (field == 'map') thingToAnalyze = 'map'
     if (field == 'scorecard') thingToAnalyze = 'scorecardSegment'
     if (field == 'split') thingToAnalyze = 'split'
+    if (field == 'trueSegment') thingToAnalyze = 'trueSegment'
+    let min
+    let max
+    if (field == 'scorecard' && scorecardMode == 'Normalized') {
+        min = Math.min(...rrcCurrentAttempt[attemptField].filter(obj => obj.scorecardSegment).map(obj => obj.scorecardSegment))
+        max = Math.max(...rrcCurrentAttempt[attemptField].filter(obj => obj.scorecardSegment).map(obj => obj.scorecardSegment))
+    }
     rrcCurrentAttempt[attemptField].forEach((scene, index) => {
         const runNgun = cupheadRunNguns[scene.name]
         const level = cupheadBosses[scene.name] || cupheadRunNguns[scene.name]
@@ -188,36 +196,60 @@ function rrcExtraTable(title, field, sceneNames) {
         deltaSum += delta
         const content = level ? getImage(runNgun ? 'runnguns/' + level.id : level.id, 21) : sceneNames[scene.name]
         HTMLContent += `<tr class='${getRowColor(index)}'>
-            <td class='${level ? 'container ' + level.id : ''}' style='text-align:left'>${content}</td>
-            <td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`
-        if (rrcComparison != 'None' && !(title == 'Scorecards' && scorecardMode == 'Star Skips')) {
-            HTMLContent +=
-                `<td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>
-            <td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>`
+            <td class='${level ? 'container ' + level.id : ''}' style='text-align:left'>${content}</td>`
+        if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent += normalizedColorCell(currentSegment, min, max)
+        if (!(title == 'Scorecards' && scorecardMode == 'Star Skips')) HTMLContent += `<td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`
+        if (rrcComparison != 'None'
+            && !(title == 'Scorecards' && scorecardMode == 'Star Skips')
+            && !(title == 'Scorecards' && scorecardMode == 'Normalized' && ['Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison))) {
+            HTMLContent += `<td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>`
+            if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent += normalizedColorCell(comparisonSegment, min, max)
+            HTMLContent += `<td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>`
             if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
         }
         if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
             HTMLContent += `<td>
-            <div class='myekulColor container' style='gap:3px;justify-content:left'>`
+            <div class='myekulColor container' style='gap:3px;justify-content:left;padding:0 5px'>`
             for (let i = 0; i < scene.scorecard?.starSkips; i++) {
                 HTMLContent += fontAwesome('star')
             }
             HTMLContent += `</div></td>`
+            if (!['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison)) {
+                HTMLContent += `<td>
+                <div class='dim container' style='gap:3px;justify-content:left;padding:0 5px;font-size:80%'>`
+                for (let i = 0; i < rrcComparisonAttempt.levels[index].scorecard?.starSkips; i++) {
+                    HTMLContent += fontAwesome('star')
+                }
+                HTMLContent += `</div></td>`
+            }
         }
         HTMLContent += `</tr>`
     })
+    if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
+        HTMLContent += `<tr>
+        <td></td>
+        <td>${starSkipCount(rrcCurrentAttempt)}</td>
+        <td class='dim'>${['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) ? '' : starSkipCount(rrcComparisonAttempt)}</td>
+        </tr>`
+    }
+    if (rrcComparison != 'None' && title != 'SPLITS'
+        && title != 'SEGMENTS'
+        && !(title == 'Scorecards' && scorecardMode == 'Star Skips')
+        && !(title == 'Scorecards' && ['Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) && scorecardMode == 'Normalized')
+    ) {
+        HTMLContent += `<tr><td colspan=10 class='${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</td></tr>`
+    }
     HTMLContent += `</table></div>`
-    if (rrcComparison != 'None' && title != 'SPLITS') HTMLContent += `<div class='container ${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</div>`
     if (title == 'Scorecards') {
         HTMLContent += `
         <div style='position:absolute;left:255px;top:25px'>
             <div class='scorecardButton button ${scorecardMode == 'Default' ? 'selected' : ''}' onclick="changeScorecardMode('Default')">${fontAwesome('tasks')}</div>
+            <div class='scorecardButton button ${scorecardMode == 'Normalized' ? 'selected' : ''}' onclick="changeScorecardMode('Normalized')">${fontAwesome('balance-scale')}</div>
             <div id='starSkipButton' class='scorecardButton button container ${scorecardMode == 'Star Skips' ? 'selected' : ''}' onclick="changeScorecardMode('Star Skips')">
             ${fontAwesome('star')}
             ${fontAwesome('star')}
             </div>
         </div>`
-        // <div class='scorecardButton button ${scorecardMode == 'Normalized' ? 'selected' : ''}' onclick="changeScorecardMode('Normalized')">${fontAwesome('balance-scale')}</div>
     }
     HTMLContent += `</div>`
     return HTMLContent
@@ -263,35 +295,22 @@ function rrcRaw() {
     HTMLContent += `
         <table style='margin:0 auto'>
         <tr class='gray'>
-        <th>Map</th>
         <th></th>
         <th>IGT</th>
         <th>RTA</th>
-        <th>Scorecard</th>
         <th>HP</th>
-        <th>Parry</th>
-        <th>Supers</th>
-        <th>Normalized Scorecard</th>
-        <th>Split Before</th>
-        <th>Split After</th>
+        <th>P</th>
+        <th>EX</th>
         </tr>`
     rrcCurrentAttempt.bosses.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
-        const split = level.id != 'thedevil' ? secondsToHMS(scene.scorecard?.endTime, true) : secondsToHMS(scene.endTime, true)
-        let splitBefore = secondsToHMS(scene.endTime - 6.45, true)
-        if (level.id == 'forestfollies') splitBefore = ''
-        if (level.id == 'thedevil') splitBefore = split
         HTMLContent += `<tr class='${getRowColor(index)}'>
             <td class='container ${level?.id}'>${getImage(level.id, 21)}</td>
             <td class='${level?.id}'>${scene.levelTime ? secondsToHMS(scene.levelTime, true) : ''}</td>
             <td class='${level?.id}' style='font-size:80%'>${scene.levelTime ? level?.id == 'thedevil' ? secondsToHMS(scene.segment, true) : secondsToHMS(scene.segment - 6.45, true) : ''}</td>
-            <td>${index < rrcCurrentAttempt.bosses.length - 1 ? secondsToHMS(scene.scorecard.segment, true) : ''}</td>
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.hp : ''}</td>
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.parries : ''}</td>
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.superMeter || scene.scorecard.coins : ''}</td>
-            <td>${index < rrcCurrentAttempt.bosses.length - 1 ? secondsToHMS(scene.trueScorecard, true) : ''}</td>
-            <td class='${level?.id}' style='padding:0 5px'>${splitBefore}</td>
-            <td class='${level?.id}' style='padding:0 5px'>${split}</td>
             </tr>`
     })
     HTMLContent += `</table>`
@@ -356,20 +375,37 @@ function fancyScorecard() {
         })
         HTMLContent += `</div>
         <div class='scorecardTimes dim' style='left:780px'>
-            ${theResults(rrcComparisonAttempt)}
+            ${theResults(rrcComparisonAttempt, true)}
         </div>`
     }
     HTMLContent += `</div>`
     return HTMLContent
 }
-function theResults(attempt) {
+function theResults(attempt, comparison) {
     let HTMLContent = ''
     rrcElems.forEach(elem => {
         HTMLContent += `<p>${secondsToHMS(attempt[elem], true)}</p>`
     })
-    HTMLContent += `<p class='myekulColor'>${fontAwesome('star') + ` ???`}</p>`
+    if (!(comparison && ['Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison))) {
+        let starSkipNum = starSkipCount(attempt)
+        let icon = 'star'
+        if (!starSkipNum) icon += '-o'
+        HTMLContent += `
+        <p class='container ${starSkipNum ? 'myekulColor' : ''}' style='gap:3px;justify-content:left'>
+            ${fontAwesome(icon)
+            + fontAwesome(icon)
+            + '&nbsp;' + starSkipNum}
+        </p>`
+    }
     return HTMLContent
-
+}
+function starSkipCount(attempt) {
+    let starSkipNum = 0
+    attempt.levels.forEach(level => {
+        const numStarSkips = level.scorecard?.starSkips
+        starSkipNum += numStarSkips / 2 || 0
+    })
+    return starSkipNum
 }
 function read_rrc(content) {
     try {
@@ -385,85 +421,3 @@ function read_rrc(content) {
         console.error('Error parsing JSON file:', error)
     }
 }
-const rrc80 = [
-    'cutscene_intro',
-    'level_house_elder_kettle',
-    'map_world_1',
-    'level_platforming_1_1F',
-    'win',
-    'map_world_1',
-    'shop',
-    'map_world_1',
-    'level_veggies',
-    'win',
-    'map_world_1',
-    'level_frogs',
-    'win',
-    'map_world_1',
-    'level_slime',
-    'win',
-    'map_world_1',
-    'level_shmup_tutorial',
-    'map_world_1',
-    'level_flying_blimp',
-    'win',
-    'map_world_1',
-    'level_flower',
-    'win',
-    'map_world_1',
-    'level_dice_gate',
-    'cutscene_world2',
-    'map_world_2',
-    'level_baroness',
-    'win',
-    'map_world_2',
-    'level_flying_bird',
-    'win',
-    'map_world_2',
-    'level_flying_genie',
-    'win',
-    'map_world_2',
-    'level_clown',
-    'win',
-    'map_world_2',
-    'level_dragon',
-    'win',
-    'map_world_2',
-    'level_dice_gate',
-    'cutscene_world3',
-    'map_world_3',
-    'level_bee',
-    'win',
-    'map_world_3',
-    'level_robot',
-    'win',
-    'map_world_3',
-    'level_sally_stage_play',
-    'win',
-    'map_world_3',
-    'level_mouse',
-    'win',
-    'map_world_3',
-    'level_pirate',
-    'win',
-    'map_world_3',
-    'level_flying_mermaid',
-    'win',
-    'map_world_3',
-    'level_train',
-    'win',
-    'map_world_3',
-    'map_world_4',
-    'cutscene_kingdice',
-    'level_dice_palace_main',
-    'level_dice_palace_cigar',
-    'level_dice_palace_main',
-    'level_dice_palace_rabbit',
-    'level_dice_palace_main',
-    'level_dice_palace_roulette',
-    'level_dice_palace_main',
-    'win',
-    'map_world_4',
-    'cutscene_devil',
-    'level_devil'
-]

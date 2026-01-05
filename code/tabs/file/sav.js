@@ -45,7 +45,10 @@ function processSavFile(playerIndex, display) {
                     level.played = true
                     level.completed = true
                 })
-                if (runRecapCategory.name == '1.1+') runRecap_rrcFile.attempts = [{ scenes: runRecapCategory.topRuns[playerIndex].rrc }]
+                if (runRecapCategory.name == '1.1+') {
+                    rrcAttemptIndex = 0
+                    runRecap_rrcFile.attempts = [{ scenes: runRecapCategory.topRuns[playerIndex].rrc }]
+                }
                 if (playerIndex == 0 && runRecapCategory.markin) {
                     bootMarkinExample()
                     if (display) {

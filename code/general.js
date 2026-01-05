@@ -85,3 +85,20 @@ function generateBoardTitle(category = runRecapCategory) {
 function updateBoardTitle() {
     document.getElementById('boardTitle').innerHTML = generateBoardTitle()
 }
+function normalizeTime(time, min, max) {
+    return (time - min) / (max - min);
+}
+function getColor(normalized) {
+    let r, g;
+    if (normalized < 0.5) {
+        r = Math.round(255 * (normalized * 2))
+        g = 255;
+    } else {
+        r = 255;
+        g = Math.round(255 * (1 - (normalized - 0.5) * 2))
+    }
+    return `rgb(${r},${g},0)`;
+}
+function normalizedColorCell(num,min,max) {
+    return `<td style='width:5px;background-color:${getColor(normalizeTime(num, min, max))}'></td>`
+}
