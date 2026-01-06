@@ -68,16 +68,7 @@ function generateTop10() {
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table></div>
-    <div class='container' style='margin-top:100px;gap:50px'>`
-    HTMLContent += `<table>`
-    runRecapCategory.topRuns.forEach((run, index) => {
-        HTMLContent += `<tr class='${getRowColor(index)}'>
-        <td>${getPlayerDisplay(players[index])}</td>
-        ${residualIcons(run)}
-        <td class='thedevil' style='padding:0 5px'>${secondsToHMS(run.runRecap[categories.length - 1], true)}</td>
-        ${bossPattern('thedevil', run.thedevil)}
-        </tr>`
-    })
+    <div class='container' style='margin-top:100px'>`
     HTMLContent += `<table>
     <tr>
     <td><td>`

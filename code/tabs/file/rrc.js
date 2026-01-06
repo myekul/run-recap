@@ -20,7 +20,8 @@ function rrcView() {
     HTMLContent += classicView()
     HTMLContent += rrcComparisonDisplay()
     HTMLContent += rrcRTA()
-    if (['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)) {
+    const runFinished = ['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)
+    if (runFinished) {
         const finalTableName = segmentToggle ? 'SEGMENTS' : 'SPLITS'
         const finalTableThing = segmentToggle ? 'trueSegment' : 'split'
         HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
@@ -30,9 +31,13 @@ function rrcView() {
         HTMLContent += `</div>`
     }
     HTMLContent += `</div>`
-    if (runRecapCategory.name == '1.1+' && rrcCurrentAttempt.scenes.at(-1)?.endTime < 1680 && rrcCurrentAttempt.scenes.at(-1)?.name == 'level_devil' && rrcComparison != 'None') {
-        chartEligible = true
-        HTMLContent += rrcChartSection()
+    if (rrcCompatible && runFinished && rrcComparison != 'None') {
+        const finalTime = rrcCurrentAttempt.scenes.at(-1)?.endTime
+        const timeRequirement = runRecapCategory.name == '1.1+' && finalTime < 1680 || runRecapCategory.name == 'DLC' && finalTime < 660
+        if (timeRequirement) {
+            chartEligible = true
+            HTMLContent += rrcChartSection()
+        }
     }
     HTMLContent += `<div class='container' style='gap:10px;margin-top:15px'>
         <div class='button cuphead' onclick="rrcRaw()">Show raw</div>
@@ -65,7 +70,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
     let kdTotal = 0
     // Separate bosses, map, scorecards?
     scenes.forEach((scene, index) => {
-        scene.topBest = { segment: rrcTopBests[index] }
+        if (rrcCompatible) scene.topBest = { segment: runRecapCategory.rrcTopBests[index] }
         const boss = cupheadBosses[scene.name]
         const runNgun = cupheadRunNguns[scene.name]
         if (scene.name.startsWith('level_dice_palace')) {
@@ -80,9 +85,11 @@ function rrcOrganize(attempt, scenes, doSegments) {
             attempt.cutsceneTime += scene.segment
         } else if (boss || runNgun) {
             attempt.levelTime += scene.segment
-            if ((scene.name == 'level_devil' && index == scenes.length - 1) || scenes[index + 1]?.name == 'win') {
-                scene.topBest.map = rrcTopBests[index - 1]
-                scene.topBest.scorecardSegment = rrcTopBests[index + 1]
+            if ((['level_devil', 'level_saltbaker'].includes(scene.name) && index == scenes.length - 1) || scenes[index + 1]?.name == 'win') {
+                if (rrcCompatible) {
+                    scene.topBest.map = runRecapCategory.rrcTopBests[index - 1]
+                    scene.topBest.scorecardSegment = runRecapCategory.rrcTopBests[index + 1]
+                }
                 scene.map = mapTime
                 mapTime = 0
                 scene.scorecard = attempt.scenes[index + 1]
@@ -99,14 +106,14 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 } else {
                     scene.trueSegment = scene.endTime - attempt.levels.at(-1).scorecard.endTime
                 }
-                if (!splitBefore) scene.trueSegment = scene.endTime - attempt.levels.at(-1)?.endTime
-                if (!splitBefore && ['level_devil', 'level_saltbaker'].includes(scene.name)) scene.trueSegment += 6.45
+                if (splitBefore) scene.trueSegment = scene.endTime - attempt.levels.at(-1)?.endTime
+                if (splitBefore && ['level_devil', 'level_saltbaker'].includes(scene.name)) scene.trueSegment += 6.45
                 //
                 attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
                 scene.rta = scene.segment
-                scene.topBest.rta = rrcTopBests[index]
+                if (rrcCompatible) scene.topBest.rta = runRecapCategory.rrcTopBests[index]
                 if (boss) {
                     if (scene.scorecard) scene.rta -= 6.45
                     if (scene.kdTotal) scene.rta = scene.kdTotal - 6.45 * 5

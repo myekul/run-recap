@@ -14,10 +14,11 @@ function openDatabase(comparison) {
     </div>
     </div>
     <table style='padding:10px;margin:0 auto'>`
+    const validComparison = ['sav', 'rrc'].includes(comparison)
     database.forEach((run, index) => {
         if (!(comparison && runRecapCategory.tabName != run.category)) {
             const category = commBestILs[run.category]
-            const onclick = comparison ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
+            const onclick = validComparison ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
             HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="${onclick}">
         <td class='dim' style='font-size:70%'>${index + 1}</td>
         <td><div class='container'>${generateBoardTitle(category)}</div></td>
@@ -28,7 +29,7 @@ function openDatabase(comparison) {
         }
     })
     HTMLContent += `</table>`
-    if (comparison) playSound('category_select')
+    if (validComparison) playSound('category_select')
     openModal(HTMLContent, 'DATABASE', '', comparison)
 }
 function databaseComparison(sav, player, time) {

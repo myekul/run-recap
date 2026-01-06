@@ -23,7 +23,6 @@
 - Personal Bests
 - King Dice IGT
 - 800 grid
-- Red-green scale for normalized scorecards
 
 ### Alt Strats
 - Run 'n Guns

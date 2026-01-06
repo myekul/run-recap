@@ -45,7 +45,7 @@ function processSavFile(playerIndex, display) {
                     level.played = true
                     level.completed = true
                 })
-                if (runRecapCategory.name == '1.1+') {
+                if (rrcCompatible) {
                     rrcAttemptIndex = 0
                     runRecap_rrcFile.attempts = [{ scenes: runRecapCategory.topRuns[playerIndex].rrc }]
                 }
@@ -54,7 +54,7 @@ function processSavFile(playerIndex, display) {
                     if (display) {
                         showTab('lss')
                     } else {
-                        if (runRecapCategory.name == '1.1+') {
+                        if (rrcCompatible) {
                             showTab('rrc')
                         } else {
                             showTab('sav')
@@ -62,7 +62,7 @@ function processSavFile(playerIndex, display) {
                     }
                 }
                 if (playerIndex > 0 || !runRecapCategory.markin) {
-                    if (runRecapCategory.name == '1.1+') {
+                    if (rrcCompatible) {
                         showTab('rrc')
                     } else {
                         showTab('sav')

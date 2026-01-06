@@ -18,7 +18,7 @@ function rrcChartData() {
     }
     const pointsPerPlayer = runRecapCategory.topRuns.map(r => []);
     const currentAttemptPoints = [];
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < runRecapCategory.scenes.length; i++) {
         runRecapCategory.topRuns.forEach((player, playerIndex) => {
             if (player.rrc[i]) {
                 const xTime = player.rrc[i].endTime;
@@ -64,9 +64,15 @@ function rrcChart() {
         const s = sec % 60;
         return `${m}:${String(s).padStart(2, '0')}`;
     }
-    const maxTime = 420 * 4
+    let interval = 420
+    let numTicks = 4
+    if (runRecapCategory.name == 'DLC') {
+        interval = 60
+        numTicks = 11
+    }
+    let maxTime = interval * numTicks
     const ticks = [];
-    for (let t = 420; t <= maxTime; t += 420) {
+    for (let t = interval; t <= maxTime; t += interval) {
         ticks.push({
             v: t,
             f: formatSeconds(t)
@@ -77,7 +83,7 @@ function rrcChart() {
         chartArea: { height: '80%', width: '80%' },
         fontName: font,
         hAxis: {
-            title: 'Segment Time',
+            title: 'Split Time',
             ticks: ticks,
             textStyle: { color: 'gray' },
             titleTextStyle: { color: 'gray' },
