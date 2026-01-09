@@ -219,6 +219,12 @@
                 "title": "Punches Super Skip"
             },
             {
+                "name": "5 Flies, Bulls",
+                "time": 43.78,
+                "player": "Lewzr",
+                "url": "https://youtu.be/Ei57c2WMg0U"
+            },
+            {
                 "name": "5 Flies, Snakes",
                 "time": 43.98,
                 "player": "Lewzr",
@@ -2003,15 +2009,15 @@
         "therootpack": [
             {
                 "name": "Potato EX",
-                "time": 26.2,
+                "time": "26.20",
                 "player": "Yuka",
                 "url": "https://youtu.be/l9Rbi9SOiwA"
             },
             {
                 "name": "No Potato EXs, Onion Dash",
-                "time": 27.76,
-                "player": "Yuka",
-                "url": "https://youtu.be/qf1ZEKBi71o"
+                "time": 27.47,
+                "player": "graven_",
+                "url": "https://youtu.be/Oq9j5wIK-Vg"
             },
             {
                 "name": "No Doubles/Triples",
@@ -2297,10 +2303,22 @@
         ],
         "captainbrineybeard": [
             {
-                "name": "",
+                "name": "Squid",
                 "time": 26.45,
                 "player": "Yuka",
                 "url": "https://youtu.be/I8mkWoEROm4"
+            },
+            {
+                "name": "2-Gun",
+                "time": 26.72,
+                "player": "Yuka",
+                "url": "https://youtu.be/YjtVVG-YHds"
+            },
+            {
+                "name": "4-Gun",
+                "time": 31.65,
+                "player": "Yuka",
+                "url": "https://www.youtube.com/watch?v=PkW3wEiRRnk&t=36s"
             }
         ],
         "calamaria": [
@@ -2321,10 +2339,38 @@
         ],
         "kingdice": [
             {
+                "title": "Parryless"
+            },
+            {
                 "name": "2-4-9",
                 "time": "1:26.16",
                 "player": "Yuka",
                 "url": "https://youtu.be/b_QhqaYQqdA?si=DpUJGL89VdPwgQ4y&t=1330"
+            },
+            {
+                "title": "Parry at the very end for some reason"
+            },
+            {
+                "name": "2-4-9",
+                "time": "1:24.98",
+                "player": "Yuka",
+                "url": "https://youtu.be/KnfXMV_4e74"
+            }
+        ],
+        "chipsbettigan": [
+            {
+                "name": "",
+                "time": 11.05,
+                "player": "Yuka",
+                "url": "https://www.youtube.com/watch?v=LtdcCsrf4Cw&t=12s"
+            }
+        ],
+        "pipanddot": [
+            {
+                "name": "",
+                "time": 12.79,
+                "player": "Yuka",
+                "url": "https://youtu.be/RIJ_27MY32M"
             }
         ],
         "thedevil": [

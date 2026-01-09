@@ -21,15 +21,13 @@ function rrcView() {
     HTMLContent += rrcComparisonDisplay()
     HTMLContent += rrcRTA()
     const runFinished = ['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)
-    if (runFinished) {
-        const finalTableName = segmentToggle ? 'SEGMENTS' : 'SPLITS'
-        const finalTableThing = segmentToggle ? 'trueSegment' : 'split'
-        HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
-        HTMLContent += `<div style='width:270px'>${rtaTable(finalTableName, finalTableThing, cupheadBosses)}</div>`
-        HTMLContent += fancyScorecard()
-        HTMLContent += `<div style='width:270px'></div>`
-        HTMLContent += `</div>`
-    }
+    const finalTableName = segmentToggle ? 'SEGMENTS' : 'SPLITS'
+    const finalTableThing = segmentToggle ? 'trueSegment' : 'split'
+    HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
+    HTMLContent += `<div style='width:270px'>${rtaTable(finalTableName, finalTableThing, cupheadBosses)}</div>`
+    if (runFinished) HTMLContent += fancyScorecard()
+    if (runFinished) HTMLContent += `<div style='width:270px'></div>`
+    HTMLContent += `</div>`
     HTMLContent += `</div>`
     if (rrcCompatible && runFinished && rrcComparison != 'None') {
         const finalTime = rrcCurrentAttempt.scenes.at(-1)?.endTime
@@ -169,7 +167,7 @@ function rrcRTA() {
 function rtaTable(title, field, sceneNames) {
     let HTMLContent = ''
     HTMLContent += `
-        <div class='border background1' style='padding:8px;position:relative;min-width:225px'>
+        <div class='border background1 shadow' style='padding:8px;position:relative;min-width:225px'>
         <div class='font2 container' style='font-size:150%'>
             ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="segmentToggle=!segmentToggle;playSound('move');action()">${fontAwesome('exchange')}</div>` : ''}
             <div class='container' style='min-width:165px;margin:0'>${title}</div>
@@ -354,7 +352,7 @@ function fancyScorecard() {
     let HTMLContent = ''
     HTMLContent += `
         <div class='container' style='position:relative;width:600px;margin:0'>
-            <div class='spinning-div border'>
+            <div class='spinning-div border shadow'>
                 <div style='position:relative'>
                     <img class='container' src="images/results.gif" style='height:100px;margin-bottom:8px'>
                     <img id='scorecardLine' class='container' src='images/scorecard_line.png'>

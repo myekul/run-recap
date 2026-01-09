@@ -158,6 +158,15 @@ th {
     background-color: forestgreen;
 }
 
+.chipsbettigan {
+    color: var(--cuphead);
+    background-color: dodgerblue;
+}
+
+.pipanddot {
+    background-color: cadetblue;
+}
+
 .kingdice2 {
     background-color: rebeccapurple;
 }

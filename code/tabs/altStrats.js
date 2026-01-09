@@ -158,6 +158,11 @@ function generateAltStrats() {
                         HTMLContent += altStrats(miniboss)
                     })
                 }
+                if (runRecapCategory.name == 'Legacy' && altStratLevel == 'kingdice') {
+                    ['chipsbettigan', 'pipanddot'].forEach(miniboss => {
+                        HTMLContent += altStrats(miniboss)
+                    })
+                }
             } else {
                 HTMLContent += `<div class='container' style='margin-top:20px'>No alt strats...</div>`
             }
@@ -216,14 +221,18 @@ function altStratClick(level) {
 }
 const otherNames = {
     forestfollies: 'Forest Follies',
+    chipsbettigan: 'Chips Bettigan',
     mrwheezy: 'Mr. Wheezy',
+    pipanddot: 'Pip and Dot',
     hopuspocus: 'Hopus Pocus',
     pirouletta: 'Pirouletta',
     kingdice2: 'King Dice (Final)'
 }
 const imgLocation = {
     forestfollies: 'runnguns/forestfollies',
+    chipsbettigan: 'phase/kingdice2',
     mrwheezy: 'phase/kingdice3',
+    pipanddot: 'phase/kingdice4',
     hopuspocus: 'phase/kingdice5',
     pirouletta: 'phase/kingdice7',
     kingdice2: 'kingdice'
