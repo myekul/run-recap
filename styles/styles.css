@@ -211,3 +211,16 @@ th {
     background-color: mediumpurple;
     margin-bottom: 5px
 }
+
+#rrcCredits td div,
+#rrcCredits td {
+    text-align: left;
+    justify-content: left;
+    background-color: transparent;
+}
+
+#rrcCredits td:nth-child(4),
+#myekulLanguages {
+    font-size: 70%;
+    padding-left:10px
+}

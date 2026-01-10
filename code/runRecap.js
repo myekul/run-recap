@@ -205,13 +205,13 @@ function runRecapCopy() {
         })
     } else {
         const scenes = runRecap_rrcFile.attempts[rrcAttemptIndex].scenes
-        // clipboardContent = JSON.stringify(scenes)
-        scenes.forEach((scene, sceneIndex) => {
-            if (cupheadBosses[scene.name] && !(scene.name == 'level_dice_palace_main' && scenes[sceneIndex + 1]?.name != 'win')) {
-                clipboardContent += scene.levelTime
-                if (!['level_devil', 'level_saltbaker'].includes(scene.name) && sceneIndex < scenes.length - 1) clipboardContent += ','
-            }
-        })
+        clipboardContent = JSON.stringify(scenes)
+        // scenes.forEach((scene, sceneIndex) => {
+        //     if (cupheadBosses[scene.name] && !(scene.name == 'level_dice_palace_main' && scenes[sceneIndex + 1]?.name != 'win')) {
+        //         clipboardContent += scene.levelTime
+        //         if (!['level_devil', 'level_saltbaker'].includes(scene.name) && sceneIndex < scenes.length - 1) clipboardContent += ','
+        //     }
+        // })
     }
     navigator.clipboard.writeText(clipboardContent)
         .then(() => {

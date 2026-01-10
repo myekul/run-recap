@@ -1,6 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'sums', 'residual', 'grid', null, 'ballpit'])
+setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'sums', 'grid', null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
@@ -365,3 +365,8 @@ function emptyFile(type) {
         <div id='dropbox'></div>
         </div>`
 }
+fetch('https://api.github.com/repos/SBDWolf/Run-Recap-Component/tags')
+    .then(response => response.json())
+    .then(data => {
+        rrcComponentVersion = data[0].name
+    })

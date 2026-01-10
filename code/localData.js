@@ -12,22 +12,29 @@ function prepareLocalData() {
                         const categoryScenes = commBestILs[category].scenes
                         commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
                         data[category].forEach((rrc, index) => {
-                            commBestILs[category].topRuns[index].rrc = []
+                            const currentRun = commBestILs[category].topRuns[index]
+                            currentRun.rrc = []
                             if (rrc.scenes) {
+                                const starSkipFlag = currentRun.starSkips
+                                if (!starSkipFlag) currentRun.starSkips = []
                                 rrc.endTimes = []
                                 let winIndex = 0
                                 rrc.scenes.forEach(scene => {
                                     rrc.endTimes.push(scene.endTime)
                                     if (scene.name == 'win') {
-                                        scene.starSkips = commBestILs[category].topRuns[index].starSkips[winIndex] * 2
+                                        if (!rrc.scenes.some(scene => scene.starSkips)) {
+                                            scene.starSkips = currentRun.starSkips[winIndex] * 2
+                                        } else if (!starSkipFlag) {
+                                            currentRun.starSkips.push(scene.starSkips / 2 || 0)
+                                        }
                                         winIndex++
                                     }
                                 })
-                                commBestILs[category].topRuns[index].rrc = rrc.scenes
+                                currentRun.rrc = rrc.scenes
                             } else {
                                 reconstructRRC(category, rrc.endTimes, index)
                             }
-                            rrcSegments(commBestILs[category].topRuns[index].rrc)
+                            rrcSegments(currentRun.rrc)
                         })
                     }
                 })

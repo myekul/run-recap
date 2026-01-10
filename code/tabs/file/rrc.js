@@ -8,6 +8,43 @@ function generate_rrc() {
     } else {
         HTMLContent += emptyFile('rrc')
     }
+    HTMLContent += `
+        <div class='container' style='margin:20px'>~</div>
+        <div class='container'>
+        <div style='padding:30px'>
+            <img src='images/rrc.png' style='height:80px'>
+            <div class='container font2' style='font-size:180%'>.rrc</div>
+        </div>
+        <table id='rrcCredits' class='dim' style='background-color:transparent'>
+            <tr>
+                <td rowspan=2 class='dim' style='padding-right:50px'>Project Leads</td>
+                <td>
+                    <span style='font-size:70%;margin-right:30px'>Backend Developer</span>
+                    ${playerDisplay('SBDWolf')}
+                </td>
+                <td class='dim'>Component design, memory reading, .rrc writing</td>
+                <td>C#</td>
+            </tr>
+            <tr>
+                <td>
+                    <span style='font-size:70%'>Frontend Developer</span>
+                    ${playerDisplay('myekul')}
+                </td>
+                <td class='dim'>Web design, .rrc parsing, comparison tools</td>
+                <td id='myekulLanguages'>HTML / CSS / JavaScript</td>
+            </tr>
+            <tr><td style='padding:10px'></td></tr>
+            <tr>
+                <td class='dim'>Additional Help</td>
+                <td>
+                <span style='font-size:70%'>Memory Specialist</span>
+                ${playerDisplay('diggity')}
+                </td>
+                <td class='dim'>Memory reading technology, .wasm autosplitter</td>
+                <td>Rust / WebAssembly</td>
+            </tr>
+        </table>
+        </div>`
     document.getElementById('content').innerHTML = HTMLContent
     if (dropboxEligible) initializeDropbox()
     if (chartEligible) rrcChart()
@@ -416,6 +453,7 @@ function read_rrc(content) {
     try {
         rrcAttemptIndex = 0
         runRecap_rrcFile = JSON.parse(content)
+        if (runRecap_rrcFile.version != rrcComponentVersion) openModal(rrcUpdateNotice(), 'NOTICE', '', true)
         runRecap_rrcFile.attempts.forEach(attempt => {
             attempt.scenes.forEach(scene => {
                 scene.endTime = convertToSeconds(scene.endTime.slice(3))
@@ -423,6 +461,14 @@ function read_rrc(content) {
         })
         runRecap_rrcFile.attempts.reverse()
     } catch (error) {
-        console.error('Error parsing JSON file:', error)
+        console.error('Error parsing .rrc file:', error)
     }
+}
+function rrcUpdateNotice() {
+    return `<div style='width:360px;padding-bottom:10px'>Your Run Recap Component is outdated! Please install the latest version to gain access to all features.</div>
+    <div class='container'>
+    ${getAnchor('https://github.com/SBDWolf/Run-Recap-Component')}
+    <div class='button cuphead' style='width:200px'>Go to download page</div>
+    </a>
+    </div>`
 }
