@@ -133,7 +133,7 @@ function rrcChartSection() {
         usedColors.add(color);
         rrcChartSeries[index] = { color: color };
     });
-    rrcChartSeries[runRecapCategory.topRuns.length] = { color: 'red', lineWidth: 4 };
+    rrcChartSeries[runRecapCategory.topRuns.length] = { color: 'red', lineWidth: 5 };
     let HTMLContent = ''
     HTMLContent += `
     ${rrcComparisonDisplay()}

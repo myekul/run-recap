@@ -16,14 +16,14 @@ function generate_rrc() {
             <div class='container font2' style='font-size:180%'>.rrc</div>
         </div>
         <table id='rrcCredits' class='dim' style='background-color:transparent'>
+            <tr><td class='dim font2'>PROJECT LEADS</td></tr>
             <tr>
-                <td rowspan=2 class='dim' style='padding-right:50px'>Project Leads</td>
                 <td>
                     <span style='font-size:70%;margin-right:30px'>Backend Developer</span>
                     ${playerDisplay('SBDWolf')}
                 </td>
                 <td class='dim'>Component design, memory reading, .rrc writing</td>
-                <td>C#</td>
+                <td>C# / Rust</td>
             </tr>
             <tr>
                 <td>
@@ -31,11 +31,10 @@ function generate_rrc() {
                     ${playerDisplay('myekul')}
                 </td>
                 <td class='dim'>Web design, .rrc parsing, comparison tools</td>
-                <td id='myekulLanguages'>HTML / CSS / JavaScript</td>
+                <td>HTML / CSS / JavaScript</td>
             </tr>
-            <tr><td style='padding:10px'></td></tr>
+            <tr><td class='dim font2' style='padding-top:10px'>ADDITIONAL HELP</td></tr>
             <tr>
-                <td class='dim'>Additional Help</td>
                 <td>
                 <span style='font-size:70%'>Memory Specialist</span>
                 ${playerDisplay('diggity')}

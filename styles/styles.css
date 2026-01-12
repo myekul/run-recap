@@ -219,8 +219,12 @@ th {
     background-color: transparent;
 }
 
-#rrcCredits td:nth-child(4),
-#myekulLanguages {
+#rrcCredits td:nth-child(3) {
     font-size: 70%;
-    padding-left:10px
+    padding-left: 10px
+}
+
+#rrcCredits td:nth-child(2) {
+    font-size: 80%;
+    width: 200px
 }

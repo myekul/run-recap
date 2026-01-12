@@ -15,16 +15,17 @@ function prepareLocalData() {
                             const currentRun = commBestILs[category].topRuns[index]
                             currentRun.rrc = []
                             if (rrc.scenes) {
-                                const starSkipFlag = currentRun.starSkips
-                                if (!starSkipFlag) currentRun.starSkips = []
+                                const savStarSkips = currentRun.starSkips
+                                if (!savStarSkips) currentRun.starSkips = []
+                                const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
                                 rrc.endTimes = []
                                 let winIndex = 0
                                 rrc.scenes.forEach(scene => {
                                     rrc.endTimes.push(scene.endTime)
                                     if (scene.name == 'win') {
-                                        if (!rrc.scenes.some(scene => scene.starSkips)) {
+                                        if (!rrcStarSkips) {
                                             scene.starSkips = currentRun.starSkips[winIndex] * 2
-                                        } else if (!starSkipFlag) {
+                                        } else if (!savStarSkips) {
                                             currentRun.starSkips.push(scene.starSkips / 2 || 0)
                                         }
                                         winIndex++

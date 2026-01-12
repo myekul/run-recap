@@ -70,16 +70,16 @@
                 "title": "Doubles"
             },
             {
-                "name": "TAStato, 1 Double 1 Triple",
+                "name": "2 Triples, 1 Double",
                 "time": 34.76,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/cBF9TGXFvvg"
             },
             {
-                "name": "Double, 2 Onion Triples",
-                "time": 34.76,
+                "name": "1 Triple, 2 Doubles",
+                "time": 34.99,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/MT5an2EvQ90"
+                "url": "https://youtu.be/w6TAShhO8cw"
             },
             {
                 "name": "3 Doubles",
@@ -548,75 +548,75 @@
             },
             {
                 "name": "Cupcake, Waffle, Candy Corn",
-                "time": 32.46,
-                "player": "Lewzr",
-                "url": "https://youtu.be/FYJwLEgbYdY"
+                "time": 31.99,
+                "player": "myekul",
+                "url": "https://youtu.be/Sao77G1QFws"
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
-                "time": 33.08,
+                "time": 32.85,
                 "player": "myekul",
-                "url": "https://youtu.be/y-E6RomK2-8"
+                "url": "https://youtu.be/STAGjoWvRZA"
             },
             {
                 "name": "Cupcake, Waffle, Jawbreaker",
-                "time": 34.38,
+                "time": 33.97,
                 "player": "myekul",
-                "url": "https://youtu.be/lX4yGmABI-Y"
+                "url": "https://youtu.be/S87rqEuK_bI"
             },
             {
                 "name": "Cupcake, Candy Corn, Waffle",
-                "time": "31.39",
-                "player": "Quincely0",
-                "url": "https://youtu.be/3GENutoLY-w"
+                "time": 31.22,
+                "player": "myekul",
+                "url": "https://youtu.be/Qbay_OREtJI"
             },
             {
                 "name": "Cupcake, Candy Corn, Gumball",
-                "time": 33.41,
+                "time": 33.25,
                 "player": "myekul",
-                "url": "https://youtu.be/IkB7cWCAPgU"
+                "url": "https://youtu.be/hoKqvgKE9tw"
             },
             {
                 "name": "Cupcake, Candy Corn, Jawbreaker",
-                "time": 34.95,
+                "time": "34.10",
                 "player": "myekul",
-                "url": "https://youtu.be/Ya7BYZRq1RQ"
+                "url": "https://youtu.be/nb0Gqn9LLpI"
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
-                "time": 33.74,
+                "time": 33.31,
                 "player": "myekul",
-                "url": "https://youtu.be/rTw7xZTzwEs"
+                "url": "https://youtu.be/XsM3-y0nYW0"
             },
             {
                 "name": "Cupcake, Gumball, Candy Corn",
-                "time": 33.85,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=YYFkTfZ3WryeYYhS&t=1069"
+                "time": "33.40",
+                "player": "myekul",
+                "url": "https://youtu.be/aZBsAdIH9xE"
             },
             {
                 "name": "Cupcake, Gumball, Jawbreaker",
-                "time": 36.25,
+                "time": 36.22,
                 "player": "myekul",
-                "url": "https://youtu.be/PYZ1euAqGN4"
+                "url": "https://youtu.be/84eb8ZEDTss"
             },
             {
                 "name": "Cupcake, Jawbreaker, Waffle",
-                "time": 35.03,
+                "time": 34.33,
                 "player": "myekul",
-                "url": "https://youtu.be/BjrJGBXzIq0"
+                "url": "https://youtu.be/vBjWtSou6S8"
             },
             {
                 "name": "Cupcake, Jawbreaker, Candy Corn",
-                "time": 36.48,
+                "time": "35.60",
                 "player": "myekul",
-                "url": "https://youtu.be/ngNSuJDmjL4"
+                "url": "https://youtu.be/FUIRhG-iYwc"
             },
             {
                 "name": "Cupcake, Jawbreaker, Gumball",
-                "time": 36.49,
+                "time": 36.35,
                 "player": "myekul",
-                "url": "https://youtu.be/nCiTN-Xxsek"
+                "url": "https://youtu.be/khnldgO4n3M"
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
@@ -1203,7 +1203,7 @@
             },
             {
                 "name": "Squid, Squid",
-                "time": 39.10,
+                "time": "39.10",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/iqWvIKvZCt4"
             },
@@ -1521,6 +1521,12 @@
                 "rta": "1:48.28",
                 "player": "Lewzr",
                 "url": "https://youtu.be/LUQ7mQnuqh4"
+            },
+            {
+                "name": "Charge Pirouletta",
+                "time": "1:47.91",
+                "player": "SBDWolf",
+                "url": "https://www.youtube.com/live/D-k9VJxupj4?t=8241s"
             },
             {
                 "name": "Worst RNG",
@@ -2427,9 +2433,9 @@
             },
             {
                 "name": "Ring Clap Dragon R",
-                "time": 30.78,
-                "player": "Fintan0",
-                "url": "https://youtu.be/MBF6Qtq0UBU"
+                "time": "28.60",
+                "player": "graven_",
+                "url": "https://youtu.be/4i0vpA_atpw"
             },
             {
                 "name": "Clap Ring Dragon R",
@@ -2884,9 +2890,9 @@
             },
             {
                 "name": "Lunar Eclipse, 3-cycle",
-                "time": 35.44,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/Pwuu1oLkPZM"
+                "time": 35.26,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/3u0WkdBYqbA"
             },
             {
                 "name": "No Lunar Eclipse",
