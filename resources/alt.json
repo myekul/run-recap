@@ -1148,10 +1148,10 @@
             },
             {
                 "name": "2-Gun, Gun",
-                "time": 36.52,
-                "rta": "37.80",
+                "time": 36.67,
+                "rta": 37.77,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/1tJDk7gscp8"
+                "url": "https://youtu.be/JzJJD3_PQzk"
             },
             {
                 "name": "2-Gun, Squid",
@@ -1174,6 +1174,7 @@
             {
                 "name": "4-Gun, Gun",
                 "time": 41.21,
+                "rta": 41.76,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/iiACS0KYIrc"
             },
@@ -1198,6 +1199,7 @@
             {
                 "name": "Squid, Gun",
                 "time": 37.81,
+                "rta": 38.72,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/Ou5RBEl9gGA"
             },
@@ -1222,6 +1224,7 @@
             {
                 "name": "Shark, Gun",
                 "time": 40.74,
+                "rta": 41.32,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/gpvctI8rHoI"
             },
@@ -1287,11 +1290,11 @@
                 "title": "Other"
             },
             {
-                "name": "2-Gun, Gun (Best RTA)",
-                "time": 36.67,
-                "rta": 37.77,
+                "name": "2-Gun, Gun (Best IGT)",
+                "time": 36.52,
+                "rta": "37.80",
                 "player": "SBDWolf",
-                "url": "https://youtu.be/JzJJD3_PQzk"
+                "url": "https://youtu.be/1tJDk7gscp8"
             },
             {
                 "name": "2-2 Squid, Gun",
@@ -2121,10 +2124,10 @@
         ],
         "cagneycarnation": [
             {
-                "name": "",
+                "name": "Lunge, Lunge",
                 "time": 21.96,
                 "player": "Yuka",
-                "url": "https://youtu.be/PYMSFVo4CvQ?si=8MffcgOzBU6qQ-BN&t=33"
+                "url": "https://www.youtube.com/watch?v=PYMSFVo4CvQ&t=33s"
             }
         ],
         "baronessvonbonbon": [
@@ -3208,7 +3211,7 @@
         ],
         "captainbrineybeard": [
             {
-                "name": "",
+                "name": "2-Gun, Gun",
                 "time": 37.98,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/esv0BG2bPUI"
@@ -3354,7 +3357,7 @@
         ],
         "captainbrineybeard": [
             {
-                "name": "",
+                "name": "2-Gun, Gun",
                 "time": "39.10",
                 "player": "Quincely0",
                 "url": "https://youtu.be/ait78oDCd8o"

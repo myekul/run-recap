@@ -290,7 +290,7 @@ function altStrats(query) {
                 <th class='gray'>${getOdds(strat.odds)}</th>
                 <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
             } else {
-                HTMLContent += `<th colspan='5' class='gray' style='margin-top:10px'>${strat.title}</th>`
+                HTMLContent += `<th colspan='6' class='gray' style='margin-top:10px'>${strat.title}</th>`
             }
             HTMLContent += `</tr>`
         } else {
@@ -306,7 +306,7 @@ function altStrats(query) {
                     HTMLContent += `</div></td>`
                 }
                 HTMLContent += query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
-                if (['cagneycarnation', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
+                if (['cagneycarnation', 'captainbrineybeard', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
                 HTMLContent += normalizedColorCell(strat.time, min, max)
                 HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                 if (RTAcheck) {
@@ -381,6 +381,7 @@ function bossPattern(boss, pattern) {
     let split = boss == 'thedevil' ? ' ' : ', '
     const attacks = {
         cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
+        captainbrineybeard: ['Gun', '2-Gun', '4-Gun', 'Squid', 'Shark', 'Dogfish'],
         calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
         thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
     }
