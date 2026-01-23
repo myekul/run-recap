@@ -55,11 +55,10 @@ window.firebaseUtils = {
                 scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes,
                 player: localStorage.getItem('username'),
                 category: runRecapCategory.tabName,
-                time: secondsToHMS(runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.at(-1).endTime, true),
+                time: secondsToHMS(runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.at(-1).endTime),
                 date: new Date(year, month - 1, day).toISOString().slice(0, 10),
                 uploadDate: new Date().toISOString().slice(0, 10)
             }
-            console.log(obj)
         }
         const uploadCheck = document.getElementById('uploadCheck')
         uploadCheck.innerHTML = `<div class='loader'></div>`

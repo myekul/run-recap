@@ -52,8 +52,7 @@ function processSavFile(playerIndex, display) {
                     level.completed = true
                 })
                 if (rrcCompatible) {
-                    rrcAttemptIndex = 0
-                    runRecap_rrcFile.attempts = [{ scenes: runRecapCategory.topRuns[playerIndex].rrc }]
+                    rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
                 }
                 if (playerIndex == 0 && runRecapCategory.markin) {
                     bootMarkinExample()

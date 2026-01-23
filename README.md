@@ -31,9 +31,13 @@
 
 - Database modal should be instant with load inside
 
-- Loading database files as examples AND comparisons
-
 - Reverse-engineer rrc examples to populate sav examples
+
+- Database doesn't remember rrc vs sav
+
+- Random database errors:
+    - Viewing rrc from home/sav/lss/rrc will produce error
+    - Viewing sav/rrc from alt strats page will produce error
 
 - Baroness patterns vs alt strat
 

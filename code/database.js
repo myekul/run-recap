@@ -26,15 +26,11 @@ function openDatabase(type, comparison, shh) {
         HTMLContent += `</div>`
         HTMLContent += fileTitle(type)
     }
-    if (type == 'rrc') HTMLContent += `
-    <div class='textBlock'>
-    The .rrc database is currently write-only. Viewing and comparison functionality coming soon. <span class='dim'>myekul is so busy...</span>
-    </div>`
     HTMLContent += `<table style='padding:10px;margin:0 auto'>`
     runRecap_database[type].forEach((run, index) => {
         if (!(type && runRecapCategory.tabName != run.category)) {
             const category = commBestILs[run.category]
-            const onclick = comparison ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
+            const onclick = comparison ? `databaseCompare('${type}','${index}','${run.player}','${run.time}')` : `databaseView('${type}',${index},'${run.player}','${run.time}','${category.tabName}')`
             HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="${onclick}">
         <td class='dim' style='font-size:70%'>${index + 1}</td>
         ${comparison ? '' : `<td><div class='container'>${generateBoardTitle(category)}</div></td>`}
@@ -49,12 +45,56 @@ function openDatabase(type, comparison, shh) {
     if (shh) playSound('move')
     openModal(HTMLContent, 'DATABASE', '', comparison || shh)
 }
-function databaseComparison(sav, player, time) {
-    savComparisonCollection['Database'] = []
-    sav.split(',').forEach((time, index) => {
-        savComparisonCollection['Database'][index] = time
-    })
-    changeComparison('sav', 'Database', player + ' - ' + time)
+function databaseView(type, databaseIndex, player, time, categoryName) {
+    runRecapUnload('sav')
+    runRecapUnload('lss')
+    runRecapUnload('rrc')
+    runRecapTime = time
+    setRunRecapTime(runRecapTime)
+    document.getElementById('input_runRecap_time').value = time
+    getCommBestILs(categoryName)
+    runRecapExample = true
+    document.getElementById('runRecap_player').innerHTML = playerDisplay(player)
+    if (type == 'sav') {
+        fetch('https://myekul.com/shared-assets/cuphead/sav.json')
+            .then(response => response.json())
+            .then(data => {
+                runRecap_savFile = data
+                categories.forEach((category, categoryIndex) => {
+                    const level = getCupheadLevel(categoryIndex)
+                    level.bestTime = runRecap_database['sav'][databaseIndex].sav[categoryIndex]
+                    level.played = true
+                    level.completed = true
+                })
+                if (!['sums', 'residual', 'grid'].includes(globalTab)) {
+                    showTab('sav')
+                } else {
+                    action()
+                }
+                playSound('ready')
+                closeModal(true)
+            })
+    } else if (type == 'rrc') {
+        rrcImport(runRecap_database['rrc'][databaseIndex].scenes)
+        showTab('rrc')
+        playSound('ready')
+        closeModal(true)
+    }
+
+}
+function databaseCompare(type, databaseIndex, player, time) {
+    const run = runRecap_database[type][databaseIndex]
+    const runData = type == 'sav' ? run.sav : run.scenes
+    if (type == 'sav') {
+        savComparisonCollection['Database'] = []
+        runData.split(',').forEach((time, index) => {
+            savComparisonCollection['Database'][index] = time
+        })
+    } else if (type == 'rrc') {
+        rrcSegments(runData)
+        rrcComparisonCollection['Database'] = runData
+    }
+    changeComparison(type, 'Database', player + ' - ' + time)
     action()
 }
 function runRecapUploadButton() {
@@ -67,31 +107,4 @@ function runRecapUploadButton() {
     <div>Fraudulent or duplicate submissions are subject to deletion.</div>`
         openModal(HTMLContent, 'UPLOAD')
     }
-}
-function processDatabaseFile(databaseIndex, player, time, categoryName) {
-    fetch('https://myekul.com/shared-assets/cuphead/sav.json')
-        .then(response => response.json())
-        .then(data => {
-            runRecapUnload('lss')
-            runRecapTime = time
-            setRunRecapTime(runRecapTime)
-            document.getElementById('input_runRecap_time').value = time
-            getCommBestILs(categoryName)
-            runRecap_savFile = data
-            categories.forEach((category, categoryIndex) => {
-                const level = getCupheadLevel(categoryIndex)
-                level.bestTime = runRecap_database['sav'][databaseIndex].sav[categoryIndex]
-                level.played = true
-                level.completed = true
-            })
-            runRecapExample = true
-            document.getElementById('runRecap_player').innerHTML = playerDisplay(player)
-            if (!['sums', 'residual', 'grid'].includes(globalTab)) {
-                showTab('sav')
-            } else {
-                action()
-            }
-            playSound('ready')
-            closeModal(true)
-        })
 }

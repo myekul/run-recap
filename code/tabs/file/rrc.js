@@ -485,6 +485,10 @@ function read_rrc(content) {
         console.error('Error parsing .rrc file:', error)
     }
 }
+function rrcImport(scenes) {
+    rrcAttemptIndex = 0
+    runRecap_rrcFile.attempts = [{ scenes: scenes }]
+}
 function rrcUpdateNotice() {
     return `<div style='width:360px;padding-bottom:10px'>Your Run Recap Component is outdated! Please install the latest version to gain access to all features.</div>
     <div class='container'>
