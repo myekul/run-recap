@@ -4,6 +4,12 @@ function generate_sav() {
     if (runRecap_savFile) {
         handleNumDeaths()
         HTMLContent += classicView()
+        if (getCupheadLevel(categories.length - 1).completed) {
+            HTMLContent += `<div class="container" style="margin-top:20px;gap:10px">
+                                <div class='button cuphead' onclick="downloadJSON(runRecap_savFile)" style='width:135px'>${fontAwesome('download')}</i>&nbsp;Download .sav</div>
+                                <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'>${fontAwesome('clone')}&nbsp;Copy to clipboard</div>
+                            </div>`
+        }
     } else {
         HTMLContent += emptyFile('sav')
     }

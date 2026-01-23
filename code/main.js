@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             commBestILs = data
+            commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
             prepareLocalData()
             runRecapCategory = commBestILs['1.1+']
             window.firebaseUtils.firestoreRead()
@@ -63,11 +64,6 @@ function action() {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
         document.getElementById(globalTab + 'Button').classList.add('activeBanner')
     })
-    if (globalTab == 'sav') {
-        show('runRecap_content')
-    } else {
-        hide('runRecap_content')
-    }
     if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile || globalTab == 'rrc')) {
         show('runRecap_sav_section')
     } else {
@@ -89,24 +85,25 @@ function action() {
     }
     if (runRecapExample) {
         show('runRecap_example_div')
-        hide('runRecap_upload_div')
+        hide('upload_div')
     } else {
         hide('runRecap_example_div')
         if (runRecap_savFile) {
             if (getCupheadLevel(categories.length - 1).completed) {
-                show('runRecap_upload_div')
+                show('upload_div')
             } else {
-                hide('runRecap_upload_div')
+                hide('upload_div')
+            }
+        }
+        if (globalTab == 'rrc') {
+            if (rrcCurrentAttempt.scenes?.length == runRecapCategory.scenes?.length && ['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1).name)) {
+                show('upload_div')
+            } else {
+                hide('upload_div')
             }
         }
     }
-    if (runRecap_savFile) {
-        if (getCupheadLevel(categories.length - 1).completed) {
-            show('completedRun')
-        }
-    } else {
-        hide('completedRun')
-    }
+    if (!['sav', 'rrc'].includes(globalTab)) hide('upload_div')
     if (globalTab == 'lss' && runRecapTheoretical) {
         show('runRecap_theoretical_div')
     } else {
@@ -126,11 +123,7 @@ function action() {
         hide('pageTitle')
     } else if (['sav', 'lss', 'rrc'].includes(globalTab)) {
         show('pageTitle')
-        let HTMLContent = `<div class='font2 container' style='gap:8px;font-size:200%;padding:15px 0'>
-        <img src='https://myekul.com/shared-assets/cuphead/images/extra/${globalTab}.png' style='height:40px;filter: brightness(0) invert(1)'>
-        .${globalTab}
-        </div>`
-        document.getElementById('pageTitle').innerHTML = HTMLContent
+        document.getElementById('pageTitle').innerHTML = `<div style='padding:15px 0'>${fileTitle(globalTab)}</div>`
     } else {
         show('pageTitle')
         if (fontAwesomeSet[globalTab]) {
@@ -157,6 +150,11 @@ function action() {
         hide('rrcBrowser')
         show('runRecap_time')
     }
+    if (['sav', 'lss', 'rrc'].includes(globalTab)) {
+        show('backButton')
+    } else {
+        hide('backButton')
+    }
 }
 document.querySelectorAll('select').forEach(elem => {
     elem.addEventListener('change', () => {
@@ -175,7 +173,7 @@ function getCommBestILs(categoryName = runRecapCategory.tabName) {
     playerNames = new Set()
     savComparison = 'Top 3 Average'
     altStratLevel = null
-    rrcCompatible = ['1.1+', 'DLC'].includes(runRecapCategory.tabName)
+    rrcCompatible = ['1.1+', 'NMG', 'DLC'].includes(runRecapCategory.tabName)
     if (rrcCompatible) rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
@@ -345,15 +343,18 @@ const fileOrigin = {
     lss: 'LiveSplit',
     rrc: 'Run Recap'
 };
-function fileInfoCard(type) {
-    return `<div style='width:330px'>
-                <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
-                <div class='font2 container' style='gap:8px;font-size:200%;margin-bottom:5px'>
+function fileTitle(type) {
+    return `<div class='font2 container' style='gap:5px;font-size:200%'>
                     <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
                         style='height:40px;filter: brightness(0) invert(1)'>
                     .${type}
-                </div>
-                <div class='fileType textBlock' style="font-size:90%">
+                </div>`
+}
+function fileInfoCard(type) {
+    return `<div style='width:330px'>
+                <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
+                ${fileTitle(type)}
+                <div class='fileType textBlock' style="margin-top:10px;font-size:90%">
                 ${fileInfo[type]}
                 </div>
             </div>`

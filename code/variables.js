@@ -6,9 +6,13 @@ const markinSheets = {}
 let runRecapCategory
 let globalCache
 
+// File types
+
 let runRecap_savFile
 let runRecap_lssFile = {}
 let runRecap_rrcFile = {}
+
+// .rrc
 
 let rrcAttemptIndex = 0
 
@@ -36,12 +40,12 @@ let splitInfo = []
 
 let deltaType
 
-let database
+const runRecap_database = { sav: [], rrc: [] }
+
+let databaseView = 'rrc'
 
 let savComparisonCollection = {}
 let savComparison
-
-let savComparisonView
 
 let loaded
 

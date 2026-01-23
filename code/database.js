@@ -1,36 +1,53 @@
-function savDatabase(comparison) {
-    if (!database) {
-        window.firebaseUtils.firestoreReadRR(comparison)
+function fetchDatabase(type, comparison, shh) {
+    if (!runRecap_database[type]?.length) {
+        window.firebaseUtils.firestoreReadRR(type, comparison, shh)
     } else {
-        openDatabase(comparison)
+        openDatabase(type, comparison, shh)
     }
 }
-function openDatabase(comparison) {
-    let HTMLContent = `<div class='container'>
+function openDatabase(type, comparison, shh) {
+    let HTMLContent = ''
+    if (comparison) {
+        HTMLContent += `<div class='container'>Choose a comparison!</div>`
+    } else {
+        HTMLContent += `<div class='container'>
+        <div class='textBlock'>
+        Welcome to the ${myekulColor('Run Recap Database')}!
+        This is a collection of every .sav and .rrc that has been uploaded to the website.
+        To view a run, simply click on an entry.
+        </div>
+        </div>`
+    }
+    if (!comparison) {
+        HTMLContent += `<div class='container' style='gap:10px;margin:10px 0'>`;
+        ['rrc', 'sav'].forEach(fileType => {
+            HTMLContent += `<div class='button font2 ${type == fileType ? 'selected' : 'cuphead'}' style='width:50px' onclick="fetchDatabase('${fileType}',null,true)">.${fileType}</div>`
+        })
+        HTMLContent += `</div>`
+        HTMLContent += fileTitle(type)
+    }
+    if (type == 'rrc') HTMLContent += `
     <div class='textBlock'>
-    Welcome to the ${myekulColor('Run Recap Database')}!
-    This is a collection of every .sav that has been uploaded to the website.
-    To view a .sav, simply click on an entry.
-    </div>
-    </div>
-    <table style='padding:10px;margin:0 auto'>`
-    const validComparison = ['sav', 'rrc'].includes(comparison)
-    database.forEach((run, index) => {
-        if (!(comparison && runRecapCategory.tabName != run.category)) {
+    The .rrc database is currently write-only. Viewing and comparison functionality coming soon. <span class='dim'>myekul is so busy...</span>
+    </div>`
+    HTMLContent += `<table style='padding:10px;margin:0 auto'>`
+    runRecap_database[type].forEach((run, index) => {
+        if (!(type && runRecapCategory.tabName != run.category)) {
             const category = commBestILs[run.category]
-            const onclick = validComparison ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
+            const onclick = comparison ? `databaseComparison('${run.sav}','${run.player}','${run.time}')` : `processDatabaseFile(${index},'${run.player}','${run.time}','${category.tabName}')`
             HTMLContent += `<tr class='${getRowColor(index)} grow' onclick="${onclick}">
         <td class='dim' style='font-size:70%'>${index + 1}</td>
-        <td><div class='container'>${generateBoardTitle(category)}</div></td>
-        <td style='padding:0 5px'><div>${run.date}</div><div style='font-size:60%'>${daysAgo(getDateDif(new Date(), new Date(run.date)))}</div></td>
+        ${comparison ? '' : `<td><div class='container'>${generateBoardTitle(category)}</div></td>`}
+        <td style='padding:0 5px;white-space:nowrap'><div>${run.date}</div><div style='font-size:60%'>${daysAgo(getDateDif(new Date(), new Date(run.date)))}</div></td>
         <td class='${category.className}' style='font-size:120%;padding:0 5px'>${run.time}</td>
         <td>${playerDisplay(run.player, true)}</td>
         </tr>`
         }
     })
     HTMLContent += `</table>`
-    if (validComparison) playSound('category_select')
-    openModal(HTMLContent, 'DATABASE', '', comparison)
+    if (comparison) playSound('category_select')
+    if (shh) playSound('move')
+    openModal(HTMLContent, 'DATABASE', '', comparison || shh)
 }
 function databaseComparison(sav, player, time) {
     savComparisonCollection['Database'] = []
@@ -41,7 +58,8 @@ function databaseComparison(sav, player, time) {
     action()
 }
 function runRecapUploadButton() {
-    if (localStorage.getItem('username') && runRecapTime != 'XX:XX') {
+    if (localStorage.getItem('username') &&
+        ((globalTab == 'sav' && runRecapTime != 'XX:XX') || globalTab == 'rrc')) {
         window.firebaseUtils.firestoreWriteRR()
     } else {
         let HTMLContent = `
@@ -62,7 +80,7 @@ function processDatabaseFile(databaseIndex, player, time, categoryName) {
             runRecap_savFile = data
             categories.forEach((category, categoryIndex) => {
                 const level = getCupheadLevel(categoryIndex)
-                level.bestTime = database[databaseIndex].sav[categoryIndex]
+                level.bestTime = runRecap_database['sav'][databaseIndex].sav[categoryIndex]
                 level.played = true
                 level.completed = true
             })

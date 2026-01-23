@@ -397,7 +397,7 @@ function bossPattern(boss, pattern) {
 function userContributions(playerName) {
     let HTMLContent = ''
     HTMLContent += playerDisplay(playerName)
-    HTMLContent += `<table style='margin-top:10px'>`
+    HTMLContent += `<table style='margin:10px'>`
     let strats = []
     for (const level in alt[runRecapCategory.tabName]) {
         let title = ''
@@ -413,7 +413,7 @@ function userContributions(playerName) {
     }
     strats.forEach((strat, index) => {
         HTMLContent += `
-        <tr class='${getRowColor(index)}'>
+        <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
         <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
         <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>

@@ -92,9 +92,9 @@
             },
             {
                 "name": "3 Triples",
-                "time": 33.92,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/6whLLEFdttU"
+                "time": 33.81,
+                "player": "ExclamationMarkYT",
+                "url": "https://www.youtube.com/watch?v=PV6ORR8kARs&t=17s"
             },
             {
                 "name": "3 Doubles",
@@ -560,9 +560,9 @@
             },
             {
                 "name": "Cupcake, Waffle, Jawbreaker",
-                "time": 33.97,
+                "time": 33.95,
                 "player": "myekul",
-                "url": "https://youtu.be/S87rqEuK_bI"
+                "url": "https://youtu.be/bOiCPnb0HT8"
             },
             {
                 "name": "Cupcake, Candy Corn, Waffle",
@@ -578,9 +578,9 @@
             },
             {
                 "name": "Cupcake, Candy Corn, Jawbreaker",
-                "time": "34.10",
+                "time": "33.60",
                 "player": "myekul",
-                "url": "https://youtu.be/nb0Gqn9LLpI"
+                "url": "https://youtu.be/pKGyBECyZC0"
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
@@ -626,9 +626,9 @@
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
-                "time": 33.62,
+                "time": 33.17,
                 "player": "myekul",
-                "url": "https://youtu.be/TpcSeQrKkSk"
+                "url": "https://youtu.be/xZ9e9EzJI0w"
             },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
@@ -638,9 +638,9 @@
             },
             {
                 "name": "Gumball, Candy Corn, Waffle",
-                "time": 33.29,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=OMZG3d4pyRUxIB7m&t=1289"
+                "time": 32.95,
+                "player": "myekul",
+                "url": "https://youtu.be/ul8aajaIuQs"
             },
             {
                 "name": "Gumball, Candy Corn, Cupcake",
@@ -1390,6 +1390,12 @@
                 "url": "https://www.youtube.com/live/TKqk-CQkGDQ?si=n-SaaPV5Pl3N8Mxk&t=6502"
             },
             {
+                "name": "Ghosts, Turtle, Red Fish",
+                "time": 55.45,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/NLNBC0fZiQ4"
+            },
+            {
                 "name": "Ghosts, Pufferfish, Yellow Fish, Turtle",
                 "time": 56.12,
                 "player": "Taylz",
@@ -1733,9 +1739,9 @@
             },
             {
                 "name": "Clap Dragon",
-                "time": 46.99,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/ZQrl-XxPJNo",
+                "time": 46.55,
+                "player": "myekul",
+                "url": "https://youtu.be/wjGBFkk2-S0",
                 "odds": "1/14"
             },
             {
@@ -1784,9 +1790,9 @@
             },
             {
                 "name": "Clap Ring Dragon",
-                "time": 41.31,
+                "time": 41.15,
                 "player": "myekul",
-                "url": "https://youtu.be/9A_Ydc8biSg"
+                "url": "https://youtu.be/vS3M7ioSyOU"
             },
             {
                 "name": "Ring Clap Dragon",
@@ -2024,21 +2030,21 @@
             },
             {
                 "name": "No Potato EXs, Onion Dash",
-                "time": 27.47,
+                "time": 27.16,
                 "player": "graven_",
-                "url": "https://youtu.be/Oq9j5wIK-Vg"
-            },
-            {
-                "name": "No Doubles/Triples",
-                "time": 28.81,
-                "player": "Yuka",
-                "url": "https://youtu.be/ZPR2PWzL9gI"
+                "url": "https://youtu.be/uVqd14xZ-zk"
             },
             {
                 "name": "All Doubles",
                 "time": 27.47,
                 "player": "Yuka",
                 "url": "https://youtu.be/Yl8vNUhaX5Q"
+            },
+            {
+                "name": "No Doubles/Triples",
+                "time": 28.81,
+                "player": "Yuka",
+                "url": "https://youtu.be/ZPR2PWzL9gI"
             }
         ],
         "ribbyandcroaks": [
@@ -2227,9 +2233,9 @@
         "djimmithegreat": [
             {
                 "name": "Gems",
-                "time": 47.98,
+                "time": 47.73,
                 "player": "Yuka",
-                "url": "https://youtu.be/CHqMHvTawog"
+                "url": "https://youtu.be/7-_gpl2wPhA"
             },
             {
                 "name": "Cats / Swords",
@@ -3037,6 +3043,12 @@
                 "time": 53.47,
                 "player": "myekul",
                 "url": "https://youtu.be/DVHcisMA0PA"
+            },
+            {
+                "name": "DLS 6+3",
+                "time": 55.07,
+                "player": "myekul",
+                "url": "https://youtu.be/4ACv5_HH05o"
             },
             {
                 "name": "LSL 7+3",

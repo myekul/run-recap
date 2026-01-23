@@ -34,22 +34,38 @@ window.firebaseUtils = {
         }
     },
     firestoreWriteRR: async () => {
-        let sav = []
-        categories.forEach((category, categoryIndex) => {
-            sav.push(getCupheadLevel(categoryIndex).bestTime)
-        })
-        const obj = {
-            sav: sav,
-            player: localStorage.getItem('username'),
-            category: runRecapCategory.tabName,
-            time: runRecapTime,
-            date: new Date().toISOString().slice(0, 10)
+        let obj
+        let collectionName = 'runRecap'
+        if (globalTab == 'sav') {
+            let sav = []
+            categories.forEach((category, categoryIndex) => {
+                sav.push(getCupheadLevel(categoryIndex).bestTime)
+            })
+            obj = {
+                sav: sav,
+                player: localStorage.getItem('username'),
+                category: runRecapCategory.tabName,
+                time: runRecapTime,
+                date: new Date().toISOString().slice(0, 10)
+            }
+        } else if (globalTab == 'rrc') {
+            collectionName += '_rrc'
+            const [year, month, day] = runRecap_rrcFile.attempts[rrcAttemptIndex].startedAt.slice(0, 10).split("/").map(Number);
+            obj = {
+                scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes,
+                player: localStorage.getItem('username'),
+                category: runRecapCategory.tabName,
+                time: secondsToHMS(runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.at(-1).endTime, true),
+                date: new Date(year, month - 1, day).toISOString().slice(0, 10),
+                uploadDate: new Date().toISOString().slice(0, 10)
+            }
+            console.log(obj)
         }
         const uploadCheck = document.getElementById('uploadCheck')
         uploadCheck.innerHTML = `<div class='loader'></div>`
         hide('uploadButton')
         show('uploadCheck')
-        await addDoc(collection(db, 'runRecap'), obj)
+        await addDoc(collection(db, collectionName), obj)
             .then(() => {
                 console.log(`Run Recap written`);
                 uploadCheck.innerHTML = fontAwesome('check')
@@ -58,65 +74,26 @@ window.firebaseUtils = {
                 console.error(`Error writing document ${i}: `, error);
             });
     },
-    firestoreReadRR: async (comparison) => {
+    firestoreReadRR: async (type, comparison, shh) => {
         try {
-            const collectionRef = collection(db, 'runRecap');
+            let collectionName = 'runRecap'
+            if (type == 'rrc') collectionName += '_rrc'
+            const collectionRef = collection(db, collectionName);
             const q = query(collectionRef);
             const querySnapshot = await getDocs(q);
             const results = [];
             querySnapshot.forEach(docSnap => {
                 results.push({ id: docSnap.id, ...docSnap.data() });
             });
-            database = results.sort((a, b) => new Date(b.date) - new Date(a.date))
-            database = database.sort((a, b) => a.player.localeCompare(b.player, undefined, { sensitivity: "base" }))
-            database = database.sort((a, b) => a.time.localeCompare(b.time, undefined, { sensitivity: "base" }))
-            database = database.sort((a, b) => a.category.localeCompare(b.category, undefined, { sensitivity: "base" }))
-            openDatabase(comparison)
+            runRecap_database[type] = results.sort((a, b) => new Date(b.date) - new Date(a.date))
+            runRecap_database[type] = runRecap_database[type].sort((a, b) => a.player.localeCompare(b.player, undefined, { sensitivity: "base" }))
+            runRecap_database[type] = runRecap_database[type].sort((a, b) => a.time.localeCompare(b.time, undefined, { sensitivity: "base" }))
+            runRecap_database[type] = runRecap_database[type].sort((a, b) => a.category.localeCompare(b.category, undefined, { sensitivity: "base" }))
+            openDatabase(type, comparison, shh)
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }
     },
-    firestoreWrite_rrc: async () => {
-        const [year, month, day] = runRecap_rrcFile.attempts[rrcAttemptIndex].startedAt.slice(0, 10).split("/").map(Number);
-        const obj = {
-            scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes,
-            player: localStorage.getItem('username'),
-            category: runRecapCategory.tabName,
-            runDate: new Date(year, month - 1, day),
-            uploadDate: new Date().toISOString().slice(0, 10)
-        }
-        const uploadCheck = document.getElementById('uploadCheck')
-        uploadCheck.innerHTML = `<div class='loader'></div>`
-        hide('uploadButton')
-        show('uploadCheck')
-        console.log(obj)
-        // await addDoc(collection(db, 'runRecap_rrc'), obj)
-        //     .then(() => {
-        //         console.log(`.rrc written!`);
-        //         uploadCheck.innerHTML = fontAwesome('check')
-        //     })
-        //     .catch((error) => {
-        //         console.error(`Error writing document ${i}: `, error);
-        //     });
-    },
-    // firestoreRead_rrc: async (comparison) => {
-    //     try {
-    //         const collectionRef = collection(db, 'runRecap_rrc');
-    //         const q = query(collectionRef);
-    //         const querySnapshot = await getDocs(q);
-    //         const results = [];
-    //         querySnapshot.forEach(docSnap => {
-    //             results.push({ id: docSnap.id, ...docSnap.data() });
-    //         });
-    //         database = results.sort((a, b) => new Date(b.runDate) - new Date(a.runDate))
-    //         database = database.sort((a, b) => a.player.localeCompare(b.player, undefined, { sensitivity: "base" }))
-    //         database = database.sort((a, b) => a.scenes.at(-1).endTime.localeCompare(b.scenes.at(-1).endTime, undefined, { sensitivity: "base" }))
-    //         database = database.sort((a, b) => a.category.localeCompare(b.category, undefined, { sensitivity: "base" }))
-    //         openDatabase(comparison)
-    //     } catch (error) {
-    //         console.error('Error reading .rrc database:', error)
-    //     }
-    // },
     firestoreWriteCommBestILs: async () => {
         const obj = {
             player: localStorage.getItem('username'),

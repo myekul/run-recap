@@ -29,7 +29,7 @@
             </div>
             <div class='cuphead button'
                 style="position:absolute;left:20px;top:13px;font-size:150%;width:50px;height:50px"
-                onclick="savDatabase()"><i class="fa fa-cloud"></i>
+                onclick="fetchDatabase(databaseView)"><i class="fa fa-cloud"></i>
             </div>
         </header>
         <main>
@@ -174,33 +174,17 @@
                 </div>
             </div>
             <div id="content"></div>
-            <div id="runRecap_content" style="display:none">
-                <div class='container' style='padding-top:20px'>
-                    <div class="container" style="margin:0">
-                        <div class='button cuphead' onclick="showTab('home')"
-                            style='width:110px;height:30px;font-size:90%'>
-                            <i class="fa fa-reply"></i>&nbsp;Go back
-                        </div>
-                        <div id="completedRun" class="container" style="margin:0">
-                            <div class='divider'></div>
-                            <div class='button cuphead' onclick="downloadJSON(runRecap_savFile)" style='width:135px'><i
-                                    class="fa fa-download"></i>&nbsp;Download .sav</div>
-                            <div class='divider'></div>
-                            <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i
-                                    class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
-                            <div id="runRecap_upload_div" class="container" style="display:none">
-                                <div class='divider'></div>
-                                <div id='uploadButton' class='button cuphead pulseSize' onclick="runRecapUploadButton()"
-                                    style='width:190px;height:30px;font-size:90%'><i
-                                        class="fa fa-cloud-upload"></i>&nbsp;Upload to database</div>
-                                <div id='uploadCheck' class='container'
-                                    style='display:none;width:190px;font-size:200%;margin:0'></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id='runRecap_chart' class='container' style='display:none;width:900px;height:100px'></div>
+            <div id='backButton' class='button cuphead' onclick="showTab('home')"
+                style='display:none;width:150px;height:30px;font-size:100%;position:fixed;bottom:20px;left:20px;z-index:2'>
+                <i class="fa fa-reply"></i>&nbsp;Go back
+            </div>
+            <div id="upload_div" class="container" style="display:none;position:fixed;bottom:20px;right:20px;z-index:2">
+                <div id='uploadButton' class='button cuphead pulseSize' onclick="runRecapUploadButton()"
+                    style='width:190px;height:30px;font-size:90%'><i class="fa fa-cloud-upload"></i>&nbsp;Upload to
+                    database</div>
+                <div id='uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
+            </div>
         </main>
         <footer></footer>
     </div>

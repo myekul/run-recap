@@ -18,12 +18,25 @@
 - Chalice Tutorial toggle?
 
 ### .rrc
-- Upload
 - Resets / Deaths
 - Personal Bests
 - King Dice IGT
 - 800 grid
+- Confetti
+
+- Legacy
+- DLC C/S
+- DLC+Base
+- DLC+Base C/S
+
+- Database modal should be instant with load inside
+
+- Loading database files as examples AND comparisons
+
+- Reverse-engineer rrc examples to populate sav examples
+
+- Baroness patterns vs alt strat
 
 ### Alt Strats
 - Run 'n Guns
-- Briney pattern images / stats
+- Briney stats

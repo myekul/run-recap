@@ -111,7 +111,7 @@ function setRunRecapTime(time) {
 function runRecapUnload(elem) {
     if (elem == 'sav') runRecap_savFile = null
     if (elem == 'lss') runRecap_lssFile = {}
-    if (elem == 'rrc') runRecap_rrcFile = {}
+    if (elem == 'rrc') runRecap_rrcFile = {}; rrcCurrentAttempt = {}
 }
 function runRecapGrade(delta) {
     return getLetterGrade(100 - (delta * 4))

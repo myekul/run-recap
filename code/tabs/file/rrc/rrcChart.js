@@ -66,6 +66,10 @@ function rrcChart() {
     }
     let interval = 420
     let numTicks = 4
+    if (runRecapCategory.name == 'NMG') {
+        interval = 120
+        numTicks = 15
+    }
     if (runRecapCategory.name == 'DLC') {
         interval = 60
         numTicks = 11

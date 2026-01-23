@@ -18,7 +18,7 @@ function generate_rrc() {
         <table id='rrcCredits' class='dim' style='background-color:transparent'>
             <tr><td class='dim font2'>PROJECT LEADS</td></tr>
             <tr>
-                <td>
+                <td style='padding-left:20px'>
                     <span style='font-size:70%;margin-right:30px'>Backend Developer</span>
                     ${playerDisplay('SBDWolf')}
                 </td>
@@ -26,7 +26,7 @@ function generate_rrc() {
                 <td>C# / Rust</td>
             </tr>
             <tr>
-                <td>
+                <td style='padding-left:20px'>
                     <span style='font-size:70%'>Frontend Developer</span>
                     ${playerDisplay('myekul')}
                 </td>
@@ -35,12 +35,18 @@ function generate_rrc() {
             </tr>
             <tr><td class='dim font2' style='padding-top:10px'>ADDITIONAL HELP</td></tr>
             <tr>
-                <td>
+                <td style='padding-left:20px'>
                 <span style='font-size:70%'>Memory Specialist</span>
                 ${playerDisplay('diggity')}
                 </td>
                 <td class='dim'>Memory reading technology, .wasm autosplitter</td>
                 <td>Rust / WebAssembly</td>
+            </tr>
+            <tr><td class='dim font2' style='padding-top:10px'>RUN RETIMING</td></tr>
+            <tr>
+                <td colspan=3 style='padding-left:20px'>
+                ${playerDisplay('Misterbutter444')}
+                </td>
             </tr>
         </table>
         </div>`
@@ -67,7 +73,7 @@ function rrcView() {
     HTMLContent += `</div>`
     if (rrcCompatible && runFinished && rrcComparison != 'None') {
         const finalTime = rrcCurrentAttempt.scenes.at(-1)?.endTime
-        const timeRequirement = runRecapCategory.name == '1.1+' && finalTime < 1680 || runRecapCategory.name == 'DLC' && finalTime < 660
+        const timeRequirement = runRecapCategory.name == '1.1+' && finalTime < 1680 || runRecapCategory.name == 'DLC' && finalTime < 660 || runRecapCategory.name == 'NMG' && finalTime < 1800
         if (timeRequirement) {
             chartEligible = true
             HTMLContent += rrcChartSection()
@@ -283,17 +289,33 @@ function rtaTable(title, field, sceneNames) {
     HTMLContent += `</table></div>`
     if (title == 'Scorecards') {
         HTMLContent += `
-        <div style='position:absolute;left:255px;top:25px'>
-            <div class='scorecardButton button ${scorecardMode == 'Default' ? 'selected' : ''}' onclick="changeScorecardMode('Default')">${fontAwesome('tasks')}</div>
-            <div class='scorecardButton button ${scorecardMode == 'Normalized' ? 'selected' : ''}' onclick="changeScorecardMode('Normalized')">${fontAwesome('balance-scale')}</div>
-            <div id='starSkipButton' class='scorecardButton button container ${scorecardMode == 'Star Skips' ? 'selected' : ''}' onclick="changeScorecardMode('Star Skips')">
-            ${fontAwesome('star')}
-            ${fontAwesome('star')}
-            </div>
-        </div>`
+        <div style='position:absolute;left:255px;top:25px'>`
+        const scorecardModes = [
+            {
+                name: 'Default',
+                icon: fontAwesome('tasks')
+            },
+            {
+                name: 'Normalized',
+                icon: fontAwesome('balance-scale')
+            },
+            {
+                name: 'Star Skips',
+                icon: fontAwesome('star').repeat(2)
+            }
+        ]
+        scorecardModes.forEach(mode => {
+            if (!(mode.name == 'Normalized' && runRecapCategory.name == 'NMG')) {
+                HTMLContent += scorecardModeButton(mode.name, mode.icon)
+            }
+        })
+        HTMLContent += `</div>`
     }
     HTMLContent += `</div>`
     return HTMLContent
+}
+function scorecardModeButton(mode, icon) {
+    return `<div class='scorecardButton button container ${scorecardMode == mode ? 'selected' : ''}' onclick="changeScorecardMode('${mode}')">${icon}</div>`
 }
 function changeScorecardMode(mode) {
     scorecardMode = mode
