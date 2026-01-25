@@ -1729,13 +1729,15 @@
                 "name": "Pinwheel Dragon (3 Quads)",
                 "time": 45.64,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/0hlrM62-gNQ"
+                "url": "https://youtu.be/0hlrM62-gNQ",
+                "odds": "3/140"
             },
             {
                 "name": "Ring Dragon (3 Quads)",
                 "time": "46.80",
                 "player": "myekul",
-                "url": "https://youtu.be/c3muDgZht_M"
+                "url": "https://youtu.be/c3muDgZht_M",
+                "odds": "3/140"
             },
             {
                 "name": "Clap Dragon",
@@ -1746,9 +1748,9 @@
             },
             {
                 "name": "Dragon Clap",
-                "time": 48.88,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/uuCLFW2Vl6M",
+                "time": 48.42,
+                "player": "myekul",
+                "url": "https://youtu.be/KLZ4Iak9Lx8",
                 "odds": "1/7"
             },
             {
@@ -1760,7 +1762,8 @@
                 "time": 39.96,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/hYe-Jyq-ksE",
-                "odds": "1/55"
+                "odds": "1/55",
+                "odds2": 3
             },
             {
                 "name": "Bubbles Dragon (Slower)",
@@ -1792,32 +1795,38 @@
                 "name": "Clap Ring Dragon",
                 "time": 41.15,
                 "player": "myekul",
-                "url": "https://youtu.be/vS3M7ioSyOU"
+                "url": "https://youtu.be/vS3M7ioSyOU",
+                "odds": "3/140",
+                "odds2": 4
             },
             {
                 "name": "Ring Clap Dragon",
                 "time": 41.27,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/EKJTvJiG8Qc"
+                "url": "https://youtu.be/EKJTvJiG8Qc",
+                "odds": "3/140"
             },
             {
                 "name": "Clap Pinwheel Dragon",
                 "time": 41.07,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/ZcFeMxh2zLg"
+                "url": "https://youtu.be/ZcFeMxh2zLg",
+                "odds": "3/140"
             },
             {
                 "name": "Pinwheel Clap Dragon",
                 "time": 41.12,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/iMmPMKVbh6o"
+                "url": "https://youtu.be/iMmPMKVbh6o",
+                "odds": "3/140"
             },
             {
                 "name": "Clap Bubbles Dragon",
                 "time": 42.65,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/JVOAjTHOJKI",
-                "odds": "1/55"
+                "odds": "1/55",
+                "odds2": 6
             },
             {
                 "name": "Bubbles Clap Dragon",
@@ -1858,13 +1867,16 @@
                 "name": "Clap Ring Clap Dragon",
                 "time": "45.70",
                 "player": "SBDWolf",
-                "url": "https://youtu.be/YCurAXaGDGc"
+                "url": "https://youtu.be/YCurAXaGDGc",
+                "odds": "3/140",
+                "odds2": 5
             },
             {
                 "name": "Clap Pinwheel Clap Dragon",
                 "time": 45.55,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/U5EQbN-aNYA"
+                "url": "https://youtu.be/U5EQbN-aNYA",
+                "odds": "3/140"
             },
             {
                 "name": "Clap Bubbles Clap Dragon",
@@ -1874,7 +1886,22 @@
                 "odds": "1/55"
             },
             {
-                "title": "Freezeless Spider"
+                "name": "Clap Bubbles Clap Dragon (Slower)",
+                "time": 49.93,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/zo-MMM7202k",
+                "odds": "3/385"
+            },
+            {
+                "name": "Clap Bubbles Clap Dragon (Slowest)",
+                "time": 51.67,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/hL_I1_63fpU",
+                "odds": "1/385"
+            },
+            {
+                "title": "Freezeless Spider",
+                "odds": "3/14"
             },
             {
                 "name": "Spider",
@@ -1884,67 +1911,81 @@
                 "odds": "1/7"
             },
             {
-                "name": "Clap Spider 4B",
+                "name": "Clap Spider",
                 "time": 49.25,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/6C9dO0JKQI4"
+                "url": "https://youtu.be/6C9dO0JKQI4",
+                "odds": "1/14"
             },
             {
-                "title": "Freeze Spider"
-            },
-            {
-                "name": "Pinwheel Spider",
-                "time": 40.92,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/2TYubrghMUE"
+                "title": "Freeze Spider",
+                "odds": "6/21"
             },
             {
                 "name": "Ring Spider",
                 "time": 40.94,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/1-PlZ5oj3NI"
+                "url": "https://youtu.be/1-PlZ5oj3NI",
+                "odds": "3/140",
+                "odds2": 3
+            },
+            {
+                "name": "Pinwheel Spider",
+                "time": 40.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/2TYubrghMUE",
+                "odds": "3/140"
             },
             {
                 "name": "Bubbles Spider",
                 "time": 41.64,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/rFuC7Cufa6Y"
-            },
-            {
-                "name": "Bubbles Clap Spider",
-                "time": 45.55,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/5Hs8Jvs2lFw"
-            },
-            {
-                "name": "Clap Bubbles Spider",
-                "time": 45.76,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/Q_zXAoQ8Lyc"
+                "url": "https://youtu.be/rFuC7Cufa6Y",
+                "odds": "3/105"
             },
             {
                 "name": "Ring Clap Spider",
                 "time": 43.63,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/I_2GzvKytxI"
+                "url": "https://youtu.be/I_2GzvKytxI",
+                "odds": "3/140",
+                "odds2": 4
             },
             {
                 "name": "Clap Ring Spider",
                 "time": 43.83,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/nNMnDhrUhF8"
+                "url": "https://youtu.be/nNMnDhrUhF8",
+                "odds": "3/140"
             },
             {
                 "name": "Pinwheel Clap Spider",
                 "time": 43.75,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/3ZWyPGR1HVs"
+                "url": "https://youtu.be/3ZWyPGR1HVs",
+                "odds": "3/140"
             },
             {
                 "name": "Clap Pinwheel Spider",
                 "time": 43.84,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/rhOxqYH_cno"
+                "url": "https://youtu.be/rhOxqYH_cno",
+                "odds": "3/140"
+            },
+            {
+                "name": "Bubbles Clap Spider",
+                "time": 45.55,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/5Hs8Jvs2lFw",
+                "odds": "3/105",
+                "odds2": 2
+            },
+            {
+                "name": "Clap Bubbles Spider",
+                "time": 45.76,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Q_zXAoQ8Lyc",
+                "odds": "3/105"
             },
             {
                 "name": "Clap Spider 5B",
@@ -1956,19 +1997,23 @@
                 "name": "Clap Ring Clap Spider",
                 "time": 48.13,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/srbUeriKqJE"
+                "url": "https://youtu.be/srbUeriKqJE",
+                "odds": "3/140",
+                "odds2": 3
             },
             {
                 "name": "Clap Pinwheel Clap Spider",
                 "time": 48.14,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/NyWqpEPK-KE"
+                "url": "https://youtu.be/NyWqpEPK-KE",
+                "odds": "3/140"
             },
             {
                 "name": "Clap Bubbles Clap Spider",
                 "time": 51.07,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/Tqj8eXzo4Kc"
+                "url": "https://youtu.be/Tqj8eXzo4Kc",
+                "odds": "3/105"
             },
             {
                 "title": "Spider's Kiss"
@@ -1980,12 +2025,6 @@
                 "url": "https://youtu.be/FuAtHLS56Ms"
             },
             {
-                "name": "Bubbles Clap Spider",
-                "time": 41.93,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/wmvDccZy624"
-            },
-            {
                 "name": "Clap Ring Clap Spider",
                 "time": "40.30",
                 "player": "SBDWolf",
@@ -1993,9 +2032,27 @@
             },
             {
                 "name": "Clap Bubbles Clap Spider",
-                "time": 44.87,
+                "time": 43.94,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/RZZwIHGnIAQ"
+                "url": "https://youtu.be/WcK8ADykeYw"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider (Slower)",
+                "time": 45.28,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/8Q6AksOl9NQ"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider (Slowest)",
+                "time": 46.82,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/UM_GwElcLiU"
+            },
+            {
+                "name": "Bubbles Clap Spider",
+                "time": 41.93,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/wmvDccZy624"
             },
             {
                 "title": "Head Skip"

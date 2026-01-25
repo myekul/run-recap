@@ -79,14 +79,6 @@ function generateAltStrats() {
                     {
                         boss: 'thedevil',
                         name: 'Clap Bubbles Clap'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Clap Bubbles Clap Dragon (Slower)'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Clap Bubbles Clap Dragon (Slowest)'
                     }
                 ]
                 HTMLContent += `
@@ -282,19 +274,19 @@ function altStrats(query) {
     let min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
     let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
     altStrats.forEach((strat, index) => {
-        if (strat.title && !(strat.title == 'Head Skip' && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
+        if (strat.title && !(["Spider's Kiss", 'Head Skip'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
             HTMLContent += `<tr><td style='height:10px'></td></tr>
             <tr>`
             if (isolatePatterns && strat.odds) {
                 HTMLContent += `<th></th>
-                <th class='gray'>${getOdds(strat.odds)}</th>
+                <th colspan=2 class='gray'>${getOdds(strat.odds)}</th>
                 <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
             } else {
                 HTMLContent += `<th colspan='6' class='gray' style='margin-top:10px'>${strat.title}</th>`
             }
             HTMLContent += `</tr>`
         } else {
-            if (!(runRecapCategory.name == '1.1+' && query == 'thedevil' && isolatePatterns && !strat.odds)) {
+            if (!(query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns && !strat.odds)) {
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
         <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
                 if (baronessCheck) {
@@ -305,7 +297,19 @@ function altStrats(query) {
                     })
                     HTMLContent += `</div></td>`
                 }
-                HTMLContent += query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns ? `<td style='font-size:80%;text-align:right;color:gray' style='padding:0 5px'>${getOdds(strat.odds)}</td>` : ''
+                if (query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns) {
+                    let combinedOdds = 0
+                    altStrats.slice(index, index + strat.odds2).forEach((strat2) => {
+                        combinedOdds += rawOdds(strat2.odds)
+                        strat2.odds2Flag = true
+                    })
+                    if (strat.odds2) {
+                        HTMLContent += `<td rowspan=${strat.odds2} class='background2' style='font-size:80%;text-align:right;color:gray;padding:0 5px'>${combinedOdds.toFixed(1) + '%'}</td>`
+                    } else if (!strat.odds2Flag) {
+                        HTMLContent += `<td></td>`
+                    }
+                    HTMLContent += `<td style='font-size:80%;text-align:right;color:gray;padding:0 5px'>${getOdds(strat.odds)}</td>`
+                }
                 if (['cagneycarnation', 'captainbrineybeard', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
                 HTMLContent += normalizedColorCell(strat.time, min, max)
                 HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
@@ -340,9 +344,12 @@ function altStrats(query) {
     }
     HTMLContent += `</div></div>`
     return HTMLContent
-    function getOdds(odds) {
-        return ((odds.split('/')[0] / odds.split('/')[1]) * 100).toFixed(1) + '%'
-    }
+}
+function rawOdds(odds) {
+    return odds.split('/')[0] / odds.split('/')[1] * 100
+}
+function getOdds(odds) {
+    return rawOdds(odds).toFixed(1) + '%'
 }
 function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
