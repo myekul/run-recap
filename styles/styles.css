@@ -228,3 +228,10 @@ th {
     font-size: 80%;
     width: 200px
 }
+
+.odds {
+    font-size: 80%;
+    text-align: right;
+    padding: 0 5px;
+    color: gray
+}

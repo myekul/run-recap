@@ -1151,125 +1151,145 @@
                 "time": 36.67,
                 "rta": 37.77,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/JzJJD3_PQzk"
+                "url": "https://youtu.be/JzJJD3_PQzk",
+                "odds": "1/8"
             },
             {
                 "name": "2-Gun, Squid",
                 "time": 37.35,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/clVwGnQHxQ4"
+                "url": "https://youtu.be/clVwGnQHxQ4",
+                "odds": "1/24"
             },
             {
                 "name": "2-Gun, Shark",
                 "time": 38.49,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/RdDpE3uSoRE"
+                "url": "https://youtu.be/RdDpE3uSoRE",
+                "odds": "1/24"
             },
             {
                 "name": "2-Gun, Dogfish",
                 "time": 39.36,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/1jHORsRYgpk"
+                "url": "https://youtu.be/1jHORsRYgpk",
+                "odds": "1/24"
             },
             {
                 "name": "4-Gun, Gun",
                 "time": 41.21,
                 "rta": 41.76,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/iiACS0KYIrc"
+                "url": "https://youtu.be/iiACS0KYIrc",
+                "odds": "1/8"
             },
             {
                 "name": "4-Gun, Squid",
                 "time": 38.81,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/T1Lq_KTWyCQ"
+                "url": "https://youtu.be/T1Lq_KTWyCQ",
+                "odds": "1/24"
             },
             {
                 "name": "4-Gun, Shark",
                 "time": "42.80",
                 "player": "SBDWolf",
-                "url": "https://youtu.be/gXuQ0XQZFPk"
+                "url": "https://youtu.be/gXuQ0XQZFPk",
+                "odds": "1/24"
             },
             {
                 "name": "4-Gun, Dogfish",
                 "time": 43.57,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/HARBGcVyDWY"
+                "url": "https://youtu.be/HARBGcVyDWY",
+                "odds": "1/24"
             },
             {
                 "name": "Squid, Gun",
                 "time": 37.81,
                 "rta": 38.72,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/Ou5RBEl9gGA"
+                "url": "https://youtu.be/Ou5RBEl9gGA",
+                "odds": "1/12"
             },
             {
                 "name": "Squid, Squid",
                 "time": "39.10",
                 "player": "SBDWolf",
-                "url": "https://youtu.be/iqWvIKvZCt4"
+                "url": "https://youtu.be/iqWvIKvZCt4",
+                "odds": "1/36"
             },
             {
                 "name": "Squid, Shark",
                 "time": 39.25,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/JD1ETD36dWI"
+                "url": "https://youtu.be/JD1ETD36dWI",
+                "odds": "1/36"
             },
             {
                 "name": "Squid, Dogfish",
                 "time": 39.38,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/HEuIKGkgNi4"
+                "url": "https://youtu.be/HEuIKGkgNi4",
+                "odds": "1/36"
             },
             {
                 "name": "Shark, Gun",
                 "time": 40.74,
                 "rta": 41.32,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/gpvctI8rHoI"
+                "url": "https://youtu.be/gpvctI8rHoI",
+                "odds": "1/12"
             },
             {
                 "name": "Shark, Squid",
                 "time": 38.99,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/D8J3kgeZ8XQ"
+                "url": "https://youtu.be/D8J3kgeZ8XQ",
+                "odds": "1/36"
             },
             {
                 "name": "Shark, Shark",
                 "time": 41.98,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/RFWacOkulls"
+                "url": "https://youtu.be/RFWacOkulls",
+                "odds": "1/36"
             },
             {
                 "name": "Shark, Dogfish",
                 "time": 43.39,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/OGkQ2Aj1F0w"
+                "url": "https://youtu.be/OGkQ2Aj1F0w",
+                "odds": "1/36"
             },
             {
                 "name": "Dogfish, Gun",
                 "time": 41.37,
                 "rta": 42.92,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/GgnnwXygKgA"
+                "url": "https://youtu.be/GgnnwXygKgA",
+                "odds": "1/12"
             },
             {
                 "name": "Dogfish, Squid",
                 "time": 39.29,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/Fb0cADjVnno"
+                "url": "https://youtu.be/Fb0cADjVnno",
+                "odds": "1/36"
             },
             {
                 "name": "Dogfish, Shark",
                 "time": 43.48,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/sM4s3bBgqhw"
+                "url": "https://youtu.be/sM4s3bBgqhw",
+                "odds": "1/36"
             },
             {
                 "name": "Dogfish, Dogfish",
                 "time": 42.16,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/tWmvLmoXSJk"
+                "url": "https://youtu.be/tWmvLmoXSJk",
+                "odds": "1/36"
             },
             {
                 "title": "2-cycle"

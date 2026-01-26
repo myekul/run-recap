@@ -282,7 +282,7 @@ function altStrats(query) {
                 <th colspan=2 class='gray'>${getOdds(strat.odds)}</th>
                 <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
             } else {
-                HTMLContent += `<th colspan='6' class='gray' style='margin-top:10px'>${strat.title}</th>`
+                HTMLContent += `<th colspan='7' class='gray' style='margin-top:10px'>${strat.title}</th>`
             }
             HTMLContent += `</tr>`
         } else {
@@ -297,6 +297,9 @@ function altStrats(query) {
                     })
                     HTMLContent += `</div></td>`
                 }
+                if (query == 'captainbrineybeard') {
+                    HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
+                }
                 if (query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns) {
                     let combinedOdds = 0
                     altStrats.slice(index, index + strat.odds2).forEach((strat2) => {
@@ -304,11 +307,11 @@ function altStrats(query) {
                         strat2.odds2Flag = true
                     })
                     if (strat.odds2) {
-                        HTMLContent += `<td rowspan=${strat.odds2} class='background2' style='font-size:80%;text-align:right;color:gray;padding:0 5px'>${combinedOdds.toFixed(1) + '%'}</td>`
+                        HTMLContent += `<td rowspan=${strat.odds2} class='background2 odds'>${combinedOdds.toFixed(1) + '%'}</td>`
                     } else if (!strat.odds2Flag) {
                         HTMLContent += `<td></td>`
                     }
-                    HTMLContent += `<td style='font-size:80%;text-align:right;color:gray;padding:0 5px'>${getOdds(strat.odds)}</td>`
+                    HTMLContent += `<td class='odds'>${getOdds(strat.odds)}</td>`
                 }
                 if (['cagneycarnation', 'captainbrineybeard', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
                 HTMLContent += normalizedColorCell(strat.time, min, max)
@@ -463,9 +466,9 @@ function bonbonStuff() {
         HTMLContent += bonbonRow('minion2', '2nd')
         HTMLContent += bonbonRow('minion3', '3rd')
     }
-    HTMLContent += `<td colspan=9 class='gray clickable' onclick="baronessExtra=!baronessExtra;playSound('move');action()">${fontAwesome(baronessExtra ? 'close' : 'chevron-down')}</td>`
-    HTMLContent += `</table></div>`
-    HTMLContent += `<div class='container' style='gap:5px'>
+    HTMLContent += `<td colspan=9 class='gray clickable' onclick="baronessExtra=!baronessExtra;playSound('move');action()">${fontAwesome(baronessExtra ? 'close' : 'chevron-down')}</td>
+    </table></div>
+    <div class='container' style='gap:5px;margin-top:5px'>
     <div>Sort:</div>`;
     ['Standard', 'Best', 'Worst'].forEach(sort => {
         HTMLContent += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
