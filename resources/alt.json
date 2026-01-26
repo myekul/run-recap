@@ -1152,7 +1152,9 @@
                 "rta": 37.77,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/JzJJD3_PQzk",
-                "odds": "1/8"
+                "odds": "1/8",
+                "odds2": 4,
+                "odds3": 8
             },
             {
                 "name": "2-Gun, Squid",
@@ -1181,7 +1183,8 @@
                 "rta": 41.76,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/iiACS0KYIrc",
-                "odds": "1/8"
+                "odds": "1/8",
+                "odds2": 4
             },
             {
                 "name": "4-Gun, Squid",
@@ -1210,7 +1213,9 @@
                 "rta": 38.72,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/Ou5RBEl9gGA",
-                "odds": "1/12"
+                "odds": "1/12",
+                "odds2": 4,
+                "odds3": 12
             },
             {
                 "name": "Squid, Squid",
@@ -1239,7 +1244,8 @@
                 "rta": 41.32,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/gpvctI8rHoI",
-                "odds": "1/12"
+                "odds": "1/12",
+                "odds2": 4
             },
             {
                 "name": "Shark, Squid",
@@ -1268,7 +1274,8 @@
                 "rta": 42.92,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/GgnnwXygKgA",
-                "odds": "1/12"
+                "odds": "1/12",
+                "odds2": 4
             },
             {
                 "name": "Dogfish, Squid",

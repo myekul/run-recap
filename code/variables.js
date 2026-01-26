@@ -60,7 +60,7 @@ let altStratNum = 0
 let altStratLevel
 
 let isolatePatterns
-let baronessExtra
+let altStratExtra
 let bonbonSort = 'Standard'
 
 let minibossArray = []

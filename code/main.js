@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             commBestILs = data
+            commBestILs['Legacy'].scenes = commBestILs['1.1+'].scenes
             commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
             prepareLocalData()
             runRecapCategory = commBestILs['1.1+']
@@ -162,7 +163,8 @@ document.querySelectorAll('select').forEach(elem => {
         action()
     })
 })
-function getCommBestILs(categoryName = runRecapCategory.tabName) {
+function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
+    if (forceHome && runRecapExample) showTab('home')
     runRecapCategory = commBestILs[categoryName]
     let buttonName = runRecapCategory.className
     if (['dlc', 'dlcbase'].includes(buttonName) && runRecapCategory.shot1) {
@@ -173,7 +175,7 @@ function getCommBestILs(categoryName = runRecapCategory.tabName) {
     playerNames = new Set()
     savComparison = 'Top 3 Average'
     altStratLevel = null
-    rrcCompatible = ['1.1+', 'NMG', 'DLC'].includes(runRecapCategory.tabName)
+    rrcCompatible = ['1.1+', 'Legacy', 'NMG', 'DLC'].includes(runRecapCategory.tabName)
     if (rrcCompatible) rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()

@@ -108,7 +108,10 @@ function reconstructRRC(category, endTimes, playerIndex) {
             }
         }
         if (newScene.name == 'win') {
-            newScene.starSkips = commBestILs[category].topRuns[playerIndex].starSkips[winIndex] * 2
+            const hasStarSkips = commBestILs[category].topRuns[playerIndex].starSkips
+            if (hasStarSkips) {
+                newScene.starSkips = hasStarSkips[winIndex] * 2
+            }
             newScene.hp = true
             if (!cupheadRunNguns[categoryScenes[index - 1]]) newScene.superMeter = true
             if (category == '1.1+') {

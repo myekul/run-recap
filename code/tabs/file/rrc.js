@@ -72,9 +72,7 @@ function rrcView() {
     HTMLContent += `</div>`
     HTMLContent += `</div>`
     if (rrcCompatible && runFinished && rrcComparison != 'None') {
-        const finalTime = rrcCurrentAttempt.scenes.at(-1)?.endTime
-        const timeRequirement = runRecapCategory.name == '1.1+' && finalTime < 1680 || runRecapCategory.name == 'DLC' && finalTime < 660 || runRecapCategory.name == 'NMG' && finalTime < 1800
-        if (timeRequirement) {
+        if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime) {
             chartEligible = true
             HTMLContent += rrcChartSection()
         }
@@ -305,7 +303,7 @@ function rtaTable(title, field, sceneNames) {
             }
         ]
         scorecardModes.forEach(mode => {
-            if (!(mode.name == 'Normalized' && runRecapCategory.name == 'NMG')) {
+            if (!(mode.name == 'Normalized' && runRecapCategory.name != '1.1+' && runRecapExample)) {
                 HTMLContent += scorecardModeButton(mode.name, mode.icon)
             }
         })

@@ -7,6 +7,7 @@
         "category": 0,
         "shot1": "lobber",
         "shot2": "spread",
+        "chartTime": 1680,
         "scenes": [
             "cutscene_intro",
             "level_house_elder_kettle",
@@ -97,7 +98,7 @@
             "26.10",
             27.17,
             43.34,
-            "1:13.27",
+            73.27,
             33.37,
             39.09,
             "31.90",
@@ -107,7 +108,7 @@
             32.05,
             45.49,
             51.64,
-            "1:37.24",
+            97.24,
             30.49
         ],
         "tasLinks": [
@@ -144,7 +145,8 @@
         "className": "legacy",
         "category": 1,
         "shot1": "lobber",
-        "shot2": "roundabout"
+        "shot2": "roundabout",
+        "chartTime": 1440
     },
     "NMG": {
         "name": "NMG",
@@ -153,7 +155,8 @@
         "className": "nmg",
         "category": 2,
         "shot1": "lobber",
-        "shot2": "spread"
+        "shot2": "spread",
+        "chartTime": 1800
     },
     "DLC": {
         "name": "DLC",
@@ -163,6 +166,7 @@
         "category": 3,
         "shot1": "lobber",
         "shot2": "spread",
+        "chartTime": 660,
         "scenes": [
             "cutscene_intro",
             "level_house_elder_kettle",

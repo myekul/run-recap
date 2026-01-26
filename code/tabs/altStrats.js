@@ -163,27 +163,31 @@ function generateAltStrats() {
         HTMLContent += `<div class='container'>No alt strats...</div>`
     }
     document.getElementById('content').innerHTML = HTMLContent
-    if (altStratLevel == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') drawChart()
+    if (['baronessvonbonbon', 'captainbrineybeard'].includes(altStratLevel) && runRecapCategory.name == '1.1+') drawChart()
     if (!altStratLevel) window.firebaseUtils.firestoreReadCommBestILs()
 }
 function drawChart() {
     let data = [['Value']]
-    alt[runRecapCategory.tabName].baronessvonbonbon.forEach(strat => {
+    alt[runRecapCategory.tabName][altStratLevel].forEach(strat => {
         data.push([parseFloat(strat.time)])
     })
     data = google.visualization.arrayToDataTable(data);
     const font = getComputedStyle(document.documentElement).getPropertyValue('--font')
+    const isBaroness = altStratLevel == 'baronessvonbonbon'
+    const minVal = isBaroness ? 29 : 36
+    const maxVal = isBaroness ? 38 : 44
+    const ticks = isBaroness ? [29, 30, 31, 32, 33, 34, 35, 36] : [36, 37, 38, 39, 40, 41, 42, 43, 44]
     var options = {
         chartArea: { height: '75%', width: '90%' },
         legend: { position: 'none' },
-        colors: ["hotpink"],
+        colors: [isBaroness ? 'hotpink' : 'crimson'],
         backgroundColor: 'transparent',
         histogram: {
             bucketSize: 0.5
         },
         hAxis: {
-            viewWindow: { min: 29, max: 38 },
-            ticks: [29, 30, 31, 32, 33, 34, 35, 36],
+            viewWindow: { min: minVal, max: maxVal },
+            ticks: ticks,
             textStyle: {
                 color: 'gray',
                 fontName: font
@@ -202,7 +206,7 @@ function drawChart() {
         }
     };
     var chart = new google.visualization.Histogram(
-        document.getElementById("chart_baroness")
+        document.getElementById("chart_" + altStratLevel)
     );
     chart.draw(data, options);
 }
@@ -229,20 +233,13 @@ const imgLocation = {
     pirouletta: 'phase/kingdice7',
     kingdice2: 'kingdice'
 }
-const minibosses = {
-    'Waffle': 'waffle',
-    'Candy Corn': 'candycorn',
-    'Cupcake': 'cupcake',
-    'Gumball': 'gumball',
-    'Jawbreaker': 'jawbreaker'
-}
 function altStrats(query) {
     const category = categories.find(category => category.info.id == query)
     const img = category ? query : imgLocation[query]
     const name = category ? category.info.name : otherNames[query]
     let HTMLContent = ''
-    if (query == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') {
-        HTMLContent += bonbonStuff()
+    if (['baronessvonbonbon', 'captainbrineybeard'].includes(query) && runRecapCategory.name == '1.1+') {
+        HTMLContent += bonbonStuff(query)
     }
     if (query == 'thedevil' && runRecapCategory.name == '1.1+') {
         HTMLContent += `<div class='container'>
@@ -282,7 +279,7 @@ function altStrats(query) {
                 <th colspan=2 class='gray'>${getOdds(strat.odds)}</th>
                 <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
             } else {
-                HTMLContent += `<th colspan='7' class='gray' style='margin-top:10px'>${strat.title}</th>`
+                HTMLContent += `<th colspan='9' class='gray' style='margin-top:10px'>${strat.title}</th>`
             }
             HTMLContent += `</tr>`
         } else {
@@ -297,21 +294,10 @@ function altStrats(query) {
                     })
                     HTMLContent += `</div></td>`
                 }
-                if (query == 'captainbrineybeard') {
+                if ((query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns) || query == 'captainbrineybeard') {
+                    HTMLContent += altStrats.some(strat => strat.odds3) ? oddsLayer(altStrats, index, strat, 'odds3') : ''
+                    HTMLContent += oddsLayer(altStrats, index, strat, 'odds2')
                     HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
-                }
-                if (query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns) {
-                    let combinedOdds = 0
-                    altStrats.slice(index, index + strat.odds2).forEach((strat2) => {
-                        combinedOdds += rawOdds(strat2.odds)
-                        strat2.odds2Flag = true
-                    })
-                    if (strat.odds2) {
-                        HTMLContent += `<td rowspan=${strat.odds2} class='background2 odds'>${combinedOdds.toFixed(1) + '%'}</td>`
-                    } else if (!strat.odds2Flag) {
-                        HTMLContent += `<td></td>`
-                    }
-                    HTMLContent += `<td class='odds'>${getOdds(strat.odds)}</td>`
                 }
                 if (['cagneycarnation', 'captainbrineybeard', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
                 HTMLContent += normalizedColorCell(strat.time, min, max)
@@ -353,6 +339,21 @@ function rawOdds(odds) {
 }
 function getOdds(odds) {
     return rawOdds(odds).toFixed(1) + '%'
+}
+function oddsLayer(altStrats, index, strat, field) {
+    let combinedOdds = 0
+    if (strat.odds) {
+        altStrats.slice(index, index + strat[field]).forEach((strat2) => {
+            combinedOdds += rawOdds(strat2.odds)
+            strat2[field + 'Flag'] = true
+        })
+    }
+    if (strat[field]) {
+        return `<td rowspan=${strat[field]} class='background2 odds'>${combinedOdds.toFixed(1) + '%'}</td>`
+    } else if (!strat[field + 'Flag']) {
+        return `<td></td>`
+    }
+    return ''
 }
 function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
@@ -433,111 +434,110 @@ function userContributions(playerName) {
     HTMLContent += `</table>`
     return HTMLContent
 }
+const minibosses = {
+    'Waffle': 'waffle',
+    'Candy Corn': 'candycorn',
+    'Cupcake': 'cupcake',
+    'Gumball': 'gumball',
+    'Jawbreaker': 'jawbreaker'
+}
 function bonbonStuff() {
+    const config = {
+        baronessvonbonbon: {
+            minibosses: minibosses,
+            fields: ['overall', 'minion1', 'minion2', 'minion3'],
+            groupSize: 3,
+            groupLabels: ['', '1st', '2nd', '3rd'],
+            startIndex: 0,
+            limit: null
+        },
+        captainbrineybeard: {
+            minibosses: { '2-Gun': '2-Gun', '4-Gun': '4-Gun', 'Squid': 'Squid', 'Shark': 'Shark', 'Dogfish': 'Dogfish', 'Gun': 'Gun' },
+            fields: ['overall', 'minion1', 'minion2'],
+            groupSize: 2,
+            groupLabels: ['', '1st', '2nd'],
+            startIndex: 1,
+            limit: 20
+        }
+    }
+    const cfg = config[altStratLevel]
+    let allStrats = alt[runRecapCategory.tabName][altStratLevel]
+    const endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
+    allStrats = allStrats.slice(cfg.startIndex, endIndex)
     let HTMLContent = ''
     HTMLContent += `<div class='container' style='gap:10px'>
-        <div id='chart_baroness' style='width:350px;margin:0'></div>
+        <div id='chart_${altStratLevel}' style='width:350px;margin:0'></div>
         <table>
         </tr>
         <td></td>`
-    if (baronessExtra) HTMLContent += `<td></td>`
+    if (altStratExtra) HTMLContent += `<td></td>`
     minibossArray = []
-    for (const miniboss in minibosses) {
-        const minibossInfo = { name: miniboss, overall: [], minion1: [], minion2: [], minion3: [] }
-        HTMLContent += `<td class='${minibosses[miniboss]}'>${getImage('phase/baronessvonbonbon' + minibosses[miniboss])}</td>`
-        for (const obj of alt[runRecapCategory.tabName].baronessvonbonbon) {
+    for (const minibossName in cfg.minibosses) {
+        const minibossInfo = { name: minibossName }
+        cfg.fields.forEach(field => minibossInfo[field] = [])
+        const imageHtml = altStratLevel === 'captainbrineybeard' 
+            ? `<img src='images/captainbrineybeard/${cfg.minibosses[minibossName]}.png' style='height:36px'>`
+            : getImage('phase/' + altStratLevel + cfg.minibosses[minibossName])
+        HTMLContent += `<td class='${cfg.minibosses[minibossName]}'>${imageHtml}</td>`
+        for (const obj of allStrats) {
             obj.name.split(', ').forEach((name, index) => {
-                if (name == miniboss) {
+                if (name == minibossName) {
                     minibossInfo.overall.push(obj)
-                    if (index == 0) minibossInfo.minion1.push(obj)
-                    if (index == 1) minibossInfo.minion2.push(obj)
-                    if (index == 2) minibossInfo.minion3.push(obj)
+                    const positionField = cfg.fields[index + 1]
+                    if (positionField) minibossInfo[positionField].push(obj)
                 }
             })
         }
         minibossArray.push(minibossInfo)
     }
     HTMLContent += `
-    <td rowspan=6 style='width:15px'></td>
-    <td class='baronessvonbonbon'>${getImage('baronessvonbonbon')}</div>`
-    HTMLContent += bonbonRow('overall', '')
-    if (baronessExtra) {
-        HTMLContent += bonbonRow('minion1', '1st')
-        HTMLContent += bonbonRow('minion2', '2nd')
-        HTMLContent += bonbonRow('minion3', '3rd')
+    <td rowspan=20 style='width:15px'></td>
+    <td class='${altStratLevel}'>${getImage(altStratLevel)}</div>`
+    HTMLContent += bonbonRow('overall', '', cfg.fields.length)
+    if (altStratExtra) {
+        for (let i = 1; i < cfg.fields.length; i++) {
+            HTMLContent += bonbonRow(cfg.fields[i], cfg.groupLabels[i], cfg.fields.length)
+        }
     }
-    HTMLContent += `<td colspan=9 class='gray clickable' onclick="baronessExtra=!baronessExtra;playSound('move');action()">${fontAwesome(baronessExtra ? 'close' : 'chevron-down')}</td>
-    </table></div>
-    <div class='container' style='gap:5px;margin-top:5px'>
+    HTMLContent += `<td colspan=20 class='gray clickable' onclick="altStratExtra=!altStratExtra;playSound('move');action()">${fontAwesome(altStratExtra ? 'close' : 'chevron-down')}</td>
+    </table></div>`
+    if (altStratLevel == 'baronessvonbonbon') {
+        HTMLContent += `<div class='container' style='gap:5px;margin-top:5px'>
     <div>Sort:</div>`;
-    ['Standard', 'Best', 'Worst'].forEach(sort => {
-        HTMLContent += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
-    })
-    HTMLContent += `</div>`
+        ['Standard', 'Best', 'Worst'].forEach(sort => {
+            HTMLContent += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
+        })
+        HTMLContent += `</div>`
+    }
     return HTMLContent
     function bonbonRow(field, label) {
+        const stats = [
+            { name: 'Mean', fn: miniboss => math.mean(miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => math.mean(allStrats.map(entry => parseFloat(entry.time))), class: altStratLevel, format: v => v.toFixed(2) },
+            { name: 'Std. Dev', fn: miniboss => math.std(miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => math.std(allStrats.map(entry => parseFloat(entry.time))), class: 'dim', format: v => v.toFixed(2) + 's', row_class: 'background2' },
+            { name: 'Median', fn: miniboss => math.median(miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => math.median(allStrats.map(entry => parseFloat(entry.time))), class: '', format: v => v.toFixed(2), row_class: 'background2' },
+            { name: 'Min', fn: miniboss => Math.min(...miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => Math.min(...allStrats.map(entry => parseFloat(entry.time))), class: '', format: v => v.toFixed(2), row_class: '' },
+            { name: 'Max', fn: miniboss => Math.max(...miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => Math.max(...allStrats.map(entry => parseFloat(entry.time))), class: '', format: v => v.toFixed(2), row_class: 'background2' }
+        ]
         let HTMLContent = ''
-        HTMLContent += `<tr>`
-        if (baronessExtra) HTMLContent += `<td rowspan=5 class='${label ? 'gray' : ''}' style='padding:5px'>${label}</td>`
-        // Mean
-        HTMLContent += `<td class='myekulColor'>Mean</td>`
-        minibossArray.forEach(miniboss => {
-            const mean = math.mean(miniboss[field].map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td class='baronessvonbonbon' style='padding:0 3px'>${mean.toFixed(2)}</td>`
+
+        stats.forEach((stat, index) => {
+            const row_class = stat.row_class ? ` ${stat.row_class}` : ''
+            const font_size = index == 0 ? '' : " style='font-size:80%'"
+            HTMLContent += `<tr class='${row_class}'${font_size}>`
+            if (!index && altStratExtra) {
+                HTMLContent += `<td rowspan=5 class='${label ? 'gray' : ''}' style='padding:5px'>${label}</td>`
+            }
+            HTMLContent += `<td class='${index == 0 ? 'myekulColor' : ''}'>${stat.name}</td>`
+            minibossArray.forEach(miniboss => {
+                const value = miniboss[field].length ? stat.fn(miniboss) : null
+                HTMLContent += `<td class='${stat.class}' ${stat.name == 'Mean' ? `style='padding:0 3px'` : ''}>${value !== null ? stat.format(value) : '-'}</td>`
+            })
+            if (!label) {
+                const value = stat.fn_all()
+                HTMLContent += `<td class='${stat.class}' ${stat.name == 'Mean' ? `style='padding:0 3px'` : ''}>${stat.format(value)}</td>`
+            }
+            HTMLContent += `</tr>`
         })
-        if (!label) {
-            const mean = math.mean(alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td class='baronessvonbonbon' style='padding:0 3px'>${mean.toFixed(2)}</td>`
-        }
-        HTMLContent += `</tr>`
-        // Std. Dev
-        HTMLContent += `<tr class='background2' style='font-size:80%'>
-            <td>Std. Dev</td>`
-        minibossArray.forEach(miniboss => {
-            const std = math.std(miniboss[field].map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td class='dim'>${std.toFixed(2)}s</td>`
-        })
-        if (!label) {
-            const std = math.std(alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td class='dim'>${std.toFixed(2)}s</td>`
-        }
-        HTMLContent += `</tr>`
-        // Median
-        HTMLContent += `<tr class='background2' style='font-size:80%'>
-            <td>Median</td>`
-        minibossArray.forEach(miniboss => {
-            const median = math.median(miniboss[field].map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td>${median.toFixed(2)}</td>`
-        })
-        if (!label) {
-            const median = math.median(alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td>${median.toFixed(2)}</td>`
-        }
-        HTMLContent += `</tr>`
-        // Min
-        HTMLContent += `<tr style='font-size:70%'>
-            <td>Min</td>`
-        minibossArray.forEach(miniboss => {
-            const min = Math.min(...miniboss[field].map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td>${min.toFixed(2)}</td>`
-        })
-        if (!label) {
-            const min = Math.min(...alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td>${min.toFixed(2)}</td>`
-        }
-        HTMLContent += `</tr>`
-        // Max
-        HTMLContent += `<tr class='background2' style='font-size:70%'>
-            <td>Max</td>`
-        minibossArray.forEach(miniboss => {
-            const max = Math.max(...miniboss[field].map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td>${max}</td>`
-        })
-        if (!label) {
-            const max = Math.max(...alt[runRecapCategory.tabName].baronessvonbonbon.map(entry => parseFloat(entry.time)))
-            HTMLContent += `<td>${max.toFixed(2)}</td>`
-        }
-        HTMLContent += `</tr>`
         return HTMLContent
     }
 }

@@ -9,6 +9,8 @@
 - Info section
 - Ground vs. Plane
 
+- Odds2 row visual bug
+
 ### .sav
 - None comparison
 - Played as Chalice or Mugman
@@ -24,7 +26,6 @@
 - 800 grid
 - Confetti
 
-- Legacy
 - DLC C/S
 - DLC+Base
 - DLC+Base C/S
@@ -43,4 +44,3 @@
 
 ### Alt Strats
 - Run 'n Guns
-- Briney stats
