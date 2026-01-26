@@ -213,7 +213,7 @@ function rtaTable(title, field, sceneNames) {
         <div class='font2 container' style='font-size:150%'>
             ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="segmentToggle=!segmentToggle;playSound('move');action()">${fontAwesome('exchange')}</div>` : ''}
             <div class='container' style='min-width:165px;margin:0'>${title}</div>
-            ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="splitBefore=!splitBefore;playSound('move');action()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
+            ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="toggleSplitType()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
         </div>
         <div class='container'><table>
         <tr class='gray'>
@@ -317,9 +317,16 @@ function rtaTable(title, field, sceneNames) {
 function scorecardModeButton(mode, icon) {
     return `<div class='scorecardButton button container ${scorecardMode == mode ? 'selected' : ''}' onclick="changeScorecardMode('${mode}')">${icon}</div>`
 }
+function toggleSplitType() {
+    splitBefore = !splitBefore
+    playSound('move')
+    toast(splitBefore ? 'Split Before (Old Timing)' : 'Split After')
+    action()
+}
 function changeScorecardMode(mode) {
     scorecardMode = mode
     playSound('move')
+    toast(mode)
     action()
 }
 function rrcUpdateBrowser() {
