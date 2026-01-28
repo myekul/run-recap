@@ -18,10 +18,15 @@ function prepareLocalData() {
                                 const savStarSkips = currentRun.starSkips
                                 if (!savStarSkips) currentRun.starSkips = []
                                 const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
+                                const savLevelsNeeded = !currentRun.runRecap
+                                if (savLevelsNeeded) currentRun.runRecap = []
                                 rrc.endTimes = []
                                 let winIndex = 0
-                                rrc.scenes.forEach(scene => {
+                                rrc.scenes.forEach((scene, index) => {
                                     rrc.endTimes.push(scene.endTime)
+                                    if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[index + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
+                                        currentRun.runRecap.push(scene.levelTime)
+                                    }
                                     if (scene.name == 'win') {
                                         if (!rrcStarSkips) {
                                             scene.starSkips = currentRun.starSkips[winIndex] * 2
@@ -35,7 +40,6 @@ function prepareLocalData() {
                             } else {
                                 reconstructRRC(category, rrc.endTimes, index)
                             }
-                            rrcSegments(currentRun.rrc)
                         })
                     }
                 })
@@ -62,9 +66,11 @@ function rrcComparisonCollectionPrepare() {
             endTime: Infinity
         })),
     }
-    runRecapCategory.topRuns.forEach((player, index) => {
-        rrcComparisonCollection['Player ' + index] = runRecapCategory.topRuns[index].rrc
-        runRecapCategory.topRuns[index].rrc.forEach((scene, sceneIndex) => {
+    const tempTop = runRecapCategory.topRuns.map(run => run.rrc.map(scene => ({ ...scene })))
+    tempTop.forEach(run => rrcSegments(run))
+    tempTop.forEach((run, index) => {
+        rrcComparisonCollection['Player ' + index] = run
+        run.forEach((scene, sceneIndex) => {
             const topBestScene = rrcComparisonCollection['Top Bests'][sceneIndex]
             if (scene.segment < topBestScene.segment) {
                 topBestScene.name = scene.name
@@ -81,13 +87,13 @@ function rrcComparisonCollectionPrepare() {
     for (let i = 0; i < runRecapCategory.scenes.length; i++) {
         rrcComparisonCollection['Top 3 Average'][i].name = runRecapCategory.scenes[i]
         rrcComparisonCollection['Top Average'][i].name = runRecapCategory.scenes[i]
-        runRecapCategory.topRuns.forEach((run, index) => {
+        tempTop.forEach((run, index) => {
             if (index < 3) {
-                rrcComparisonCollection['Top 3 Average'][i].endTime += run.rrc[i].endTime
-                rrcComparisonCollection['Top 3 Average'][i].segment += run.rrc[i].segment
+                rrcComparisonCollection['Top 3 Average'][i].endTime += run[i].endTime
+                rrcComparisonCollection['Top 3 Average'][i].segment += run[i].segment
             }
-            rrcComparisonCollection['Top Average'][i].endTime += run.rrc[i].endTime
-            rrcComparisonCollection['Top Average'][i].segment += run.rrc[i].segment
+            rrcComparisonCollection['Top Average'][i].endTime += run[i].endTime
+            rrcComparisonCollection['Top Average'][i].segment += run[i].segment
         })
         rrcComparisonCollection['Top 3 Average'][i].endTime /= 3
         rrcComparisonCollection['Top 3 Average'][i].segment /= 3

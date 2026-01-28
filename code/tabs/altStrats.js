@@ -239,7 +239,7 @@ function altStrats(query) {
     const name = category ? category.info.name : otherNames[query]
     let HTMLContent = ''
     if (['baronessvonbonbon', 'captainbrineybeard'].includes(query) && runRecapCategory.name == '1.1+') {
-        HTMLContent += bonbonStuff(query)
+        HTMLContent += altStats(query)
     }
     if (query == 'thedevil' && runRecapCategory.name == '1.1+') {
         HTMLContent += `<div class='container'>
@@ -441,7 +441,7 @@ const minibosses = {
     'Gumball': 'gumball',
     'Jawbreaker': 'jawbreaker'
 }
-function bonbonStuff() {
+function altStats() {
     const config = {
         baronessvonbonbon: {
             minibosses: minibosses,

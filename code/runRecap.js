@@ -20,7 +20,7 @@ async function handleFile(event) {
                             if (getCupheadLevel(bosses[0].levelID, true).completed) {
                                 category = 'DLC+Base L/S'
                             } else {
-                                category = 'DLC L/S'
+                                category = 'DLC'
                             }
                         } else if (runRecap_savFile.loadouts.playerOne.primaryWeapon == 1466416941) { // Charge
                             if (getCupheadLevel(bosses[0].levelID, true).completed) {

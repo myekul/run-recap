@@ -9,12 +9,11 @@
 - Info section
 - Ground vs. Plane
 
-- Odds2 row visual bug
+- Odds2 row hover bug
 
 ### .sav
 - None comparison
 - Played as Chalice or Mugman
-- TAS comparison broken
 
 ### .lss
 - Chalice Tutorial toggle?
@@ -32,15 +31,17 @@
 
 - Database modal should be instant with load inside
 
-- Reverse-engineer rrc examples to populate sav examples
-
 - Database doesn't remember rrc vs sav
+
+- Database only shows current category
 
 - Random database errors:
     - Viewing rrc from home/sav/lss/rrc will produce error
     - Viewing sav/rrc from alt strats page will produce error
 
 - Baroness patterns vs alt strat
+
+- Example name is bugged when switching categories and comparing against top player
 
 ### Alt Strats
 - Run 'n Guns

@@ -175,7 +175,7 @@ function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
     playerNames = new Set()
     savComparison = 'Top 3 Average'
     altStratLevel = null
-    rrcCompatible = ['1.1+', 'Legacy', 'NMG', 'DLC'].includes(runRecapCategory.tabName)
+    rrcCompatible = ['1.1+', 'Legacy', 'NMG', 'DLC', 'DLC C/S'].includes(runRecapCategory.tabName)
     if (rrcCompatible) rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
