@@ -27,22 +27,20 @@ function generateTop10() {
     HTMLContent += `<div class='container' style='margin-top:20px'><table>
         <tr>
         <td colspan=4></td>
-        <th colspan=3 class='isle1'>Isle 1</th>
-        <th colspan=5 class='expert'>Isle 2</th>
-        <th colspan=5 class='isle3'>Isle 3</th>
-        <th colspan=5 class='hell'>Hell</th>
+        <th colspan=2 class='isle1'>Isle 1</th>
+        <th colspan=4 class='expert'>Isle 2</th>
+        <th colspan=4 class='isle3'>Isle 3</th>
+        <th colspan=4 class='hell'>Hell</th>
         </tr>
         <tr>
         <td colspan=4>
         <th class='gray'>RTA</th>
-        <th class='gray'>IGT</th>
-        <th class='gray'>Resid</th>`
+        <th class='gray'>IGT</th>`
     for (let i = 0; i < 3; i++) {
         HTMLContent += `
             <th class='gray'>RTA</th>
             <th class='gray'>IGT</th>
-            <th colspan=2 class='gray'>Sum</th>
-            <th class='gray'>Resid</th>`
+            <th colspan=2 class='gray'>Sum</th>`
     }
     runRecapCategory.topRuns.forEach((run, index) => {
         HTMLContent += `<tr class='hover ${getRowColor(index)}'>
@@ -63,7 +61,6 @@ function generateTop10() {
             HTMLContent += `<td class='${isle.className}' style='font-size:80%;opacity:80%'>${secondsToHMS(isleIGT, true)}</td>`
             HTMLContent += isleIndex > 0 ? `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(convertToSeconds(time), true)}</td>` : ''
             HTMLContent += isleIndex > 0 ? `<td style='font-size:80%;opacity:80%' class='${isle.className}'>${secondsToHMS(sum, true)}</td>` : ''
-            HTMLContent += `<td style='font-size:80%'>${secondsToHMS((isleRTA || convertToSeconds(time)) - isleIGT, true)}</td>`
         })
         HTMLContent += `</tr>`
     })

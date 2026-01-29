@@ -72,7 +72,7 @@ function rrcView() {
     HTMLContent += `</div>`
     HTMLContent += `</div>`
     if (rrcCompatible && runFinished && rrcComparison != 'None') {
-        if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime) {
+        if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime && rrcCurrentAttempt.scenes.length == runRecapCategory.scenes.length) {
             chartEligible = true
             HTMLContent += rrcChartSection()
         }
