@@ -51,27 +51,17 @@ function processSavFile(playerIndex, display) {
                     level.played = true
                     level.completed = true
                 })
-                if (rrcCompatible) {
-                    rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
-                }
+                rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
                 if (playerIndex == 0 && runRecapCategory.markin) {
                     bootMarkinExample()
                     if (display) {
                         showTab('lss')
                     } else {
-                        if (rrcCompatible) {
-                            showTab('rrc')
-                        } else {
-                            showTab('sav')
-                        }
+                        showTab('rrc')
                     }
                 }
                 if (playerIndex > 0 || !runRecapCategory.markin) {
-                    if (rrcCompatible) {
-                        showTab('rrc')
-                    } else {
-                        showTab('sav')
-                    }
+                    showTab('rrc')
                 }
             } else {
                 showTab('sav')

@@ -62,16 +62,15 @@ function rrcView() {
     HTMLContent += classicView()
     HTMLContent += rrcComparisonDisplay()
     HTMLContent += rrcRTA()
-    const runFinished = ['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1)?.name)
     const finalTableName = segmentToggle ? 'SEGMENTS' : 'SPLITS'
     const finalTableThing = segmentToggle ? 'trueSegment' : 'split'
     HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
     HTMLContent += `<div style='width:270px'>${rtaTable(finalTableName, finalTableThing, cupheadBosses)}</div>`
-    if (runFinished) HTMLContent += fancyScorecard()
-    if (runFinished) HTMLContent += `<div style='width:270px'></div>`
+    if (lastBossDone()) HTMLContent += fancyScorecard()
+    if (lastBossDone()) HTMLContent += `<div style='width:270px'></div>`
     HTMLContent += `</div>`
     HTMLContent += `</div>`
-    if (rrcCompatible && runFinished && rrcComparison != 'None') {
+    if (lastBossDone() && rrcComparison != 'None') {
         if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime && rrcCurrentAttempt.scenes.length == runRecapCategory.scenes.length) {
             chartEligible = true
             HTMLContent += rrcChartSection()
@@ -108,7 +107,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
     let kdTotal = 0
     // Separate bosses, map, scorecards?
     scenes.forEach((scene, index) => {
-        if (rrcCompatible) scene.topBest = { segment: runRecapCategory.rrcTopBests[index] }
+        scene.topBest = { segment: runRecapCategory.rrcTopBests[index] }
         const boss = cupheadBosses[scene.name]
         const runNgun = cupheadRunNguns[scene.name]
         if (scene.name.startsWith('level_dice_palace')) {
@@ -124,10 +123,8 @@ function rrcOrganize(attempt, scenes, doSegments) {
         } else if (boss || runNgun) {
             attempt.levelTime += scene.segment
             if ((['level_devil', 'level_saltbaker'].includes(scene.name) && index == scenes.length - 1) || scenes[index + 1]?.name == 'win') {
-                if (rrcCompatible) {
-                    scene.topBest.map = runRecapCategory.rrcTopBests[index - 1]
-                    scene.topBest.scorecardSegment = runRecapCategory.rrcTopBests[index + 1]
-                }
+                scene.topBest.map = runRecapCategory.rrcTopBests[index - 1]
+                scene.topBest.scorecardSegment = runRecapCategory.rrcTopBests[index + 1]
                 scene.map = mapTime
                 mapTime = 0
                 scene.scorecard = attempt.scenes[index + 1]
@@ -151,7 +148,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
                 scene.rta = scene.segment
-                if (rrcCompatible) scene.topBest.rta = runRecapCategory.rrcTopBests[index]
+                scene.topBest.rta = runRecapCategory.rrcTopBests[index]
                 if (boss) {
                     if (scene.scorecard) scene.rta -= 6.45
                     if (scene.kdTotal) scene.rta = scene.kdTotal - 6.45 * 5
@@ -501,4 +498,8 @@ function rrcUpdateNotice() {
     <div class='button cuphead' style='width:200px'>Go to download page</div>
     </a>
     </div>`
+}
+function lastBossDone(){
+    const lastScene = rrcCurrentAttempt.scenes.at(-1)?.name
+    return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && 'level_saltbaker')
 }

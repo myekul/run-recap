@@ -74,6 +74,10 @@ function rrcChart() {
         interval = 60
         numTicks = 11
     }
+    if (runRecapCategory.name == 'DLC+Base') {
+        interval = 120
+        numTicks = 18
+    }
     let maxTime = interval * numTicks
     const ticks = [];
     for (let t = interval; t <= maxTime; t += interval) {

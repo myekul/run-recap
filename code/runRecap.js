@@ -53,11 +53,11 @@ async function handleFile(event) {
                 }
             }
         } catch (error) {
-            show('runRecapError')
+            toast('Error!')
             console.log(error)
         }
     } else {
-        show('runRecapError')
+        toast('Error!')
     }
     if (event.target?.files) {
         event.target.value = ''

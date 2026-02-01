@@ -16,8 +16,7 @@ function generateHome() {
                     </div>
                     <div id="dropbox"></div>
                 </div>
-                <div id='fileTypes' class="container" style="gap:30px;align-items:flex-start"></div>
-                <div id='runRecapError' class='container' style='display:none;margin-top:20px'>Error!</div>`
+                <div id='fileTypes' class="container" style="gap:30px;align-items:flex-start"></div>`
     document.getElementById('content').innerHTML = HTMLContent
     if (runRecapExample) {
         runRecapDefault()

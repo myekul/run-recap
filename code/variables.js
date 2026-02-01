@@ -23,8 +23,6 @@ let rrcComparisonCollection = {}
 let rrcComparison = 'Top Bests'
 let rrcComparisonText = 'Top Bests'
 
-let rrcCompatible
-
 let splitBefore
 let segmentToggle
 let scorecardMode = 'Default'

@@ -11,6 +11,8 @@
 
 - Odds2 row hover bug
 
+- Yuka Sums not working!
+
 ### .sav
 - None comparison
 - Played as Chalice or Mugman
