@@ -132,6 +132,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 // Split
                 scene.split = scene.endTime
                 if (!['level_devil', 'level_saltbaker'].includes(scene.name)) scene.split -= 6.45
+                if (scene.name == 'level_saltbaker' && runRecapCategory.name == 'DLC+Base') scene.split -= 8.45
                 if (runNgun) scene.split = 0
                 if (!splitBefore) scene.split = scene.scorecardSegment ? scene.endTime + scene.scorecardSegment : scene.endTime
                 // Segment
@@ -142,7 +143,8 @@ function rrcOrganize(attempt, scenes, doSegments) {
                     scene.trueSegment = scene.endTime - attempt.levels.at(-1).scorecard.endTime
                 }
                 if (splitBefore) scene.trueSegment = scene.endTime - attempt.levels.at(-1)?.endTime
-                if (splitBefore && ['level_devil', 'level_saltbaker'].includes(scene.name)) scene.trueSegment += 6.45
+                if (splitBefore && scene.name == 'level_devil') scene.trueSegment += 6.45
+                if (splitBefore && scene.name == 'level_saltbaker' && runRecapCategory.name == 'DLC') scene.trueSegment += 8.45
                 //
                 attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
@@ -150,13 +152,16 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 scene.rta = scene.segment
                 scene.topBest.rta = runRecapCategory.rrcTopBests[index]
                 if (boss) {
-                    if (scene.scorecard) scene.rta -= 6.45
+                    if (scene.scorecard) {
+                        scene.rta -= 6.45
+                        if (scene.name == 'level_saltbaker' && runRecapCategory.name == 'DLC+Base') scene.rta -= 2
+                    }
                     if (scene.kdTotal) scene.rta = scene.kdTotal - 6.45 * 5
                 }
             }
         } else if (scene.name == 'win') {
             attempt.scorecardTime += scene.segment
-        } else if (['level_dice_palace_cigar', 'level_dice_palace_rabbit', 'level_dice_palace_roulette'].includes(scene.name)) {
+        } else if (['level_dice_palace_chips', 'level_dice_palace_cigar', 'level_dice_palace_domino', 'level_dice_palace_rabbit', 'level_dice_palace_roulette', 'level_dice_palace_eight_ball', 'level_dice_palace_monkey'].includes(scene.name)) {
             attempt.levelTime += scene.segment
         } else {
             attempt.intermissionTime += scene.segment
@@ -499,7 +504,7 @@ function rrcUpdateNotice() {
     </a>
     </div>`
 }
-function lastBossDone(){
+function lastBossDone() {
     const lastScene = rrcCurrentAttempt.scenes.at(-1)?.name
     return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && 'level_saltbaker')
 }

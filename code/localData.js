@@ -2,12 +2,14 @@ function prepareLocalData() {
     fetch('resources/topData.json')
         .then(response => response.json())
         .then(data => {
+            data['DLC+Base L/S'] = data['DLC+Base']
             for (const category in data) {
                 commBestILs[category].topRuns = data[category]
             }
             fetch('resources/rrcData.json')
                 .then(response => response.json())
                 .then(data => {
+                    data['DLC+Base L/S'] = data['DLC+Base']
                     for (const category in data) {
                         const categoryScenes = commBestILs[category].scenes
                         commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])

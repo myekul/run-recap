@@ -11,7 +11,7 @@
 
 - Odds2 row hover bug
 
-- Yuka Sums not working!
+- Yuka sums not working
 
 ### .sav
 - None comparison
@@ -27,9 +27,7 @@
 - 800 grid
 - Confetti
 
-- DLC C/S
-- DLC+Base
-- DLC+Base C/S
+- DLC+Base Saltbaker segment bugged
 
 - Database modal should be instant with load inside
 
