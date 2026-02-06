@@ -11,6 +11,8 @@
 
 - Odds2 row hover bug
 
+- Yuka sums not working
+
 ### .sav
 - None comparison
 - Played as Chalice or Mugman
@@ -25,9 +27,7 @@
 - 800 grid
 - Confetti
 
-- DLC C/S
-- DLC+Base
-- DLC+Base C/S
+- DLC+Base Saltbaker segment bugged
 
 - Database modal should be instant with load inside
 

@@ -17,7 +17,7 @@ function generateCommBestSplits() {
             const player = players.find(player => player.name == playerName) || playerName
             const wrSplit = runRecap_markin.wrSplits[index]
             const url = runRecap_markin.bestSplitsURLs[index]
-            HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'clickable' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
+            HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
             <td class='dim' style='font-size:70%'>${secondsToHMS(wrSplit, true)}</td>
             <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
             <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin.bestSplits[index], true)}</td>
@@ -43,7 +43,7 @@ function generateCommBestSplits() {
             const wrSegment = runRecap_markin.wrSegments[index]
             const url = runRecap_markin.bestSegmentsURLs[index]
             sum += bestSegment
-            HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'clickable' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
+            HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
             <td class='dim' style='font-size:70%'>${secondsToHMS(wrSegment, true)}</td>
             <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
             <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(bestSegment, true)}</td>

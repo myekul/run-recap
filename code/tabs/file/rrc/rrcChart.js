@@ -18,13 +18,15 @@ function rrcChartData() {
     }
     const pointsPerPlayer = runRecapCategory.topRuns.map(r => []);
     const currentAttemptPoints = [];
+    const tempTop = runRecapCategory.topRuns.map(run => run.rrc.map(scene => ({ ...scene })))
+    tempTop.forEach(run => rrcSegments(run))
     for (let i = 0; i < runRecapCategory.scenes.length; i++) {
-        runRecapCategory.topRuns.forEach((player, playerIndex) => {
-            if (player.rrc[i]) {
-                const xTime = player.rrc[i].endTime;
+        tempTop.forEach((run, playerIndex) => {
+            if (run[i]) {
+                const xTime = run[i].endTime;
                 const yDelta = xTime - rrcComparisonCollection[rrcComparison][i]?.endTime || 0;
-                const segmentDelta = player.rrc[i].segment - rrcComparisonCollection[rrcComparison][i]?.segment;
-                const tooltip = rrcCustomTooltip(yDelta, xTime, segmentDelta, getPlayerDisplay(players[playerIndex]), player.rrc[i].name);
+                const segmentDelta = run[i].segment - rrcComparisonCollection[rrcComparison][i]?.segment;
+                const tooltip = rrcCustomTooltip(yDelta, xTime, segmentDelta, getPlayerDisplay(players[playerIndex]), run[i].name);
                 pointsPerPlayer[playerIndex].push([xTime, yDelta, tooltip]);
             }
         });
@@ -74,6 +76,10 @@ function rrcChart() {
         interval = 60
         numTicks = 11
     }
+    if (runRecapCategory.name == 'DLC+Base') {
+        interval = 120
+        numTicks = 19
+    }
     let maxTime = interval * numTicks
     const ticks = [];
     for (let t = interval; t <= maxTime; t += interval) {
@@ -84,13 +90,15 @@ function rrcChart() {
     }
     const font = getComputedStyle(document.documentElement).getPropertyValue('--font')
     const options = {
-        chartArea: { height: '80%', width: '80%' },
+        chartArea: { height: '70%', width: '80%' },
         fontName: font,
         hAxis: {
             title: 'Split Time',
             ticks: ticks,
             textStyle: { color: 'gray' },
             titleTextStyle: { color: 'gray' },
+            slantedText: true,
+            slantedTextAngle: 30,
             gridlines: {
                 color: 'dimgray'
             },
@@ -142,7 +150,7 @@ function rrcChartSection() {
     HTMLContent += `
     ${rrcComparisonDisplay()}
     <div class='container' style='gap:10px'>
-    <div id="rrcChart" class='border shadow' style="width:1000px;height: 400px"></div>
+    <div id="rrcChart" class='border shadow' style="width:1000px;height:400px"></div>
     <table>`
     runRecapCategory.topRuns.forEach((run, index) => {
         const colorCell = `<td style='background-color:${rrcChartSeries[index].color};width:10px'></td>`

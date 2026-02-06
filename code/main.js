@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
             commBestILs = data
             commBestILs['Legacy'].scenes = commBestILs['1.1+'].scenes
             commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
+            commBestILs['DLC+Base L/S'].scenes = commBestILs['DLC+Base'].scenes
             prepareLocalData()
             runRecapCategory = commBestILs['1.1+']
             window.firebaseUtils.firestoreRead()
@@ -97,7 +98,7 @@ function action() {
             }
         }
         if (globalTab == 'rrc') {
-            if (rrcCurrentAttempt.scenes?.length == runRecapCategory.scenes?.length && ['level_devil', 'level_saltbaker'].includes(rrcCurrentAttempt.scenes.at(-1).name)) {
+            if (rrcCurrentAttempt.scenes?.length == runRecapCategory.scenes?.length && lastBossDone()) {
                 show('upload_div')
             } else {
                 hide('upload_div')
@@ -175,8 +176,7 @@ function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
     playerNames = new Set()
     savComparison = 'Top 3 Average'
     altStratLevel = null
-    rrcCompatible = ['1.1+', 'Legacy', 'NMG', 'DLC', 'DLC C/S'].includes(runRecapCategory.tabName)
-    if (rrcCompatible) rrcComparisonCollectionPrepare()
+    rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
     // if (runRecapExample) showTab('home')
