@@ -41,6 +41,7 @@ let deltaType
 const runRecap_database = { sav: [], rrc: [] }
 
 let databaseType = 'rrc'
+let databaseCategory
 
 let savComparisonCollection = {}
 let savComparison

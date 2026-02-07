@@ -6,44 +6,55 @@ function prepareLocalData() {
             for (const category in data) {
                 commBestILs[category].topRuns = data[category]
             }
-            fetch('resources/rrcData.json')
+            fetch('resources/scenes.json')
                 .then(response => response.json())
                 .then(data => {
                     data['DLC+Base L/S'] = data['DLC+Base']
                     for (const category in data) {
-                        const categoryScenes = commBestILs[category].scenes
-                        commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
-                        data[category].forEach((rrc, index) => {
-                            const currentRun = commBestILs[category].topRuns[index]
-                            currentRun.rrc = []
-                            if (rrc.scenes) {
-                                const savStarSkips = currentRun.starSkips
-                                if (!savStarSkips) currentRun.starSkips = []
-                                const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
-                                const savLevelsNeeded = !currentRun.runRecap
-                                if (savLevelsNeeded) currentRun.runRecap = []
-                                rrc.endTimes = []
-                                let winIndex = 0
-                                rrc.scenes.forEach((scene, index) => {
-                                    rrc.endTimes.push(scene.endTime)
-                                    if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[index + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
-                                        currentRun.runRecap.push(scene.levelTime)
-                                    }
-                                    if (scene.name == 'win') {
-                                        if (!rrcStarSkips) {
-                                            scene.starSkips = currentRun.starSkips[winIndex] * 2
-                                        } else if (!savStarSkips) {
-                                            currentRun.starSkips.push(scene.starSkips / 2 || 0)
-                                        }
-                                        winIndex++
+                        commBestILs[category].scenes = data[category]
+                    }
+                    commBestILs['Legacy'].scenes = commBestILs['1.1+'].scenes
+                    commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
+                    commBestILs['DLC+Base L/S'].scenes = commBestILs['DLC+Base'].scenes
+                    fetch('resources/rrcData.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            data['DLC+Base L/S'] = data['DLC+Base']
+                            for (const category in data) {
+                                const categoryScenes = commBestILs[category].scenes
+                                commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
+                                data[category].forEach((rrc, index) => {
+                                    const currentRun = commBestILs[category].topRuns[index]
+                                    currentRun.rrc = []
+                                    if (rrc.scenes) {
+                                        const savStarSkips = currentRun.starSkips
+                                        if (!savStarSkips) currentRun.starSkips = []
+                                        const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
+                                        const savLevelsNeeded = !currentRun.runRecap
+                                        if (savLevelsNeeded) currentRun.runRecap = []
+                                        rrc.endTimes = []
+                                        let winIndex = 0
+                                        rrc.scenes.forEach((scene, index) => {
+                                            rrc.endTimes.push(scene.endTime)
+                                            if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[index + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
+                                                currentRun.runRecap.push(scene.levelTime)
+                                            }
+                                            if (scene.name == 'win') {
+                                                if (!rrcStarSkips) {
+                                                    scene.starSkips = currentRun.starSkips[winIndex] * 2
+                                                } else if (!savStarSkips) {
+                                                    currentRun.starSkips.push(scene.starSkips / 2 || 0)
+                                                }
+                                                winIndex++
+                                            }
+                                        })
+                                        currentRun.rrc = rrc.scenes
+                                    } else {
+                                        reconstructRRC(category, rrc.endTimes, index)
                                     }
                                 })
-                                currentRun.rrc = rrc.scenes
-                            } else {
-                                reconstructRRC(category, rrc.endTimes, index)
                             }
                         })
-                    }
                 })
         })
     fetch('resources/alt.json')

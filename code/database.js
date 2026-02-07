@@ -18,6 +18,9 @@ function openDatabase(type, comparison, shh) {
         </div>
         </div>`
     }
+    HTMLContent += `<div class='container'>`
+    if (!comparison) HTMLContent += categorySelect(true)
+    HTMLContent += `<div>`
     if (!comparison) {
         HTMLContent += `<div class='container' style='gap:10px;margin:10px 0'>`;
         ['rrc', 'sav'].forEach(fileType => {
@@ -40,7 +43,9 @@ function openDatabase(type, comparison, shh) {
         </tr>`
         }
     })
-    HTMLContent += `</table>`
+    HTMLContent += `</table>
+    </div>
+    </div>`
     if (comparison) playSound('category_select')
     if (shh) playSound('move')
     openModal(HTMLContent, 'DATABASE', '', comparison || shh)

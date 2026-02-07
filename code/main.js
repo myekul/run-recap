@@ -4,14 +4,12 @@ setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
+document.getElementById('categorySelect').innerHTML = categorySelect()
 document.addEventListener('DOMContentLoaded', function () {
     fetch('resources/categoryData.json')
         .then(response => response.json())
         .then(data => {
             commBestILs = data
-            commBestILs['Legacy'].scenes = commBestILs['1.1+'].scenes
-            commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
-            commBestILs['DLC+Base L/S'].scenes = commBestILs['DLC+Base'].scenes
             prepareLocalData()
             runRecapCategory = commBestILs['1.1+']
             window.firebaseUtils.firestoreRead()
