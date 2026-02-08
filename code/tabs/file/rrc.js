@@ -112,7 +112,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
         const runNgun = cupheadRunNguns[scene.name]
         if (scene.name.startsWith('level_dice_palace')) {
             kdTotal += scene.segment
-            if (scenes[index + 1].name == 'win') scene.kdTotal = kdTotal
+            if (scenes[index + 1]?.name == 'win') scene.kdTotal = kdTotal
         }
         if (scene.name.startsWith('map')) {
             mapTime += scene.segment

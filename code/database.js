@@ -18,17 +18,19 @@ function openDatabase(type, comparison, shh) {
         </div>
         </div>`
     }
-    HTMLContent += `<div class='container'>`
-    if (!comparison) HTMLContent += categorySelect(true)
-    HTMLContent += `<div>`
+    HTMLContent += `<div class='container' style='align-items:flex-start'>`
     if (!comparison) {
+        HTMLContent += `<div>`
         HTMLContent += `<div class='container' style='gap:10px;margin:10px 0'>`;
         ['rrc', 'sav'].forEach(fileType => {
             HTMLContent += `<div class='button font2 ${type == fileType ? 'selected' : 'cuphead'}' style='width:50px' onclick="fetchDatabase('${fileType}',null,true)">.${fileType}</div>`
         })
         HTMLContent += `</div>`
         HTMLContent += fileTitle(type)
+        HTMLContent += categorySelect(true)
+        HTMLContent += `</div>`
     }
+    HTMLContent += `<div>`
     HTMLContent += `<table style='padding:10px;margin:0 auto'>`
     runRecap_database[type].forEach((run, index) => {
         if (!(type && runRecapCategory.tabName != run.category)) {
