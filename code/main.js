@@ -165,11 +165,7 @@ document.querySelectorAll('select').forEach(elem => {
 function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
     if (forceHome && runRecapExample) showTab('home')
     runRecapCategory = commBestILs[categoryName]
-    let buttonName = runRecapCategory.className
-    if (['dlc', 'dlcbase'].includes(buttonName) && runRecapCategory.shot1) {
-        buttonName = runRecapCategory.className + (runRecapCategory.shot1?.charAt(0) || '') + (runRecapCategory.shot2?.charAt(0) || '')
-    }
-    buttonClick(buttonName + 'Button', 'categoryTabs', 'selected')
+    categoryButtonClick(runRecapCategory)
     players = []
     playerNames = new Set()
     savComparison = 'Top 3 Average'
@@ -185,6 +181,23 @@ function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
         if (category.var2) variables += `&var-${category.var2}=${category.subcat2}`
         getLeaderboard(category, `category/${category.id}`, variables, true)
     }
+}
+function categoryButtonClick(category, database) {
+    let buttonID
+    if (category) {
+        buttonID = category.className
+        if (['dlc', 'dlcbase'].includes(buttonID) && category.shot1) {
+            buttonID = category.className + (category.shot1?.charAt(0) || '') + (category.shot2?.charAt(0) || '')
+        }
+        document.getElementById('allButtonDatabase')?.classList.remove('grayedOut')
+    } else {
+        document.getElementById('allButtonDatabase')?.classList.add('grayedOut')
+    }
+    let buttonSection = 'categorySelect'
+    if (database) buttonSection += 'Database'
+    buttonID += 'Button'
+    if (database) buttonID += 'Database'
+    buttonClick(buttonID, buttonSection, 'selected')
 }
 function letsGo() {
     runRecapCategory.players = globalCache[runRecapCategory.category].players
@@ -299,12 +312,15 @@ const reloadTimeout = setTimeout(() => {
         location.reload();
     }
 }, 3000)
-document.querySelectorAll('.lobber').forEach(button => {
-    button.innerHTML = cupheadShot('lobber', 21)
-})
-document.querySelectorAll('.charge').forEach(button => {
-    button.innerHTML = cupheadShot('charge', 21)
-})
+function buttonShots() {
+    document.querySelectorAll('.lobber').forEach(button => {
+        button.innerHTML = cupheadShot('lobber', 21)
+    })
+    document.querySelectorAll('.charge').forEach(button => {
+        button.innerHTML = cupheadShot('charge', 21)
+    })
+}
+buttonShots()
 const fileInfo = {
     sav: `The easiest way to get started.
     When a Cuphead save file is created, all data is stored in a ${myekulColor('Cuphead .sav')}.

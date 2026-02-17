@@ -18,13 +18,13 @@ th {
     opacity: 0.8;
 }
 
-#categoryTabs .button {
+#categorySelect .button {
     height: 25px;
     width: 100px;
     font-size: 100%;
 }
 
-#categoryTabs .container {
+#categorySelect .container {
     justify-content: flex-start;
 }
 

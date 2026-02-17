@@ -105,7 +105,7 @@ function normalizedColorCell(num, min, max) {
 function categorySelect(database) {
     let functionName = "playSound('category_select');"
     functionName += database ? 'databaseCategorySwitch' : 'getCommBestILs'
-    return `<div id="categoryTabs">
+    return `<div id="categorySelect">
                 <div class="container">
                     <div id='onePointOneButton' onclick="${functionName}('1.1+',true)"
                         class="button onePointOne">
@@ -137,5 +137,5 @@ function categorySelect(database) {
 }
 function databaseCategorySwitch(category) {
     databaseCategory = category
-    openDatabase(databaseType,null,true)
+    openDatabase(databaseType, null, true)
 }
