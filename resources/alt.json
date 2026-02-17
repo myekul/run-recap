@@ -1062,10 +1062,10 @@
             },
             {
                 "name": "Red Gem",
-                "time": 41.12,
-                "rta": 42.03,
-                "player": "ClipBoardGuy",
-                "url": "https://youtu.be/ZtcCc34xWlM"
+                "time": "40.90",
+                "rta": 41.83,
+                "player": "Lewzr",
+                "url": "https://youtu.be/X-3BKVEpcU4"
             },
             {
                 "name": "Blue Gem",
@@ -1349,10 +1349,10 @@
             },
             {
                 "name": "Red Fish, Pufferfish, Ghosts",
-                "time": 50.58,
-                "rta": 51.68,
-                "player": "Taylz",
-                "url": "https://youtu.be/M7EBKUvNAEs"
+                "time": 50.15,
+                "rta": 51.46,
+                "player": "Lewzr",
+                "url": "https://youtu.be/8xwa1d1OQzY"
             },
             {
                 "name": "Red Fish, Turtle, Ghosts",
@@ -2905,9 +2905,15 @@
         "glumstonethegiant": [
             {
                 "name": "",
-                "time": "45.56",
+                "time": "45.46",
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/dfHqs6by1qk"
+                "url": "https://youtu.be/YCpc9RlH9DY"
+            },
+            {
+                "name": "Jumproll",
+                "time": "46.98",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/LZVPSIjRYvI"
             }
         ],
         "mortimerfreeze": [
@@ -3047,15 +3053,15 @@
             },
             {
                 "name": "Geese",
-                "time": 47.39,
+                "time": 47.15,
                 "player": "myekul",
-                "url": "https://youtu.be/S9XKGm-XAWk"
+                "url": "https://youtu.be/e3hJNxOG_mQ"
             },
             {
                 "name": "Cauldron",
-                "time": 47.42,
+                "time": 47.36,
                 "player": "myekul",
-                "url": "https://youtu.be/TPI-iN5NrdM"
+                "url": "https://www.youtube.com/watch?v=P0MFWuBBQ_Y&t=29s"
             },
             {
                 "title": "Parries"
@@ -3105,9 +3111,9 @@
         "moonshinemob": [
             {
                 "name": "",
-                "time": 37.62,
+                "time": 37.52,
                 "player": "myekul",
-                "url": "https://youtu.be/UH473RCWW8g"
+                "url": "https://youtu.be/fQwR1zl9WLs"
             }
         ],
         "chefsaltbaker": [
@@ -3127,6 +3133,24 @@
                 "url": "https://youtu.be/q1p4E3J7rKg"
             },
             {
+                "name": "LSL",
+                "time": 51.73,
+                "player": "myekul",
+                "url": "https://youtu.be/eYCNjX6PrVE"
+            },
+            {
+                "name": "LDS",
+                "time": 51.91,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=z23DklK7ETg&t=644s"
+            },
+            {
+                "name": "L-LD 1P",
+                "time": 53.53,
+                "player": "myekul",
+                "url": "https://youtu.be/Lsy9wrBqzt4"
+            },
+            {
                 "title": "Baby Chargimate"
             },
             {
@@ -3134,6 +3158,12 @@
                 "time": 53.47,
                 "player": "myekul",
                 "url": "https://youtu.be/DVHcisMA0PA"
+            },
+            {
+                "name": "S-LS 5+3",
+                "time": 54.66,
+                "player": "myekul",
+                "url": "https://youtu.be/730O9K-ssIA"
             },
             {
                 "name": "DLS 6+3",
@@ -3307,9 +3337,9 @@
         "wernerwerman": [
             {
                 "name": "",
-                "time": 43.34,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/1HNToGP1aYw"
+                "time": 43.05,
+                "player": "myekul",
+                "url": "https://youtu.be/_jC35fEg_7c"
             }
         ],
         "captainbrineybeard": [

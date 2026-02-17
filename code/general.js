@@ -99,6 +99,43 @@ function getColor(normalized) {
     }
     return `rgb(${r},${g},0)`;
 }
-function normalizedColorCell(num,min,max) {
+function normalizedColorCell(num, min, max) {
     return `<td style='width:5px;background-color:${getColor(normalizeTime(num, min, max))}'></td>`
+}
+function categorySelect(database) {
+    let functionName = "playSound('category_select');"
+    functionName += database ? 'databaseCategorySwitch' : 'getCommBestILs'
+    return `<div id="categorySelect">
+                <div class="container">
+                    <div id='onePointOneButton' onclick="${functionName}('1.1+',true)"
+                        class="button onePointOne">
+                        1.1+
+                    </div>
+                </div>
+                <div class="container">
+                    <div id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy
+                    </div>
+                </div>
+                <div class="container">
+                    <div id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</div>
+                </div>
+                <div class="container">
+                    <div id='dlclsButton' onclick="${functionName}('DLC',true)" class="button dlc">DLC</div>
+                    <!-- <div class="dlc lobber button" onclick="${functionName}('DLC L/S')></div> -->
+                    <div id='dlccsButton' class="dlc charge button" onclick="${functionName}('DLC C/S',true)">
+                    </div>
+                </div>
+                <div class="container">
+                    <div id='dlcbasecsButton' onclick="${functionName}('DLC+Base C/S',true)" class="button dlcbase">
+                        DLC+Base
+                    </div>
+                    <!-- <div class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S')"></div> -->
+                    <div id='dlcbaselsButton' class="dlcbase lobber button"
+                        onclick="${functionName}('DLC+Base L/S',true)"></div>
+                </div>
+            </div>`
+}
+function databaseCategorySwitch(category) {
+    databaseCategory = category
+    openDatabase(databaseType, null, true)
 }
