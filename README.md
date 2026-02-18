@@ -31,10 +31,6 @@
 
 - Database modal should be instant with load inside
 
-- Database doesn't remember rrc vs sav
-
-- Database only shows current category
-
 - Random database errors:
     - Viewing rrc from home/sav/lss/rrc will produce error
     - Viewing sav/rrc from alt strats page will produce error

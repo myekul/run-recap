@@ -62,7 +62,7 @@ function bigPlayerDisplay(player) {
     if (player.extra) {
         const grade = getLetterGrade(player.extra.percentage)
         const trophy = getTrophy(player.extra.place)
-        HTMLContent += `<td class='${grade.className}' style='font-size:75%;text-align:left'>${grade.grade}</td>`
+        HTMLContent += `<td class='${grade.className}' style='font-size:75%;text-align:left'><span>${grade.grade}</span></td>`
         HTMLContent += `<td class='clickable ${runRecapCategory.className} ${placeClass[player.extra.place]}' style='font-size:75%;padding:0 1px;'>${getAnchor('https://www.speedrun.com/cuphead/runs/' + player.extra.id)}${trophy ? `<div class='trophy'>${trophy}</div>` : player.extra.place}</td>`
         HTMLContent += `<td class='clickable ${runRecapCategory.className} ${placeClass[player.extra.place]}' style='padding: 0 3px'>${getAnchor(player.extra.url)}${secondsToHMS(player.extra.score)}</a></td>`
     } else {

@@ -70,10 +70,10 @@ function lssView() {
         HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('split', index, comparisonSplit, comparison)}</td>`
         HTMLContent += `<td style='padding:0 20px'></td>`
         const compareCustom = !isNaN(comparison) || comparison == 'yourPB'
-        HTMLContent += `<td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'>${compareCustom ? '' : grade.grade}</td>`
+        HTMLContent += `<td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'><span>${compareCustom ? '' : grade.grade}</span></td>`
         HTMLContent += image
         HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSegment, true)}</td>`
-        HTMLContent += `<td class='${compareCustom ? redGreen(trueDelta) : grade.className}' style='padding:0 5px;font-size:90%'>${getDelta(trueDelta)}</td>`
+        HTMLContent += `<td class='${compareCustom ? redGreen(trueDelta) : grade.className}' style='padding:0 5px;font-size:90%'><span>${getDelta(trueDelta)}</span></td>`
         HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
         if (runRecap_savFile) {
             HTMLContent += `<td style='padding:0 20px'></td>`
@@ -93,10 +93,10 @@ function lssView() {
                     comparisonContents += `</div>`
                 }
                 comparisonContents += `<div>${secondsToHMS(comparisonTime)}</div></div>`
-                HTMLContent += `<td class='${ILgrade.className}' style='padding:0 5px;text-align:left'>${ILgrade.grade}</td>`
+                HTMLContent += `<td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>`
                 HTMLContent += image
                 HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>`
-                HTMLContent += `<td class='${deltaType ? redGreen(delta) : ILgrade.className}' style='padding:0 5px;font-size:90%'>${runTime == nullTime ? '-' : getDelta(delta)}</td>`
+                HTMLContent += `<td class='${deltaType ? redGreen(delta) : ILgrade.className}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>`
                 HTMLContent += `<td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
             } else if (index == 2) {
                 HTMLContent += `<td colspan=5></td>`
@@ -431,7 +431,7 @@ function runRecapSegment(index) {
     const grade = getLetterGrade(100 - resetRate)
     HTMLContent += `<div class='container' style='gap:8px'>`
     HTMLContent += `<div>Reset rate:</div>`
-    HTMLContent += `<div class='${grade.className}' style='border-radius:5px;padding:5px;${grade.grade == 'F' ? 'color:white' : ''}'>${display}%</div>`
+    HTMLContent += `<div class='${grade.className}' style='border-radius:5px;padding:5px;${grade.grade == 'F' ? 'color:white' : ''}'><span>${display}%</span></div>`
     HTMLContent += `<div>=</div>`
     HTMLContent += `<div style='font-size:80%'>
         <div class='container'>${numResets} reset${numResets == 1 ? '' : 's'}</div>

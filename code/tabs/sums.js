@@ -96,9 +96,9 @@ function getIsleSum(isle) {
     if (isle.sum) {
         const delta = Math.floor(isle.sum - isle.comparisonSum)
         const grade = runRecapGrade(delta)
-        HTMLContent += `<td class='${grade.className}' style='text-align:left'>${savComparison != 'None' ? grade.grade : ''}</td>`
+        HTMLContent += `<td class='${grade.className}' style='text-align:left'><span>${savComparison != 'None' ? grade.grade : ''}</span></td>`
         HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, decimalsCriteria())}</td>`
-        HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
+        HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'><span>${savComparison != 'None' ? getDelta(delta) : ''}</span></td>`
         HTMLContent += `<td style='width:20px'></td>`
     }
     return HTMLContent

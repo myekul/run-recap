@@ -114,7 +114,10 @@ function runRecapUnload(elem) {
     if (elem == 'rrc') runRecap_rrcFile = {}; rrcCurrentAttempt = {}
 }
 function runRecapGrade(delta) {
-    return getLetterGrade(100 - (delta * 4))
+    const index = Math.floor(delta);
+    return grades[
+        Math.max(0, Math.min(index, grades.length - 1))
+    ];
 }
 function runRecapDelta(runTime, comparisonTime) {
     return Math.floor(runTime) - Math.floor(comparisonTime)
