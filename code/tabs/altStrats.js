@@ -1,10 +1,13 @@
+let altStratOther = '300%'
+let altStratCategory
 function generateAltStrats() {
+    altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
-    if (alt[runRecapCategory.tabName]) {
+    if (altStratCategory) {
         HTMLContent += `<div class='container' style='gap:10px'>`
         assignIsles()
         HTMLContent += `<table>
-        <tr><td class='background2' style='font-size:80%;color:gray'>${alt[runRecapCategory.tabName].forestfollies?.length || '&nbsp;'}</td></tr>
+        <tr><td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.length || '&nbsp;'}</td></tr>
         <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td></tr>
         </table>`
         isles.forEach(isle => {
@@ -13,7 +16,7 @@ function generateAltStrats() {
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
                     let numStrats = 0
-                    const altTest = alt[runRecapCategory.tabName][category.info.id]
+                    const altTest = altStratCategory[category.info.id]
                     if (altTest) {
                         altTest.forEach(strat => {
                             if (!strat.title) {
@@ -38,8 +41,8 @@ function generateAltStrats() {
         HTMLContent += `</div>`
         if (!altStratLevel) {
             const counts = {};
-            for (const boss in alt[runRecapCategory.tabName]) {
-                for (const obj of alt[runRecapCategory.tabName][boss]) {
+            for (const boss in altStratCategory) {
+                for (const obj of altStratCategory[boss]) {
                     if (!obj.title) {
                         const player = obj.player;
                         counts[player] = (counts[player] || 0) + 1;
@@ -116,7 +119,7 @@ function generateAltStrats() {
             HTMLContent += `<table>`
             HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
             categories.forEach((category, categoryIndex) => {
-                const altGroup = alt[runRecapCategory.tabName][category.info.id]
+                const altGroup = altStratCategory[category.info.id]
                 if (altGroup) {
                     let fastest = altGroup[0]
                     altGroup.forEach(strat => {
@@ -128,7 +131,7 @@ function generateAltStrats() {
                     <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
                     <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                     <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
-                    <td>${getPlayerDisplay(players.find(player => player.name == fastest.player), true)}</td>
+                    <td>${getPlayerDisplay(players.find(player => player.name == fastest.player) || fastest.player, true)}</td>
                     </tr>`
                 } else {
                     HTMLContent += `
@@ -143,7 +146,7 @@ function generateAltStrats() {
             HTMLContent += `</div>`
         } else {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
-            if (alt[runRecapCategory.tabName][altStratLevel]) {
+            if (altStratCategory[altStratLevel]) {
                 HTMLContent += altStrats(altStratLevel)
                 if (runRecapCategory.name == '1.1+' && altStratLevel == 'kingdice') {
                     ['mrwheezy', 'hopuspocus', 'pirouletta', 'kingdice2'].forEach(miniboss => {
@@ -156,19 +159,19 @@ function generateAltStrats() {
                     })
                 }
             } else {
-                HTMLContent += `<div class='container' style='margin-top:20px'>No alt strats...</div>`
+                HTMLContent += emptyPageText('No alt strats...')
             }
         }
     } else {
-        HTMLContent += `<div class='container'>No alt strats...</div>`
+        HTMLContent += emptyPageText('No alt strats...')
     }
     document.getElementById('content').innerHTML = HTMLContent
     if (['baronessvonbonbon', 'captainbrineybeard'].includes(altStratLevel) && runRecapCategory.name == '1.1+') drawChart()
-    if (!altStratLevel) window.firebaseUtils.firestoreReadCommBestILs()
+    if (!altStratLevel && altStratCategory) window.firebaseUtils.firestoreReadCommBestILs()
 }
 function drawChart() {
     let data = [['Value']]
-    alt[runRecapCategory.tabName][altStratLevel].forEach(strat => {
+    altStratCategory[altStratLevel].forEach(strat => {
         data.push([parseFloat(strat.time)])
     })
     data = google.visualization.arrayToDataTable(data);
@@ -251,8 +254,8 @@ function altStrats(query) {
     <div style='margin:0;position:relative'><table style='margin:10px'>
     <tr><td colspan=10><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
-    const RTAcheck = alt[runRecapCategory.tabName][query].some(strat => strat.rta)
-    // if (!alt[runRecapCategory.tabName][query].some(strat => strat.title)) {
+    const RTAcheck = altStratCategory[query].some(strat => strat.rta)
+    // if (!altStratCategory[query].some(strat => strat.title)) {
     //     HTMLContent += `<tr>
     // <th class='gray'>Pattern / Strat</th>`
     //     if (baronessCheck) HTMLContent += `<th class='gray'></th>`
@@ -260,7 +263,7 @@ function altStrats(query) {
     //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
     //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
     // }
-    let altStrats = [...alt[runRecapCategory.tabName][query]]
+    let altStrats = [...altStratCategory[query]]
     if (query == 'baronessvonbonbon' && runRecapCategory.name == '1.1+') {
         if (bonbonSort == 'Best') {
             altStrats.sort((a, b) => a.time - b.time)
@@ -370,7 +373,7 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
                 strat = submission.altstrat == 'other' ? submission.other : submission.altstrat
             }
             HTMLContent += `
-            <td class='${commBestILs[submission.category].className}'>${submission.category}</td>
+            <td class='${commBestILs[submission.category]?.className || 'gray'}'>${submission.category}</td>
             <td class='${submission.boss}'><div class='container'>${getImage(imgLocation[submission.boss] ? imgLocation[submission.boss] : submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
             <td style='text-align:left'>${strat || ''}</td>
@@ -410,9 +413,9 @@ function userContributions(playerName) {
     HTMLContent += playerDisplay(playerName)
     HTMLContent += `<table style='margin:10px'>`
     let strats = []
-    for (const level in alt[runRecapCategory.tabName]) {
+    for (const level in altStratCategory) {
         let title = ''
-        for (const obj of alt[runRecapCategory.tabName][level]) {
+        for (const obj of altStratCategory[level]) {
             if (!obj.title) {
                 if (playerName == obj.player) {
                     strats.push({ ...obj, level: level, title: title })
@@ -461,7 +464,7 @@ function altStats() {
         }
     }
     const cfg = config[altStratLevel]
-    let allStrats = alt[runRecapCategory.tabName][altStratLevel]
+    let allStrats = altStratCategory[altStratLevel]
     const endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
     allStrats = allStrats.slice(cfg.startIndex, endIndex)
     let HTMLContent = ''
@@ -475,7 +478,7 @@ function altStats() {
     for (const minibossName in cfg.minibosses) {
         const minibossInfo = { name: minibossName }
         cfg.fields.forEach(field => minibossInfo[field] = [])
-        const imageHtml = altStratLevel === 'captainbrineybeard' 
+        const imageHtml = altStratLevel === 'captainbrineybeard'
             ? `<img src='images/captainbrineybeard/${cfg.minibosses[minibossName]}.png' style='height:36px'>`
             : getImage('phase/' + altStratLevel + cfg.minibosses[minibossName])
         HTMLContent += `<td class='${cfg.minibosses[minibossName]}'>${imageHtml}</td>`

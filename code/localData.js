@@ -173,7 +173,13 @@ function organizeAltStrats() {
         ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
         ['DLC', 'DLC C/S', 'forestfollies'],
         ['DLC', 'DLC+Base', 'forestfollies'],
-        ['DLC', 'DLC+Base C/S', 'forestfollies']
+        ['DLC', 'DLC+Base C/S', 'forestfollies'],
+        ['DLC', '300%', 'forestfollies'],
+        ['DLC Expert', '300%', 'glumstonethegiant'],
+        ['DLC Expert', '300%', 'mortimerfreeze'],
+        ['DLC Expert', '300%', 'thehowlingaces'],
+        ['DLC Expert', '300%', 'moonshinemob'],
+        ['DLC Expert', '300%', 'chefsaltbaker']
     ]
     for (const [copy, paste, boss] of chunks) {
         alt[paste][boss] = alt[copy][boss]

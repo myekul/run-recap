@@ -78,12 +78,14 @@ function bootMarkinExample() {
     document.getElementById('dropdown_runRecap_lss_comparison').value = 'commBest'
 }
 function assignIsles() {
+    isles.sort((a, b) => a.mapID - b.mapID)
     isles.forEach(isle => {
         isle.runRecapCategories = []
     })
     categories.forEach((category, categoryIndex) => {
         isles[category.info.isle - 1].runRecapCategories.push(categoryIndex)
     })
+    if (runRecapCategory.name == 'DLC+Base' || (runRecapCategory.name == 'Other' && altStratOther == '300%')) isles.unshift(isles.pop())
 }
 function getCupheadLevel(param, other) {
     const id = other ? param : categories[param].info.levelID

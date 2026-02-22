@@ -505,6 +505,6 @@ function rrcUpdateNotice() {
     </div>`
 }
 function lastBossDone() {
-    const lastScene = rrcCurrentAttempt.scenes.at(-1)?.name
-    return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && 'level_saltbaker')
+    const lastScene = rrcCurrentAttempt?.scenes?.at(-1)?.name
+    return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && lastScene == 'level_saltbaker')
 }

@@ -57,19 +57,21 @@ function changeComparison(type, comparison, custom) {
     playSound('cardflip')
 }
 function runRecapExamples(type) {
-    let HTMLContent = `<div><table>`
-    players.slice(0, runRecapCategory.topRuns.length).forEach((player, playerIndex) => {
-        if (player.extra) {
-            const comparison = type == 'sav' ? savComparison : rrcComparison
-            const onclick = type ? `playerComparison('${type}',${playerIndex})` : `processSavFile(${playerIndex});playSound('ready')`
-            HTMLContent += `<tr class='${comparison == 'Player ' + playerIndex && globalTab != 'home' ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
-            HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
-            HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
-            HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
-            HTMLContent += `</tr>`
-        }
-    })
-    HTMLContent += `</table>
+    let HTMLContent = ''
+    if (runRecapCategory.name != 'Other') {
+        HTMLContent += `<div><table>`
+        players.slice(0, runRecapCategory.topRuns.length).forEach((player, playerIndex) => {
+            if (player.extra) {
+                const comparison = type == 'sav' ? savComparison : rrcComparison
+                const onclick = type ? `playerComparison('${type}',${playerIndex})` : `processSavFile(${playerIndex});playSound('ready')`
+                HTMLContent += `<tr class='${comparison == 'Player ' + playerIndex && globalTab != 'home' ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
+                HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
+                HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
+                HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
+                HTMLContent += `</tr>`
+            }
+        })
+        HTMLContent += `</table>
     <div class='container' style='margin-top:10px'>
         <div class='button cuphead' style='gap:5px;width:170px' onclick="fetchDatabase('${type || databaseType}',${type ? true : false})">
             ${fontAwesome('cloud')}
@@ -77,6 +79,7 @@ function runRecapExamples(type) {
         </div>
     </div>
     </div>`
+    }
     return HTMLContent
 }
 function playerComparison(type, playerIndex) {

@@ -10,7 +10,7 @@ function generateHome() {
                     </div>
                 </div>
                 <div class="container" style="padding:25px 0;gap:20px">
-                    <div style="padding-right:20px">
+                    <div style="padding-right:20px;${runRecapCategory.name == 'Other' ? 'display:none' : ''}">
                         <div class="container">View Example:</div>
                         <div class="container">${runRecapExamples()}</div>
                     </div>

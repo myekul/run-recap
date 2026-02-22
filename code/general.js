@@ -80,6 +80,7 @@ function generateBoardTitle(category = runRecapCategory) {
     HTMLContent += category.shot2 ? cupheadShot(category.shot2, shotSize) : ''
     HTMLContent += category.shot1 ? `</td>` : ''
     HTMLContent += category.subcat ? boardTitleCell('', category.subcat) : ''
+    HTMLContent += category.name == 'Other' ? boardTitleCell('', altStratOther) : ''
     return boardTitleWrapper(HTMLContent)
 }
 function updateBoardTitle() {
@@ -104,7 +105,7 @@ function normalizedColorCell(num, min, max) {
 }
 function categorySelect(database) {
     let functionName = "playSound('category_select');"
-    functionName += database ? 'databaseCategorySwitch' : 'getCommBestILs'
+    functionName += database ? 'databaseCategorySwitch' : 'changeCategory'
     return `<div id="categorySelect">
                 <div class="container">
                     <div id='onePointOneButton' onclick="${functionName}('1.1+',true)"
@@ -113,8 +114,7 @@ function categorySelect(database) {
                     </div>
                 </div>
                 <div class="container">
-                    <div id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy
-                    </div>
+                    <div id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy</div>
                 </div>
                 <div class="container">
                     <div id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</div>
@@ -133,9 +133,15 @@ function categorySelect(database) {
                     <div id='dlcbaselsButton' class="dlcbase lobber button"
                         onclick="${functionName}('DLC+Base L/S',true)"></div>
                 </div>
+                <div class="container">
+                    <div id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</div>
+                </div>
             </div>`
 }
 function databaseCategorySwitch(category) {
     databaseCategory = category
     openDatabase(databaseType, null, true)
+}
+function emptyPageText(text) {
+    return `<div class='container' style='margin-top:20px'>${text}</div>`
 }

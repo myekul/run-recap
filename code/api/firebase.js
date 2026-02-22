@@ -96,7 +96,7 @@ window.firebaseUtils = {
     firestoreWriteCommBestILs: async () => {
         const obj = {
             player: localStorage.getItem('username'),
-            category: runRecapCategory.tabName,
+            category: runRecapCategory.tabName || altStratOther,
             boss: document.getElementById('dropdown_commBestILs_level').value,
             time: document.getElementById('input_commBestILs_time').value,
             altstrat: document.getElementById('dropdown_commBestILs_altStrat').value,

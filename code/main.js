@@ -1,6 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'sums', 'grid', null, 'ballpit'])
+setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
@@ -25,47 +25,38 @@ function action() {
         lss: generate_lss,
         rrc: generate_rrc,
 
-        sums: generateSums,
         residual: generateResidual,
-        grid: generateGrid,
 
         ballpit: generateBallpit,
 
         commBestILs: generateCommBestILs,
         altStrats: generateAltStrats,
         commBestSplits: generateCommBestSplits,
-        top10: generateTop10
+        theTop: generateTheTop
     }
     tabActions[globalTab]?.()
     if (localStorage.getItem('username') && !runRecapExample) {
         document.getElementById('runRecap_player').innerHTML = playerDisplay()
     }
-    if (runRecap_savFile) {
-        document.getElementById('savButton').classList.add('pulseSize')
-        document.getElementById('savButton').style.backgroundColor = 'var(--cuphead)'
-    } else {
-        document.getElementById('savButton').classList.remove('pulseSize')
-        document.getElementById('savButton').style.backgroundColor = ''
-    }
-    if (runRecap_lssFile.pbSplits) {
-        document.getElementById('lssButton').classList.add('pulseSize')
-        document.getElementById('lssButton').style.backgroundColor = 'var(--cuphead)'
-    } else {
-        document.getElementById('lssButton').classList.remove('pulseSize')
-        document.getElementById('lssButton').style.backgroundColor = ''
-    }
-    if (runRecap_rrcFile.attempts) {
-        document.getElementById('rrcButton').classList.add('pulseSize')
-        document.getElementById('rrcButton').style.backgroundColor = 'var(--cuphead)'
-    } else {
-        document.getElementById('rrcButton').classList.remove('pulseSize')
-        document.getElementById('rrcButton').style.backgroundColor = ''
-    }
-    ['commBestILs', 'altStrats', 'commBestSplits', 'top10'].forEach(page => {
+    const typeCriteria = [
+        { type: 'sav', criteria: runRecap_savFile },
+        { type: 'lss', criteria: runRecap_lssFile.pbSplits },
+        { type: 'rrc', criteria: runRecap_rrcFile.attempts }
+    ]
+    typeCriteria.forEach(({ type, criteria }) => {
+        if (criteria) {
+            document.getElementById(type + 'Button').classList.add('pulseSize')
+            document.getElementById(type + 'Button').style.backgroundColor = 'var(--cuphead)'
+        } else {
+            document.getElementById(type + 'Button').classList.remove('pulseSize')
+            document.getElementById(type + 'Button').style.backgroundColor = ''
+        }
+    });
+    ['commBestILs', 'altStrats', 'commBestSplits', 'theTop'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
         document.getElementById(globalTab + 'Button').classList.add('activeBanner')
     })
-    if (['sav', 'sums', 'grid'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile || globalTab == 'rrc')) {
+    if (['sav'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile || globalTab == 'rrc')) {
         show('runRecap_sav_section')
     } else {
         hide('runRecap_sav_section')
@@ -110,12 +101,12 @@ function action() {
     } else {
         hide('runRecap_theoretical_div')
     }
-    if (!['home', 'commBestILs', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+    if (!['home', 'altStrats', 'commBestILs', 'commBestSplits', 'ballpit'].includes(globalTab)) {
         show('runRecap_bar')
     } else {
         hide('runRecap_bar')
     }
-    if (runRecap_savFile && ['sav', 'sums', 'grid'].includes(globalTab)) {
+    if (runRecap_savFile && ['sav'].includes(globalTab)) {
         runRecap_chart()
     } else {
         hide('runRecap_chart')
@@ -129,7 +120,7 @@ function action() {
         show('pageTitle')
         if (fontAwesomeSet[globalTab]) {
             setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
-            if (globalTab == 'commBestSplits') {
+            if (globalTab == 'commBestSplits' && runRecapCategory.markin) {
                 tabCredit(getPlayerName(players.find(player => player.name == 'MarkinSws')) || 'MarkinSws', 'by', '8l0yyz28/image?v=6e8c7d2')
             }
         }
@@ -139,7 +130,7 @@ function action() {
     } else {
         hide('commBestSubmit')
     }
-    if (!['home', 'commBestILs', 'altStrats', 'commBestSplits', 'top10', 'ballpit'].includes(globalTab)) {
+    if (!['home', 'commBestILs', 'altStrats', 'commBestSplits', 'ballpit'].includes(globalTab)) {
         show('runRecap_details')
     } else {
         hide('runRecap_details')
@@ -156,6 +147,16 @@ function action() {
     } else {
         hide('backButton')
     }
+    const grayButtons = ['commBestILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
+    if (runRecapCategory.name == 'Other') {
+        grayButtons.forEach(page => {
+            document.getElementById(page + 'Button').classList.add('grayedOut')
+        })
+    } else {
+        grayButtons.forEach(page => {
+            document.getElementById(page + 'Button').classList.remove('grayedOut')
+        })
+    }
 }
 document.querySelectorAll('select').forEach(elem => {
     elem.addEventListener('change', () => {
@@ -163,7 +164,7 @@ document.querySelectorAll('select').forEach(elem => {
         action()
     })
 })
-function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
+function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     if (forceHome && runRecapExample) showTab('home')
     runRecapCategory = commBestILs[categoryName]
     categoryButtonClick(runRecapCategory)
@@ -171,16 +172,19 @@ function getCommBestILs(categoryName = runRecapCategory.tabName, forceHome) {
     playerNames = new Set()
     savComparison = 'Top 3 Average'
     altStratLevel = null
-    rrcComparisonCollectionPrepare()
+    if (categoryName != 'Other') rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
     // if (runRecapExample) showTab('home')
     if (category > -1) {
         letsGo()
-    } else {
+    } else if (categoryName != 'Other') {
         let variables = `var-${category.var}=${category.subcat}`
         if (category.var2) variables += `&var-${category.var2}=${category.subcat2}`
         getLeaderboard(category, `category/${category.id}`, variables, true)
+    } else {
+        organizeCategories()
+        action()
     }
 }
 function categoryButtonClick(category, database) {
@@ -258,7 +262,6 @@ function done() {
     for (let i = 0; i < runRecapCategory.topRuns.length; i++) {
         HTMLContent += `<option value="Player ${i}">${i + 1}. ${secondsToHMS(runRecapCategory.runs[i].score)} - ${fullgamePlayer(i)}</option>`
     }
-    // document.getElementById('runRecap_optgroup').innerHTML = HTMLContent
     const usernameAttempt = localStorage.getItem('username')
     const username = usernameAttempt ? localStorage.getItem('username').trim() : ''
     if (username) {

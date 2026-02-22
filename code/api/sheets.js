@@ -24,21 +24,23 @@ function fetchCuphead(markin) {
         if (!markin) {
             fetchCuphead(true)
         } else {
-            getCommBestILs()
+            changeCategory()
         }
     })
 }
-function loadMyekul() {
-    const values = myekulSheets[runRecapCategory.tabName]
-    // console.log(values)
+function organizeCategories() {
     categories = []
     bossesCopy = [...bosses]
     if (runRecapCategory.name == 'DLC') {
         bossesCopy = bossesCopy.slice(19, 25)
-    } else if (runRecapCategory.name != 'DLC+Base') {
+    } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
         bossesCopy = bossesCopy.slice(0, 19)
     }
     bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0));
+    if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
+        const elem = bossesCopy.splice(18, 1)[0];
+        bossesCopy.splice(21, 0, elem);
+    }
     // OOB Route
     if (runRecapCategory.tabName == 'DLC+Base 2') {
         const elementsToMove = bossesCopy.slice(0, 6);
@@ -50,6 +52,11 @@ function loadMyekul() {
     bossesCopy.forEach(boss => {
         categories.push({ name: boss.name, info: boss, runs: [] })
     })
+}
+function loadMyekul() {
+    const values = myekulSheets[runRecapCategory.tabName]
+    // console.log(values)
+    organizeCategories()
     players.forEach(player => {
         player.runs = new Array(categories.length).fill(0)
     })

@@ -1,30 +1,35 @@
 function generateCommBestILs() {
-    let HTMLContent = `<div class='container'><table>`
-    HTMLContent += `<tr>`
-    HTMLContent += `<td colspan=4></td>`
-    categories.forEach(category => {
-        HTMLContent += `<td class='${category.info.id}' style='width:36px'>${getImage(category.info.id)}</td>`
-    })
-    HTMLContent += `</tr>`
-    HTMLContent += `<tr>`
-    HTMLContent += `<td colspan=4></td>`
-    categories.forEach(category => {
-        HTMLContent += `<th class='cuphead'>${secondsToHMS(category.runs[0].score)}</th>`
-    })
-    players.slice(0, 100).forEach((player, index) => {
-        HTMLContent += `<tr class='${getRowColor(index)}'>`
-        HTMLContent += bigPlayerDisplay(player)
-        categories.forEach((category, index2) => {
-            const run = player.runs[index2]
-            if (run) {
-                const debug = run.debug ? '*' : ''
-                HTMLContent += `<td class='clickable'>${getAnchor(run.url)}${getTrophy(1)}${debug}<a></td>`
-            } else {
-                HTMLContent += `<td></td>`
-            }
+    let HTMLContent = ''
+    if (runRecapCategory.name != 'Other') {
+        HTMLContent += `<div class='container'><table>`
+        HTMLContent += `<tr>`
+        HTMLContent += `<td colspan=4></td>`
+        categories.forEach(category => {
+            HTMLContent += `<td class='${category.info.id}' style='width:36px'>${getImage(category.info.id)}</td>`
         })
-    })
-    HTMLContent += `</table></div>`
+        HTMLContent += `</tr>`
+        HTMLContent += `<tr>`
+        HTMLContent += `<td colspan=4></td>`
+        categories.forEach(category => {
+            HTMLContent += `<th class='cuphead'>${secondsToHMS(category.runs[0].score)}</th>`
+        })
+        players.slice(0, 100).forEach((player, index) => {
+            HTMLContent += `<tr class='${getRowColor(index)}'>`
+            HTMLContent += bigPlayerDisplay(player)
+            categories.forEach((category, index2) => {
+                const run = player.runs[index2]
+                if (run) {
+                    const debug = run.debug ? '*' : ''
+                    HTMLContent += `<td class='clickable'>${getAnchor(run.url)}${getTrophy(1)}${debug}<a></td>`
+                } else {
+                    HTMLContent += `<td></td>`
+                }
+            })
+        })
+        HTMLContent += `</table></div>`
+    } else {
+        HTMLContent += emptyPageText('Category not supported!')
+    }
     document.getElementById('content').innerHTML = HTMLContent
 }
 // if (['DLC', 'DLC+Base'].includes(runRecapCategory.tabName) && !runRecapCategory.extraPlayers) {
@@ -56,15 +61,18 @@ function runViableInfo() {
     <div ${runViableStyle}>What are the nonviable strats?</div>
     <div class='textBlock'>
     ${generateBoardTitle(commBestILs['1.1+'])}
+    ${bossImage('ribbyandcroaks', 'Phase 1 Triples')}
     ${bossImage('baronessvonbonbon', 'Up+down EXs at 1 HP')}
     ${bossImage('beppitheclown', 'Two-cycle Beppi Skip')}
     ${bossImage('drkahlsrobot', "TAS EX")}
+    ${bossImage('drkahlsrobot', "Heart Clip")}
     ${bossImage('captainbrineybeard', 'Jistuma EX on first flame')}
     ${bossImage('phantomexpress', '2 EXs on Phase 1')}
     ${bossImage('thedevil', "Spider's Kiss")}
     ${generateBoardTitle(commBestILs['NMG'])}
     ${bossImage('goopylegrande', 'Doubles (besides quad)')}
     ${bossImage('drkahlsrobot', "TAS EX")}
+    ${bossImage('drkahlsrobot', "Heart Clip")}
     ${bossImage('wernerwerman', 'Doubles (besides quad)')}
     ${generateBoardTitle(commBestILs['DLC C/S'])}
     ${bossImage('thehowlingaces', 'First laser guess')}

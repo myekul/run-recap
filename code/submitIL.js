@@ -57,6 +57,8 @@ function modalSubmitIL() {
     <br>-Unobstructed gameplay is preferred.
     <br>-V-sync must be turned off.
     <br>-Pause buffers must be less than 1s.
+    <br>
+    <br>-ILs with exact time attached will take precedence over non-exact times.
     <br>-Submitting ILs on behalf of other players is encouraged.
     <br>-Submissions will be manually verified by myekul.
     </div>`

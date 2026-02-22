@@ -61,7 +61,7 @@ function generateCommBestSplits() {
         </div>
         </div>`
     } else {
-        HTMLContent += `<div class='container'>Category not supported!</div>`
+        HTMLContent += emptyPageText('Category not supported!')
     }
     document.getElementById('content').innerHTML = HTMLContent
 }

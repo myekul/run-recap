@@ -1051,6 +1051,9 @@
             ]
         },
         {
+            "name": "ExclamationMarkYT"
+        },
+        {
             "name": "JimiconNeedsYT",
             "runRecap": [
                 48,
@@ -1067,25 +1070,6 @@
                 0,
                 1,
                 1
-            ]
-        },
-        {
-            "name": "ExclamationMarkYT",
-            "runRecap": [
-                48.81,
-                44.97,
-                46.25,
-                61.12,
-                38.99,
-                53.23
-            ],
-            "starSkips": [
-                0,
-                0.5,
-                0,
-                0,
-                1,
-                0
             ]
         },
         {

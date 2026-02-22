@@ -251,5 +251,9 @@
             "Uramatsu",
             "PorcoBrabo"
         ]
+    },
+    "Other": {
+        "name": "Other",
+        "className": "gray"
     }
 }

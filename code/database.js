@@ -77,7 +77,7 @@ function databaseView(type, databaseIndex, player, time, categoryName) {
     runRecapTime = time
     setRunRecapTime(runRecapTime)
     document.getElementById('input_runRecap_time').value = time
-    getCommBestILs(categoryName)
+    changeCategory(categoryName)
     runRecapExample = true
     document.getElementById('runRecap_player').innerHTML = playerDisplay(player)
     if (type == 'sav') {
@@ -91,7 +91,7 @@ function databaseView(type, databaseIndex, player, time, categoryName) {
                     level.played = true
                     level.completed = true
                 })
-                if (!['sums', 'residual', 'grid'].includes(globalTab)) {
+                if (!['theTop', 'residual'].includes(globalTab)) {
                     showTab('sav')
                 } else {
                     action()

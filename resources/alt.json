@@ -109,15 +109,9 @@
             },
             {
                 "name": "5 Flies, Bulls",
-                "time": 39.99,
-                "player": "Lewzr",
-                "url": "https://youtu.be/4r2BLAk6iw0"
-            },
-            {
-                "name": "5 Flies, Snakes",
-                "time": 41.81,
-                "player": "Quincely0",
-                "url": "https://youtu.be/gstVx9ibTKY"
+                "time": 40.79,
+                "player": "Grondious",
+                "url": "https://youtu.be/-KvAjbtm56E"
             },
             {
                 "name": "5 Flies, Tigers",
@@ -126,40 +120,10 @@
                 "url": "https://youtu.be/b2BcfRaU3yI"
             },
             {
-                "name": "6 Flies, Bulls",
-                "time": 40.95,
-                "player": "Lewzr",
-                "url": "https://youtu.be/AoI7G94NLRY"
-            },
-            {
-                "name": "6 Flies, Snakes",
-                "time": "42.40",
-                "player": "Quincely0",
-                "url": "https://youtu.be/68pJU4KHDxA"
-            },
-            {
-                "name": "6 Flies, Tigers",
-                "time": "42.95",
-                "player": "Quincely0",
-                "url": "https://youtu.be/FzLulZ57Kds"
-            },
-            {
                 "name": "7 Flies, Tigers",
-                "time": 41.42,
-                "player": "Lewzr",
-                "url": "https://youtu.be/tocSku5Nw-Q"
-            },
-            {
-                "name": "7 Flies, Bulls",
-                "time": 41.87,
-                "player": "Lewzr",
-                "url": "https://youtu.be/Oxx_9UvsLjc"
-            },
-            {
-                "name": "7 Flies, Snakes",
-                "time": 42.96,
-                "player": "Lewzr",
-                "url": "https://youtu.be/S10kNJalpxU"
+                "time": 43.03,
+                "player": "ClipBoardGuy",
+                "url": "https://youtu.be/m3ICEKRywRE"
             },
             {
                 "title": "Punches Regular Skip"
@@ -229,6 +193,57 @@
                 "time": 43.98,
                 "player": "Lewzr",
                 "url": "https://youtu.be/esyIzOefrX4"
+            },
+            {
+                "title": "Flies Regular Skip (Phase 1 Triples)"
+            },
+            {
+                "name": "5 Flies, Bulls",
+                "time": 39.99,
+                "player": "Lewzr",
+                "url": "https://youtu.be/4r2BLAk6iw0"
+            },
+            {
+                "name": "5 Flies, Snakes",
+                "time": 41.81,
+                "player": "Quincely0",
+                "url": "https://youtu.be/gstVx9ibTKY"
+            },
+            {
+                "name": "6 Flies, Bulls",
+                "time": 40.95,
+                "player": "Lewzr",
+                "url": "https://youtu.be/AoI7G94NLRY"
+            },
+            {
+                "name": "6 Flies, Snakes",
+                "time": "42.40",
+                "player": "Quincely0",
+                "url": "https://youtu.be/68pJU4KHDxA"
+            },
+            {
+                "name": "6 Flies, Tigers",
+                "time": "42.95",
+                "player": "Quincely0",
+                "url": "https://youtu.be/FzLulZ57Kds"
+            },
+            {
+                "name": "7 Flies, Tigers",
+                "time": 41.42,
+                "player": "Lewzr",
+                "url": "https://youtu.be/tocSku5Nw-Q"
+            },
+            {
+                "name": "7 Flies, Bulls",
+                "time": 41.87,
+                "player": "Lewzr",
+                "url": "https://youtu.be/Oxx_9UvsLjc"
+            },
+            {
+                "name": "7 Flies, Snakes",
+                "time": 42.96,
+                "player": "Lewzr",
+                "url": "https://youtu.be/S10kNJalpxU"
             }
         ],
         "goopylegrande": [
@@ -2278,9 +2293,9 @@
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
-                "time": 26.98,
+                "time": 26.89,
                 "player": "Yuka",
-                "url": "https://youtu.be/WTdoS7rc2dQ"
+                "url": "https://www.youtube.com/watch?v=P3TjB9XmCKk&t=42s"
             },
             {
                 "name": "Gumball, Candy Corn, Waffle",
@@ -3393,9 +3408,9 @@
         "therootpack": [
             {
                 "name": "",
-                "time": 36.65,
-                "player": "Quincely0",
-                "url": "https://youtu.be/FpynAtJ_1FA"
+                "time": 36.44,
+                "player": "myekul",
+                "url": "https://youtu.be/yU4c2KVBnIY"
             }
         ],
         "ribbyandcroaks": [
@@ -3417,9 +3432,9 @@
         "cagneycarnation": [
             {
                 "name": "Lunge, Lunge, Pods",
-                "time": 34.86,
-                "player": "Quincely0",
-                "url": "https://youtu.be/qozAGjG2bCY"
+                "time": 34.78,
+                "player": "myekul",
+                "url": "https://youtu.be/gqcEN3JiZAc"
             },
             {
                 "name": "Seeds, Pods",
@@ -3524,6 +3539,169 @@
                 "time": 48.99,
                 "player": "myekul",
                 "url": "https://youtu.be/QfECaX34aEk"
+            }
+        ]
+    },
+    "DLC Expert": {
+        "glumstonethegiant": [
+            {
+                "name": "",
+                "time": 52.13,
+                "player": "myekul",
+                "url": "https://youtu.be/6WqmwLRGV2Q"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 43.68,
+                "player": "myekul",
+                "url": "https://youtu.be/Ik_5jakFyZM"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 46.62,
+                "player": "myekul",
+                "url": "https://youtu.be/vc5GE_KgUvY"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 42.73,
+                "player": "myekul",
+                "url": "https://youtu.be/9TwN0Y2AIlw"
+            }
+        ],
+        "chefsaltbaker": [
+            {
+                "title": "3+1 M-Swaps"
+            },
+            {
+                "name": "SL-L, 7+3",
+                "time": 57.78,
+                "player": "myekul",
+                "url": "https://youtu.be/fSLf4i6vKfE"
+            },
+            {
+                "title": "5+1 M-Swaps"
+            },
+            {
+                "name": "LSL, 8+3",
+                "time": 55,
+                "player": "myekul",
+                "url": "https://youtu.be/fGhgm62RVaY"
+            }
+        ]
+    },
+    "300%": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 37.79,
+                "player": "myekul",
+                "url": "https://youtu.be/WF-NVrfbNcs"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "",
+                "time": 56,
+                "player": "Jason2890",
+                "url": "https://youtu.be/AHSIqESbvZI"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 34.85,
+                "player": "myekul",
+                "url": "https://youtu.be/oumvJ4msrmM"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 40.95,
+                "player": "myekul",
+                "url": "https://youtu.be/kwYVj354GoM"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Gumball, Waffle, Cupcake",
+                "time": 38,
+                "player": "myekul",
+                "url": "https://youtu.be/KFQ4Kt8h3_M"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": 47.84,
+                "player": "myekul",
+                "url": "https://youtu.be/9bACspMXaCU"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": 51.61,
+                "player": "myekul",
+                "url": "https://youtu.be/jIGrULyX-Ng"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 43.86,
+                "player": "myekul",
+                "url": "https://youtu.be/ByBpDqdOZME"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "title": "Lobber/Spread"
+            },
+            {
+                "name": "Catapult, Charge",
+                "time": 44.89,
+                "player": "myekul",
+                "url": "https://youtu.be/-1RWTKQcsHc"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "",
+                "time": 44,
+                "player": "Jason2890",
+                "url": "https://youtu.be/Z1ehOtRZqhA"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 35.69,
+                "player": "myekul",
+                "url": "https://youtu.be/-ca58h8ZATA"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": 57,
+                "player": "Jason2890",
+                "url": "https://youtu.be/SlQllQCXuoY"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap Bubbles",
+                "time": 53.87,
+                "player": "myekul",
+                "url": "https://youtu.be/NjbGXwKaYvM"
             }
         ]
     }

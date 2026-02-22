@@ -45,8 +45,8 @@ async function handleFile(event) {
                         category = '1.1+'
                     }
                 }
-                getCommBestILs(category)
-                if (['sums', 'residual', 'grid'].includes(globalTab)) {
+                changeCategory(category)
+                if (['residual'].includes(globalTab)) {
                     action()
                 } else {
                     showTab('sav')
