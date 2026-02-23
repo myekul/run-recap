@@ -292,7 +292,7 @@ function comparisonContent(type, index, time, comparison) {
     const source = type == 'split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'
     let HTMLContent = `<div class='container dim' style='gap:7px;justify-content:left;font-size:90%'>`
     if (comparison == null || comparison == 'commBest') {
-        const player = players.find(player => player.name == runRecap_markin[source][index].split('/')[0])
+        const player = allPlayers.find(player => player.name == runRecap_markin[source][index].split('/')[0])
         HTMLContent += player ? getPlayerIcon(player, 24) : ''
     }
     HTMLContent += `<div>${secondsToHMS(time, true)}</div></div>`
@@ -476,7 +476,7 @@ function splitSegmentInfo(array, index, type) {
     HTMLContent += `<table>
         <tr class='gray'><th colspan=2>Comm Best</th></tr>
         <tr>
-            <td>${getPlayerIcon(players.find(player => player.name == runRecap_markin[type == 'Split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'][index].split('/')[0]), 24)}</td>
+            <td>${getPlayerIcon(allPlayers.find(player => player.name == runRecap_markin[type == 'Split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'][index].split('/')[0]), 24)}</td>
             <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'bestSplits' : 'bestSegments'][index], true)}</td>
         </tr>
     </table>`

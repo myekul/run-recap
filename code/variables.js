@@ -6,6 +6,8 @@ const markinSheets = {}
 let runRecapCategory
 let globalCache
 
+let allPlayers = []
+
 // File types
 
 let runRecap_savFile

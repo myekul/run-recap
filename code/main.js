@@ -121,7 +121,7 @@ function action() {
         if (fontAwesomeSet[globalTab]) {
             setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
             if (globalTab == 'commBestSplits' && runRecapCategory.markin) {
-                tabCredit(getPlayerName(players.find(player => player.name == 'MarkinSws')) || 'MarkinSws', 'by', '8l0yyz28/image?v=6e8c7d2')
+                tabCredit(getPlayerName(allPlayers.find(player => player.name == 'MarkinSws')), 'by', '8l0yyz28/image?v=6e8c7d2')
             }
         }
     }
@@ -247,10 +247,7 @@ function done() {
                 badPlayers.push(player)
             }
         })
-        players = newPlayers
-        badPlayers.forEach(badPlayer => {
-            players.push(badPlayer)
-        })
+        players = [...newPlayers, ...badPlayers]
         players.sort((a, b) => a.extra?.score - b.extra?.score)
         players.forEach((player, playerIndex) => {
             if (player.extra) {

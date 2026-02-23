@@ -56,14 +56,14 @@ function generateAltStrats() {
             countArray.sort((a, b) => b.count - a.count)
             HTMLContent += `<div class='container' style='margin-top:20px;gap:30px;align-items:flex-start'>`
             HTMLContent += `
-            <div>
+            <div style='width:310px'>
             <div class='container'><table>
             <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
             let sum = 0
             countArray.forEach((player, index) => {
                 sum += player.count
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
-                <td>${getPlayerDisplay(players.find(player2 => player2.name == player.player) || player.player)}</td>
+                <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
                 <td>${player.count}</td>
                 </tr>`
             })
@@ -85,6 +85,7 @@ function generateAltStrats() {
                     }
                 ]
                 HTMLContent += `
+            <div class='container'>
             <table style='margin-top:20px'>
             <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'><div class='container' style='gap:8px'><img src='https://myekul.com/shared-assets/images/myekul.png' style='height:36px'><div>myekul's ideas</div></div></td></tr>`
                 myekulIdeas.forEach((idea, index) => {
@@ -94,7 +95,8 @@ function generateAltStrats() {
                 </tr>`
                 })
                 HTMLContent += `
-            </table>`
+            </table>
+            </div>`
             }
             HTMLContent += `</div>`
             HTMLContent += `<div><div class='textBlock' style='width:460px'>
@@ -116,7 +118,8 @@ function generateAltStrats() {
             <div id='commBest_queue'>${pendingSubmissions()}</div>
             </div>`
             // Best Times
-            HTMLContent += `<table>`
+            HTMLContent += `<div style='width:310px'>
+            <table>`
             HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
             categories.forEach((category, categoryIndex) => {
                 const altGroup = altStratCategory[category.info.id]
@@ -131,7 +134,7 @@ function generateAltStrats() {
                     <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
                     <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                     <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
-                    <td>${getPlayerDisplay(players.find(player => player.name == fastest.player) || fastest.player, true)}</td>
+                    <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
                     </tr>`
                 } else {
                     HTMLContent += `
@@ -142,7 +145,8 @@ function generateAltStrats() {
                     </tr>`
                 }
             })
-            HTMLContent += `</table>`
+            HTMLContent += `</table>
+            </div>`
             HTMLContent += `</div>`
         } else {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
@@ -308,7 +312,7 @@ function altStrats(query) {
                 if (RTAcheck) {
                     HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
                 }
-                const player = players.find(player => player.name == strat.player)
+                const player = allPlayers.find(player => player.name == strat.player)
                 HTMLContent += `<td>${getPlayerDisplay(player || strat.player, true)}</td>`
             }
         }
@@ -377,7 +381,7 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
             <td class='${submission.boss}'><div class='container'>${getImage(imgLocation[submission.boss] ? imgLocation[submission.boss] : submission.boss, 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
             <td style='text-align:left'>${strat || ''}</td>
-            <td>${getPlayerDisplay(players.find(player => player.name == submission.player) || submission.player, true)}</td>`
+            <td>${getPlayerDisplay(allPlayers.find(player => player.name == submission.player) || submission.player, true)}</td>`
         } else {
             // if (done && i == 3 && !submissions[0]) {
             //     HTMLContent += `<td colspan=5 style='font-size:80%;color:gray'></td>`

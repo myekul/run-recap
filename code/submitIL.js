@@ -1,7 +1,14 @@
 function modalSubmitIL() {
     let bossSelectHTML = ''
-    categories.forEach(category => {
-        bossSelectHTML += `<option value='${category.info.id}'>${category.info.name}</option>`
+    isles.forEach(isle => {
+        if (isle.runRecapCategories.length) {
+            bossSelectHTML += `<optgroup label='${isle.name}'>`
+            isle.runRecapCategories.forEach(categoryIndex => {
+                const category = categories[categoryIndex]
+                bossSelectHTML += `<option value='${category.info.id}'>${category.info.name}</option>`
+            })
+            bossSelectHTML += `</optgroup>`
+        }
     })
     let inputty = [
         {

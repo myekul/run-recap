@@ -2193,19 +2193,31 @@
         ],
         "goopylegrande": [
             {
-                "name": "TAS Strat",
+                "title": "Parryless"
+            },
+            {
+                "name": "3 Bounce",
                 "time": 16.58,
                 "player": "Yuka",
                 "url": "https://youtu.be/KMAPzlswXvY"
             },
             {
-                "name": "Run Viable Strat",
+                "name": "4 Bounce",
                 "time": 17.58,
                 "player": "Yuka",
                 "url": "https://youtu.be/6GY9L_zVTno"
             },
             {
-                "name": "Parries",
+                "title": "Parries"
+            },
+            {
+                "name": "Triple Triple",
+                "time": 16.19,
+                "player": "Yuka",
+                "url": "https://youtu.be/Mp0q1udGU08"
+            },
+            {
+                "name": "Far Away",
                 "time": 17.33,
                 "player": "Yuka",
                 "url": "https://youtu.be/QHujccQie7o"
@@ -2397,15 +2409,9 @@
         "sallystageplay": [
             {
                 "name": "Phase 3 K.O.",
-                "time": 34.68,
+                "time": 33.29,
                 "player": "Yuka",
-                "url": "https://youtu.be/APbvKumxndo?si=ojuhgnFdjsJAADet&t=42"
-            },
-            {
-                "name": "TPOEX, Phase 4 K.O.",
-                "time": 34.90,
-                "player": "Yuka",
-                "url": "https://youtu.be/BYL8B1n343w"
+                "url": "https://youtu.be/6WIn7xOIMRU"
             },
             {
                 "name": "Phase 4 K.O.",
@@ -2954,9 +2960,9 @@
             },
             {
                 "name": "Parryless",
-                "time": 45.84,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/CAHuJPlUW-c"
+                "time": 45.58,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/TZnIDrMsWy4"
             }
         ],
         "estherwinchester": [

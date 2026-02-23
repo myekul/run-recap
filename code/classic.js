@@ -17,20 +17,12 @@ function classicView() {
             HTMLContent += `</div>`
         }
     }
-    if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
-        const isle = isles[4]
-        HTMLContent += isleHeader(isle)
-        isle.runRecapCategories.forEach(object => {
-            HTMLContent += savBoss(object)
-        })
-        HTMLContent += `</table></div>`
-    }
-    isles.slice(0, 4).forEach((isle, index) => {
+    isles.slice(0, 5).forEach((isle, index) => {
         HTMLContent += isle.runRecapCategories.length ? isleHeader(isle) : ''
         isle.runRecapCategories.forEach(object => {
             HTMLContent += savBoss(object)
         })
-        HTMLContent += `</table>`
+        if (isle.runRecapCategories.length) HTMLContent += `</table>`
         // const levels = [['forestfollies', 'treetoptrouble'], ['funfairfever', 'funhousefrazzle'], ['ruggedridge', 'perilouspiers']]
         // levels.forEach((levelPair, levelIndex) => {
         //     if (index == levelIndex) {
@@ -44,7 +36,7 @@ function classicView() {
         //         HTMLContent += `</div>`
         //     }
         // })
-        HTMLContent += `</div>`
+        if (isle.runRecapCategories.length) HTMLContent += `</div>`
     })
     HTMLContent += `</div>`
     return HTMLContent
@@ -94,7 +86,11 @@ function extraLevel(name, time) {
         </div>`
 }
 function isleHeader(isle) {
-    return `<div><table class='shadow'><tr><th colspan=4 class='${isle.className}'>${isle.name}</th></td>`
+    return `<div>
+    <table class='shadow'>
+    <tr>
+    <th colspan=4 class='${isle.className}'>${isle.name}</th>
+    </tr>`
 }
 function runRecapIL(runTime, categoryIndex) {
     return `<div ${globalTab == 'sav' ? `class='grow' onclick="runRecapPlaceholder('${runTime}',${categoryIndex})"` : ''} style='font-size:130%'>${secondsToHMS(runTime, true)}</div>`

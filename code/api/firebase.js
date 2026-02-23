@@ -22,6 +22,13 @@ window.firebaseUtils = {
             querySnapshot.forEach(doc => {
                 globalCache.push(doc.data());
             });
+            globalCache.forEach(category => {
+                category.players.forEach(player => {
+                    if (!allPlayers.some(p => p.name === player.name)) {
+                        allPlayers.push(player)
+                    }
+                })
+            })
             gapi.load('client', () => loadClient2())
             async function loadClient2() {
                 gapi.client.setApiKey(API_KEY);
