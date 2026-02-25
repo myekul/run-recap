@@ -4,7 +4,7 @@ setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
-grades.unshift({ grade: 'S', className: 'grade-s grade', threshold: 100 },)
+grades.unshift({ grade: 'S', className: 'grade-s grade', threshold: 100 })
 document.getElementById('categorySelect').innerHTML = categorySelect()
 document.addEventListener('DOMContentLoaded', function () {
     fetch('resources/categoryData.json')

@@ -161,7 +161,7 @@ function rrcOrganize(attempt, scenes, doSegments) {
             }
         } else if (scene.name == 'win') {
             attempt.scorecardTime += scene.segment
-        } else if (['level_dice_palace_chips', 'level_dice_palace_cigar', 'level_dice_palace_domino', 'level_dice_palace_rabbit', 'level_dice_palace_roulette', 'level_dice_palace_eight_ball', 'level_dice_palace_monkey'].includes(scene.name)) {
+        } else if (['level_dice_palace_chips', 'level_dice_palace_cigar', 'level_dice_palace_domino', 'level_dice_palace_rabbit', 'level_dice_palace_roulette', 'level_dice_palace_eight_ball', 'level_dice_palace_flying_memory'].includes(scene.name)) {
             attempt.levelTime += scene.segment
         } else {
             attempt.intermissionTime += scene.segment
