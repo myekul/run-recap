@@ -2182,6 +2182,12 @@
                 "url": "https://youtu.be/shYqplW41Mc?si=jj19H6TGJApp_kau&t=7"
             },
             {
+                "name": "Punches, Bulls",
+                "time": 34.73,
+                "player": "Yuka",
+                "url": "https://youtu.be/R2NVnZg59yA"
+            },
+            {
                 "title": "Regular Skip"
             },
             {
@@ -2365,9 +2371,9 @@
         "beppitheclown": [
             {
                 "name": "",
-                "time": 27.84,
+                "time": 26.89,
                 "player": "Yuka",
-                "url": "https://youtu.be/LWPXjnXrT98"
+                "url": "https://youtu.be/EpQNXzP0PC8"
             }
         ],
         "grimmatchstick": [
@@ -2926,13 +2932,13 @@
         "glumstonethegiant": [
             {
                 "name": "",
-                "time": "45.46",
+                "time": 45.46,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/YCpc9RlH9DY"
             },
             {
                 "name": "Jumproll",
-                "time": "46.98",
+                "time": 46.98,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/LZVPSIjRYvI"
             }
@@ -2946,9 +2952,18 @@
             },
             {
                 "name": "Cards",
-                "time": "41.86",
+                "time": 41.86,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/_21Nw01dCR8"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Whale",
+                "time": "39.90",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/9RbrSjc_0PA"
             }
         ],
         "thehowlingaces": [
@@ -3019,7 +3034,13 @@
                 "name": "Lunar Eclipse, 3-cycle",
                 "time": 35.26,
                 "player": "GamerAttack27",
-                "url": "https://youtu.be/3u0WkdBYqbA"
+                "url": "https://youtu.be/3u0WkdBYqbA",
+                "tie": [
+                    {
+                        "player": "ExclamationMarkYT",
+                        "url": "https://youtu.be/zQ7bGN1IDfw"
+                    }
+                ]
             },
             {
                 "name": "No Lunar Eclipse",
@@ -3108,10 +3129,16 @@
                 "title": "Standard Strats"
             },
             {
-                "name": "",
+                "name": "Bones, No Delay",
                 "time": 42.97,
                 "player": "myekul",
                 "url": "https://youtu.be/dqqT2n-83cw"
+            },
+            {
+                "name": "Left Cat, No Delay",
+                "time": 42.58,
+                "player": "myekul",
+                "url": "https://youtu.be/J8Ko-d3MMjo"
             },
             {
                 "title": "Experimental"

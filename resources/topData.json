@@ -1097,23 +1097,7 @@
     ],
     "DLC C/S": [
         {
-            "name": "myekul",
-            "runRecap": [
-                48.93,
-                39.95,
-                43.52,
-                63.73,
-                39.48,
-                52.66
-            ],
-            "starSkips": [
-                0,
-                1,
-                0,
-                1,
-                0,
-                1
-            ]
+            "name": "myekul"
         },
         {
             "name": "Musically_dECLINED",

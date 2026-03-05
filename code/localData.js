@@ -13,7 +13,10 @@ function prepareLocalData() {
                     for (const category in data) {
                         commBestILs[category].scenes = data[category]
                     }
-                    commBestILs['Legacy'].scenes = commBestILs['1.1+'].scenes
+                    commBestILs['Legacy'].scenes = [...commBestILs['1.1+'].scenes]
+                    commBestILs['Legacy'].scenes[70] = 'level_dice_palace_chips'
+                    commBestILs['Legacy'].scenes[72] = 'level_dice_palace_domino'
+                    commBestILs['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
                     commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
                     commBestILs['DLC+Base L/S'].scenes = commBestILs['DLC+Base'].scenes
                     fetch('resources/rrcData.json')

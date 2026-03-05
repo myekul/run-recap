@@ -40,6 +40,8 @@ let splitInfo = []
 
 let deltaType
 
+let truncatedDLCBase
+
 const runRecap_database = { sav: [], rrc: [] }
 
 let databaseType = 'rrc'

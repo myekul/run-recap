@@ -4180,42 +4180,177 @@
     "DLC C/S": [
         {
             "name": "myekul",
-            "endTimes": [
-                "1.56",
-                "10.07",
-                "22.8",
-                "1:01.15",
-                "1:09.90",
-                "1:16.92",
-                "1:22.70",
-                "1:33.67",
-                "2:38.64",
-                "2:50.68",
-                "2:52.38",
-                "2:54.93",
-                "2:59.99",
-                "3:04.13",
-                "3:13.59",
-                "3:19.23",
-                "3:23.44",
-                "4:18.84",
-                "4:25.87",
-                "4:38.04",
-                "5:24.46",
-                "5:32.49",
-                "5:44.08",
-                "6:34.07",
-                "6:41.27",
-                "6:54.97",
-                "8:06.62",
-                "8:15.39",
-                "8:26.85",
-                "9:12.80",
-                "9:19.77",
-                "9:35.25",
-                "9:41.68",
-                "9:43.38",
-                "10:36.24"
+            "scenes": [
+                {
+                    "name": "cutscene_intro",
+                    "endTime": 1.631
+                },
+                {
+                    "name": "level_house_elder_kettle",
+                    "endTime": 10.074
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 22.926
+                },
+                {
+                    "name": "level_platforming_1_1F",
+                    "levelTime": 33.7,
+                    "endTime": 60.798
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 1,
+                    "coins": 5,
+                    "starSkips": 2,
+                    "endTime": 68.561
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 75.626
+                },
+                {
+                    "name": "shop",
+                    "endTime": 81.51
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 92.404
+                },
+                {
+                    "name": "level_mausoleum",
+                    "endTime": 157.623
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 169.687
+                },
+                {
+                    "name": "cutscene_dlc_intro",
+                    "endTime": 171.40800000000002
+                },
+                {
+                    "name": "level_kitchen",
+                    "endTime": 173.708
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 178.695
+                },
+                {
+                    "name": "level_chalice_tutorial",
+                    "endTime": 182.747
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 192.182
+                },
+                {
+                    "name": "shop_DLC",
+                    "endTime": 197.85
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 202.068
+                },
+                {
+                    "name": "level_old_man",
+                    "levelTime": 50.2,
+                    "endTime": 258.712
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 7,
+                    "starSkips": 2,
+                    "endTime": 265.658
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 277.762
+                },
+                {
+                    "name": "level_snow_cult",
+                    "levelTime": 39.23,
+                    "endTime": 323.441
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 8,
+                    "starSkips": 2,
+                    "endTime": 330.36
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 341.83299999999997
+                },
+                {
+                    "name": "level_airplane",
+                    "levelTime": 44.73,
+                    "endTime": 393.023
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 7,
+                    "endTime": 400.96500000000003
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 414.78499999999997
+                },
+                {
+                    "name": "level_flying_cowboy",
+                    "levelTime": 61.91,
+                    "endTime": 484.999
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 4,
+                    "superMeter": 27,
+                    "starSkips": 1,
+                    "endTime": 493.491
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 504.92
+                },
+                {
+                    "name": "level_rum_runners",
+                    "levelTime": 38.94,
+                    "endTime": 550.323
+                },
+                {
+                    "name": "win",
+                    "hp": 2,
+                    "parries": 0,
+                    "superMeter": 5,
+                    "starSkips": 2,
+                    "endTime": 557.213
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 572.6
+                },
+                {
+                    "name": "level_kitchen",
+                    "endTime": 578.893
+                },
+                {
+                    "name": "cutscene_dlc_saltbaker_prebattle",
+                    "endTime": 580.659
+                },
+                {
+                    "name": "level_saltbaker",
+                    "levelTime": 51.88,
+                    "endTime": 632.9
+                }
             ]
         },
         {
@@ -4563,7 +4698,7 @@
                 },
                 {
                     "endTime": 200.39,
-                    "name": "shop_dlc"
+                    "name": "shop_DLC"
                 },
                 {
                     "name": "map_world_DLC",

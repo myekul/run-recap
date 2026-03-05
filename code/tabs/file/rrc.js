@@ -57,6 +57,14 @@ function generate_rrc() {
 function rrcView() {
     let HTMLContent = ''
     rrcCurrentAttempt = { scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.map(s => ({ ...s })) }
+    truncatedDLCBase = false
+    if (runRecapCategory.name == 'DLC') {
+        const index = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == "level_saltbaker")
+        if (index != -1) {
+            rrcCurrentAttempt.scenes = rrcCurrentAttempt.scenes.slice(0, index + 1)
+            rrcCurrentAttempt.scenes[index].endTime -= 8.45
+        }
+    }
     rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
     if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
     HTMLContent += classicView()
@@ -482,11 +490,28 @@ function read_rrc(content) {
         rrcAttemptIndex = 0
         runRecap_rrcFile = JSON.parse(content)
         if (runRecap_rrcFile.version != rrcComponentVersion) openModal(rrcUpdateNotice(), 'NOTICE', '', true)
+        let maxScenes = 0
+        let detectedCategory = 'Other'
+        let sampleAttempt
         runRecap_rrcFile.attempts.forEach(attempt => {
+            ['1.1+', 'Legacy', 'DLC', 'DLC+Base', 'DLC C/S', 'DLC+Base C/S'].forEach(categoryName => {
+                if (commBestILs[categoryName].scenes.length == attempt.scenes.length && lastBossDone(attempt)) {
+                    let matched = true
+                    attempt.scenes.forEach((scene, index) => {
+                        if (scene.name != commBestILs[categoryName].scenes[index]) matched = false
+                    })
+                    if (attempt.scenes.length > maxScenes && matched) {
+                        maxScenes = attempt.scenes.length
+                        detectedCategory = categoryName
+                        sampleAttempt = attempt
+                    }
+                }
+            })
             attempt.scenes.forEach(scene => {
                 scene.endTime = convertToSeconds(scene.endTime.slice(3))
             })
         })
+        changeCategory(detectedCategory)
         runRecap_rrcFile.attempts.reverse()
     } catch (error) {
         console.error('Error parsing .rrc file:', error)
@@ -504,7 +529,7 @@ function rrcUpdateNotice() {
     </a>
     </div>`
 }
-function lastBossDone() {
-    const lastScene = rrcCurrentAttempt?.scenes?.at(-1)?.name
+function lastBossDone(attempt = rrcCurrentAttempt) {
+    const lastScene = attempt?.scenes?.at(-1)?.name
     return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && lastScene == 'level_saltbaker')
 }
