@@ -85,8 +85,8 @@ function rrcView() {
         }
     }
     HTMLContent += `<div class='container' style='gap:10px;margin-top:15px'>
-        <div class='button cuphead' onclick="rrcRaw()">Show raw</div>
-        <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</div>
+        <button class='button cuphead' onclick="rrcRaw()">Show raw</button>
+        <button class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</button>
         </div>`
     return HTMLContent
 }
@@ -323,7 +323,7 @@ function rtaTable(title, field, sceneNames) {
     return HTMLContent
 }
 function scorecardModeButton(mode, icon) {
-    return `<div class='scorecardButton button container ${scorecardMode == mode ? 'selected' : ''}' onclick="changeScorecardMode('${mode}')">${icon}</div>`
+    return `<button class='scorecardButton button container ${scorecardMode == mode ? 'selected' : ''}' onclick="changeScorecardMode('${mode}')">${icon}</button>`
 }
 function toggleSplitType() {
     splitBefore = !splitBefore

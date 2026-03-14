@@ -194,12 +194,6 @@ function runRecap_chart(times, deltas, lss) {
         hide('runRecap_chart')
     }
 }
-function runRecapMusic() {
-    const src = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? `https://www.youtube.com/embed/L6T3fpUGSmE?si=CY3h0TbNYkQ003eZ` : `https://www.youtube.com/embed/cdvSNkW3Uyk?si=VcZ9Du_FsD5A8O6g`
-    document.getElementById('musicDiv').innerHTML = `
-    <iframe width="150" height="150" src="${src}&amp;controls=0" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    `
-}
 function runRecapCopy() {
     let clipboardContent = ''
     if (globalTab == 'sav') {

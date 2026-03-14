@@ -1162,6 +1162,15 @@
                 "time": 38.76,
                 "player": "Lewzr",
                 "url": "https://youtu.be/QjstsSlNaOY"
+            },
+            {
+                "title": "1 HP Backup"
+            },
+            {
+                "name": "Catapult, Charge",
+                "time": 38.67,
+                "player": "Lewzr",
+                "url": "https://youtu.be/VMLC7_CRDgw"
             }
         ],
         "captainbrineybeard": [
@@ -1497,13 +1506,13 @@
             {
                 "name": "L Pumpkin, L Cart Final",
                 "time": 56.64,
-                "rta": 58.30,
+                "rta": "58.30",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/cNlgq_i0x_c"
             },
             {
                 "name": "L Pumpkin",
-                "time": 57.7,
+                "time": "57.70",
                 "rta": 59.36,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/cif5WQOacxA"
@@ -1537,9 +1546,9 @@
             },
             {
                 "name": "R Pumpkin",
-                "time": 59.44,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/BFdOWkxh47o"
+                "time": 58.92,
+                "player": "Quincely0",
+                "url": "https://youtu.be/akGntRCM24A"
             },
             {
                 "title": "Safe Phase 1"
@@ -2415,9 +2424,9 @@
         "sallystageplay": [
             {
                 "name": "Phase 3 K.O.",
-                "time": 33.29,
+                "time": 33.18,
                 "player": "Yuka",
-                "url": "https://youtu.be/6WIn7xOIMRU"
+                "url": "https://youtu.be/B-XAUGSZOs4"
             },
             {
                 "name": "Phase 4 K.O.",
@@ -2428,10 +2437,22 @@
         ],
         "wernerwerman": [
             {
-                "name": "",
-                "time": 27.15,
+                "name": "Cherry Bombs (6)",
+                "time": 25.96,
                 "player": "Yuka",
-                "url": "https://youtu.be/Z0npuy1gYJE"
+                "url": "https://youtu.be/pV7JrKfaZKM"
+            },
+            {
+                "name": "Cherry Bombs (5)",
+                "time": 26.93,
+                "player": "Yuka",
+                "url": "https://youtu.be/51XKGUeAUpI"
+            },
+            {
+                "name": "Catapult",
+                "time": "26.70",
+                "player": "Yuka",
+                "url": "https://youtu.be/eSAAQzFFlnE"
             }
         ],
         "captainbrineybeard": [
@@ -2660,12 +2681,6 @@
                 "url": "https://youtu.be/6lPCn0ScQEs"
             },
             {
-                "name": "Punches, Tigers",
-                "time": 48.03,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/4fVsVD-EokY"
-            },
-            {
                 "name": "Punches, Snakes",
                 "time": 48.25,
                 "player": "Quincely0",
@@ -2676,9 +2691,15 @@
             },
             {
                 "name": "5 Flies, Bulls",
-                "time": "47.40",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/mSnNzC5SRtk"
+                "time": 46.77,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/cMFcjJugtJY"
+            },
+            {
+                "name": "5 Flies, Tigers",
+                "time": 48.03,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/4fVsVD-EokY"
             },
             {
                 "title": "Flies Super Skip"
@@ -2823,9 +2844,9 @@
             },
             {
                 "name": "R Pumpkin, 1 Single",
-                "time": 59.44,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/BFdOWkxh47o"
+                "time": 58.92,
+                "player": "Quincely0",
+                "url": "https://youtu.be/akGntRCM24A"
             },
             {
                 "name": "R Pumpkin, Safe Phase 3",

@@ -175,6 +175,8 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     if (categoryName != 'Other') rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
+    const musicID = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? 'L6T3fpUGSmE' : 'cdvSNkW3Uyk'
+    document.getElementById('musicDiv').href = `https://youtu.be/${musicID}`
     // if (runRecapExample) showTab('home')
     if (category > -1) {
         letsGo()

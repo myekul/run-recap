@@ -364,9 +364,10 @@ function oddsLayer(altStrats, index, strat, field) {
 }
 function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
-    HTMLContent += `<tr><td colspan=6 class='font2 gray' style='font-size:120%;padding:5px;position:relative'>
+    HTMLContent += `<tr><td colspan=6 class='gray' style='padding:5px;position:relative'>
     ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
-    Pending Submissions
+    <div class='font2' style='font-size:120%'>Pending Submissions</div>
+    <div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>
     </td></tr>`
     for (let i = 0; i < 16; i++) {
         const submission = submissions[i]

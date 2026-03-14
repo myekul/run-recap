@@ -3,7 +3,7 @@ function generateCommBestSplits() {
     if (runRecapCategory.markin) {
         HTMLContent += `<div>`
         HTMLContent += `<div class='container' style='padding-bottom:10px;gap:10px'>
-        <div class='button cuphead' style='width:180px' onclick="processSavFile(0,true);playSound('ready')">View WR Run Recap</div>
+        <button class='button cuphead' style='width:180px' onclick="processSavFile(0,true);playSound('ready')">View WR Run Recap</button>
         <div class='grow'><a href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ" target="_blank"><img src='${sharedAssetsURL('sheets')}' style='height:25px'></a></div>
         </div>
         <div class='container' style='gap:30px'>

@@ -73,10 +73,10 @@ function runRecapExamples(type) {
         })
         HTMLContent += `</table>
     <div class='container' style='margin-top:10px'>
-        <div class='button cuphead' style='gap:5px;width:170px' onclick="fetchDatabase('${type || databaseType}',${type ? true : false})">
+        <button class='button cuphead' style='gap:5px;width:170px' onclick="fetchDatabase('${type || databaseType}',${type ? true : false})">
             ${fontAwesome('cloud')}
             Browse database
-        </div>
+        </button>
     </div>
     </div>`
     }

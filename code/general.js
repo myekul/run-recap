@@ -108,33 +108,26 @@ function categorySelect(database) {
     functionName += database ? 'databaseCategorySwitch' : 'changeCategory'
     return `<div id="categorySelect">
                 <div class="container">
-                    <div id='onePointOneButton' onclick="${functionName}('1.1+',true)"
-                        class="button onePointOne">
-                        1.1+
-                    </div>
+                    <button id='onePointOneButton' onclick="${functionName}('1.1+',true)" class="button onePointOne">1.1+</button>
                 </div>
                 <div class="container">
-                    <div id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy</div>
+                    <button id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy</button>
                 </div>
                 <div class="container">
-                    <div id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</div>
+                    <button id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</button>
                 </div>
                 <div class="container">
-                    <div id='dlclsButton' onclick="${functionName}('DLC',true)" class="button dlc">DLC</div>
-                    <!-- <div class="dlc lobber button" onclick="${functionName}('DLC L/S')></div> -->
-                    <div id='dlccsButton' class="dlc charge button" onclick="${functionName}('DLC C/S',true)">
-                    </div>
+                    <button id='dlclsButton' onclick="${functionName}('DLC',true)" class="button dlc">DLC</button>
+                    <!-- <button class="dlc lobber button" onclick="${functionName}('DLC L/S')"></button> -->
+                    <button id='dlccsButton' class="dlc charge button" onclick="${functionName}('DLC C/S',true)"></button>
                 </div>
                 <div class="container">
-                    <div id='dlcbasecsButton' onclick="${functionName}('DLC+Base C/S',true)" class="button dlcbase">
-                        DLC+Base
-                    </div>
-                    <!-- <div class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S')"></div> -->
-                    <div id='dlcbaselsButton' class="dlcbase lobber button"
-                        onclick="${functionName}('DLC+Base L/S',true)"></div>
+                    <button id='dlcbasecsButton' onclick="${functionName}('DLC+Base C/S',true)" class="button dlcbase">DLC+Base</button>
+                    <!-- <button class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S')"></button> -->
+                    <button id='dlcbaselsButton' class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S',true)"></button>
                 </div>
                 <div class="container">
-                    <div id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</div>
+                    <button id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
                 </div>
             </div>`
 }

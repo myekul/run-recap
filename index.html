@@ -27,56 +27,47 @@
                 <img src="images/favicon.png" style="height:70px">
                 <div class="font2" style="font-size:220%">RUN RECAP</div>
             </div>
-            <div class='cuphead button'
-                style="position:absolute;left:20px;top:13px;font-size:150%;width:50px;height:50px"
-                onclick="fetchDatabase(databaseType)"><i class="fa fa-cloud"></i>
-            </div>
+            <button class='cuphead button' style="position:absolute;left:20px;top:13px;font-size:150%;width:50px;height:50px" onclick="fetchDatabase(databaseType)">
+                <i class="fa fa-cloud"></i>
+            </button>
         </header>
         <main>
             <div class="sticky">
                 <div id="headerRow" class="container">
+                    <button onclick="document.getElementById('input_upload').click()" class='button cuphead' style="width:120px;position:absolute;left:15px">
+                        <i class="fa fa-folder-open"></i>&nbsp;Open file
+                    </button>
                     <div class="font2" style="margin-right:8px">Comm Best</div>
-                    <div id='altStratsButton' onclick="altStratLevel=null;showTab('altStrats')"
-                        class="button headerButton" style="width:60px">
+                    <button id='altStratsButton' onclick="altStratLevel=null;showTab('altStrats')" class="button headerButton" style="width:60px">
                         <i class="fa fa-database"></i>ILs
-                    </div>
-                    <div id='commBestILsButton' onclick="altStratLevel=null;showTab('commBestILs')"
-                        class="button headerButton" style="width:30px">
+                    </button>
+                    <button id='commBestILsButton' onclick="altStratLevel=null;showTab('commBestILs')" class="button headerButton" style="width:30px">
                         <i class="fa fa-trophy"></i>
-                    </div>
+                    </button>
                     <div class="dot"></div>
-                    <div id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button headerButton"
-                        style="width:80px">
+                    <button id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button headerButton" style="width:80px">
                         <i class="fa fa-tasks"></i>Splits
-                    </div>
-                    <div id='theTopButton' onclick="showTab('theTop')" class="button headerButton" style="width:30px">
+                    </button>
+                    <button id='theTopButton' onclick="showTab('theTop')" class="button headerButton" style="width:30px">
                         <i class="fa fa-bullseye"></i>
-                    </div>
+                    </button>
                     <div style="width:70px">
                         <div id="boardTitleSrc" class="container">
                             <div class="loader"></div>
                         </div>
                     </div>
-                    <div onclick="document.getElementById('input_upload').click()" class='button cuphead'
-                        style="width:120px;position:absolute;left:15px">
-                        <i class="fa fa-folder-open"></i>&nbsp;Open file
-                    </div>
-                    <input id='input_username' type='text' placeholder='Your SRC username'
-                        style='display:none;width:200px;font-size:100%;position:absolute;right:40px;top:4px;'>
-                    <div id='username' onclick="showInput('username')" class='container grow'
-                        style='display:none;position:absolute;right:40px;color:white;gap:8px'>
+                    <input id='input_username' type='text' placeholder='Your SRC username' style='display:none;width:200px;font-size:100%;position:absolute;right:40px;top:4px;'>
+                    <button id='username' onclick="showInput('username')" class='container grow' style='display:none;position:absolute;right:40px;color:white;gap:8px'>
                         Your Username...
                         <i class="fa fa-edit" style="font-size:130%"></i>
-                    </div>
+                    </button>
                 </div>
                 <div id="progress"></div>
                 <div id="tabsDiv"></div>
-                <div id="categorySelect" class='container'
-                    style="position:absolute;left:20px;top:55px;align-items: flex-start;"></div>
-                <div id="musicDiv" class='grow' onclick="runRecapMusic()"
-                    style="position:absolute;right:20px;top:55px;">
+                <div id="categorySelect" class='container' style="position:absolute;left:20px;top:55px;align-items: flex-start;"></div>
+                <a id="musicDiv" class='grow' style="position:absolute;right:20px;top:55px" target="_blank">
                     <img src="images/gramophone.png" style="height:80px">
-                </div>
+                </a>
             </div>
             <div id="pageTitle"></div>
             <div id="boardTitleDiv" class="sticky" style="top:80px;max-width: 50%;margin:0 auto;padding:10px 0">
@@ -84,19 +75,14 @@
                     <div>
                         <div class="container" style="gap:8px;position:relative">
                             <div id="boardTitle" class="shadow"></div>
-                            <div id='commBestSubmit' class="button cuphead"
-                                style="display:none;width:120px;gap:8px;position:absolute;left:110%;font-size:90%"
-                                onclick="modalSubmitIL()">
+                            <button id='commBestSubmit' class="button cuphead" style="display:none;width:120px;gap:8px;position:absolute;left:110%;font-size:90%" onclick="modalSubmitIL()">
                                 <i class="fa fa-plus"></i>Submit IL
-                            </div>
+                            </button>
                         </div>
                     </div>
-                    <div id='runRecap_details' class='container background1 shadow'
-                        style='display:none;padding:3px 15px;margin-left:15px;gap:20px;border-radius:15px'>
-                        <input id='input_runRecap_time' type='text' placeholder='XX:XX'
-                            style='display:none;width:65px;font-size:100%'>
-                        <div id='runRecap_time' onclick="showInput('runRecap_time')" class='container grow'
-                            style='margin:0;gap:8px'></div>
+                    <div id='runRecap_details' class='container background1 shadow' style='display:none;padding:3px 15px;margin-left:15px;gap:20px;border-radius:15px'>
+                        <input id='input_runRecap_time' type='text' placeholder='XX:XX' style='display:none;width:65px;font-size:100%'>
+                        <button id='runRecap_time' onclick="showInput('runRecap_time')" class='container grow' style='margin:0;gap:8px'></button>
                         <div id="rrcBrowser"></div>
                         <div id='runRecap_player' class='container' style='margin:0;gap:8px'></div>
                         <div id="runRecap_example_div" class='dim' style="display:none">EXAMPLE</div>
@@ -136,8 +122,7 @@
                     </div>
                     <div id="runRecap_sav_section" class="container" style="margin:0;display:none">
                         <div id="sav_divider" class="divider"></div>
-                        <div class="container grow dim" style="margin:0;gap:10px"
-                            onclick="openModal(savComparisonContent(),'IGT COMPARISON')">
+                        <div class="container grow dim" style="margin:0;gap:10px" onclick="openModal(savComparisonContent(),'IGT COMPARISON')">
                             &Delta;
                             <div id="savComparison">Top 3 Average</div>
                         </div>
@@ -148,14 +133,13 @@
             </div>
             <div id="content"></div>
             <div id='runRecap_chart' class='container' style='display:none;width:900px;height:100px'></div>
-            <div id='backButton' class='button cuphead' onclick="showTab('home')"
-                style='display:none;width:150px;height:30px;font-size:100%;position:fixed;bottom:20px;left:20px;z-index:2'>
+            <button id='backButton' class='button cuphead' onclick="showTab('home')" style='display:none;width:150px;height:30px;font-size:100%;position:fixed;bottom:20px;left:20px;z-index:2'>
                 <i class="fa fa-reply"></i>&nbsp;Go back
-            </div>
+            </button>
             <div id="upload_div" class="container" style="display:none;position:fixed;bottom:20px;right:20px;z-index:2">
-                <div id='uploadButton' class='button cuphead pulseSize' onclick="runRecapUploadButton()"
-                    style='width:190px;height:30px;font-size:90%'><i class="fa fa-cloud-upload"></i>&nbsp;Upload to
-                    database</div>
+                <button id='uploadButton' class='button cuphead pulseSize' onclick="runRecapUploadButton()" style='width:190px;height:30px;font-size:90%'>
+                    <i class="fa fa-cloud-upload"></i>&nbsp;Upload to database
+                </button>
                 <div id='uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
             </div>
         </main>
