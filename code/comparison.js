@@ -59,7 +59,7 @@ function changeComparison(type, comparison, custom) {
 function runRecapExamples(type) {
     let HTMLContent = ''
     if (runRecapCategory.name != 'Other') {
-        HTMLContent += `<div><table>`
+        HTMLContent += `<div><table class='shadow'>`
         players.slice(0, runRecapCategory.topRuns.length).forEach((player, playerIndex) => {
             if (player.extra) {
                 const comparison = type == 'sav' ? savComparison : rrcComparison
@@ -91,7 +91,7 @@ function savComparisonDisplay() {
     return `
     <div class='container' style='margin:0'>
         <button class="container grow dim" style="gap:10px" onclick="openModal(savComparisonContent(),'IGT COMPARISON')">
-        &Delta;<div>${savComparisonText}</div>
+        <div class='font2'>IGT</div>&Delta;<div>${savComparisonText}</div>
         </button>
     </div>`
 }
@@ -99,7 +99,7 @@ function rrcComparisonDisplay() {
     return `
     <div class='container'>
         <button class="container grow dim" style="margin:20px;gap:10px" onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
-        &Delta;<div>${rrcComparisonText}</div>
+        <div class='font2'>RTA</div>&Delta;<div>${rrcComparisonText}</div>
         </button>
     </div>`
 }

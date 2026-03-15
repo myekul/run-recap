@@ -7,7 +7,7 @@ function generateCommBestSplits() {
         <div class='grow'><a href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ" target="_blank"><img src='${sharedAssetsURL('sheets')}' style='height:25px'></a></div>
         </div>
         <div class='container' style='gap:30px'>
-        <table>
+        <table class='shadow'>
         <tr>
         <th class='dim'>WR</th>
         <th colspan=5 class='gray'>Comm Best Splits</th>
@@ -30,7 +30,7 @@ function generateCommBestSplits() {
         HTMLContent += `</table>`
         // Segments
         HTMLContent += `
-        <table>
+        <table class='shadow'>
         <tr>
         <th class='dim'>WR</th>
         <th colspan=5 class='gray'>Comm Best Segments</th>

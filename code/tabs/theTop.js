@@ -69,7 +69,7 @@ function generateTheTop() {
         // })
         // HTMLContent += `</table></div>`
         HTMLContent += `<div class='container' style='margin-top:100px'>`
-        HTMLContent += `<table>
+        HTMLContent += `<table class='shadow'>
     <tr>
     <td><td>`
         players.slice(0, runRecapCategory.topRuns.length).forEach(player => {

@@ -151,7 +151,7 @@ function rrcChartSection() {
     ${rrcComparisonDisplay()}
     <div class='container' style='gap:10px'>
     <div id="rrcChart" class='border shadow' style="width:1000px;height:400px"></div>
-    <table>`
+    <table class='shadow'>`
     runRecapCategory.topRuns.forEach((run, index) => {
         const colorCell = `<td style='background-color:${rrcChartSeries[index].color};width:10px'></td>`
         const selected = rrcComparison.split(' ')[0] == 'Player' && rrcComparison.split(' ')[1] == index

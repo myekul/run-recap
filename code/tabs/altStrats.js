@@ -6,13 +6,13 @@ function generateAltStrats() {
     if (altStratCategory) {
         HTMLContent += `<div class='container' style='gap:10px'>`
         assignIsles()
-        HTMLContent += `<table>
+        HTMLContent += `<table class='shadow'>
         <tr><td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.length || '&nbsp;'}</td></tr>
         <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td></tr>
         </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
-                HTMLContent += `<table><tr class='background2'>`
+                HTMLContent += `<table class='shadow'><tr class='background2'>`
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
                     let numStrats = 0
@@ -57,7 +57,7 @@ function generateAltStrats() {
             HTMLContent += `<div class='container' style='margin-top:20px;gap:30px;align-items:flex-start'>`
             HTMLContent += `
             <div style='width:310px'>
-            <div class='container'><table>
+            <div class='container'><table class='shadow'>
             <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
             let sum = 0
             countArray.forEach((player, index) => {
@@ -68,7 +68,7 @@ function generateAltStrats() {
                 </tr>`
             })
             HTMLContent += `</table></div>
-            <div class='container' style='color:gray;font-size:80%'>TOTAL: ${sum}</div>`
+            <div class='container' style='color:gray;font-size:80%;margin-top:5px'>TOTAL: ${sum}</div>`
             if (runRecapCategory.tabName == '1.1+') {
                 const myekulIdeas = [
                     {
@@ -86,7 +86,7 @@ function generateAltStrats() {
                 ]
                 HTMLContent += `
             <div class='container'>
-            <table style='margin-top:20px'>
+            <table class='shadow' style='margin-top:20px'>
             <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'><div class='container' style='gap:8px'><img src='https://myekul.com/shared-assets/images/myekul.png' style='height:36px'><div>myekul's ideas</div></div></td></tr>`
                 myekulIdeas.forEach((idea, index) => {
                     HTMLContent += `<tr class='${getRowColor(index)}'>
@@ -119,7 +119,7 @@ function generateAltStrats() {
             </div>`
             // Best Times
             HTMLContent += `<div style='width:310px'>
-            <table>`
+            <table class='shadow'>`
             HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
             categories.forEach((category, categoryIndex) => {
                 const altGroup = altStratCategory[category.info.id]
@@ -255,7 +255,7 @@ function altStrats(query) {
     }
     HTMLContent += `
     <div class='container'>
-    <div style='margin:0;position:relative'><table style='margin:10px'>
+    <div style='margin:0;position:relative'><table class='shadow' style='margin:10px'>
     <tr><td colspan=10><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
     const baronessCheck = query == 'baronessvonbonbon'
     const RTAcheck = altStratCategory[query].some(strat => strat.rta)
@@ -321,7 +321,7 @@ function altStrats(query) {
     HTMLContent += `</table>`
     if (runRecapCategory.name == '1.1+' && category) {
         const categoryIndex = categories.findIndex(category => category.info.id == query)
-        HTMLContent += `<table style='position:absolute;left:110%;top:12px'>
+        HTMLContent += `<table class='shadow' style='position:absolute;left:110%;top:12px'>
         <tr>
         <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
         </tr>
@@ -363,7 +363,8 @@ function oddsLayer(altStrats, index, strat, field) {
     return ''
 }
 function pendingSubmissions(submissions = new Array(16).fill(null), done) {
-    let HTMLContent = `<div class='container'><table style='width:450px;margin-top:20px'>`
+    let HTMLContent = `<div class='container'>
+    <table class='shadow' style='width:450px;margin-top:20px'>`
     HTMLContent += `<tr><td colspan=6 class='gray' style='padding:5px;position:relative'>
     ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
     <div class='font2' style='font-size:120%'>Pending Submissions</div>
