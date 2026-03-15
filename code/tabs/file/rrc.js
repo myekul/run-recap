@@ -61,8 +61,8 @@ function rrcView() {
     if (runRecapCategory.name == 'DLC') {
         const index = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == "level_saltbaker")
         if (index != -1) {
+            if (rrcCurrentAttempt.scenes[index + 1]) rrcCurrentAttempt.scenes[index].endTime -= 8.45
             rrcCurrentAttempt.scenes = rrcCurrentAttempt.scenes.slice(0, index + 1)
-            rrcCurrentAttempt.scenes[index].endTime -= 8.45
         }
     }
     rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
@@ -188,13 +188,6 @@ function calculateScorecard(scorecard) {
     if (scorecard?.starSkips == 2) segment += 1.016
     if (scorecard?.starSkips == 3) segment += 1.516
     return segment
-}
-function rrcComparisonDisplay() {
-    return `<div class="container grow dim" style="margin:20px;gap:10px"
-                onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
-                &Delta;
-                <div>${rrcComparisonText}</div>
-            </div>`
 }
 function rrcRTA() {
     let HTMLContent = ''
@@ -525,7 +518,7 @@ function rrcUpdateNotice() {
     return `<div style='width:360px;padding-bottom:10px'>Your Run Recap Component is outdated! Please install the latest version to gain access to all features.</div>
     <div class='container'>
     ${getAnchor('https://github.com/SBDWolf/Run-Recap-Component')}
-    <div class='button cuphead' style='width:200px'>Go to download page</div>
+    <button class='button cuphead' style='width:200px'>Go to download page</button>
     </a>
     </div>`
 }

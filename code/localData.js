@@ -2,14 +2,15 @@ function prepareLocalData() {
     fetch('resources/topData.json')
         .then(response => response.json())
         .then(data => {
-            data['DLC+Base L/S'] = data['DLC+Base']
+            data['DLC+Base'] = data['DLC+Base C/S']
+            data['DLC'] = data['DLC L/S']
             for (const category in data) {
                 commBestILs[category].topRuns = data[category]
             }
             fetch('resources/scenes.json')
                 .then(response => response.json())
                 .then(data => {
-                    data['DLC+Base L/S'] = data['DLC+Base']
+                    data['DLC+Base'] = data['DLC+Base C/S']
                     for (const category in data) {
                         commBestILs[category].scenes = data[category]
                     }
@@ -18,11 +19,13 @@ function prepareLocalData() {
                     commBestILs['Legacy'].scenes[72] = 'level_dice_palace_domino'
                     commBestILs['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
                     commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
-                    commBestILs['DLC+Base L/S'].scenes = commBestILs['DLC+Base'].scenes
+                    commBestILs['DLC'].scenes = commBestILs['DLC L/S'].scenes
+                    commBestILs['DLC+Base'].scenes = commBestILs['DLC+Base C/S'].scenes
                     fetch('resources/rrcData.json')
                         .then(response => response.json())
                         .then(data => {
-                            data['DLC+Base L/S'] = data['DLC+Base']
+                            data['DLC+Base'] = data['DLC+Base C/S']
+                            data['DLC'] = data['DLC L/S']
                             for (const category in data) {
                                 const categoryScenes = commBestILs[category].scenes
                                 commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
@@ -165,19 +168,19 @@ function organizeAltStrats() {
         ['1.1+', 'Legacy', 'forestfollies'],
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
-        ['DLC', 'DLC C/S', 'estherwinchester'],
-        ['NMG', 'DLC+Base', 'hildaberg'],
-        ['NMG', 'DLC+Base', 'cagneycarnation'],
-        ['NMG', 'DLC+Base', 'baronessvonbonbon'],
-        ['DLC+Base', 'DLC+Base C/S', 'hildaberg'],
-        ['DLC+Base', 'DLC+Base C/S', 'wallywarbles'],
-        ['DLC+Base', 'DLC+Base C/S', 'djimmithegreat'],
-        ['DLC+Base', 'DLC+Base C/S', 'drkahlsrobot'],
-        ['DLC+Base', 'DLC+Base C/S', 'calamaria'],
-        ['DLC', 'DLC C/S', 'forestfollies'],
-        ['DLC', 'DLC+Base', 'forestfollies'],
-        ['DLC', 'DLC+Base C/S', 'forestfollies'],
-        ['DLC', '300%', 'forestfollies'],
+        ['DLC L/S', 'DLC C/S', 'estherwinchester'],
+        ['NMG', 'DLC+Base L/S', 'hildaberg'],
+        ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
+        ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
+        ['DLC+Base L/S', 'DLC+Base C/S', 'hildaberg'],
+        ['DLC+Base L/S', 'DLC+Base C/S', 'wallywarbles'],
+        ['DLC+Base L/S', 'DLC+Base C/S', 'djimmithegreat'],
+        ['DLC+Base L/S', 'DLC+Base C/S', 'drkahlsrobot'],
+        ['DLC+Base L/S', 'DLC+Base C/S', 'calamaria'],
+        ['DLC L/S', 'DLC C/S', 'forestfollies'],
+        ['DLC L/S', 'DLC+Base L/S', 'forestfollies'],
+        ['DLC L/S', 'DLC+Base C/S', 'forestfollies'],
+        ['DLC L/S', '300%', 'forestfollies'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
         ['DLC Expert', '300%', 'thehowlingaces'],
@@ -187,7 +190,7 @@ function organizeAltStrats() {
     for (const [copy, paste, boss] of chunks) {
         alt[paste][boss] = alt[copy][boss]
     }
-    copyDLC('DLC', 'DLC+Base')
+    copyDLC('DLC L/S', 'DLC+Base L/S')
     copyDLC('DLC C/S', 'DLC+Base C/S')
 }
 function copyDLC(copy, paste) {

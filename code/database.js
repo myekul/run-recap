@@ -64,7 +64,7 @@ function openDatabase(type, comparison, shh) {
     if (shh) playSound('move')
     openModal(HTMLContent, 'DATABASE', '', comparison || shh)
     buttonShots()
-    const buttons = document.querySelectorAll('#databaseCategorySelect #categorySelect > .container > div[id]')
+    const buttons = document.querySelectorAll('#databaseCategorySelect .categorySelect > .container > button[id]')
     buttons.forEach(btn => {
         btn.id += 'Database'
     })

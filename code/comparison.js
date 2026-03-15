@@ -46,8 +46,8 @@ function changeComparison(type, comparison, custom) {
     let HTMLContent = custom || comparison
     if (type == 'sav') {
         deltaType = custom
-        document.getElementById('savComparison').innerText = HTMLContent
         savComparison = comparison
+        savComparisonText = HTMLContent
     }
     if (type == 'rrc') {
         rrcComparison = comparison
@@ -86,4 +86,20 @@ function playerComparison(type, playerIndex) {
     const player = players[playerIndex]
     changeComparison(type, 'Player ' + playerIndex, player.name + ' - ' + secondsToHMS(player.extra.score))
     action()
+}
+function savComparisonDisplay() {
+    return `
+    <div class='container' style='margin:0'>
+        <button class="container grow dim" style="gap:10px" onclick="openModal(savComparisonContent(),'IGT COMPARISON')">
+        &Delta;<div>${savComparisonText}</div>
+        </button>
+    </div>`
+}
+function rrcComparisonDisplay() {
+    return `
+    <div class='container'>
+        <button class="container grow dim" style="margin:20px;gap:10px" onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
+        &Delta;<div>${rrcComparisonText}</div>
+        </button>
+    </div>`
 }

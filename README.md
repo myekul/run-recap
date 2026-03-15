@@ -27,8 +27,6 @@
 - 800 grid
 - Confetti
 
-- DLC+Base Saltbaker segment bugged
-
 - Database modal should be instant with load inside
 
 - Random database errors:

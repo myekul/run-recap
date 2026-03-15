@@ -2,12 +2,11 @@ function generate_sav() {
     dropboxEligible = false
     let HTMLContent = ''
     if (runRecap_savFile) {
-        handleNumDeaths()
         HTMLContent += classicView()
         if (getCupheadLevel(categories.length - 1).completed) {
             HTMLContent += `<div class="container" style="margin-top:20px;gap:10px">
-                                <div class='button cuphead' onclick="downloadJSON(runRecap_savFile)" style='width:135px'>${fontAwesome('download')}</i>&nbsp;Download .sav</div>
-                                <div class='button cuphead' onclick="runRecapCopy()" style='width:165px'>${fontAwesome('clone')}&nbsp;Copy to clipboard</div>
+                                <button class='button cuphead' onclick="downloadJSON(runRecap_savFile)" style='width:135px'>${fontAwesome('download')}</i>&nbsp;Download .sav</button>
+                                <button class='button cuphead' onclick="runRecapCopy()" style='width:165px'>${fontAwesome('clone')}&nbsp;Copy to clipboard</button>
                             </div>`
         }
     } else {
@@ -17,19 +16,20 @@ function generate_sav() {
     if (dropboxEligible) initializeDropbox(true)
 }
 function handleNumDeaths() {
-    const numDeaths = runRecap_savFile.statictics.playerOne.numDeaths
-    if (numDeaths) {
-        show('runRecap_ghost')
-        document.getElementById('runRecap_numDeaths').innerHTML = numDeaths
-        let char = runRecap_savFile.isPlayer1Mugman ? 'mugman' : 'cuphead'
-        if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
-            char = 'chalice'
+    let HTMLContent = ''
+    if (runRecap_savFile) {
+        const numDeaths = runRecap_savFile.statictics.playerOne.numDeaths
+        if (numDeaths) {
+            let char = runRecap_savFile.isPlayer1Mugman ? 'mugman' : 'cuphead'
+            if (['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
+                char = 'chalice'
+            }
+            HTMLContent += `
+        <img src='https://myekul.com/shared-assets/cuphead/images/extra/ghost_${char}.png' style="height:40px;margin-left:20px">
+        <div style="margin-left:8px">${numDeaths}</div>`
         }
-        document.getElementById('runRecap_ghost').src = `https://myekul.com/shared-assets/cuphead/images/extra/ghost_${char}.png`
-    } else {
-        document.getElementById('runRecap_numDeaths').innerHTML = ''
-        hide('runRecap_ghost')
     }
+    return HTMLContent
 }
 function processSavFile(playerIndex, display) {
     fetch('https://myekul.com/shared-assets/cuphead/sav.json')

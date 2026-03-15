@@ -78,7 +78,7 @@
     },
     "DLC": {
         "name": "DLC",
-        "tabName": "DLC",
+        "tabName": "DLC L/S",
         "markin": "DLC Any% (L/S)",
         "className": "dlc",
         "category": 3,
@@ -88,12 +88,13 @@
     },
     "DLC L/S": {
         "name": "DLC",
-        "tabName": "DLC",
+        "tabName": "DLC L/S",
         "markin": "DLC Any% (L/S)",
         "className": "dlc",
         "category": 3,
         "shot1": "lobber",
         "shot2": "spread",
+        "chartTime": 660,
         "extraRuns": [
             {
                 "date": "2024-03-14",
@@ -171,17 +172,17 @@
             "halfword",
             "AssasinNarga",
             "PorcoBrabo",
-            "MineLive",
+            "_Mine_",
             "nomit"
         ]
     },
     "DLC+Base": {
         "name": "DLC+Base",
-        "tabName": "DLC+Base",
-        "markin": "DLC+BG Any% (L/S)",
+        "tabName": "DLC+Base C/S",
+        "markin": "DLC+BG Any% (C/S)",
         "className": "dlcbase",
         "category": 4,
-        "shot1": "lobber",
+        "shot1": "charge",
         "shot2": "spread"
     },
     "DLC+Base II": {
@@ -194,7 +195,7 @@
     },
     "DLC+Base L/S": {
         "name": "DLC+Base",
-        "tabName": "DLC+Base",
+        "tabName": "DLC+Base L/S",
         "markin": "DLC+BG Any% (L/S)",
         "className": "dlcbase",
         "category": 4,

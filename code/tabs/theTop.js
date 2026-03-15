@@ -25,6 +25,7 @@ function generateTheTop() {
         })
         HTMLContent += chartEligible ? rrcChartSection() : ''
         HTMLContent += topGrid()
+        HTMLContent += savComparisonDisplay()
         HTMLContent += topSums()
         // HTMLContent += `<div class='container' style='margin-top:20px'><table>
         //     <tr>
@@ -113,7 +114,7 @@ function generateTheTop() {
 }
 function topGrid() {
     let HTMLContent = ''
-    HTMLContent += `<div class='container' style='overflow-x:auto;margin-top:30px'>`
+    HTMLContent += `<div class='container' style='overflow-x:auto;margin:20px 0'>`
     HTMLContent += `<table class='shadow'>`
     HTMLContent += `<tr><td colspan=4></td>`
     categories.forEach(category => {
@@ -185,7 +186,7 @@ function topSums() {
         isle.comparisonSum = Math.floor(isle.comparisonSum)
         comparisonSum += isle.comparisonSum
     })
-    HTMLContent += `<div class='container' style='margin-top:30px'>
+    HTMLContent += `<div class='container' style='margin-top:20px'>
     <table class='shadow'>`
     HTMLContent += `<tr style='color:gray'><td colspan=4></td>`
     isles.forEach(isle => {

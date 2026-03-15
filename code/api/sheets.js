@@ -89,7 +89,7 @@ function loadMyekul() {
                                     return true
                                 }
                             }
-                            category.runs.push({ place: 1, debug: debug, player: { name: playerName }, score: time, date: category.runs.length, url: url })
+                            category.runs.push({ debug: debug, player: { name: playerName }, score: time, url: url })
                         }
                     })
                 }

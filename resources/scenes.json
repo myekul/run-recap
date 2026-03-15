@@ -81,7 +81,7 @@
         "cutscene_devil",
         "level_devil"
     ],
-    "DLC": [
+    "DLC L/S": [
         "cutscene_intro",
         "level_house_elder_kettle",
         "map_world_1",
@@ -151,7 +151,7 @@
             "cutscene_dlc_saltbaker_prebattle",
             "level_saltbaker"
     ],
-    "DLC+Base": [
+    "DLC+Base L/S": [
         "cutscene_intro",
         "level_house_elder_kettle",
         "map_world_1",

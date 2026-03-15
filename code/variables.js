@@ -49,6 +49,7 @@ let databaseCategory
 
 let savComparisonCollection = {}
 let savComparison
+let savComparisonText
 
 let loaded
 

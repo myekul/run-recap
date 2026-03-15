@@ -1,6 +1,11 @@
 function classicView() {
     let HTMLContent = ''
-    HTMLContent += `<div class='container' style='gap:25px'>`
+    HTMLContent += `
+    <div class='container'>
+    ${savComparisonDisplay()}
+    ${handleNumDeaths()}
+    </div>`
+    HTMLContent += `<div class='container' style='gap:25px;margin:20px'>`
     assignIsles()
     if (globalTab == 'sav') {
         const follies = getCupheadLevel(runNguns[0].levelID, true)

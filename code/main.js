@@ -56,11 +56,6 @@ function action() {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
         document.getElementById(globalTab + 'Button').classList.add('activeBanner')
     })
-    if (['sav'].includes(globalTab) || (globalTab == 'lss' && runRecap_savFile || globalTab == 'rrc')) {
-        show('runRecap_sav_section')
-    } else {
-        hide('runRecap_sav_section')
-    }
     if (globalTab == 'lss') {
         if (runRecapExample) {
             hide('runRecap_lss_comparison')
@@ -69,11 +64,6 @@ function action() {
         }
     } else {
         hide('runRecap_lss_comparison')
-    }
-    if (globalTab == 'lss' && runRecap_savFile && !runRecapExample) {
-        show('sav_divider')
-    } else {
-        hide('sav_divider')
     }
     if (runRecapExample) {
         show('runRecap_example_div')
@@ -171,6 +161,7 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     players = []
     playerNames = new Set()
     savComparison = 'Top 3 Average'
+    savComparisonText = 'Top 3 Average'
     altStratLevel = null
     if (categoryName != 'Other') rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
@@ -191,6 +182,8 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
 }
 function categoryButtonClick(category, database) {
     let buttonID
+    let buttonSection = 'categorySelect'
+    if (database) buttonSection += 'Database'
     if (category) {
         buttonID = category.className
         if (['dlc', 'dlcbase'].includes(buttonID) && category.shot1) {
@@ -200,11 +193,14 @@ function categoryButtonClick(category, database) {
     } else {
         document.getElementById('allButtonDatabase')?.classList.add('grayedOut')
     }
-    let buttonSection = 'categorySelect'
-    if (database) buttonSection += 'Database'
     buttonID += 'Button'
     if (database) buttonID += 'Database'
     buttonClick(buttonID, buttonSection, 'selected')
+    if (['dlc', 'dlcbase'].includes(category?.className)) {
+        buttonID = category.className + 'Button'
+        if (database) buttonID += 'Database'
+        document.getElementById(buttonID).classList.add('selected')
+    }
 }
 function letsGo() {
     runRecapCategory.players = globalCache[runRecapCategory.category].players
@@ -233,6 +229,11 @@ function done() {
             morePlayers.push(run.playerName)
         })
         players = players.filter(player => runRecapCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name) || player.runs.some(run => run != 0))
+        players.forEach(player => {
+            if (!(runRecapCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name))) {
+                delete player.extra
+            }
+        })
         const worldRecord = runRecapCategory.runs[0].score
         runRecapCategory.extraRuns?.forEach(run => {
             const player = players.find(player => player.name == run.playerName)

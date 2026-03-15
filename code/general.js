@@ -27,10 +27,8 @@ function convertToSeconds(time) {
         return Number(time);
     }
 }
-function getImage(image, heightParam) {
-    const height = heightParam ? heightParam : 36
-    const src = `https://myekul.com/shared-assets/cuphead/images/${image}.png`
-    return `<img src='${src}' style='height:${height}px;width:auto'>`
+function getImage(image, height = 36) {
+    return `<img src='https://myekul.com/shared-assets/cuphead/images/${image}.png' style='height:${height}px;width:auto'>`
 }
 function getTrophy(place) {
     let placeText = ''
@@ -104,9 +102,9 @@ function normalizedColorCell(num, min, max) {
     return `<td style='width:5px;background-color:${getColor(normalizeTime(num, min, max))}'></td>`
 }
 function categorySelect(database) {
-    let functionName = "playSound('category_select');"
-    functionName += database ? 'databaseCategorySwitch' : 'changeCategory'
-    return `<div id="categorySelect">
+    let functionName = ""
+    functionName += database ? 'databaseCategorySwitch' : `playSound('category_select');changeCategory`
+    return `<div class="categorySelect">
                 <div class="container">
                     <button id='onePointOneButton' onclick="${functionName}('1.1+',true)" class="button onePointOne">1.1+</button>
                 </div>
@@ -117,14 +115,14 @@ function categorySelect(database) {
                     <button id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</button>
                 </div>
                 <div class="container">
-                    <button id='dlclsButton' onclick="${functionName}('DLC',true)" class="button dlc">DLC</button>
-                    <!-- <button class="dlc lobber button" onclick="${functionName}('DLC L/S')"></button> -->
+                    <button id='dlcButton' class="dlc button" onclick="${functionName}('DLC',true)">DLC</button>
+                    <button id='dlclsButton' class="dlc lobber button" onclick="${functionName}('DLC L/S',true)"></button>
                     <button id='dlccsButton' class="dlc charge button" onclick="${functionName}('DLC C/S',true)"></button>
                 </div>
                 <div class="container">
-                    <button id='dlcbasecsButton' onclick="${functionName}('DLC+Base C/S',true)" class="button dlcbase">DLC+Base</button>
-                    <!-- <button class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S')"></button> -->
+                    <button id='dlcbaseButton' class="dlcbase button" onclick="${functionName}('DLC+Base',true)">DLC+Base</button>
                     <button id='dlcbaselsButton' class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S',true)"></button>
+                    <button id='dlcbasecsButton' class="dlcbase charge button" onclick="${functionName}('DLC+Base C/S',true)"></button>
                 </div>
                 <div class="container">
                     <button id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
