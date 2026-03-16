@@ -168,6 +168,7 @@ function organizeAltStrats() {
         ['1.1+', 'Legacy', 'forestfollies'],
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
+        ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['DLC L/S', 'DLC C/S', 'estherwinchester'],
         ['NMG', 'DLC+Base L/S', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],

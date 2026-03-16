@@ -136,9 +136,9 @@
             },
             {
                 "name": "Punches, Bulls",
-                "time": "43.80",
-                "player": "Lewzr",
-                "url": "https://youtu.be/huuc7qQPy9I"
+                "time": 43.65,
+                "player": "graven_",
+                "url": "https://youtu.be/p6Q_JfXKx5Y"
             },
             {
                 "name": "Punches, Snakes",
@@ -2659,6 +2659,12 @@
                 "time": 35.13,
                 "player": "SBDWolf",
                 "url": "https://www.twitch.tv/sbdwolf/clip/LachrymoseDifferentPastaHoneyBadger-d5IGUKvTWxM9jq_a"
+            },
+            {
+                "name": "Spread EXs",
+                "time": 36.86,
+                "player": "Quincely0",
+                "url": "https://youtu.be/t011i72vcGQ"
             }
         ],
         "ribbyandcroaks": [
@@ -2767,29 +2773,36 @@
                 "rta": 53.04,
                 "player": "Quincely0",
                 "url": "https://youtu.be/92kJ31-4xkY"
+            },
+            {
+                "name": "Nukeless",
+                "time": 51.69,
+                "rta": 52.82,
+                "player": "Quincely0",
+                "url": "https://youtu.be/eiCbjukYaBI"
             }
         ],
         "djimmithegreat": [
             {
                 "name": "",
-                "time": "1:22.95",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/VJF6aXTrHtk"
+                "time": "1:21.97",
+                "player": "Quincely0",
+                "url": "https://youtu.be/YeBFC9OztBw"
             }
         ],
         "beppitheclown": [
+            {
+                "name": "Parryless",
+                "time": 57.97,
+                "player": "Quincely0",
+                "url": "https://youtu.be/QKEjsAgpQps"
+            },
             {
                 "name": "Parries",
                 "time": 57.81,
                 "rta": "58.37",
                 "player": "Quincely0",
                 "url": "https://youtu.be/DqzELZLfmho"
-            },
-            {
-                "name": "Parryless",
-                "time": 59.87,
-                "player": "myekul",
-                "url": "https://youtu.be/50AoT_hFBE0?si=cl6oQ5HBLYYadLEH&t=29s"
             }
         ],
         "drkahlsrobot": [
@@ -2847,6 +2860,12 @@
                 "time": 58.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/akGntRCM24A"
+            },
+            {
+                "name": "L Pumpkin, 1 Single",
+                "time": "59.30",
+                "player": "Quincely0",
+                "url": "https://youtu.be/YWwREAeeDh8"
             },
             {
                 "name": "R Pumpkin, Safe Phase 3",
@@ -3179,10 +3198,16 @@
         ],
         "moonshinemob": [
             {
-                "name": "",
-                "time": 37.52,
-                "player": "myekul",
-                "url": "https://youtu.be/fQwR1zl9WLs"
+                "name": "3-Cycle",
+                "time": 37.01,
+                "player": "Quincely0",
+                "url": "https://youtu.be/C4yaobQyGC8"
+            },
+            {
+                "name": "2-Cycle",
+                "time": 36.61,
+                "player": "Quincely0",
+                "url": "https://www.youtube.com/watch?v=3FadpYpXNBI&t=90s"
             }
         ],
         "chefsaltbaker": [
