@@ -21,7 +21,7 @@ function generateLeaderboards() {
     })
     HTMLContent += `</table>
     </div>`
-    HTMLContent += `<div style='width:700px'>${podium(newRuns)}</div>`
+    HTMLContent += `<div style='width:750px'>${podium(newRuns)}</div>`
     HTMLContent += `</div>`
     document.getElementById('content').innerHTML = HTMLContent
     buttonShots()
