@@ -89,11 +89,6 @@ th {
     width: auto;
 }
 
-.trophy {
-    filter: drop-shadow(0.5px 1px 0 black) drop-shadow(-0.5px -0.5px 0 black);
-    padding: 0 3px
-}
-
 #tabs {
     width: 450px !important
 }

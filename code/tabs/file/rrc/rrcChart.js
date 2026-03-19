@@ -132,9 +132,9 @@ function rrcChartSection() {
     rrcChartSeries = {};
     const usedColors = new Set();
     runRecapCategory.topRuns.forEach((playerRun, index) => {
-        let color = players[index]['name-style'].color2
+        let color = players[index]['name-style']?.color2
         if (usedColors.has(color)) {
-            color = players[index]['name-style'].color1
+            color = players[index]['name-style']?.color1
         }
         if (usedColors.has(color)) {
             color = 'lightgreen'

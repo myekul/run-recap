@@ -1,6 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
+setTabs(['home', 'leaderboards', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
 initializeHash('home')
 setAudio('cuphead')
 runRecapDefault()
@@ -20,6 +20,7 @@ function action() {
     loaded = true
     const tabActions = {
         home: generateHome,
+        leaderboards: generateLeaderboards,
 
         sav: generate_sav,
         lss: generate_lss,
@@ -120,7 +121,7 @@ function action() {
     } else {
         hide('commBestSubmit')
     }
-    if (!['home', 'commBestILs', 'altStrats', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+    if (!['home', 'leaderboards', 'commBestILs', 'altStrats', 'commBestSplits', 'ballpit'].includes(globalTab)) {
         show('runRecap_details')
     } else {
         hide('runRecap_details')
@@ -207,6 +208,16 @@ function categoryButtonClick(category, database) {
 function letsGo() {
     runRecapCategory.players = globalCache[runRecapCategory.category].players
     runRecapCategory.runs = globalCache[runRecapCategory.category].runs
+    if (runRecapCategory.extraRuns || runRecapCategory.extraPlayers) {
+        runRecapCategory.runs = runRecapCategory.runs.filter(run => runRecapCategory.extraPlayers.includes(run.playerName))
+        runRecapCategory.players = runRecapCategory.players.filter(player => runRecapCategory.extraPlayers.includes(player.name))
+    }
+    runRecapCategory.extraRuns?.forEach(run => {
+        const player = allPlayers.find(player => player.name == run.playerName)
+        const newRun = { score: convertToSeconds(run.score), playerName: run.playerName, player: { player }, date: run.date, url: run.url }
+        runRecapCategory.runs.push(newRun)
+        runRecapCategory.players.push({ ...player, extra: newRun })
+    })
     runRecapCategory.players.forEach(player => {
         const initialSize = playerNames.size
         playerNames.add(player.name)
@@ -226,33 +237,18 @@ function done() {
     })
     assignRuns(runRecapCategory)
     if (runRecapCategory.extraRuns || runRecapCategory.extraPlayers) {
-        const morePlayers = []
-        runRecapCategory.extraRuns?.forEach(run => {
-            morePlayers.push(run.playerName)
-        })
-        players = players.filter(player => runRecapCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name) || player.runs.some(run => run != 0))
-        players.forEach(player => {
-            if (!(runRecapCategory.extraPlayers?.includes(player.name) || morePlayers.includes(player.name))) {
-                delete player.extra
-            }
-        })
-        const worldRecord = runRecapCategory.runs[0].score
-        runRecapCategory.extraRuns?.forEach(run => {
-            const player = players.find(player => player.name == run.playerName)
-            run.score = run.score > 0 ? run.score : convertToSeconds(run.score)
-            run.percentage = (worldRecord / run.score) * 100
-            player.extra = run
-        })
-        const newPlayers = []
-        const badPlayers = []
+        const yesRun = []
+        const noRun = []
         players.forEach(player => {
             if (player.extra) {
-                newPlayers.push(player)
+                yesRun.push(player)
             } else {
-                badPlayers.push(player)
+                noRun.push(player)
             }
         })
-        players = [...newPlayers, ...badPlayers]
+        players = [...yesRun, ...noRun]
+        runRecapCategory.runs.sort((a, b) => a.score - b.score)
+        runRecapCategory.players.sort((a, b) => a.extra?.score - b.extra?.score)
         players.sort((a, b) => a.extra?.score - b.extra?.score)
         players.forEach((player, playerIndex) => {
             if (player.extra) {
@@ -281,15 +277,15 @@ function assignRuns(category, categoryIndex) {
         const runPlayer = run.player
         let thePlayer = ''
         for (const player of players) {
-            if (player.id && runPlayer.id) {
-                if (player.id == runPlayer.id) {
+            if (player.id && runPlayer?.id) {
+                if (player.id == runPlayer?.id) {
                     thePlayer = player;
                     break;
                 }
-            } else if (player.name == runPlayer.name && player.rel == runPlayer.rel) {
+            } else if (player.name == runPlayer?.name && player.rel == runPlayer?.rel) {
                 thePlayer = player;
                 break;
-            } else if (player.name == runPlayer.name) {
+            } else if (player.name == runPlayer?.name) {
                 thePlayer = player;
                 break;
             }
@@ -303,13 +299,6 @@ function assignRuns(category, categoryIndex) {
         }
         const runTime = run.score
         run.percentage = getScore(category, runTime)
-        if (thePlayer.bestScore) {
-            if (run.percentage > thePlayer.bestScore) {
-                thePlayer.bestScore = run.percentage
-            }
-        } else {
-            thePlayer.bestScore = run.percentage
-        }
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }
