@@ -50,9 +50,8 @@ function getPlayerDisplay(player, exception) {
     let HTMLContent = `
     <div class='container' style='justify-content:left;gap:4px;text-align:left;font-weight: bold;font-size:80%;padding:0 3px'>`
     HTMLContent += ['commBestSplits'].includes(globalTab) || exception ? '' : `<div style='width:18px'>${getPlayerFlag(player, 12)}</div>`
-    HTMLContent += `${getPlayerIcon(player, 21)}`
-    HTMLContent += `<td class='short-border' style='--border-width:${normalize(player.extra?.percentage, 90)}%;text-align:left;font-weight: bold;font-size:80%;padding-right:5px'>${getPlayerName(player)}</td>`
-   
+    HTMLContent += getPlayerIcon(player, 21)
+    HTMLContent += globalTab != 'leaderboards' ? getPlayerName(player) : `<td class='short-border' style='--border-width:${normalize(player.extra?.percentage, 90)}%;text-align:left;font-weight: bold;font-size:80%;padding-right:5px'>${getPlayerName(player)}</td>`
     HTMLContent += `</div>`
     return HTMLContent
 }
