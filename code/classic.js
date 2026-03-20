@@ -78,7 +78,7 @@ function savBoss(categoryIndex) {
     HTMLContent += `<td class='${grade.className}' style='text-align:left;width:24px'><span>${done ? deltaType ? '' : grade.grade : ''}</span></td>`
     HTMLContent += `<td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>`
     HTMLContent += `<td id='runRecap_${categoryIndex}' class='${done ? category.info.id : ''}' style='width:85px'>${cellContent}</td>`
-    HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade?.className}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>`
+    HTMLContent += `<td class='${redGreen(delta)}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>`
     HTMLContent += `<td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>`
     HTMLContent += `</tr>`
     return HTMLContent
@@ -94,7 +94,8 @@ function isleHeader(isle) {
     return `<div>
     <table class='shadow'>
     <tr>
-    <th colspan=4 class='${isle.className}'>${isle.name}</th>
+    <th colspan=3 class='${isle.className}'>${isle.name}</th>
+    <td colspan=2></td>
     </tr>`
 }
 function runRecapIL(runTime, categoryIndex) {

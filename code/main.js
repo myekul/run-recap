@@ -26,8 +26,6 @@ function action() {
         lss: generate_lss,
         rrc: generate_rrc,
 
-        residual: generateResidual,
-
         ballpit: generateBallpit,
 
         commBestILs: generateCommBestILs,

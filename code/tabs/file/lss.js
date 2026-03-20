@@ -73,7 +73,7 @@ function lssView() {
         HTMLContent += `<td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'><span>${compareCustom ? '' : grade.grade}</span></td>`
         HTMLContent += image
         HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSegment, true)}</td>`
-        HTMLContent += `<td class='${compareCustom ? redGreen(trueDelta) : grade.className}' style='padding:0 5px;font-size:90%'><span>${getDelta(trueDelta)}</span></td>`
+        HTMLContent += `<td class='${redGreen(trueDelta)}' style='padding:0 5px;font-size:90%'><span>${getDelta(trueDelta)}</span></td>`
         HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
         if (runRecap_savFile) {
             HTMLContent += `<td style='padding:0 20px'></td>`
@@ -96,7 +96,7 @@ function lssView() {
                 HTMLContent += `<td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>`
                 HTMLContent += image
                 HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>`
-                HTMLContent += `<td class='${deltaType ? redGreen(delta) : ILgrade.className}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>`
+                HTMLContent += `<td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>`
                 HTMLContent += `<td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
             } else if (index == 2) {
                 HTMLContent += `<td colspan=5></td>`

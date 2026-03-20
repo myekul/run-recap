@@ -91,7 +91,7 @@ function databaseView(type, databaseIndex, player, time, categoryName) {
                     level.played = true
                     level.completed = true
                 })
-                if (!['theTop', 'residual'].includes(globalTab)) {
+                if (!['theTop'].includes(globalTab)) {
                     showTab('sav')
                 } else {
                     action()

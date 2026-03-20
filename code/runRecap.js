@@ -46,11 +46,7 @@ async function handleFile(event) {
                     }
                 }
                 changeCategory(category)
-                if (['residual'].includes(globalTab)) {
-                    action()
-                } else {
-                    showTab('sav')
-                }
+                showTab('sav')
             }
         } catch (error) {
             toast('Error!')

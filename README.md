@@ -1,6 +1,6 @@
 # To do
 - Support for other categories
-- Comm Best Any% DLC boards merge bug
+- Comm Best Any% DLC boards merge bug - 1st placement
 - Comm Best splits isle sums
 - .lss isle sums
 - Organize Run Recap database
