@@ -191,6 +191,13 @@ function organizeAltStrats() {
     for (const [copy, paste, boss] of chunks) {
         alt[paste][boss] = alt[copy][boss]
     }
+    const temp = []
+    alt['1.1+'].captainbrineybeard.forEach(strat => {
+        if (strat.title || !strat.name.includes('Squid')) {
+            temp.push(strat)
+        }
+    })
+    alt['NMG'].captainbrineybeard = temp
     copyDLC('DLC L/S', 'DLC+Base L/S')
     copyDLC('DLC C/S', 'DLC+Base C/S')
 }

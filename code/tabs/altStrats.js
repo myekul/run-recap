@@ -59,45 +59,38 @@ function generateAltStrats() {
             <div style='width:310px'>
             <div class='container'><table class='shadow'>
             <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
-            let sum = 0
             countArray.forEach((player, index) => {
-                sum += player.count
                 HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
                 <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
                 <td>${player.count}</td>
                 </tr>`
             })
-            HTMLContent += `</table></div>
-            <div class='container' style='color:gray;font-size:80%;margin-top:5px'>TOTAL: ${sum}</div>`
-            if (runRecapCategory.tabName == '1.1+') {
-                const myekulIdeas = [
-                    {
-                        boss: 'drkahlsrobot',
-                        name: 'One Damage Boost'
-                    },
-                    {
-                        boss: 'calamaria',
-                        name: 'ALL PATTERNS!'
-                    },
-                    {
-                        boss: 'thedevil',
-                        name: 'Clap Bubbles Clap'
-                    }
-                ]
-                HTMLContent += `
+            HTMLContent += `</table></div>`
+            HTMLContent += `
             <div class='container'>
             <table class='shadow' style='margin-top:20px'>
-            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'><div class='container' style='gap:8px'><img src='https://myekul.com/shared-assets/images/myekul.png' style='height:36px'><div>myekul's ideas</div></div></td></tr>`
-                myekulIdeas.forEach((idea, index) => {
-                    HTMLContent += `<tr class='${getRowColor(index)}'>
-                <td class='${idea.boss}'><div class='container'>${getImage(idea.boss, 21)}</div></td>
-                <td style='text-align:left;font-size:90%'>${idea.name}</td>
+            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td></tr>`
+            const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', '300%']
+            altStratCategories.forEach((altStratCategory, index) => {
+                const category = commBestILs[altStratCategory]
+                const altStrats = alt[altStratCategory]
+                let sum = 0
+                for (const boss in altStrats) {
+                    for (const obj of altStrats[boss]) {
+                        if (!obj.title) {
+                            sum++
+                        }
+                    }
+                }
+                HTMLContent += `<tr class='${getRowColor(index)}'>
+                <td class='${category?.className || 'gray'}' style='position:relative'>${category?.name || altStratCategory}
+                <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div></td>
+                <td style=''>${sum}</td>
                 </tr>`
-                })
-                HTMLContent += `
+            })
+            HTMLContent += `
             </table>
             </div>`
-            }
             HTMLContent += `</div>`
             HTMLContent += `<div><div class='textBlock' style='width:460px'>
             Welcome to the ${myekulColor('Comm Best ILs')} database!
@@ -301,7 +294,7 @@ function altStrats(query) {
                     })
                     HTMLContent += `</div></td>`
                 }
-                if ((query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns) || query == 'captainbrineybeard') {
+                if (runRecapCategory.name == '1.1+' && ((query == 'thedevil' && isolatePatterns) || query == 'captainbrineybeard')) {
                     HTMLContent += altStrats.some(strat => strat.odds3) ? oddsLayer(altStrats, index, strat, 'odds3') : ''
                     HTMLContent += oddsLayer(altStrats, index, strat, 'odds2')
                     HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
@@ -368,7 +361,7 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     HTMLContent += `<tr><td colspan=6 class='gray' style='padding:5px;position:relative'>
     ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
     <div class='font2' style='font-size:120%'>Pending Submissions</div>
-    <div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>
+    ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
     </td></tr>`
     for (let i = 0; i < (submissions.length <= 10 ? 10 : submissions.length < 50 ? submissions.length : 50); i++) {
         const submission = submissions[i]

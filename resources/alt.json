@@ -120,6 +120,12 @@
                 "url": "https://youtu.be/b2BcfRaU3yI"
             },
             {
+                "name": "7 Flies, Bulls",
+                "time": 42.26,
+                "player": "graven_",
+                "url": "https://youtu.be/BjyU2hzLh-E"
+            },
+            {
                 "name": "7 Flies, Tigers",
                 "time": 43.03,
                 "player": "ClipBoardGuy",
@@ -1381,14 +1387,14 @@
             {
                 "name": "Red Fish, Turtle, Ghosts",
                 "time": 53.35,
-                "rta": 53.90,
+                "rta": "53.90",
                 "player": "Lewzr",
                 "url": "https://youtu.be/DG_wH-wNZ38"
             },
             {
                 "name": "Red Fish, Seahorse, Ghosts",
                 "time": 53.62,
-                "rta": 54.20,
+                "rta": "54.20",
                 "player": "Lewzr",
                 "url": "https://youtu.be/tYAF4zQ-8VU"
             },
@@ -1402,7 +1408,7 @@
             {
                 "name": "Pufferfish, Ghosts, Turtle, Red Fish",
                 "time": 52.29,
-                "rta": 53.20,
+                "rta": "53.20",
                 "player": "Taylz",
                 "url": "https://youtu.be/WGUoMw6Z624"
             },
@@ -1479,7 +1485,7 @@
             },
             {
                 "name": "Pufferfish, Red Fish, Turtle, Ghosts",
-                "time": 56.60,
+                "time": "56.60",
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/vp-2gvKboSk"
             },
@@ -1549,6 +1555,18 @@
                 "time": 58.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/akGntRCM24A"
+            },
+            {
+                "name": "L Pumpkin",
+                "time": "59.30",
+                "player": "Quincely0",
+                "url": "https://youtu.be/YWwREAeeDh8"
+            },
+            {
+                "name": "R Pumpkin, Safe Phase 3",
+                "time": 59.35,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/_uGZXEmuFfY"
             },
             {
                 "title": "Safe Phase 1"
@@ -2160,6 +2178,12 @@
                 "time": 28.81,
                 "player": "Yuka",
                 "url": "https://youtu.be/ZPR2PWzL9gI"
+            },
+            {
+                "name": "TAS Lobber",
+                "time": 26.35,
+                "player": "Yuka",
+                "url": "https://youtu.be/xlK-fo2983E"
             }
         ],
         "ribbyandcroaks": [
@@ -2343,13 +2367,13 @@
             },
             {
                 "name": "Down Gun Gun",
-                "time": "33.99",
+                "time": 33.99,
                 "player": "Lewzr",
                 "url": "https://youtu.be/GhkU0ObLNXk"
             },
             {
                 "name": "Up Eggs",
-                "time": "34.65",
+                "time": 34.65,
                 "player": "Lewzr",
                 "url": "https://youtu.be/NvJx-AhNDWw"
             },
@@ -2358,9 +2382,18 @@
             },
             {
                 "name": "Up Gun",
-                "time": "34.61",
+                "time": 34.61,
                 "player": "Lewzr",
                 "url": "https://youtu.be/T_eZRcOQq-E"
+            },
+            {
+                "title": "Heart"
+            },
+            {
+                "name": "Down Gun Gun",
+                "time": "35.70",
+                "player": "Yuka",
+                "url": "https://youtu.be/drBLtIg8O2o"
             }
         ],
         "djimmithegreat": [
@@ -2379,10 +2412,16 @@
         ],
         "beppitheclown": [
             {
-                "name": "",
+                "name": "3B",
                 "time": 26.89,
                 "player": "Yuka",
                 "url": "https://youtu.be/EpQNXzP0PC8"
+            },
+            {
+                "name": "2B+",
+                "time": 27.87,
+                "player": "Yuka",
+                "url": "https://youtu.be/CD6fUOXUfH8"
             }
         ],
         "grimmatchstick": [
@@ -2485,10 +2524,28 @@
         ],
         "phantomexpress": [
             {
+                "title": "Triple"
+            },
+            {
                 "name": "",
                 "time": 50.89,
                 "player": "Yuka",
                 "url": "https://youtu.be/W1F_oIS3O74"
+            },
+            {
+                "name": "Bad Ghoul RNG",
+                "time": 51.35,
+                "player": "Yuka",
+                "url": "https://youtu.be/AaDJUzAfBz8"
+            },
+            {
+                "title": "Double"
+            },
+            {
+                "name": "",
+                "time": 51.16,
+                "player": "Yuka",
+                "url": "https://youtu.be/_mMr0Npoii4"
             }
         ],
         "kingdice": [
@@ -2727,15 +2784,21 @@
             {
                 "name": "Parries + Doubles",
                 "time": 26.44,
-                "rta": 26.80,
+                "rta": "26.80",
                 "player": "myekul",
                 "url": "https://youtu.be/V6UeJRCQOhU"
             },
             {
                 "name": "Doubles",
-                "time": "27.50",
+                "time": 27.49,
                 "player": "Quincely0",
-                "url": "https://youtu.be/PnlKwelRnHU"
+                "url": "https://youtu.be/jFegppA9nTc"
+            },
+            {
+                "name": "Transition Doubles",
+                "time": 27.95,
+                "player": "Quincely0",
+                "url": "https://www.youtube.com/watch?v=_CaxGv2u0iI&t=22s"
             }
         ],
         "cagneycarnation": [
@@ -2802,9 +2865,16 @@
             {
                 "name": "1 Nuke",
                 "time": 52.65,
-                "rta": "54.75",
+                "rta": 54.75,
                 "player": "Quincely0",
                 "url": "https://youtu.be/TVGZmdSH7kU"
+            },
+            {
+                "name": "Nukeless",
+                "time": 52.81,
+                "rta": 53.79,
+                "player": "Quincely0",
+                "url": "https://youtu.be/JoCqm7_kaG4"
             }
         ],
         "djimmithegreat": [
@@ -2913,6 +2983,13 @@
                 "title": "Parries, 1 Nuke"
             },
             {
+                "name": "Red Fish, Seahorse, Ghosts",
+                "time": 59.37,
+                "rta": "1:01.04",
+                "player": "Quincely0",
+                "url": "https://youtu.be/5tl5OPIrIHM"
+            },
+            {
                 "name": "Red Fish, Turtle, Ghosts",
                 "time": 59.53,
                 "rta": "1:01.24",
@@ -2940,13 +3017,6 @@
                 "title": "Parryless, 1 Nuke"
             },
             {
-                "name": "Red Fish, Seahorse, Ghosts",
-                "time": 59.37,
-                "rta": "1:01.04",
-                "player": "Quincely0",
-                "url": "https://youtu.be/5tl5OPIrIHM"
-            },
-            {
                 "name": "Turtle, Yellow Fish, Seahorse, Ghosts",
                 "time": "1:01.72",
                 "rta": "1:02.85",
@@ -2955,6 +3025,12 @@
             },
             {
                 "title": "Parryless, Nukeless"
+            },
+            {
+                "name": "Ghosts, Turtle, Red Fish",
+                "time": "1:00.26",
+                "player": "Quincely0",
+                "url": "https://youtu.be/dJ_fXJd1sPk"
             },
             {
                 "name": "Turtle, Yellow Fish, Ghosts",
@@ -2979,15 +3055,12 @@
                 "time": "1:01.97",
                 "player": "HappyWolf",
                 "url": "https://youtu.be/sn-jiBcwTDo"
-            },
-            {
-                "name": "Ghosts, Turtle, Red Fish",
-                "time": "1:02.15",
-                "player": "HappyWolf",
-                "url": "https://youtu.be/Y5VR-UzaHx4"
             }
         ],
         "phantomexpress": [
+            {
+                "title": "2 Doubles"
+            },
             {
                 "name": "L Pumpkin, 2 Doubles",
                 "time": 57.88,
@@ -2996,23 +3069,25 @@
                 "url": "https://youtu.be/nhdBoVEdlIA"
             },
             {
-                "name": "R Pumpkin, 1 Single",
+                "title": "Single"
+            },
+            {
+                "name": "R Pumpkin",
                 "time": 58.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/akGntRCM24A"
             },
             {
-                "name": "L Pumpkin, 1 Single",
+                "name": "L Pumpkin",
                 "time": "59.30",
                 "player": "Quincely0",
                 "url": "https://youtu.be/YWwREAeeDh8"
             },
             {
                 "name": "R Pumpkin, Safe Phase 3",
-                "time": "1:00.59",
-                "rta": "1:02.59",
+                "time": 59.35,
                 "player": "HappyWolf",
-                "url": "https://youtu.be/4erfkfM-MV8"
+                "url": "https://youtu.be/_uGZXEmuFfY"
             }
         ],
         "kingdice": [
