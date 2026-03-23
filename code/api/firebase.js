@@ -134,6 +134,7 @@ window.firebaseUtils = {
             querySnapshot.forEach(docSnap => {
                 results.push({ id: docSnap.id, ...docSnap.data() });
             });
+            results.sort((a, b) => new Date(a.date) - new Date(b.date))
             document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results, true)
         } catch (error) {
             console.error('Error reading runRecap documents:', error)

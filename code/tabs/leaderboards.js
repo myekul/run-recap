@@ -1,28 +1,32 @@
 function generateLeaderboards() {
     let HTMLContent = ''
-    const runs = runRecapCategory.runs.slice(0, 10)
-    const newRuns = []
-    runs.forEach((run, index) => {
-        newRuns.push({ run: run, playerIndex: index, categoryIndex: runRecapCategory.category })
-    })
-    HTMLContent += horiztonalCategories()
-    HTMLContent += `<div class='container' style='align-items:flex-start'>`
-    HTMLContent += `<div style='width:450px'>
+    if (runRecapCategory.name != 'Other') {
+        const runs = runRecapCategory.runs.slice(0, 10)
+        const newRuns = []
+        runs.forEach((run, index) => {
+            newRuns.push({ run: run, playerIndex: index, categoryIndex: runRecapCategory.category })
+        })
+        HTMLContent += horiztonalCategories()
+        HTMLContent += `<div class='container' style='align-items:flex-start'>`
+        HTMLContent += `<div style='width:450px'>
     <table class='shadow'>`
-    const newPlayers = players.filter(player => player.extra).slice(0, 100)
-    newPlayers.forEach((player, index) => {
-        HTMLContent += `
+        const newPlayers = players.filter(player => player.extra).slice(0, 100)
+        newPlayers.forEach((player, index) => {
+            HTMLContent += `
         <tr class='${getRowColor(index)}'>
             <td class='dim' style='font-size:80%;padding:0 3px'>${player.extra.date}</td>
             ${bigPlayerDisplay(player)}
             <td>${player.extra.comment ? `<div class='grow dim' onclick="runModal('${player.name}')">${fontAwesome('commenting-o')}</div>` : ''}</td>
             <td>${index < runRecapCategory.topRuns.length ? `<img src='images/rrc.png' class='container grow' style='height:18px' onclick="processSavFile(${index}),playSound('ready')">` : ''}</td>
         </tr>`
-    })
-    HTMLContent += `</table>
+        })
+        HTMLContent += `</table>
     </div>`
-    HTMLContent += `<div style='width:750px'>${podium(newRuns)}</div>`
-    HTMLContent += `</div>`
+        HTMLContent += `<div style='width:750px'>${podium(newRuns)}</div>`
+        HTMLContent += `</div>`
+    } else {
+        HTMLContent += emptyPageText('Category not supported!')
+    }
     document.getElementById('content').innerHTML = HTMLContent
     buttonShots()
 }

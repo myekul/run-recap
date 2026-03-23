@@ -45,9 +45,9 @@
             },
             {
                 "name": "Acorn Maker Kill",
-                "time": 35.98,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/AbWEyzWLw0w"
+                "time": 35.78,
+                "player": "Quincely0",
+                "url": "https://youtu.be/T9PHXkunk8g"
             }
         ],
         "therootpack": [
@@ -617,9 +617,9 @@
             },
             {
                 "name": "Cupcake, Jawbreaker, Waffle",
-                "time": 34.33,
+                "time": "34.30",
                 "player": "myekul",
-                "url": "https://youtu.be/vBjWtSou6S8"
+                "url": "https://youtu.be/wdgnq0JxM5Y"
             },
             {
                 "name": "Cupcake, Jawbreaker, Candy Corn",
@@ -671,9 +671,9 @@
             },
             {
                 "name": "Gumball, Cupcake, Waffle",
-                "time": 33.57,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=weCWZ55feKug3jl0&t=1536"
+                "time": 33.26,
+                "player": "myekul",
+                "url": "https://youtu.be/T61opErSR4E"
             },
             {
                 "name": "Gumball, Cupcake, Candy Corn",
@@ -773,9 +773,9 @@
             },
             {
                 "name": "Jawbreaker, Gumball, Cupcake",
-                "time": 36.96,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=2AAGWOgtu9mHIMby&t=2126"
+                "time": 36.87,
+                "player": "Quincely0",
+                "url": "https://youtu.be/xhOCY89EEk0"
             }
         ],
         "wallywarbles": [
@@ -1606,11 +1606,11 @@
                 "title": "Doubles"
             },
             {
-                "name": "Best RNG",
-                "time": "1:49.54",
-                "rta": "1:51.52",
-                "player": "myekul",
-                "url": "https://youtu.be/fUMnuMlpTCM"
+                "name": "3-5-7, Doubles",
+                "time": "1:48.42",
+                "rta": "1:50.23",
+                "player": "Quincely0",
+                "url": "https://youtu.be/Z8DgeF0IUlg"
             },
             {
                 "name": "Worst RNG",
@@ -1737,16 +1737,16 @@
                 "url": "https://youtu.be/_IX5qo9yW-k"
             },
             {
+                "name": "Charge, 4 Cards, 3 HP",
+                "time": "11.20",
+                "player": "myekul",
+                "url": "https://youtu.be/TnvbOXlfjLk"
+            },
+            {
                 "name": "Charge, 5 Cards, 2 HP",
                 "time": 12.15,
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/wb9h6_BjHMo"
-            },
-            {
-                "name": "Charge, 4 Cards, 3 HP",
-                "time": 12.15,
-                "player": "HappyWolf",
-                "url": "https://youtube.com/clip/UgkxcLrqnIdG5w7qsBrSZSZ-I_GqdOn15U0f?si=Vj78I3tx8UNn9tFY"
             },
             {
                 "title": "Doubles"
@@ -1792,9 +1792,9 @@
             },
             {
                 "name": "Ring Dragon (3 Quads)",
-                "time": "46.80",
+                "time": 45.88,
                 "player": "myekul",
-                "url": "https://youtu.be/c3muDgZht_M",
+                "url": "https://youtu.be/PzoKF7SNKfo",
                 "odds": "3/140"
             },
             {
@@ -2642,9 +2642,9 @@
             },
             {
                 "name": "Acorn Maker Kill",
-                "time": 35.98,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/AbWEyzWLw0w"
+                "time": 35.78,
+                "player": "Quincely0",
+                "url": "https://youtu.be/T9PHXkunk8g"
             }
         ],
         "therootpack": [
@@ -2665,6 +2665,12 @@
                 "time": 36.86,
                 "player": "Quincely0",
                 "url": "https://youtu.be/t011i72vcGQ"
+            },
+            {
+                "name": "Secret Phase",
+                "time": 37.78,
+                "player": "Quincely0",
+                "url": "https://youtu.be/Pk7xre4jjNc"
             }
         ],
         "ribbyandcroaks": [
@@ -2687,9 +2693,9 @@
                 "url": "https://youtu.be/6lPCn0ScQEs"
             },
             {
-                "name": "Punches, Snakes",
+                "name": "Punches, Bulls",
                 "time": 48.25,
-                "player": "Quincely0",
+                "player": "HappyWolf",
                 "url": "https://youtu.be/WRk_19zWiLE"
             },
             {
@@ -2712,7 +2718,7 @@
             },
             {
                 "name": "5 Flies, Bulls",
-                "time": 49.30,
+                "time": "49.30",
                 "player": "HappyWolf",
                 "url": "https://youtu.be/n6OeOjZ_Qg8"
             }
@@ -2727,7 +2733,7 @@
             },
             {
                 "name": "Doubles",
-                "time": 27.50,
+                "time": "27.50",
                 "player": "Quincely0",
                 "url": "https://youtu.be/PnlKwelRnHU"
             }
@@ -2764,9 +2770,18 @@
                 "time": 34.68,
                 "player": "HappyWolf",
                 "url": "https://youtu.be/CDO4WD1o8HI"
+            },
+            {
+                "name": "Jawbreaker, Gumball, Cupcake",
+                "time": 36.87,
+                "player": "Quincely0",
+                "url": "https://youtu.be/xhOCY89EEk0"
             }
         ],
         "wallywarbles": [
+            {
+                "title": "Right Garbage"
+            },
             {
                 "name": "1 Nuke",
                 "time": 50.75,
@@ -2780,14 +2795,42 @@
                 "rta": 52.82,
                 "player": "Quincely0",
                 "url": "https://youtu.be/eiCbjukYaBI"
+            },
+            {
+                "title": "Heart"
+            },
+            {
+                "name": "1 Nuke",
+                "time": 52.65,
+                "rta": "54.75",
+                "player": "Quincely0",
+                "url": "https://youtu.be/TVGZmdSH7kU"
             }
         ],
         "djimmithegreat": [
             {
-                "name": "",
+                "name": "Gems",
+                "time": "1:21.91",
+                "player": "Quincely0",
+                "url": "https://youtu.be/utt3cD7qtx4"
+            },
+            {
+                "name": "Swords",
                 "time": "1:21.97",
                 "player": "Quincely0",
                 "url": "https://youtu.be/YeBFC9OztBw"
+            },
+            {
+                "name": "Cats",
+                "time": "1:22.52",
+                "player": "Quincely0",
+                "url": "https://youtu.be/36L3yX1UGQE"
+            },
+            {
+                "name": "Secret Phase",
+                "time": "1:23.32",
+                "player": "Quincely0",
+                "url": "https://youtu.be/QOAZKgqxxRY"
             }
         ],
         "beppitheclown": [
@@ -2807,14 +2850,27 @@
         ],
         "drkahlsrobot": [
             {
-                "name": "2 Nukes",
+                "title": "2 Nukes"
+            },
+            {
+                "name": "Blue Gem",
                 "time": 44.94,
                 "rta": 48.47,
                 "player": "Quincely0",
                 "url": "https://youtu.be/VAtge70sCE8"
             },
             {
-                "name": "1 Nuke",
+                "title": "1 Nuke"
+            },
+            {
+                "name": "Blue Gem",
+                "time": 45.43,
+                "rta": 47.66,
+                "player": "Quincely0",
+                "url": "https://youtu.be/LKzxv3ajCfQ"
+            },
+            {
+                "name": "Red Gem",
                 "time": 45,
                 "player": "Quincely0",
                 "url": "https://youtu.be/nlv-sKUku8U?si=_hKvJmVaABZ7YkHG&t=1050"
@@ -2834,17 +2890,101 @@
                 "time": 43.78,
                 "player": "Quincely0",
                 "url": "https://youtu.be/4EwmIvZSv24"
+            },
+            {
+                "name": "Spread EXs",
+                "time": 44.19,
+                "player": "Quincely0",
+                "url": "https://youtu.be/i7fc1QF-O90"
             }
         ],
         "calamaria": [
             {
-                "title": "2 Nukes"
+                "title": "Parries, 2 Nukes"
             },
             {
                 "name": "Red Fish, Pufferfish, Ghosts",
                 "time": 57.76,
+                "rta": "1:01.11",
                 "player": "Quincely0",
                 "url": "https://youtu.be/YT1TIyVvLa0"
+            },
+            {
+                "title": "Parries, 1 Nuke"
+            },
+            {
+                "name": "Red Fish, Turtle, Ghosts",
+                "time": 59.53,
+                "rta": "1:01.24",
+                "player": "Quincely0",
+                "url": "https://youtu.be/ce9gOwci1uI"
+            },
+            {
+                "title": "Parries, Nukeless"
+            },
+            {
+                "name": "Seahorse, Red Fish, Pufferfish, Ghosts",
+                "time": 59.66,
+                "rta": "1:00.77",
+                "player": "Quincely0",
+                "url": "https://youtu.be/3Cekjlxtf-k"
+            },
+            {
+                "name": "Yellow Fish, Pufferfish, Ghosts, Turtle",
+                "time": 59.89,
+                "rta": "1:00.26",
+                "player": "Quincely0",
+                "url": "https://youtu.be/U6qZxn4y0M8"
+            },
+            {
+                "title": "Parryless, 1 Nuke"
+            },
+            {
+                "name": "Red Fish, Seahorse, Ghosts",
+                "time": 59.37,
+                "rta": "1:01.04",
+                "player": "Quincely0",
+                "url": "https://youtu.be/5tl5OPIrIHM"
+            },
+            {
+                "name": "Turtle, Yellow Fish, Seahorse, Ghosts",
+                "time": "1:01.72",
+                "rta": "1:02.85",
+                "player": "HappyWolf",
+                "url": "https://youtu.be/60ApeYk0dug"
+            },
+            {
+                "title": "Parryless, Nukeless"
+            },
+            {
+                "name": "Turtle, Yellow Fish, Ghosts",
+                "time": "1:00.36",
+                "player": "Quincely0",
+                "url": "https://youtu.be/Jn7ogCSniog"
+            },
+            {
+                "name": "Ghosts, Seahorse, Yellow Fish",
+                "time": "1:00.86",
+                "player": "Quincely0",
+                "url": "https://youtu.be/QsjsoH_SFB4"
+            },
+            {
+                "name": "Red Fish, Turtle, Ghosts",
+                "time": "1:01.70",
+                "player": "HappyWolf",
+                "url": "https://www.youtube.com/watch?v=OqBT_yd1sVY&t=37s"
+            },
+            {
+                "name": "Turtle, Red Fish, Seahorse, Ghosts",
+                "time": "1:01.97",
+                "player": "HappyWolf",
+                "url": "https://youtu.be/sn-jiBcwTDo"
+            },
+            {
+                "name": "Ghosts, Turtle, Red Fish",
+                "time": "1:02.15",
+                "player": "HappyWolf",
+                "url": "https://youtu.be/Y5VR-UzaHx4"
             }
         ],
         "phantomexpress": [
@@ -2885,16 +3025,23 @@
             },
             {
                 "name": "3-5-7, Doubles",
-                "time": "1:49.54",
-                "rta": "1:51.52",
-                "player": "myekul",
-                "url": "https://youtu.be/fUMnuMlpTCM"
+                "time": "1:48.42",
+                "rta": "1:50.23",
+                "player": "Quincely0",
+                "url": "https://youtu.be/Z8DgeF0IUlg"
             },
             {
-                "name": "3-4-8",
+                "name": "3-4-8, Spread EXs",
                 "time": "1:55",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/1GQjn0cuuI0"
+            },
+            {
+                "name": "3-4-8, Doubles",
+                "time": "1:54.69",
+                "rta": "1:56.31",
+                "player": "Quincely0",
+                "url": "https://youtu.be/YPmF71uGG-o"
             }
         ],
         "thedevil": [
@@ -2964,9 +3111,9 @@
             },
             {
                 "name": "Acorn Maker Kill",
-                "time": 35.98,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/AbWEyzWLw0w"
+                "time": 35.78,
+                "player": "Quincely0",
+                "url": "https://youtu.be/T9PHXkunk8g"
             }
         ],
         "glumstonethegiant": [

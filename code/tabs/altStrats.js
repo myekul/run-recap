@@ -370,9 +370,9 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     <div class='font2' style='font-size:120%'>Pending Submissions</div>
     <div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>
     </td></tr>`
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < (submissions.length <= 10 ? 10 : submissions.length < 50 ? submissions.length : 50); i++) {
         const submission = submissions[i]
-        HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')"` : ''}>`
+        HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')" onmouseenter="toast('${submission.date} - ${daysAgo(getDateDif(new Date(), new Date(submission.date)))}')"` : ''}>`
         if (submission) {
             let strat
             if (submission.altstrat != 'none') {

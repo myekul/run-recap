@@ -58,7 +58,7 @@ function loadMyekul() {
     // console.log(values)
     organizeCategories()
     players.forEach(player => {
-        player.runs = new Array(categories.length).fill(0)
+        player.ILs = new Array(categories.length).fill(0)
     })
     const numRuns = runRecapCategory.topRuns.length
     categories.forEach((category, categoryIndex) => {
@@ -84,7 +84,7 @@ function loadMyekul() {
                                 playerNames.add(player.name)
                                 if (playerNames.size > initialSize) {
                                     const playerCopy = { ...player }
-                                    playerCopy.runs = new Array(categories.length).fill(0)
+                                    playerCopy.ILs = new Array(categories.length).fill(0)
                                     players.push(playerCopy)
                                     return true
                                 }

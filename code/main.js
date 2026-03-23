@@ -136,7 +136,7 @@ function action() {
     } else {
         hide('backButton')
     }
-    const grayButtons = ['commBestILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
+    const grayButtons = ['leaderboards', 'commBestILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
     if (runRecapCategory.name == 'Other') {
         grayButtons.forEach(page => {
             document.getElementById(page + 'Button').classList.add('grayedOut')
@@ -221,7 +221,7 @@ function letsGo() {
         playerNames.add(player.name)
         if (playerNames.size > initialSize) {
             const playerCopy = { ...player }
-            playerCopy.runs = []
+            playerCopy.ILs = []
             players.push(playerCopy)
             return true
         }
@@ -289,7 +289,7 @@ function assignRuns(category, categoryIndex) {
             }
         }
         if (categoryIndex != null) {
-            thePlayer.runs ? thePlayer.runs[categoryIndex] = run : ''
+            thePlayer.ILs ? thePlayer.ILs[categoryIndex] = run : ''
         } else {
             if (!(runRecapCategory.extraRuns && !runRecapCategory.extraPlayers?.includes(thePlayer.name))) {
                 thePlayer.extra = run

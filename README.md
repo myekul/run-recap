@@ -13,6 +13,8 @@
 
 - Duplicate URLs in Firebase cache
 
+- Run Viable ILs to .json
+
 ### .sav
 - None comparison
 - Played as Chalice or Mugman

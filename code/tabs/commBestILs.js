@@ -1,7 +1,7 @@
 function generateCommBestILs() {
     let HTMLContent = ''
     if (runRecapCategory.name != 'Other') {
-        HTMLContent += `<div class='container'><table>`
+        HTMLContent += `<div class='container'><table class='shadow'>`
         HTMLContent += `<tr>`
         HTMLContent += `<td colspan=4></td>`
         categories.forEach(category => {
@@ -17,7 +17,7 @@ function generateCommBestILs() {
             HTMLContent += `<tr class='${getRowColor(index)}'>`
             HTMLContent += bigPlayerDisplay(player)
             categories.forEach((category, index2) => {
-                const run = player.runs[index2]
+                const run = player.ILs[index2]
                 if (run) {
                     const debug = run.debug ? '*' : ''
                     HTMLContent += `<td class='clickable'>${getAnchor(run.url)}${getTrophy(1)}${debug}<a></td>`
