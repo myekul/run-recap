@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
 })
 function action() {
-    loaded = true
+    if (!loaded) {
+        loaded = true
+        document.getElementById('boardTitleSrc').innerHTML = `<div>${getAnchor('https://www.speedrun.com/cuphead') + `<div class='grow'>${sharedAssetsImg('src')}</div>`}</div>`
+    }
     const tabActions = {
         home: generateHome,
         leaderboards: generateLeaderboards,
@@ -226,10 +229,9 @@ function letsGo() {
             return true
         }
     })
-    loadMyekul()
+    loadRunViableILs()
 }
 function done() {
-    loadSheets()
     categories.forEach((category, categoryIndex) => {
         assignRuns(category, categoryIndex)
     })

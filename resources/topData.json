@@ -6,7 +6,7 @@
         },
         {
             "name": "Quincely0",
-            "runRecap": [
+            "igt": [
                 36.06,
                 45.9,
                 25.4,
@@ -55,7 +55,7 @@
         },
         {
             "name": "Grondious",
-            "runRecap": [
+            "igt": [
                 35.2,
                 47.11,
                 24.9,
@@ -108,7 +108,7 @@
         },
         {
             "name": "Lewzr",
-            "runRecap": [
+            "igt": [
                 35.02,
                 46.85,
                 22.79,
@@ -190,7 +190,7 @@
         },
         {
             "name": "GamerAttack27",
-            "runRecap": [
+            "igt": [
                 36.77,
                 45.36,
                 25.34,
@@ -239,7 +239,7 @@
         },
         {
             "name": "ExclamationMarkYT",
-            "runRecap": [
+            "igt": [
                 35.58,
                 47.4,
                 25.11,
@@ -290,7 +290,7 @@
     "Legacy": [
         {
             "name": "Fintan0",
-            "runRecap": [
+            "igt": [
                 27,
                 37,
                 19,
@@ -335,7 +335,7 @@
         },
         {
             "name": "Yuka",
-            "runRecap": [
+            "igt": [
                 27.17,
                 36.56,
                 20.13,
@@ -380,7 +380,7 @@
         },
         {
             "name": "Sublime",
-            "runRecap": [
+            "igt": [
                 29,
                 37,
                 20,
@@ -425,7 +425,7 @@
         },
         {
             "name": "SBDWolf",
-            "runRecap": [
+            "igt": [
                 28,
                 37,
                 19,
@@ -473,7 +473,7 @@
         },
         {
             "name": "Jason2890",
-            "runRecap": [
+            "igt": [
                 30,
                 43,
                 22,
@@ -520,7 +520,7 @@
     "NMG": [
         {
             "name": "GamerAttack27",
-            "runRecap": [
+            "igt": [
                 38.37,
                 49.98,
                 30.24,
@@ -565,7 +565,7 @@
         },
         {
             "name": "Quincely0",
-            "runRecap": [
+            "igt": [
                 37,
                 50,
                 29,
@@ -610,7 +610,7 @@
         },
         {
             "name": "MarkinSws",
-            "runRecap": [
+            "igt": [
                 38,
                 48,
                 30,
@@ -655,7 +655,7 @@
         },
         {
             "name": "myekul",
-            "runRecap": [
+            "igt": [
                 37.48,
                 50.37,
                 30.39,
@@ -700,7 +700,7 @@
         },
         {
             "name": "minamikori",
-            "runRecap": [
+            "igt": [
                 38,
                 50,
                 32,
@@ -745,7 +745,7 @@
         },
         {
             "name": "Lewzr",
-            "runRecap": [
+            "igt": [
                 38.02,
                 48.46,
                 30.08,
@@ -790,7 +790,7 @@
         },
         {
             "name": "ScoopOfButter",
-            "runRecap": [
+            "igt": [
                 37,
                 50,
                 31,
@@ -835,7 +835,7 @@
         },
         {
             "name": "Jason2890",
-            "runRecap": [
+            "igt": [
                 39,
                 50,
                 33,
@@ -880,7 +880,7 @@
         },
         {
             "name": "Uramatsu",
-            "runRecap": [
+            "igt": [
                 39,
                 50,
                 31,
@@ -925,7 +925,7 @@
         },
         {
             "name": "Grondious",
-            "runRecap": [
+            "igt": [
                 38,
                 48,
                 34,
@@ -972,7 +972,7 @@
     "DLC L/S": [
         {
             "name": "MarkinSws",
-            "runRecap": [
+            "igt": [
                 46.82,
                 40.80,
                 46.19,
@@ -991,7 +991,7 @@
         },
         {
             "name": "GamerAttack27",
-            "runRecap": [
+            "igt": [
                 49.60,
                 42.94,
                 46.31,
@@ -1013,7 +1013,7 @@
         },
         {
             "name": "JimiconNeedsYT",
-            "runRecap": [
+            "igt": [
                 48,
                 43,
                 46,
@@ -1032,7 +1032,7 @@
         },
         {
             "name": "Quincely0",
-            "runRecap": [
+            "igt": [
                 50,
                 40,
                 46,
@@ -1056,7 +1056,7 @@
         },
         {
             "name": "Musically_dECLINED",
-            "runRecap": [
+            "igt": [
                 50.61,
                 40.95,
                 44.20,
@@ -1075,7 +1075,7 @@
         },
         {
             "name": "GamerAttack27",
-            "runRecap": [
+            "igt": [
                 49,
                 40,
                 45,
@@ -1094,7 +1094,7 @@
         },
         {
             "name": "Quincely0",
-            "runRecap": [
+            "igt": [
                 49,
                 41,
                 48,
@@ -1113,7 +1113,7 @@
         },
         {
             "name": "Kirthar",
-            "runRecap": [
+            "igt": [
                 51.77,
                 42.65,
                 46.3,
@@ -1132,7 +1132,7 @@
         },
         {
             "name": "_Mine_",
-            "runRecap": [
+            "igt": [
                 52.63,
                 41.51,
                 47.20,
@@ -1153,7 +1153,7 @@
     "DLC+Base L/S": [
         {
             "name": "MarkinSws",
-            "runRecap": [
+            "igt": [
                 49,
                 45,
                 47,

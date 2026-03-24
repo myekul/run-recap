@@ -105,7 +105,6 @@ function databaseView(type, databaseIndex, player, time, categoryName) {
         playSound('ready')
         closeModal(true)
     }
-
 }
 function databaseCompare(type, databaseIndex, player, time) {
     const run = runRecap_database[type][databaseIndex]

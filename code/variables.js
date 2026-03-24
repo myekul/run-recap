@@ -1,7 +1,5 @@
 const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
-const MYEKUL_SHEET_ID = '14l1hkW337uiyCRkNz61MNq99AEoidZdqaQUIpH5FlGU'
 
-const myekulSheets = {}
 const markinSheets = {}
 let runRecapCategory
 let globalCache

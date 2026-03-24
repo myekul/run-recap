@@ -1,6 +1,5 @@
-function fetchCuphead(markin) {
-    const sheetSrc = markin ? markinSheets : myekulSheets
-    const sheetID = markin ? '1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ' : MYEKUL_SHEET_ID
+function fetchCuphead() {
+    const sheetID = '1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ'
     return gapi.client.sheets.spreadsheets.get({
         spreadsheetId: sheetID,
         fields: `sheets(properties.title,data(rowData(values(userEnteredValue,textFormatRuns))))`
@@ -9,23 +8,14 @@ function fetchCuphead(markin) {
         sheets.forEach(sheet => {
             const sheetName = sheet.properties.title
             let rowData = sheet.data[0].rowData
-            if (markin) {
-                rowData = rowData.slice(3)
-                rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].userEnteredValue)
-            }
+            rowData = rowData.slice(3)
+            rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].userEnteredValue)
             rowData.forEach(row => {
-                if (row.values) {
-                    const startIndex = markin ? 1 : 2
-                    row.values = row.values.slice(startIndex)
-                }
+                if (row.values) row.values = row.values.slice(1)
             })
-            sheetSrc[sheetName] = rowData
+            markinSheets[sheetName] = rowData
         })
-        if (!markin) {
-            fetchCuphead(true)
-        } else {
-            changeCategory()
-        }
+        changeCategory()
     })
 }
 function organizeCategories() {
@@ -53,48 +43,36 @@ function organizeCategories() {
         categories.push({ name: boss.name, info: boss, runs: [] })
     })
 }
-function loadMyekul() {
-    const values = myekulSheets[runRecapCategory.tabName]
-    // console.log(values)
+function loadRunViableILs() {
     organizeCategories()
     players.forEach(player => {
         player.ILs = new Array(categories.length).fill(0)
     })
     const numRuns = runRecapCategory.topRuns.length
     categories.forEach((category, categoryIndex) => {
-        category.difficulty = 'regular'
-        if (values[categoryIndex]) {
-            if (values[categoryIndex].values) {
-                if (values[categoryIndex].values[0]) {
-                    const rawTime = values[categoryIndex].values[0].userEnteredValue?.numberValue
-                    const time = convertToSeconds(secondsToHMS(Math.round(rawTime * 24 * 60)))
-                    const runs = values[categoryIndex].values.slice(1)
-                    runs.forEach(column => {
-                        if (column.userEnteredValue) {
-                            let playerName = column.userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]
-                            const url = column.userEnteredValue.formulaValue.slice(12).split('"')[0]
-                            let debug = false
-                            if (playerName.startsWith("*")) {
-                                playerName = playerName.slice(1);
-                                // debug = true
-                            }
-                            addPlayer({ name: playerName })
-                            function addPlayer(player) {
-                                const initialSize = playerNames.size
-                                playerNames.add(player.name)
-                                if (playerNames.size > initialSize) {
-                                    const playerCopy = { ...player }
-                                    playerCopy.ILs = new Array(categories.length).fill(0)
-                                    players.push(playerCopy)
-                                    return true
-                                }
-                            }
-                            category.runs.push({ debug: debug, player: { name: playerName }, score: time, url: url })
-                        }
-                    })
+        const time = runViable[runRecapCategory.tabName][categoryIndex].time
+        const ILs = runViable[runRecapCategory.tabName][categoryIndex].ILs
+        ILs.forEach(IL => {
+            let playerName = IL.name
+            const url = IL.url
+            let debug = false
+            if (playerName.startsWith("*")) {
+                playerName = playerName.slice(1);
+                // debug = true
+            }
+            addPlayer({ name: playerName })
+            function addPlayer(player) {
+                const initialSize = playerNames.size
+                playerNames.add(player.name)
+                if (playerNames.size > initialSize) {
+                    const playerCopy = { ...player }
+                    playerCopy.ILs = new Array(categories.length).fill(0)
+                    players.push(playerCopy)
+                    return true
                 }
             }
-        }
+            category.runs.push({ debug: debug, player: { name: playerName }, score: time, url: url })
+        })
     })
     savComparisonCollection = {
         "Top Average": [],
@@ -105,13 +83,13 @@ function loadMyekul() {
         "Run Viable ILs": []
     }
     runRecapCategory.topRuns.forEach((run, index) => {
-        savComparisonCollection['Player ' + (index)] = run.runRecap
+        savComparisonCollection['Player ' + (index)] = run.igt
     })
     categories.forEach((category, categoryIndex) => {
         let topSum = 0
         let top3Sum = 0
         runRecapCategory.topRuns.forEach((run, index) => {
-            const time = run.runRecap[categoryIndex]
+            const time = run.igt[categoryIndex]
             topSum += time
             if (index < 3) top3Sum += time
             if (Math.floor(time) < savComparisonCollection['Top Bests'][categoryIndex]) {
@@ -132,26 +110,4 @@ function loadMyekul() {
     } else {
         action()
     }
-}
-function loadSheets() {
-    let url = 'https://docs.google.com/spreadsheets/d/' + MYEKUL_SHEET_ID
-    loadSheetIcon(url)
-    gapi.client.sheets.spreadsheets.get({
-        spreadsheetId: MYEKUL_SHEET_ID
-    }).then(response => {
-        const sheets = response.result.sheets;
-        const tabMap = {};
-        sheets.forEach(sheet => {
-            const name = sheet.properties.title;
-            const gid = sheet.properties.sheetId;
-            tabMap[name] = gid;
-        });
-        url += '/edit?gid=' + tabMap[runRecapCategory.tabName]
-        loadSheetIcon(url)
-    });
-}
-function loadSheetIcon(url) {
-    const boardTitleSrc = document.getElementById('boardTitleSrc')
-    boardTitleSrc.innerHTML = `<div class='grow flash'>${getAnchor(url)}${sharedAssetsImg('sheets')}</div>`
-    boardTitleSrc.innerHTML += `<div style='margin-left:5px'>${getAnchor('https://www.speedrun.com/cuphead') + `<div class='grow'>${sharedAssetsImg('src')}</div>`}</div>`
 }

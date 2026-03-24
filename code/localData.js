@@ -36,14 +36,14 @@ function prepareLocalData() {
                                         const savStarSkips = currentRun.starSkips
                                         if (!savStarSkips) currentRun.starSkips = []
                                         const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
-                                        const savLevelsNeeded = !currentRun.runRecap
-                                        if (savLevelsNeeded) currentRun.runRecap = []
+                                        const savLevelsNeeded = !currentRun.igt
+                                        if (savLevelsNeeded) currentRun.igt = []
                                         rrc.endTimes = []
                                         let winIndex = 0
                                         rrc.scenes.forEach((scene, index) => {
                                             rrc.endTimes.push(scene.endTime)
                                             if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[index + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
-                                                currentRun.runRecap.push(scene.levelTime)
+                                                currentRun.igt.push(scene.levelTime)
                                             }
                                             if (scene.name == 'win') {
                                                 if (!rrcStarSkips) {
@@ -63,11 +63,16 @@ function prepareLocalData() {
                         })
                 })
         })
-    fetch('resources/alt.json')
+    fetch('resources/runViable.json')
         .then(response => response.json())
         .then(data => {
-            alt = data
-            organizeAltStrats()
+            runViable = data
+            fetch('resources/alt.json')
+                .then(response => response.json())
+                .then(data => {
+                    alt = data
+                    organizeAltStrats()
+                })
         })
 }
 function rrcComparisonCollectionPrepare() {
@@ -128,7 +133,7 @@ function reconstructRRC(category, endTimes, playerIndex) {
         const newScene = { name: categoryScenes[index], endTime: convertToSeconds(endTime) }
         if (cupheadBosses[newScene.name]) {
             if (!(newScene.name == 'level_dice_palace_main' && categoryScenes[index + 1] != 'win')) {
-                newScene.levelTime = commBestILs[category].topRuns[playerIndex].runRecap[bossIndex]
+                newScene.levelTime = commBestILs[category].topRuns[playerIndex].igt[bossIndex]
                 bossIndex++
             }
         }

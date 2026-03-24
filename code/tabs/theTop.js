@@ -16,8 +16,8 @@ function generateTheTop() {
             })
             isles.forEach(isle => {
                 isle.runRecapCategories.forEach(categoryIndex => {
-                    const bestTime = run.runRecap[categoryIndex]
-                    const content = bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
+                    const bestTime = run.igt[categoryIndex]
+                    const content = bestTime != nullTime ? bestTime : 0
                     isle.sum += content
                     isle.sums[index] += content
                 })
@@ -26,49 +26,50 @@ function generateTheTop() {
         HTMLContent += chartEligible ? rrcChartSection() : ''
         HTMLContent += topGrid()
         HTMLContent += savComparisonDisplay()
-        HTMLContent += topSums()
+        // HTMLContent += topSums()
+        HTMLContent += `<div class='container' style='margin-top:20px'><table class='shadow'>
+            <tr>
+            <td colspan=4></td>`
+        isles.forEach(isle => {
+            if (isle.runRecapCategories.length) {
+                HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`
+            }
+        })
+        HTMLContent += `<td style='padding:0px 30px'></td>`
+        isles.forEach(isle => {
+            if (isle.runRecapCategories.length) {
+                HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`
+            }
+        })
+        HTMLContent += `</tr>`
+        runRecapCategory.topRuns.forEach((run, index) => {
+            HTMLContent += `<tr class='hover ${getRowColor(index)}'>
+                ${bigPlayerDisplay(players[index])}`
+            run.splits = []
+            isles.forEach((isle, isleIndex) => {
+                if (isle.runRecapCategories.length) {
+                    const category = categories[isle.runRecapCategories.at(-1)]
+                    let time = convertToSeconds(runRecapCategory.topRuns[index].rrc.find(scene => scene.name == 'level_' + category.info.internal).endTime)
+                    if (runRecapCategory.name != 'DLC' && isleIndex < 3) {
+                        time -= runRecapCategory.name == 'DLC+Base' && isleIndex == 0 ? 8.45 : 6.45
+                    }
+                    run.splits.push(time)
+                }
+            })
+            run.splits.forEach((time, isleIndex) => {
+                const isle = isles[isleIndex]
+                const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])
+                HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(isleRTA || convertToSeconds(time), true)}</td>`
+            })
+            HTMLContent += `<td></td>`
+            run.splits.forEach((time, isleIndex) => {
+                const isle = isles[isleIndex]
+                HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(convertToSeconds(time), true)}</td>`
+            })
+            HTMLContent += `</tr>`
+        })
+        HTMLContent += `</table></div>`
         HTMLContent += topResidual()
-        // HTMLContent += `<div class='container' style='margin-top:20px'><table>
-        //     <tr>
-        //     <td colspan=4></td>
-        //     <th colspan=2 class='isle1'>Isle 1</th>
-        //     <th colspan=4 class='expert'>Isle 2</th>
-        //     <th colspan=4 class='isle3'>Isle 3</th>
-        //     <th colspan=4 class='hell'>Hell</th>
-        //     </tr>
-        //     <tr>
-        //     <td colspan=4>
-        //     <th class='gray'>RTA</th>
-        //     <th class='gray'>IGT</th>`
-        // for (let i = 0; i < 3; i++) {
-        //     HTMLContent += `
-        //         <th class='gray'>RTA</th>
-        //         <th class='gray'>IGT</th>
-        //         <th colspan=2 class='gray'>Sum</th>`
-        // }
-        // runRecapCategory.topRuns.forEach((run, index) => {
-        //     HTMLContent += `<tr class='hover ${getRowColor(index)}'>
-        //         ${bigPlayerDisplay(players[index])}`
-        //     let sum = 0
-        //     run.splits = [
-        //         convertToSeconds(runRecapCategory.topRuns[index].rrc[22].endTime) - 6.45,
-        //         convertToSeconds(runRecapCategory.topRuns[index].rrc[40].endTime) - 6.45,
-        //         convertToSeconds(runRecapCategory.topRuns[index].rrc[64].endTime) - 6.45,
-        //         runRecapCategory.runs[index].score
-        //     ]
-        //     run.splits.forEach((time, isleIndex) => {
-        //         const isle = isles[isleIndex]
-        //         const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])
-        //         const isleIGT = isle.sums[index]
-        //         sum += isleIGT
-        //         HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(isleRTA || convertToSeconds(time), true)}</td>`
-        //         HTMLContent += `<td class='${isle.className}' style='font-size:80%;opacity:80%'>${secondsToHMS(isleIGT, true)}</td>`
-        //         HTMLContent += isleIndex > 0 ? `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(convertToSeconds(time), true)}</td>` : ''
-        //         HTMLContent += isleIndex > 0 ? `<td style='font-size:80%;opacity:80%' class='${isle.className}'>${secondsToHMS(sum, true)}</td>` : ''
-        //     })
-        //     HTMLContent += `</tr>`
-        // })
-        // HTMLContent += `</table></div>`
         HTMLContent += `<div class='container' style='margin-top:100px'>`
         HTMLContent += `<table class='shadow'>
     <tr>
@@ -132,7 +133,7 @@ function topGrid() {
         HTMLContent += `<tr class='${getRowColor(index)} hover'>`
         HTMLContent += bigPlayerDisplay(player)
         categories.forEach((category, categoryIndex) => {
-            const ILtime = run.runRecap[categoryIndex]
+            const ILtime = run.igt[categoryIndex]
             const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
@@ -208,8 +209,8 @@ function topSums() {
         })
         isles.forEach(isle => {
             isle.runRecapCategories.forEach(categoryIndex => {
-                const bestTime = run.runRecap[categoryIndex]
-                const content = bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
+                const bestTime = run.igt[categoryIndex]
+                const content = bestTime != nullTime ? bestTime : 0
                 isle.sum += content
                 isle.sums[index] += content
             })
@@ -222,14 +223,14 @@ function topSums() {
         })
         const delta = Math.floor(sum - comparisonSum)
         HTMLContent += `
-        <td>${secondsToHMS(sum, decimalsCriteria())}</td>
+        <td>${secondsToHMS(sum, true)}</td>
         <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>
         </tr>`
     })
     HTMLContent += `<tr style='color:gray'><th colspan=4 style='text-align:right'>&Delta;</th>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
-            HTMLContent += `<th colspan=3>${secondsToHMS(isle.comparisonSum, decimalsCriteria())}</th>`
+            HTMLContent += `<th colspan=3>${secondsToHMS(isle.comparisonSum, true)}</th>`
             HTMLContent += `<td></td>`
         }
     })
@@ -256,7 +257,7 @@ function topSums() {
         if (getCupheadLevel(categories.length - 1).completed) {
             const delta = Math.floor(sum - comparisonSum)
             HTMLContent += `
-            <td>${secondsToHMS(sum, decimalsCriteria())}</td>
+            <td>${secondsToHMS(sum, true)}</td>
             <td class='${redGreen(delta)}'>${savComparison != 'None' ? getDelta(delta) : ''}</td>`
         }
         HTMLContent += `</tr>`
@@ -270,7 +271,7 @@ function getIsleSum(isle) {
         const delta = Math.floor(isle.sum - isle.comparisonSum)
         const grade = runRecapGrade(delta)
         HTMLContent += `<td class='${grade.className}' style='text-align:left'><span>${savComparison != 'None' ? grade.grade : ''}</span></td>`
-        HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, decimalsCriteria())}</td>`
+        HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, true)}</td>`
         HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'><span>${savComparison != 'None' ? getDelta(delta) : ''}</span></td>`
         HTMLContent += `<td style='width:20px'></td>`
     }
@@ -291,12 +292,13 @@ function topResidual() {
         HTMLContent += `<tr class='${getRowColor(index)}'>`
         HTMLContent += bigPlayerDisplay(player)
         rrcOrganize(run, run.rrc, true)
-        HTMLContent += `<td>${secondsToHMS(run.levelTime, true)}</td>`
-        HTMLContent += `<td>${secondsToHMS(run.intermissionTime, true)}</td>`
-        HTMLContent += `<td>${secondsToHMS(run.mapTime, true)}</td>`
-        HTMLContent += `<td>${secondsToHMS(run.cutsceneTime, true)}</td>`
-        HTMLContent += `<td>${secondsToHMS(run.scorecardTime, true)}</td>`
-        HTMLContent += `</tr>`
+        HTMLContent += `
+        <td>${secondsToHMS(run.levelTime, true)}</td>
+        <td>${secondsToHMS(run.intermissionTime, true)}</td>
+        <td>${secondsToHMS(run.mapTime, true)}</td>
+        <td>${secondsToHMS(run.cutsceneTime, true)}</td>
+        <td>${secondsToHMS(run.scorecardTime, true)}</td>
+        </tr>`
     })
     HTMLContent += `</table>
     </div>`

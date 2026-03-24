@@ -47,7 +47,7 @@ function processSavFile(playerIndex, display) {
                 document.getElementById('input_runRecap_time').value = time
                 categories.forEach((category, categoryIndex) => {
                     const level = getCupheadLevel(categoryIndex)
-                    level.bestTime = runRecapCategory.topRuns[playerIndex].runRecap[categoryIndex]
+                    level.bestTime = runRecapCategory.topRuns[playerIndex].igt[categoryIndex]
                     level.played = true
                     level.completed = true
                 })
@@ -85,7 +85,7 @@ function assignIsles() {
     categories.forEach((category, categoryIndex) => {
         isles[category.info.isle - 1].runRecapCategories.push(categoryIndex)
     })
-    if (runRecapCategory.name == 'DLC+Base' || (runRecapCategory.name == 'Other' && altStratOther == '300%')) isles.unshift(isles.pop())
+    if (['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (runRecapCategory.name == 'Other' && altStratOther == '300%')) isles.unshift(isles.pop())
 }
 function getCupheadLevel(param, other) {
     const id = other ? param : categories[param].info.levelID
