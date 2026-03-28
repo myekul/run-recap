@@ -427,6 +427,7 @@ function userContributions(playerName) {
     strats.forEach((strat, index) => {
         HTMLContent += `
         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
+        <td class='dim' style='font-size:70%'>${index+1}</td>
         <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
         <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
         <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>

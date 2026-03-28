@@ -437,15 +437,15 @@
             },
             {
                 "name": "Waffle, Candy Corn, Jawbreaker",
-                "time": 33.72,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=AuFaBFjRiJT_j1FJ&t=505"
+                "time": "33.30",
+                "player": "Quincely0",
+                "url": "https://youtu.be/hIozCoDsZBw"
             },
             {
                 "name": "Waffle, Cupcake, Candy Corn",
-                "time": 31.66,
-                "player": "Lewzr",
-                "url": "https://youtu.be/Ev8GA77NiCQ"
+                "time": 31.11,
+                "player": "Quincely0",
+                "url": "https://youtu.be/W1JeK5sv-dM"
             },
             {
                 "name": "Waffle, Cupcake, Gumball",
@@ -485,9 +485,9 @@
             },
             {
                 "name": "Waffle, Jawbreaker, Cupcake",
-                "time": 35.17,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=4HOhDuC8oLQY8Avm&t=787"
+                "time": 33.98,
+                "player": "Quincely0",
+                "url": "https://youtu.be/_n6srlSSDx0"
             },
             {
                 "name": "Waffle, Jawbreaker, Gumball",
@@ -527,9 +527,9 @@
             },
             {
                 "name": "Candy Corn, Cupcake, Jawbreaker",
-                "time": 35.72,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=Pb4ukOwz5_oW-MLz&t=177"
+                "time": 35.65,
+                "player": "myekul",
+                "url": "https://youtu.be/jWYNY1GAPYk"
             },
             {
                 "name": "Candy Corn, Gumball, Waffle",
@@ -551,9 +551,9 @@
             },
             {
                 "name": "Candy Corn, Jawbreaker, Waffle",
-                "time": 35.11,
+                "time": 34.19,
                 "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=DsaYSP0UKki9L0UZ&t=326"
+                "url": "https://youtu.be/OnNl5ljYOOI"
             },
             {
                 "name": "Candy Corn, Jawbreaker, Gumball",
@@ -1109,6 +1109,13 @@
                 "title": "Other"
             },
             {
+                "name": "Red Gem, 1st Parry",
+                "time": 42.51,
+                "rta": 43.24,
+                "player": "myekul",
+                "url": "https://youtu.be/nKWpcB0ecJU"
+            },
+            {
                 "name": "Phase 2 Nuke",
                 "time": 44.65,
                 "rta": 46.88,
@@ -1466,6 +1473,12 @@
                 "url": "https://youtu.be/SZnluBJ75Ew"
             },
             {
+                "name": "Ghosts, Pufferfish, Red Fish",
+                "time": 56.39,
+                "player": "myekul",
+                "url": "https://youtu.be/k_z0Ann6XTg"
+            },
+            {
                 "name": "Pufferfish, Ghosts, Turtle, Yellow Fish",
                 "time": 56.15,
                 "player": "ClipBoardGuy",
@@ -1667,7 +1680,7 @@
                 "name": "3 Flame, 2 EXs",
                 "time": 19.32,
                 "player": "myekul",
-                "url": "https://youtu.be/lzbvuRT2AcQ"
+                "url": "https://youtu.be/UsP-ujah5Lc"
             },
             {
                 "title": "Doubles"
@@ -2741,6 +2754,12 @@
                 "url": "https://youtu.be/B2mk7bPkEmY"
             },
             {
+                "name": "7 Flies, Tigers",
+                "time": 47.31,
+                "player": "Quincely0",
+                "url": "https://youtu.be/l-GNrtItWw4"
+            },
+            {
                 "title": "Punches Regular Skip"
             },
             {
@@ -2754,6 +2773,12 @@
                 "time": 48.25,
                 "player": "HappyWolf",
                 "url": "https://youtu.be/WRk_19zWiLE"
+            },
+            {
+                "name": "Punches, Tigers",
+                "time": 48.52,
+                "player": "Quincely0",
+                "url": "https://youtu.be/pN_4I4dbKUQ"
             },
             {
                 "title": "Punches Super Skip"
@@ -2821,6 +2846,12 @@
                 "time": 31.67,
                 "player": "Quincely0",
                 "url": "https://youtu.be/8w8ZzhYGUCo"
+            },
+            {
+                "name": "Candy Corn, Cupcake, Waffle",
+                "time": "32.90",
+                "player": "Quincely0",
+                "url": "https://youtu.be/KD1fmx4LYwU"
             },
             {
                 "name": "Candy Corn, Waffle, Cupcake",
@@ -3140,9 +3171,9 @@
         "thedevil": [
             {
                 "name": "Ring Dragon",
-                "time": 49.48,
+                "time": 49.08,
                 "player": "myekul",
-                "url": "https://youtu.be/iwjyzjI37CQ"
+                "url": "https://youtu.be/PnwVG5PYzUc"
             },
             {
                 "name": "Bubbles Dragon",
