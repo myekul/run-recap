@@ -1,7 +1,8 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
 setTabs(['home', 'leaderboards', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
-initializeHash('home')
+const today = new Date()
+initializeHash(today.getMonth() == 3 && today.getDate() == 1 ? 'aprilFools' : 'home')
 setAudio('cuphead')
 runRecapDefault()
 grades.unshift({ grade: 'S', className: 'grade-s grade', threshold: 100 })
@@ -30,6 +31,7 @@ function action() {
         rrc: generate_rrc,
 
         ballpit: generateBallpit,
+        aprilFools: generateAprilFools,
 
         commBestILs: generateCommBestILs,
         altStrats: generateAltStrats,
@@ -56,7 +58,7 @@ function action() {
     });
     ['commBestILs', 'altStrats', 'commBestSplits', 'theTop'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
-        document.getElementById(globalTab + 'Button').classList.add('activeBanner')
+        document.getElementById(globalTab + 'Button')?.classList.add('activeBanner')
     })
     if (globalTab == 'lss') {
         if (runRecapExample) {
@@ -122,7 +124,7 @@ function action() {
     } else {
         hide('commBestSubmit')
     }
-    if (!['home', 'leaderboards', 'commBestILs', 'altStrats', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+    if (['sav', 'lss', 'rrc', 'theTop'].includes(globalTab)) {
         show('runRecap_details')
     } else {
         hide('runRecap_details')
@@ -365,6 +367,7 @@ function fileInfoCard(type) {
     return `<div style='width:330px'>
                 <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
                 ${fileTitle(type)}
+                ${globalTab == 'aprilFools' ? `<div class='container' style='font-size:180%;margin-top:10px'>$9<span style='font-size:50%;margin-bottom:8px'>.99</span>/mo</div>` : ''}
                 <div class='fileType textBlock' style="margin-top:10px;font-size:90%">
                 ${fileInfo[type]}
                 </div>
