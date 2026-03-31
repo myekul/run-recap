@@ -8,15 +8,15 @@ function generateHome() {
                         and a <span class="myekulColor">LiveSplit .lss</span> file
                         to gain valuable insights about your recent run performance.
                     </div>
-                </div>
-                <div class="container" style="padding:25px 0;gap:20px">
+                </div>`
+    if (!aprilFools) HTMLContent += `<div class="container" style="padding:25px 0;gap:20px">
                     <div style="padding-right:20px;${runRecapCategory.name == 'Other' ? 'display:none' : ''}">
                         <div class="container">View Example:</div>
                         <div class="container">${runRecapExamples()}</div>
                     </div>
                     <div id="dropbox"></div>
-                </div>
-                <div id='fileTypes' class="container" style="gap:30px;align-items:flex-start"></div>`
+                </div>`
+    HTMLContent += `<div id='fileTypes' class="container" style="gap:30px;align-items:flex-start"></div>`
     document.getElementById('content').innerHTML = HTMLContent
     if (runRecapExample) {
         runRecapDefault()

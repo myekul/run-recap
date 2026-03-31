@@ -2,7 +2,8 @@ google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
 setTabs(['home', 'leaderboards', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
 const today = new Date()
-initializeHash(today.getMonth() == 3 && today.getDate() == 1 ? 'aprilFools' : 'home')
+initializeHash('home')
+let aprilFools = today.getMonth() == 3 && today.getDate() == 1
 setAudio('cuphead')
 runRecapDefault()
 grades.unshift({ grade: 'S', className: 'grade-s grade', threshold: 100 })
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 function action() {
     if (!loaded) {
+        if (aprilFools) aprilFoolsPopup()
         loaded = true
         document.getElementById('boardTitleSrc').innerHTML = `<div>${getAnchor('https://www.speedrun.com/cuphead') + `<div class='grow'>${sharedAssetsImg('src')}</div>`}</div>`
     }
@@ -31,7 +33,6 @@ function action() {
         rrc: generate_rrc,
 
         ballpit: generateBallpit,
-        aprilFools: generateAprilFools,
 
         commBestILs: generateCommBestILs,
         altStrats: generateAltStrats,
@@ -340,7 +341,7 @@ const fileInfo = {
     please upload a .lss with the standard split configuration,
     as seen
     <span class="myekulColor clickable" style="text-decoration: underline">
-    ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a></span>.`,
+    ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a></span>.</span>`,
     rrc: `A powerful new file type, ${myekulColor('Run Recap .rrc')}. Designed exclusively for detailed analysis of Cuphead runs.
     <br>
     <span class='dim'>
@@ -356,6 +357,11 @@ const fileOrigin = {
     lss: 'LiveSplit',
     rrc: 'Run Recap'
 };
+const filePrice = {
+    sav: 9,
+    lss: 16,
+    rrc: 29
+};
 function fileTitle(type) {
     return `<div class='font2 container' style='gap:5px;font-size:200%'>
                     <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
@@ -364,20 +370,49 @@ function fileTitle(type) {
                 </div>`
 }
 function fileInfoCard(type) {
-    return `<div style='width:330px'>
+    return `<div ${aprilFools ? `class='border background1'` : ''} style='width:330px;${aprilFools ? 'padding:12px;height:330px;margin-top:20px;position:relative' : ''}'>
                 <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
                 ${fileTitle(type)}
-                ${globalTab == 'aprilFools' ? `<div class='container' style='font-size:180%;margin-top:10px'>$9<span style='font-size:50%;margin-bottom:8px'>.99</span>/mo</div>` : ''}
+                ${aprilFools ? `<div class='container' style='font-size:200%;margin-top:10px'>$${filePrice[type]}<span style='font-size:50%;margin-bottom:8px'>.99</span>/mo</div>` : ''}
                 <div class='fileType textBlock' style="margin-top:10px;font-size:90%">
                 ${fileInfo[type]}
+                ${aprilFools ? `<button class='button cuphead font2' style='position:absolute;bottom:24px;left:100px;font-size:170%;height:50px;width:150px;border-radius:40px' onclick="aprilFoolsReveal()">BUY NOW</button>` : ''}
                 </div>
             </div>`
+}
+function aprilFoolsPopup() {
+    let HTMLContent = `<div style='width:400px;padding:10px'>
+    Hello vibrant community!
+    <br><br>
+    Thank you for using Run Recap. Due to the extremely positive reception of the site and the widespread impact it has had on the community,
+    the myekul.com board of executives has decided to make Run Recap a ${myekulColor('premium, subscription-based service')}.
+    Given the site's popularity, we figured this would be an excellent opportunity to capitalize on our lucrative run analysis tools.
+    <br>${myekulColor('Pricing plans now available!')}
+    <br><br>
+    -myekul
+    </div>`
+    openModal(HTMLContent, 'UPDATE')
+}
+function aprilFoolsReveal() {
+    let HTMLContent = `<div style='width:450px;padding:10px'>
+    APRIL FOOLS! ${myekulColor('myekul.com will ALWAYS be free and open source.')}
+    Thank you everyone for visiting the site. It truly means a lot for my work to get appreciated the way it does.
+    <br><br>
+    ...If you would like to actually support the myekul project though, a donation would be greatly appreciated.
+    It costs me ${myekulColor('$10/year')} to keep the myekul.com domain name, and if we could get that community-funded, that would mean a lot.
+    Anything beyond that is not necessary, but would put a smile on my silly face.
+    ${myekulColor('For donations of $5 or more, you will receive a special supporter badge on the Combined Leaderboard!')}
+    <a href="https://ko-fi.com/myekul" target="_blank" class='button cuphead font2' style='margin:10px auto;font-size:170%;height:50px;width:150px;border-radius:40px'>DONATE</a>`
+    openModal(HTMLContent, 'APRIL FOOLS!', '', true)
+    playSound('ready')
+    aprilFools = false
+    action()
 }
 function emptyFile(type) {
     dropboxEligible = true
     return `<div class='container' style='gap:30px;margin-top:8px'>
         ${fileInfoCard(type)}
-        <div id='dropbox'></div>
+        ${!aprilFools ? `<div id='dropbox'></div>` : ''}
         </div>`
 }
 fetch('https://api.github.com/repos/SBDWolf/Run-Recap-Component/tags')
