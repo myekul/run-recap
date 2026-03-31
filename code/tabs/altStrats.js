@@ -355,7 +355,9 @@ function oddsLayer(altStrats, index, strat, field) {
     }
     return ''
 }
-function pendingSubmissions(submissions = new Array(16).fill(null), done) {
+const MIN_ENTRIES = 10
+const MAX_ENTRIES = 50
+function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), done) {
     let HTMLContent = `<div class='container'>
     <table class='shadow' style='width:450px;margin-top:20px'>`
     HTMLContent += `<tr><td colspan=6 class='gray' style='padding:5px;position:relative'>
@@ -363,7 +365,7 @@ function pendingSubmissions(submissions = new Array(16).fill(null), done) {
     <div class='font2' style='font-size:120%'>Pending Submissions</div>
     ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
     </td></tr>`
-    for (let i = 0; i < (submissions.length <= 10 ? 10 : submissions.length < 50 ? submissions.length : 50); i++) {
+    for (let i = 0; i < (submissions.length <= MIN_ENTRIES ? MIN_ENTRIES : submissions.length < MAX_ENTRIES ? submissions.length : MAX_ENTRIES); i++) {
         const submission = submissions[i]
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')" onmouseenter="toast('${submission.date} - ${daysAgo(getDateDif(new Date(), new Date(submission.date)))}')"` : ''}>`
         if (submission) {
@@ -427,7 +429,7 @@ function userContributions(playerName) {
     strats.forEach((strat, index) => {
         HTMLContent += `
         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
-        <td class='dim' style='font-size:70%'>${index+1}</td>
+        <td class='dim' style='font-size:70%'>${index + 1}</td>
         <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
         <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
         <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>

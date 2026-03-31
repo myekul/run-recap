@@ -359,8 +359,8 @@ const fileOrigin = {
 };
 const filePrice = {
     sav: 9,
-    lss: 16,
-    rrc: 29
+    lss: 15,
+    rrc: 24
 };
 function fileTitle(type) {
     return `<div class='font2 container' style='gap:5px;font-size:200%'>
