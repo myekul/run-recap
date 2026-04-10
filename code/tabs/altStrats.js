@@ -1,6 +1,6 @@
 let altStratOther = '300%'
 let altStratCategory
-function generateAltStrats() {
+async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
     if (altStratCategory) {
@@ -40,107 +40,7 @@ function generateAltStrats() {
         })
         HTMLContent += `</div>`
         if (!altStratLevel) {
-            const counts = {};
-            for (const boss in altStratCategory) {
-                for (const obj of altStratCategory[boss]) {
-                    if (!obj.title) {
-                        const player = obj.player;
-                        counts[player] = (counts[player] || 0) + 1;
-                    }
-                }
-            }
-            const countArray = Object.entries(counts).map(([player, count]) => ({
-                player,
-                count
-            }));
-            countArray.sort((a, b) => b.count - a.count)
-            HTMLContent += `<div class='container' style='margin-top:20px;gap:30px;align-items:flex-start'>`
-            HTMLContent += `
-            <div style='width:310px'>
-            <div class='container'><table class='shadow'>
-            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
-            countArray.forEach((player, index) => {
-                HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
-                <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
-                <td>${player.count}</td>
-                </tr>`
-            })
-            HTMLContent += `</table></div>`
-            HTMLContent += `
-            <div class='container'>
-            <table class='shadow' style='margin-top:20px'>
-            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td></tr>`
-            const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', '300%']
-            altStratCategories.forEach((altStratCategory, index) => {
-                const category = commBestILs[altStratCategory]
-                const altStrats = alt[altStratCategory]
-                let sum = 0
-                for (const boss in altStrats) {
-                    for (const obj of altStrats[boss]) {
-                        if (!obj.title) {
-                            sum++
-                        }
-                    }
-                }
-                HTMLContent += `<tr class='${getRowColor(index)}'>
-                <td class='${category?.className || 'gray'}' style='position:relative'>${category?.name || altStratCategory}
-                <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div></td>
-                <td style=''>${sum}</td>
-                </tr>`
-            })
-            HTMLContent += `
-            </table>
-            </div>`
-            HTMLContent += `</div>`
-            HTMLContent += `<div><div class='textBlock' style='width:460px'>
-            Welcome to the ${myekulColor('Comm Best ILs')} database!
-            This is a comprehensive collection of ILs for EVERY notable pattern / strat variation on EVERY boss in EVERY main Any% category.
-            <br><br>
-            The ${myekulColor('Alternate Strats')} collection serves as a resource for runners to study the best times and strategies for all possible scenarios.
-            Got an idea for a new alt strat?
-            ${myekulColor('Submissions are always open!')}
-            </div>
-            <div class="button cuphead"
-                style="width:120px;gap:8px;font-size:90%;margin:20px auto"
-                onclick="modalSubmitIL()">
-                <i class="fa fa-plus"></i>Submit IL
-            </div>
-            <div class='textBlock' style='width:460px'>
-            Across all categories, we have accumulated ${myekulColor(altStratNum)} ILs. Thank you for the continued support!
-            </div>
-            <div id='commBest_queue'>${pendingSubmissions()}</div>
-            </div>`
-            // Best Times
-            HTMLContent += `<div style='width:310px'>
-            <table class='shadow'>`
-            HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
-            categories.forEach((category, categoryIndex) => {
-                const altGroup = altStratCategory[category.info.id]
-                if (altGroup) {
-                    let fastest = altGroup[0]
-                    altGroup.forEach(strat => {
-                        if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
-                            fastest = strat
-                        }
-                    })
-                    HTMLContent += `
-                    <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
-                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
-                    <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
-                    </tr>`
-                } else {
-                    HTMLContent += `
-                    <tr class='${getRowColor(categoryIndex)}'>
-                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}'></td>
-                    <td></td>
-                    </tr>`
-                }
-            })
-            HTMLContent += `</table>
-            </div>`
-            HTMLContent += `</div>`
+            HTMLContent += `<div id='altStratsHTML' class='container' style='margin-top:20px;gap:30px;align-items:flex-start'></div>`
         } else {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
             if (altStratCategory[altStratLevel]) {
@@ -162,9 +62,104 @@ function generateAltStrats() {
     } else {
         HTMLContent += emptyPageText('No alt strats...')
     }
-    document.getElementById('content').innerHTML = HTMLContent
+    let temp = document.createElement('div')
+    temp.innerHTML = HTMLContent
+    if (!altStratLevel && altStratCategory) {
+        const altHTML = await fetch('html/altStrats.html').then(r => r.text());
+        temp.querySelector('#altStratsHTML').innerHTML = altHTML;
+        altStrat_topContributors(temp)
+        altStrat_categories(temp)
+        altStrat_bestTimes(temp)
+        temp.querySelector('#altStratNum').innerText = altStratNum
+        temp.querySelector('#commBest_queue').innerHTML = pendingSubmissions()
+        window.firebaseUtils.firestoreReadCommBestILs()
+    }
+    document.getElementById('content').innerHTML = temp.innerHTML
     if (['baronessvonbonbon', 'captainbrineybeard'].includes(altStratLevel) && runRecapCategory.name == '1.1+') drawChart()
-    if (!altStratLevel && altStratCategory) window.firebaseUtils.firestoreReadCommBestILs()
+}
+function altStrat_topContributors(root) {
+    let HTMLContent = ''
+    const counts = {};
+    for (const boss in altStratCategory) {
+        for (const obj of altStratCategory[boss]) {
+            if (!obj.title) {
+                const player = obj.player;
+                counts[player] = (counts[player] || 0) + 1;
+            }
+        }
+    }
+    const countArray = Object.entries(counts).map(([player, count]) => ({
+        player,
+        count
+    }));
+    countArray.sort((a, b) => b.count - a.count)
+    HTMLContent += `<table class='shadow'>
+            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
+    countArray.forEach((player, index) => {
+        HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
+                <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
+                <td>${player.count}</td>
+                </tr>`
+    })
+    HTMLContent += `</table>`
+    root.querySelector('#altStrat_topContributors').innerHTML = HTMLContent
+}
+function altStrat_categories(root) {
+    let HTMLContent = ''
+    HTMLContent += `
+            <table class='shadow' style='margin-top:20px'>
+            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td></tr>`
+    const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', '300%']
+    altStratCategories.forEach((altStratCategory, index) => {
+        const category = commBestILs[altStratCategory]
+        const altStrats = alt[altStratCategory]
+        let sum = 0
+        for (const boss in altStrats) {
+            for (const obj of altStrats[boss]) {
+                if (!obj.title) {
+                    sum++
+                }
+            }
+        }
+        HTMLContent += `<tr class='${getRowColor(index)}'>
+                <td class='${category?.className || 'gray'}' style='position:relative'>${category?.name || altStratCategory}
+                <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div></td>
+                <td style=''>${sum}</td>
+                </tr>`
+    })
+    HTMLContent += `</table>`
+    root.querySelector('#altStrat_categories').innerHTML = HTMLContent
+}
+function altStrat_bestTimes(root) {
+    let HTMLContent = ''
+    HTMLContent += `<table class='shadow'>`
+    HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
+    categories.forEach((category, categoryIndex) => {
+        const altGroup = altStratCategory[category.info.id]
+        if (altGroup) {
+            let fastest = altGroup[0]
+            altGroup.forEach(strat => {
+                if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
+                    fastest = strat
+                }
+            })
+            HTMLContent += `
+                    <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
+                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
+                    <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
+                    <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
+                    </tr>`
+        } else {
+            HTMLContent += `
+                    <tr class='${getRowColor(categoryIndex)}'>
+                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
+                    <td class='${category.info.id}'></td>
+                    <td></td>
+                    </tr>`
+        }
+    })
+    HTMLContent += `</table>`
+    root.querySelector('#altStrat_bestTimes').innerHTML = HTMLContent
 }
 function drawChart() {
     let data = [['Value']]

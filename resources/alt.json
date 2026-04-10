@@ -683,9 +683,9 @@
             },
             {
                 "name": "Gumball, Cupcake, Candy Corn",
-                "time": 34.36,
+                "time": 33.36,
                 "player": "myekul",
-                "url": "https://youtu.be/mbYko0dNoj8"
+                "url": "https://youtu.be/es-nMNbY9AE"
             },
             {
                 "name": "Gumball, Cupcake, Jawbreaker",
@@ -1769,9 +1769,9 @@
             },
             {
                 "name": "Charge, 4 Cards, 3 HP",
-                "time": "11.20",
+                "time": 11.18,
                 "player": "myekul",
-                "url": "https://youtu.be/TnvbOXlfjLk"
+                "url": "https://youtu.be/wTCAiKNeW3k"
             },
             {
                 "name": "Charge, 5 Cards, 2 HP",
@@ -1815,17 +1815,17 @@
                 "odds": "9/35"
             },
             {
+                "name": "Ring Dragon (3 Quads)",
+                "time": 45.59,
+                "player": "myekul",
+                "url": "https://youtu.be/YAkZBzBszpg",
+                "odds": "3/140"
+            },
+            {
                 "name": "Pinwheel Dragon (3 Quads)",
                 "time": 45.64,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/0hlrM62-gNQ",
-                "odds": "3/140"
-            },
-            {
-                "name": "Ring Dragon (3 Quads)",
-                "time": 45.88,
-                "player": "myekul",
-                "url": "https://youtu.be/PzoKF7SNKfo",
                 "odds": "3/140"
             },
             {
@@ -1837,9 +1837,9 @@
             },
             {
                 "name": "Dragon Clap",
-                "time": 47.66,
+                "time": "47.60",
                 "player": "myekul",
-                "url": "https://youtu.be/vxSyi-3uFxI",
+                "url": "https://youtu.be/INtdE7L9_oA",
                 "odds": "1/7"
             },
             {
@@ -1882,9 +1882,9 @@
             },
             {
                 "name": "Clap Ring Dragon",
-                "time": 41.15,
+                "time": 40.92,
                 "player": "myekul",
-                "url": "https://youtu.be/vS3M7ioSyOU",
+                "url": "https://youtu.be/-97awXJUARI",
                 "odds": "3/140",
                 "odds2": 4
             },
@@ -1933,9 +1933,9 @@
             },
             {
                 "name": "Bubbles Clap Dragon (Slower)",
-                "time": 44.73,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/GaFA6LJvOkM",
+                "time": 44.61,
+                "player": "myekul",
+                "url": "https://youtu.be/5DFN0fC4teU",
                 "odds": "3/385"
             },
             {
@@ -1954,9 +1954,9 @@
             },
             {
                 "name": "Clap Ring Clap Dragon",
-                "time": "45.70",
-                "player": "SBDWolf",
-                "url": "https://youtu.be/YCurAXaGDGc",
+                "time": "45.67",
+                "player": "myekul",
+                "url": "https://youtu.be/XcEpUCfZrIA",
                 "odds": "3/140",
                 "odds2": 5
             },
@@ -2808,10 +2808,10 @@
         "goopylegrande": [
             {
                 "name": "Parries + Doubles",
-                "time": 26.44,
-                "rta": "26.80",
+                "time": 26.35,
+                "rta": 26.72,
                 "player": "myekul",
-                "url": "https://youtu.be/V6UeJRCQOhU"
+                "url": "https://youtu.be/vdr956VHZ60"
             },
             {
                 "name": "Doubles",
@@ -3808,9 +3808,9 @@
         "baronessvonbonbon": [
             {
                 "name": "Waffle, Candy Corn, Gumball",
-                "time": 31.99,
+                "time": 31.29,
                 "player": "myekul",
-                "url": "https://youtu.be/UtpexZ_bGC4"
+                "url": "https://youtu.be/uyeahT7UpSQ"
             }
         ],
         "beppitheclown": [
@@ -3860,9 +3860,15 @@
         "wernerwerman": [
             {
                 "name": "",
-                "time": "44",
+                "time": "44.31",
                 "player": "myekul",
-                "url": "https://youtu.be/zLb7_-4bf9g"
+                "url": "https://youtu.be/p3jAlGdDlJ8"
+            },
+            {
+                "name": "Phase 2/3 Charge",
+                "time": 43,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/FxkAcdHQ2VQ"
             }
         ],
         "captainbrineybeard": [
