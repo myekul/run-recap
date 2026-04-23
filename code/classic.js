@@ -91,7 +91,8 @@ function extraLevel(name, time) {
         </div>`
 }
 function isleHeader(isle) {
-    return `<div>
+    return `<div style='position:relative'>
+    ${isle.name == 'Hell' ? `<div id='kdPlus' class='grow dim' style='display:none;position:absolute;right:-20px;top:30px' onclick="kdPlus()">${fontAwesome('plus')}</div>` : ''}
     <table class='shadow'>
     <tr>
     <th colspan=3 class='${isle.className}'>${isle.name}</th>

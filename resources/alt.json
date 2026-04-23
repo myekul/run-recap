@@ -3881,6 +3881,12 @@
         ],
         "phantomexpress": [
             {
+                "name": "Two-cycle",
+                "time": "1:02.26",
+                "player": "myekul",
+                "url": "https://youtu.be/Sb4Pe1Txf0k"
+            },
+            {
                 "name": "One-cycle",
                 "time": 59.67,
                 "player": "myekul",
@@ -3907,6 +3913,15 @@
                 "time": 48.99,
                 "player": "myekul",
                 "url": "https://youtu.be/QfECaX34aEk"
+            }
+        ]
+    },
+    "DLC+Base Simple": {
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 25,
+                "player": "myekul"
             }
         ]
     },

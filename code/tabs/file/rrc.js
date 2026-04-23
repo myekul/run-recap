@@ -51,6 +51,10 @@ function generate_rrc() {
         </table>
         </div>`
     document.getElementById('content').innerHTML = HTMLContent
+    const kdindex = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == 'level_dice_palace_main')
+    if (lastBossDone() && rrcCurrentAttempt.scenes[kdindex]?.levelTime) {
+        show('kdPlus')
+    }
     if (dropboxEligible) initializeDropbox()
     if (chartEligible) rrcChart()
 }
@@ -84,11 +88,34 @@ function rrcView() {
             HTMLContent += rrcChartSection()
         }
     }
-    HTMLContent += `<div class='container' style='gap:10px;margin-top:15px'>
+    HTMLContent += `
+    <div class='container' style='gap:10px;margin-top:15px'>
         <button class='button cuphead' onclick="rrcRaw()">Show raw</button>
         <button class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</button>
-        </div>`
+    </div>`
     return HTMLContent
+}
+const kdminibosses = {
+    booze: 'tipsytroop',
+    chips: 'chipsbettigan',
+    cigar: 'mrwheezy',
+    domino: 'pipanddot',
+    rabbit: 'hopuspocus',
+    flying_horse: 'phearlap',
+    roulette: 'pirouletta',
+    eight_ball: 'mangosteen',
+    flying_memory: 'mrchimes'
+}
+const kdminibossID = {
+    booze: 1,
+    chips: 2,
+    cigar: 3,
+    domino: 4,
+    rabbit: 5,
+    flying_horse: 6,
+    roulette: 7,
+    eight_ball: 8,
+    flying_memory: 9
 }
 function rrcSegments(scenes) {
     scenes.forEach((scene, index) => {
@@ -525,4 +552,28 @@ function rrcUpdateNotice() {
 function lastBossDone(attempt = rrcCurrentAttempt) {
     const lastScene = attempt?.scenes?.at(-1)?.name
     return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && lastScene == 'level_saltbaker')
+}
+function kdPlus() {
+    let HTMLContent = ''
+    const kdindex = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == 'level_dice_palace_main')
+    HTMLContent += `<div class='container' style='font-size:130%;margin:20px;gap:8px'>`
+    for (let i = kdindex; i < rrcCurrentAttempt.scenes.length; i++) {
+        const kdlevel = rrcCurrentAttempt.scenes[i].name.split('level_dice_palace_')[1]
+        const kdminiboss = kdminibosses[kdlevel]
+        if (kdminiboss) {
+            HTMLContent += `
+                <table class='shadow'><tr class='${kdminiboss}'>
+                <td class='container'>${getImage('phase/kingdice' + kdminibossID[kdlevel])}</td>
+                <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[i].levelTime - rrcCurrentAttempt.scenes[i - 1].levelTime, true)}</td>
+                </tr></table>`
+        }
+    }
+    const kdHimselfIndex = rrcCurrentAttempt.scenes.findLastIndex(scene => scene.name == 'level_dice_palace_main')
+    HTMLContent += `
+                <table class='shadow'><tr class='kingdice2'>
+                <td class='container'>${getImage('kingdice')}</td>
+                <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[kdHimselfIndex].levelTime - rrcCurrentAttempt.scenes[kdHimselfIndex - 1].levelTime, true)}</td>
+                </tr></table>`
+    HTMLContent += `</div>`
+    openModal(HTMLContent, 'MINIBOSSES')
 }
