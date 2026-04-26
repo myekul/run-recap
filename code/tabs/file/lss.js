@@ -14,20 +14,19 @@ function lssView() {
     runRecap_lss_splitInfo()
     const currentRun = document.getElementById('dropdown_runRecap_lss_current').value
     const comparison = document.getElementById('dropdown_runRecap_lss_comparison').value
-    runRecapTheoretical = ['yourBest', 'sob', 'theoryRun'].includes(currentRun)
-    HTMLContent += `<div class='container'><table class='shadow'>`
-    HTMLContent += `<tr style='font-size:60%'>`
     const comparisonTitle = segmentComparison(comparison)
-    HTMLContent += `<td></td>`
-    HTMLContent += `<td>Splits</td>`
-    HTMLContent += `<td></td>`
     let splitTitle = comparisonTitle
     if (comparison == 'yourBest') {
         splitTitle = 'Your BPE'
     } else if (comparison == 'sob') {
         splitTitle = 'Your SoB'
     }
-    HTMLContent += `
+    runRecapTheoretical = ['yourBest', 'sob', 'theoryRun'].includes(currentRun)
+    HTMLContent += `<div class='container'><table class='shadow'>
+    <tr style='font-size:60%'>
+    <td></td>
+    <td>Splits</td>
+    <td></td>
     <td>${splitTitle}</td>
     <td></td>
     <td></td>
@@ -64,17 +63,18 @@ function lssView() {
         const splitDelta = currentSplit - comparisonSplit
         const trueSplitDelta = Math.trunc(splitDelta * 100) / 100
         deltas.push(trueSplitDelta)
-        HTMLContent += image
-        HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSplit, true)}</td>`
-        HTMLContent += `<td class='${redGreen(trueSplitDelta)}' style='padding:0 5px;font-size:90%'>${getDelta(trueSplitDelta)}</td>`
-        HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('split', index, comparisonSplit, comparison)}</td>`
-        HTMLContent += `<td style='padding:0 20px'></td>`
         const compareCustom = !isNaN(comparison) || comparison == 'yourPB'
-        HTMLContent += `<td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'><span>${compareCustom ? '' : grade.grade}</span></td>`
-        HTMLContent += image
-        HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSegment, true)}</td>`
-        HTMLContent += `<td class='${redGreen(trueDelta)}' style='padding:0 5px;font-size:90%'><span>${getDelta(trueDelta)}</span></td>`
-        HTMLContent += `<td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
+        HTMLContent += `
+        ${image}
+        <td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSplit, true)}</td>
+        <td class='${redGreen(trueSplitDelta)}' style='padding:0 5px;font-size:90%'>${getDelta(trueSplitDelta)}</td>
+        <td style='padding:0 5px;'>${comparisonContent('split', index, comparisonSplit, comparison)}</td>
+        <td style='padding:0 20px'></td>
+        <td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'><span>${compareCustom ? '' : grade.grade}</span></td>
+        ${image}
+        <td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSegment, true)}</td>
+        <td class='${redGreen(trueDelta)}' style='padding:0 5px;font-size:90%'><span>${getDelta(trueDelta)}</span></td>
+        <td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
         if (runRecap_savFile) {
             HTMLContent += `<td style='padding:0 20px'></td>`
             if (index >= getOffset()) {
@@ -93,11 +93,12 @@ function lssView() {
                     comparisonContents += `</div>`
                 }
                 comparisonContents += `<div>${secondsToHMS(comparisonTime)}</div></div>`
-                HTMLContent += `<td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>`
-                HTMLContent += image
-                HTMLContent += `<td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>`
-                HTMLContent += `<td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>`
-                HTMLContent += `<td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
+                HTMLContent += `
+                <td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>
+                ${image}
+                <td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>
+                <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>
+                <td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
             } else if (index == 2) {
                 HTMLContent += `<td colspan=5></td>`
             } else {
@@ -413,10 +414,11 @@ function markinExample() {
 function runRecapSegment(index) {
     const split = splitInfo[index]
     let HTMLContent = ''
-    HTMLContent += `<div class='container ${split.id}' style='gap:10px;margin-top:10px;padding:5px;border-radius:5px'>`
-    HTMLContent += getImage(split.id, 36)
-    HTMLContent += `<div style='font-size:20px;font-weight:bold'>${split.name}</div>`
-    HTMLContent += `</div>`
+    HTMLContent += `
+    <div class='container ${split.id}' style='gap:10px;margin-top:10px;padding:5px;border-radius:5px'>
+        ${getImage(split.id, 36)}
+        <div style='font-size:20px;font-weight:bold'>${split.name}</div>
+    </div>`
     document.getElementById('modal-subtitle').innerHTML = HTMLContent
     HTMLContent = ''
     const thisSegment = runRecap_lssFile.segmentHistory[index].length
@@ -429,16 +431,17 @@ function runRecapSegment(index) {
     const resetRate = 100 * (numResets / segmentAttemptCount)
     const display = resetRate ? displayPercentage(resetRate) : 0
     const grade = getLetterGrade(100 - resetRate)
-    HTMLContent += `<div class='container' style='gap:8px'>`
-    HTMLContent += `<div>Reset rate:</div>`
-    HTMLContent += `<div class='${grade.className}' style='border-radius:5px;padding:5px;${grade.grade == 'F' ? 'color:white' : ''}'><span>${display}%</span></div>`
-    HTMLContent += `<div>=</div>`
-    HTMLContent += `<div style='font-size:80%'>
-        <div class='container'>${numResets} reset${numResets == 1 ? '' : 's'}</div>
-        <div style='margin: 5px 0;border-bottom: 2px solid white;width: 100px;'></div>
-        <div class='container'>${segmentAttemptCount} attempts</div>
+    HTMLContent += `
+    <div class='container' style='gap:8px'>
+        <div>Reset rate:</div>
+        <div class='${grade.className}' style='border-radius:5px;padding:5px;${grade.grade == 'F' ? 'color:white' : ''}'><span>${display}%</span></div>
+        <div>=</div>
+        <div style='font-size:80%'>
+            <div class='container'>${numResets} reset${numResets == 1 ? '' : 's'}</div>
+            <div style='margin: 5px 0;border-bottom: 2px solid white;width: 100px;'></div>
+            <div class='container'>${segmentAttemptCount} attempts</div>
+        </div>
     </div>`
-    HTMLContent += `</div>`
     HTMLContent += `<div class='container' style='gap:20px;width:800px'>`
     const sortedSplits = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.split - b.split)
     HTMLContent += splitSegmentInfo(sortedSplits, index, 'Split')
@@ -451,9 +454,12 @@ function runRecapSegment(index) {
 function splitSegmentInfo(array, index, type) {
     const split = splitInfo[index]
     let HTMLContent = ''
-    HTMLContent += `<div style='padding-top:15px'>`
-    HTMLContent += `<table>
-    <tr class='gray'><th colspan=6>Your Top 10 ${type}s</th></tr>`
+    HTMLContent += `
+    <div style='padding-top:15px'>
+    <table>
+    <tr class='gray'>
+        <th colspan=6>Your Top 10 ${type}s</th>
+    </tr>`
     let sum = 0
     array.slice(0, NUM_SPLITS).forEach((arrayAttempt, segmentIndex) => {
         const run = runRecap_lssFile.attemptHistory.find(attempt => attempt.id == arrayAttempt.id)
@@ -461,32 +467,48 @@ function splitSegmentInfo(array, index, type) {
         const trophy = getTrophy(segmentIndex + 1)
         const time = arrayAttempt[type.toLowerCase()]
         sum += time
-        HTMLContent += `<tr class='${getRowColor(segmentIndex)}'>
-        <td style='font-size:70%;text-align:right;padding:0 5px'>${date ? daysAgo(getDateDif(new Date(), new Date(date))) : ''}</td>
-        <td class='${placeClass[segmentIndex + 1]}' style='font-size:70%;padding:0 3px'>${trophy ? `<div class='container trophy'>${trophy}` : segmentIndex + 1}</td>
-        <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(time, true)}</td>
-        <td class='${run ? runRecapCategory.className : ''}' style='font-size:80%;padding:0 5px'>${run ? secondsToHMS(run.gameTime, true) : ''}</td>
-        <td style='font-size:70%;padding:0 5px'>${date ? date : ''}</td>
-        <td style='font-size:50%'>${arrayAttempt.id}</td>
+        HTMLContent += `
+        <tr class='${getRowColor(segmentIndex)}'>
+            <td style='font-size:70%;text-align:right;padding:0 5px'>${date ? daysAgo(getDateDif(new Date(), new Date(date))) : ''}</td>
+            <td class='${placeClass[segmentIndex + 1]}' style='font-size:70%;padding:0 3px'>${trophy ? `<div class='container trophy'>${trophy}` : segmentIndex + 1}</td>
+            <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(time, true)}</td>
+            <td class='${run ? runRecapCategory.className : ''}' style='font-size:80%;padding:0 5px'>${run ? secondsToHMS(run.gameTime, true) : ''}</td>
+            <td style='font-size:70%;padding:0 5px'>${date ? date : ''}</td>
+            <td style='font-size:50%'>${arrayAttempt.id}</td>
         </tr>`
     })
     HTMLContent += `</table>`
-    HTMLContent += `<div class='container' style='padding-top:15px'><table><tr class='gray'><th>Your Top 10 Average</th></tr><tr><td class='${split.id}'>${secondsToHMS(sum / NUM_SPLITS, true)}</td></tr></table></div>`
-    HTMLContent += `<div class='container' style='padding-top:15px;gap:8px'>`
-    HTMLContent += `<table>
-        <tr class='gray'><th colspan=2>Comm Best</th></tr>
-        <tr>
-            <td>${getPlayerIcon(allPlayers.find(player => player.name == runRecap_markin[type == 'Split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'][index].split('/')[0]), 24)}</td>
-            <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'bestSplits' : 'bestSegments'][index], true)}</td>
-        </tr>
-    </table>`
-    HTMLContent += `<table>
-        <tr class='gray'><th colspan=2>World Record</th></tr>
-        <tr>
-            <td>${getPlayerIcon(players[0], 24)}</td>
-            <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'wrSplits' : 'wrSegments'][index], true)}</td>
-        </tr>
-    </table>`
-    HTMLContent += `</div></div>`
+    HTMLContent += `
+    <div class='container' style='padding-top:15px'>
+        <table>
+            <tr class='gray'>
+                <th>Your Top 10 Average</th>
+            </tr>
+            <tr>
+                <td class='${split.id}'>${secondsToHMS(sum / NUM_SPLITS, true)}</td>
+            </tr>
+        </table>
+    </div>
+    <div class='container' style='padding-top:15px;gap:8px'>
+        <table>
+            <tr class='gray'>
+                <th colspan=2>Comm Best</th>
+            </tr>
+            <tr>
+                <td>${getPlayerIcon(allPlayers.find(player => player.name == runRecap_markin[type == 'Split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'][index].split('/')[0]), 24)}</td>
+                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'bestSplits' : 'bestSegments'][index], true)}</td>
+            </tr>
+        </table>
+        <table>
+            <tr class='gray'>
+                <th colspan=2>World Record</th>
+            </tr>
+            <tr>
+                <td>${getPlayerIcon(players[0], 24)}</td>
+                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'wrSplits' : 'wrSegments'][index], true)}</td>
+            </tr>
+        </table>
+    </div>
+    </div>`
     return HTMLContent
 }

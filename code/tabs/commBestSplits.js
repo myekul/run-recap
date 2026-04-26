@@ -2,27 +2,33 @@ function generateCommBestSplits() {
     let HTMLContent = ''
     if (runRecapCategory.markin) {
         HTMLContent += `<div>`
-        HTMLContent += `<div class='container' style='padding-bottom:10px;gap:10px'>
-        <button class='button cuphead' style='width:180px' onclick="processSavFile(0,true);playSound('ready')">View WR Run Recap</button>
-        <div class='grow'><a href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ" target="_blank"><img src='${sharedAssetsURL('sheets')}' style='height:25px'></a></div>
+        HTMLContent += `
+        <div class='container' style='padding-bottom:10px;gap:10px'>
+            <button class='button cuphead' style='width:180px' onclick="processSavFile(0,true);playSound('ready')">View WR Run Recap</button>
+            <div class='grow'>
+                <a href="https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ" target="_blank">
+                    <img src='${sharedAssetsURL('sheets')}' style='height:25px'>
+                </a>
+            </div>
         </div>
         <div class='container' style='gap:30px'>
-        <table class='shadow'>
-        <tr>
-        <th class='dim'>WR</th>
-        <th colspan=5 class='gray'>Comm Best Splits</th>
-        </tr>`
+            <table class='shadow'>
+                <tr>
+                    <th class='dim'>WR</th>
+                    <th colspan=5 class='gray'>Comm Best Splits</th>
+                </tr>`
         splitInfo.forEach((split, index) => {
             const playerName = runRecap_markin.bestSplitsPlayers[index].split('/')[0]
             const player = allPlayers.find(player => player.name == playerName) || playerName
             const wrSplit = runRecap_markin.wrSplits[index]
             const url = runRecap_markin.bestSplitsURLs[index]
-            HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
-            <td class='dim' style='font-size:70%'>${secondsToHMS(wrSplit, true)}</td>
-            <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
-            <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin.bestSplits[index], true)}</td>
-            <td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>
-            <td>${getPlayerDisplay(player)}</td>
+            HTMLContent += `
+            <tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
+                <td class='dim' style='font-size:70%'>${secondsToHMS(wrSplit, true)}</td>
+                <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
+                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin.bestSplits[index], true)}</td>
+                <td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>
+                <td>${getPlayerDisplay(player)}</td>
             </tr>`
             const nextIsle = splitInfo[index + 1]?.isle
             if (nextIsle != split.isle) HTMLContent += `<tr style='height:16px'></tr>`
@@ -31,10 +37,10 @@ function generateCommBestSplits() {
         // Segments
         HTMLContent += `
         <table class='shadow'>
-        <tr>
-        <th class='dim'>WR</th>
-        <th colspan=5 class='gray'>Comm Best Segments</th>
-        </tr>`
+            <tr>
+                <th class='dim'>WR</th>
+                <th colspan=5 class='gray'>Comm Best Segments</th>
+            </tr>`
         let sum = 0
         splitInfo.forEach((split, index) => {
             const playerName = runRecap_markin.bestSegmentsPlayers[index].split('/')[0]
@@ -43,12 +49,13 @@ function generateCommBestSplits() {
             const wrSegment = runRecap_markin.wrSegments[index]
             const url = runRecap_markin.bestSegmentsURLs[index]
             sum += bestSegment
-            HTMLContent += `<tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
-            <td class='dim' style='font-size:70%'>${secondsToHMS(wrSegment, true)}</td>
-            <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
-            <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(bestSegment, true)}</td>
-            <td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>
-            <td>${getPlayerDisplay(player ? player : playerName)}</td>
+            HTMLContent += `
+            <tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
+                <td class='dim' style='font-size:70%'>${secondsToHMS(wrSegment, true)}</td>
+                <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
+                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(bestSegment, true)}</td>
+                <td style='color:gray;padding:0 3px'>${url ? fontAwesome('video-camera') : ''}</td>
+                <td>${getPlayerDisplay(player ? player : playerName)}</td>
             </tr>`
             const nextIsle = splitInfo[index + 1]?.isle
             if (nextIsle != split.isle) {

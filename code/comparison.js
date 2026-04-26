@@ -66,11 +66,12 @@ function runRecapExamples(type) {
                 const onclick = type ? `playerComparison('${type}',${playerIndex})` : `processSavFile(${playerIndex});playSound('ready')`
                 const truncated = Math.trunc(runRecapCategory.topRuns[playerIndex].rrc[runRecapCategory.scenes.length - 1].endTime * 100) / 100
                 const discrepancy = truncated != runRecapCategory.runs[playerIndex].score
-                HTMLContent += `<tr class='${comparison == 'Player ' + playerIndex && globalTab != 'home' ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">`
-                HTMLContent += `<td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>`
-                HTMLContent += `<td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>`
-                HTMLContent += `<td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>`
-                HTMLContent += `</tr>`
+                HTMLContent += `
+                <tr class='${comparison == 'Player ' + playerIndex && globalTab != 'home' ? 'cuphead' : ''} ${getRowColor(playerIndex)} grow' onclick="${onclick}">
+                    <td style='font-size:70%'>${getTrophy(playerIndex + 1) || playerIndex + 1}</td>
+                    <td class='${placeClass[playerIndex + 1]}' style='padding:0 4px'>${secondsToHMS(player.extra.score)}</td>
+                    <td class='container' style='justify-content:left'>${playerDisplay(player.name)}</td>
+                </tr>`
                 HTMLContent += discrepancy ? `<div class='grow' style='position:absolute;right:-20px;top:${6 + (playerIndex * 31)}px;color:salmon' onclick="discrepancyDetected()">${fontAwesome('exclamation-circle')}</div>` : ''
             }
         })

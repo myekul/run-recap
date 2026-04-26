@@ -20,7 +20,6 @@
 ### .rrc
 - Resets / Deaths
 - Personal Bests
-- King Dice IGT
 - 800 grid
 - Confetti
 

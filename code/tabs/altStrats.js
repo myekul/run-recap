@@ -6,9 +6,14 @@ async function generateAltStrats() {
     if (altStratCategory) {
         HTMLContent += `<div class='container' style='gap:10px'>`
         assignIsles()
-        HTMLContent += `<table class='shadow'>
-        <tr><td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.length || '&nbsp;'}</td></tr>
-        <tr><td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td></tr>
+        HTMLContent += `
+        <table class='shadow'>
+            <tr>
+                <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.length || '&nbsp;'}</td>
+            </tr>
+            <tr>
+                <td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td>
+            </tr>
         </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
@@ -93,8 +98,11 @@ function altStrat_topContributors(root) {
         count
     }));
     countArray.sort((a, b) => b.count - a.count)
-    HTMLContent += `<table class='shadow'>
-            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td></tr>`
+    HTMLContent += `
+    <table class='shadow'>
+        <tr>
+            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td>
+        </tr>`
     countArray.forEach((player, index) => {
         HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
                 <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
@@ -108,7 +116,9 @@ function altStrat_categories(root) {
     let HTMLContent = ''
     HTMLContent += `
             <table class='shadow' style='margin-top:20px'>
-            <tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td></tr>`
+                <tr>
+                    <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td>
+                </tr>`
     const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', '300%']
     altStratCategories.forEach((altStratCategory, index) => {
         const category = commBestILs[altStratCategory]
@@ -121,11 +131,14 @@ function altStrat_categories(root) {
                 }
             }
         }
-        HTMLContent += `<tr class='${getRowColor(index)}'>
-                <td class='${category?.className || 'gray'}' style='position:relative'>${category?.name || altStratCategory}
-                <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div></td>
-                <td style=''>${sum}</td>
-                </tr>`
+        HTMLContent += `
+        <tr class='${getRowColor(index)}'>
+            <td class='${category?.className || 'gray'}' style='position:relative'>
+                ${category?.name || altStratCategory}
+                <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div>
+            </td>
+            <td style=''>${sum}</td>
+        </tr>`
     })
     HTMLContent += `</table>`
     root.querySelector('#altStrat_categories').innerHTML = HTMLContent
@@ -133,7 +146,10 @@ function altStrat_categories(root) {
 function altStrat_bestTimes(root) {
     let HTMLContent = ''
     HTMLContent += `<table class='shadow'>`
-    HTMLContent += `<tr><td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td></tr>`
+    HTMLContent += `
+    <tr>
+        <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td>
+    </tr>`
     categories.forEach((category, categoryIndex) => {
         const altGroup = altStratCategory[category.info.id]
         if (altGroup) {
@@ -144,18 +160,18 @@ function altStrat_bestTimes(root) {
                 }
             })
             HTMLContent += `
-                    <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
-                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
-                    <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
-                    </tr>`
+            <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
+                <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
+                <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
+                <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
+            </tr>`
         } else {
             HTMLContent += `
-                    <tr class='${getRowColor(categoryIndex)}'>
-                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}'></td>
-                    <td></td>
-                    </tr>`
+            <tr class='${getRowColor(categoryIndex)}'>
+                <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
+                <td class='${category.info.id}'></td>
+                <td></td>
+            </tr>`
         }
     })
     HTMLContent += `</table>`
@@ -237,14 +253,19 @@ function altStrats(query) {
         HTMLContent += altStats(query)
     }
     if (query == 'thedevil' && runRecapCategory.name == '1.1+') {
-        HTMLContent += `<div class='container'>
-        <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
+        HTMLContent += `
+        <div class='container'>
+            <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
         </div>`
     }
     HTMLContent += `
     <div class='container'>
-    <div style='margin:0;position:relative'><table class='shadow' style='margin:10px'>
-    <tr><td colspan=10><div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div></td></tr>`
+        <div style='margin:0;position:relative'><table class='shadow' style='margin:10px'>
+            <tr>
+                <td colspan=10>
+                    <div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div>
+                </td>
+            </tr>`
     const baronessCheck = query == 'baronessvonbonbon'
     const RTAcheck = altStratCategory[query].some(strat => strat.rta)
     // if (!altStratCategory[query].some(strat => strat.title)) {
@@ -270,7 +291,8 @@ function altStrats(query) {
             HTMLContent += `<tr><td style='height:10px'></td></tr>
             <tr>`
             if (isolatePatterns && strat.odds) {
-                HTMLContent += `<th></th>
+                HTMLContent += `
+                <th></th>
                 <th colspan=2 class='gray'>${getOdds(strat.odds)}</th>
                 <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
             } else {
@@ -279,8 +301,9 @@ function altStrats(query) {
             HTMLContent += `</tr>`
         } else {
             if (!(query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns && !strat.odds)) {
-                HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
-        <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
+                HTMLContent += `
+                <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
+                    <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
                 if (baronessCheck) {
                     HTMLContent += `<td><div class='container'>`
                     strat.name.split(',').forEach(miniboss => {
@@ -309,19 +332,21 @@ function altStrats(query) {
     HTMLContent += `</table>`
     if (runRecapCategory.name == '1.1+' && category) {
         const categoryIndex = categories.findIndex(category => category.info.id == query)
-        HTMLContent += `<table class='shadow' style='position:absolute;left:110%;top:12px'>
-        <tr>
-        <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
-        </tr>
-        <tr>
-        <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
-        </tr>`;
+        HTMLContent += `
+        <table class='shadow' style='position:absolute;left:110%;top:12px'>
+            <tr>
+                <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
+            </tr>
+            <tr>
+                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
+            </tr>`;
         ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
-            HTMLContent += `<tr>
-            <td colspan=2 class='background2 grow' style='font-size:90%'>
-            ${getAnchor(runRecapCategory.tasLinks[vidIndex] + '&t=' + runRecapCategory.tasTimestamps[categoryIndex] + 's')}
-            <span class='dim'>${fontAwesome('video-camera')}</span> ${vid}</a>
-            </td>
+            HTMLContent += `
+            <tr>
+                <td colspan=2 class='background2 grow' style='font-size:90%'>
+                ${getAnchor(runRecapCategory.tasLinks[vidIndex] + '&t=' + runRecapCategory.tasTimestamps[categoryIndex] + 's')}
+                <span class='dim'>${fontAwesome('video-camera')}</span> ${vid}</a>
+                </td>
             </tr>`
         })
         HTMLContent += `</table>`
@@ -354,12 +379,14 @@ const MIN_ENTRIES = 10
 const MAX_ENTRIES = 50
 function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), done) {
     let HTMLContent = `<div class='container'>
-    <table class='shadow' style='width:450px;margin-top:20px'>`
-    HTMLContent += `<tr><td colspan=6 class='gray' style='padding:5px;position:relative'>
-    ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
-    <div class='font2' style='font-size:120%'>Pending Submissions</div>
-    ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
-    </td></tr>`
+    <table class='shadow' style='width:450px;margin-top:20px'>
+        <tr>
+            <td colspan=6 class='gray' style='padding:5px;position:relative'>
+                ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
+                <div class='font2' style='font-size:120%'>Pending Submissions</div>
+                ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
+            </td>
+        </tr>`
     for (let i = 0; i < (submissions.length <= MIN_ENTRIES ? MIN_ENTRIES : submissions.length < MAX_ENTRIES ? submissions.length : MAX_ENTRIES); i++) {
         const submission = submissions[i]
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')" onmouseenter="toast('${submission.date} - ${daysAgo(getDateDif(new Date(), new Date(submission.date)))}')"` : ''}>`
@@ -424,11 +451,11 @@ function userContributions(playerName) {
     strats.forEach((strat, index) => {
         HTMLContent += `
         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
-        <td class='dim' style='font-size:70%'>${index + 1}</td>
-        <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
-        <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
-        <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>
-        <td style='text-align:left' style='padding:0 3px'>${strat.name}</td>
+            <td class='dim' style='font-size:70%'>${index + 1}</td>
+            <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
+            <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
+            <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>
+            <td style='text-align:left' style='padding:0 3px'>${strat.name}</td>
         </tr>`
     })
     HTMLContent += `</table>`
@@ -465,11 +492,12 @@ function altStats() {
     const endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
     allStrats = allStrats.slice(cfg.startIndex, endIndex)
     let HTMLContent = ''
-    HTMLContent += `<div class='container' style='gap:10px'>
+    HTMLContent += `
+    <div class='container' style='gap:10px'>
         <div id='chart_${altStratLevel}' style='width:350px;margin:0'></div>
-        <table>
-        </tr>
-        <td></td>`
+            <table>
+                <tr>
+                    <td></td>`
     if (altStratExtra) HTMLContent += `<td></td>`
     minibossArray = []
     for (const minibossName in cfg.minibosses) {
@@ -499,11 +527,15 @@ function altStats() {
             HTMLContent += bonbonRow(cfg.fields[i], cfg.groupLabels[i], cfg.fields.length)
         }
     }
-    HTMLContent += `<td colspan=20 class='gray clickable' onclick="altStratExtra=!altStratExtra;playSound('move');action()">${fontAwesome(altStratExtra ? 'close' : 'chevron-down')}</td>
-    </table></div>`
+    HTMLContent += `
+                <td colspan=20 class='gray clickable' onclick="altStratExtra=!altStratExtra;playSound('move');action()">${fontAwesome(altStratExtra ? 'close' : 'chevron-down')}</td>
+            </tr>
+        </table>
+    </div>`
     if (altStratLevel == 'baronessvonbonbon') {
-        HTMLContent += `<div class='container' style='gap:5px;margin-top:5px'>
-    <div>Sort:</div>`;
+        HTMLContent += `
+        <div class='container' style='gap:5px;margin-top:5px'>
+            <div>Sort:</div>`;
         ['Standard', 'Best', 'Worst'].forEach(sort => {
             HTMLContent += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
         })

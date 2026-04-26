@@ -1,4 +1,4 @@
-function generate_rrc() {
+async function generate_rrc() {
     dropboxEligible = false
     chartEligible = false
     let HTMLContent = ''
@@ -8,55 +8,18 @@ function generate_rrc() {
     } else {
         HTMLContent += emptyFile('rrc')
     }
-    HTMLContent += `
-        <div class='container' style='margin:20px'>~</div>
-        <div class='container'>
-        <div style='padding:30px'>
-            <img src='images/rrc.png' style='height:80px'>
-            <div class='container font2' style='font-size:180%'>.rrc</div>
-        </div>
-        <table id='rrcCredits' class='dim' style='background-color:transparent'>
-            <tr><td class='dim font2'>PROJECT LEADS</td></tr>
-            <tr>
-                <td style='padding-left:20px'>
-                    <span style='font-size:70%;margin-right:30px'>Backend Developer</span>
-                    ${playerDisplay('SBDWolf')}
-                </td>
-                <td class='dim'>Component design, memory reading, .rrc writing</td>
-                <td>C# / Rust</td>
-            </tr>
-            <tr>
-                <td style='padding-left:20px'>
-                    <span style='font-size:70%'>Frontend Developer</span>
-                    ${playerDisplay('myekul')}
-                </td>
-                <td class='dim'>Web design, .rrc parsing, comparison tools</td>
-                <td>HTML / CSS / JavaScript</td>
-            </tr>
-            <tr><td class='dim font2' style='padding-top:10px'>ADDITIONAL HELP</td></tr>
-            <tr>
-                <td style='padding-left:20px'>
-                <span style='font-size:70%'>Memory Specialist</span>
-                ${playerDisplay('diggity')}
-                </td>
-                <td class='dim'>Memory reading technology, .wasm autosplitter</td>
-                <td>Rust / WebAssembly</td>
-            </tr>
-            <tr><td class='dim font2' style='padding-top:10px'>RUN RETIMING</td></tr>
-            <tr>
-                <td colspan=3 style='padding-left:20px'>
-                ${playerDisplay('Misterbutter444')}
-                </td>
-            </tr>
-        </table>
-        </div>`
+    HTMLContent += `<div id='rrcCredits'></div>`
     document.getElementById('content').innerHTML = HTMLContent
-    const kdindex = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == 'level_dice_palace_main')
+    const kdindex = rrcCurrentAttempt.scenes?.findIndex(scene => scene.name == 'level_dice_palace_main')
     if (lastBossDone() && rrcCurrentAttempt.scenes[kdindex]?.levelTime) {
         show('kdPlus')
     }
     if (dropboxEligible) initializeDropbox()
     if (chartEligible) rrcChart()
+    await setHTML('code/tabs/file/rrc/rrcCredits.html', 'rrcCredits');
+    ['SBDWolf', 'myekul', 'diggity', 'Misterbutter444'].forEach((player, index) => {
+        document.getElementById('rrcCredits' + (index + 1)).innerHTML = playerDisplay(player)
+    })
 }
 function rrcView() {
     let HTMLContent = ''
@@ -283,15 +246,17 @@ function rtaTable(title, field, sceneNames) {
             if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
         }
         if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
-            HTMLContent += `<td>
-            <div class='myekulColor container' style='gap:3px;justify-content:left;padding:0 5px'>`
+            HTMLContent += `
+            <td>
+                <div class='myekulColor container' style='gap:3px;justify-content:left;padding:0 5px'>`
             for (let i = 0; i < scene.scorecard?.starSkips; i++) {
                 HTMLContent += fontAwesome('star')
             }
             HTMLContent += `</div></td>`
             if (!['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison)) {
-                HTMLContent += `<td>
-                <div class='dim container' style='gap:3px;justify-content:left;padding:0 5px;font-size:80%'>`
+                HTMLContent += `
+                <td>
+                    <div class='dim container' style='gap:3px;justify-content:left;padding:0 5px;font-size:80%'>`
                 for (let i = 0; i < rrcComparisonAttempt.levels[index].scorecard?.starSkips; i++) {
                     HTMLContent += fontAwesome('star')
                 }
@@ -402,27 +367,29 @@ function rrcRaw() {
         </tr>`
     rrcCurrentAttempt.bosses.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
-        HTMLContent += `<tr class='${getRowColor(index)}'>
+        HTMLContent += `
+        <tr class='${getRowColor(index)}'>
             <td class='container ${level?.id}'>${getImage(level.id, 21)}</td>
             <td class='${level?.id}'>${scene.levelTime ? secondsToHMS(scene.levelTime, true) : ''}</td>
             <td class='${level?.id}' style='font-size:80%'>${scene.levelTime ? level?.id == 'thedevil' ? secondsToHMS(scene.segment, true) : secondsToHMS(scene.segment - 6.45, true) : ''}</td>
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.hp : ''}</td>
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.parries : ''}</td>
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.superMeter || scene.scorecard.coins : ''}</td>
-            </tr>`
+        </tr>`
     })
     HTMLContent += `</table>`
     HTMLContent += `<table style='margin:0 auto'>`
     rrcCurrentAttempt.scenes.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
-        HTMLContent += `<tr class='${getRowColor(index)}'>
+        HTMLContent += `
+        <tr class='${getRowColor(index)}'>
             <td class='dim' style='font-size:50%'>${index}</td>
             <td class='container ${level?.id}'>${level && level?.id != 'forestfollies' ? getImage(level.id, 21) : ''}</td>
             <td class='${level?.id}'>${scene.levelTime ? secondsToHMS(scene.levelTime, true) : ''}</td>
             <td class='dim' style='font-size:70%;text-align:left'>${scene.name}</td>
             <td>${secondsToHMS(scene.segment, true)}</td>
             <td>${secondsToHMS(scene.endTime, true)}</td>
-            </tr>`
+        </tr>`
     })
     HTMLContent += `</table>`
     openModal(HTMLContent, 'RAW')
@@ -542,11 +509,12 @@ function rrcImport(scenes) {
     runRecap_rrcFile.attempts = [{ scenes: scenes }]
 }
 function rrcUpdateNotice() {
-    return `<div style='width:360px;padding-bottom:10px'>Your Run Recap Component is outdated! Please install the latest version to gain access to all features.</div>
+    return `
+    <div style='width:360px;padding-bottom:10px'>Your Run Recap Component is outdated! Please install the latest version to gain access to all features.</div>
     <div class='container'>
-    ${getAnchor('https://github.com/SBDWolf/Run-Recap-Component')}
-    <button class='button cuphead' style='width:200px'>Go to download page</button>
-    </a>
+        ${getAnchor('https://github.com/SBDWolf/Run-Recap-Component')}
+            <button class='button cuphead' style='width:200px'>Go to download page</button>
+        </a>
     </div>`
 }
 function lastBossDone(attempt = rrcCurrentAttempt) {
@@ -562,18 +530,22 @@ function kdPlus() {
         const kdminiboss = kdminibosses[kdlevel]
         if (kdminiboss) {
             HTMLContent += `
-                <table class='shadow'><tr class='${kdminiboss}'>
-                <td class='container'>${getImage('phase/kingdice' + kdminibossID[kdlevel])}</td>
-                <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[i].levelTime - rrcCurrentAttempt.scenes[i - 1].levelTime, true)}</td>
-                </tr></table>`
+                <table class='shadow'>
+                    <tr class='${kdminiboss}'>
+                        <td class='container'>${getImage('phase/kingdice' + kdminibossID[kdlevel])}</td>
+                        <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[i].levelTime - rrcCurrentAttempt.scenes[i - 1].levelTime, true)}</td>
+                    </tr>
+                </table>`
         }
     }
     const kdHimselfIndex = rrcCurrentAttempt.scenes.findLastIndex(scene => scene.name == 'level_dice_palace_main')
     HTMLContent += `
-                <table class='shadow'><tr class='kingdice2'>
+        <table class='shadow'>
+            <tr class='kingdice2'>
                 <td class='container'>${getImage('kingdice')}</td>
                 <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[kdHimselfIndex].levelTime - rrcCurrentAttempt.scenes[kdHimselfIndex - 1].levelTime, true)}</td>
-                </tr></table>`
+            </tr>
+        </table>`
     HTMLContent += `</div>`
     openModal(HTMLContent, 'MINIBOSSES')
 }

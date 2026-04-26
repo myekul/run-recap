@@ -70,15 +70,17 @@ function generateTheTop() {
         })
         HTMLContent += `</table></div>`
         HTMLContent += topResidual()
-        HTMLContent += `<div class='container' style='margin-top:100px'>`
-        HTMLContent += `<table class='shadow'>
-    <tr>
-    <td><td>`
+        HTMLContent += `
+        <div class='container' style='margin-top:100px'>
+            <table class='shadow'>
+                <tr>
+                    <td><td>`
         players.slice(0, runRecapCategory.topRuns.length).forEach(player => {
             HTMLContent += `<td><div style='position:absolute;transform:rotate(-30deg) translate(-13px,-30px);transform-origin:bottom left'>${getPlayerDisplay(player, true)}</div></td>`
         })
-        HTMLContent += `<tr>
-    <td><div class='container'>${getImage('runnguns/forestfollies', 21)}</div></td>`
+        HTMLContent += `
+        <tr>
+            <td><div class='container'>${getImage('runnguns/forestfollies', 21)}</div></td>`
         runRecapCategory.topRuns.forEach((run, index) => {
             let starSkip = ''
             if (run.starSkips[0]) starSkip = fontAwesome('star')
@@ -116,9 +118,11 @@ function generateTheTop() {
 }
 function topGrid() {
     let HTMLContent = ''
-    HTMLContent += `<div class='container' style='overflow-x:auto;margin:20px 0'>`
-    HTMLContent += `<table class='shadow'>`
-    HTMLContent += `<tr><td colspan=4></td>`
+    HTMLContent += `
+    <div class='container' style='overflow-x:auto;margin:20px 0'>
+        <table class='shadow'>
+            <tr>
+                <td colspan=4></td>`
     categories.forEach(category => {
         HTMLContent += `<td colspan=2 class='${category.info.id}'>${getImage(category.info.id)}</td>`
     })
@@ -137,8 +141,9 @@ function topGrid() {
             const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
-            HTMLContent += `<td class='${grade.className}' style='width:5px'></td>`
-            HTMLContent += `<td style='color:${Math.floor(ILtime) == Math.floor(savComparisonCollection['Top Bests'][categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
+            HTMLContent += `
+            <td class='${grade.className}' style='width:5px'></td>
+            <td style='color:${Math.floor(ILtime) == Math.floor(savComparisonCollection['Top Bests'][categoryIndex]) ? 'lightgray' : 'gray'}'>${secondsToHMS(ILtime)}</td>`
         })
         HTMLContent += `</tr>`
     })
@@ -162,8 +167,9 @@ function topGrid() {
             const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
             const delta = runRecapDelta(ILtime, comparisonTime)
             const grade = runRecapGrade(delta)
-            HTMLContent += `<td class='${grade.className}' style='font-size:70%;text-align:left'></td>`
-            HTMLContent += `<td class='${category.info.id}'>${ILtime ? secondsToHMS(ILtime) : ILtime}</td>`
+            HTMLContent += `
+            <td class='${grade.className}' style='font-size:70%;text-align:left'></td>
+            <td class='${category.info.id}'>${ILtime ? secondsToHMS(ILtime) : ILtime}</td>`
         })
         HTMLContent += `</tr>`
     }
@@ -193,8 +199,9 @@ function topSums() {
     HTMLContent += `<tr style='color:gray'><td colspan=4></td>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
-            HTMLContent += `<th colspan=3 class='${isle.className}'>${isle.name}</th>`
-            HTMLContent += `<td></td>`
+            HTMLContent += `
+            <th colspan=3 class='${isle.className}'>${isle.name}</th>
+            <td></td>`
         }
     })
     HTMLContent += `
@@ -230,8 +237,9 @@ function topSums() {
     HTMLContent += `<tr style='color:gray'><th colspan=4 style='text-align:right'>&Delta;</th>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
-            HTMLContent += `<th colspan=3>${secondsToHMS(isle.comparisonSum, true)}</th>`
-            HTMLContent += `<td></td>`
+            HTMLContent += `
+            <th colspan=3>${secondsToHMS(isle.comparisonSum, true)}</th>
+            <td></td>`
         }
     })
     HTMLContent += `
@@ -270,34 +278,36 @@ function getIsleSum(isle) {
     if (isle.sum) {
         const delta = Math.floor(isle.sum - isle.comparisonSum)
         const grade = runRecapGrade(delta)
-        HTMLContent += `<td class='${grade.className}' style='text-align:left'><span>${savComparison != 'None' ? grade.grade : ''}</span></td>`
-        HTMLContent += `<td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, true)}</td>`
-        HTMLContent += `<td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'><span>${savComparison != 'None' ? getDelta(delta) : ''}</span></td>`
-        HTMLContent += `<td style='width:20px'></td>`
+        HTMLContent += `
+        <td class='${grade.className}' style='text-align:left'><span>${savComparison != 'None' ? grade.grade : ''}</span></td>
+        <td class='${isle.className}' style='padding:0 5px'>${secondsToHMS(isle.sum, true)}</td>
+        <td class='${deltaType ? redGreen(delta) : grade.className}' style='font-size:90%'><span>${savComparison != 'None' ? getDelta(delta) : ''}</span></td>
+        <td style='width:20px'></td>`
     }
     return HTMLContent
 }
 function topResidual() {
-    let HTMLContent = `<div class='container' style='margin-top:30px'>
-    <table class='shadow'>
-    <tr>
-    <th colspan=4></th>
-    <th class='gray' style='width:110px'>Level RTA</th>
-    <th class='gray' style='width:110px'>Intermissions</th>
-    <th class='gray' style='width:110px'>Map Movement</th>
-    <th class='gray' style='width:110px'>Cutscenes</th>
-    <th class='gray' style='width:110px'>Scorecards</th>`
+    let HTMLContent = `
+    <div class='container' style='margin-top:30px'>
+        <table class='shadow'>
+            <tr>
+                <th colspan=4></th>
+                <th class='gray' style='width:110px'>Level RTA</th>
+                <th class='gray' style='width:110px'>Intermissions</th>
+                <th class='gray' style='width:110px'>Map Movement</th>
+                <th class='gray' style='width:110px'>Cutscenes</th>
+                <th class='gray' style='width:110px'>Scorecards</th>`
     runRecapCategory.topRuns.forEach((run, index) => {
         const player = players[index]
         HTMLContent += `<tr class='${getRowColor(index)}'>`
         HTMLContent += bigPlayerDisplay(player)
         rrcOrganize(run, run.rrc, true)
         HTMLContent += `
-        <td>${secondsToHMS(run.levelTime, true)}</td>
-        <td>${secondsToHMS(run.intermissionTime, true)}</td>
-        <td>${secondsToHMS(run.mapTime, true)}</td>
-        <td>${secondsToHMS(run.cutsceneTime, true)}</td>
-        <td>${secondsToHMS(run.scorecardTime, true)}</td>
+            <td>${secondsToHMS(run.levelTime, true)}</td>
+            <td>${secondsToHMS(run.intermissionTime, true)}</td>
+            <td>${secondsToHMS(run.mapTime, true)}</td>
+            <td>${secondsToHMS(run.cutsceneTime, true)}</td>
+            <td>${secondsToHMS(run.scorecardTime, true)}</td>
         </tr>`
     })
     HTMLContent += `</table>

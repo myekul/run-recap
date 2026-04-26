@@ -74,13 +74,14 @@ function savBoss(categoryIndex) {
     }
     let cellContent = done ? runRecapIL(runTime, categoryIndex) : runRecapInput(categoryIndex)
     if (!done && globalTab == 'rrc') cellContent = '???'
-    HTMLContent += `<tr class='${getRowColor(categoryIndex)}'>`
-    HTMLContent += `<td class='${grade.className}' style='text-align:left;width:24px'><span>${done ? deltaType ? '' : grade.grade : ''}</span></td>`
-    HTMLContent += `<td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>`
-    HTMLContent += `<td id='runRecap_${categoryIndex}' class='${done ? category.info.id : ''}' style='width:85px'>${cellContent}</td>`
-    HTMLContent += `<td class='${redGreen(delta)}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>`
-    HTMLContent += `<td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>`
-    HTMLContent += `</tr>`
+    HTMLContent += `
+    <tr class='${getRowColor(categoryIndex)}'>
+        <td class='${grade.className}' style='text-align:left;width:24px'><span>${done ? deltaType ? '' : grade.grade : ''}</span></td>
+        <td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>
+        <td id='runRecap_${categoryIndex}' class='${done ? category.info.id : ''}' style='width:85px'>${cellContent}</td>
+        <td class='${redGreen(delta)}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>
+        <td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>
+    </tr>`
     return HTMLContent
 }
 function extraLevel(name, time) {
@@ -91,12 +92,13 @@ function extraLevel(name, time) {
         </div>`
 }
 function isleHeader(isle) {
-    return `<div style='position:relative'>
+    return `
+    <div style='position:relative'>
     ${isle.name == 'Hell' ? `<div id='kdPlus' class='grow dim' style='display:none;position:absolute;right:-20px;top:30px' onclick="kdPlus()">${fontAwesome('plus')}</div>` : ''}
     <table class='shadow'>
     <tr>
-    <th colspan=3 class='${isle.className}'>${isle.name}</th>
-    <td colspan=2></td>
+        <th colspan=3 class='${isle.className}'>${isle.name}</th>
+        <td colspan=2></td>
     </tr>`
 }
 function runRecapIL(runTime, categoryIndex) {
