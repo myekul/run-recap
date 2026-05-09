@@ -1,23 +1,3 @@
-function fetchCuphead() {
-    const sheetID = '1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ'
-    return gapi.client.sheets.spreadsheets.get({
-        spreadsheetId: sheetID,
-        fields: `sheets(properties.title,data(rowData(values(userEnteredValue,textFormatRuns))))`
-    }).then(response => {
-        const sheets = response.result.sheets
-        sheets.forEach(sheet => {
-            const sheetName = sheet.properties.title
-            let rowData = sheet.data[0].rowData
-            rowData = rowData.slice(3)
-            rowData = rowData.filter(row => row.values && row.values[0] && row.values[0].userEnteredValue)
-            rowData.forEach(row => {
-                if (row.values) row.values = row.values.slice(1)
-            })
-            markinSheets[sheetName] = rowData
-        })
-        changeCategory()
-    })
-}
 function organizeCategories() {
     categories = []
     bossesCopy = [...bosses]

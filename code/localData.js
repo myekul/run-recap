@@ -40,9 +40,9 @@ function prepareLocalData() {
                                         if (savLevelsNeeded) currentRun.igt = []
                                         rrc.endTimes = []
                                         let winIndex = 0
-                                        rrc.scenes.forEach((scene, index) => {
+                                        rrc.scenes.forEach((scene, sceneIndex) => {
                                             rrc.endTimes.push(scene.endTime)
-                                            if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[index + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
+                                            if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[sceneIndex + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
                                                 currentRun.igt.push(scene.levelTime)
                                             }
                                             if (scene.name == 'win') {
@@ -59,19 +59,80 @@ function prepareLocalData() {
                                         reconstructRRC(category, rrc.endTimes, index)
                                     }
                                 })
+                                worldRecordData[category] = { splitBefore: [], splitAfter: [], segmentBefore: [], segmentAfter: [] }
+                                const rrc = commBestILs[category].topRuns[0].rrc
+                                let segmentSumBefore = 0
+                                let segmentSumAfter = 0
+                                let nextNull = false
+                                rrc.forEach((scene, index) => {
+                                    const segment = index == 0 ? scene.endTime : scene.endTime - rrc[index - 1].endTime
+                                    segmentSumBefore += segment
+                                    segmentSumAfter += segment
+                                    if (scene.name == 'win' || ['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial', 'level_devil', 'level_saltbaker'].includes(scene.name)) {
+                                        if (['level_devil', 'level_saltbaker'].includes(scene.name)) {
+                                            let endTime = scene.endTime
+                                            if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') {
+                                                endTime -= 8.45
+                                            }
+                                            worldRecordData[category].splitBefore.push(endTime)
+                                        } else if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
+                                            worldRecordData[category].splitBefore.push(null)
+                                        } else if (rrc[index - 1].name != 'level_platforming_1_1F' && !(rrc[index - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
+                                            worldRecordData[category].splitBefore.push(rrc[index - 1].endTime - 6.45)
+                                        }
+                                        if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
+                                            worldRecordData[category].segmentBefore.push(null)
+                                            nextNull = true
+                                        } else if (rrc[index - 1].name != 'level_platforming_1_1F' && !(scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
+                                            if (nextNull) {
+                                                worldRecordData[category].segmentBefore.push(null)
+                                                segmentSumBefore = segment
+                                                nextNull = false
+                                            } else {
+                                                let result = segmentSumBefore
+                                                if (index < rrc.length - 1) {
+                                                    result -= segment
+                                                    if (rrc[index - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') result -= 2
+                                                    if (rrc[index - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') result += 2
+                                                } else {
+                                                    result += 6.45
+                                                }
+                                                worldRecordData[category].segmentBefore.push(result)
+                                                segmentSumBefore = segment
+                                            }
+                                        }
+                                        let splitAfter = scene.endTime
+                                        if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') splitAfter -= 8.45
+                                        if (scene.name != 'level_platforming_1_1F' && rrc[index - 1].name != 'level_saltbaker') {
+                                            worldRecordData[category].splitAfter.push(splitAfter)
+                                            if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') segmentSumAfter -= 8.45
+                                            if (rrc[index - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') segmentSumAfter += 8.45
+                                            worldRecordData[category].segmentAfter.push(segmentSumAfter)
+                                            segmentSumAfter = 0
+                                        }
+                                    }
+                                })
                             }
                         })
                 })
         })
-    fetch('resources/runViable.json')
+    fetch('resources/commBest.json')
         .then(response => response.json())
         .then(data => {
-            runViable = data
-            fetch('resources/alt.json')
+            commBest = data
+            commBest['DLC+Base L/S'].before.unshift(...commBest['DLC L/S'].before)
+            commBest['DLC+Base C/S'].before.unshift(...commBest['DLC C/S'].before)
+            commBest['DLC+Base C/S'].after.unshift(...commBest['DLC C/S'].after)
+            fetch('resources/runViable.json')
                 .then(response => response.json())
                 .then(data => {
-                    alt = data
-                    organizeAltStrats()
+                    runViable = data
+                    fetch('resources/alt.json')
+                        .then(response => response.json())
+                        .then(data => {
+                            alt = data
+                            organizeAltStrats()
+                        })
                 })
         })
 }

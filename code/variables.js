@@ -1,6 +1,5 @@
 const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
 
-const markinSheets = {}
 let runRecapCategory
 let globalCache
 
@@ -23,6 +22,10 @@ let rrcComparisonCollection = {}
 let rrcComparison = 'Top Bests'
 let rrcComparisonText = 'Top Bests'
 
+const worldRecordData = {}
+
+let commSob = []
+
 let splitBefore
 let segmentToggle
 let scorecardMode = 'Default'
@@ -30,7 +33,6 @@ let scorecardMode = 'Default'
 let dropboxEligible
 let chartEligible
 
-let runRecap_markin
 let runRecapTime
 let runRecapExample = false
 let runRecapTheoretical = false

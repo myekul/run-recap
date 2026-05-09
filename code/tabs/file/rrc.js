@@ -233,7 +233,8 @@ function rtaTable(title, field, sceneNames) {
         const delta = (currentSegment - comparisonSegment) || 0
         deltaSum += delta
         const content = level ? getImage(runNgun ? 'runnguns/' + level.id : level.id, 21) : sceneNames[scene.name]
-        HTMLContent += `<tr class='${getRowColor(index)}'>
+        HTMLContent += `
+        <tr class='${getRowColor(index)}'>
             <td class='${level ? 'container ' + level.id : ''}' style='text-align:left'>${content}</td>`
         if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent += normalizedColorCell(currentSegment, min, max)
         if (!(title == 'Scorecards' && scorecardMode == 'Star Skips')) HTMLContent += `<td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`

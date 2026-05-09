@@ -6,10 +6,11 @@ function generateLeaderboards() {
         runs.forEach((run, index) => {
             newRuns.push({ run: run, playerIndex: index, categoryIndex: runRecapCategory.category })
         })
-        HTMLContent += horiztonalCategories()
-        HTMLContent += `<div class='container' style='align-items:flex-start'>`
-        HTMLContent += `<div style='width:450px'>
-    <table class='shadow'>`
+        HTMLContent += `
+        ${horiztonalCategories()}
+        <div class='container' style='align-items:flex-start;margin-top:45px'>
+            <div style='width:450px'>
+                <table class='shadow'>`
         const newPlayers = players.filter(player => player.extra).slice(0, 100)
         newPlayers.forEach((player, index) => {
             HTMLContent += `
@@ -20,8 +21,9 @@ function generateLeaderboards() {
                 <td>${index < runRecapCategory.topRuns.length ? `<img src='images/rrc.png' class='container grow' style='height:18px' onclick="processSavFile(${index}),playSound('ready')">` : ''}</td>
             </tr>`
         })
-        HTMLContent += `</table>
-    </div>`
+        HTMLContent += `
+            </table>
+        </div>`
         HTMLContent += `<div style='width:750px'>${podium(newRuns)}</div>`
         HTMLContent += `</div>`
     } else {
@@ -52,7 +54,7 @@ function fancyTime(run) {
 let sortCategoryIndex
 function horiztonalCategories() {
     functionName = `playSound('category_select');changeCategory`
-    return `<div class="container categorySelect background1 shadow" style='margin-bottom:45px;width:700px;border-radius:25px;padding:8px'>
+    return `<div class="container categorySelect background1 shadow" style='width:700px;border-radius:25px;padding:8px'>
                 <button id='onePointOneButton' onclick="${functionName}('1.1+',true)" class="button onePointOne ${runRecapCategory.tabName == '1.1+' ? 'selected' : ''}">1.1+</button>
                 <button id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy ${runRecapCategory.tabName == 'Legacy' ? 'selected' : ''}">Legacy</button>
                 <button id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg ${runRecapCategory.tabName == 'NMG' ? 'selected' : ''}">NMG</button>

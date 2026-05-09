@@ -1,0 +1,1685 @@
+{
+    "1.1+": {
+        "before": [
+            {
+                "title": "forestfollies",
+                "split": "55.57",
+                "splitRunner": "Quincely0",
+                "splitURL": "https://youtu.be/AP-yUBmASz4",
+                "segment": "55.57",
+                "segmentRunner": "Quincely0",
+                "segmentURL": "https://youtu.be/AP-yUBmASz4"
+            },
+            {
+                "title": "therootpack",
+                "split": "1:59.50",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/C_Udqda-Hp0?si=-fZG4VYuU5U2fWtr&t=3712",
+                "segment": "1:03.15",
+                "segmentRunner": "ExclamationMarkYT",
+                "segmentURL": "https://youtu.be/JkzAA001HHc"
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "3:07.27",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "1:07.15",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/watch?v=kYlpTMY9W2M&t=156s"
+            },
+            {
+                "title": "goopylegrande",
+                "split": "3:57.71",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "49.36",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/5ZmciUW-3xA?si=8gl2djV4ssFAi_yp&t=1734"
+            },
+            {
+                "title": "hildaberg",
+                "split": "5:37.66",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/_a1po4eONrI?si=B-2bDHgHmVXREVyK&t=12383",
+                "segment": "1:36.57",
+                "segmentRunner": "Grondious",
+                "segmentURL": "https://youtu.be/9HRw4AUIsO4"
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "6:41.62",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/yZornOw-XUM?si=9T5-4NDgP_RUdauW&t=12493",
+                "segment": "1:00.98",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/g0cez6yFqn8?si=5Fmqd2LQi_JFsq0U&t=13426"
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "7:56.26",
+                "splitRunner": "SBDWolf",
+                "splitURL": null,
+                "segment": "1:10.25",
+                "segmentRunner": "Grondious",
+                "segmentURL": "https://youtu.be/GGGhYroTIjg?si=8o4s7B2a7lsE3RR5"
+            },
+            {
+                "title": "wallywarbles",
+                "split": "9:19.01",
+                "splitRunner": "SBDWolf",
+                "splitURL": null,
+                "segment": "1:19.27",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/5ZmciUW-3xA?si=dqo8yrGrMvAd3gVb&t=4766"
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "11:04.79",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/AYWgYJR8JgE?si=hJ3eFw1K6GP06l_R&t=20893",
+                "segment": "1:44.91",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/4HjkFGum0dk?si=dnB_DIox6m2mzTeI&t=10107"
+            },
+            {
+                "title": "beppitheclown",
+                "split": "12:16.84",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/6NErlfGZnCw?si=7Nm4-SKY1I7BshL2&t=8261",
+                "segment": "1:08.00",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "13:38.75",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/6NErlfGZnCw?si=7Nm4-SKY1I7BshL2&t=8261",
+                "segment": "1:18.58",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "14:59.80",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:16.05",
+                "segmentRunner": "Quincely0",
+                "segmentURL": "https://www.twitch.tv/videos/2566681394"
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "16:14.70",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:10.67",
+                "segmentRunner": "ClipBoardGuy",
+                "segmentURL": "https://youtu.be/h8_ModqCNCQ"
+            },
+            {
+                "title": "sallystageplay",
+                "split": "17:28.48",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:11.95",
+                "segmentRunner": "Quincely0",
+                "segmentURL": "https://youtu.be/-DxcwACmrLc"
+            },
+            {
+                "title": "wernerwerman",
+                "split": "18:38.10",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "1:05.83",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/E_wAMzQopYs?si=UYB45FN2XEwBVCc-&t=14087"
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "19:48.05",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:07.38",
+                "segmentRunner": "Grondious",
+                "segmentURL": null
+            },
+            {
+                "title": "calamaria",
+                "split": "21:17.63",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/vA7KoQu34as?t=3074s",
+                "segment": "1:22.79",
+                "segmentRunner": "Quincely0",
+                "segmentURL": "https://www.twitch.tv/videos/2627472807"
+            },
+            {
+                "title": "phantomexpress",
+                "split": "22:49.40",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/vA7KoQu34as?t=3074s",
+                "segment": "1:28.40",
+                "segmentRunner": "ClipBoardGuy",
+                "segmentURL": "https://www.youtube.com/watch?v=Zq6sCl22wWg&t=7988s"
+            },
+            {
+                "title": "kingdice",
+                "split": "25:41.61",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "2:49.06",
+                "segmentRunner": "Grondious",
+                "segmentURL": "https://youtu.be/Y11a410-J4s"
+            },
+            {
+                "title": "thedevil",
+                "split": "26:59.56",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "1:12.71",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/watch?v=uiurXsFxMfw&t=1661s"
+            }
+        ],
+        "after": [
+            {
+                "title": "forestfollies",
+                "split": "1:05.93",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/13ZSnTYvuGA?si=gfLR5xqm9ZwWSlot&t=7137",
+                "segment": "1:05.93",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/13ZSnTYvuGA?si=gfLR5xqm9ZwWSlot&t=7137"
+            },
+            {
+                "title": "therootpack",
+                "split": "2:12.90",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/C_Udqda-Hp0?si=-fZG4VYuU5U2fWtr&t=3712",
+                "segment": "1:05.39",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/5ZmciUW-3xA?si=cJ24hr67qmm2O2ne&t=12267"
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "3:20.54",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "1:06.68",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/vA7KoQu34as?si=DXqTlkiUIjYUzz0Y&t=11482"
+            },
+            {
+                "title": "goopylegrande",
+                "split": "4:12.89",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "50.53",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/5ZmciUW-3xA?t=6889s"
+            },
+            {
+                "title": "hildaberg",
+                "split": "5:52.51",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/_a1po4eONrI?si=B-2bDHgHmVXREVyK&t=12383",
+                "segment": "1:37.08",
+                "segmentRunner": "Grondious",
+                "segmentURL": "https://youtu.be/9HRw4AUIsO4"
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "6:55.26",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/MFZfuNGx7dA?si=2Q6JMOUz5rm_baRb&t=18814",
+                "segment": "1:00.16",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/g0cez6yFqn8?si=IHeT45QI9s_r-9D9&t=13441"
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "8:09.90",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/MFZfuNGx7dA?si=Ra0q1aAmvvc-MuT5&t=18814",
+                "segment": "1:10.00",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/YUhDRiQxgcw?si=cJ_ePCQeXIyU8uMi&t=16664"
+            },
+            {
+                "title": "wallywarbles",
+                "split": "9:33.45",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/AYWgYJR8JgE?si=hJ3eFw1K6GP06l_R&t=20893",
+                "segment": "1:19.62",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/5ZmciUW-3xA?si=dqo8yrGrMvAd3gVb&t=4766"
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "11:19.50",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/AYWgYJR8JgE?si=hJ3eFw1K6GP06l_R&t=20893",
+                "segment": "1:44.87",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/4HjkFGum0dk?si=dnB_DIox6m2mzTeI&t=10107"
+            },
+            {
+                "title": "beppitheclown",
+                "split": "12:31.34",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=mMIndkvwovvgHCug&t=5091",
+                "segment": "1:08.44",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/qYec8S4JQXM?si=HVMAMeQEPtn4UYE-&t=8693"
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "13:52.22",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/6NErlfGZnCw?si=7Nm4-SKY1I7BshL2&t=8261",
+                "segment": "1:17.26",
+                "segmentRunner": "ClipBoardGuy",
+                "segmentURL": "https://youtu.be/ZEdYrp2Ogx8?t=20632"
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "15:13.17",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:16.43",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/bUKi_6rnSwY?si=A2Ub81NMkeG33kea&t=10483"
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "16:25.78",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:11.86",
+                "segmentRunner": "ClipBoardGuy",
+                "segmentURL": "https://youtu.be/fde_RotWLLg?t=3667"
+            },
+            {
+                "title": "sallystageplay",
+                "split": "17:40.71",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:11.26",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/jhpqM1vH8xY?si=Ls9w2PUimW0FjEca&t=3328"
+            },
+            {
+                "title": "wernerwerman",
+                "split": "18:52.60",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:06.724",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/E_wAMzQopYs?si=UYB45FN2XEwBVCc-&t=14087"
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "20:02.38",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:08.028",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/tfEUte2Da4s?si=zHmO9M7uNMftVejN&t=11252"
+            },
+            {
+                "title": "calamaria",
+                "split": "21:31.97",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:23.33",
+                "segmentRunner": "Quincely0",
+                "segmentURL": "https://www.twitch.tv/videos/2627472807"
+            },
+            {
+                "title": "phantomexpress",
+                "split": "23:03.72",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "1:28.481",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/93DiDn9VsVI?si=qwT5ye-Arp66EhrJ&t=16564"
+            },
+            {
+                "title": "kingdice",
+                "split": "25:55.71",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://www.youtube.com/live/5E2CJ9fspPI?si=RbZ2ebPmEFZ6QRha&t=5156",
+                "segment": "2:47.146",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/93DiDn9VsVI?si=v7PG-AG3Qj9oJd3D&t=11729"
+            },
+            {
+                "title": "thedevil",
+                "split": "26:59.56",
+                "splitRunner": "SBDWolf",
+                "splitURL": "https://youtu.be/kYlpTMY9W2M",
+                "segment": "58.733",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": "https://www.youtube.com/live/GHE-2WaxRDQ?si=RV9non-amIkHRHaH&t=5056"
+            }
+        ]
+    },
+    "Legacy": {
+        "before": [
+            {
+                "title": "forestfollies",
+                "split": "49.80",
+                "splitRunner": "Fintan0",
+                "splitURL": "https://youtu.be/DTAsZMs64LE",
+                "segment": "49.80",
+                "segmentRunner": "Fintan0",
+                "segmentURL": "https://youtu.be/DTAsZMs64LE"
+            },
+            {
+                "title": "therootpack",
+                "split": "1:46.17",
+                "splitRunner": "Yuka",
+                "splitURL": "https://youtu.be/Sq-cTahoKig",
+                "segment": "55.31",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/5YOoJ4jDphE"
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "2:45.57",
+                "splitRunner": "Fintan0",
+                "splitURL": null,
+                "segment": "59.29",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/8J-8rouEBTk"
+            },
+            {
+                "title": "goopylegrande",
+                "split": "3:35.94",
+                "splitRunner": "Fintan0",
+                "splitURL": "https://youtu.be/DTAsZMs64LE",
+                "segment": "46.20",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "hildaberg",
+                "split": "5:09.4",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:30.01",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "6:02.8",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "51.25",
+                "segmentRunner": "SBDWolf",
+                "segmentURL": null
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "7:10.3",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:06.47",
+                "segmentRunner": "Fintan0",
+                "segmentURL": null
+            },
+            {
+                "title": "wallywarbles",
+                "split": "8:22.2",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:07.50",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "9:42.3",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:15.90",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "beppitheclown",
+                "split": "10:39.3",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "53.7",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "11:40.7",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "59.6",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "12:52.0",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:05.40",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "13:35.7",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "42.10",
+                "segmentRunner": "Yuka",
+                "segmentURL": null
+            },
+            {
+                "title": "sallystageplay",
+                "split": "14:39.1",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:01.51",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "wernerwerman",
+                "split": "15:40.9",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "59.2",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "16:40.0",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "55.66",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "calamaria",
+                "split": "17:48.4",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:06.6",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "phantomexpress",
+                "split": "19:10.5",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "1:21.08",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/Bi_szJ7HFT0"
+            },
+            {
+                "title": "kingdice",
+                "split": "21:40.0",
+                "splitRunner": "Sublime",
+                "splitURL": null,
+                "segment": "2:27.65",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            },
+            {
+                "title": "thedevil",
+                "split": "22:46.29",
+                "splitRunner": "Fintan0",
+                "splitURL": null,
+                "segment": "58.1",
+                "segmentRunner": "Sublime",
+                "segmentURL": null
+            }
+        ],
+        "after": [
+            {
+                "title": "forestfollies",
+                "split": "59.77",
+                "splitRunner": "Fintan0",
+                "splitURL": "https://youtu.be/DTAsZMs64LE",
+                "segment": "59.77",
+                "segmentRunner": "Fintan0",
+                "segmentURL": "https://youtu.be/DTAsZMs64LE"
+            },
+            {
+                "title": "therootpack",
+                "split": "1:59.43",
+                "splitRunner": "Yuka",
+                "splitURL": "https://youtu.be/Sq-cTahoKig",
+                "segment": "59.02",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/yx7R92Uquk0"
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "3:02.21",
+                "splitRunner": "Fintan0",
+                "splitURL": null,
+                "segment": "1:01.88",
+                "segmentRunner": "Fintan0",
+                "segmentURL": "https://youtu.be/d6pVDFLVRn0?si=CzfD33kqrQW50Uxh&t=140"
+            },
+            {
+                "title": "goopylegrande",
+                "split": "3:50.11",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "45.49",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/HP_zMbG2B9I"
+            },
+            {
+                "title": "hildaberg",
+                "split": "5:24.82",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:32.43",
+                "segmentRunner": "Yuka",
+                "segmentURL": null
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "6:15.92",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "52.05",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/76p70xDpB2g?t=392"
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "7:23.75",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:06.14",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/P3TjB9XmCKk"
+            },
+            {
+                "title": "wallywarbles",
+                "split": "8:33.41",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:07.86",
+                "segmentRunner": "Lewzr",
+                "segmentURL": null
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "9:51.58",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:18.86",
+                "segmentRunner": "Lewzr",
+                "segmentURL": null
+            },
+            {
+                "title": "beppitheclown",
+                "split": "10:47.70",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "54.43",
+                "segmentRunner": "Sublime",
+                "segmentURL": "https://www.youtube.com/watch?v=4qH_UMWw_uA&t=645s"
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "11:51.82",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:01.59",
+                "segmentRunner": "Lewzr",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "13:00.01",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:06.34",
+                "segmentRunner": "Yuka",
+                "segmentURL": null
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "13:47.57",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "43.18",
+                "segmentRunner": "Lewzr",
+                "segmentURL": null
+            },
+            {
+                "title": "sallystageplay",
+                "split": "14:51.50",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:00.67",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/76p70xDpB2g?t=952"
+            },
+            {
+                "title": "wernerwerman",
+                "split": "15:51.04",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "59.19",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/7PuM3zILnwo"
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "16:50.41",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "55.96",
+                "segmentRunner": "graven_",
+                "segmentURL": "https://youtu.be/tkzGQTHcDEI"
+            },
+            {
+                "title": "calamaria",
+                "split": "17:58.96",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:06.77",
+                "segmentRunner": "Lewzr",
+                "segmentURL": null
+            },
+            {
+                "title": "phantomexpress",
+                "split": "19:21.39",
+                "splitRunner": "Yuka",
+                "splitURL": null,
+                "segment": "1:22.66",
+                "segmentRunner": "Fintan0",
+                "segmentURL": "https://www.youtube.com/watch?v=d6pVDFLVRn0&t=1173s"
+            },
+            {
+                "title": "kingdice",
+                "split": "21:52.51",
+                "splitRunner": "Sublime",
+                "splitURL": "https://youtu.be/3XkfoFjMVIU",
+                "segment": "2:27.68",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/fJp-0J6Zuzg"
+            },
+            {
+                "title": "thedevil",
+                "split": "22:46.29",
+                "splitRunner": "Fintan0",
+                "splitURL": null,
+                "segment": "48.11",
+                "segmentRunner": "Fintan0",
+                "segmentURL": "https://www.youtube.com/watch?v=d6pVDFLVRn0&t=1419s"
+            }
+        ]
+    },
+    "NMG": {
+        "before": [
+            {
+                "title": "forestfollies",
+                "split": "57.34",
+                "splitRunner": "GamerAttack27",
+                "splitURL": "https://youtu.be/FGvzOsDOe2k",
+                "segment": "57.34",
+                "segmentRunner": "GamerAttack27",
+                "segmentURL": "https://youtu.be/FGvzOsDOe2k"
+            },
+            {
+                "title": "therootpack",
+                "split": "2:02.53",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:04.99",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "3:16.85",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:11.83",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/9vn8QhKonx8"
+            },
+            {
+                "title": "goopylegrande",
+                "split": "4:14.32",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "55.54",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "hildaberg",
+                "split": "5:52.49",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:35.77",
+                "segmentRunner": "Grondious",
+                "segmentURL": "https://youtu.be/9HRw4AUIsO4"
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "6:58.49",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:04.20",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "8:13.16",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:11.58",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "wallywarbles",
+                "split": "9:43.89",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:25.43",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "11:35.97",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:51.76",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "beppitheclown",
+                "split": "13:04.26",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:26.25",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "14:27.34",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:17.78",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "15:48.21 ",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:16.05",
+                "segmentRunner": "Quincely0",
+                "segmentURL": "https://www.twitch.tv/videos/2566681394"
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "17:07.65",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:16.31",
+                "segmentRunner": "Jason2890",
+                "segmentURL": null
+            },
+            {
+                "title": "sallystageplay",
+                "split": "18:26.05",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:15.46",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/uzXE97Ur7Go"
+            },
+            {
+                "title": "wernerwerman",
+                "split": "19:42.35",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:15.03",
+                "segmentRunner": "GamerAttack27",
+                "segmentURL": null
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "20:54.08",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:07.38",
+                "segmentRunner": "Grondious",
+                "segmentURL": null
+            },
+            {
+                "title": "calamaria",
+                "split": "22:27.33",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:31.20",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "phantomexpress",
+                "split": "23:57.57",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:29.18",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "kingdice",
+                "split": "27:04.53",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "2:56.83",
+                "segmentRunner": "GamerAttack27",
+                "segmentURL": null
+            },
+            {
+                "title": "thedevil",
+                "split": "28:29.13",
+                "splitRunner": "Quincely0",
+                "splitURL": "https://youtu.be/lN9EUVGdkrg",
+                "segment": "1:22.55",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/x2WCKFsBywA"
+            }
+        ]
+    },
+    "DLC L/S": {
+        "before": [
+            {
+                "title": "forestfollies",
+                "split": "57.13",
+                "splitRunner": "MarkinSws",
+                "splitURL": "https://youtu.be/25YYHXBrwCI",
+                "segment": "57.13",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/25YYHXBrwCI"
+            },
+            {
+                "title": "mausoleum",
+                "split": "2:24.55",
+                "splitRunner": "MarkinSws",
+                "splitURL": "https://www.youtube.com/watch?v=BM5Bw2NEsIk&t=84s",
+                "segment": "1:25.66",
+                "segmentRunner": "Lewzr",
+                "segmentURL": "https://youtu.be/TuyN1-b-OPA"
+            },
+            {
+                "title": "glumstonethegiant",
+                "split": "3:50.16",
+                "splitRunner": "Quincely0",
+                "splitURL": null,
+                "segment": "1:23.97",
+                "segmentRunner": "GamerAttack27",
+                "segmentURL": "https://www.twitch.tv/gamerattack27/v/2625777233?sr=a"
+            },
+            {
+                "title": "mortimerfreeze",
+                "split": "4:59.22",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:07.16",
+                "segmentRunner": "GamerAttack27",
+                "segmentURL": "https://youtu.be/4hQ6htpTUQA"
+            },
+            {
+                "title": "thehowlingaces",
+                "split": "6:09.77",
+                "splitRunner": "MarkinSws",
+                "splitURL": "https://youtu.be/WKBoOOumLuo",
+                "segment": "1:09.48",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/7BocpXg5e_0"
+            },
+            {
+                "title": "estherwinchester",
+                "split": "7:40.81",
+                "splitRunner": "MarkinSws",
+                "splitURL": "https://youtu.be/QaCzvJd409M",
+                "segment": "1:28.93",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/SKxj-gOE_E4"
+            },
+            {
+                "title": "moonshinemob",
+                "split": "8:46.75",
+                "splitRunner": "GamerAttack27",
+                "splitURL": "https://youtu.be/oImEmX_GM8I",
+                "segment": "1:01.640",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/61viDhENwmk"
+            },
+            {
+                "title": "chefsaltbaker",
+                "split": "10:19.01",
+                "splitRunner": "MarkinSws",
+                "splitURL": "https://youtu.be/LqCwXXODGDc",
+                "segment": "1:28.735",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://www.youtube.com/watch?v=wJ-vsVwKU0k&t=575s"
+            }
+        ]
+    },
+    "DLC C/S": {
+        "before": [
+            {
+                "title": "forestfollies",
+                "split": "57.13",
+                "splitRunner": "MarkinSws",
+                "splitURL": "https://youtu.be/25YYHXBrwCI",
+                "segment": "57.13",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/25YYHXBrwCI"
+            },
+            {
+                "title": "mausoleum",
+                "split": "2:24.34",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/nNCr56OaxZs",
+                "segment": "1:25.66",
+                "segmentRunner": "Lewzr",
+                "segmentURL": "https://youtu.be/TuyN1-b-OPA"
+            },
+            {
+                "title": "chalicetutorial",
+                "split": "3:00.89",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/nNCr56OaxZs",
+                "segment": "35.09",
+                "segmentRunner": "Quincely0",
+                "segmentURL": null
+            },
+            {
+                "title": "glumstonethegiant",
+                "split": "4:09.98",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/nNCr56OaxZs",
+                "segment": "1:07.31",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/S9XKGm-XAWk"
+            },
+            {
+                "title": "mortimerfreeze",
+                "split": "5:16.98",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/LVptINZREZY",
+                "segment": "1:04.01",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://www.youtube.com/watch?v=hYkCoXfQwM8&t=286s"
+            },
+            {
+                "title": "thehowlingaces",
+                "split": "6:26.29",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:07.48",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/88w45xtVt5I"
+            },
+            {
+                "title": "estherwinchester",
+                "split": "7:57.72",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/fuB-gdVYuD8",
+                "segment": "1:28.13",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/SKxj-gOE_E4"
+            },
+            {
+                "title": "moonshinemob",
+                "split": "9:02.51",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/fuB-gdVYuD8",
+                "segment": "1:03.66",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/UCLkF-T0jUo"
+            },
+            {
+                "title": "chefsaltbaker",
+                "split": "10:32.90",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/MI-K-oZjQdA",
+                "segment": "1:29.02",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://www.youtube.com/watch?v=MI-K-oZjQdA&t=588s"
+            }
+        ],
+        "after": [
+            {
+                "title": "forestfollies",
+                "split": "1:08.04",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:08.04",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "mausoleum",
+                "split": "2:36.87",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:28.82",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "chalicetutorial",
+                "split": "3:02.04",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "24.91",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "glumstonethegiant",
+                "split": "4:23.36",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/nNCr56OaxZs",
+                "segment": "1:19.87",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/P0MFWuBBQ_Y"
+            },
+            {
+                "title": "mortimerfreeze",
+                "split": "5:30.20",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:04.51",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "thehowlingaces",
+                "split": "6:39.74",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:08.15",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "estherwinchester",
+                "split": "8:11.77",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:30.05",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/SKxj-gOE_E4"
+            },
+            {
+                "title": "moonshinemob",
+                "split": "9:16.37",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:02.75",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/UCLkF-T0jUo"
+            },
+            {
+                "title": "chefsaltbaker",
+                "split": "10:32.90",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/MI-K-oZjQdA",
+                "segment": "1:15.65",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://www.youtube.com/watch?v=z23DklK7ETg&t=617s"
+            }
+        ]
+    },
+    "DLC+Base L/S": {
+        "before": [
+            {
+                "title": "therootpack",
+                "split": "11:35.44",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:09.274",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "12:50.01",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:12.494",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "goopylegrande",
+                "split": "13:47.65",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "56.424",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "hildaberg",
+                "split": "15:26.61",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:37.61",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/DxNXOXuTjPY"
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "16:34.15",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:04.209",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "17:49.60",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:14.08",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/4j8jrgTbG5Y"
+            },
+            {
+                "title": "wallywarbles",
+                "split": "19:14.62",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:21.864",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "21:00.73",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:43.97",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/Z82R22MimLk"
+            },
+            {
+                "title": "beppitheclown",
+                "split": "22:21.92",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:12.006",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "23:41.98",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:17.815",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "25:59.03",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:16.501",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "26:18.03",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:13.700",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "sallystageplay",
+                "split": "27:33.90",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:03.912",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "wernerwerman",
+                "split": "28:50.67",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:15.798",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "30:04.65",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:09.241",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "calamaria",
+                "split": "31:29.42",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:22.184",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "phantomexpress",
+                "split": "33:01.89",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:27.932",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "kingdice",
+                "split": "35:58.12",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "2:53.239",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "thedevil",
+                "split": "37:20.31",
+                "splitRunner": "MarkinSws",
+                "splitURL": null,
+                "segment": "1:21.773",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            }
+        ]
+    },
+    "DLC+Base C/S": {
+        "before": [
+            {
+                "title": "therootpack",
+                "split": "11:48.90",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:09.86",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "13:04.08",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:12.28",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "goopylegrande",
+                "split": "14:02.17",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "57.06",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "hildaberg",
+                "split": "15:43.76",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:37.610",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "16:51.58",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:05.00",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "18:13.85",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:11.50",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "wallywarbles",
+                "split": "19:39.67",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:23.35",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "21:29.35",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:43.971",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "beppitheclown",
+                "split": "22:43.99",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:12.04",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "24:03.35",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:17.76",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "25:21.50",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:16.45",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "26:36.86",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:13.700",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "sallystageplay",
+                "split": "27:39.31",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:00.16",
+                "segmentRunner": "Jason2890",
+                "segmentURL": null
+            },
+            {
+                "title": "wernerwerman",
+                "split": "28:54.80",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:15.48",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://www.youtube.com/watch?v=z23DklK7ETg&t=1767s"
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "30:07.65",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:08.79",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "calamaria",
+                "split": "31:27.92",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:20.05",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": null
+            },
+            {
+                "title": "phantomexpress",
+                "split": "33:00.96",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:32.30",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "kingdice",
+                "split": "35:55.18",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "2:54.01",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "thedevil",
+                "split": "37:18.67",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:19.74",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            }
+        ],
+        "after": [
+            {
+                "title": "therootpack",
+                "split": "11:59.22",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:23.24",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/HFcj0rNa9Wo"
+            },
+            {
+                "title": "ribbyandcroaks",
+                "split": "13:13.45",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:12.24",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/Oj_nwAjdYYE"
+            },
+            {
+                "title": "goopylegrande",
+                "split": "14:14.11",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "57.69",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "hildaberg",
+                "split": "15:55.92",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:38.20",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "cagneycarnation",
+                "split": "17:03.56",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:04.00",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/yzJfLRsSwtU"
+            },
+            {
+                "title": "baronessvonbonbon",
+                "split": "18:19.25",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:11.01",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "wallywarbles",
+                "split": "19:42.59",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:22.88",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "djimmithegreat",
+                "split": "21:29.37",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:45.08",
+                "segmentRunner": "MarkinSws",
+                "segmentURL": "https://youtu.be/Z82R22MimLk"
+            },
+            {
+                "title": "beppitheclown",
+                "split": "22:48.11",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:12.24",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/U5NVY3-Twg8"
+            },
+            {
+                "title": "grimmatchstick",
+                "split": "24:07.38",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:16.69",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "rumorhoneybottoms",
+                "split": "25:26.40",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:16.46",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "drkahlsrobot",
+                "split": "26:45.08",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:14.36",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "sallystageplay",
+                "split": "27:49.69",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "59.38",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "wernerwerman",
+                "split": "29:06.60",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:16.20",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "captainbrineybeard",
+                "split": "30:18.79",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:08.71",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/rb4SYFMpj6U"
+            },
+            {
+                "title": "calamaria",
+                "split": "31:41.85",
+                "splitRunner": "myekul",
+                "splitURL": null,
+                "segment": "1:21.15",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "phantomexpress",
+                "split": "33:16.17",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:33.25",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/SL0U3I6ROUc"
+            },
+            {
+                "title": "kingdice",
+                "split": "36:09.69",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "2:52.74",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            },
+            {
+                "title": "thedevil",
+                "split": "37:18.67",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/z23DklK7ETg",
+                "segment": "1:05.73",
+                "segmentRunner": "myekul",
+                "segmentURL": null
+            }
+        ]
+    }
+}

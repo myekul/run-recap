@@ -39,7 +39,7 @@ function lssView() {
         <td></td>
         <td></td>
         <td></td>
-        <td>.sav ILs</td>
+        <td>IGT</td>
         <td></td>
         <td>Comparison</td>`
     }
@@ -47,76 +47,78 @@ function lssView() {
     const splits = []
     const deltas = []
     for (let index = 0; index < runRecap_lssFile.pbSplits.length && index < categories.length + getOffset(); index++) {
-        const currentSegment = segmentComparison(currentRun, index, true)
-        const comparisonSegment = segmentComparison(comparison, index)
-        const categoryIndex = index - getOffset()
-        const delta = currentSegment - comparisonSegment
-        const trueDelta = Math.trunc(delta * 100) / 100
-        const grade = runRecapGrade(trueDelta)
-        const className = splitInfo[index].id
-        const image = `<td class='${className}'><div class='container'>${getImage(className, 24)}</div></td>`
-        HTMLContent += `<tr class='${getRowColor(index)} ${!runRecapExample ? `clickable' onclick="openModal(runRecapSegment(${index}), 'SEGMENT INFO')"` : ''}'>`
-        // HTMLContent += `<tr class='${getRowColor(index)} clickable'>`
-        const currentSplit = splitComparison(currentRun, index)
-        splits.push(currentSplit)
-        const comparisonSplit = splitComparison(comparison, index)
-        const splitDelta = currentSplit - comparisonSplit
-        const trueSplitDelta = Math.trunc(splitDelta * 100) / 100
-        deltas.push(trueSplitDelta)
-        const compareCustom = !isNaN(comparison) || comparison == 'yourPB'
-        HTMLContent += `
-        ${image}
-        <td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSplit, true)}</td>
-        <td class='${redGreen(trueSplitDelta)}' style='padding:0 5px;font-size:90%'>${getDelta(trueSplitDelta)}</td>
-        <td style='padding:0 5px;'>${comparisonContent('split', index, comparisonSplit, comparison)}</td>
-        <td style='padding:0 20px'></td>
-        <td class='${compareCustom ? '' : grade.className}' style='padding:0 5px;text-align:left'><span>${compareCustom ? '' : grade.grade}</span></td>
-        ${image}
-        <td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSegment, true)}</td>
-        <td class='${redGreen(trueDelta)}' style='padding:0 5px;font-size:90%'><span>${getDelta(trueDelta)}</span></td>
-        <td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
-        if (runRecap_savFile) {
-            HTMLContent += `<td style='padding:0 20px'></td>`
-            if (index >= getOffset()) {
-                const level = getCupheadLevel(categoryIndex)
-                const runTime = level?.bestTime
-                const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
-                const delta = runRecapDelta(runTime, comparisonTime)
-                const ILgrade = runRecapGrade(delta)
-                let comparisonContents = `<div class='container'>`
-                if (savComparison == 'Top Bests') {
-                    comparisonContents += `<div class='container' style='padding-right:6px'>`
-                    savComparisonCollection.topBestPlayers[categoryIndex].forEach(playerIndex => {
-                        const player = players[playerIndex]
-                        comparisonContents += getPlayerIcon(player, 24)
-                    })
-                    comparisonContents += `</div>`
+        if (splitComparison(currentRun, index)) {
+            const currentSegment = segmentComparison(currentRun, index, true)
+            const comparisonSegment = segmentComparison(comparison, index)
+            const categoryIndex = index - getOffset()
+            const delta = currentSegment - comparisonSegment
+            const trueDelta = Math.trunc(delta * 100) / 100
+            const grade = runRecapGrade(trueDelta)
+            const className = splitInfo[index].id
+            const image = `<td class='${className}'><div class='container'>${getImage(className, 24)}</div></td>`
+            HTMLContent += `<tr class='${getRowColor(index)} ${!runRecapExample ? `clickable' onclick="openModal(runRecapSegment(${index}), 'SEGMENT INFO')"` : ''}'>`
+            // HTMLContent += `<tr class='${getRowColor(index)} clickable'>`
+            const currentSplit = splitComparison(currentRun, index)
+            splits.push(currentSplit)
+            const comparisonSplit = splitComparison(comparison, index)
+            const splitDelta = currentSplit - comparisonSplit
+            const trueSplitDelta = Math.trunc(splitDelta * 100) / 100
+            deltas.push(trueSplitDelta)
+            const compareCustom = !isNaN(comparison) || comparison == 'yourPB'
+            HTMLContent += `
+            ${image}
+            <td class='${className}' style='padding:0 10px;font-size:120%'>${secondsToHMS(currentSplit, true)}</td>
+            <td class='${redGreen(trueSplitDelta)}' style='padding:0 5px;font-size:90%'>${getDelta(trueSplitDelta)}</td>
+            <td style='padding:0 5px;'>${comparisonContent('split', index, comparisonSplit, comparison)}</td>
+            <td style='padding:0 20px'></td>
+            <td class='${compareCustom || !currentSegment ? '' : grade.className}' style='padding:0 5px;text-align:left'><span>${compareCustom || !currentSegment ? '' : grade.grade}</span></td>
+            ${image}
+            <td class='${className}' style='padding:0 10px;font-size:120%'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>
+            <td class='${redGreen(trueDelta)}' style='padding:0 5px;font-size:90%'><span>${currentSegment ? getDelta(trueDelta) : ''}</span></td>
+            <td style='padding:0 5px;'>${comparisonContent('segment', index, comparisonSegment, comparison)}</td>`
+            if (runRecap_savFile) {
+                HTMLContent += `<td style='padding:0 20px'></td>`
+                if (index >= getOffset()) {
+                    const level = getCupheadLevel(categoryIndex)
+                    const runTime = level?.bestTime
+                    const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
+                    const delta = runRecapDelta(runTime, comparisonTime)
+                    const ILgrade = runRecapGrade(delta)
+                    let comparisonContents = `<div class='container'>`
+                    if (savComparison == 'Top Bests') {
+                        comparisonContents += `<div class='container' style='padding-right:6px'>`
+                        savComparisonCollection.topBestPlayers[categoryIndex].forEach(playerIndex => {
+                            const player = players[playerIndex]
+                            comparisonContents += getPlayerIcon(player, 24)
+                        })
+                        comparisonContents += `</div>`
+                    }
+                    comparisonContents += `<div>${secondsToHMS(comparisonTime)}</div></div>`
+                    HTMLContent += `
+                    <td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>
+                    ${image}
+                    <td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>
+                    <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>
+                    <td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
+                } else if (index == 2) {
+                    HTMLContent += `<td colspan=5></td>`
+                } else {
+                    const levelID = index == 0 ? runNguns[0].levelID : mausoleumID
+                    const level = getCupheadLevel(levelID, true)
+                    HTMLContent += `
+                    <td>${level.bestTime != nullTime ? image : ''}</td>
+                    <td>${level.bestTime != nullTime ? secondsToHMS(level.bestTime, true) : ''}</td>
+                    <td></td>
+                    <td></td>`
                 }
-                comparisonContents += `<div>${secondsToHMS(comparisonTime)}</div></div>`
-                HTMLContent += `
-                <td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>
-                ${image}
-                <td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>
-                <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>
-                <td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
-            } else if (index == 2) {
-                HTMLContent += `<td colspan=5></td>`
-            } else {
-                const levelID = index == 0 ? runNguns[0].levelID : mausoleumID
-                const level = getCupheadLevel(levelID, true)
-                HTMLContent += `
-                <td>${level.bestTime != nullTime ? image : ''}</td>
-                <td>${level.bestTime != nullTime ? secondsToHMS(level.bestTime, true) : ''}</td>
-                <td></td>
-                <td></td>`
             }
-        }
-        HTMLContent += `</tr>`
-        if (index >= getOffset()) {
-            const category = categories[categoryIndex]
-            const nextCategory = categories[categoryIndex + 1]
-            if (nextCategory && category.info.isle != nextCategory?.info.isle) {
-                HTMLContent += `<tr style='height:20px'></tr>`
+            HTMLContent += `</tr>`
+            if (index >= getOffset()) {
+                const category = categories[categoryIndex]
+                const nextCategory = categories[categoryIndex + 1]
+                if (nextCategory && category.info.isle != nextCategory?.info.isle) {
+                    HTMLContent += `<tr style='height:20px'></tr>`
+                }
             }
         }
     }
@@ -266,7 +268,7 @@ function read_lss(content) {
 }
 function runRecap_lss_splitInfo() {
     splitInfo = []
-    for (let index = 0; index < runRecap_markin.bestSplits.length && index < categories.length + getOffset(); index++) {
+    for (let index = 0; index < commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'].length && index < categories.length + getOffset(); index++) {
         const categoryIndex = index - getOffset()
         if (index == 0) {
             splitInfo.push({ id: 'runnguns/forestfollies', name: 'Forest Follies', isle: null })
@@ -290,10 +292,9 @@ function getOffset() {
     return offset
 }
 function comparisonContent(type, index, time, comparison) {
-    const source = type == 'split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'
     let HTMLContent = `<div class='container dim' style='gap:7px;justify-content:left;font-size:90%'>`
     if (comparison == null || comparison == 'commBest') {
-        const player = allPlayers.find(player => player.name == runRecap_markin[source][index].split('/')[0])
+        const player = allPlayers.find(player => player.name == commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'][index][(type == 'split' ? 'split' : 'segment') + 'Runner'])
         HTMLContent += player ? getPlayerIcon(player, 24) : ''
     }
     HTMLContent += `<div>${secondsToHMS(time, true)}</div></div>`
@@ -336,17 +337,17 @@ function segmentComparison(comparison, index, current) {
         if (index == null) {
             return 'WR'
         }
-        return runRecap_markin.wrSegments[index]
+        return worldRecordData[runRecapCategory.tabName][splitBefore ? 'segmentBefore' : 'segmentAfter'][index]
     } else if (comparison == 'commBest') {
         if (index == null) {
             return 'Comm Best'
         }
-        return runRecap_markin.bestSegments[index]
+        return convertToSeconds(commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'][index].segment)
     } else if (comparison == 'commSoB') {
         if (index == null) {
             return 'Comm SoB'
         }
-        return runRecap_markin.bestSegments[index]
+        return convertToSeconds(commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'][index].segment)
     } else {
         const attempt = runRecap_lssFile.attemptHistory.find(attempt => attempt.id == comparison)
         if (current) setRunRecapTime(secondsToHMS(attempt.gameTime))
@@ -367,48 +368,31 @@ function splitComparison(comparison, index) {
     } else if (comparison == 'yourPB') {
         return runRecap_lssFile.pbSplits[index]
     } else if (comparison == 'wr') {
-        return runRecap_markin.wrSplits[index]
+        return worldRecordData[runRecapCategory.tabName][splitBefore ? 'splitBefore' : 'splitAfter'][index]
     } else if (comparison == 'commBest') {
-        return runRecap_markin.bestSplits[index]
+        return convertToSeconds(commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'][index].split)
     } else if (comparison == 'commSoB') {
-        return runRecap_markin.commSoB[index]
+        return commSoB[index]
     } else {
         return runRecap_lssFile.attemptHistory.find(attempt => attempt.id == comparison).splits[index]
     }
 }
 function loadMarkin() {
-    const values = markinSheets[runRecapCategory.markin]
-    runRecap_markin = { tabName: runRecapCategory.tabName, bestSplits: [], bestSplitsURLs: [], bestSplitsPlayers: [], wrSplits: [], bestSegments: [], bestSegmentsURLs: [], bestSegmentsPlayers: [], wrSegments: [], commSoB: [] }
-    values.forEach((row, index) => {
-        let url
-        runRecap_markin.bestSplits.push(convertToSeconds(row.values[0].userEnteredValue.stringValue || row.values[0].userEnteredValue.numberValue || row.values[0].userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]))
-        if (row.values[0].userEnteredValue.formulaValue) {
-            url = row.values[0].userEnteredValue.formulaValue.slice(12).split('"')[0]
-        }
-        runRecap_markin.bestSplitsURLs.push(url)
-        runRecap_markin.bestSplitsPlayers.push(row.values[1].userEnteredValue.stringValue)
-        runRecap_markin.wrSplits.push(convertToSeconds(row.values[2].userEnteredValue.stringValue || row.values[2].userEnteredValue.numberValue))
-        let url2
-        runRecap_markin.bestSegments.push(convertToSeconds(row.values[3].userEnteredValue.stringValue || row.values[3].userEnteredValue.numberValue || row.values[3].userEnteredValue.formulaValue.split(',')[1].trim().slice(1).split('"')[0]))
-        if (row.values[3].userEnteredValue.formulaValue) {
-            url2 = row.values[3].userEnteredValue.formulaValue.slice(12).split('"')[0]
-        }
-        runRecap_markin.bestSegmentsURLs.push(url2)
-        runRecap_markin.bestSegmentsPlayers.push(row.values[4].userEnteredValue.stringValue)
-        runRecap_markin.wrSegments.push(convertToSeconds(row.values[5].userEnteredValue.stringValue || row.values[5].userEnteredValue.numberValue))
-        const bestSegment = runRecap_markin.bestSegments[index]
-        runRecap_markin.commSoB.push(index == 0 ? bestSegment : runRecap_markin.commSoB[index - 1] + bestSegment)
+    commSob = []
+    const arr = commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after']
+    arr.forEach((split, index) => {
+        commSob.push(index == 0 ? convertToSeconds(split.segment) : (convertToSeconds(commSob[index - 1]) + convertToSeconds(split.segment)))
     })
     runRecap_lss_splitInfo()
     done()
     action()
 }
 function markinExample() {
-    runRecap_lssFile.pbSplits = [...runRecap_markin.wrSplits]
-    runRecap_lssFile.pbSegments = [...runRecap_markin.wrSegments]
-    runRecap_lssFile.bestSegments = [...runRecap_markin.bestSegments]
+    runRecap_lssFile.pbSplits = [...worldRecordData[runRecapCategory.tabName][splitBefore ? 'splitBefore' : 'splitAfter']]
+    runRecap_lssFile.pbSegments = [...worldRecordData[runRecapCategory.tabName][splitBefore ? 'segmentBefore' : 'segmentAfter']]
+    runRecap_lssFile.bestSegments = [...commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'].map(split => convertToSeconds(split.segment))]
     document.querySelectorAll('.lss_yourPB').forEach(elem => {
-        elem.innerHTML = secondsToHMS(runRecap_markin.wrSplits[runRecap_markin.wrSplits.length - 1])
+        elem.innerHTML = secondsToHMS(worldRecordData[runRecapCategory.tabName][splitBefore ? 'splitBefore' : 'splitAfter'].at(-1))
     })
 }
 function runRecapSegment(index) {
@@ -495,8 +479,8 @@ function splitSegmentInfo(array, index, type) {
                 <th colspan=2>Comm Best</th>
             </tr>
             <tr>
-                <td>${getPlayerIcon(allPlayers.find(player => player.name == runRecap_markin[type == 'Split' ? 'bestSplitsPlayers' : 'bestSegmentsPlayers'][index].split('/')[0]), 24)}</td>
-                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'bestSplits' : 'bestSegments'][index], true)}</td>
+                <td>${getPlayerIcon(allPlayers.find(player => player.name == commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'][index][(type == 'Split' ? 'split' : 'segment') + 'Runner']), 24)}</td>
+                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(convertToSeconds(commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'][index][(type == 'Split' ? 'split' : 'segment')]), true)}</td>
             </tr>
         </table>
         <table>
@@ -505,7 +489,7 @@ function splitSegmentInfo(array, index, type) {
             </tr>
             <tr>
                 <td>${getPlayerIcon(players[0], 24)}</td>
-                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(runRecap_markin[type == 'Split' ? 'wrSplits' : 'wrSegments'][index], true)}</td>
+                <td class='${split.id}' style='padding:0 5px'>${secondsToHMS(worldRecordData[runRecapCategory.tabName][(type == 'Split' ? 'split' : 'segment')+(splitBefore ? 'Before' : 'After')][index], true)}</td>
             </tr>
         </table>
     </div>

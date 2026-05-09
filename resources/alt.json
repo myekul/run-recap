@@ -515,9 +515,9 @@
             },
             {
                 "name": "Candy Corn, Cupcake, Waffle",
-                "time": 32.67,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=r4SogaiUfHBxzBdl&t=106"
+                "time": 31.41,
+                "player": "myekul",
+                "url": "https://youtu.be/T9m1w4ljsLw"
             },
             {
                 "name": "Candy Corn, Cupcake, Gumball",
@@ -1815,17 +1815,17 @@
                 "odds": "9/35"
             },
             {
+                "name": "Pinwheel Dragon (3 Quads)",
+                "time": 45.32,
+                "player": "myekul",
+                "url": "https://youtu.be/bsUSWNi9xvA",
+                "odds": "3/140"
+            },
+            {
                 "name": "Ring Dragon (3 Quads)",
                 "time": 45.59,
                 "player": "myekul",
                 "url": "https://youtu.be/YAkZBzBszpg",
-                "odds": "3/140"
-            },
-            {
-                "name": "Pinwheel Dragon (3 Quads)",
-                "time": 45.64,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/0hlrM62-gNQ",
                 "odds": "3/140"
             },
             {
@@ -1897,9 +1897,9 @@
             },
             {
                 "name": "Clap Pinwheel Dragon",
-                "time": 41.06,
+                "time": 40.94,
                 "player": "myekul",
-                "url": "https://youtu.be/vAw0YU0a1RU",
+                "url": "https://youtu.be/3ZQsQKUIVI0",
                 "odds": "3/140"
             },
             {
@@ -2194,9 +2194,9 @@
             },
             {
                 "name": "TAS Lobber",
-                "time": 26.35,
+                "time": 25.95,
                 "player": "Yuka",
-                "url": "https://youtu.be/xlK-fo2983E"
+                "url": "https://youtu.be/ebtFaKM2NlY"
             }
         ],
         "ribbyandcroaks": [
@@ -2255,9 +2255,9 @@
             },
             {
                 "name": "4 Bounce",
-                "time": 17.58,
+                "time": 17.36,
                 "player": "Yuka",
-                "url": "https://youtu.be/6GY9L_zVTno"
+                "url": "https://youtu.be/-5tSxahrEHc"
             },
             {
                 "title": "Parries"
@@ -3242,10 +3242,16 @@
         ],
         "glumstonethegiant": [
             {
-                "name": "",
+                "name": "Cauldron",
                 "time": 45.46,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/YCpc9RlH9DY"
+            },
+            {
+                "name": "Geese",
+                "time": 47.66,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/LkoGPolMh4M"
             },
             {
                 "name": "Jumproll",

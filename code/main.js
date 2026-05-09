@@ -96,7 +96,7 @@ function action() {
     } else {
         hide('runRecap_theoretical_div')
     }
-    if (!['home', 'altStrats', 'commBestILs', 'commBestSplits', 'ballpit'].includes(globalTab)) {
+    if (['sav', 'lss', 'rrc'].includes(globalTab)) {
         show('runRecap_bar')
     } else {
         hide('runRecap_bar')
@@ -115,12 +115,9 @@ function action() {
         show('pageTitle')
         if (fontAwesomeSet[globalTab]) {
             setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
-            if (globalTab == 'commBestSplits' && runRecapCategory.markin) {
-                tabCredit(getPlayerName(allPlayers.find(player => player.name == 'MarkinSws')), 'by', '8l0yyz28/image?v=6e8c7d2')
-            }
         }
     }
-    if (['commBestILs', 'altStrats'].includes(globalTab)) {
+    if (['commBestILs', 'altStrats', 'commBestSplits'].includes(globalTab)) {
         show('commBestSubmit')
     } else {
         hide('commBestSubmit')
@@ -170,6 +167,7 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     rrcComparison = 'Top Bests'
     rrcComparisonText = 'Top Bests'
     altStratLevel = null
+    if (!commBest[runRecapCategory.tabName]['after'] && !splitBefore) splitBefore = true
     if (categoryName != 'Other') rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
@@ -341,7 +339,7 @@ const fileInfo = {
     please upload a .lss with the standard split configuration,
     as seen
     <span class="myekulColor clickable" style="text-decoration: underline">
-    ${getAnchor('https://docs.google.com/spreadsheets/d/1JgTjjonfC7bh4976NI4pCPeFp8LbA3HMKdvS_47-WtQ')}here</a></span>.</span>`,
+    <a onclick="showTab('commBestSplits');playSound('category_select')">here</a></span>.</span>`,
     rrc: `A powerful new file type, ${myekulColor('Run Recap .rrc')}. Designed exclusively for detailed analysis of Cuphead runs.
     <br>
     <span class='dim'>

@@ -29,13 +29,7 @@ window.firebaseUtils = {
                     }
                 })
             })
-            gapi.load('client', () => loadClient2())
-            async function loadClient2() {
-                gapi.client.setApiKey(API_KEY);
-                await gapi.client.load('https://sheets.googleapis.com/$discovery/rest?version=v4')
-                console.log("GAPI loaded");
-                fetchCuphead()
-            }
+            changeCategory()
         } catch (error) {
             console.error("Error fetching documents: ", error)
         }
