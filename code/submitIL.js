@@ -1,7 +1,7 @@
-function modalSubmitIL() {
+function modalSubmit() {
     let bossSelectHTML = ''
     isles.forEach(isle => {
-        if (isle.runRecapCategories.length) {
+        if (isle?.runRecapCategories?.length) {
             bossSelectHTML += `<optgroup label='${isle.name}'>`
             isle.runRecapCategories.forEach(categoryIndex => {
                 const category = categories[categoryIndex]
@@ -51,25 +51,24 @@ function modalSubmitIL() {
     })
     HTMLContent += `</table>
     <div class='container' style='height:50px'>
-        <div id='commBestILs_uploadButton' class="button cuphead grayedOut"
-                                style="width:120px;gap:8px;font-size:90%;margin:20px auto"
-                                onclick="submitIL()">
-                                <i class="fa fa-plus"></i>Submit IL
-                            </div>
-        <div id='commBestILs_uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
+        <div id='commBest_uploadButton' class="button cuphead grayedOut" style="width:120px;gap:8px;font-size:90%;margin:20px auto" onclick="submitIL()">
+            <i class="fa fa-plus"></i>
+            Submit
+        </div>
+        <div id='commBest_uploadCheck' class='container' style='display:none;width:190px;font-size:200%;margin:0'></div>
     </div>
     <div class='textBlock dim' style='font-size:80%;padding:10px 0'>
-    -Debug mod, Lobber EX crits, and RNG manip are allowed.
-    <br>-For video proof, game audio and full scorecard are preferred.
-    <br>-Unobstructed gameplay is preferred.
-    <br>-V-sync must be turned off.
-    <br>-Pause buffers must be less than 1s.
-    <br>
-    <br>-ILs with exact time attached will take precedence over non-exact times.
-    <br>-Submitting ILs on behalf of other players is encouraged.
-    <br>-Submissions will be manually verified by myekul.
+        -Debug mod, Lobber EX crits, and RNG manip are allowed.
+        <br>-For video proof, game audio and full scorecard are preferred.
+        <br>-Unobstructed gameplay is preferred.
+        <br>-V-sync must be turned off.
+        <br>-Pause buffers must be less than 1s.
+        <br>
+        <br>-ILs with exact time attached will take precedence over non-exact times.
+        <br>-Submitting ILs on behalf of other players is encouraged.
+        <br>-Submissions will be manually verified by myekul.
     </div>`
-    openModal(HTMLContent, 'COMM BEST IL SUBMISSION')
+    openModal(HTMLContent, 'COMM BEST SUBMISSION')
 }
 function handleBossDropdown() {
     checkSubmittable()
@@ -111,8 +110,12 @@ function handleAltStratDropdown() {
     }
 }
 function checkSubmittable() {
-    const button = document.getElementById('commBestILs_uploadButton')
-    if (localStorage.getItem('username') && document.getElementById('dropdown_commBestILs_level').value != 'none' && document.getElementById('input_commBestILs_time').value && !(document.getElementById('dropdown_commBestILs_altStrat').value == 'other' && !document.getElementById('input_commBestILs_other').value) && document.getElementById('input_commBestILs_url').value) {
+    const button = document.getElementById('commBest_uploadButton')
+    if (localStorage.getItem('username')
+        && document.getElementById('dropdown_commBestILs_level').value != 'none'
+        && document.getElementById('input_commBestILs_time').value
+        && !(document.getElementById('dropdown_commBestILs_altStrat').value == 'other' && !document.getElementById('input_commBestILs_other').value)
+        && document.getElementById('input_commBestILs_url').value) {
         button.classList.remove('grayedOut')
         button.classList.add('pulseSize')
         commbestILs_ready = true

@@ -27,48 +27,7 @@ function generateTheTop() {
         HTMLContent += topGrid()
         HTMLContent += savComparisonDisplay()
         // HTMLContent += topSums()
-        HTMLContent += `<div class='container' style='margin-top:20px'><table class='shadow'>
-            <tr>
-            <td colspan=4></td>`
-        isles.forEach(isle => {
-            if (isle.runRecapCategories.length) {
-                HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`
-            }
-        })
-        HTMLContent += `<td style='padding:0px 30px'></td>`
-        isles.forEach(isle => {
-            if (isle.runRecapCategories.length) {
-                HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`
-            }
-        })
-        HTMLContent += `</tr>`
-        runRecapCategory.topRuns.forEach((run, index) => {
-            HTMLContent += `<tr class='hover ${getRowColor(index)}'>
-                ${bigPlayerDisplay(players[index])}`
-            run.splits = []
-            isles.forEach((isle, isleIndex) => {
-                if (isle.runRecapCategories.length) {
-                    const category = categories[isle.runRecapCategories.at(-1)]
-                    let time = convertToSeconds(runRecapCategory.topRuns[index].rrc.find(scene => scene.name == 'level_' + category.info.internal).endTime)
-                    if (runRecapCategory.name != 'DLC' && isleIndex < 3) {
-                        time -= runRecapCategory.name == 'DLC+Base' && isleIndex == 0 ? 8.45 : 6.45
-                    }
-                    run.splits.push(time)
-                }
-            })
-            run.splits.forEach((time, isleIndex) => {
-                const isle = isles[isleIndex]
-                const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])
-                HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(isleRTA || convertToSeconds(time), true)}</td>`
-            })
-            HTMLContent += `<td></td>`
-            run.splits.forEach((time, isleIndex) => {
-                const isle = isles[isleIndex]
-                HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(convertToSeconds(time), true)}</td>`
-            })
-            HTMLContent += `</tr>`
-        })
-        HTMLContent += `</table></div>`
+        HTMLContent += rtaSums()
         HTMLContent += topResidual()
         HTMLContent += `
         <div class='container' style='margin-top:100px'>
@@ -76,7 +35,10 @@ function generateTheTop() {
                 <tr>
                     <td><td>`
         players.slice(0, runRecapCategory.topRuns.length).forEach(player => {
-            HTMLContent += `<td><div style='position:absolute;transform:rotate(-30deg) translate(-13px,-30px);transform-origin:bottom left'>${getPlayerDisplay(player, true)}</div></td>`
+            HTMLContent += `
+            <td>
+                <div style='position:absolute;transform:rotate(-30deg) translate(-13px,-30px);transform-origin:bottom left'>${getPlayerDisplay(player, true)}</div>
+            </td>`
         })
         HTMLContent += `
         <tr>
@@ -90,8 +52,11 @@ function generateTheTop() {
         HTMLContent += `<tr>`
         categories.forEach((category, categoryIndex) => {
             if (categoryIndex < categories.length - 1) {
-                HTMLContent += `<tr>
-            <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>`
+                HTMLContent += `
+                <tr>
+                    <td class='${category.info.id}'>
+                        <div class='container'>${getImage(category.info.id, 21)}</div>
+                    </td>`
                 runRecapCategory.topRuns.forEach((run, index) => {
                     let starSkip = ''
                     if (run.starSkips[categoryIndex + 1]) starSkip = fontAwesome('star')
@@ -101,20 +66,68 @@ function generateTheTop() {
                 HTMLContent += `</tr>`
             }
         })
-        HTMLContent += `<tr>
-    <td></td>`
+        HTMLContent += `
+        <tr>
+            <td></td>`
         runRecapCategory.topRuns.forEach((run, index) => {
             HTMLContent += `<td class='dim ${getRowColor(index)}'>${run.starSkips.reduce((acc, num) => acc + num, 0)}</td>`
         })
-        HTMLContent += `</tr>
-    </table>`
-        HTMLContent += `</table>`
+        HTMLContent += `
+            </tr>
+        </table>`
         HTMLContent += `</div>`
     } else {
         HTMLContent += emptyPageText('Category not supported!')
     }
     document.getElementById('content').innerHTML = HTMLContent
     if (chartEligible && runRecapCategory.name != 'Other') rrcChart()
+}
+function rtaSums() {
+    let HTMLContent = `
+        <div class='container' style='margin-top:20px'>
+            <table class='shadow'>
+                <tr>
+                    <td colspan=4></td>`
+    isles.forEach(isle => {
+        if (isle.runRecapCategories.length) {
+            HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`
+        }
+    })
+    HTMLContent += `<td style='padding:0px 30px'></td>`
+    isles.forEach(isle => {
+        if (isle.runRecapCategories.length) {
+            HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`
+        }
+    })
+    HTMLContent += `</tr>`
+    runRecapCategory.topRuns.forEach((run, index) => {
+        HTMLContent += `<tr class='hover ${getRowColor(index)}'>
+                ${bigPlayerDisplay(players[index])}`
+        run.splits = []
+        isles.forEach((isle, isleIndex) => {
+            if (isle.runRecapCategories.length) {
+                const category = categories[isle.runRecapCategories.at(-1)]
+                let time = convertToSeconds(runRecapCategory.topRuns[index].rrc.find(scene => scene.name == 'level_' + category.info.internal).endTime)
+                if (runRecapCategory.name != 'DLC' && isleIndex < 3) {
+                    time -= runRecapCategory.name == 'DLC+Base' && isleIndex == 0 ? 8.45 : 6.45
+                }
+                run.splits.push(time)
+            }
+        })
+        run.splits.forEach((time, isleIndex) => {
+            const isle = isles[isleIndex]
+            const isleRTA = convertToSeconds(time) - convertToSeconds(run.splits[isleIndex - 1])
+            HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(isleRTA || convertToSeconds(time), true)}</td>`
+        })
+        HTMLContent += `<td></td>`
+        run.splits.forEach((time, isleIndex) => {
+            const isle = isles[isleIndex]
+            HTMLContent += `<td class='${isle.className}' style='padding:0 3px'>${secondsToHMS(convertToSeconds(time), true)}</td>`
+        })
+        HTMLContent += `</tr>`
+    })
+    HTMLContent += `</table></div>`
+    return HTMLContent
 }
 function topGrid() {
     let HTMLContent = ''
@@ -194,9 +207,11 @@ function topSums() {
         isle.comparisonSum = Math.floor(isle.comparisonSum)
         comparisonSum += isle.comparisonSum
     })
-    HTMLContent += `<div class='container' style='margin-top:20px'>
-    <table class='shadow'>`
-    HTMLContent += `<tr style='color:gray'><td colspan=4></td>`
+    HTMLContent += `
+    <div class='container' style='margin-top:20px'>
+        <table class='shadow'>
+            <tr style='color:gray'>
+                <td colspan=4></td>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length > 0) {
             HTMLContent += `
@@ -243,8 +258,8 @@ function topSums() {
         }
     })
     HTMLContent += `
-    <th>${savComparison != 'None' ? secondsToHMS(comparisonSum) : ''}</th>
-    <td></td>
+        <th>${savComparison != 'None' ? secondsToHMS(comparisonSum) : ''}</th>
+        <td></td>
     </tr>`
     if (runRecap_savFile) {
         sum = 0

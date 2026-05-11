@@ -105,10 +105,10 @@ window.firebaseUtils = {
             url: document.getElementById('input_commBestILs_url').value,
             date: new Date().toISOString().slice(0, 10)
         }
-        const uploadCheck = document.getElementById('commBestILs_uploadCheck')
+        const uploadCheck = document.getElementById('commBest_uploadCheck')
         uploadCheck.innerHTML = `<div class='loader'></div>`
-        hide('commBestILs_uploadButton')
-        show('commBestILs_uploadCheck')
+        hide('commBest_uploadButton')
+        show('commBest_uploadCheck')
         await addDoc(collection(db, 'commBestILs'), obj)
             .then(() => {
                 console.log(`Comm Best IL submitted`);

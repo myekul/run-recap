@@ -1,140 +1,140 @@
-function prepareLocalData() {
-    fetch('resources/topData.json')
-        .then(response => response.json())
-        .then(data => {
-            data['DLC+Base'] = data['DLC+Base C/S']
-            data['DLC'] = data['DLC L/S']
-            for (const category in data) {
-                commBestILs[category].topRuns = data[category]
-            }
-            fetch('resources/scenes.json')
-                .then(response => response.json())
-                .then(data => {
-                    data['DLC+Base'] = data['DLC+Base C/S']
-                    for (const category in data) {
-                        commBestILs[category].scenes = data[category]
+async function prepareLocalData() {
+    const [topData, scenes, rrcData, commBestData, runViableData, altData] = await Promise.all([
+        fetch('resources/topData.json').then(r => r.json()),
+        fetch('resources/scenes.json').then(r => r.json()),
+        fetch('resources/rrcData.json').then(r => r.json()),
+        fetch('resources/commBest.json').then(r => r.json()),
+        fetch('resources/runViable.json').then(r => r.json()),
+        fetch('resources/alt.json').then(r => r.json())
+    ])
+    commBest = commBestData
+    runViable = runViableData
+    alt = altData
+    topData['DLC+Base'] = topData['DLC+Base C/S']
+    topData['DLC'] = topData['DLC L/S']
+    for (const category in topData) {
+        commBestILs[category].topRuns = topData[category]
+    }
+    // scenes
+    scenes['DLC+Base'] = scenes['DLC+Base C/S']
+    for (const category in scenes) {
+        commBestILs[category].scenes = scenes[category]
+    }
+    commBestILs['Legacy'].scenes = [...commBestILs['1.1+'].scenes]
+    commBestILs['Legacy'].scenes[70] = 'level_dice_palace_chips'
+    commBestILs['Legacy'].scenes[72] = 'level_dice_palace_domino'
+    commBestILs['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
+    commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
+    commBestILs['DLC'].scenes = commBestILs['DLC L/S'].scenes
+    commBestILs['DLC+Base'].scenes = commBestILs['DLC+Base C/S'].scenes
+    // rrcData
+    rrcData['DLC+Base'] = rrcData['DLC+Base C/S']
+    rrcData['DLC'] = rrcData['DLC L/S']
+    for (const category in rrcData) {
+        const categoryScenes = commBestILs[category].scenes
+        commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
+        rrcData[category].forEach((rrc, index) => {
+            const currentRun = commBestILs[category].topRuns[index]
+            currentRun.rrc = []
+            if (rrc.scenes) {
+                const savStarSkips = currentRun.starSkips
+                if (!savStarSkips) currentRun.starSkips = []
+                const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
+                const savLevelsNeeded = !currentRun.igt
+                if (savLevelsNeeded) currentRun.igt = []
+                rrc.endTimes = []
+                let winIndex = 0
+                rrc.scenes.forEach((scene, sceneIndex) => {
+                    rrc.endTimes.push(scene.endTime)
+                    if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[sceneIndex + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
+                        currentRun.igt.push(scene.levelTime)
                     }
-                    commBestILs['Legacy'].scenes = [...commBestILs['1.1+'].scenes]
-                    commBestILs['Legacy'].scenes[70] = 'level_dice_palace_chips'
-                    commBestILs['Legacy'].scenes[72] = 'level_dice_palace_domino'
-                    commBestILs['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
-                    commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
-                    commBestILs['DLC'].scenes = commBestILs['DLC L/S'].scenes
-                    commBestILs['DLC+Base'].scenes = commBestILs['DLC+Base C/S'].scenes
-                    fetch('resources/rrcData.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            data['DLC+Base'] = data['DLC+Base C/S']
-                            data['DLC'] = data['DLC L/S']
-                            for (const category in data) {
-                                const categoryScenes = commBestILs[category].scenes
-                                commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
-                                data[category].forEach((rrc, index) => {
-                                    const currentRun = commBestILs[category].topRuns[index]
-                                    currentRun.rrc = []
-                                    if (rrc.scenes) {
-                                        const savStarSkips = currentRun.starSkips
-                                        if (!savStarSkips) currentRun.starSkips = []
-                                        const rrcStarSkips = rrc.scenes.some(scene => scene.starSkips)
-                                        const savLevelsNeeded = !currentRun.igt
-                                        if (savLevelsNeeded) currentRun.igt = []
-                                        rrc.endTimes = []
-                                        let winIndex = 0
-                                        rrc.scenes.forEach((scene, sceneIndex) => {
-                                            rrc.endTimes.push(scene.endTime)
-                                            if (savLevelsNeeded && cupheadBosses[scene.name] && (rrc.scenes[sceneIndex + 1]?.name == 'win' || ['level_devil', 'level_saltbaker'].includes(scene.name))) {
-                                                currentRun.igt.push(scene.levelTime)
-                                            }
-                                            if (scene.name == 'win') {
-                                                if (!rrcStarSkips) {
-                                                    scene.starSkips = currentRun.starSkips[winIndex] * 2
-                                                } else if (!savStarSkips) {
-                                                    currentRun.starSkips.push(scene.starSkips / 2 || 0)
-                                                }
-                                                winIndex++
-                                            }
-                                        })
-                                        currentRun.rrc = rrc.scenes
-                                    } else {
-                                        reconstructRRC(category, rrc.endTimes, index)
-                                    }
-                                })
-                                worldRecordData[category] = { splitBefore: [], splitAfter: [], segmentBefore: [], segmentAfter: [] }
-                                const rrc = commBestILs[category].topRuns[0].rrc
-                                let segmentSumBefore = 0
-                                let segmentSumAfter = 0
-                                let nextNull = false
-                                rrc.forEach((scene, index) => {
-                                    const segment = index == 0 ? scene.endTime : scene.endTime - rrc[index - 1].endTime
-                                    segmentSumBefore += segment
-                                    segmentSumAfter += segment
-                                    if (scene.name == 'win' || ['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial', 'level_devil', 'level_saltbaker'].includes(scene.name)) {
-                                        if (['level_devil', 'level_saltbaker'].includes(scene.name)) {
-                                            let endTime = scene.endTime
-                                            if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') {
-                                                endTime -= 8.45
-                                            }
-                                            worldRecordData[category].splitBefore.push(endTime)
-                                        } else if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
-                                            worldRecordData[category].splitBefore.push(null)
-                                        } else if (rrc[index - 1].name != 'level_platforming_1_1F' && !(rrc[index - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
-                                            worldRecordData[category].splitBefore.push(rrc[index - 1].endTime - 6.45)
-                                        }
-                                        if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
-                                            worldRecordData[category].segmentBefore.push(null)
-                                            nextNull = true
-                                        } else if (rrc[index - 1].name != 'level_platforming_1_1F' && !(scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
-                                            if (nextNull) {
-                                                worldRecordData[category].segmentBefore.push(null)
-                                                segmentSumBefore = segment
-                                                nextNull = false
-                                            } else {
-                                                let result = segmentSumBefore
-                                                if (index < rrc.length - 1) {
-                                                    result -= segment
-                                                    if (rrc[index - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') result -= 2
-                                                    if (rrc[index - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') result += 2
-                                                } else {
-                                                    result += 6.45
-                                                }
-                                                worldRecordData[category].segmentBefore.push(result)
-                                                segmentSumBefore = segment
-                                            }
-                                        }
-                                        let splitAfter = scene.endTime
-                                        if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') splitAfter -= 8.45
-                                        if (scene.name != 'level_platforming_1_1F' && rrc[index - 1].name != 'level_saltbaker') {
-                                            worldRecordData[category].splitAfter.push(splitAfter)
-                                            if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') segmentSumAfter -= 8.45
-                                            if (rrc[index - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') segmentSumAfter += 8.45
-                                            worldRecordData[category].segmentAfter.push(segmentSumAfter)
-                                            segmentSumAfter = 0
-                                        }
-                                    }
-                                })
+                    if (scene.name == 'win') {
+                        if (!rrcStarSkips) {
+                            scene.starSkips = currentRun.starSkips[winIndex] * 2
+                        } else if (!savStarSkips) {
+                            currentRun.starSkips.push(scene.starSkips / 2 || 0)
+                        }
+                        winIndex++
+                    }
+                })
+                currentRun.rrc = rrc.scenes
+            } else {
+                reconstructRRC(category, rrc.endTimes, index)
+            }
+            let segmentSumBefore = 0
+            let segmentSumAfter = 0
+            let nextNull = false
+            currentRun.splitBefore = []
+            currentRun.splitAfter = []
+            currentRun.segmentBefore = []
+            currentRun.segmentAfter = []
+            currentRun.rrc.forEach((scene, sceneIndex) => {
+                const segment = sceneIndex == 0 ? scene.endTime : scene.endTime - currentRun.rrc[sceneIndex - 1].endTime
+                segmentSumBefore += segment
+                segmentSumAfter += segment
+                if (scene.name == 'win' || ['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial', 'level_devil', 'level_saltbaker'].includes(scene.name)) {
+                    if (['level_devil', 'level_saltbaker'].includes(scene.name)) {
+                        let endTime = scene.endTime
+                        if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') {
+                            endTime -= 8.45
+                        }
+                        currentRun.splitBefore.push(endTime)
+                    } else if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
+                        currentRun.splitBefore.push(null)
+                    } else if (currentRun.rrc[sceneIndex - 1].name != 'level_platforming_1_1F' && !(currentRun.rrc[sceneIndex - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
+                        currentRun.splitBefore.push(currentRun.rrc[sceneIndex - 1].endTime - 6.45)
+                    }
+                    if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
+                        currentRun.segmentBefore.push(null)
+                        nextNull = true
+                    } else if (currentRun.rrc[sceneIndex - 1].name != 'level_platforming_1_1F' && !(scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
+                        if (nextNull) {
+                            currentRun.segmentBefore.push(null)
+                            segmentSumBefore = segment
+                            nextNull = false
+                        } else {
+                            let result = segmentSumBefore
+                            if (sceneIndex < currentRun.rrc.length - 1) {
+                                result -= segment
+                                if (currentRun.rrc[sceneIndex - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') result -= 2
+                                if (currentRun.rrc[sceneIndex - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') result += 2
+                            } else {
+                                result += 6.45
                             }
-                        })
-                })
+                            currentRun.segmentBefore.push(result)
+                            segmentSumBefore = segment
+                        }
+                    }
+                    let splitAfter = scene.endTime
+                    if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') splitAfter -= 8.45
+                    if (scene.name != 'level_platforming_1_1F' && currentRun.rrc[sceneIndex - 1].name != 'level_saltbaker') {
+                        currentRun.splitAfter.push(splitAfter)
+                        if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') segmentSumAfter -= 8.45
+                        if (currentRun.rrc[sceneIndex - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') segmentSumAfter += 8.45
+                        currentRun.segmentAfter.push(segmentSumAfter)
+                        segmentSumAfter = 0
+                    }
+                }
+            })
         })
-    fetch('resources/commBest.json')
-        .then(response => response.json())
-        .then(data => {
-            commBest = data
-            commBest['DLC+Base L/S'].before.unshift(...commBest['DLC L/S'].before)
-            commBest['DLC+Base C/S'].before.unshift(...commBest['DLC C/S'].before)
-            commBest['DLC+Base C/S'].after.unshift(...commBest['DLC C/S'].after)
-            fetch('resources/runViable.json')
-                .then(response => response.json())
-                .then(data => {
-                    runViable = data
-                    fetch('resources/alt.json')
-                        .then(response => response.json())
-                        .then(data => {
-                            alt = data
-                            organizeAltStrats()
-                        })
-                })
-        })
+    }
+    commBest['DLC+Base L/S'].before.unshift(...commBest['DLC L/S'].before)
+    commBest['DLC+Base C/S'].before.unshift(...commBest['DLC C/S'].before)
+    commBest['DLC+Base C/S'].after.unshift(...commBest['DLC C/S'].after);
+    ['NMG', 'DLC L/S', 'DLC+Base L/S'].forEach(category => {
+        commBest[category].after = []
+        const WR = commBestILs[category].topRuns[0]
+        for (let i = 0; i < WR.splitAfter.length; i++) {
+            commBest[category].after.push({
+                segment: WR.segmentAfter[i],
+                segmentRunner: commBestILs[category].topRuns[0].name,
+                split: WR.splitAfter[i],
+                splitRunner: commBestILs[category].topRuns[0].name
+            })
+        }
+    })
+    organizeAltStrats()
 }
 function rrcComparisonCollectionPrepare() {
     rrcComparisonCollection = {
@@ -271,5 +271,97 @@ function copyDLC(copy, paste) {
     const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
     dlc.forEach(boss => {
         alt[paste][boss] = alt[copy][boss]
+    })
+}
+function organizeCategories() {
+    categories = []
+    bossesCopy = [...bosses]
+    if (runRecapCategory.name == 'DLC') {
+        bossesCopy = bossesCopy.slice(19, 25)
+    } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
+        bossesCopy = bossesCopy.slice(0, 19)
+    }
+    bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0));
+    if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
+        const elem = bossesCopy.splice(18, 1)[0];
+        bossesCopy.splice(21, 0, elem);
+    }
+    // OOB Route
+    if (runRecapCategory.tabName == 'DLC+Base 2') {
+        const elementsToMove = bossesCopy.slice(0, 6);
+        bossesCopy.splice(0, 6);
+        bossesCopy.splice(8, 0, ...elementsToMove);
+        const elem = bossesCopy.splice(2, 1)[0];
+        bossesCopy.unshift(elem);
+    }
+    bossesCopy.forEach(boss => {
+        categories.push({ name: boss.name, info: boss, runs: [] })
+    })
+}
+function loadRunViableILs() {
+    players.forEach(player => {
+        player.ILs = new Array(categories.length).fill(0)
+    })
+    const numRuns = runRecapCategory.topRuns.length
+    categories.forEach((category, categoryIndex) => {
+        const time = runViable[runRecapCategory.tabName][categoryIndex].time
+        const ILs = runViable[runRecapCategory.tabName][categoryIndex].ILs
+        ILs.forEach(IL => {
+            let playerName = IL.name
+            const url = IL.url
+            let debug = false
+            if (playerName.startsWith("*")) {
+                playerName = playerName.slice(1);
+                // debug = true
+            }
+            addPlayer({ name: playerName })
+            function addPlayer(player) {
+                const initialSize = playerNames.size
+                playerNames.add(player.name)
+                if (playerNames.size > initialSize) {
+                    const playerCopy = { ...player }
+                    playerCopy.ILs = new Array(categories.length).fill(0)
+                    players.push(playerCopy)
+                    return true
+                }
+            }
+            category.runs.push({ debug: debug, player: { name: playerName }, score: time, url: url })
+        })
+    })
+    savComparisonCollection = {
+        "Top Average": [],
+        "Top 3 Average": [],
+        "Top Bests": new Array(categories.length).fill(Infinity),
+        topBestPlayers: new Array(categories.length).fill(null),
+        "Theory Run": [],
+        "Run Viable ILs": []
+    }
+    runRecapCategory.topRuns.forEach((run, index) => {
+        savComparisonCollection['Player ' + (index)] = run.igt
+    })
+    categories.forEach((category, categoryIndex) => {
+        let topSum = 0
+        let top3Sum = 0
+        runRecapCategory.topRuns.forEach((run, index) => {
+            const time = run.igt[categoryIndex]
+            topSum += time
+            if (index < 3) top3Sum += time
+            if (Math.floor(time) < savComparisonCollection['Top Bests'][categoryIndex]) {
+                savComparisonCollection['Top Bests'][categoryIndex] = Math.floor(time)
+                savComparisonCollection.topBestPlayers[categoryIndex] = [index]
+            } else if (Math.floor(time) == savComparisonCollection['Top Bests'][categoryIndex]) {
+                savComparisonCollection.topBestPlayers[categoryIndex].push(index)
+            }
+        })
+        savComparisonCollection['Top Average'].push(topSum / numRuns)
+        savComparisonCollection['Top 3 Average'].push(top3Sum / (numRuns > 3 ? 3 : numRuns))
+        savComparisonCollection['Theory Run'].push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
+        savComparisonCollection['Run Viable ILs'].push(category.runs[0].score)
+    })
+    if (runRecapCategory.name == '1.1+') savComparisonCollection['TAS'] = runRecapCategory.tas
+    commSob = []
+    const arr = commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after']
+    arr.forEach((split, index) => {
+        commSob.push(index == 0 ? convertToSeconds(split.segment) : (convertToSeconds(commSob[index - 1]) + convertToSeconds(split.segment)))
     })
 }

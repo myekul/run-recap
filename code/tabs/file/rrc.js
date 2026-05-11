@@ -37,10 +37,8 @@ function rrcView() {
     HTMLContent += classicView()
     HTMLContent += rrcComparisonDisplay()
     HTMLContent += rrcRTA()
-    const finalTableName = segmentToggle ? 'SEGMENTS' : 'SPLITS'
-    const finalTableThing = segmentToggle ? 'trueSegment' : 'split'
     HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
-    HTMLContent += `<div style='width:270px'>${rtaTable(finalTableName, finalTableThing, cupheadBosses)}</div>`
+    HTMLContent += `<div style='width:270px'></div>`
     if (lastBossDone()) HTMLContent += fancyScorecard()
     if (lastBossDone()) HTMLContent += `<div style='width:270px'></div>`
     HTMLContent += `</div>`
@@ -127,23 +125,6 @@ function rrcOrganize(attempt, scenes, doSegments) {
                 mapTime = 0
                 scene.scorecard = attempt.scenes[index + 1]
                 scene.scorecardSegment = calculateScorecard(scene.scorecard)
-                // Split
-                scene.split = scene.endTime
-                if (!['level_devil', 'level_saltbaker'].includes(scene.name)) scene.split -= 6.45
-                if (scene.name == 'level_saltbaker' && runRecapCategory.name == 'DLC+Base') scene.split -= 8.45
-                if (runNgun) scene.split = 0
-                if (!splitBefore) scene.split = scene.scorecardSegment ? scene.endTime + scene.scorecardSegment : scene.endTime
-                // Segment
-                scene.trueSegment = scene.scorecard?.endTime
-                if (scene.scorecard) {
-                    if (attempt.levels.length) scene.trueSegment = scene.scorecard.endTime - attempt.levels.at(-1).scorecard.endTime
-                } else {
-                    scene.trueSegment = scene.endTime - attempt.levels.at(-1).scorecard.endTime
-                }
-                if (splitBefore) scene.trueSegment = scene.endTime - attempt.levels.at(-1)?.endTime
-                if (splitBefore && scene.name == 'level_devil') scene.trueSegment += 6.45
-                if (splitBefore && scene.name == 'level_saltbaker' && runRecapCategory.name == 'DLC') scene.trueSegment += 8.45
-                //
                 attempt.levels.push(scene)
                 if (boss) attempt.bosses.push(scene)
                 if (runNgun) attempt.runNguns.push(scene)
@@ -198,27 +179,22 @@ function rrcRTA() {
     return HTMLContent
 }
 function rtaTable(title, field, sceneNames) {
-    let HTMLContent = ''
-    HTMLContent += `
-        <div class='border background1 shadow' style='padding:8px;position:relative;min-width:225px'>
-        <div class='font2 container' style='font-size:150%'>
-            ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="segmentToggle=!segmentToggle;playSound('move');action()">${fontAwesome('exchange')}</div>` : ''}
-            <div class='container' style='min-width:165px;margin:0'>${title}</div>
-            ${['SPLITS', 'SEGMENTS'].includes(title) ? `<div class='dim grow' onclick="toggleSplitType()">${fontAwesome(splitBefore ? 'toggle-off' : 'toggle-on')}</div>` : ''}
-        </div>
-        <div class='container'><table>
-        <tr class='gray'>
+    let HTMLContent = `
+    <div class='border background1 shadow' style='padding:8px;position:relative;min-width:225px'>
+    <div class='font2 container' style='font-size:150%'>
+        <div class='container' style='min-width:165px;margin:0'>${title}</div>
+    </div>
+    <div class='container'><table>
+    <tr class='gray'>
         <td colspan=10 style='font-size:10%'>&nbsp;</td>
-        <tr>`
+    <tr>`
     let deltaSum = 0
     let attemptField = field
-    if (['map', 'scorecard', 'split', 'trueSegment'].includes(field)) attemptField = 'levels'
+    if (['map', 'scorecard'].includes(field)) attemptField = 'levels'
     let thingToAnalyze = 'segment'
     if (field == 'levels') thingToAnalyze = 'rta'
     if (field == 'map') thingToAnalyze = 'map'
     if (field == 'scorecard') thingToAnalyze = 'scorecardSegment'
-    if (field == 'split') thingToAnalyze = 'split'
-    if (field == 'trueSegment') thingToAnalyze = 'trueSegment'
     let min
     let max
     if (field == 'scorecard' && scorecardMode == 'Normalized') {
@@ -273,8 +249,7 @@ function rtaTable(title, field, sceneNames) {
         <td class='dim'>${['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) ? '' : starSkipCount(rrcComparisonAttempt)}</td>
         </tr>`
     }
-    if (rrcComparison != 'None' && title != 'SPLITS'
-        && title != 'SEGMENTS'
+    if (rrcComparison != 'None'
         && !(title == 'Scorecards' && scorecardMode == 'Star Skips')
         && !(title == 'Scorecards' && ['Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) && scorecardMode == 'Normalized')
     ) {
@@ -311,12 +286,6 @@ function rtaTable(title, field, sceneNames) {
 function scorecardModeButton(mode, icon) {
     return `<button class='scorecardButton button container ${scorecardMode == mode ? 'selected' : ''}' onclick="changeScorecardMode('${mode}')">${icon}</button>`
 }
-function toggleSplitType() {
-    splitBefore = !splitBefore
-    playSound('move')
-    toast(splitBefore ? 'Split Before (Old Timing)' : 'Split After')
-    action()
-}
 function changeScorecardMode(mode) {
     scorecardMode = mode
     playSound('move')
@@ -325,34 +294,54 @@ function changeScorecardMode(mode) {
 }
 function rrcUpdateBrowser() {
     let HTMLContent = ''
-    HTMLContent += `<div class='container'>
+    HTMLContent += `
+    <div class='container' style='gap:4px'>
         <select onchange="rrcChangeIndex(parseInt(this.value),true)">`
     runRecap_rrcFile.attempts.forEach((attempt, index) => {
-        let content = attempt.lssAttemptId + ' - ' + attempt.startedAt
-        const lastScene = attempt.scenes.at(-1)
-        if (lastScene?.name == 'level_devil') {
-            content += ' - ' + secondsToHMS(lastScene.endTime)
+        if (!(onlyShowFinished && !lastBossDone(attempt)) && !(onlyShowDeathless && attempt.scenes.length != runRecapCategory.scenes.length)) {
+            let content = attempt.lssAttemptId + ' - ' + attempt.startedAt
+            const lastScene = attempt.scenes.at(-1)
+            if (lastScene?.name == 'level_devil') {
+                content += ' - ' + secondsToHMS(lastScene.endTime)
+            }
+            HTMLContent += `<option value='${index}' ${rrcAttemptIndex == index ? 'selected' : ''}>${content}</option>`
         }
-        HTMLContent += `<option value='${index}' ${rrcAttemptIndex == index ? 'selected' : ''}>${content}</option>`
     })
-    HTMLContent += `</select>
-        </div>`
-    HTMLContent += `<div class='container' style='gap:2px;margin:3px'>
-            <div class='grow ${rrcAttemptIndex == runRecap_rrcFile.attempts.length - 1 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex + 1})">${fontAwesome('chevron-left')}</div>`
-    for (let i = rrcAttemptIndex + 7; i >= rrcAttemptIndex - 7; i--) {
-        const attempt = runRecap_rrcFile.attempts[i]
-        if (attempt) {
-            let className = ''
-            if (attempt.scenes.length <= 3) className = 'dim'
-            if (attempt.scenes.at(-1)?.name == 'level_devil') className = 'myekulColor'
-            HTMLContent += `<div class='clickable ${className}' style='text-align:center;width:14px;font-size:${rrcAttemptIndex == i ? '80%' : '50%'}' onclick="rrcChangeIndex(${i})">${fontAwesome('circle')}</div>`
-        } else {
-            HTMLContent += `<div style='width:14px'></div>`
-        }
-    }
-    HTMLContent += `<div class='grow ${rrcAttemptIndex == 0 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex - 1})">${fontAwesome('chevron-right')}</div>
+    HTMLContent += `
+        </select>
+        <i class='fa fa-gear dim grow' onclick="rrcSettings()"></i>
     </div>`
+    if (!onlyShowFinished && !onlyShowDeathless) {
+        HTMLContent += `
+        <div class='container' style='gap:2px;margin:3px'>
+            <div class='grow ${rrcAttemptIndex == runRecap_rrcFile.attempts.length - 1 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex + 1})">${fontAwesome('chevron-left')}</div>`
+        for (let i = rrcAttemptIndex + 7; i >= rrcAttemptIndex - 7; i--) {
+            const attempt = runRecap_rrcFile.attempts[i]
+            if (attempt) {
+                let className = ''
+                if (attempt.scenes.length <= 3) className = 'dim'
+                if (attempt.scenes.at(-1)?.name == 'level_devil') className = 'myekulColor'
+                HTMLContent += `<div class='clickable ${className}' style='text-align:center;width:14px;font-size:${rrcAttemptIndex == i ? '80%' : '50%'}' onclick="rrcChangeIndex(${i})">${fontAwesome('circle')}</div>`
+            } else {
+                HTMLContent += `<div style='width:14px'></div>`
+            }
+        }
+        HTMLContent += `<div class='grow ${rrcAttemptIndex == 0 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex - 1})">${fontAwesome('chevron-right')}</div>`
+    }
+    HTMLContent += `</div>`
     document.getElementById('rrcBrowser').innerHTML = HTMLContent
+}
+function rrcSettings() {
+    let HTMLContent = `
+    <div>
+        <input id='checkbox_finishedRuns' type='checkbox' onchange="onlyShowFinished=!onlyShowFinished;action();playSound('move')" ${onlyShowFinished ? 'checked' : ''}>
+        <label for='checkbox_finishedRuns'>Only show finished runs</label>
+    </div>
+    <div>
+        <input id='checkbox_deathlessRuns' type='checkbox' onchange="onlyShowDeathless=!onlyShowDeathless;action();playSound('move')" ${onlyShowDeathless ? 'checked' : ''}>
+        <label for='checkbox_deathlessRuns'>Only show deathless runs</label>
+    </div>`
+    openModal(HTMLContent, 'RRC SETTINGS')
 }
 function rrcRaw() {
     let HTMLContent = ''

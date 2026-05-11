@@ -22,7 +22,7 @@ let rrcComparisonCollection = {}
 let rrcComparison = 'Top Bests'
 let rrcComparisonText = 'Top Bests'
 
-const worldRecordData = {}
+let lssPlayerIndex = 0
 
 let commSob = []
 
@@ -56,6 +56,9 @@ let loaded
 let commbestILs_ready
 
 let commBestILs
+
+let onlyShowFinished = false
+let onlyShowDeathless = false
 
 // Alt Strats
 

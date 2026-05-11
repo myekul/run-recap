@@ -61,15 +61,6 @@ function action() {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
         document.getElementById(globalTab + 'Button')?.classList.add('activeBanner')
     })
-    if (globalTab == 'lss') {
-        if (runRecapExample) {
-            hide('runRecap_lss_comparison')
-        } else {
-            show('runRecap_lss_comparison')
-        }
-    } else {
-        hide('runRecap_lss_comparison')
-    }
     if (runRecapExample) {
         show('runRecap_example_div')
         hide('upload_div')
@@ -96,10 +87,10 @@ function action() {
     } else {
         hide('runRecap_theoretical_div')
     }
-    if (['sav', 'lss', 'rrc'].includes(globalTab)) {
-        show('runRecap_bar')
+    if (globalTab == 'lss' && runRecap_lssFile.pbSplits) {
+        show('runRecap_lss')
     } else {
-        hide('runRecap_bar')
+        hide('runRecap_lss')
     }
     if (runRecap_savFile && ['sav'].includes(globalTab)) {
         runRecap_chart()
@@ -167,23 +158,23 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     rrcComparison = 'Top Bests'
     rrcComparisonText = 'Top Bests'
     altStratLevel = null
-    if (!commBest[runRecapCategory.tabName]['after'] && !splitBefore) splitBefore = true
+    if (commBest[runRecapCategory.tabName]) {
+        if (!commBest[runRecapCategory.tabName]['after'] && !splitBefore) splitBefore = true
+    }
     if (categoryName != 'Other') rrcComparisonCollectionPrepare()
     const category = runRecapCategory.category
     updateBoardTitle()
     const musicID = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? 'L6T3fpUGSmE' : 'cdvSNkW3Uyk'
     document.getElementById('musicDiv').href = `https://youtu.be/${musicID}`
     // if (runRecapExample) showTab('home')
-    if (category > -1) {
-        letsGo()
-    } else if (categoryName != 'Other') {
-        let variables = `var-${category.var}=${category.subcat}`
-        if (category.var2) variables += `&var-${category.var2}=${category.subcat2}`
-        getLeaderboard(category, `category/${category.id}`, variables, true)
-    } else {
-        organizeCategories()
-        action()
-    }
+    organizeCategories()
+    if (category > -1) prepareData()
+    let HTMLContent = ''
+    runRecapCategory.topRuns?.forEach((run, index) => {
+        HTMLContent += `<option value="top${index}">${secondsToHMS(run.rrc.at(-1).endTime)} - ${players[index].name}</option>`
+    })
+    document.getElementById('lss_topRuns').innerHTML = HTMLContent
+    action()
 }
 function categoryButtonClick(category, database) {
     let buttonID
@@ -207,7 +198,7 @@ function categoryButtonClick(category, database) {
         document.getElementById(buttonID).classList.add('selected')
     }
 }
-function letsGo() {
+function prepareData() {
     runRecapCategory.players = globalCache[runRecapCategory.category].players
     runRecapCategory.runs = globalCache[runRecapCategory.category].runs
     if (runRecapCategory.extraRuns || runRecapCategory.extraPlayers) {
@@ -231,6 +222,8 @@ function letsGo() {
         }
     })
     loadRunViableILs()
+    runRecap_lss_splitInfo()
+    done()
 }
 function done() {
     categories.forEach((category, categoryIndex) => {

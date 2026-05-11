@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://myekul.com/shared-assets/styles/grades.css">
     <link rel="stylesheet" href="https://myekul.com/shared-assets/cuphead/cuphead.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/media.css">
     <link rel="stylesheet" href="styles/scorecard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
@@ -75,8 +76,8 @@
                     <div>
                         <div class="container" style="gap:8px;position:relative">
                             <div id="boardTitle" class="shadow"></div>
-                            <button id='commBestSubmit' class="button cuphead" style="display:none;width:120px;gap:8px;position:absolute;left:110%;font-size:90%" onclick="modalSubmitIL()">
-                                <i class="fa fa-plus"></i>Submit IL
+                            <button id='commBestSubmit' class="button cuphead" style="display:none;width:120px;gap:8px;position:absolute;left:110%;font-size:90%" onclick="modalSubmit()">
+                                <i class="fa fa-plus"></i>Submit
                             </button>
                         </div>
                     </div>
@@ -90,36 +91,39 @@
                     </div>
                 </div>
             </div>
-            <div id="runRecap_bar">
-                <div class="container" style='padding-bottom:10px'>
-                    <div id="runRecap_lss_comparison" class="container" style="margin:0;display:none">
-                        <div class='font2' style="padding-right:10px">.lss</div>
-                        <select id="dropdown_runRecap_lss_current" class="onePointOne">
-                            <option class='lss_yourPB' value="yourPB" selected>Your PB</option>
-                            <optgroup label="Theoretical">
-                                <option value="yourBest">Best Pace Ever</option>
-                                <option value="sob">Sum of Best</option>
-                                <option value="theoryRun">Your "Theory Run"</option>
-                            </optgroup>
-                            <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
-                        </select>
-                        <div>&Delta;</div>
-                        <select id="dropdown_runRecap_lss_comparison">
-                            <option class="lss_yourPB" value="yourPB">Your PB</option>
-                            <option id="lss_prevPB">Previous PB</option>
-                            <optgroup label="Theoretical">
-                                <option value="yourBest" selected>Best Pace Ever</option>
-                                <option value="sob">Sum of Best</option>
-                                <option value="theoryRun">Your "Theory Run"</option>
-                            </optgroup>
-                            <optgroup label="Comm Best Sheet">
-                                <option value="wr">World Record</option>
-                                <option value="commBest">Comm Best</option>
-                                <option value="commSoB">Comm SoB</option>
-                            </optgroup>
-                            <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
-                        </select>
+            <div id="runRecap_lss" style="display:none">
+                <div class="container" style='padding:10px 0;gap:20px'>
+                    <div>
+                        <div class="container">
+                            <div class='font2' style="padding-right:10px">.lss</div>
+                            <select id="dropdown_runRecap_lss_current" class="onePointOne">
+                                <option class='lss_yourPB' value="yourPB" selected>Your PB</option>
+                                <optgroup label="Theoretical" class="lssHide">
+                                    <option value="yourBest" class="lssHide">Best Pace Ever</option>
+                                    <option value="sob" class="lssHide">Sum of Best</option>
+                                    <option value="theoryRun" class="lssHide">Your "Theory Run"</option>
+                                </optgroup>
+                                <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
+                            </select>
+                            <div>&Delta;</div>
+                            <select id="dropdown_runRecap_lss_comparison">
+                                <option class="lss_yourPB lssHide" value="yourPB">Your PB</option>
+                                <option id="lss_prevPB" class="lssHide">Previous PB</option>
+                                <optgroup label="Theoretical" class="lssHide">
+                                    <option value="yourBest" class="lssHide">Best Pace Ever</option>
+                                    <option value="sob" class="lssHide">Sum of Best</option>
+                                    <option value="theoryRun" class="lssHide">Your "Theory Run"</option>
+                                </optgroup>
+                                <optgroup label="Comm Best Sheet">
+                                    <option value="commBest" selected>Comm Best</option>
+                                    <option value="commSob">Comm SoB</option>
+                                </optgroup>
+                                <optgroup id="lss_topRuns" label="Top Runs"></optgroup>
+                                <optgroup class="lss_recentRuns" label="Recent Runs"></optgroup>
+                            </select>
+                        </div>
                     </div>
+                    <div id="lss_igt">123</div>
                 </div>
             </div>
             <div id="content"></div>
@@ -147,7 +151,6 @@
 <script src="code/comparison.js"></script>
 
 <script src="code/api/firebase.js" type="module"></script>
-<script src="code/api/sheets.js"></script>
 
 <script src="code/tabs/home.js"></script>
 <script src="code/tabs/leaderboards.js"></script>

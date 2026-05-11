@@ -12,10 +12,10 @@ function savComparisonContent() {
     ['Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
         if (!(!['1.1+'].includes(runRecapCategory.name) && ['TAS'].includes(option))) {
             HTMLContent += `
-        <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('sav','${option}');action()">
-            <div>${option}</div>
-            <div style='color:gray;font-size:70%;'>${savComparisonInfo[option] || ''}</div>
-        </div>`
+            <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('sav','${option}');action()">
+                <div>${option}</div>
+                <div style='color:gray;font-size:70%;'>${savComparisonInfo[option] || ''}</div>
+            </div>`
         }
     })
     HTMLContent += `</div>`
@@ -75,14 +75,15 @@ function runRecapExamples(type) {
                 HTMLContent += discrepancy ? `<div class='grow' style='position:absolute;right:-20px;top:${6 + (playerIndex * 31)}px;color:salmon' onclick="discrepancyDetected()">${fontAwesome('exclamation-circle')}</div>` : ''
             }
         })
-        HTMLContent += `</table>
-    <div class='container' style='margin-top:10px'>
-        <button class='button cuphead' style='gap:5px;width:170px' onclick="fetchDatabase('${type || databaseType}',${type ? true : false})">
-            ${fontAwesome('cloud')}
-            Browse database
-        </button>
-    </div>
-    </div>`
+        HTMLContent += `
+        </table>
+        <div class='container' style='margin-top:10px'>
+            <button class='button cuphead' style='gap:5px;width:170px' onclick="fetchDatabase('${type || databaseType}',${type ? true : false})">
+                ${fontAwesome('cloud')}
+                Browse database
+            </button>
+        </div>
+        </div>`
     }
     return HTMLContent
 }

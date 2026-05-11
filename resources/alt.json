@@ -6,9 +6,9 @@
             },
             {
                 "name": "Ledge Clip",
-                "time": 32.65,
+                "time": 32.63,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/f47J9BaBkS4"
+                "url": "https://www.youtube.com/live/13ZSnTYvuGA?si=TA4h9E8KP93Z38Ue&t=7173"
             },
             {
                 "name": "Pink Butterfly",
@@ -27,9 +27,9 @@
             },
             {
                 "name": "Ninja Clip",
-                "time": 33.57,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/zhDYWdYTK7A"
+                "time": 33.53,
+                "player": "myekul",
+                "url": "https://youtu.be/SNowOje2QZQ"
             },
             {
                 "name": "TSSMTIC",
@@ -3170,10 +3170,22 @@
         ],
         "thedevil": [
             {
+                "name": "Clap Dragon",
+                "time": 48.47,
+                "player": "myekul",
+                "url": "https://youtu.be/FNCyVws_SXw"
+            },
+            {
                 "name": "Ring Dragon",
                 "time": 48.58,
                 "player": "myekul",
                 "url": "https://youtu.be/oygY7jqJUKs"
+            },
+            {
+                "name": "Dragon Clap",
+                "time": 49.47,
+                "player": "myekul",
+                "url": "https://youtu.be/8GfI-81VCKs"
             },
             {
                 "name": "Bubbles Dragon",
@@ -3182,22 +3194,16 @@
                 "url": "https://youtu.be/8SuwbKgrJ-c"
             },
             {
-                "name": "Dragon Clap",
-                "time": 50.81,
-                "player": "myekul",
-                "url": "https://youtu.be/4pW2AQ53S2c"
-            },
-            {
-                "name": "Clap Dragon",
-                "time": 51.64,
-                "player": "myekul",
-                "url": "https://youtu.be/olimvJ8WeF0"
-            },
-            {
                 "name": "Clap Pinwheel Clap",
-                "time": 54.69,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/2CGuMiA6eQM"
+                "time": 51.15,
+                "player": "myekul",
+                "url": "https://youtu.be/ygM8Lt1ngP0"
+            },
+            {
+                "name": "Clap Ring Clap",
+                "time": 51.23,
+                "player": "myekul",
+                "url": "https://youtu.be/LJV5V-DTs7U"
             }
         ]
     },
@@ -3217,9 +3223,9 @@
             },
             {
                 "name": "Ninja Clip",
-                "time": 33.57,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/zhDYWdYTK7A"
+                "time": 33.53,
+                "player": "myekul",
+                "url": "https://youtu.be/SNowOje2QZQ"
             },
             {
                 "name": "TSSMTIC",
@@ -3766,9 +3772,9 @@
         "thedevil": [
             {
                 "name": "Ring Dragon",
-                "time": 49.41,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/dyoUz_VljuQ"
+                "time": 48.98,
+                "player": "myekul",
+                "url": "https://youtu.be/5QxHk3tFjMc"
             }
         ]
     },

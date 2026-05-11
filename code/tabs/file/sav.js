@@ -53,30 +53,17 @@ function processSavFile(playerIndex, display) {
                     level.completed = true
                 })
                 rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
-                if (playerIndex == 0 && runRecapCategory.markin) {
-                    bootMarkinExample()
-                    if (display) {
-                        showTab('lss')
-                    } else {
-                        showTab('rrc')
-                    }
-                }
-                if (playerIndex > 0 || !runRecapCategory.markin) {
+                lssPlayerIndex = playerIndex
+                lssExample(lssPlayerIndex)
+                if (display) {
+                    showTab('lss')
+                } else {
                     showTab('rrc')
                 }
             } else {
                 showTab('sav')
             }
         })
-}
-function bootMarkinExample() {
-    markinExample()
-    document.querySelectorAll('.lss_recentRuns').forEach(elem => {
-        elem.innerHTML = ''
-        hide(elem)
-    })
-    document.getElementById('dropdown_runRecap_lss_current').value = 'yourPB'
-    document.getElementById('dropdown_runRecap_lss_comparison').value = 'commBest'
 }
 function assignIsles() {
     isles.sort((a, b) => a.mapID - b.mapID)

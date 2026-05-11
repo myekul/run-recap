@@ -57,18 +57,18 @@
             },
             {
                 "title": "baronessvonbonbon",
-                "split": "7:56.26",
+                "split": "7:56.28",
                 "splitRunner": "SBDWolf",
-                "splitURL": null,
+                "splitURL": "https://www.youtube.com/live/13ZSnTYvuGA?si=JE7myhsZfQxv25wo&t=3272",
                 "segment": "1:10.25",
                 "segmentRunner": "Grondious",
                 "segmentURL": "https://youtu.be/GGGhYroTIjg?si=8o4s7B2a7lsE3RR5"
             },
             {
                 "title": "wallywarbles",
-                "split": "9:19.01",
+                "split": "9:19.02",
                 "splitRunner": "SBDWolf",
-                "splitURL": null,
+                "splitURL": "https://www.youtube.com/live/yZornOw-XUM?si=03r16eM3yofI1XWH&t=12493",
                 "segment": "1:19.27",
                 "segmentRunner": "SBDWolf",
                 "segmentURL": "https://www.youtube.com/live/5ZmciUW-3xA?si=dqo8yrGrMvAd3gVb&t=4766"
@@ -542,7 +542,7 @@
                 "title": "thedevil",
                 "split": "22:46.29",
                 "splitRunner": "Fintan0",
-                "splitURL": null,
+                "splitURL": "https://youtu.be/d6pVDFLVRn0",
                 "segment": "58.1",
                 "segmentRunner": "Sublime",
                 "segmentURL": null
@@ -724,7 +724,7 @@
                 "title": "thedevil",
                 "split": "22:46.29",
                 "splitRunner": "Fintan0",
-                "splitURL": null,
+                "splitURL": "https://youtu.be/d6pVDFLVRn0",
                 "segment": "48.11",
                 "segmentRunner": "Fintan0",
                 "segmentURL": "https://www.youtube.com/watch?v=d6pVDFLVRn0&t=1419s"
@@ -1338,12 +1338,12 @@
         "before": [
             {
                 "title": "therootpack",
-                "split": "11:48.90",
+                "split": "11:44.79",
                 "splitRunner": "myekul",
-                "splitURL": null,
+                "splitURL": "https://youtu.be/MI-K-oZjQdA",
                 "segment": "1:09.86",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/HFcj0rNa9Wo"
             },
             {
                 "title": "ribbyandcroaks",
@@ -1352,7 +1352,7 @@
                 "splitURL": null,
                 "segment": "1:12.28",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/Oj_nwAjdYYE"
             },
             {
                 "title": "goopylegrande",
@@ -1361,16 +1361,16 @@
                 "splitURL": null,
                 "segment": "57.06",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/SgLvPZUH_7E"
             },
             {
                 "title": "hildaberg",
                 "split": "15:43.76",
                 "splitRunner": "myekul",
                 "splitURL": null,
-                "segment": "1:37.610",
+                "segment": "1:37.61",
                 "segmentRunner": "MarkinSws",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/DxNXOXuTjPY"
             },
             {
                 "title": "cagneycarnation",
@@ -1379,7 +1379,7 @@
                 "splitURL": null,
                 "segment": "1:05.00",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/yzJfLRsSwtU"
             },
             {
                 "title": "baronessvonbonbon",
@@ -1388,7 +1388,7 @@
                 "splitURL": null,
                 "segment": "1:11.50",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://www.youtube.com/watch?v=fMCBzfN-6tI&t=1105s"
             },
             {
                 "title": "wallywarbles",
@@ -1397,16 +1397,16 @@
                 "splitURL": null,
                 "segment": "1:23.35",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/IZaVCkGG5zY"
             },
             {
                 "title": "djimmithegreat",
                 "split": "21:29.35",
                 "splitRunner": "myekul",
                 "splitURL": "https://youtu.be/z23DklK7ETg",
-                "segment": "1:43.971",
+                "segment": "1:43.97",
                 "segmentRunner": "MarkinSws",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/Z82R22MimLk"
             },
             {
                 "title": "beppitheclown",
@@ -1415,7 +1415,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:12.04",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/U5NVY3-Twg8"
             },
             {
                 "title": "grimmatchstick",
@@ -1424,7 +1424,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:17.76",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://www.youtube.com/watch?v=U5NVY3-Twg8&t=76s"
             },
             {
                 "title": "rumorhoneybottoms",
@@ -1433,7 +1433,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:16.45",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/KE9n540LcyA"
             },
             {
                 "title": "drkahlsrobot",
@@ -1469,7 +1469,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:08.79",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/rb4SYFMpj6U"
             },
             {
                 "title": "calamaria",
@@ -1477,8 +1477,8 @@
                 "splitRunner": "myekul",
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:20.05",
-                "segmentRunner": "MarkinSws",
-                "segmentURL": null
+                "segmentRunner": "myekul",
+                "segmentURL": "https://www.youtube.com/watch?v=sQzJGIr3Hco&t=5197s"
             },
             {
                 "title": "phantomexpress",
@@ -1487,7 +1487,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:32.30",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/SL0U3I6ROUc"
             },
             {
                 "title": "kingdice",
@@ -1496,7 +1496,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "2:54.01",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/0vRReaidOzI"
             },
             {
                 "title": "thedevil",
@@ -1505,7 +1505,7 @@
                 "splitURL": "https://youtu.be/z23DklK7ETg",
                 "segment": "1:19.74",
                 "segmentRunner": "myekul",
-                "segmentURL": null
+                "segmentURL": "https://youtu.be/p-ncpqEWMrM"
             }
         ],
         "after": [

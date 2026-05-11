@@ -161,7 +161,8 @@ function rrcChartSection() {
         ${colorCell}
         </tr>`
     })
-    HTMLContent += `</table>
+    HTMLContent += `
+        </table>
     </div>`
     return HTMLContent
 }

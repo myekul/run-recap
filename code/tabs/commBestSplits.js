@@ -3,12 +3,7 @@ function generateCommBestSplits() {
     let HTMLContent = ''
     HTMLContent += horiztonalCategories()
     if (commBest[runRecapCategory.tabName]) {
-        HTMLContent += `
-        <div class='container' style='padding-bottom:10px;gap:10px;margin:15px 0'>
-            <div ${splitBefore ? '' : 'class="dim"'}>Split Before</div>
-            <button class='grow dim' style='font-size:120%' onclick="splitBefore=!splitBefore;playSound('move');action()">${fontAwesome('toggle-' + (splitBefore ? 'off' : 'on'))}</button>
-            <div ${!splitBefore ? '' : 'class="dim"'}>Split After</div>
-        </div>`
+        HTMLContent += splitBeforeAfter()
         if (commBest[runRecapCategory.tabName][cardinality]) {
             HTMLContent += `
             <div>
@@ -22,7 +17,7 @@ function generateCommBestSplits() {
                 const thisSplit = commBest[runRecapCategory.tabName][cardinality][index]
                 const playerName = thisSplit.splitRunner
                 const player = allPlayers.find(player => player.name == playerName) || playerName
-                const wrSplit = worldRecordData[runRecapCategory.tabName][splitBefore ? 'splitBefore' : 'splitAfter'][index]
+                const wrSplit = runRecapCategory.topRuns[0][splitBefore ? 'splitBefore' : 'splitAfter'][index]
                 const url = commBest[runRecapCategory.tabName][cardinality][index].splitURL
                 HTMLContent += `
                 <tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
@@ -49,7 +44,7 @@ function generateCommBestSplits() {
                 const playerName = thisSplit.segmentRunner
                 const player = allPlayers.find(player => player.name == playerName) || playerName
                 const bestSegment = convertToSeconds(thisSplit.segment)
-                const wrSegment = worldRecordData[runRecapCategory.tabName][splitBefore ? 'segmentBefore' : 'segmentAfter'][index]
+                const wrSegment = runRecapCategory.topRuns[0][splitBefore ? 'segmentBefore' : 'segmentAfter'][index]
                 const url = commBest[runRecapCategory.tabName][cardinality][index].segmentURL
                 sum += bestSegment
                 HTMLContent += `
@@ -81,4 +76,19 @@ function generateCommBestSplits() {
     }
     document.getElementById('content').innerHTML = HTMLContent
     buttonShots()
+}
+function splitBeforeAfter() {
+    return `
+        <div class='container' style='gap:10px;margin:15px 0'>
+            <div ${splitBefore ? '' : 'class="dim"'}>Split Before</div>
+            <button class='dim grow' style='font-size:130%' onclick="splitBeforeAfterHelper()">${fontAwesome('toggle-' + (splitBefore ? 'off' : 'on'))}</button>
+            <div ${!splitBefore ? '' : 'class="dim"'}>Split After</div>
+        </div>`
+}
+function splitBeforeAfterHelper() {
+    splitBefore = !splitBefore
+    toast(splitBefore ? 'Split Before (Old Timing)' : 'Split After')
+    playSound('move')
+    if (globalTab == 'lss' && runRecapExample) lssExample(lssPlayerIndex)
+    action()
 }

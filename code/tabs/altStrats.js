@@ -85,8 +85,17 @@ async function generateAltStrats() {
 function altStrat_topContributors(root) {
     let HTMLContent = ''
     const counts = {};
-    for (const boss in altStratCategory) {
-        for (const obj of altStratCategory[boss]) {
+    if (root) {
+        for (const boss in altStratCategory) {
+            for (const obj of altStratCategory[boss]) {
+                if (!obj.title) {
+                    const player = obj.player;
+                    counts[player] = (counts[player] || 0) + 1;
+                }
+            }
+        }
+    } else {
+        for (const obj of altStratCategory[altStratLevel]) {
             if (!obj.title) {
                 const player = obj.player;
                 counts[player] = (counts[player] || 0) + 1;
@@ -101,16 +110,21 @@ function altStrat_topContributors(root) {
     HTMLContent += `
     <table class='shadow'>
         <tr>
-            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Top Contributors</td>
+            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px 8px;white-space:nowrap'>Top Contributors</td>
         </tr>`
     countArray.forEach((player, index) => {
-        HTMLContent += `<tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
-                <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
-                <td>${player.count}</td>
-                </tr>`
+        HTMLContent += `
+        <tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
+            <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
+            <td>${player.count}</td>
+        </tr>`
     })
     HTMLContent += `</table>`
-    root.querySelector('#altStrat_topContributors').innerHTML = HTMLContent
+    if (root) {
+        root.querySelector('#altStrat_topContributors').innerHTML = HTMLContent
+    } else {
+        return HTMLContent
+    }
 }
 function altStrat_categories(root) {
     let HTMLContent = ''
@@ -308,7 +322,10 @@ function altStrats(query) {
                     HTMLContent += `<td><div class='container'>`
                     strat.name.split(',').forEach(miniboss => {
                         miniboss = miniboss.trim()
-                        HTMLContent += `<div class='container' style='width:25px'><img src='https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'></div>`
+                        HTMLContent += `
+                        <div class='container' style='width:25px'>
+                            <img src='https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'>
+                        </div>`
                     })
                     HTMLContent += `</div></td>`
                 }
@@ -351,6 +368,7 @@ function altStrats(query) {
         })
         HTMLContent += `</table>`
     }
+    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][altStratLevel].length > 1) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors()}</div>`
     HTMLContent += `</div></div>`
     return HTMLContent
 }

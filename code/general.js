@@ -105,30 +105,31 @@ function normalizedColorCell(num, min, max) {
 function categorySelect(database) {
     let functionName = ""
     functionName += database ? 'databaseCategorySwitch' : `playSound('category_select');changeCategory`
-    return `<div class="categorySelect">
-                <div class="container">
-                    <button id='onePointOneButton' onclick="${functionName}('1.1+',true)" class="button onePointOne">1.1+</button>
-                </div>
-                <div class="container">
-                    <button id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy</button>
-                </div>
-                <div class="container">
-                    <button id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</button>
-                </div>
-                <div class="container">
-                    <button id='dlcButton' class="dlc button" onclick="${functionName}('DLC',true)">DLC</button>
-                    <button id='dlclsButton' class="dlc lobber button" onclick="${functionName}('DLC L/S',true)"></button>
-                    <button id='dlccsButton' class="dlc charge button" onclick="${functionName}('DLC C/S',true)"></button>
-                </div>
-                <div class="container">
-                    <button id='dlcbaseButton' class="dlcbase button" onclick="${functionName}('DLC+Base',true)">DLC+Base</button>
-                    <button id='dlcbaselsButton' class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S',true)"></button>
-                    <button id='dlcbasecsButton' class="dlcbase charge button" onclick="${functionName}('DLC+Base C/S',true)"></button>
-                </div>
-                <div class="container">
-                    <button id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
-                </div>
-            </div>`
+    return `
+    <div class="categorySelect">
+        <div class="container">
+            <button id='onePointOneButton' onclick="${functionName}('1.1+',true)" class="button onePointOne">1.1+</button>
+        </div>
+        <div class="container">
+            <button id='legacyButton' onclick="${functionName}('Legacy',true)" class="button legacy">Legacy</button>
+        </div>
+        <div class="container">
+            <button id='nmgButton' onclick="${functionName}('NMG',true)" class="button nmg">NMG</button>
+        </div>
+        <div class="container">
+            <button id='dlcButton' class="dlc button" onclick="${functionName}('DLC',true)">DLC</button>
+            <button id='dlclsButton' class="dlc lobber button" onclick="${functionName}('DLC L/S',true)"></button>
+            <button id='dlccsButton' class="dlc charge button" onclick="${functionName}('DLC C/S',true)"></button>
+        </div>
+        <div class="container">
+            <button id='dlcbaseButton' class="dlcbase button" onclick="${functionName}('DLC+Base',true)">DLC+Base</button>
+            <button id='dlcbaselsButton' class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S',true)"></button>
+            <button id='dlcbasecsButton' class="dlcbase charge button" onclick="${functionName}('DLC+Base C/S',true)"></button>
+        </div>
+        <div class="container">
+            <button id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
+        </div>
+    </div>`
 }
 function databaseCategorySwitch(category) {
     databaseCategory = category

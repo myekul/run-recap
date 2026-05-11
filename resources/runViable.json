@@ -794,15 +794,11 @@
         },
         {
             "name": "thedevil",
-            "time": 49,
+            "time": 48,
             "ILs": [
                 {
                     "name": "*myekul",
-                    "url": "https://youtu.be/e9iuDrmwC78"
-                },
-                {
-                    "name": "*Quincely0",
-                    "url": "https://youtu.be/9BxUhq5KIAQ"
+                    "url": "https://youtu.be/oygY7jqJUKs"
                 }
             ]
         }
@@ -849,6 +845,10 @@
                 {
                     "name": "Quincely0",
                     "url": "https://youtu.be/ZH5WQlB9Gts?feature=shared&t=300"
+                },
+                {
+                    "name": "Taylz",
+                    "url": "https://www.twitch.tv/taylz343/clip/CleverStylishCrocodileKlappa-3P_pTkQYaWq5n_98"
                 },
                 {
                     "name": "*Lewzr",
@@ -1330,11 +1330,11 @@
         },
         {
             "name": "thedevil",
-            "time": 49,
+            "time": 48,
             "ILs": [
                 {
-                    "name": "*MarkinSws",
-                    "url": "https://www.youtube.com/watch?v=dyoUz_VljuQ"
+                    "name": "*myekul",
+                    "url": "https://youtu.be/5QxHk3tFjMc"
                 }
             ]
         }

@@ -2,7 +2,6 @@
     "1.1+": {
         "name": "1.1+",
         "tabName": "1.1+",
-        "markin": "1.1+ Any% (Split After)",
         "className": "onePointOne",
         "category": 0,
         "shot1": "lobber",
@@ -59,7 +58,6 @@
     "Legacy": {
         "name": "Legacy",
         "tabName": "Legacy",
-        "markin": "1.0 Any% (Split Before)",
         "className": "legacy",
         "category": 1,
         "shot1": "lobber",
@@ -69,7 +67,6 @@
     "NMG": {
         "name": "NMG",
         "tabName": "NMG",
-        "markin": "NMG Any%",
         "className": "nmg",
         "category": 2,
         "shot1": "lobber",
@@ -79,7 +76,6 @@
     "DLC": {
         "name": "DLC",
         "tabName": "DLC L/S",
-        "markin": "DLC Any% (L/S)",
         "className": "dlc",
         "category": 3,
         "shot1": "lobber",
@@ -89,7 +85,6 @@
     "DLC L/S": {
         "name": "DLC",
         "tabName": "DLC L/S",
-        "markin": "DLC Any% (L/S)",
         "className": "dlc",
         "category": 3,
         "shot1": "lobber",
@@ -129,7 +124,6 @@
     "DLC C/S": {
         "name": "DLC",
         "tabName": "DLC C/S",
-        "markin": "DLC Any% (C/S)",
         "className": "dlc",
         "category": 3,
         "shot1": "charge",
@@ -179,7 +173,6 @@
     "DLC+Base": {
         "name": "DLC+Base",
         "tabName": "DLC+Base C/S",
-        "markin": "DLC+BG Any% (C/S)",
         "className": "dlcbase",
         "category": 4,
         "shot1": "charge",
@@ -188,7 +181,6 @@
     "DLC+Base II": {
         "name": "DLC+Base",
         "tabName": "DLC+Base II",
-        "markin": "DLC+BG Any% (L/S)",
         "className": "dlcbase",
         "category": 4,
         "subcat": "Route II"
@@ -196,7 +188,6 @@
     "DLC+Base L/S": {
         "name": "DLC+Base",
         "tabName": "DLC+Base L/S",
-        "markin": "DLC+BG Any% (L/S)",
         "className": "dlcbase",
         "category": 4,
         "shot1": "lobber",
@@ -219,7 +210,6 @@
     "DLC+Base C/S": {
         "name": "DLC+Base",
         "tabName": "DLC+Base C/S",
-        "markin": "DLC+BG Any% (C/S)",
         "className": "dlcbase",
         "category": 4,
         "shot1": "charge",

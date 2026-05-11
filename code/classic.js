@@ -1,9 +1,8 @@
 function classicView() {
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div class='container'>
-    ${savComparisonDisplay()}
-    ${handleNumDeaths()}
+        ${savComparisonDisplay()}
+        ${handleNumDeaths()}
     </div>`
     HTMLContent += `<div class='container' style='gap:25px;margin:20px'>`
     assignIsles()
@@ -86,10 +85,11 @@ function savBoss(categoryIndex) {
 }
 function extraLevel(name, time) {
     const folder = name == 'mausoleum' ? 'other' : 'runnguns'
-    return `<div class='container'>
+    return `
+    <div class='container'>
         <div>${getImage(folder + '/' + name, 36)}</div>
         <div style='padding-left:8px;font-size:120%'>${secondsToHMS(time, true)}</div>
-        </div>`
+    </div>`
 }
 function isleHeader(isle) {
     return `
