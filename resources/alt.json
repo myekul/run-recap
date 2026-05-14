@@ -3170,6 +3170,9 @@
         ],
         "thedevil": [
             {
+                "title": "Dragon"
+            },
+            {
                 "name": "Clap Dragon",
                 "time": 48.47,
                 "player": "myekul",
@@ -3189,21 +3192,36 @@
             },
             {
                 "name": "Bubbles Dragon",
-                "time": 50.18,
+                "time": 49.59,
                 "player": "myekul",
-                "url": "https://youtu.be/8SuwbKgrJ-c"
+                "url": "https://youtu.be/jmr-uJGnRAs"
+            },
+            {
+                "title": "Head Skip"
+            },
+            {
+                "name": "Bubbles Clap",
+                "time": 49.73,
+                "player": "myekul",
+                "url": "https://youtu.be/Hh5ce3hfmJ8"
+            },
+            {
+                "name": "Clap Bubbles",
+                "time": 49.74,
+                "player": "myekul",
+                "url": "https://youtu.be/HzvxoZNtkvQ"
             },
             {
                 "name": "Clap Pinwheel Clap",
-                "time": 51.15,
+                "time": 50.78,
                 "player": "myekul",
-                "url": "https://youtu.be/ygM8Lt1ngP0"
+                "url": "https://youtu.be/n1ubMlNRZ_8"
             },
             {
                 "name": "Clap Ring Clap",
-                "time": 51.23,
+                "time": "50.90",
                 "player": "myekul",
-                "url": "https://youtu.be/LJV5V-DTs7U"
+                "url": "https://youtu.be/8y-I_UkvuP0"
             }
         ]
     },
@@ -3729,6 +3747,18 @@
         ],
         "calamaria": [
             {
+                "name": "Red Fish, Pufferfish, Ghosts",
+                "time": 48.59,
+                "player": "myekul",
+                "url": "https://youtu.be/sxXnrPQmrYc"
+            },
+            {
+                "name": "Red Fish, Seahorse, Ghosts",
+                "time": 49.09,
+                "player": "myekul",
+                "url": "https://youtu.be/lqO0qnrLx6s"
+            },
+            {
                 "name": "Ghosts, Seahorse, Red Fish",
                 "time": 49.86,
                 "player": "Quincely0",
@@ -3739,18 +3769,6 @@
                 "time": 49.95,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/MrPwmMw-sP0"
-            },
-            {
-                "name": "Red Fish, Pufferfish, Ghosts",
-                "time": 50.54,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=sQzJGIr3Hco&t=5231s"
-            },
-            {
-                "name": "Red Fish, Seahorse, Ghosts",
-                "time": "50.80",
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=z23DklK7ETg&t=1954s"
             }
         ],
         "phantomexpress": [

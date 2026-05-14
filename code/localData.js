@@ -18,7 +18,7 @@ async function prepareLocalData() {
     // scenes
     scenes['DLC+Base'] = scenes['DLC+Base C/S']
     for (const category in scenes) {
-        commBestILs[category].scenes = scenes[category]
+        if (commBestILs[category]) commBestILs[category].scenes = scenes[category]
     }
     commBestILs['Legacy'].scenes = [...commBestILs['1.1+'].scenes]
     commBestILs['Legacy'].scenes[70] = 'level_dice_palace_chips'
@@ -287,7 +287,7 @@ function organizeCategories() {
         bossesCopy.splice(21, 0, elem);
     }
     // OOB Route
-    if (runRecapCategory.tabName == 'DLC+Base 2') {
+    if (runRecapCategory.tabName == 'DLC+Base L/S OoB') {
         const elementsToMove = bossesCopy.slice(0, 6);
         bossesCopy.splice(0, 6);
         bossesCopy.splice(8, 0, ...elementsToMove);

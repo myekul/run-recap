@@ -178,12 +178,12 @@
         "shot1": "charge",
         "shot2": "spread"
     },
-    "DLC+Base II": {
+    "DLC+Base L/S OoB": {
         "name": "DLC+Base",
-        "tabName": "DLC+Base II",
+        "tabName": "DLC+Base L/S OoB",
         "className": "dlcbase",
         "category": 4,
-        "subcat": "Route II"
+        "subcat": "OoB"
     },
     "DLC+Base L/S": {
         "name": "DLC+Base",
