@@ -1940,9 +1940,9 @@
             },
             {
                 "name": "Clap Bubbles Dragon (Slowest)",
-                "time": 46.23,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/ikarMP0YKgI",
+                "time": 45.96,
+                "player": "myekul",
+                "url": "https://youtu.be/BQ6A7uA0SAg",
                 "odds": "1/385"
             },
             {
@@ -3173,6 +3173,12 @@
                 "title": "Dragon"
             },
             {
+                "name": "Pinwheel Dragon",
+                "time": 47.78,
+                "player": "myekul",
+                "url": "https://youtu.be/x0iCrcdcNyc"
+            },
+            {
                 "name": "Clap Dragon",
                 "time": 48.47,
                 "player": "myekul",
@@ -3357,7 +3363,13 @@
                 "title": "Parryless"
             },
             {
-                "name": "2 Nuke, Parryless",
+                "name": "Nukeless",
+                "time": "1:02.86",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/cIJ2RA6Dzpw"
+            },
+            {
+                "name": "2 Nuke",
                 "time": "1:00.87",
                 "rta": "1:03.06",
                 "player": "ExclamationMarkYT",
@@ -3946,12 +3958,235 @@
             }
         ]
     },
+    "NMG P/S": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 40.82,
+                "player": "Quincely0",
+                "url": "https://www.youtube.com/watch?v=S5TxRvD7jDg&t=6s"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "Punches, Tigers",
+                "time": "49.60",
+                "player": "Quincely0",
+                "url": "https://youtu.be/j-Wnt-IzCwk"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": "29.90",
+                "player": "Yuka",
+                "url": "https://youtu.be/1GsKhxIRmYc"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 36.87,
+                "player": "Yuka",
+                "url": "https://youtu.be/J4Jih-NB_sY"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Gumball, Waffle, Candy Corn",
+                "time": 41.64,
+                "player": "Quincely0",
+                "url": "https://youtu.be/KQruyG-403o"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": "1:01.30",
+                "player": "Yuka",
+                "url": "https://youtu.be/JofDjGRuSWY"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": 51.91,
+                "player": "Yuka",
+                "url": "https://youtu.be/dtTKEJUjWSs"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 40.83,
+                "player": "Quincely0",
+                "url": "https://youtu.be/BX9o9CbjJbM"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 53.25,
+                "player": "Quincely0",
+                "url": "https://youtu.be/gzZrbCefpMk"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "Catapult, Charge",
+                "time": 47.62,
+                "player": "Quincely0",
+                "url": "https://www.youtube.com/watch?v=PFP2t9t9pp8&t=3s"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "2-Gun, Gun",
+                "time": 39.53,
+                "player": "Quincely0",
+                "url": "https://youtu.be/A0Xbf0udbe0"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": "1:09.76",
+                "player": "Yuka",
+                "url": "https://youtu.be/4rs72tsHQKw"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "3-5-7",
+                "time": "1:59",
+                "player": "Yuka",
+                "url": "https://youtu.be/bIqH4HawKY4"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Bubbles Dragon (Slower)",
+                "time": 57.86,
+                "player": "Quincely0",
+                "url": "https://youtu.be/ln4yU0PGgnE"
+            }
+        ]
+    },
     "DLC+Base Simple": {
         "goopylegrande": [
             {
                 "name": "",
                 "time": 25,
-                "player": "myekul"
+                "player": "myekul",
+                "url": "https://youtu.be/yDW98fVl0ls"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 27,
+                "player": "myekul",
+                "url": "https://youtu.be/JC9bbT5AjNs"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "",
+                "time": 32,
+                "player": "myekul",
+                "url": "https://youtu.be/fd3iMvS5Mt8"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": "28.50",
+                "player": "myekul",
+                "url": "https://youtu.be/WHbTrE0rumc"
+            }
+        ]
+    },
+    "DLC Low%": {
+        "glumstonethegiant": [
+            {
+                "name": "Parryless",
+                "time": "1:04",
+                "player": "Chory",
+                "url": "https://youtu.be/yJTerNbVlzE"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 59,
+                "player": "Quincely0",
+                "url": "https://youtu.be/nsvyjSBgzQY"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": "1:02.40",
+                "player": "Chory",
+                "url": "https://www.youtube.com/watch?v=or9dkl_8jSc&t=236s"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 54.58,
+                "player": "Grondious",
+                "url": "https://youtu.be/Au8aI1wH7-0"
+            }
+        ],
+        "chefsaltbaker": [
+            {
+                "name": "DL-S",
+                "time": "1:22.59",
+                "player": "Chory",
+                "url": "https://youtu.be/-zI4zWejAgw"
+            }
+        ]
+    },
+    "DLC C/T": {
+        "glumstonethegiant": [
+            {
+                "name": "",
+                "time": 51.79,
+                "player": "myekul",
+                "url": "https://youtu.be/KNn8cCljEZs"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": "43.20",
+                "player": "myekul",
+                "url": "https://youtu.be/XUkMuY6fxx8"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 46,
+                "player": "myekul",
+                "url": "https://youtu.be/CJg1VRSZHJw"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 42.56,
+                "player": "myekul",
+                "url": "https://youtu.be/uQsZeMB5KCo"
+            }
+        ],
+        "chefsaltbaker": [
+            {
+                "name": "SLD",
+                "time": "1:05.81",
+                "player": "myekul",
+                "url": "https://youtu.be/pQEUdxAYqlo"
             }
         ]
     },
@@ -3978,6 +4213,14 @@
                 "time": 46.62,
                 "player": "myekul",
                 "url": "https://youtu.be/vc5GE_KgUvY"
+            }
+        ],
+        "estherwinchester": [
+            {
+                "name": "1 Nuke",
+                "time": "1:08",
+                "player": "myekul",
+                "url": "https://youtu.be/YUKiRKqLtoM"
             }
         ],
         "moonshinemob": [

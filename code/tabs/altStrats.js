@@ -133,7 +133,8 @@ function altStrat_categories(root) {
                 <tr>
                     <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td>
                 </tr>`
-    const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', '300%']
+    const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
+    const otherCategories = ['NMG P/S', 'DLC+Base Simple', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
     altStratCategories.forEach((altStratCategory, index) => {
         const category = commBestILs[altStratCategory]
         const altStrats = alt[altStratCategory]
@@ -151,15 +152,31 @@ function altStrat_categories(root) {
                 ${category?.name || altStratCategory}
                 <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div>
             </td>
-            <td style=''>${sum}</td>
+            <td>${sum}</td>
         </tr>`
     })
+    let sum = 0
+    otherCategories.forEach((altStratCategory, index) => {
+        const category = commBestILs[altStratCategory]
+        const altStrats = alt[altStratCategory]
+        for (const boss in altStrats) {
+            for (const obj of altStrats[boss]) {
+                if (!obj.title) {
+                    sum++
+                }
+            }
+        }
+    })
+    HTMLContent += `
+        <tr class='background1'>
+            <td class='gray' style='position:relative'>Other</td>
+            <td>${sum}</td>
+        </tr>`
     HTMLContent += `</table>`
     root.querySelector('#altStrat_categories').innerHTML = HTMLContent
 }
 function altStrat_bestTimes(root) {
-    let HTMLContent = ''
-    HTMLContent += `<table class='shadow'>`
+    let HTMLContent = `<table class='shadow'>`
     HTMLContent += `
     <tr>
         <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td>
@@ -178,6 +195,7 @@ function altStrat_bestTimes(root) {
                 <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                 <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
                 <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
+                <td class='${commBestILs[copiedILs[runRecapCategory.tabName ?? altStratOther][category.info.id]]?.className || ''}'></td>
             </tr>`
         } else {
             HTMLContent += `

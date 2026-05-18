@@ -222,6 +222,7 @@ function reconstructRRC(category, endTimes, playerIndex) {
 }
 function organizeAltStrats() {
     for (const category in alt) {
+        copiedILs[category] = {}
         for (const boss in alt[category]) {
             for (const obj of alt[category][boss]) {
                 if (!obj.title) {
@@ -236,18 +237,18 @@ function organizeAltStrats() {
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['DLC L/S', 'DLC C/S', 'estherwinchester'],
-        ['NMG', 'DLC+Base L/S', 'hildaberg'],
+        ['DLC L/S', 'DLC Low%', 'estherwinchester'],
+        ['DLC L/S', 'DLC C/T', 'estherwinchester'],
+        ['1.1+', 'DLC+Base L/S', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
-        ['DLC+Base L/S', 'DLC+Base C/S', 'hildaberg'],
-        ['DLC+Base L/S', 'DLC+Base C/S', 'wallywarbles'],
-        ['DLC+Base L/S', 'DLC+Base C/S', 'djimmithegreat'],
-        ['DLC+Base L/S', 'DLC+Base C/S', 'drkahlsrobot'],
-        ['DLC+Base L/S', 'DLC+Base C/S', 'calamaria'],
+        ['NMG', 'NMG P/S', 'forestfollies'],
         ['DLC L/S', 'DLC C/S', 'forestfollies'],
         ['DLC L/S', 'DLC+Base L/S', 'forestfollies'],
         ['DLC L/S', 'DLC+Base C/S', 'forestfollies'],
         ['DLC L/S', '300%', 'forestfollies'],
+        ['DLC L/S', 'DLC Low%', 'forestfollies'],
+        ['DLC L/S', 'DLC C/T', 'forestfollies'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
         ['DLC Expert', '300%', 'thehowlingaces'],
@@ -256,6 +257,7 @@ function organizeAltStrats() {
     ]
     for (const [copy, paste, boss] of chunks) {
         alt[paste][boss] = alt[copy][boss]
+        copiedILs[paste][boss] = copy
     }
     const temp = []
     alt['1.1+'].captainbrineybeard.forEach(strat => {
@@ -264,13 +266,17 @@ function organizeAltStrats() {
         }
     })
     alt['NMG'].captainbrineybeard = temp
-    copyDLC('DLC L/S', 'DLC+Base L/S')
-    copyDLC('DLC C/S', 'DLC+Base C/S')
-}
-function copyDLC(copy, paste) {
     const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
-    dlc.forEach(boss => {
+    const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
+    copyBulk('DLC L/S', 'DLC+Base L/S', dlc)
+    copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
+    copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)
+    copyBulk('NMG', 'NMG P/S', plane)
+}
+function copyBulk(copy, paste, bosses) {
+    bosses.forEach(boss => {
         alt[paste][boss] = alt[copy][boss]
+        copiedILs[paste][boss] = copy
     })
 }
 function organizeCategories() {

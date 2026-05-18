@@ -25,10 +25,10 @@ function generateTheTop() {
         })
         HTMLContent += chartEligible ? rrcChartSection() : ''
         HTMLContent += topGrid()
-        HTMLContent += savComparisonDisplay()
-        // HTMLContent += topSums()
-        HTMLContent += rtaSums()
-        HTMLContent += topResidual()
+            + savComparisonDisplay()
+            // + topSums()
+            + rtaSums()
+            + topResidual()
         HTMLContent += `
         <div class='container' style='margin-top:100px'>
             <table class='shadow'>
@@ -83,11 +83,12 @@ function generateTheTop() {
     if (chartEligible && runRecapCategory.name != 'Other') rrcChart()
 }
 function rtaSums() {
+    if (runRecapCategory.name == 'DLC') return ''
     let HTMLContent = `
-        <div class='container' style='margin-top:20px'>
-            <table class='shadow'>
-                <tr>
-                    <td colspan=4></td>`
+    <div class='container' style='margin-top:20px'>
+        <table class='shadow'>
+            <tr>
+                <td colspan=4></td>`
     isles.forEach(isle => {
         if (isle.runRecapCategories.length) {
             HTMLContent += `<th class='${isle.className}'>${isle.name}</th>`

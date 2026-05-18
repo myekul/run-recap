@@ -66,6 +66,8 @@ let alt
 let altStratNum = 0
 let altStratLevel
 
+const copiedILs = {}
+
 let isolatePatterns
 let altStratExtra
 let bonbonSort = 'Standard'
