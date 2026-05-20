@@ -1,5 +1,8 @@
 let altStratOther = '300%'
 let altStratCategory
+function mausCriteria() {
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && altStratOther == '300%')
+}
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
@@ -8,15 +11,27 @@ async function generateAltStrats() {
         <div>
             <div class='container' style='gap:10px'>`
         assignIsles()
+        const isle1 = ['forestfollies']
+        if (mausCriteria()) isle1.push('mausoleum')
         HTMLContent += `
         <table class='shadow'>
-            <tr>
-                <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.filter(IL => !IL.title).length || '&nbsp;'}</td>
-            </tr>
-            <tr>
-                <td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td>
-            </tr>
-        </table>`
+                <tr class='background2'>`
+        isle1.forEach(level => {
+            HTMLContent += `
+                <td>
+                    <div style='font-size:80%;color:gray'>${altStratCategory[level]?.length || '&nbsp;'}</div>
+                </td>`
+        })
+        HTMLContent += `</tr><tr>`
+        isle1.forEach(level => {
+            HTMLContent += `
+                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+                    <div>${getImage(imageLocation(level))}</div>
+                </td>`
+        })
+        HTMLContent += `
+                    </tr>
+                </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
                 HTMLContent += `<table class='shadow'><tr class='background2'>`
@@ -73,7 +88,7 @@ async function generateAltStrats() {
             RUNNGUNS.slice(1).forEach(level => {
                 HTMLContent += `
                 <td>
-                    <div style='font-size:80%;color:gray'>${altStratCategory.level || '&nbsp;'}</div>
+                    <div style='font-size:80%;color:gray'>${altStratCategory[level]?.length || '&nbsp;'}</div>
                 </td>`
             })
             HTMLContent += `</tr><tr>`
