@@ -47,7 +47,7 @@ async function generateAltStrats() {
             chess.forEach(level => {
                 HTMLContent += `
                 <td>
-                    <div style='font-size:80%;color:gray'>${altStratCategory.level || '&nbsp;'}</div>
+                    <div style='font-size:80%;color:gray'>${altStratCategory[level]?.length || '&nbsp;'}</div>
                 </td>`
             })
             HTMLContent += `</tr><tr>`

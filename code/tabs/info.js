@@ -5,7 +5,7 @@ function generateInfo() {
     <img src='${sharedAssetsURL('myekul')}' class='container' style='height:50px;width:50px'><div style='width:600px;white-space: normal'>
     Hello! My name is ${myekulColor(`myekul`)} and I am a Cuphead speedrunner and web developer.
     This is ${myekulColor(`Run Recap`)}, a Cuphead speedrun analysis tool.
-    <video autoplay loop playsinline muted class='container border shadow' style='height:250px;margin-top:15px'>
+    <video autoplay loop playsinline muted class='container border shadow' style='height:250px;width:444.44px;margin-top:15px'>
         <source src='images/sizzle.mp4' type='video/mp4' />
     </video>
     <div class='infoTitle'>How it works</div>

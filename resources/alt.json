@@ -4360,6 +4360,46 @@
                 "url": "https://youtu.be/NjbGXwKaYvM"
             }
         ],
+        "pawns": [
+            {
+                "name": "",
+                "time": 9.11,
+                "player": "GamerAttack27",
+                "url": "https://www.youtube.com/watch?v=1cRv4VhUT3M&t=213s"
+            }
+        ],
+        "knight": [
+            {
+                "name": "",
+                "time": 14.39,
+                "player": "GamerAttack27",
+                "url": "https://www.youtube.com/watch?v=1cRv4VhUT3M&t=241s"
+            }
+        ],
+        "bishop": [
+            {
+                "name": "",
+                "time": 32,
+                "player": "AssasinNarga",
+                "url": "https://youtu.be/MUarzLlDjFk"
+            }
+        ],
+        "rook": [
+            {
+                "name": "",
+                "time": 20.19,
+                "player": "GamerAttack27",
+                "url": "https://www.youtube.com/watch?v=1cRv4VhUT3M&t=330s"
+            }
+        ],
+        "queen": [
+            {
+                "name": "",
+                "time": "16.90",
+                "player": "Quincely0",
+                "url": "https://youtu.be/fMQPaOng1Tw"
+            }
+        ],
         "angelanddemon": [
             {
                 "name": "",
