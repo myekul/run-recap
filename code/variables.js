@@ -1,5 +1,8 @@
 const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
 
+const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefrazzle', 'ruggedridge', 'perilouspiers']
+const OTHERLEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
+
 let runRecapCategory
 let globalCache
 
@@ -65,6 +68,8 @@ let onlyShowDeathless = false
 let alt
 let altStratNum = 0
 let altStratLevel
+
+let categoryNames = []
 
 const copiedILs = {}
 

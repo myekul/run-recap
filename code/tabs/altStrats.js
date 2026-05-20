@@ -4,12 +4,14 @@ async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
     if (altStratCategory) {
-        HTMLContent += `<div class='container' style='gap:10px'>`
+        HTMLContent += `
+        <div>
+            <div class='container' style='gap:10px'>`
         assignIsles()
         HTMLContent += `
         <table class='shadow'>
             <tr>
-                <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.length || '&nbsp;'}</td>
+                <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.forestfollies?.filter(IL => !IL.title).length || '&nbsp;'}</td>
             </tr>
             <tr>
                 <td class='grow' onclick="altStratClick('forestfollies')"><div>${getImage('runnguns/forestfollies')}</div></td>
@@ -20,29 +22,72 @@ async function generateAltStrats() {
                 HTMLContent += `<table class='shadow'><tr class='background2'>`
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
-                    let numStrats = 0
-                    const altTest = altStratCategory[category.info.id]
-                    if (altTest) {
-                        altTest.forEach(strat => {
-                            if (!strat.title) {
-                                numStrats++
-                            }
-                        })
-                    }
-                    HTMLContent += `<td>
-            <div style='font-size:80%;color:gray'>${numStrats || '&nbsp;'}</div>
-            </td>`
+                    HTMLContent += `
+                    <td>
+                        <div style='font-size:80%;color:gray'>${altStratCategory[category.info.id]?.filter(IL => !IL.title).length || '&nbsp;'}</div>
+                    </td>`
                 })
                 HTMLContent += `</tr><tr>`
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
-                    HTMLContent += `<td style='width:36px' class='grow ${category.info.id} ${category.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${category.info.id}')">
-            <div>${getImage(category.info.id)}</div>
-            </td>`
+                    HTMLContent += `
+                    <td style='width:36px' class='grow ${category.info.id} ${category.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${category.info.id}')">
+                        <div>${getImage(category.info.id)}</div>
+                    </td>`
                 })
                 HTMLContent += `</tr></table>`
             }
         })
+        HTMLContent += `</div>`
+        const chess = ['pawns', 'knight', 'bishop', 'rook', 'queen']
+        if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
+            HTMLContent += `
+            <div class='container' style='gap:10px;margin-top:10px'>
+                <table class='shadow'><tr class='background2'>`
+            chess.forEach(level => {
+                HTMLContent += `
+                <td>
+                    <div style='font-size:80%;color:gray'>${altStratCategory.level || '&nbsp;'}</div>
+                </td>`
+            })
+            HTMLContent += `</tr><tr>`
+            chess.forEach(level => {
+                HTMLContent += `
+                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+                    <div>${getImage('other/' + level)}</div>
+                </td>`
+            })
+            HTMLContent += `
+                </tr>
+            </table>
+            <table class='shadow'>
+                <tr>
+                    <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.angelanddemon?.filter(IL => !IL.title).length || '&nbsp;'}</td>
+                </tr>
+                <tr>
+                    <td class='grow' onclick="altStratClick('angelanddemon')"><div>${getImage('other/angelanddemon')}</div></td>
+                </tr>
+            </table>
+            <table class='shadow'>
+                <tr class='background2'>`
+            RUNNGUNS.slice(1).forEach(level => {
+                HTMLContent += `
+                <td>
+                    <div style='font-size:80%;color:gray'>${altStratCategory.level || '&nbsp;'}</div>
+                </td>`
+            })
+            HTMLContent += `</tr><tr>`
+            RUNNGUNS.slice(1).forEach(level => {
+                HTMLContent += `
+                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+                    <div>${getImage('runnguns/' + level)}</div>
+                </td>`
+            })
+            HTMLContent += `
+                    </tr>
+                </table>
+            </div>`
+        }
         HTMLContent += `</div>`
         if (!altStratLevel) {
             HTMLContent += `<div id='altStratsHTML' class='container' style='margin-top:20px;gap:30px;align-items:flex-start'></div>`
@@ -82,7 +127,7 @@ async function generateAltStrats() {
     document.getElementById('content').innerHTML = temp.innerHTML
     if (['baronessvonbonbon', 'captainbrineybeard'].includes(altStratLevel) && runRecapCategory.name == '1.1+') drawChart()
 }
-function altStrat_topContributors(root) {
+function altStrat_topContributors(root, level) {
     let HTMLContent = ''
     const counts = {};
     if (root) {
@@ -95,7 +140,7 @@ function altStrat_topContributors(root) {
             }
         }
     } else {
-        for (const obj of altStratCategory[altStratLevel]) {
+        for (const obj of altStratCategory[level]) {
             if (!obj.title) {
                 const player = obj.player;
                 counts[player] = (counts[player] || 0) + 1;
@@ -267,19 +312,15 @@ const otherNames = {
     pirouletta: 'Pirouletta',
     kingdice2: 'King Dice (Final)'
 }
-const imgLocation = {
-    forestfollies: 'runnguns/forestfollies',
-    chipsbettigan: 'phase/kingdice2',
-    mrwheezy: 'phase/kingdice3',
-    pipanddot: 'phase/kingdice4',
-    hopuspocus: 'phase/kingdice5',
-    pirouletta: 'phase/kingdice7',
-    kingdice2: 'kingdice'
+function levelName(query) {
+    const category = categories.find(category => category.info.id == query)
+    if (category) return category.info.name
+    const otherName = OTHERLEVELS.find(level => query == level.toLowerCase().replaceAll(" ", ""))
+    if (otherName) return otherName
+    if (query == 'angelanddemon') return 'Angel & Demon'
+    return otherNames[query]
 }
 function altStrats(query) {
-    const category = categories.find(category => category.info.id == query)
-    const img = category ? query : imgLocation[query]
-    const name = category ? category.info.name : otherNames[query]
     let HTMLContent = ''
     if (['baronessvonbonbon', 'captainbrineybeard'].includes(query) && runRecapCategory.name == '1.1+') {
         HTMLContent += altStats(query)
@@ -295,7 +336,7 @@ function altStrats(query) {
         <div style='margin:0;position:relative'><table class='shadow' style='margin:10px'>
             <tr>
                 <td colspan=10>
-                    <div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(img)}${name}</div>
+                    <div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(imageLocation(query))}${levelName(query)}</div>
                 </td>
             </tr>`
     const baronessCheck = query == 'baronessvonbonbon'
@@ -365,7 +406,7 @@ function altStrats(query) {
         HTMLContent += `</tr>`
     })
     HTMLContent += `</table>`
-    if (runRecapCategory.name == '1.1+' && category) {
+    if (runRecapCategory.name == '1.1+' && categoryNames.includes(query)) {
         const categoryIndex = categories.findIndex(category => category.info.id == query)
         HTMLContent += `
         <table class='shadow' style='position:absolute;left:110%;top:12px'>
@@ -373,7 +414,7 @@ function altStrats(query) {
                 <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
             </tr>
             <tr>
-                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
+                <td class='${query}' style='padding:0 5px'>${secondsToHMS(runRecapCategory.tas[categoryIndex], true)}</td>
             </tr>`;
         ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
             HTMLContent += `
@@ -386,7 +427,7 @@ function altStrats(query) {
         })
         HTMLContent += `</table>`
     }
-    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][altStratLevel].length > 1) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors()}</div>`
+    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query].length > 1) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
     HTMLContent += `</div></div>`
     return HTMLContent
 }
@@ -414,15 +455,16 @@ function oddsLayer(altStrats, index, strat, field) {
 const MIN_ENTRIES = 10
 const MAX_ENTRIES = 50
 function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), done) {
-    let HTMLContent = `<div class='container'>
-    <table class='shadow' style='width:450px;margin-top:20px'>
-        <tr>
-            <td colspan=6 class='gray' style='padding:5px;position:relative'>
-                ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
-                <div class='font2' style='font-size:120%'>Pending Submissions</div>
-                ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
-            </td>
-        </tr>`
+    let HTMLContent = `
+    <div class='container'>
+        <table class='shadow' style='width:450px;margin-top:20px'>
+            <tr>
+                <td colspan=6 class='gray' style='padding:5px;position:relative'>
+                    ${done ? '' : `<div class='loader' style='position:absolute;left:10px'></div>`}
+                    <div class='font2' style='font-size:120%'>Pending Submissions</div>
+                    ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
+                </td>
+            </tr>`
     for (let i = 0; i < (submissions.length <= MIN_ENTRIES ? MIN_ENTRIES : submissions.length < MAX_ENTRIES ? submissions.length : MAX_ENTRIES); i++) {
         const submission = submissions[i]
         HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')" onmouseenter="toast('${submission.date} - ${daysAgo(getDateDif(new Date(), new Date(submission.date)))}')"` : ''}>`
@@ -433,7 +475,7 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
             }
             HTMLContent += `
             <td class='${commBestILs[submission.category]?.className || 'gray'}'>${submission.category}</td>
-            <td class='${submission.boss}'><div class='container'>${getImage(imgLocation[submission.boss] ? imgLocation[submission.boss] : submission.boss, 21)}</div></td>
+            <td class='${submission.boss}'><div class='container'>${getImage(imageLocation(submission.boss), 21)}</div></td>
             <td class='${submission.boss}'>${submission.time}</td>
             <td style='text-align:left'>${strat || ''}</td>
             <td>${getPlayerDisplay(allPlayers.find(player => player.name == submission.player) || submission.player, true)}</td>`
@@ -489,7 +531,7 @@ function userContributions(playerName) {
         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
             <td class='dim' style='font-size:70%'>${index + 1}</td>
             <td style='text-align:left;font-size:80%;color:gray;padding:0 3px'>${strat.title}</td>
-            <td class='${strat.level}'><div class='container'>${getImage(imgLocation[strat.level] ? imgLocation[strat.level] : strat.level, 21)}</div></td>
+            <td class='${strat.level}'><div class='container'>${getImage(imageLocation(strat.level), 21)}</div></td>
             <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>
             <td style='text-align:left' style='padding:0 3px'>${strat.name}</td>
         </tr>`

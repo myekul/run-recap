@@ -10,6 +10,13 @@ function modalSubmit() {
             bossSelectHTML += `</optgroup>`
         }
     })
+    if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
+        bossSelectHTML += `<optgroup label='Other'>`
+        OTHERLEVELS.forEach(level => {
+            bossSelectHTML += `<option value='${level}'>${level}</option>`
+        })
+        bossSelectHTML += `</optgroup>`
+    }
     let inputty = [
         {
             name: 'Level',
@@ -36,20 +43,21 @@ function modalSubmit() {
             html: `<input id='input_commBestILs_url' type='text' style='font-size:100%;width:250px' onchange="checkSubmittable()">`
         }
     ]
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div class='container' style='gap:12px;margin:10px'>
-    ${generateBoardTitle()}
-    ${playerDisplay()}
+        ${generateBoardTitle()}
+        ${playerDisplay()}
     </div>`
     HTMLContent += `<table id='commBestILsSubmit' style='margin:0 auto'>`
     inputty.forEach(elem => {
-        HTMLContent += `<tr id='commBestILs_row_${elem.name}' style='height:36px;${elem.name == 'Other' ? 'display:none' : ''}'>
-        <td>${elem.name}</td>`
-        HTMLContent += `<td id='commBestILs_${elem.name.trim().toLowerCase()}'><div class='container' style='justify-content:left'><div id='commBestILs_level_cell3'></div>${elem.html}</div></td>
+        HTMLContent += `
+        <tr id='commBestILs_row_${elem.name}' style='height:36px;${elem.name == 'Other' ? 'display:none' : ''}'>
+            <td>${elem.name}</td>
+            <td id='commBestILs_${elem.name.trim().toLowerCase()}'><div class='container' style='justify-content:left'><div id='commBestILs_level_cell3'></div>${elem.html}</div></td>
         </tr>`
     })
-    HTMLContent += `</table>
+    HTMLContent += `
+    </table>
     <div class='container' style='height:50px'>
         <div id='commBest_uploadButton' class="button cuphead grayedOut" style="width:120px;gap:8px;font-size:90%;margin:20px auto" onclick="submitIL()">
             <i class="fa fa-plus"></i>
@@ -77,7 +85,7 @@ function handleBossDropdown() {
     if (level != 'none') {
         document.getElementById('dropdown_commBestILs_level').className = level
         document.getElementById('commBestILs_level').className = level
-        document.getElementById('commBestILs_level_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(level == 'forestfollies' ? 'runnguns/forestfollies' : level, 32)}</div>`
+        document.getElementById('commBestILs_level_cell3').innerHTML = `<div class='container' style='width:32px;padding-left:5px'>${getImage(imageLocation(level), 32)}</div>`
         let altStratHTML = `
         <option value='none'>-- None --</option>
         <option value='other'>++ New alt strat ++</option>`
@@ -99,6 +107,26 @@ function handleBossDropdown() {
         document.getElementById('commBestILs_level').className = ''
         document.getElementById('commBestILs_level_cell3').innerHTML = ''
     }
+}
+function imageLocation(level) {
+    const imgLocation = {
+        chipsbettigan: 'phase/kingdice2',
+        mrwheezy: 'phase/kingdice3',
+        pipanddot: 'phase/kingdice4',
+        hopuspocus: 'phase/kingdice5',
+        pirouletta: 'phase/kingdice7',
+        kingdice2: 'kingdice'
+    }
+    level = level.toLowerCase().replaceAll(" ", "")
+    if (level == 'angel&demon') level = 'angelanddemon'
+    if (RUNNGUNS.includes(level)) {
+        return 'runnguns/' + level
+    } else if (imgLocation[level]) {
+        return imgLocation[level]
+    } else if (!categoryNames.includes(level)) {
+        return 'other/' + level
+    }
+    return level
 }
 function handleAltStratDropdown() {
     checkSubmittable()

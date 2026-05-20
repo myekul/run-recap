@@ -1,6 +1,6 @@
 google.charts.load('current', { packages: ['corechart'] });
 setFooter('2025')
-setTabs(['home', 'leaderboards', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
+setTabs(['info', 'home', 'leaderboards', null, [fancyTab('sav'), fancyTab('lss'), fancyTab('rrc')], null, 'ballpit'])
 const today = new Date()
 initializeHash('home')
 let aprilFools = today.getMonth() == 3 && today.getDate() == 1
@@ -37,7 +37,9 @@ function action() {
         commBestILs: generateCommBestILs,
         altStrats: generateAltStrats,
         commBestSplits: generateCommBestSplits,
-        theTop: generateTheTop
+        theTop: generateTheTop,
+
+        info: generateInfo
     }
     tabActions[globalTab]?.()
     if (localStorage.getItem('username') && !runRecapExample) {
@@ -59,7 +61,7 @@ function action() {
     });
     ['commBestILs', 'altStrats', 'commBestSplits', 'theTop'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
-        document.getElementById(globalTab + 'Button')?.classList.add('activeBanner')
+        if (page == globalTab) document.getElementById(globalTab + 'Button')?.classList.add('activeBanner')
     })
     if (runRecapExample) {
         show('runRecap_example_div')
@@ -80,6 +82,11 @@ function action() {
                 hide('upload_div')
             }
         }
+    }
+    if (globalTab == 'info') {
+        hide('boardTitleDiv')
+    } else {
+        show('boardTitleDiv')
     }
     if (!['sav', 'rrc'].includes(globalTab)) hide('upload_div')
     if (globalTab == 'lss' && runRecapTheoretical) {

@@ -281,6 +281,7 @@ function copyBulk(copy, paste, bosses) {
 }
 function organizeCategories() {
     categories = []
+    categoryNames = []
     bossesCopy = [...bosses]
     if (runRecapCategory.name == 'DLC') {
         bossesCopy = bossesCopy.slice(19, 25)
@@ -302,6 +303,7 @@ function organizeCategories() {
     }
     bossesCopy.forEach(boss => {
         categories.push({ name: boss.name, info: boss, runs: [] })
+        categoryNames.push(boss.id)
     })
 }
 function loadRunViableILs() {
