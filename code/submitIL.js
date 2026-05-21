@@ -23,7 +23,7 @@ function modalSubmit() {
             html: `<select id="dropdown_commBestILs_level" onchange="handleBossDropdown()">
             <option value='none' selected>-- Select a Level --</option>
             <option value='forestfollies'>Forest Follies</option>
-            ${mausCriteria() ? `<option value='mausoleum'>Mausoleum 1</option>` : ''}
+            ${mausCriteria() ? `<option value='mausoleum'>Mausoleum</option>` : ''}
             ${bossSelectHTML}
             </select>`
         },

@@ -303,11 +303,11 @@ function assignRuns(category, categoryIndex) {
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }
-const reloadTimeout = setTimeout(() => {
-    if (!loaded) {
-        location.reload();
-    }
-}, 3000)
+// const reloadTimeout = setTimeout(() => {
+//     if (!loaded) {
+//         location.reload();
+//     }
+// }, 3000)
 function buttonShots() {
     document.querySelectorAll('.lobber').forEach(button => {
         button.innerHTML = cupheadShot('lobber', 21)

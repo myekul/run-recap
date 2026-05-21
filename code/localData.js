@@ -1,6 +1,5 @@
 async function prepareLocalData() {
-    const [topData, scenes, rrcData, commBestData, runViableData, altData] = await Promise.all([
-        fetch('resources/topData.json').then(r => r.json()),
+    const [scenes, rrcData, commBestData, runViableData, altData] = await Promise.all([
         fetch('resources/scenes.json').then(r => r.json()),
         fetch('resources/rrcData.json').then(r => r.json()),
         fetch('resources/commBest.json').then(r => r.json()),
@@ -10,11 +9,6 @@ async function prepareLocalData() {
     commBest = commBestData
     runViable = runViableData
     alt = altData
-    topData['DLC+Base'] = topData['DLC+Base C/S']
-    topData['DLC'] = topData['DLC L/S']
-    for (const category in topData) {
-        commBestILs[category].topRuns = topData[category]
-    }
     // scenes
     scenes['DLC+Base'] = scenes['DLC+Base C/S']
     for (const category in scenes) {
@@ -31,6 +25,7 @@ async function prepareLocalData() {
     rrcData['DLC+Base'] = rrcData['DLC+Base C/S']
     rrcData['DLC'] = rrcData['DLC L/S']
     for (const category in rrcData) {
+        commBestILs[category].topRuns = rrcData[category]
         const categoryScenes = commBestILs[category].scenes
         commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
         rrcData[category].forEach((rrc, index) => {
@@ -243,12 +238,6 @@ function organizeAltStrats() {
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
         ['NMG', 'NMG P/S', 'forestfollies'],
-        ['DLC L/S', 'DLC C/S', 'forestfollies'],
-        ['DLC L/S', 'DLC+Base L/S', 'forestfollies'],
-        ['DLC L/S', 'DLC+Base C/S', 'forestfollies'],
-        ['DLC L/S', '300%', 'forestfollies'],
-        ['DLC L/S', 'DLC Low%', 'forestfollies'],
-        ['DLC L/S', 'DLC C/T', 'forestfollies'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
         ['DLC Expert', '300%', 'thehowlingaces'],
@@ -272,11 +261,20 @@ function organizeAltStrats() {
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)
     copyBulk('NMG', 'NMG P/S', plane)
+    const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', 'DLC+Base Simple', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
+    copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
+    copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
 }
 function copyBulk(copy, paste, bosses) {
     bosses.forEach(boss => {
         alt[paste][boss] = alt[copy][boss]
         copiedILs[paste][boss] = copy
+    })
+}
+function copyDuplicate(copy, pasteArray, boss) {
+    pasteArray.forEach(category=>{
+        alt[category][boss] = alt[copy][boss]
+        copiedILs[category][boss] = copy
     })
 }
 function organizeCategories() {

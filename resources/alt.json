@@ -2828,13 +2828,28 @@
         ],
         "cagneycarnation": [
             {
-                "name": "Spread EXs",
+                "title": "Spread EXs"
+            },
+            {
+                "name": "Lunge, Lunge, Pods",
                 "time": 35.57,
                 "player": "Quincely0",
                 "url": "https://youtu.be/S2iW1ebfbq8"
             },
             {
-                "name": "Doubles",
+                "title": "Spread EXs, Parries"
+            },
+            {
+                "name": "Seeds, Lunge",
+                "time": "35.80",
+                "player": "minamikori",
+                "url": "https://youtu.be/nbpm-KzwBek"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Lunge, Lunge, Pods",
                 "time": 34.99,
                 "player": "Quincely0",
                 "url": "https://youtu.be/HSCJaqXeZVc"
@@ -3268,6 +3283,26 @@
                 "time": 35.78,
                 "player": "Quincely0",
                 "url": "https://youtu.be/T9PHXkunk8g"
+            }
+        ],
+        "mausoleum": [
+            {
+                "name": "1-1",
+                "time": 47.53,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=nNCr56OaxZs&t=110s"
+            },
+            {
+                "name": "2",
+                "time": 48.99,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=MI-K-oZjQdA&t=111s"
+            },
+            {
+                "name": "1-2",
+                "time": 49.45,
+                "player": "myekul",
+                "url": "https://youtu.be/z23DklK7ETg?si=1B7VMFITJ1VayK0k&t=118"
             }
         ],
         "glumstonethegiant": [
@@ -4354,6 +4389,18 @@
         ],
         "thedevil": [
             {
+                "title": "Whetstone"
+            },
+            {
+                "name": "Clap Dragon",
+                "time": 46.99,
+                "player": "myekul",
+                "url": "https://youtu.be/XjIPBZitqC0"
+            },
+            {
+                "title": "Chalice"
+            },
+            {
                 "name": "Clap Bubbles",
                 "time": 53.87,
                 "player": "myekul",
@@ -4363,17 +4410,23 @@
         "pawns": [
             {
                 "name": "",
-                "time": 9.11,
-                "player": "GamerAttack27",
-                "url": "https://www.youtube.com/watch?v=1cRv4VhUT3M&t=213s"
+                "time": 8.05,
+                "player": "myekul",
+                "url": "https://youtu.be/-Q9QBt-4ICY"
             }
         ],
         "knight": [
             {
-                "name": "",
+                "name": "1 HP",
                 "time": 14.39,
                 "player": "GamerAttack27",
                 "url": "https://www.youtube.com/watch?v=1cRv4VhUT3M&t=241s"
+            },
+            {
+                "name": "2 HP",
+                "time": 15.31,
+                "player": "myekul",
+                "url": "https://youtu.be/tWqchFc5oUY"
             }
         ],
         "bishop": [
@@ -4387,9 +4440,9 @@
         "rook": [
             {
                 "name": "",
-                "time": 20.19,
-                "player": "GamerAttack27",
-                "url": "https://www.youtube.com/watch?v=1cRv4VhUT3M&t=330s"
+                "time": 18.92,
+                "player": "myekul",
+                "url": "https://youtu.be/ZcenkgyZJqA"
             }
         ],
         "queen": [

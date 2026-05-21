@@ -333,6 +333,7 @@ function levelName(query) {
     const otherName = OTHERLEVELS.find(level => query == level.toLowerCase().replaceAll(" ", ""))
     if (otherName) return otherName
     if (query == 'angelanddemon') return 'Angel & Demon'
+    if (query == 'mausoleum') return 'Mausoleum'
     return otherNames[query]
 }
 function altStrats(query) {

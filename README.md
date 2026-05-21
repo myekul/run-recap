@@ -1,11 +1,9 @@
 # To do
 - Support for other categories
 - Comm Best Any% DLC boards merge bug - 1st placement
-- Comm Best splits isle sums
 - Organize Run Recap database
 - Find player or display player name
 - DLC+Base L/S Routes
-- Info section
 - Ground vs. Plane
 
 - Duplicate URLs in Firebase cache
