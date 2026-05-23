@@ -1,4 +1,4 @@
-function generateCommBestILs() {
+function generateRunViableILs() {
     let HTMLContent = ''
     if (runRecapCategory.name != 'Other') {
         HTMLContent += `
@@ -51,8 +51,8 @@ function generateCommBestILs() {
 //     }
 // }
 function runViableInfo() {
-    let HTMLContent = ''
-    HTMLContent += `<div ${runViableStyle}>What is a "Run Viable" IL?</div>
+    let HTMLContent = `
+    <div ${runViableStyle}>What is a "Run Viable" IL?</div>
     <div class='textBlock'>
     In a top-level context,
     there are a handful of time-saving strategies which are extremely difficult to pull off consistently.

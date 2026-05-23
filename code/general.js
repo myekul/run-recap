@@ -79,7 +79,7 @@ function generateBoardTitle(category = runRecapCategory) {
     HTMLContent += category.shot2 ? cupheadShot(category.shot2, shotSize) : ''
     HTMLContent += category.shot1 ? `</td>` : ''
     HTMLContent += category.subcat ? boardTitleCell('', category.subcat) : ''
-    HTMLContent += category.name == 'Other' ? boardTitleCell('', altStratOther) : ''
+    HTMLContent += category.name == 'Other' ? `<td class='grow' style='height:32px;padding:0 5px' onclick="otherCategories()">${altStratOther}</td>` : ''
     return boardTitleWrapper(HTMLContent)
 }
 function updateBoardTitle() {
@@ -103,9 +103,8 @@ function normalizedColorCell(num, min, max) {
     return `<td style='width:5px;background-color:${getColor(normalizeTime(num, min, max))}'></td>`
 }
 function categorySelect(database) {
-    let functionName = ""
-    functionName += database ? 'databaseCategorySwitch' : `playSound('category_select');changeCategory`
-    return `
+    functionName = database ? 'databaseCategorySwitch' : `playSound('category_select');changeCategory`
+    let HTMLContent = `
     <div class="categorySelect">
         <div class="container">
             <button id='onePointOneButton' onclick="${functionName}('1.1+',true)" class="button onePointOne">1.1+</button>
@@ -125,11 +124,26 @@ function categorySelect(database) {
             <button id='dlcbaseButton' class="dlcbase button" onclick="${functionName}('DLC+Base',true)">DLC+Base</button>
             <button id='dlcbaselsButton' class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S',true)"></button>
             <button id='dlcbasecsButton' class="dlcbase charge button" onclick="${functionName}('DLC+Base C/S',true)"></button>
-        </div>
-        <div class="container">
-            <button id='grayButton' onclick="${functionName}('Other',true)" class="button gray" style='width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
-        </div>
-    </div>`
+        </div>`
+    if (!database) {
+        HTMLContent += `
+            <div class="container">
+                <button id='grayButton' onclick="${functionName}('Other',true)" class="button" style='background-color:gray;width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
+            </div>
+            <div class="container">
+                <button onclick="otherCategories()" class='grow' style='width:80px;height:20px;margin-left:13px'><i class='fa fa-plus' style='margin-left'></i></button>
+            </div>`
+    }
+    HTMLContent += `</div>`
+    return HTMLContent
+}
+function otherCategories() {
+    let HTMLContent = `<div class='container' style='margin:10px'><div class='otherCategories'>`
+    OTHER_CATEGORIES.forEach(category => {
+        HTMLContent += `<button class='button ${category == altStratOther ? 'selected' : ''}' style='background-color:gray;width:200px' onclick="altStratOther='${category}';changeCategory('Other');showTab('altStrats');closeModal(true);playSound('category_select')">${category}</button>`
+    })
+    HTMLContent += `</div></div>`
+    openModal(HTMLContent, 'OTHER CATEGORIES')
 }
 function databaseCategorySwitch(category) {
     databaseCategory = category

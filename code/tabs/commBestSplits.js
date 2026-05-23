@@ -1,7 +1,6 @@
 function generateCommBestSplits() {
     const cardinality = splitBefore ? 'before' : 'after'
-    let HTMLContent = ''
-    HTMLContent += horiztonalCategories()
+    let HTMLContent = horiztonalCategories()
     if (commBest[runRecapCategory.tabName]) {
         HTMLContent += splitBeforeAfter()
         if (commBest[runRecapCategory.tabName][cardinality]) {

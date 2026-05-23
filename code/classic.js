@@ -57,7 +57,6 @@ function savBoss(categoryIndex) {
     }
     const prevCategory = categories[categoryIndex - 1]
     if (prevCategory) category.runTime += prevCategory.runTime
-    let HTMLContent = ''
     const done = runTime && runTime != nullTime
     const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
     const delta = runRecapDelta(runTime, comparisonTime)
@@ -73,7 +72,7 @@ function savBoss(categoryIndex) {
     }
     let cellContent = done ? runRecapIL(runTime, categoryIndex) : runRecapInput(categoryIndex)
     if (!done && globalTab == 'rrc') cellContent = '???'
-    HTMLContent += `
+    return `
     <tr class='${getRowColor(categoryIndex)}'>
         <td class='${grade.className}' style='text-align:left;width:24px'><span>${done ? deltaType ? '' : grade.grade : ''}</span></td>
         <td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>
@@ -81,7 +80,6 @@ function savBoss(categoryIndex) {
         <td class='${redGreen(delta)}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>
         <td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>
     </tr>`
-    return HTMLContent
 }
 function extraLevel(name, time) {
     const folder = name == 'mausoleum' ? 'other' : 'runnguns'

@@ -131,8 +131,7 @@ function rtaSums() {
     return HTMLContent
 }
 function topGrid() {
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div class='container' style='overflow-x:auto;margin:20px 0'>
         <table class='shadow'>
             <tr>

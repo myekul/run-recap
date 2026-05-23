@@ -409,14 +409,11 @@ function lssExample(index) {
 }
 function runRecapSegment(index) {
     const split = splitInfo[index]
-    let HTMLContent = ''
-    HTMLContent += `
+    document.getElementById('modal-subtitle').innerHTML = `
     <div class='container ${split.id}' style='gap:10px;margin-top:10px;padding:5px;border-radius:5px'>
         ${getImage(split.id, 36)}
         <div style='font-size:20px;font-weight:bold'>${split.name}</div>
     </div>`
-    document.getElementById('modal-subtitle').innerHTML = HTMLContent
-    HTMLContent = ''
     const thisSegment = runRecap_lssFile.segmentHistory[index].length
     let prevSegment = runRecap_lssFile.segmentHistory[index - 1]?.length
     if (!prevSegment) {
@@ -427,7 +424,9 @@ function runRecapSegment(index) {
     const resetRate = 100 * (numResets / segmentAttemptCount)
     const display = resetRate ? displayPercentage(resetRate) : 0
     const grade = getLetterGrade(100 - resetRate)
-    HTMLContent += `
+    const sortedSplits = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.split - b.split)
+    const sortedSegments = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.segment - b.segment)
+    return `
     <div class='container' style='gap:8px'>
         <div>Reset rate:</div>
         <div class='${grade.className}' style='border-radius:5px;padding:5px;${grade.grade == 'F' ? 'color:white' : ''}'><span>${display}%</span></div>
@@ -437,20 +436,16 @@ function runRecapSegment(index) {
             <div style='margin: 5px 0;border-bottom: 2px solid white;width: 100px;'></div>
             <div class='container'>${segmentAttemptCount} attempts</div>
         </div>
+    </div>
+    <div class='container' style='gap:20px;width:800px'>
+        ${splitSegmentInfo(sortedSplits, index, 'Split')}
+        ${splitSegmentInfo(sortedSegments, index, 'Segment')}
+    </div>
     </div>`
-    HTMLContent += `<div class='container' style='gap:20px;width:800px'>`
-    const sortedSplits = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.split - b.split)
-    HTMLContent += splitSegmentInfo(sortedSplits, index, 'Split')
-    const sortedSegments = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.segment - b.segment)
-    HTMLContent += splitSegmentInfo(sortedSegments, index, 'Segment')
-    HTMLContent += `</div>`
-    HTMLContent += `</div>`
-    return HTMLContent
 }
 function splitSegmentInfo(array, index, type) {
     const split = splitInfo[index]
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div style='padding-top:15px'>
         <table>
             <tr class='gray'>

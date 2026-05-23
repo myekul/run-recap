@@ -261,7 +261,7 @@ function organizeAltStrats() {
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)
     copyBulk('NMG', 'NMG P/S', plane)
-    const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', 'DLC+Base Simple', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
+    const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', 'DLC+Base Simple C/S', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
     copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
     copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
 }
@@ -272,7 +272,7 @@ function copyBulk(copy, paste, bosses) {
     })
 }
 function copyDuplicate(copy, pasteArray, boss) {
-    pasteArray.forEach(category=>{
+    pasteArray.forEach(category => {
         alt[category][boss] = alt[copy][boss]
         copiedILs[category][boss] = copy
     })
@@ -281,11 +281,12 @@ function organizeCategories() {
     categories = []
     categoryNames = []
     bossesCopy = [...bosses]
-    if (runRecapCategory.name == 'DLC') {
+    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && ['DLC C/T', 'DLC Low%', 'DLC Expert'].includes(altStratOther))) {
         bossesCopy = bossesCopy.slice(19, 25)
     } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
         bossesCopy = bossesCopy.slice(0, 19)
     }
+    if (runRecapCategory.name == 'Other' && altStratOther == 'DLC+Base Simple C/S') bossesCopy = [...bosses.slice(0, 17), ...bosses.slice(19, 24)]
     bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0));
     if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
         const elem = bossesCopy.splice(18, 1)[0];

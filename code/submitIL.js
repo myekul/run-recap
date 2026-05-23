@@ -12,7 +12,7 @@ function modalSubmit() {
     })
     if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
         bossSelectHTML += `<optgroup label='Other'>`
-        OTHERLEVELS.forEach(level => {
+        OTHER_LEVELS.forEach(level => {
             bossSelectHTML += `<option value='${level}'>${level}</option>`
         })
         bossSelectHTML += `</optgroup>`
@@ -48,8 +48,8 @@ function modalSubmit() {
     <div class='container' style='gap:12px;margin:10px'>
         ${generateBoardTitle()}
         ${playerDisplay()}
-    </div>`
-    HTMLContent += `<table id='commBestILsSubmit' style='margin:0 auto'>`
+    </div>
+    <table id='commBestILsSubmit' style='margin:0 auto'>`
     inputty.forEach(elem => {
         HTMLContent += `
         <tr id='commBestILs_row_${elem.name}' style='height:36px;${elem.name == 'Other' ? 'display:none' : ''}'>
@@ -119,12 +119,13 @@ function imageLocation(level) {
         kingdice2: 'kingdice'
     }
     level = level.toLowerCase().replaceAll(" ", "")
-    if (level == 'angel&demon') level = 'angelanddemon'
+    if (level == 'angelanddemon') return 'other/angelanddemon'
+    if (level == 'mausoleum') return 'other/mausoleum'
     if (RUNNGUNS.includes(level)) {
         return 'runnguns/' + level
     } else if (imgLocation[level]) {
         return imgLocation[level]
-    } else if (!categoryNames.includes(level)) {
+    } else if (OTHER_LEVELS.map(level => level.toLowerCase().replaceAll(" ", "")).includes(level)) {
         return 'other/' + level
     }
     return level
@@ -147,15 +148,15 @@ function checkSubmittable() {
         && document.getElementById('input_commBestILs_url').value) {
         button.classList.remove('grayedOut')
         button.classList.add('pulseSize')
-        commbestILs_ready = true
+        commBestILs_readyToSubmit = true
     } else {
         button.classList.add('grayedOut')
         button.classList.remove('pulseSize')
-        commbestILs_ready = false
+        commBestILs_readyToSubmit = false
     }
 }
 function submitIL() {
-    if (commbestILs_ready) {
+    if (commBestILs_readyToSubmit) {
         playSound('ready')
         window.firebaseUtils.firestoreWriteCommBestILs()
     } else {

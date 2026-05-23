@@ -1,6 +1,5 @@
 function generateHome() {
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div class="container" style="margin-top:20px">
         <div class='textBlock'>
             Welcome to <span class="myekulColor">Run Recap</span>! This tool allows you to upload

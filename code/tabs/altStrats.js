@@ -1,5 +1,3 @@
-let altStratOther = '300%'
-let altStratCategory
 function mausCriteria() {
     return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && altStratOther == '300%')
 }
@@ -11,11 +9,12 @@ async function generateAltStrats() {
         <div>
             <div class='container' style='gap:10px'>`
         assignIsles()
-        const isle1 = ['forestfollies']
+        const isle1 = []
+        if (!(runRecapCategory.name == 'Other' && altStratOther == 'NMG P/S')) isle1.push('forestfollies')
         if (mausCriteria()) isle1.push('mausoleum')
         HTMLContent += `
         <table class='shadow'>
-                <tr class='background2'>`
+            <tr class='background2'>`
         isle1.forEach(level => {
             HTMLContent += `
                 <td>
@@ -80,7 +79,7 @@ async function generateAltStrats() {
                     <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.angelanddemon?.filter(IL => !IL.title).length || '&nbsp;'}</td>
                 </tr>
                 <tr>
-                    <td class='grow' onclick="altStratClick('angelanddemon')"><div>${getImage('other/angelanddemon')}</div></td>
+                    <td class='grow ${'angelanddemon' == altStratLevel ? 'selected' : ''}' onclick="altStratClick('angelanddemon')"><div>${getImage('other/angelanddemon')}</div></td>
                 </tr>
             </table>
             <table class='shadow'>
@@ -187,15 +186,12 @@ function altStrat_topContributors(root, level) {
     }
 }
 function altStrat_categories(root) {
-    let HTMLContent = ''
-    HTMLContent += `
-            <table class='shadow' style='margin-top:20px'>
-                <tr>
-                    <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td>
-                </tr>`
-    const altStratCategories = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-    const otherCategories = ['NMG P/S', 'DLC+Base Simple', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
-    altStratCategories.forEach((altStratCategory, index) => {
+    let HTMLContent = `
+    <table class='shadow' style='margin-top:20px'>
+        <tr>
+            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td>
+        </tr>`
+    ALT_STRAT_CATEGORIES.forEach((altStratCategory, index) => {
         const category = commBestILs[altStratCategory]
         const altStrats = alt[altStratCategory]
         let sum = 0
@@ -216,7 +212,7 @@ function altStrat_categories(root) {
         </tr>`
     })
     let sum = 0
-    otherCategories.forEach((altStratCategory, index) => {
+    OTHER_CATEGORIES.forEach((altStratCategory, index) => {
         const category = commBestILs[altStratCategory]
         const altStrats = alt[altStratCategory]
         for (const boss in altStrats) {
@@ -330,7 +326,7 @@ const otherNames = {
 function levelName(query) {
     const category = categories.find(category => category.info.id == query)
     if (category) return category.info.name
-    const otherName = OTHERLEVELS.find(level => query == level.toLowerCase().replaceAll(" ", ""))
+    const otherName = OTHER_LEVELS.find(level => query == level.toLowerCase().replaceAll(" ", ""))
     if (otherName) return otherName
     if (query == 'angelanddemon') return 'Angel & Demon'
     if (query == 'mausoleum') return 'Mausoleum'
@@ -507,8 +503,7 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
     return HTMLContent
 }
 function bossPattern(boss, pattern) {
-    let HTMLContent = ''
-    HTMLContent += `<td class='gray'><div class='container'>`
+    let HTMLContent = `<td class='gray'><div class='container'>`
     let split = boss == 'thedevil' ? ' ' : ', '
     const attacks = {
         cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
@@ -585,8 +580,7 @@ function altStats() {
     let allStrats = altStratCategory[altStratLevel]
     const endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
     allStrats = allStrats.slice(cfg.startIndex, endIndex)
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div class='container' style='gap:10px'>
         <div id='chart_${altStratLevel}' style='width:350px;margin:0'></div>
             <table>
@@ -645,7 +639,6 @@ function altStats() {
             { name: 'Max', fn: miniboss => Math.max(...miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => Math.max(...allStrats.map(entry => parseFloat(entry.time))), class: '', format: v => v.toFixed(2), row_class: 'background2' }
         ]
         let HTMLContent = ''
-
         stats.forEach((stat, index) => {
             const row_class = stat.row_class ? ` ${stat.row_class}` : ''
             const font_size = index == 0 ? '' : " style='font-size:80%'"

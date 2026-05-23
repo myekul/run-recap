@@ -34,7 +34,7 @@ function action() {
 
         ballpit: generateBallpit,
 
-        commBestILs: generateCommBestILs,
+        runViableILs: generateRunViableILs,
         altStrats: generateAltStrats,
         commBestSplits: generateCommBestSplits,
         theTop: generateTheTop,
@@ -59,7 +59,7 @@ function action() {
             document.getElementById(type + 'Button').style.backgroundColor = ''
         }
     });
-    ['commBestILs', 'altStrats', 'commBestSplits', 'theTop'].forEach(page => {
+    ['altStrats', 'runViableILs', 'commBestSplits', 'theTop'].forEach(page => {
         document.getElementById(page + 'Button').classList.remove('activeBanner')
         if (page == globalTab) document.getElementById(globalTab + 'Button')?.classList.add('activeBanner')
     })
@@ -115,7 +115,7 @@ function action() {
             setPageTitle(fontAwesomeSet[globalTab][1], fontAwesomeSet[globalTab][0])
         }
     }
-    if (['commBestILs', 'altStrats', 'commBestSplits'].includes(globalTab)) {
+    if (['altStrats', 'runViableILs', 'commBestSplits'].includes(globalTab)) {
         show('commBestSubmit')
     } else {
         hide('commBestSubmit')
@@ -137,7 +137,7 @@ function action() {
     } else {
         hide('backButton')
     }
-    const grayButtons = ['leaderboards', 'commBestILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
+    const grayButtons = ['leaderboards', 'runViableILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
     if (runRecapCategory.name == 'Other') {
         grayButtons.forEach(page => {
             document.getElementById(page + 'Button').classList.add('grayedOut')
@@ -303,11 +303,11 @@ function assignRuns(category, categoryIndex) {
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }
-// const reloadTimeout = setTimeout(() => {
-//     if (!loaded) {
-//         location.reload();
-//     }
-// }, 3000)
+const reloadTimeout = setTimeout(() => {
+    if (!loaded) {
+        location.reload();
+    }
+}, 3000)
 function buttonShots() {
     document.querySelectorAll('.lobber').forEach(button => {
         button.innerHTML = cupheadShot('lobber', 21)
@@ -360,39 +360,43 @@ const filePrice = {
     lss: 15,
     rrc: 24
 };
-function fileTitle(type) {
-    return `<div class='font2 container' style='gap:5px;font-size:200%'>
-                    <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
-                        style='height:40px;filter: brightness(0) invert(1)'>
-                    .${type}
-                </div>`
+function fileTitle(type, origin) {
+    return `
+    ${origin ? `<div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>` : ''}
+    <div class='font2 container' style='gap:5px;font-size:200%'>
+        <img src='https://myekul.com/shared-assets/cuphead/images/extra/${type}.png'
+            style='height:40px;filter: brightness(0) invert(1)'>
+        .${type}
+    </div>`
 }
 function fileInfoCard(type) {
-    return `<div ${aprilFools ? `class='border background1'` : ''} style='width:330px;${aprilFools ? 'padding:12px;height:330px;margin-top:20px;position:relative' : ''}'>
-                <div class="container dim" style="font-size:80%">${fileOrigin[type]}</div>
-                ${fileTitle(type)}
-                ${aprilFools ? `<div class='container' style='font-size:200%;margin-top:10px'>$${filePrice[type]}<span style='font-size:50%;margin-bottom:8px'>.99</span>/mo</div>` : ''}
-                <div class='fileType textBlock' style="margin-top:10px;font-size:90%">
-                ${fileInfo[type]}
-                ${aprilFools ? `<button class='button cuphead font2' style='position:absolute;bottom:24px;left:100px;font-size:170%;height:50px;width:150px;border-radius:40px' onclick="aprilFoolsReveal()">BUY NOW</button>` : ''}
-                </div>
-            </div>`
+    return `
+    <div ${aprilFools ? `class='border background1'` : ''} style='width:330px;${aprilFools ? 'padding:12px;height:330px;margin-top:20px;position:relative' : ''}'>
+        ${fileTitle(type, true)}
+        ${aprilFools ? `<div class='container' style='font-size:200%;margin-top:10px'>$${filePrice[type]}<span style='font-size:50%;margin-bottom:8px'>.99</span>/mo</div>` : ''}
+        <div class='fileType textBlock' style="margin-top:10px;font-size:90%">
+        ${fileInfo[type]}
+        ${aprilFools ? `<button class='button cuphead font2' style='position:absolute;bottom:24px;left:100px;font-size:170%;height:50px;width:150px;border-radius:40px' onclick="aprilFoolsReveal()">BUY NOW</button>` : ''}
+        </div>
+    </div>`
 }
 function aprilFoolsPopup() {
-    let HTMLContent = `<div style='width:400px;padding:10px'>
-    Hello vibrant community!
-    <br><br>
-    Thank you for using Run Recap. Due to the extremely positive reception of the site and the widespread impact it has had on the community,
-    the myekul.com board of executives has decided to make Run Recap a ${myekulColor('premium, subscription-based service')}.
-    Given the site's popularity, we figured this would be an excellent opportunity to capitalize on our lucrative run analysis tools.
-    <br>${myekulColor('Pricing plans now available!')}
-    <br><br>
-    -myekul
+    let HTMLContent = `
+    <div style='width:400px;padding:10px'>
+        Hello vibrant community!
+        <br><br>
+        Thank you for using Run Recap. Due to the extremely positive reception of the site and the widespread impact it has had on the community,
+        the myekul.com board of executives has decided to make Run Recap a ${myekulColor('premium, subscription-based service')}.
+        Given the site's popularity, we figured this would be an excellent opportunity to capitalize on our lucrative run analysis tools.
+        <br>${myekulColor('Pricing plans now available!')}
+        <br><br>
+        -myekul
     </div>`
     openModal(HTMLContent, 'UPDATE')
 }
 function aprilFoolsReveal() {
-    let HTMLContent = `<div style='width:450px;padding:10px'>
+    let HTMLContent = `
+    <div style='width:450px;padding:10px'>
     APRIL FOOLS! ${myekulColor('myekul.com will ALWAYS be free and open source.')}
     Thank you everyone for visiting the site. It truly means a lot for my work to get appreciated the way it does.
     <br><br>
@@ -408,10 +412,11 @@ function aprilFoolsReveal() {
 }
 function emptyFile(type) {
     dropboxEligible = true
-    return `<div class='container' style='gap:30px;margin-top:8px'>
+    return `
+    <div class='container' style='gap:30px;margin-top:8px'>
         ${fileInfoCard(type)}
         ${!aprilFools ? `<div id='dropbox'></div>` : ''}
-        </div>`
+    </div>`
 }
 fetch('https://api.github.com/repos/SBDWolf/Run-Recap-Component/tags')
     .then(response => response.json())

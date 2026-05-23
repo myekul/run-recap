@@ -24,7 +24,6 @@ async function generate_rrc() {
 function rrcView() {
     let HTMLContent = ''
     rrcCurrentAttempt = { scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.map(s => ({ ...s })) }
-    truncatedDLCBase = false
     if (runRecapCategory.name == 'DLC') {
         const index = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == "level_saltbaker")
         if (index != -1) {
@@ -161,22 +160,20 @@ function calculateScorecard(scorecard) {
     return segment
 }
 function rrcRTA() {
-    let HTMLContent = ''
-    HTMLContent += `
-        <div class='container'>
-            <div>
-                <div class='container' style='align-items:flex-start;gap:30px'>
-                    ${rtaTable('Map Movement', 'map', cupheadBosses)
-        + rtaTable('Level RTA', 'levels', cupheadBosses)
-        + rtaTable('Scorecards', 'scorecard', cupheadBosses)}
-                </div>
-                <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
-                    ${rtaTable('Intermissions', 'intermissions', cupheadIntermissions)
-        + rtaTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
-                </div>
-            </div>`
-    HTMLContent += `</div>`
-    return HTMLContent
+    return `
+    <div class='container'>
+        <div>
+            <div class='container' style='align-items:flex-start;gap:30px'>
+                ${rtaTable('Map Movement', 'map', cupheadBosses)}
+                ${rtaTable('Level RTA', 'levels', cupheadBosses)}
+                ${rtaTable('Scorecards', 'scorecard', cupheadBosses)}
+            </div>
+            <div class='container' style='align-items:flex-start;gap:30px;margin-top:20px'>
+                ${rtaTable('Intermissions', 'intermissions', cupheadIntermissions)}
+                ${rtaTable('Cutscenes', 'cutscenes', cupheadCutscenes)}
+            </div>
+        </div>
+    </div>`
 }
 function rtaTable(title, field, sceneNames) {
     let HTMLContent = `
@@ -293,8 +290,7 @@ function changeScorecardMode(mode) {
     action()
 }
 function rrcUpdateBrowser() {
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
     <div class='container' style='gap:4px'>
         <select onchange="rrcChangeIndex(parseInt(this.value),true)">`
     runRecap_rrcFile.attempts.forEach((attempt, index) => {
@@ -344,8 +340,7 @@ function rrcSettings() {
     openModal(HTMLContent, 'RRC SETTINGS')
 }
 function rrcRaw() {
-    let HTMLContent = ''
-    HTMLContent += `
+    let HTMLContent = `
         <table style='margin:0 auto'>
         <tr class='gray'>
         <th></th>
