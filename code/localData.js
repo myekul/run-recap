@@ -227,6 +227,7 @@ function organizeAltStrats() {
     }
     const chunks = [
         ['1.1+', 'Legacy', 'forestfollies'],
+        ['1.1+', '1.1+ All Flags', 'forestfollies'],
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
@@ -254,6 +255,7 @@ function organizeAltStrats() {
     copyDuplicate('DLC L/S', estherDuplicate, 'estherwinchester')
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
+    copyBulk('1.1+', '1.1+ All Flags', bosses.slice(0, 19).map(boss => boss.id))
     copyBulk('DLC L/S', 'DLC+Base L/S', dlc)
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)

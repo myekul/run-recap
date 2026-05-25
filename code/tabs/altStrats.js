@@ -147,7 +147,7 @@ function altStrat_topContributors(root, level) {
     if (root) {
         for (const boss in altStratCategory) {
             for (const obj of altStratCategory[boss]) {
-                if (!obj.title) {
+                if (!obj.title && !obj.copy) {
                     const player = obj.player;
                     counts[player] = (counts[player] || 0) + 1;
                 }
@@ -467,7 +467,7 @@ function userContributions(playerName) {
     for (const level in altStratCategory) {
         let title = ''
         for (const obj of altStratCategory[level]) {
-            if (!obj.title) {
+            if (!obj.title && !obj.copy) {
                 if (playerName == obj.player) {
                     strats.push({ ...obj, level: level, title: title })
                 }
