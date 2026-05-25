@@ -1,5 +1,4 @@
 # To do
-- Support for other categories
 - Comm Best Any% DLC boards merge bug - 1st placement
 - Organize Run Recap database
 - Find player or display player name

@@ -73,13 +73,17 @@ function bigPlayerDisplay(player) {
 function generateBoardTitle(category = runRecapCategory) {
     let HTMLContent = ''
     const shotSize = 30
+    const shot1 = category.shot1 ?? (category.name == 'Other' ? LOADOUTS[altStratOther]?.[0] : '')
+    const shot2 = category.shot2 ?? (category.name == 'Other' ? LOADOUTS[altStratOther]?.[1] : '')
+    let otherName = altStratOther
+    if (shot1 && category.name == 'Other') otherName = otherName.split(' ').slice(0, -1).join(' ')
     HTMLContent += boardTitleCell(category.className, category.name)
-    HTMLContent += category.shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
-    HTMLContent += category.shot1 ? cupheadShot(category.shot1, shotSize) : ''
-    HTMLContent += category.shot2 ? cupheadShot(category.shot2, shotSize) : ''
-    HTMLContent += category.shot1 ? `</td>` : ''
+    HTMLContent += category.name == 'Other' ? `<td class='grow' style='height:32px;padding:0 5px' onclick="otherCategories()">${otherName}</td>` : ''
+    HTMLContent += shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
+    HTMLContent += shot1 ? cupheadShot(shot1, shotSize) : ''
+    HTMLContent += shot2 ? cupheadShot(shot2, shotSize) : ''
+    HTMLContent += shot1 ? `</td>` : ''
     HTMLContent += category.subcat ? boardTitleCell('', category.subcat) : ''
-    HTMLContent += category.name == 'Other' ? `<td class='grow' style='height:32px;padding:0 5px' onclick="otherCategories()">${altStratOther}</td>` : ''
     return boardTitleWrapper(HTMLContent)
 }
 function updateBoardTitle() {
@@ -127,23 +131,43 @@ function categorySelect(database) {
         </div>`
     if (!database) {
         HTMLContent += `
-            <div class="container">
-                <button id='grayButton' onclick="${functionName}('Other',true)" class="button" style='background-color:gray;width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
-            </div>
-            <div class="container">
-                <button onclick="otherCategories()" class='grow' style='width:80px;height:20px;margin-left:13px'><i class='fa fa-plus' style='margin-left'></i></button>
-            </div>`
+        <div class="container">
+            <button id='otherCategoryButton' onclick="otherCategories()" class="button" style='background-color:gray;width:80px;height:20px;font-size:80%;margin-left:13px'>Other</button>
+        </div>`
     }
     HTMLContent += `</div>`
     return HTMLContent
 }
+function altStratSum(category) {
+    const altStrats = alt[category]
+    let sum = 0
+    for (const boss in altStrats) {
+        for (const obj of altStrats[boss]) {
+            if (!obj.title && !obj.copy) {
+                sum++
+            }
+        }
+    }
+    return sum
+}
 function otherCategories() {
     let HTMLContent = `<div class='container' style='margin:10px'><div class='otherCategories'>`
     OTHER_CATEGORIES.forEach(category => {
-        HTMLContent += `<button class='button ${category == altStratOther ? 'selected' : ''}' style='background-color:gray;width:200px' onclick="altStratOther='${category}';changeCategory('Other');showTab('altStrats');closeModal(true);playSound('category_select')">${category}</button>`
+        HTMLContent += `
+        <div class='container' style='justify-content:flex-start'>
+            <button class='button ${category == altStratOther ? 'selected' : ''}' style='background-color:gray;width:200px' onclick="chooseOtherCategory('${category}')">${category}</button>
+            <div class='altStratNum'>${altStratSum(category)}</div>
+        </div>`
     })
     HTMLContent += `</div></div>`
     openModal(HTMLContent, 'OTHER CATEGORIES')
+}
+function chooseOtherCategory(category) {
+    altStratOther = category
+    changeCategory('Other')
+    showTab('altStrats')
+    closeModal(true)
+    playSound('category_select')
 }
 function databaseCategorySwitch(category) {
     databaseCategory = category

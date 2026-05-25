@@ -3,7 +3,7 @@ async function generate_rrc() {
     chartEligible = false
     let HTMLContent = ''
     if (runRecap_rrcFile.attempts) {
-        rrcUpdateBrowser()
+        document.getElementById('rrcBrowser').innerHTML = rrcBrowser()
         HTMLContent += rrcView()
     } else {
         HTMLContent += emptyFile('rrc')
@@ -33,15 +33,16 @@ function rrcView() {
     }
     rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
     if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
-    HTMLContent += classicView()
-    HTMLContent += rrcComparisonDisplay()
-    HTMLContent += rrcRTA()
-    HTMLContent += `<div class='container' style='margin-top:20px;gap:20px'>`
-    HTMLContent += `<div style='width:270px'></div>`
-    if (lastBossDone()) HTMLContent += fancyScorecard()
-    if (lastBossDone()) HTMLContent += `<div style='width:270px'></div>`
-    HTMLContent += `</div>`
-    HTMLContent += `</div>`
+    HTMLContent += `
+    ${classicView()}
+    ${rrcComparisonDisplay()}
+    ${rrcRTA()}
+    <div class='container' style='margin-top:20px;gap:20px'>
+        <div style='width:270px'></div>
+        ${lastBossDone() ? fancyScorecard() : ''}
+        ${lastBossDone() ? `<div style='width:270px'></div>` : ''}
+    </div>
+    </div>`
     if (lastBossDone() && rrcComparison != 'None') {
         if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime && rrcCurrentAttempt.scenes.length == runRecapCategory.scenes.length) {
             chartEligible = true
@@ -54,28 +55,6 @@ function rrcView() {
         <button class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</button>
     </div>`
     return HTMLContent
-}
-const kdminibosses = {
-    booze: 'tipsytroop',
-    chips: 'chipsbettigan',
-    cigar: 'mrwheezy',
-    domino: 'pipanddot',
-    rabbit: 'hopuspocus',
-    flying_horse: 'phearlap',
-    roulette: 'pirouletta',
-    eight_ball: 'mangosteen',
-    flying_memory: 'mrchimes'
-}
-const kdminibossID = {
-    booze: 1,
-    chips: 2,
-    cigar: 3,
-    domino: 4,
-    rabbit: 5,
-    flying_horse: 6,
-    roulette: 7,
-    eight_ball: 8,
-    flying_memory: 9
 }
 function rrcSegments(scenes) {
     scenes.forEach((scene, index) => {
@@ -240,10 +219,11 @@ function rtaTable(title, field, sceneNames) {
         HTMLContent += `</tr>`
     })
     if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
-        HTMLContent += `<tr>
-        <td></td>
-        <td>${starSkipCount(rrcCurrentAttempt)}</td>
-        <td class='dim'>${['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) ? '' : starSkipCount(rrcComparisonAttempt)}</td>
+        HTMLContent += `
+        <tr>
+            <td></td>
+            <td>${starSkipCount(rrcCurrentAttempt)}</td>
+            <td class='dim'>${['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) ? '' : starSkipCount(rrcComparisonAttempt)}</td>
         </tr>`
     }
     if (rrcComparison != 'None'
@@ -289,25 +269,51 @@ function changeScorecardMode(mode) {
     toast(mode)
     action()
 }
-function rrcUpdateBrowser() {
+function rrcSelfCompare(index) {
+    changeComparison('rrc', 'Self', determineEndTime(runRecap_rrcFile.attempts[index]))
+    const scenes = runRecap_rrcFile.attempts[index].scenes
+    rrcSegments(scenes)
+    rrcComparisonCollection.Self = scenes
+    action()
+    closeModal()
+}
+function rrcShouldShowAttempt(attempt, popup) {
+    const lastBossIndex = attempt.scenes.findIndex(scene => scene.name == runRecapCategory.scenes.at(-1))
+    const sceneMatchCount = lastBossIndex == runRecapCategory.scenes.length - 1 && attempt.scenes[lastBossIndex].levelTime
+    if ((onlyShowFinished || popup) && !lastBossDone(attempt)) return
+    if ((onlyShowDeathless || popup) && (!lastBossDone(attempt) || !sceneMatchCount)) return
+    return true
+}
+function determineEndTime(attempt) {
+    let lastScene = attempt.scenes.at(-1)
+    if (runRecapCategory.name == 'DLC') {
+        lastScene = attempt.scenes.find(scene => scene.name == 'level_saltbaker')
+    }
+    let endTime = lastScene?.endTime
+    if (endTime != attempt.scenes.at(-1)?.endTime) endTime -= 8.45
+    if (['level_devil', 'level_saltbaker'].includes(lastScene?.name) && lastScene?.levelTime) {
+        return secondsToHMS(endTime)
+    }
+    return ''
+}
+function rrcBrowser(popup) {
+    const functionality = popup ? `rrcSelfCompare(parseInt(this.value))` : `rrcChangeIndex(parseInt(this.value),true)`
     let HTMLContent = `
     <div class='container' style='gap:4px'>
-        <select onchange="rrcChangeIndex(parseInt(this.value),true)">`
+        <select onchange="${functionality}">`
     runRecap_rrcFile.attempts.forEach((attempt, index) => {
-        if (!(onlyShowFinished && !lastBossDone(attempt)) && !(onlyShowDeathless && attempt.scenes.length != runRecapCategory.scenes.length)) {
+        if (rrcShouldShowAttempt(attempt, popup)) {
             let content = attempt.lssAttemptId + ' - ' + attempt.startedAt
-            const lastScene = attempt.scenes.at(-1)
-            if (lastScene?.name == 'level_devil') {
-                content += ' - ' + secondsToHMS(lastScene.endTime)
-            }
+            const endTime = determineEndTime(attempt)
+            if (endTime) content += ' - ' + endTime
             HTMLContent += `<option value='${index}' ${rrcAttemptIndex == index ? 'selected' : ''}>${content}</option>`
         }
     })
     HTMLContent += `
         </select>
-        <i class='fa fa-gear dim grow' onclick="rrcSettings()"></i>
+        ${!popup ? `<i class='fa fa-gear dim grow' onclick="rrcSettings()"></i>` : ''}
     </div>`
-    if (!onlyShowFinished && !onlyShowDeathless) {
+    if (!onlyShowFinished && !onlyShowDeathless && !popup) {
         HTMLContent += `
         <div class='container' style='gap:2px;margin:3px'>
             <div class='grow ${rrcAttemptIndex == runRecap_rrcFile.attempts.length - 1 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex + 1})">${fontAwesome('chevron-left')}</div>`
@@ -325,7 +331,7 @@ function rrcUpdateBrowser() {
         HTMLContent += `<div class='grow ${rrcAttemptIndex == 0 ? 'grayedOut' : ''}' onclick="rrcChangeIndex(${rrcAttemptIndex - 1})">${fontAwesome('chevron-right')}</div>`
     }
     HTMLContent += `</div>`
-    document.getElementById('rrcBrowser').innerHTML = HTMLContent
+    return HTMLContent
 }
 function rrcSettings() {
     let HTMLContent = `
@@ -341,14 +347,14 @@ function rrcSettings() {
 }
 function rrcRaw() {
     let HTMLContent = `
-        <table style='margin:0 auto'>
+    <table style='margin:0 auto'>
         <tr class='gray'>
-        <th></th>
-        <th>IGT</th>
-        <th>RTA</th>
-        <th>HP</th>
-        <th>P</th>
-        <th>EX</th>
+            <th></th>
+            <th>IGT</th>
+            <th>RTA</th>
+            <th>HP</th>
+            <th>P</th>
+            <th>EX</th>
         </tr>`
     rrcCurrentAttempt.bosses.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
@@ -394,36 +400,37 @@ function rrcChangeIndex(index, dropdown) {
 }
 const rrcElems = ['levelTime', 'intermissionTime', 'mapTime', 'cutsceneTime', 'scorecardTime']
 function fancyScorecard() {
-    let HTMLContent = ''
-    HTMLContent += `
-        <div class='container' style='position:relative;width:600px;margin:0'>
-            <div class='spinning-div border shadow'>
-                <div style='position:relative'>
-                    <img class='container' src="images/results.gif" style='height:100px;margin-bottom:8px'>
-                    <img id='scorecardLine' class='container' src='images/scorecard_line.png'>
-                    <img class='container' src="images/scorecard.png" style='height:400px;-webkit-user-drag: none'>
-                    <div id='scorecardText' style='color:floralwhite'>
-                        <p>LEVEL RTA ${". ".repeat(9)}</p>
-                        <p>INTERMISSIONS ${". ".repeat(4)}</p>
-                        <p>MAP MOVEMENT ${". ".repeat(3)}</p>
-                        <p>CUTSCENES ${". ".repeat(8)}</p>
-                        <p>SCORECARDS ${". ".repeat(6)}</p>
-                        <p>STAR SKIPS ${". ".repeat(8)}</p>
-                    </div>
-                    <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(convertToSeconds(rrcCurrentAttempt.scenes.at(-1).endTime), true)}</div>
+    let HTMLContent = `
+    <div class='container' style='position:relative;width:600px;margin:0'>
+        <div class='spinning-div border shadow'>
+            <div style='position:relative'>
+                <img class='container' src="images/results.gif" style='height:100px;margin-bottom:8px'>
+                <img id='scorecardLine' class='container' src='images/scorecard_line.png'>
+                <img class='container' src="images/scorecard.png" style='height:400px;-webkit-user-drag: none'>
+                <div id='scorecardText' style='color:floralwhite'>
+                    <p>LEVEL RTA ${". ".repeat(9)}</p>
+                    <p>INTERMISSIONS ${". ".repeat(4)}</p>
+                    <p>MAP MOVEMENT ${". ".repeat(3)}</p>
+                    <p>CUTSCENES ${". ".repeat(8)}</p>
+                    <p>SCORECARDS ${". ".repeat(6)}</p>
+                    <p>STAR SKIPS ${". ".repeat(8)}</p>
                 </div>
+                <div id='scorecardFinal' class='myekulColor'>${secondsToHMS(convertToSeconds(rrcCurrentAttempt.scenes.at(-1).endTime), true)}</div>
             </div>
-            <div class='scorecardTimes myekulColor'>
-                ${theResults(rrcCurrentAttempt)}
-            </div>`
+        </div>
+        <div class='scorecardTimes myekulColor'>
+            ${theResults(rrcCurrentAttempt)}
+        </div>`
     if (rrcComparison != 'None') {
-        HTMLContent += `<div style='position:absolute;left:600px;top:130px;width:300px'>${rrcComparisonDisplay()}</div>`
-        HTMLContent += `<div class='scorecardTimes myekulColor' style='left:650px'>`
+        HTMLContent += `
+        <div style='position:absolute;left:600px;top:130px;width:300px'>${rrcComparisonDisplay()}</div>
+        <div class='scorecardTimes myekulColor' style='left:650px'>`
         rrcElems.forEach(field => {
             const delta = rrcCurrentAttempt[field] - rrcComparisonAttempt[field]
             HTMLContent += `<p class='${redGreen(delta)}'>${getDelta(delta.toFixed(2))}</p>`
         })
-        HTMLContent += `</div>
+        HTMLContent += `
+        </div>
         <div class='scorecardTimes dim' style='left:780px'>
             ${theResults(rrcComparisonAttempt, true)}
         </div>`
@@ -467,7 +474,7 @@ function read_rrc(content) {
         let sampleAttempt
         runRecap_rrcFile.attempts.forEach(attempt => {
             ['1.1+', 'Legacy', 'DLC', 'DLC+Base', 'DLC C/S', 'DLC+Base C/S'].forEach(categoryName => {
-                if (commBestILs[categoryName].scenes.length == attempt.scenes.length && lastBossDone(attempt)) {
+                if (commBestILs[categoryName].scenes.length == attempt.scenes.length && lastBossDone(attempt, true)) {
                     let matched = true
                     attempt.scenes.forEach((scene, index) => {
                         if (scene.name != commBestILs[categoryName].scenes[index]) matched = false
@@ -503,8 +510,11 @@ function rrcUpdateNotice() {
     </div>`
 }
 function lastBossDone(attempt = rrcCurrentAttempt) {
-    const lastScene = attempt?.scenes?.at(-1)?.name
-    return lastScene == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && lastScene == 'level_saltbaker')
+    let lastScene = attempt?.scenes?.at(-1)
+    if (runRecapCategory.name == 'DLC') {
+        lastScene = attempt.scenes.find(scene => scene.name == 'level_saltbaker')
+    }
+    return (lastScene?.name == 'level_devil' || (runRecapCategory.name != 'DLC+Base' && lastScene?.name == 'level_saltbaker')) && lastScene?.levelTime
 }
 function kdPlus() {
     let HTMLContent = ''
@@ -512,15 +522,15 @@ function kdPlus() {
     HTMLContent += `<div class='container' style='font-size:130%;margin:20px;gap:8px'>`
     for (let i = kdindex; i < rrcCurrentAttempt.scenes.length; i++) {
         const kdlevel = rrcCurrentAttempt.scenes[i].name.split('level_dice_palace_')[1]
-        const kdminiboss = kdminibosses[kdlevel]
+        const kdminiboss = KD_MINIBOSSES[kdlevel]
         if (kdminiboss) {
             HTMLContent += `
-                <table class='shadow'>
-                    <tr class='${kdminiboss}'>
-                        <td class='container'>${getImage('phase/kingdice' + kdminibossID[kdlevel])}</td>
-                        <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[i].levelTime - rrcCurrentAttempt.scenes[i - 1].levelTime, true)}</td>
-                    </tr>
-                </table>`
+            <table class='shadow'>
+                <tr class='${kdminiboss}'>
+                    <td class='container'>${getImage('phase/kingdice' + KD_MINIBOSS_ID[kdlevel])}</td>
+                    <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[i].levelTime - rrcCurrentAttempt.scenes[i - 1].levelTime, true)}</td>
+                </tr>
+            </table>`
         }
     }
     const kdHimselfIndex = rrcCurrentAttempt.scenes.findLastIndex(scene => scene.name == 'level_dice_palace_main')
@@ -530,7 +540,7 @@ function kdPlus() {
                 <td class='container'>${getImage('kingdice')}</td>
                 <td style='min-width:85px'>${secondsToHMS(rrcCurrentAttempt.scenes[kdHimselfIndex].levelTime - rrcCurrentAttempt.scenes[kdHimselfIndex - 1].levelTime, true)}</td>
             </tr>
-        </table>`
-    HTMLContent += `</div>`
+        </table>
+    </div>`
     openModal(HTMLContent, 'MINIBOSSES')
 }

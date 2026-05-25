@@ -137,6 +137,11 @@ function action() {
     } else {
         hide('backButton')
     }
+    if (globalTab == 'altStrats') {
+        document.querySelectorAll('.altStratNum').forEach(elem => { show(elem) })
+    } else {
+        document.querySelectorAll('.altStratNum').forEach(elem => { hide(elem) })
+    }
     const grayButtons = ['leaderboards', 'runViableILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
     if (runRecapCategory.name == 'Other') {
         grayButtons.forEach(page => {

@@ -53,7 +53,7 @@ function generateInfo() {
             <div style='width:150px'>${fileTitle('rrc', true)}</div>
             <div style='width:450px'>
                 A powerful new file type, ${myekulColor('Run Recap .rrc')}.
-                Using a new LiveSplit component developed in collaboration with SBDWolf, .rrc automatically records the time between every single loading screen in the run.
+                Using a custom LiveSplit component developed in collaboration with SBDWolf, .rrc automatically records the time between every single loading screen in the run.
                 It also reads the game's memory, and saves level data such as IGT, parries, and star skips.
                 For the most in-depth analysis, .rrc is the way to go.
             </div>
@@ -148,7 +148,14 @@ function generateInfo() {
     In late 2024, I got into fullgame speedruns, and I had this idea to utilize the .sav to display the level IGT of all of the fights.
     I implemented it as a side feature on my Combined Leaderboard website, and it was a hit!
     I eventually ported Run Recap to its own repository and fleshed it out, and it became what it is today.
-    Now, Run Recap acts as a central hub of Cuphead speedrun analysis, and it's the go-to place for top runners all around the world to critique their runs.
+    Now, Run Recap acts as a central hub of Cuphead speedrun analysis, and it's the go-to place for top runners all around the world to critique their runs.`
+    const flags = ['us', 'gb', 'gb/sct', 'de', 'ch', 'it', 'se', 'rs', 'cn', 'kr', 'jp', 'br']
+    HTMLContent += `<div class='container' style='gap:8px;margin:10px'>`
+    flags.forEach(flag => {
+        HTMLContent += `<img src='https://speedrun.com/images/flags/${flag}.png' style='height:20px'>`
+    })
+    HTMLContent += `</div>`
+    HTMLContent += `
     <div class='infoTitle'>Special Thanks</div>
     ${specialThanks}`
     // `<div class='infoTitle'>The Top</div>

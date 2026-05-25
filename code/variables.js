@@ -1,11 +1,3 @@
-const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
-
-const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefrazzle', 'ruggedridge', 'perilouspiers']
-const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
-
-const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-const OTHER_CATEGORIES = ['NMG P/S', 'DLC+Base Simple C/S', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
-
 let runRecapCategory
 let globalCache
 
@@ -73,8 +65,6 @@ let altStratLevel
 
 let categoryNames = []
 
-const copiedILs = {}
-
 let isolatePatterns
 let altStratExtra
 let bonbonSort = 'Standard'
@@ -83,7 +73,3 @@ let minibossArray = []
 
 let altStratOther = '300%'
 let altStratCategory
-
-function decimalsCriteria() {
-    return runRecapCategory.name == '1.1+'
-}

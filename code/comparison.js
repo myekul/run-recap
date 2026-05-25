@@ -1,45 +1,38 @@
-function savComparisonContent() {
-    const savComparisonInfo = {
-        'Top Average': `Average of top ${runRecapCategory.topRuns.length} players' boss times in their PBs`,
-        'Top 3 Average': "Average of top 3 players' boss times in their PBs",
-        'Top Bests': "Best of top players' boss times in their PBs",
-        'Theory Run': "Top 3 players' PB boss times averaged with Run Viable ILs",
-        'Run Viable ILs': "Community best ILs with run viable strategies",
-        'TAS': "Tool-Assisted Speedrun (by SBDWolf)"
-    }
-    let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
-    // ['None', 'Top 10 Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
-    ['Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS'].forEach((option, index) => {
-        if (!(!['1.1+'].includes(runRecapCategory.name) && ['TAS'].includes(option))) {
-            HTMLContent += `
-            <div class='grow ${getRowColor(index)} ${savComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('sav','${option}');action()">
-                <div>${option}</div>
-                <div style='color:gray;font-size:70%;'>${savComparisonInfo[option] || ''}</div>
-            </div>`
-        }
-    })
-    HTMLContent += `</div>`
-    HTMLContent += runRecapExamples('sav')
-    HTMLContent += `</div>`
-    return HTMLContent
+const savComparisonInfo = {
+    'Top Average': `Average of top players' boss times in their PBs`,
+    'Top 3 Average': "Average of top 3 players' boss times in their PBs",
+    'Top Bests': "Best of top players' boss times in their PBs",
+    'Theory Run': "Top 3 players' PB boss times averaged with Run Viable ILs",
+    'Run Viable ILs': "Community best ILs with run viable strategies",
+    'TAS': "Tool-Assisted Speedrun (by SBDWolf)"
 }
-function rrcComparisonContent() {
-    const rrcComparisonInfo = {
-        'Top Average': `Average of top ${runRecapCategory.topRuns.length} players' segment times in their PBs`,
-        'Top 3 Average': "Average of top 3 players' segment times in their PBs",
-        'Top Bests': "Best of top players' segment times in their PBs"
-    }
+const rrcComparisonInfo = {
+    'Top Average': `Average of top players' segment times in their PBs`,
+    'Top 3 Average': "Average of top 3 players' segment times in their PBs",
+    'Top Bests': "Best of top players' segment times in their PBs"
+}
+const savComparisonOptions = ['Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS']
+const rrcComparisonOptions = ['None', 'Top Average', 'Top 3 Average', 'Top Bests']
+function comparisonPopup(type) {
+    const comparisonInfo = type == 'sav' ? savComparisonInfo : rrcComparisonInfo
+    const comparisonOptions = type == 'sav' ? savComparisonOptions : rrcComparisonOptions
+    const comparison = type == 'sav' ? savComparison : rrcComparison
     let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
-    ['None', 'Top Average', 'Top 3 Average', 'Top Bests'].forEach((option, index) => {
+    comparisonOptions.forEach((option, index) => {
         HTMLContent += `
-        <div class='grow ${getRowColor(index)} ${rrcComparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('rrc','${option}');action()">
+        <div class='grow ${getRowColor(index)} ${comparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('${type}','${option}');action()">
             <div>${option}</div>
-            <div style='color:gray;font-size:70%;'>${rrcComparisonInfo[option] || ''}</div>
+            <div style='color:gray;font-size:70%;'>${comparisonInfo[option] || ''}</div>
         </div>`
     })
-    HTMLContent += `</div>`
-    HTMLContent += runRecapExamples('rrc')
-    HTMLContent += `</div>`
+    HTMLContent += `
+        </div>
+        <div>
+            <div>
+                ${!runRecapExample && globalTab == 'rrc' ? `<div style='margin-bottom:10px'>${rrcBrowser(true)}</div>` : ''}
+                ${runRecapExamples(type)}
+            </div>
+    </div>`
     return HTMLContent
 }
 function changeComparison(type, comparison, custom) {
@@ -98,7 +91,7 @@ function playerComparison(type, playerIndex) {
 function savComparisonDisplay() {
     return `
     <div class='container' style='margin:0'>
-        <button class="container grow dim" style="gap:10px" onclick="openModal(savComparisonContent(),'IGT COMPARISON')">
+        <button class="container grow dim" style="gap:10px" onclick="openModal(comparisonPopup('sav'),'IGT COMPARISON')">
         <div class='font2'>IGT</div>&Delta;<div>${savComparisonText}</div>
         </button>
     </div>`
@@ -106,7 +99,7 @@ function savComparisonDisplay() {
 function rrcComparisonDisplay() {
     return `
     <div class='container'>
-        <button class="container grow dim" style="margin:20px;gap:10px" onclick="openModal(rrcComparisonContent(),'RTA COMPARISON')">
+        <button class="container grow dim" style="margin:20px;gap:10px" onclick="openModal(comparisonPopup('rrc'),'RTA COMPARISON')">
         <div class='font2'>RTA</div>&Delta;<div>${rrcComparisonText}</div>
         </button>
     </div>`

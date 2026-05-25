@@ -269,7 +269,7 @@ function topSums() {
         isles.forEach(isle => {
             isle.runRecapCategories.forEach(categoryIndex => {
                 const bestTime = getCupheadLevel(categoryIndex).bestTime
-                isle.sum += bestTime != nullTime ? decimalsCriteria() ? bestTime : Math.floor(bestTime) : 0
+                isle.sum += bestTime != nullTime ? Math.floor(bestTime) : 0
             })
         })
         HTMLContent += `<tr><th colspan=4 style='text-align:right'>Your run</th>`

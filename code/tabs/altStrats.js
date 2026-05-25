@@ -1,5 +1,5 @@
 function mausCriteria() {
-    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && altStratOther == '300%')
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && MISC_DLC.includes(altStratOther))
 }
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
@@ -16,30 +16,24 @@ async function generateAltStrats() {
         <table class='shadow'>
             <tr class='background2'>`
         isle1.forEach(level => {
-            HTMLContent += `
-                <td>
-                    <div style='font-size:80%;color:gray'>${altStratCategory[level]?.length || '&nbsp;'}</div>
-                </td>`
+            HTMLContent += altStratHeader(level)
         })
         HTMLContent += `</tr><tr>`
         isle1.forEach(level => {
             HTMLContent += `
-                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
-                    <div>${getImage(imageLocation(level))}</div>
-                </td>`
+            <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+                <div>${getImage(imageLocation(level))}</div>
+            </td>`
         })
         HTMLContent += `
-                    </tr>
-                </table>`
+            </tr>
+        </table>`
         isles.forEach(isle => {
             if (isle.runRecapCategories.length) {
                 HTMLContent += `<table class='shadow'><tr class='background2'>`
                 isle.runRecapCategories.forEach(categoryIndex => {
                     const category = categories[categoryIndex]
-                    HTMLContent += `
-                    <td>
-                        <div style='font-size:80%;color:gray'>${altStratCategory[category.info.id]?.filter(IL => !IL.title).length || '&nbsp;'}</div>
-                    </td>`
+                    HTMLContent += altStratHeader(category.info.id)
                 })
                 HTMLContent += `</tr><tr>`
                 isle.runRecapCategories.forEach(categoryIndex => {
@@ -54,15 +48,13 @@ async function generateAltStrats() {
         })
         HTMLContent += `</div>`
         const chess = ['pawns', 'knight', 'bishop', 'rook', 'queen']
+        if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+            HTMLContent += `<div class='container' style='gap:10px;margin-top:10px'>`
+        }
         if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
-            HTMLContent += `
-            <div class='container' style='gap:10px;margin-top:10px'>
-                <table class='shadow'><tr class='background2'>`
+            HTMLContent += `<table class='shadow'><tr class='background2'>`
             chess.forEach(level => {
-                HTMLContent += `
-                <td>
-                    <div style='font-size:80%;color:gray'>${altStratCategory[level]?.length || '&nbsp;'}</div>
-                </td>`
+                HTMLContent += altStratHeader(level)
             })
             HTMLContent += `</tr><tr>`
             chess.forEach(level => {
@@ -81,14 +73,13 @@ async function generateAltStrats() {
                 <tr>
                     <td class='grow ${'angelanddemon' == altStratLevel ? 'selected' : ''}' onclick="altStratClick('angelanddemon')"><div>${getImage('other/angelanddemon')}</div></td>
                 </tr>
-            </table>
-            <table class='shadow'>
+            </table>`
+        }
+        if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+            HTMLContent += `<table class='shadow'>
                 <tr class='background2'>`
             RUNNGUNS.slice(1).forEach(level => {
-                HTMLContent += `
-                <td>
-                    <div style='font-size:80%;color:gray'>${altStratCategory[level]?.length || '&nbsp;'}</div>
-                </td>`
+                HTMLContent += altStratHeader(level)
             })
             HTMLContent += `</tr><tr>`
             RUNNGUNS.slice(1).forEach(level => {
@@ -132,7 +123,6 @@ async function generateAltStrats() {
         const altHTML = await fetch('html/altStrats.html').then(r => r.text());
         temp.querySelector('#altStratsHTML').innerHTML = altHTML;
         altStrat_topContributors(temp)
-        altStrat_categories(temp)
         altStrat_bestTimes(temp)
         temp.querySelector('#altStratNum').innerText = altStratNum
         temp.querySelector('#commBest_queue').innerHTML = pendingSubmissions()
@@ -140,6 +130,16 @@ async function generateAltStrats() {
     }
     document.getElementById('content').innerHTML = temp.innerHTML
     if (['baronessvonbonbon', 'captainbrineybeard'].includes(altStratLevel) && runRecapCategory.name == '1.1+') drawChart()
+}
+function altStratHeader(level) {
+    const copy = altStratCategory[level] ? altStratCategory[level][0]?.copy : null
+    return `
+    <td>
+        <div style='font-size:80%;color:gray;position:relative'>
+            ${altStratCategory[level]?.filter(IL => !IL.title).length || '&nbsp;'}
+            ${copy ? `<div class='${commBestILs[copy]?.className ?? 'gray'}' style='position:absolute;width:36px;top:-5px;height:2px'></div>` : ''}
+        </div>
+    </td>`
 }
 function altStrat_topContributors(root, level) {
     let HTMLContent = ''
@@ -185,58 +185,12 @@ function altStrat_topContributors(root, level) {
         return HTMLContent
     }
 }
-function altStrat_categories(root) {
-    let HTMLContent = `
-    <table class='shadow' style='margin-top:20px'>
-        <tr>
-            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Categories</td>
-        </tr>`
-    ALT_STRAT_CATEGORIES.forEach((altStratCategory, index) => {
-        const category = commBestILs[altStratCategory]
-        const altStrats = alt[altStratCategory]
-        let sum = 0
-        for (const boss in altStrats) {
-            for (const obj of altStrats[boss]) {
-                if (!obj.title) {
-                    sum++
-                }
-            }
-        }
-        HTMLContent += `
-        <tr class='${getRowColor(index)}'>
-            <td class='${category?.className || 'gray'}' style='position:relative'>
-                ${category?.name || altStratCategory}
-                <div style='position:absolute;right:92px;top:2px'>${cupheadShot((['DLC', 'DLC+Base'].includes(category?.name) ? category.shot1 : ''), 21, true)}</div>
-            </td>
-            <td>${sum}</td>
-        </tr>`
-    })
-    let sum = 0
-    OTHER_CATEGORIES.forEach((altStratCategory, index) => {
-        const category = commBestILs[altStratCategory]
-        const altStrats = alt[altStratCategory]
-        for (const boss in altStrats) {
-            for (const obj of altStrats[boss]) {
-                if (!obj.title) {
-                    sum++
-                }
-            }
-        }
-    })
-    HTMLContent += `
-        <tr class='background1'>
-            <td class='gray' style='position:relative'>Other</td>
-            <td>${sum}</td>
-        </tr>`
-    HTMLContent += `</table>`
-    root.querySelector('#altStrat_categories').innerHTML = HTMLContent
-}
 function altStrat_bestTimes(root) {
-    let HTMLContent = `<table class='shadow'>`
-    HTMLContent += `
-    <tr>
-        <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td>
-    </tr>`
+    let HTMLContent = `
+    <table class='shadow'>
+        <tr>
+            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td>
+        </tr>`
     categories.forEach((category, categoryIndex) => {
         const altGroup = altStratCategory[category.info.id]
         if (altGroup) {
@@ -251,7 +205,7 @@ function altStrat_bestTimes(root) {
                 <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                 <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
                 <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
-                <td class='${commBestILs[copiedILs[runRecapCategory.tabName ?? altStratOther][category.info.id]]?.className || ''}'></td>
+                <td class='${fastest.copy ? commBestILs[fastest.copy]?.className ?? 'gray' : ''}'></td>
             </tr>`
         } else {
             HTMLContent += `
@@ -314,15 +268,6 @@ function altStratClick(level) {
     playSound('move')
     action()
 }
-const otherNames = {
-    forestfollies: 'Forest Follies',
-    chipsbettigan: 'Chips Bettigan',
-    mrwheezy: 'Mr. Wheezy',
-    pipanddot: 'Pip and Dot',
-    hopuspocus: 'Hopus Pocus',
-    pirouletta: 'Pirouletta',
-    kingdice2: 'King Dice (Final)'
-}
 function levelName(query) {
     const category = categories.find(category => category.info.id == query)
     if (category) return category.info.name
@@ -330,7 +275,7 @@ function levelName(query) {
     if (otherName) return otherName
     if (query == 'angelanddemon') return 'Angel & Demon'
     if (query == 'mausoleum') return 'Mausoleum'
-    return otherNames[query]
+    return OTHER_NAMES[query]
 }
 function altStrats(query) {
     let HTMLContent = ''
@@ -395,7 +340,7 @@ function altStrats(query) {
                         miniboss = miniboss.trim()
                         HTMLContent += `
                         <div class='container' style='width:25px'>
-                            <img src='https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${minibosses[miniboss]}.png' style='height:21px'>
+                            <img src='https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${MINIBOSSES[miniboss]}.png' style='height:21px'>
                         </div>`
                     })
                     HTMLContent += `</div></td>`
@@ -426,7 +371,7 @@ function altStrats(query) {
                 <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
             </tr>
             <tr>
-                <td class='${query}' style='padding:0 5px'>${secondsToHMS(runRecapCategory.tas[categoryIndex], true)}</td>
+                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
             </tr>`;
         ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
             HTMLContent += `
@@ -505,15 +450,9 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
 function bossPattern(boss, pattern) {
     let HTMLContent = `<td class='gray'><div class='container'>`
     let split = boss == 'thedevil' ? ' ' : ', '
-    const attacks = {
-        cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
-        captainbrineybeard: ['Gun', '2-Gun', '4-Gun', 'Squid', 'Shark', 'Dogfish'],
-        calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
-        thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
-    }
     pattern.split(split).forEach(attack => {
         if (boss == 'cagneycarnation') attack = attack.split(' ')[0]
-        if (attacks[boss].includes(attack)) {
+        if (ATTACKS[boss].includes(attack)) {
             HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/${boss}/${attack}.png' style='height:21px'></div>`
         }
     })
@@ -521,9 +460,9 @@ function bossPattern(boss, pattern) {
     return HTMLContent
 }
 function userContributions(playerName) {
-    let HTMLContent = ''
-    HTMLContent += playerDisplay(playerName)
-    HTMLContent += `<table style='margin:10px'>`
+    let HTMLContent = `
+    ${playerDisplay(playerName)}
+    <table style='margin:10px'>`
     let strats = []
     for (const level in altStratCategory) {
         let title = ''
@@ -550,33 +489,8 @@ function userContributions(playerName) {
     HTMLContent += `</table>`
     return HTMLContent
 }
-const minibosses = {
-    'Waffle': 'waffle',
-    'Candy Corn': 'candycorn',
-    'Cupcake': 'cupcake',
-    'Gumball': 'gumball',
-    'Jawbreaker': 'jawbreaker'
-}
 function altStats() {
-    const config = {
-        baronessvonbonbon: {
-            minibosses: minibosses,
-            fields: ['overall', 'minion1', 'minion2', 'minion3'],
-            groupSize: 3,
-            groupLabels: ['', '1st', '2nd', '3rd'],
-            startIndex: 0,
-            limit: null
-        },
-        captainbrineybeard: {
-            minibosses: { '2-Gun': '2-Gun', '4-Gun': '4-Gun', 'Squid': 'Squid', 'Shark': 'Shark', 'Dogfish': 'Dogfish', 'Gun': 'Gun' },
-            fields: ['overall', 'minion1', 'minion2'],
-            groupSize: 2,
-            groupLabels: ['', '1st', '2nd'],
-            startIndex: 1,
-            limit: 20
-        }
-    }
-    const cfg = config[altStratLevel]
+    const cfg = STATS_CONFIG[altStratLevel]
     let allStrats = altStratCategory[altStratLevel]
     const endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
     allStrats = allStrats.slice(cfg.startIndex, endIndex)

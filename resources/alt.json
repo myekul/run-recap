@@ -3308,9 +3308,9 @@
         "glumstonethegiant": [
             {
                 "name": "Cauldron",
-                "time": 45.46,
+                "time": 45.44,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/YCpc9RlH9DY"
+                "url": "https://youtu.be/B6buflKXbnU"
             },
             {
                 "name": "Geese",
@@ -3987,9 +3987,35 @@
         "thedevil": [
             {
                 "name": "Clap Bubbles",
-                "time": 48.99,
+                "time": 47.14,
                 "player": "myekul",
-                "url": "https://youtu.be/QfECaX34aEk"
+                "url": "https://youtu.be/xDWgxtRx7IM"
+            }
+        ]
+    },
+    "1.1+ All Flags": {
+        "treetoptrouble": [
+            {
+                "name": "",
+                "time": 39.86,
+                "player": "Quincely0",
+                "url": "https://youtu.be/ihz1nTZnVTk"
+            }
+        ],
+        "funhousefrazzle": [
+            {
+                "name": "",
+                "time": 34.92,
+                "player": "Quincely0",
+                "url": "https://youtu.be/Y2RPdmtaaOA"
+            }
+        ],
+        "perilouspiers": [
+            {
+                "name": "",
+                "time": 57.78,
+                "player": "Quincely0",
+                "url": "https://www.youtube.com/watch?v=4oyczxkltU0&t=104s"
             }
         ]
     },
@@ -3997,9 +4023,9 @@
         "therootpack": [
             {
                 "name": "",
-                "time": 40.82,
-                "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=S5TxRvD7jDg&t=6s"
+                "time": "40.80",
+                "player": "Yuka",
+                "url": "https://youtu.be/7DjKjJCfJjQ"
             }
         ],
         "ribbyandcroaks": [
@@ -4100,10 +4126,26 @@
         ],
         "thedevil": [
             {
+                "name": "Clap Bubbles (Slowest)",
+                "time": 52.48,
+                "player": "myekul",
+                "url": "https://youtu.be/4cL72dtqBFM"
+            },
+            {
                 "name": "Bubbles Dragon (Slower)",
                 "time": 57.86,
                 "player": "Quincely0",
                 "url": "https://youtu.be/ln4yU0PGgnE"
+            }
+        ]
+    },
+    "NMG R/S": {
+        "wernerwerman": [
+            {
+                "name": "Catapult, Charge",
+                "time": 44.76,
+                "player": "myekul",
+                "url": "https://youtu.be/DCV2T3GBH48"
             }
         ]
     },
@@ -4222,6 +4264,48 @@
                 "time": "1:05.81",
                 "player": "myekul",
                 "url": "https://youtu.be/pQEUdxAYqlo"
+            }
+        ]
+    },
+    "DLC R/S": {
+        "glumstonethegiant": [
+            {
+                "name": "",
+                "time": 47.71,
+                "player": "myekul",
+                "url": "https://youtu.be/Oj7R2m3FyFw"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 40.93,
+                "player": "myekul",
+                "url": "https://youtu.be/YyhCWBWBHhE"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 47.97,
+                "player": "myekul",
+                "url": "https://youtu.be/mFpiICO0ONY"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 46.24,
+                "player": "myekul",
+                "url": "https://youtu.be/eZze0AaEBn4"
+            }
+        ],
+        "chefsaltbaker": [
+            {
+                "name": "LSL",
+                "time": "1:10.65",
+                "player": "myekul",
+                "url": "https://youtu.be/SEDZ-MsZDCI"
             }
         ]
     },
@@ -4461,7 +4545,7 @@
                 "url": "https://youtu.be/81y3lyh8ZMU"
             }
         ],
-        "treetoptrouble":[
+        "treetoptrouble": [
             {
                 "name": "",
                 "time": 37.66,

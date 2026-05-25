@@ -71,9 +71,7 @@ function openDatabase(type, comparison, shh) {
     openModal(HTMLContent, 'DATABASE', '', comparison || shh)
     buttonShots()
     const buttons = document.querySelectorAll('#databaseCategorySelect .categorySelect > .container > button[id]')
-    buttons.forEach(btn => {
-        btn.id += 'Database'
-    })
+    buttons.forEach(btn => btn.id += 'Database')
     categoryButtonClick(commBestILs[databaseCategory], true)
 }
 function databaseView(type, databaseIndex, player, time, categoryName) {
@@ -116,13 +114,13 @@ function databaseCompare(type, databaseIndex, player, time) {
     const run = runRecap_database[type][databaseIndex]
     const runData = type == 'sav' ? run.sav : run.scenes
     if (type == 'sav') {
-        savComparisonCollection['Database'] = []
+        savComparisonCollection.Database = []
         runData.forEach((time, index) => {
-            savComparisonCollection['Database'][index] = time
+            savComparisonCollection.Database[index] = time
         })
     } else if (type == 'rrc') {
         rrcSegments(runData)
-        rrcComparisonCollection['Database'] = runData
+        rrcComparisonCollection.Database = runData
     }
     changeComparison(type, 'Database', player + ' - ' + time)
     action()

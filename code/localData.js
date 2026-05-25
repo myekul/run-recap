@@ -217,7 +217,6 @@ function reconstructRRC(category, endTimes, playerIndex) {
 }
 function organizeAltStrats() {
     for (const category in alt) {
-        copiedILs[category] = {}
         for (const boss in alt[category]) {
             for (const obj of alt[category][boss]) {
                 if (!obj.title) {
@@ -231,13 +230,9 @@ function organizeAltStrats() {
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
-        ['DLC L/S', 'DLC C/S', 'estherwinchester'],
-        ['DLC L/S', 'DLC Low%', 'estherwinchester'],
-        ['DLC L/S', 'DLC C/T', 'estherwinchester'],
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
-        ['NMG', 'NMG P/S', 'forestfollies'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
         ['DLC Expert', '300%', 'thehowlingaces'],
@@ -245,43 +240,68 @@ function organizeAltStrats() {
         ['DLC Expert', '300%', 'chefsaltbaker']
     ]
     for (const [copy, paste, boss] of chunks) {
-        alt[paste][boss] = alt[copy][boss]
-        copiedILs[paste][boss] = copy
+        alt[paste][boss] = alt[copy][boss].map(strat => ({ ...strat, copy: copy }))
     }
-    const temp = []
-    alt['1.1+'].captainbrineybeard.forEach(strat => {
-        if (strat.title || !strat.name.includes('Squid')) {
-            temp.push(strat)
-        }
-    })
-    alt['NMG'].captainbrineybeard = temp
-    const dlc = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'estherwinchester', 'moonshinemob', 'chefsaltbaker']
+    alt['NMG'].captainbrineybeard = alt['1.1+'].captainbrineybeard
+        .filter(strat => strat.title || !strat.name.includes('Squid'))
+        .map(strat => ({ ...strat, copy: '1.1+' }))
+    const nmgDuplicate = ['NMG P/S', 'NMG R/S']
+    copyDuplicate('NMG', nmgDuplicate, 'forestfollies')
+    const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
+    copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
+    copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
+    const estherDuplicate = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S']
+    copyDuplicate('DLC L/S', estherDuplicate, 'estherwinchester')
+    const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
     copyBulk('DLC L/S', 'DLC+Base L/S', dlc)
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)
     copyBulk('NMG', 'NMG P/S', plane)
-    const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', 'DLC+Base Simple C/S', 'DLC Low%', 'DLC C/T', 'DLC Expert', '300%']
-    copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
-    copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
+    copyBulk('NMG', 'NMG R/S', plane)
+    ALT_STRAT_CATEGORIES.forEach(categoryName => {
+        const category = commBestILs[categoryName]
+        buttonID = category.className
+        if (['dlc', 'dlcbase'].includes(buttonID) && category.shot1) {
+            buttonID = category.className + (category.shot1?.charAt(0) || '') + (category.shot2?.charAt(0) || '')
+        }
+        document.getElementById(buttonID + 'Button').insertAdjacentHTML(
+            'afterend',
+            `<div class='altStratNum dim' style='display:none'>${altStratSum(categoryName)}</div>`
+        )
+    })
+    let sum = 0
+    OTHER_CATEGORIES.forEach((altStratCategory, index) => {
+        const category = commBestILs[altStratCategory]
+        const altStrats = alt[altStratCategory]
+        for (const boss in altStrats) {
+            for (const obj of altStrats[boss]) {
+                if (!obj.title && !obj.copy) {
+                    sum++
+                }
+            }
+        }
+    })
+    document.getElementById('otherCategoryButton').insertAdjacentHTML(
+        'afterend',
+        `<div class='altStratNum dim' style='display:none'>${sum}</div>`
+    )
 }
 function copyBulk(copy, paste, bosses) {
     bosses.forEach(boss => {
-        alt[paste][boss] = alt[copy][boss]
-        copiedILs[paste][boss] = copy
+        alt[paste][boss] = alt[copy][boss].map(strat => ({ ...strat, copy: copy }))
     })
 }
 function copyDuplicate(copy, pasteArray, boss) {
     pasteArray.forEach(category => {
-        alt[category][boss] = alt[copy][boss]
-        copiedILs[category][boss] = copy
+        alt[category][boss] = alt[copy][boss].map(strat => ({ ...strat, copy: copy }))
     })
 }
 function organizeCategories() {
     categories = []
     categoryNames = []
     bossesCopy = [...bosses]
-    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && ['DLC C/T', 'DLC Low%', 'DLC Expert'].includes(altStratOther))) {
+    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && ['DLC C/T', 'DLC R/S', 'DLC Low%', 'DLC Expert'].includes(altStratOther))) {
         bossesCopy = bossesCopy.slice(19, 25)
     } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
         bossesCopy = bossesCopy.slice(0, 19)

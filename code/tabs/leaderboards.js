@@ -15,7 +15,7 @@ function generateLeaderboards() {
         newPlayers.forEach((player, index) => {
             HTMLContent += `
             <tr class='${getRowColor(index)}'>
-                <td class='dim' style='font-size:80%;padding:0 3px'>${player.extra.date}</td>
+                <td class='dim' style='font-size:80%;padding:0 3px;white-space:nowrap'>${player.extra.date}</td>
                 ${bigPlayerDisplay(player)}
                 <td>${player.extra.comment ? `<div class='grow dim' onclick="runModal('${player.name}')">${fontAwesome('commenting-o')}</div>` : ''}</td>
                 <td>${index < runRecapCategory.topRuns.length ? `<img src='images/rrc.png' class='container grow' style='height:18px' onclick="processSavFile(${index}),playSound('ready')">` : ''}</td>

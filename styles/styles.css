@@ -158,3 +158,30 @@ th {
     padding: 0 5px;
     color: gray
 }
+
+.corner-triangle {
+    position: relative;
+}
+
+.corner-triangle::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+
+    border-top: 12px solid var(--triangleColor);
+    border-left: 12px solid transparent;
+}
+
+.otherCategory {
+    background-color: gray;
+    color: black
+}
+
+.altStratNum {
+    color: gray;
+    margin: 0 4px;
+    font-size: 90%
+}

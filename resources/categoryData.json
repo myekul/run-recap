@@ -245,6 +245,6 @@
     },
     "Other": {
         "name": "Other",
-        "className": "gray"
+        "className": "otherCategory"
     }
 }
