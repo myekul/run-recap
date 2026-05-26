@@ -4000,6 +4000,20 @@
                 "time": 39.86,
                 "player": "Quincely0",
                 "url": "https://youtu.be/ihz1nTZnVTk"
+            },
+            {
+                "name": "Quincely Skip",
+                "time": 35.98,
+                "player": "Quincely0",
+                "url": "https://youtu.be/chWlWNYtcOY"
+            }
+        ],
+        "funfairfever": [
+            {
+                "name": "",
+                "time": 40.76,
+                "player": "ClipBoardGuy",
+                "url": "https://www.youtube.com/watch?v=dRa-zrMh0lM&t=675s"
             }
         ],
         "funhousefrazzle": [
@@ -4079,9 +4093,9 @@
         "rumorhoneybottoms": [
             {
                 "name": "Middle",
-                "time": 40.83,
-                "player": "Quincely0",
-                "url": "https://youtu.be/BX9o9CbjJbM"
+                "time": 39.18,
+                "player": "myekul",
+                "url": "https://youtu.be/kD2P74Ov71I"
             }
         ],
         "sallystageplay": [
@@ -4095,9 +4109,9 @@
         "wernerwerman": [
             {
                 "name": "Catapult, Charge",
-                "time": 47.62,
-                "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=PFP2t9t9pp8&t=3s"
+                "time": 46.81,
+                "player": "myekul",
+                "url": "https://youtu.be/1qHfDiHJP8o"
             }
         ],
         "captainbrineybeard": [
@@ -4140,12 +4154,46 @@
         ]
     },
     "NMG R/S": {
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": 48,
+                "player": "Grondious",
+                "url": "https://youtu.be/EV_NRKKCUTU"
+            }
+        ],
         "wernerwerman": [
             {
                 "name": "Catapult, Charge",
                 "time": 44.76,
                 "player": "myekul",
                 "url": "https://youtu.be/DCV2T3GBH48"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": "1:03",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/lmjtg3uiNYM"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap, Bubbles",
+                "time": 51.93,
+                "player": "myekul",
+                "url": "https://youtu.be/6zI1ViWFknc"
+            }
+        ]
+    },
+    "NMG Expert": {
+        "wernerwerman": [
+            {
+                "name": "Catapult, Charge",
+                "time": 45.25,
+                "player": "myekul",
+                "url": "https://youtu.be/3DxPB0cRIlo"
             }
         ]
     },
@@ -4306,6 +4354,30 @@
                 "time": "1:10.65",
                 "player": "myekul",
                 "url": "https://youtu.be/SEDZ-MsZDCI"
+            }
+        ]
+    },
+    "DLC OG Charge": {
+        "glumstonethegiant": [
+            {
+                "name": "Cauldron, Geese",
+                "time": "53.60",
+                "player": "myekul",
+                "url": "https://youtu.be/e58ssHbJ1Js"
+            },
+            {
+                "name": "Cauldron, Bear",
+                "time": "53.90",
+                "player": "myekul",
+                "url": "https://youtu.be/Zh6kdJpRWT8"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 46.85,
+                "player": "myekul",
+                "url": "https://youtu.be/MxAnE209MYs"
             }
         ]
     },

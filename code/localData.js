@@ -246,12 +246,12 @@ function organizeAltStrats() {
     alt['NMG'].captainbrineybeard = alt['1.1+'].captainbrineybeard
         .filter(strat => strat.title || !strat.name.includes('Squid'))
         .map(strat => ({ ...strat, copy: '1.1+' }))
-    const nmgDuplicate = ['NMG P/S', 'NMG R/S']
+    const nmgDuplicate = ['NMG P/S', 'NMG R/S', 'NMG Expert']
     copyDuplicate('NMG', nmgDuplicate, 'forestfollies')
     const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
     copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
     copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
-    const estherDuplicate = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S']
+    const estherDuplicate = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge']
     copyDuplicate('DLC L/S', estherDuplicate, 'estherwinchester')
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
@@ -303,7 +303,7 @@ function organizeCategories() {
     categories = []
     categoryNames = []
     bossesCopy = [...bosses]
-    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && ['DLC C/T', 'DLC R/S', 'DLC Low%', 'DLC Expert'].includes(altStratOther))) {
+    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && ['DLC C/T', 'DLC R/S', 'DLC Low%', 'DLC OG Charge', 'DLC Expert'].includes(altStratOther))) {
         bossesCopy = bossesCopy.slice(19, 25)
     } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
         bossesCopy = bossesCopy.slice(0, 19)

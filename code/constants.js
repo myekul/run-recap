@@ -4,8 +4,8 @@ const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefr
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-const OTHER_CATEGORIES = ['1.1+ All Flags', 'NMG P/S', 'NMG R/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
-const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const OTHER_CATEGORIES = ['1.1+ All Flags', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
 
 const LOADOUTS = {
     'NMG P/S': ['peashooter', 'spread'],
