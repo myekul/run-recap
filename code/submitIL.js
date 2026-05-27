@@ -110,21 +110,13 @@ function handleBossDropdown() {
     }
 }
 function imageLocation(level) {
-    const imgLocation = {
-        chipsbettigan: 'phase/kingdice2',
-        mrwheezy: 'phase/kingdice3',
-        pipanddot: 'phase/kingdice4',
-        hopuspocus: 'phase/kingdice5',
-        pirouletta: 'phase/kingdice7',
-        kingdice2: 'kingdice'
-    }
     level = level.toLowerCase().replaceAll(" ", "")
     if (level == 'angelanddemon') return 'other/angelanddemon'
     if (level == 'mausoleum') return 'other/mausoleum'
     if (RUNNGUNS.includes(level)) {
         return 'runnguns/' + level
-    } else if (imgLocation[level]) {
-        return imgLocation[level]
+    } else if (IMG_LOCATION[level]) {
+        return IMG_LOCATION[level]
     } else if (OTHER_LEVELS.map(level => level.toLowerCase().replaceAll(" ", "")).includes(level)) {
         return 'other/' + level
     }

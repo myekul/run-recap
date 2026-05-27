@@ -15,6 +15,15 @@ const LOADOUTS = {
     'DLC+Base Simple C/S': ['charge', 'spread'],
 }
 
+const IMG_LOCATION = {
+        chipsbettigan: 'phase/kingdice2',
+        mrwheezy: 'phase/kingdice3',
+        pipanddot: 'phase/kingdice4',
+        hopuspocus: 'phase/kingdice5',
+        pirouletta: 'phase/kingdice7',
+        kingdice2: 'kingdice'
+    }
+
 const OTHER_NAMES = {
     forestfollies: 'Forest Follies',
     chipsbettigan: 'Chips Bettigan',

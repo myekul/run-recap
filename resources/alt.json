@@ -539,9 +539,9 @@
             },
             {
                 "name": "Candy Corn, Gumball, Cupcake",
-                "time": 34.73,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=z8qdCQ7oaUIjnZQq&t=250"
+                "time": 33.89,
+                "player": "Lewzr",
+                "url": "https://www.twitch.tv/lewzr__/clip/CarelessFancyHamsterVoteYea-89rbY_-xPn9kmSms"
             },
             {
                 "name": "Candy Corn, Gumball, Jawbreaker",
@@ -4154,6 +4154,30 @@
         ]
     },
     "NMG R/S": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 39,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/bLKOZXY-vZ4"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Gumball, Candy Corn, Waffle",
+                "time": 36.92,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/j8DTN1wYU7s"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "Parryless",
+                "time": "1:01.77",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/qo8E91ljPWA"
+            }
+        ],
         "grimmatchstick": [
             {
                 "name": "",
@@ -4162,12 +4186,28 @@
                 "url": "https://youtu.be/EV_NRKKCUTU"
             }
         ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": "51.90",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/SuHe0PlzzCc"
+            }
+        ],
         "wernerwerman": [
             {
                 "name": "Catapult, Charge",
                 "time": 44.76,
                 "player": "myekul",
                 "url": "https://youtu.be/DCV2T3GBH48"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "Catapult, Charge",
+                "time": 37.51,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/DjIJXmCWk6Y"
             }
         ],
         "phantomexpress": [
