@@ -137,10 +137,14 @@ function action() {
     } else {
         hide('backButton')
     }
+    document.getElementById('boardTitle').classList.remove('grayedOut')
     if (globalTab == 'altStrats') {
         document.querySelectorAll('.altStratNum').forEach(elem => { show(elem) })
+        show('commBestILsAll')
+        if (commBestILsAll) document.getElementById('boardTitle').classList.add('grayedOut')
     } else {
         document.querySelectorAll('.altStratNum').forEach(elem => { hide(elem) })
+        hide('commBestILsAll')
     }
     const grayButtons = ['leaderboards', 'runViableILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
     if (runRecapCategory.name == 'Other') {

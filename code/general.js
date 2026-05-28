@@ -70,20 +70,21 @@ function bigPlayerDisplay(player) {
     HTMLContent += `<td>${getPlayerDisplay(player)}</td>`
     return HTMLContent
 }
-function generateBoardTitle(category = runRecapCategory) {
+function generateBoardTitle(categoryName = runRecapCategory.tabName || runRecapCategory.name) {
+    const category = commBestILs[categoryName]
     let HTMLContent = ''
     const shotSize = 30
-    const shot1 = category.shot1 ?? (category.name == 'Other' ? LOADOUTS[altStratOther]?.[0] : '')
-    const shot2 = category.shot2 ?? (category.name == 'Other' ? LOADOUTS[altStratOther]?.[1] : '')
-    let otherName = altStratOther
-    if (shot1 && category.name == 'Other') otherName = otherName.split(' ').slice(0, -1).join(' ')
-    HTMLContent += boardTitleCell(category.className, category.name)
-    HTMLContent += category.name == 'Other' ? `<td class='grow' style='height:32px;padding:0 5px' onclick="otherCategories()">${otherName}</td>` : ''
+    let otherName = category ? altStratOther : categoryName
+    const shot1 = category?.shot1 ?? (category?.name == 'Other' || category == null ? LOADOUTS[otherName]?.[0] : '')
+    const shot2 = category?.shot2 ?? (category?.name == 'Other' || category == null ? LOADOUTS[otherName]?.[1] : '')
+    if (shot1 && category?.name == 'Other') otherName = otherName.split(' ').slice(0, -1).join(' ')
+    HTMLContent += boardTitleCell(category?.className ?? 'gray', category?.name || 'Other')
+    HTMLContent += category?.name == 'Other' || category == null ? `<td class='grow' style='height:32px;padding:0 5px;color:white' onclick="otherCategories()">${otherName}</td>` : ''
     HTMLContent += shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
     HTMLContent += shot1 ? cupheadShot(shot1, shotSize) : ''
     HTMLContent += shot2 ? cupheadShot(shot2, shotSize) : ''
     HTMLContent += shot1 ? `</td>` : ''
-    HTMLContent += category.subcat ? boardTitleCell('', category.subcat) : ''
+    HTMLContent += category?.subcat ? boardTitleCell('', category?.subcat) : ''
     return boardTitleWrapper(HTMLContent)
 }
 function updateBoardTitle() {
@@ -155,7 +156,7 @@ function otherCategories() {
     OTHER_CATEGORIES.forEach(category => {
         HTMLContent += `
         <div class='container' style='justify-content:flex-start'>
-            <button class='button ${category == altStratOther ? 'selected' : ''}' style='background-color:gray;width:200px' onclick="chooseOtherCategory('${category}')">${category}</button>
+            <button class='button ${category == altStratOther && runRecapCategory.name == 'Other' ? 'selected' : ''}' style='background-color:gray;width:200px' onclick="chooseOtherCategory('${category}')">${category}</button>
             <div class='altStratNum'>${altStratSum(category)}</div>
         </div>`
     })

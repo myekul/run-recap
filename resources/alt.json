@@ -4060,7 +4060,7 @@
         ],
         "cagneycarnation": [
             {
-                "name": "",
+                "name": "Lunge, Lunge, Pods",
                 "time": 36.87,
                 "player": "Yuka",
                 "url": "https://youtu.be/J4Jih-NB_sY"
@@ -4162,6 +4162,22 @@
                 "url": "https://youtu.be/bLKOZXY-vZ4"
             }
         ],
+        "ribbyandcroaks": [
+            {
+                "name": "Punches, Tigers",
+                "time": 46,
+                "player": "Grondious",
+                "url": "https://www.twitch.tv/grondious/clip/PopularPeacefulEelStoneLightning"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "Lunge, Pods, Pods",
+                "time": 37.38,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/tGt8mErDkQM"
+            }
+        ],
         "baronessvonbonbon": [
             {
                 "name": "Gumball, Candy Corn, Waffle",
@@ -4204,7 +4220,7 @@
         ],
         "captainbrineybeard": [
             {
-                "name": "Catapult, Charge",
+                "name": "2-Gun, Gun",
                 "time": 37.51,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/DjIJXmCWk6Y"
@@ -4216,6 +4232,14 @@
                 "time": "1:03",
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/lmjtg3uiNYM"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "3-5-7",
+                "time": "1:54.43",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/9Q__Koid79k"
             }
         ],
         "thedevil": [
@@ -4256,7 +4280,7 @@
         ],
         "baronessvonbonbon": [
             {
-                "name": "",
+                "name": "Gumball, Waffle, Jawbreaker",
                 "time": 32,
                 "player": "myekul",
                 "url": "https://youtu.be/fd3iMvS5Mt8"

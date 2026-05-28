@@ -75,8 +75,12 @@
                 <div class="container" style="max-width:50%">
                     <div>
                         <div class="container" style="gap:8px;position:relative">
+                            <div id='commBestILsAll' class='container dim' style='display:none;gap:10px;margin:15px 0;position:absolute;right:115%'>
+                                <div style="white-space:nowrap">Show All</div>
+                                <button id='commBestILsAll_toggle' class='grow' style='font-size:130%' onclick="commBestILsAllHelper()"><i class="fa fa-toggle-off"></i></button>
+                            </div>
                             <div id="boardTitle" class="shadow"></div>
-                            <button id='commBestSubmit' class="button cuphead" style="display:none;width:120px;gap:8px;position:absolute;left:110%;font-size:90%" onclick="modalSubmit()">
+                            <button id='commBestSubmit' class="button cuphead" style="display:none;width:120px;gap:8px;position:absolute;left:115%;font-size:90%" onclick="modalSubmit()">
                                 <i class="fa fa-plus"></i>Submit
                             </button>
                         </div>

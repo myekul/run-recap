@@ -37,7 +37,7 @@ function openDatabase(type, comparison, shh) {
     <div class='container' style='height:500px;width:750px;overflow-y:scroll;align-items:flex-start'>
         <div>
             <div class='container' style='margin-top:5px;gap:10px'>`
-    if (databaseCategory) HTMLContent += generateBoardTitle(commBestILs[databaseCategory])
+    if (databaseCategory) HTMLContent += generateBoardTitle(databaseCategory)
     HTMLContent += `
         <div>${fileTitle(type)}</div>
     </div>
@@ -53,7 +53,7 @@ function openDatabase(type, comparison, shh) {
             HTMLContent += `
             <tr class='${getRowColor(index)} grow' onclick="${onclick}">
                 <td class='dim' style='font-size:70%'>${index + 1}</td>
-                ${comparison || databaseCategory ? '' : `<td><div class='container'>${generateBoardTitle(category)}</div></td>`}
+                ${comparison || databaseCategory ? '' : `<td><div class='container'>${generateBoardTitle(category.tabName)}</div></td>`}
                 <td style='padding:0 5px;white-space:nowrap'><div>${run.date}</div><div style='font-size:60%'>${daysAgo(getDateDif(new Date(), new Date(run.date)))}</div></td>
                 <td class='${category.className}' style='font-size:120%;padding:0 5px'>${run.time}</td>
                 <td>${playerDisplay(run.player, true)}</td>

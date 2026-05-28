@@ -51,6 +51,7 @@ let databaseCategory
 let loaded
 
 let commBestILs_readyToSubmit
+let commBestILsAll = false
 
 let commBestILs
 

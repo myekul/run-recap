@@ -62,7 +62,7 @@ function runViableInfo() {
     </div>
     <div ${runViableStyle}>What are the nonviable strats?</div>
     <div class='textBlock'>
-    ${generateBoardTitle(commBestILs['1.1+'])}
+    ${generateBoardTitle('1.1+')}
     ${bossImage('ribbyandcroaks', 'Phase 1 Triples')}
     ${bossImage('baronessvonbonbon', 'Up+down EXs at 1 HP')}
     ${bossImage('beppitheclown', 'Two-cycle Beppi Skip')}
@@ -71,16 +71,16 @@ function runViableInfo() {
     ${bossImage('captainbrineybeard', 'Jistuma EX on first flame')}
     ${bossImage('phantomexpress', '2 EXs on Phase 1')}
     ${bossImage('thedevil', "Spider's Kiss")}
-    ${generateBoardTitle(commBestILs['NMG'])}
+    ${generateBoardTitle('NMG')}
     ${bossImage('goopylegrande', 'Doubles (besides quad)')}
     ${bossImage('drkahlsrobot', "TAS EX")}
     ${bossImage('drkahlsrobot', "Heart Clip")}
     ${bossImage('wernerwerman', 'Doubles (besides quad)')}
-    ${generateBoardTitle(commBestILs['DLC C/S'])}
+    ${generateBoardTitle('DLC C/S')}
     ${bossImage('thehowlingaces', 'First laser guess')}
     ${bossImage('chefsaltbaker', 'Willy-nilly Chargimate')}
     ${bossImage('chefsaltbaker', 'Fast 4+3')}
-    ${generateBoardTitle(commBestILs['DLC+Base C/S'])}
+    ${generateBoardTitle('DLC+Base C/S')}
     ${bossImage('phantomexpress', 'Phase 2 one-cycle')}
     </div>`
     openModal(HTMLContent, 'RUN VIABLE INFO')

@@ -1,69 +1,69 @@
 function generateInfo() {
     let HTMLContent = `
     <div class='container'>
-    <div>
-    <img src='${sharedAssetsURL('myekul')}' class='container' style='height:50px;width:50px'>
-    <div style='width:600px;white-space:normal;margin:0 auto'>
-    Hello! My name is ${myekulColor(`myekul`)} and I am a Cuphead speedrunner and web developer.
-    This is ${myekulColor(`Run Recap`)}, a Cuphead speedrun analysis tool.
-    </div>
-    <div class='container' style='gap:20px'>
-        <video autoplay loop playsinline muted class='border shadow' style='height:250px;width:444.44px;margin-top:15px'>
-            <source src='images/sizzle.mp4' type='video/mp4' />
-        </video>
-        <div class='dim' style='font-size:90%'>
-            I'm gonna check my stats,
-            <br>So I'm gonna have to use Run Recap...
-            <br>Inkwell Isle, uploading my file,
-            <br>myekul's freaking awesome!
-            <br>
-            <br>I use Run Recap,
-            <br>I know my decimals,
-            <br>My run's incredible,
-            <br>But my residual's terrible!
-        </div>
-    </div>
-    <div style='width:600px;white-space:normal;margin:0 auto'>
-    <div class='infoTitle'>How it works</div>
-    This website contains a ${myekulColor('massive database')} of runs, individual levels, split/segment times, and more.
-    Using this data, we're able to display a detailed run breakdown with a simple drag and drop of a file.
-    <br><br>
-    <div class='background1 border shadow' style='font-size:85%;padding:15px'>
-        <div style='font-size:115%'>When you complete a fullgame speedrun, there are 3 different file types you can drag into Run Recap to analyze your performance:</div>
-        <br><br>
-        <div class='container'>
-            <div style='width:150px'>${fileTitle('sav', true)}</div>
-            <div style='width:450px'>
-                Cuphead automatically saves all level times to a ${myekulColor('.sav')} file, stored in ${myekulColor('%appdata%\\Roaming\\Cuphead')}.
-                The 3 .sav files correspond to the 3 in-game save files.
-                You can drag one of these files into Run Recap to view your times.
+        <div>
+            <img src='${sharedAssetsURL('myekul')}' class='container' style='height:50px;width:50px'>
+            <div style='width:600px;white-space:normal;margin:0 auto'>
+                Hello! My name is ${myekulColor(`myekul`)} and I am a Cuphead speedrunner and web developer.
+                This is ${myekulColor(`Run Recap`)}, a Cuphead speedrun analysis tool.
             </div>
-        </div>
-        <br>
-        <div class='container'>
-            <div style='width:450px'>
-                Run Recap also supports ${myekulColor('LiveSplit .lss')} files.
-                Here, you can compare against all of your previous runs, and also compare against top runners' splits/segments.
-                Additionally, you can click on a row to view a list of your best splits/segments for a given boss.
+            <div class='container' style='gap:20px'>
+                <video autoplay loop playsinline muted class='border shadow' style='height:250px;width:444.44px;margin-top:15px'>
+                    <source src='images/sizzle.mp4' type='video/mp4' />
+                </video>
+                <div class='dim' style='font-size:90%'>
+                    I'm gonna check my stats,
+                    <br>So I'm gonna have to use Run Recap...
+                    <br>Inkwell Isle, uploading my file,
+                    <br>myekul's freaking awesome!
+                    <br>
+                    <br>I use Run Recap,
+                    <br>I know my decimals,
+                    <br>My run's incredible,
+                    <br>But my residual's terrible!
+                </div>
             </div>
-            <div style='width:150px'>${fileTitle('lss', true)}</div>
-        </div>
-        <br>
-        <div class='container'>
-            <div style='width:150px'>${fileTitle('rrc', true)}</div>
-            <div style='width:450px'>
-                A powerful new file type, ${myekulColor('Run Recap .rrc')}.
-                Using a custom LiveSplit component developed in collaboration with SBDWolf, .rrc automatically records the time between every single loading screen in the run.
-                It also reads the game's memory, and saves level data such as IGT, parries, and star skips.
-                For the most in-depth analysis, .rrc is the way to go.
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class='background1 border shadow' style='padding:15px'>
-        The grading system is quite simple. Based on the selected comparison, grades are determined by a linear scale.
-        <table class='shadow' style='margin-top:15px'>
-            <tr>`
+            <div style='width:600px;white-space:normal;margin:0 auto'>
+                <div class='infoTitle'>How it works</div>
+                This website contains a ${myekulColor('massive database')} of runs, individual levels, split/segment times, and more.
+                Using this data, we're able to display a detailed run breakdown with a simple drag and drop of a file.
+                <br><br>
+                <div class='background1 border shadow' style='font-size:85%;padding:15px'>
+                    <div style='font-size:115%'>When you complete a fullgame speedrun, there are 3 different file types you can drag into Run Recap to analyze your performance:</div>
+                    <br><br>
+                    <div class='container'>
+                        <div style='width:150px'>${fileTitle('sav', true)}</div>
+                        <div style='width:450px'>
+                            Cuphead automatically saves all level times to a ${myekulColor('.sav')} file, stored in ${myekulColor('%appdata%\\Roaming\\Cuphead')}.
+                            The 3 .sav files correspond to the 3 in-game save files.
+                            You can drag one of these files into Run Recap to view your times.
+                        </div>
+                    </div>
+                    <br>
+                    <div class='container'>
+                        <div style='width:450px'>
+                            Run Recap also supports ${myekulColor('LiveSplit .lss')} files.
+                            Here, you can compare against all of your previous runs, and also compare against top runners' splits/segments.
+                            Additionally, you can click on a row to view a list of your best splits/segments for a given boss.
+                        </div>
+                        <div style='width:150px'>${fileTitle('lss', true)}</div>
+                    </div>
+                    <br>
+                    <div class='container'>
+                        <div style='width:150px'>${fileTitle('rrc', true)}</div>
+                        <div style='width:450px'>
+                            A powerful new file type, ${myekulColor('Run Recap .rrc')}.
+                            Using a custom LiveSplit component developed in collaboration with SBDWolf, .rrc automatically records the time between every single loading screen in the run.
+                            It also reads the game's memory, and saves level data such as IGT, parries, and star skips.
+                            For the most in-depth analysis, .rrc is the way to go.
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class='background1 border shadow' style='padding:15px'>
+                    The grading system is quite simple. Based on the selected comparison, grades are determined by a linear scale.
+                    <table class='shadow' style='margin-top:15px'>
+                        <tr>`
     grades.forEach((grade, index) => {
         HTMLContent += `<td class='${grade.className}' style='padding:8px;width:24px'><span>${grade.grade}</span></td>`
     })
