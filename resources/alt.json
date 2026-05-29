@@ -3854,10 +3854,37 @@
         ],
         "ribbyandcroaks": [
             {
-                "name": "7 Flies Regular Skip",
+                "title": "Flies Regular Skip"
+            },
+            {
+                "name": "7 Flies, Snakes",
                 "time": "47.50",
                 "player": "myekul",
                 "url": "https://youtu.be/0nbs4tY-8oU"
+            },
+            {
+                "title": "Flies Super Skip"
+            },
+            {
+                "name": "5 Flies, Tigers",
+                "time": 49.06,
+                "player": "myekul",
+                "url": "https://youtu.be/z23DklK7ETg?si=FnUdSu0_DOhvWtXb&t=801"
+            },
+            {
+                "title": "Punches Regular Skip"
+            },
+            {
+                "name": "Tigers",
+                "time": 48.76,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=hwv5dQf1nK8&t=804s"
+            },
+            {
+                "name": "Snakes",
+                "time": 49.13,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=ke9jhGMhCaI&t=818s"
             }
         ],
         "goopylegrande": [
@@ -3888,6 +3915,12 @@
                 "time": 31.29,
                 "player": "myekul",
                 "url": "https://youtu.be/uyeahT7UpSQ"
+            },
+            {
+                "name": "Jawbreaker, Gumball, Waffle",
+                "time": 34,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/HAA75m6SuL4"
             }
         ],
         "beppitheclown": [
