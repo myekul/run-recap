@@ -4,7 +4,7 @@ const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefr
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-const OTHER_CATEGORIES = ['1.1+ All Flags', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const OTHER_CATEGORIES = ['1.1+ All Flags', 'OG Charge', 'NMG Low%', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
 const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
 
 const LOADOUTS = {
@@ -16,13 +16,13 @@ const LOADOUTS = {
 }
 
 const IMG_LOCATION = {
-        chipsbettigan: 'phase/kingdice2',
-        mrwheezy: 'phase/kingdice3',
-        pipanddot: 'phase/kingdice4',
-        hopuspocus: 'phase/kingdice5',
-        pirouletta: 'phase/kingdice7',
-        kingdice2: 'kingdice'
-    }
+    chipsbettigan: 'phase/kingdice2',
+    mrwheezy: 'phase/kingdice3',
+    pipanddot: 'phase/kingdice4',
+    hopuspocus: 'phase/kingdice5',
+    pirouletta: 'phase/kingdice7',
+    kingdice2: 'kingdice'
+}
 
 const OTHER_NAMES = {
     forestfollies: 'Forest Follies',

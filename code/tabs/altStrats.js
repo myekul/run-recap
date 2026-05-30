@@ -10,7 +10,7 @@ async function generateAltStrats() {
             <div class='container' style='gap:10px;margin-top:8px'>`
         assignIsles()
         const isle1 = []
-        if (!(runRecapCategory.name == 'Other' && altStratOther == 'NMG P/S')) isle1.push('forestfollies')
+        if (!(runRecapCategory.name == 'Other' && ['NMG Low%', 'NMG P/S'].includes(altStratOther))) isle1.push('forestfollies')
         if (mausCriteria()) isle1.push('mausoleum')
         HTMLContent += `
         <table class='shadow'>
