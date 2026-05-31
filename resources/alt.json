@@ -3996,9 +3996,15 @@
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
-                "time": 36.71,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=1148s"
+                "time": 32,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/sOUPfLhAaBM"
+            },
+            {
+                "name": "Cupcake, Gumball, Waffle",
+                "time": 31,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/B6F1aeSuVIM"
             },
             {
                 "name": "Cupcake, Candy Corn, Gumball",
@@ -4007,10 +4013,10 @@
                 "url": "https://youtu.be/wnQyc2REfxc"
             },
             {
-                "name": "Cupcake, Gumball, Waffle",
-                "time": 31,
+                "name": "Cupcake, Gumball, Candy Corn",
+                "time": 33,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/B6F1aeSuVIM"
+                "url": "https://youtu.be/3l2JzdTdNFM"
             },
             {
                 "name": "Jawbreaker, Gumball, Waffle",
@@ -4041,6 +4047,12 @@
                 "time": 45.32,
                 "player": "myekul",
                 "url": "https://youtu.be/z23DklK7ETg?si=lBNbIK0bVvr9Dzrb&t=1132"
+            },
+            {
+                "name": "Candy Corn, Gumball, Jawbreaker",
+                "time": 35,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/GZuOtWEExtc"
             },
             {
                 "name": "Candy Corn, Jawbreaker, Gumball",
@@ -4246,13 +4258,13 @@
             }
         ]
     },
-    "NMG Low%": {
+    "Low%": {
         "therootpack": [
             {
                 "name": "",
-                "time": 48.77,
-                "player": "BlackTower",
-                "url": "https://youtu.be/oWKMXYyq8oc?si=d5bbHFd9mHEoTkcH&t=90"
+                "time": "47.90",
+                "player": "Quincely0",
+                "url": "https://youtu.be/usYVgDZEdtg"
             }
         ],
         "ribbyandcroaks": [
@@ -4272,9 +4284,9 @@
         "goopylegrande": [
             {
                 "name": "",
-                "time": 43.98,
-                "player": "BlackTower",
-                "url": "https://www.youtube.com/watch?v=oWKMXYyq8oc&t=262s"
+                "time": 43.18,
+                "player": "Quincely0",
+                "url": "https://youtu.be/n84d6NPnImc"
             }
         ],
         "cagneycarnation": [
@@ -4785,6 +4797,14 @@
         ]
     },
     "DLC OG Charge": {
+        "forestfollies":[
+            {
+                "name": "",
+                "time": 36.62,
+                "player": "myekul",
+                "url": "https://youtu.be/SiLTxwGIs8Y?si=fj9d0Q3su-JbM89E&t=35"
+            }
+        ],
         "glumstonethegiant": [
             {
                 "name": "Cauldron, Geese",
@@ -4805,6 +4825,30 @@
                 "time": 46.85,
                 "player": "myekul",
                 "url": "https://youtu.be/MxAnE209MYs"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 49.06,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=SiLTxwGIs8Y&t=377s"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 49.79,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=SiLTxwGIs8Y&t=552s"
+            }
+        ],
+        "chefsaltbaker": [
+            {
+                "name": "SLD",
+                "time": "1:08.69",
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=SiLTxwGIs8Y&t=647s"
             }
         ]
     },

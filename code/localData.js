@@ -229,7 +229,7 @@ function organizeAltStrats() {
         ['1.1+', 'Legacy', 'forestfollies'],
         ['1.1+', '1.1+ All Flags', 'forestfollies'],
         ['1.1+', 'OG Charge', 'hildaberg'],
-        ['1.1+', 'NMG Low%', 'hildaberg'],
+        ['1.1+', 'Low%', 'hildaberg'],
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],

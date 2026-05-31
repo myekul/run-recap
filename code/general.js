@@ -77,7 +77,7 @@ function generateBoardTitle(categoryName = runRecapCategory.tabName || runRecapC
     let otherName = category ? altStratOther : categoryName
     const shot1 = category?.shot1 ?? (category?.name == 'Other' || category == null ? LOADOUTS[otherName]?.[0] : '')
     const shot2 = category?.shot2 ?? (category?.name == 'Other' || category == null ? LOADOUTS[otherName]?.[1] : '')
-    if (shot1 && category?.name == 'Other') otherName = otherName.split(' ').slice(0, -1).join(' ')
+    if (shot1 && (category?.name == 'Other' || category == null)) otherName = otherName.split(' ').slice(0, -1).join(' ')
     HTMLContent += boardTitleCell(category?.className ?? 'gray', category?.name || 'Other')
     HTMLContent += category?.name == 'Other' || category == null ? `<td class='grow' style='height:32px;padding:0 5px;color:white' onclick="otherCategories()">${otherName}</td>` : ''
     HTMLContent += shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''

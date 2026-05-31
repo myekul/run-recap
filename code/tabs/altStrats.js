@@ -1,5 +1,5 @@
 function mausCriteria() {
-    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && MISC_DLC.includes(altStratOther))
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && MISC_DLC.includes(altStratOther) || altStratOther == 'DLC OG Charge')
 }
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
@@ -10,8 +10,9 @@ async function generateAltStrats() {
             <div class='container' style='gap:10px;margin-top:8px'>`
         assignIsles()
         const isle1 = []
-        if (!(runRecapCategory.name == 'Other' && ['NMG Low%', 'NMG P/S'].includes(altStratOther))) isle1.push('forestfollies')
+        if (!(runRecapCategory.name == 'Other' && ['Low%', 'NMG P/S'].includes(altStratOther))) isle1.push('forestfollies')
         if (mausCriteria()) isle1.push('mausoleum')
+        if (runRecapCategory.name == 'Other' && altStratOther == 'OG Charge') isle1.push('treetoptrouble')
         HTMLContent += `
         <table class='shadow'>
             <tr class='background2'>`
