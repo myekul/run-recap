@@ -24,6 +24,7 @@ function generateTheTop() {
             })
         })
         HTMLContent += chartEligible ? rrcChartSection() : ''
+        HTMLContent += ['1.1+', 'Legacy', 'NMG'].includes(runRecapCategory.name) ? pbProgressionSection() : ''
         HTMLContent += topGrid()
             + savComparisonDisplay()
             // + topSums()
@@ -80,7 +81,7 @@ function generateTheTop() {
         HTMLContent += emptyPageText('Category not supported!')
     }
     document.getElementById('content').innerHTML = HTMLContent
-    if (chartEligible && runRecapCategory.name != 'Other') rrcChart()
+    if (chartEligible && runRecapCategory.name != 'Other') rrcChart(); pbProgression()
 }
 function rtaSums() {
     if (runRecapCategory.name == 'DLC') return ''

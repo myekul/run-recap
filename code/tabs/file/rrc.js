@@ -278,7 +278,7 @@ function rrcSelfCompare(index) {
     closeModal()
 }
 function rrcShouldShowAttempt(attempt, popup) {
-    const lastBossIndex = attempt.scenes.findIndex(scene => scene.name == runRecapCategory.scenes.at(-1))
+    const lastBossIndex = attempt.scenes.findIndex(scene => scene.name == runRecapCategory?.scenes?.at(-1))
     const sceneMatchCount = lastBossIndex == runRecapCategory.scenes.length - 1 && attempt.scenes[lastBossIndex].levelTime
     if ((onlyShowFinished || popup) && !lastBossDone(attempt)) return
     if ((onlyShowDeathless || popup) && (!lastBossDone(attempt) || !sceneMatchCount)) return
@@ -473,8 +473,10 @@ function read_rrc(content) {
         let detectedCategory = 'Other'
         let sampleAttempt
         runRecap_rrcFile.attempts.forEach(attempt => {
-            ['1.1+', 'Legacy', 'DLC', 'DLC+Base', 'DLC C/S', 'DLC+Base C/S'].forEach(categoryName => {
-                if (commBestILs[categoryName].scenes.length == attempt.scenes.length && lastBossDone(attempt, true)) {
+            ['1.1+', 'Legacy', 'DLC L/S', 'DLC+Base L/S', 'DLC C/S', 'DLC+Base C/S'].forEach(categoryName => {
+                console.log(commBestILs[categoryName].scenes.length == attempt.scenes.length);
+                if ((commBestILs[categoryName].scenes.length == attempt.scenes.length) && lastBossDone(attempt)) {
+                    console.log(categoryName)
                     let matched = true
                     attempt.scenes.forEach((scene, index) => {
                         if (scene.name != commBestILs[categoryName].scenes[index]) matched = false

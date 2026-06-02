@@ -238,9 +238,50 @@ function prepareData() {
         }
     })
     loadRunViableILs()
+    fetchTopRuns()
     runRecap_lss_splitInfo()
     done()
 }
+
+async function fetchTopRuns() {
+    const categoryConfig = globalCache[runRecapCategory.category]
+    const categoryId = categoryConfig?.id
+    const topPlayers = players.slice(0, runRecapCategory.topRuns.length).filter(player => player?.id)
+
+    const promises = topPlayers.map(player => {
+        const params = new URLSearchParams({
+            category: categoryId,
+            user: player.id,
+            max: '50',
+            status: 'verified',
+            orderby: 'date',
+            direction: 'desc'
+        })
+        return fetch(`https://www.speedrun.com/api/v1/runs?${params}`)
+            .then(response => {
+                if (!response.ok) throw new Error(`Speedrun API error ${response.status}`)
+                return response.json()
+            })
+            .then(json => {
+                const runs = (json.data || [])
+                    .filter(run => run.values[globalCache[runRecapCategory.category].var1[0]] == globalCache[runRecapCategory.category].var1[1]
+                        && run.values[globalCache[runRecapCategory.category].var2[0]] == globalCache[runRecapCategory.category].var2[1]
+                        && run.times.primary_t < 1800
+                    )
+                return { player, runs }
+            })
+            .catch(error => {
+                console.error(`Error fetching runs for ${player.name} (${player.id}):`, error)
+                return { player, runs: [] }
+            })
+    })
+    runRecapCategory.top10PlayerHistories = await Promise.all(promises)
+    console.log('Fetched top player histories', runRecapCategory.top10PlayerHistories)
+    if (globalTab == 'theTop') {
+        pbProgression()
+    }
+}
+
 function done() {
     categories.forEach((category, categoryIndex) => {
         assignRuns(category, categoryIndex)

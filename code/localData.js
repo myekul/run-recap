@@ -236,6 +236,8 @@ function organizeAltStrats() {
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
+        ['Low%', 'OG Charge', 'djimmithegreat'],
+        ['DLC L/S', 'DLC OG Charge', 'mausoleum'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
         ['DLC Expert', '300%', 'thehowlingaces'],
@@ -249,11 +251,11 @@ function organizeAltStrats() {
         .filter(strat => strat.title || !strat.name.includes('Squid'))
         .map(strat => ({ ...strat, copy: '1.1+' }))
     const nmgDuplicate = ['NMG P/S', 'NMG R/S', 'NMG Expert']
-    copyDuplicate('NMG', nmgDuplicate, 'forestfollies')
     const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
+    const estherDuplicate = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge']
+    copyDuplicate('NMG', nmgDuplicate, 'forestfollies')
     copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
     copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
-    const estherDuplicate = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge']
     copyDuplicate('DLC L/S', estherDuplicate, 'estherwinchester')
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']

@@ -208,6 +208,6 @@ function runRecapCopy() {
     }
     navigator.clipboard.writeText(clipboardContent)
         .then(() => {
-            // Success!
+            toast('Copied to clipboard!')
         })
 }

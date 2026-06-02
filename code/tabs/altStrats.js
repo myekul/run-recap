@@ -1,5 +1,5 @@
 function mausCriteria() {
-    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && MISC_DLC.includes(altStratOther) || altStratOther == 'DLC OG Charge')
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || altStratOther == 'DLC OG Charge'))
 }
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
@@ -438,7 +438,7 @@ function altStrats(query) {
         })
         HTMLContent += `</table>`
     }
-    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query].length > 1) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
+    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query].length > 1 || commBestILsAll) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
     HTMLContent += `</div></div>`
     return HTMLContent
 }
