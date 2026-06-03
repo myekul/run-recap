@@ -43,10 +43,12 @@ const MINIBOSSES = {
 }
 
 const ATTACKS = {
+    ribbyandcroaks: ['5 Flies', '6 Flies', '7 Flies', 'Punches', 'Snakes', 'Tigers', 'Bulls'],
     cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
     captainbrineybeard: ['Gun', '2-Gun', '4-Gun', 'Squid', 'Shark', 'Dogfish'],
     calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
-    thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider']
+    thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'],
+    chefsaltbaker: ['L', 'S', 'D', '-']
 }
 
 const STATS_CONFIG = {

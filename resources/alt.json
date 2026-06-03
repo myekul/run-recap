@@ -26,7 +26,13 @@
                 "title": "Parry"
             },
             {
-                "name": "Both Ledge Clips",
+                "name": "3 Ledge Clips",
+                "time": "31.90",
+                "player": "Yuka",
+                "url": "https://youtu.be/fsl45HXSDGQ"
+            },
+            {
+                "name": "2 Ledge Clips",
                 "time": 31.99,
                 "player": "Quincely0",
                 "url": "https://youtu.be/AP-yUBmASz4"
@@ -3484,19 +3490,19 @@
                 "title": "Standard Strats"
             },
             {
-                "name": "4+1 Shakers",
+                "name": "LSL 4+1 Shakers",
                 "time": 49.76,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/hajyDdpLwyA"
             },
             {
-                "name": "5+1 Shakers",
+                "name": "SLD 5+1 Shakers",
                 "time": 51.15,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/XCph9LTdJHU"
             },
             {
-                "name": "Strawberries",
+                "name": "L-SL",
                 "time": 52.49,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/RRHoTUQKf4o"
@@ -3505,13 +3511,13 @@
                 "title": "2.5-cycle"
             },
             {
-                "name": "Limes, Limes",
+                "name": "LL",
                 "time": "51.80",
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/ARbNnh0vRJQ"
             },
             {
-                "name": "Limes, Sugar",
+                "name": "LS",
                 "time": 53.08,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/RRyPkfHkqTw"
@@ -3918,15 +3924,15 @@
             },
             {
                 "name": "7 Flies, Snakes",
-                "time": 46.82,
+                "time": 46.52,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/uOBH4NoQkPU"
+                "url": "https://youtu.be/bffSHt3_d1w"
             },
             {
                 "name": "7 Flies, Tigers",
-                "time": 55.54,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=807s"
+                "time": 46.58,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/uVCmcN7Npm4"
             },
             {
                 "title": "Flies Super Skip"
@@ -3996,9 +4002,9 @@
             },
             {
                 "name": "Gumball, Candy Corn, Waffle",
-                "time": 30.74,
+                "time": 30.28,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/uJIbo1VnZ4w"
+                "url": "https://youtu.be/N-ZZVGcbo-o"
             },
             {
                 "name": "Gumball, Jawbreaker, Waffle",
@@ -4026,9 +4032,9 @@
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
-                "time": 31.29,
-                "player": "myekul",
-                "url": "https://youtu.be/uyeahT7UpSQ"
+                "time": 30.89,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/HmO7ME9OpOQ"
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
@@ -4950,7 +4956,7 @@
                 "title": "3+1 M-Swaps"
             },
             {
-                "name": "SL-L, 7+3",
+                "name": "SL-L 7+3",
                 "time": 57.78,
                 "player": "myekul",
                 "url": "https://youtu.be/fSLf4i6vKfE"
@@ -4959,7 +4965,7 @@
                 "title": "5+1 M-Swaps"
             },
             {
-                "name": "LSL, 8+3",
+                "name": "LSL 8+3",
                 "time": 55,
                 "player": "myekul",
                 "url": "https://youtu.be/fGhgm62RVaY"

@@ -402,7 +402,7 @@ function altStrats(query) {
                             HTMLContent += oddsLayer(altStrats, index, strat, 'odds2')
                             HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
                         }
-                        if (['cagneycarnation', 'captainbrineybeard', 'calamaria', 'thedevil'].includes(query)) HTMLContent += bossPattern(query, strat.name)
+                        if (ATTACKS[query]) HTMLContent += bossPattern(query, strat.name)
                         HTMLContent += normalizedColorCell(strat.time, min, max)
                         HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                         if (RTAcheck) {
@@ -503,8 +503,9 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
 }
 function bossPattern(boss, pattern) {
     let HTMLContent = `<td class='gray'><div class='container'>`
-    let split = boss == 'thedevil' ? ' ' : ', '
-    pattern.split(split).forEach(attack => {
+    const split = boss == 'thedevil' ? ' ' : ', '
+    const patterns = boss == 'chefsaltbaker' ? [...pattern.split(' ')[0]] : pattern.split(split)
+    patterns.forEach(attack => {
         if (boss == 'cagneycarnation') attack = attack.split(' ')[0]
         if (ATTACKS[boss].includes(attack)) {
             HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/${boss}/${attack}.png' style='height:21px'></div>`

@@ -276,7 +276,6 @@ async function fetchTopRuns() {
             })
     })
     runRecapCategory.top10PlayerHistories = await Promise.all(promises)
-    console.log('Fetched top player histories', runRecapCategory.top10PlayerHistories)
     if (globalTab == 'theTop') {
         pbProgression()
     }
