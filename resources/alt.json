@@ -1859,9 +1859,9 @@
             },
             {
                 "name": "Ring Dragon (3 Quads)",
-                "time": 45.59,
+                "time": 45.51,
                 "player": "myekul",
-                "url": "https://youtu.be/YAkZBzBszpg",
+                "url": "https://youtu.be/Lb8FPGPBt4Y",
                 "odds": "3/140"
             },
             {
@@ -3066,6 +3066,12 @@
                 "time": 43.93,
                 "player": "myekul",
                 "url": "https://youtu.be/yJCehrQFgHo"
+            },
+            {
+                "name": "Cherry Bombs, Catapult",
+                "time": 44.01,
+                "player": "myekul",
+                "url": "https://youtu.be/my-lO9CKc2s"
             }
         ],
         "calamaria": [
@@ -3527,7 +3533,7 @@
     "DLC C/S": {
         "glumstonethegiant": [
             {
-                "title": "Parryless"
+                "title": "Standard Strats"
             },
             {
                 "name": "Geese",
@@ -3542,14 +3548,20 @@
                 "url": "https://www.youtube.com/watch?v=P0MFWuBBQ_Y&t=29s"
             },
             {
-                "title": "Parries"
+                "title": "Other"
             },
             {
-                "name": "Cauldron",
+                "name": "Parries",
                 "time": 46.25,
                 "rta": "47.00",
                 "player": "myekul",
                 "url": "https://youtu.be/DIH3GtVWBMg"
+            },
+            {
+                "name": "Right Puppet",
+                "time": 47.79,
+                "player": "myekul",
+                "url": "https://youtu.be/FB448m0eSYc}"
             }
         ],
         "mortimerfreeze": [
@@ -4694,40 +4706,6 @@
             }
         ]
     },
-    "DLC+Base Simple C/S": {
-        "goopylegrande": [
-            {
-                "name": "",
-                "time": 25,
-                "player": "myekul",
-                "url": "https://youtu.be/yDW98fVl0ls"
-            }
-        ],
-        "cagneycarnation": [
-            {
-                "name": "",
-                "time": 27,
-                "player": "myekul",
-                "url": "https://youtu.be/JC9bbT5AjNs"
-            }
-        ],
-        "baronessvonbonbon": [
-            {
-                "name": "Gumball, Waffle, Jawbreaker",
-                "time": 32,
-                "player": "myekul",
-                "url": "https://youtu.be/fd3iMvS5Mt8"
-            }
-        ],
-        "grimmatchstick": [
-            {
-                "name": "",
-                "time": "28.50",
-                "player": "myekul",
-                "url": "https://youtu.be/WHbTrE0rumc"
-            }
-        ]
-    },
     "DLC Low%": {
         "glumstonethegiant": [
             {
@@ -4972,6 +4950,72 @@
             }
         ]
     },
+    "DLC+Base Simple C/S": {
+        "glumstonethegiant": [
+            {
+                "name": "",
+                "time": 32.38,
+                "player": "myekul",
+                "url": "https://youtu.be/D_Xa8VsYQ8A"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 33.79,
+                "player": "myekul",
+                "url": "https://youtu.be/NS16xdX-cQ4"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 32.88,
+                "player": "myekul",
+                "url": "https://youtu.be/lxC_AfeMLwI"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 32.88,
+                "player": "myekul",
+                "url": "https://youtu.be/latPG4QDnuc"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 25,
+                "player": "myekul",
+                "url": "https://youtu.be/yDW98fVl0ls"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 27,
+                "player": "myekul",
+                "url": "https://youtu.be/JC9bbT5AjNs"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Gumball, Waffle, Jawbreaker",
+                "time": 32,
+                "player": "myekul",
+                "url": "https://youtu.be/fd3iMvS5Mt8"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": "28.50",
+                "player": "myekul",
+                "url": "https://youtu.be/WHbTrE0rumc"
+            }
+        ]
+    },
     "300%": {
         "therootpack": [
             {
@@ -5141,9 +5185,9 @@
         "angelanddemon": [
             {
                 "name": "",
-                "time": 23.14,
+                "time": 22.28,
                 "player": "myekul",
-                "url": "https://youtu.be/81y3lyh8ZMU"
+                "url": "https://youtu.be/im-gVejPDAk"
             }
         ],
         "treetoptrouble": [
