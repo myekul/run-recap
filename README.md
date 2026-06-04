@@ -27,6 +27,3 @@
     - Viewing sav/rrc from alt strats page will produce error
 
 - Baroness patterns vs alt strat
-
-### Alt Strats
-- Run 'n Guns

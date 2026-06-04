@@ -266,7 +266,7 @@ async function fetchTopRuns() {
                 const runs = (json.data || [])
                     .filter(run => run.values[globalCache[runRecapCategory.category].var1[0]] == globalCache[runRecapCategory.category].var1[1]
                         && run.values[globalCache[runRecapCategory.category].var2[0]] == globalCache[runRecapCategory.category].var2[1]
-                        && run.times.primary_t < 1800
+                        && run.times.primary_t < 1680
                     )
                 return { player, runs }
             })

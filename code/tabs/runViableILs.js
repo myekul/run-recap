@@ -3,15 +3,16 @@ function generateRunViableILs() {
     if (runRecapCategory.name != 'Other') {
         HTMLContent += `
         <div class='container'>
-        <table class='shadow'>
-        <tr>
-        <td colspan=4></td>`
+            <table class='shadow'>
+                <tr>
+                    <td colspan=4></td>`
         categories.forEach(category => {
             HTMLContent += `<td class='${category.info.id}' style='width:36px'>${getImage(category.info.id)}</td>`
         })
-        HTMLContent += `</tr>
+        HTMLContent += `
+        </tr>
         <tr>
-        <td colspan=4></td>`
+            <td colspan=4></td>`
         categories.forEach(category => {
             HTMLContent += `<th class='cuphead'>${secondsToHMS(category.runs[0].score)}</th>`
         })
@@ -51,41 +52,41 @@ function generateRunViableILs() {
 //     }
 // }
 function runViableInfo() {
+    const runViableStyle = 'class="myekulColor font2" style="font-size:120%;margin-top:10px"'
     let HTMLContent = `
     <div ${runViableStyle}>What is a "Run Viable" IL?</div>
     <div class='textBlock'>
-    In a top-level context,
-    there are a handful of time-saving strategies which are extremely difficult to pull off consistently.
-    Often times, these strats are risky or RNG reliant, and failing them will result in a considerable time loss.
-    <br><br>
-    For this reason, we've curated this collection of ILs achieved with run viable strats.
+        In a top-level context,
+        there are a handful of time-saving strategies which are extremely difficult to pull off consistently.
+        Often times, these strats are risky or RNG reliant, and failing them will result in a considerable time loss.
+        <br><br>
+        For this reason, we've curated this collection of ILs achieved with run viable strats.
     </div>
     <div ${runViableStyle}>What are the nonviable strats?</div>
     <div class='textBlock'>
-    ${generateBoardTitle('1.1+')}
-    ${bossImage('ribbyandcroaks', 'Phase 1 Triples')}
-    ${bossImage('baronessvonbonbon', 'Up+down EXs at 1 HP')}
-    ${bossImage('beppitheclown', 'Two-cycle Beppi Skip')}
-    ${bossImage('drkahlsrobot', "TAS EX")}
-    ${bossImage('drkahlsrobot', "Heart Clip")}
-    ${bossImage('captainbrineybeard', 'Jistuma EX on first flame')}
-    ${bossImage('phantomexpress', '2 EXs on Phase 1')}
-    ${bossImage('thedevil', "Spider's Kiss")}
-    ${generateBoardTitle('NMG')}
-    ${bossImage('goopylegrande', 'Doubles (besides quad)')}
-    ${bossImage('drkahlsrobot', "TAS EX")}
-    ${bossImage('drkahlsrobot', "Heart Clip")}
-    ${bossImage('wernerwerman', 'Doubles (besides quad)')}
-    ${generateBoardTitle('DLC C/S')}
-    ${bossImage('thehowlingaces', 'First laser guess')}
-    ${bossImage('chefsaltbaker', 'Willy-nilly Chargimate')}
-    ${bossImage('chefsaltbaker', 'Fast 4+3')}
-    ${generateBoardTitle('DLC+Base C/S')}
-    ${bossImage('phantomexpress', 'Phase 2 one-cycle')}
+        ${generateBoardTitle('1.1+')}
+        ${bossImage('ribbyandcroaks', 'Phase 1 Triples')}
+        ${bossImage('baronessvonbonbon', 'Up+down EXs at 1 HP')}
+        ${bossImage('beppitheclown', 'Two-cycle Beppi Skip')}
+        ${bossImage('drkahlsrobot', "TAS EX")}
+        ${bossImage('drkahlsrobot', "Heart Clip")}
+        ${bossImage('captainbrineybeard', 'Jistuma EX on first flame')}
+        ${bossImage('phantomexpress', '2 EXs on Phase 1')}
+        ${bossImage('thedevil', "Spider's Kiss")}
+        ${generateBoardTitle('NMG')}
+        ${bossImage('goopylegrande', 'Doubles (besides quad)')}
+        ${bossImage('drkahlsrobot', "TAS EX")}
+        ${bossImage('drkahlsrobot', "Heart Clip")}
+        ${bossImage('wernerwerman', 'Doubles (besides quad)')}
+        ${generateBoardTitle('DLC C/S')}
+        ${bossImage('thehowlingaces', 'First laser guess')}
+        ${bossImage('chefsaltbaker', 'Willy-nilly Chargimate')}
+        ${bossImage('chefsaltbaker', '3+3 Shaker')}
+        ${generateBoardTitle('DLC+Base C/S')}
+        ${bossImage('phantomexpress', 'Phase 2 one-cycle')}
     </div>`
     openModal(HTMLContent, 'RUN VIABLE INFO')
 }
-const runViableStyle = 'class="myekulColor font2" style="font-size:120%;margin-top:10px"'
 function bossImage(boss, text) {
     return `
     <div class='container ${boss}' style='border-radius:5px;justify-content:left;gap:8px;width:300px;margin:5px;margin-left:15px;padding-left:5px'>

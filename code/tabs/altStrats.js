@@ -48,17 +48,16 @@ async function generateAltStrats() {
             }
         })
         HTMLContent += `</div>`
-        const chess = ['pawns', 'knight', 'bishop', 'rook', 'queen']
         if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
             HTMLContent += `<div class='container' style='gap:10px;margin-top:10px'>`
         }
         if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
             HTMLContent += `<table class='shadow'><tr class='background2'>`
-            chess.forEach(level => {
+            CHESS.forEach(level => {
                 HTMLContent += altStratHeader(level)
             })
             HTMLContent += `</tr><tr>`
-            chess.forEach(level => {
+            CHESS.forEach(level => {
                 HTMLContent += `
                 <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
                     <div>${getImage('other/' + level)}</div>
@@ -386,17 +385,6 @@ function altStrats(query) {
                         HTMLContent += `
                         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
                             <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
-                        if (baronessCheck) {
-                            HTMLContent += `<td><div class='container'>`
-                            strat.name.split(',').forEach(miniboss => {
-                                miniboss = miniboss.trim()
-                                HTMLContent += `
-                                <div class='container' style='width:25px'>
-                                    <img src='https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${MINIBOSSES[miniboss]}.png' style='height:21px'>
-                                </div>`
-                            })
-                            HTMLContent += `</div></td>`
-                        }
                         if (runRecapCategory.name == '1.1+' && ((query == 'thedevil' && isolatePatterns) || query == 'captainbrineybeard') && !commBestILsAll) {
                             HTMLContent += altStrats.some(strat => strat.odds3) ? oddsLayer(altStrats, index, strat, 'odds3') : ''
                             HTMLContent += oddsLayer(altStrats, index, strat, 'odds2')
@@ -502,13 +490,16 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
     return HTMLContent
 }
 function bossPattern(boss, pattern) {
-    let HTMLContent = `<td class='gray'><div class='container'>`
+    let HTMLContent = `<td><div class='container'>`
     const split = boss == 'thedevil' ? ' ' : ', '
     const patterns = boss == 'chefsaltbaker' ? [...pattern.split(' ')[0]] : pattern.split(split)
     patterns.forEach(attack => {
         if (boss == 'cagneycarnation') attack = attack.split(' ')[0]
         if (ATTACKS[boss].includes(attack)) {
-            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='images/${boss}/${attack}.png' style='height:21px'></div>`
+            const src = boss == 'baronessvonbonbon'
+                ? `https://myekul.com/shared-assets/cuphead/images/phase/baronessvonbonbon${MINIBOSSES[attack]}.png`
+                : `images/${boss}/${attack}.png`
+            HTMLContent += `<div class='container' style='width:25px;margin:0'><img src='${src}' style='height:21px'></div>`
         }
     })
     HTMLContent += `</div></td>`
@@ -559,7 +550,8 @@ function userContributions(playerName) {
                 <td style='text-align:left;font-size:80%;color:gray;padding:0 5px'>${strat.title}</td>
                 <td class='${strat.level}'><div class='container'>${getImage(imageLocation(strat.level), 21)}</div></td>
                 <td class='${strat.level}' style='padding:0 3px'>${strat.time}</td>
-                <td style='text-align:left;padding:0 5px;white-space:nowrap'>${strat.name}</td>
+                ${ATTACKS[strat.level] ? bossPattern(strat.level, strat.name) : `<td></td>`}
+                <td style='text-align:left;padding:0 5px;white-space:nowrap;font-size:80%'>${strat.name}</td>
             </tr>`
             num++
         })

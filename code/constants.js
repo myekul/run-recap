@@ -1,10 +1,11 @@
 const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
 
+const CHESS = ['pawns', 'knight', 'bishop', 'rook', 'queen']
 const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefrazzle', 'ruggedridge', 'perilouspiers']
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-const OTHER_CATEGORIES = ['1.1+ All Flags', 'OG Charge', 'Low%', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const OTHER_CATEGORIES = ['1.1+ All Flags', 'Low%', 'OG Charge', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
 const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
 
 const LOADOUTS = {
@@ -45,6 +46,7 @@ const MINIBOSSES = {
 const ATTACKS = {
     ribbyandcroaks: ['5 Flies', '6 Flies', '7 Flies', 'Punches', 'Snakes', 'Tigers', 'Bulls'],
     cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
+    baronessvonbonbon: ['Waffle', 'Candy Corn', 'Cupcake', 'Gumball', 'Jawbreaker'],
     captainbrineybeard: ['Gun', '2-Gun', '4-Gun', 'Squid', 'Shark', 'Dogfish'],
     calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
     thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'],
