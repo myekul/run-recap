@@ -4028,6 +4028,12 @@
                 "url": "https://youtu.be/N-ZZVGcbo-o"
             },
             {
+                "name": "Gumball, Candy Corn, Cupcake",
+                "time": 32.24,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/VnGWSSZzwCU"
+            },
+            {
                 "name": "Gumball, Waffle, Cupcake",
                 "time": 30.59,
                 "player": "DaniStuff2345",
@@ -4056,6 +4062,12 @@
                 "time": 30.89,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/HmO7ME9OpOQ"
+            },
+            {
+                "name": "Waffle, Cupcake, Gumball",
+                "time": "31.10",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/GSSuIjR4bQk"
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
@@ -4195,6 +4207,12 @@
                 "time": 43,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/FxkAcdHQ2VQ"
+            },
+            {
+                "name": "Cherry Bombs, Charge",
+                "time": 43.94,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/WkFG97K2yyo"
             }
         ],
         "captainbrineybeard": [
@@ -4691,9 +4709,9 @@
         "phantomexpress": [
             {
                 "name": "",
-                "time": "1:03",
+                "time": "1:02.15",
                 "player": "GamerAttack27",
-                "url": "https://youtu.be/lmjtg3uiNYM"
+                "url": "https://youtu.be/CrHDAnbB1Ao"
             }
         ],
         "kingdice": [
@@ -4799,6 +4817,15 @@
             }
         ],
         "chefsaltbaker": [
+            {
+                "name": "SLD",
+                "time": "1:00.52",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/7z1xALesaVY"
+            },
+            {
+                "title": "Half Chargimate"
+            },
             {
                 "name": "SLD",
                 "time": "1:05.81",
@@ -5031,6 +5058,12 @@
             }
         ],
         "baronessvonbonbon": [
+            {
+                "name": "Gumball, Candy Corn, Waffle",
+                "time": 29.85,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/RPgzw-nOL0U"
+            },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
                 "time": 32,
