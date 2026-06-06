@@ -307,7 +307,7 @@ function organizeCategories() {
     categories = []
     categoryNames = []
     bossesCopy = [...bosses]
-    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && ['DLC C/T', 'DLC R/S', 'DLC Low%', 'DLC OG Charge', 'DLC Expert'].includes(altStratOther))) {
+    if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && JUST_DLC.includes(altStratOther))) {
         bossesCopy = bossesCopy.slice(19, 25)
     } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
         bossesCopy = bossesCopy.slice(0, 19)

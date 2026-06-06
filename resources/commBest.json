@@ -928,17 +928,17 @@
             },
             {
                 "title": "mausoleum",
-                "split": "2:24.55",
-                "splitRunner": "MarkinSws",
-                "splitURL": "https://www.youtube.com/watch?v=BM5Bw2NEsIk&t=84s",
+                "split": "2:24.38",
+                "splitRunner": "ExclamationMarkYT",
+                "splitURL": "",
                 "segment": "1:25.66",
                 "segmentRunner": "Lewzr",
                 "segmentURL": "https://youtu.be/TuyN1-b-OPA"
             },
             {
                 "title": "glumstonethegiant",
-                "split": "3:50.16",
-                "splitRunner": "Quincely0",
+                "split": "3:49.51",
+                "splitRunner": "ExclamationMarkYT",
                 "splitURL": null,
                 "segment": "1:23.97",
                 "segmentRunner": "GamerAttack27",
@@ -946,8 +946,8 @@
             },
             {
                 "title": "mortimerfreeze",
-                "split": "4:59.22",
-                "splitRunner": "MarkinSws",
+                "split": "4:58.15",
+                "splitRunner": "ExclamationMarkYT",
                 "splitURL": null,
                 "segment": "1:07.16",
                 "segmentRunner": "GamerAttack27",
@@ -985,9 +985,9 @@
                 "split": "10:19.01",
                 "splitRunner": "MarkinSws",
                 "splitURL": "https://youtu.be/LqCwXXODGDc",
-                "segment": "1:28.735",
-                "segmentRunner": "MarkinSws",
-                "segmentURL": "https://www.youtube.com/watch?v=wJ-vsVwKU0k&t=575s"
+                "segment": "1:28.43",
+                "segmentRunner": "ExclamationMarkYT",
+                "segmentURL": null
             }
         ]
     },

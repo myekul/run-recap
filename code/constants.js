@@ -5,14 +5,16 @@ const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefr
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-const OTHER_CATEGORIES = ['1.1+ All Flags', 'Low%', 'OG Charge', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
-const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const OTHER_CATEGORIES = ['1.1+ All Flags', 'Low%', 'OG Charge', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Expert', 'DLC+Base Simple C/S', '300%']
+const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert']
 
 const LOADOUTS = {
     'NMG P/S': ['peashooter', 'spread'],
     'NMG R/S': ['roundabout', 'spread'],
     'DLC C/T': ['charge', 'twist-up'],
     'DLC R/S': ['roundabout', 'spread'],
+    'DLC P/S': ['peashooter', 'spread'],
     'DLC+Base Simple C/S': ['charge', 'spread'],
 }
 
@@ -47,6 +49,7 @@ const ATTACKS = {
     ribbyandcroaks: ['5 Flies', '6 Flies', '7 Flies', 'Punches', 'Snakes', 'Tigers', 'Bulls'],
     cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
     baronessvonbonbon: ['Waffle', 'Candy Corn', 'Cupcake', 'Gumball', 'Jawbreaker'],
+    grimmatchstick: ['1 Laser', '2 Lasers', '3 Lasers', '2 Meteors', '3 Meteors', '4 Meteors'],
     captainbrineybeard: ['Gun', '2-Gun', '4-Gun', 'Squid', 'Shark', 'Dogfish'],
     calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
     thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'],

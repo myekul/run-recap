@@ -359,8 +359,8 @@ function altStrats(query) {
                 altStrats.sort((a, b) => b.time - a.time)
             }
         }
-        let min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
-        let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(obj.time)))
+        let min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
+        let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
         altStrats.forEach((strat, index) => {
             if (!(commBestILsAll && strat.copy)) {
                 if (strat.title && !(["Spider's Kiss", 'Head Skip'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
@@ -391,7 +391,7 @@ function altStrats(query) {
                             HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
                         }
                         if (ATTACKS[query]) HTMLContent += bossPattern(query, strat.name)
-                        HTMLContent += normalizedColorCell(strat.time, min, max)
+                        HTMLContent += normalizedColorCell(convertToSeconds(strat.time), min, max)
                         HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                         if (RTAcheck) {
                             HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`

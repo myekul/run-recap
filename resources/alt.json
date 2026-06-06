@@ -1008,13 +1008,13 @@
                 "title": "Standard Strats"
             },
             {
-                "name": "3 Lasers, 2 Lasers",
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
                 "time": 45.89,
                 "player": "Quincely0",
                 "url": "https://youtu.be/wADPxhZkybg"
             },
             {
-                "name": "3 Lasers, 1 Laser",
+                "name": "3 Lasers, 1 Laser, 2 Meteors",
                 "time": 46.14,
                 "player": "Quincely0",
                 "url": "https://www.youtube.com/watch?v=kawoqMzhDUI&t=6s"
@@ -1041,7 +1041,7 @@
                 "title": "Grim Glitch"
             },
             {
-                "name": "3 Lasers, 2 Meteors",
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
                 "time": 47.64,
                 "player": "Quincely0",
                 "url": "https://youtu.be/DCe8My83EtQ"
@@ -2475,10 +2475,16 @@
         ],
         "grimmatchstick": [
             {
-                "name": "",
+                "name": "2 Lasers, 1 Laser",
                 "time": 29.68,
                 "player": "Yuka",
                 "url": "https://youtu.be/tpvTZ5YQ5a8"
+            },
+            {
+                "name": "2 Lasers, 2 Lasers",
+                "time": 29.99,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/mEJMFlwY1Wo"
             }
         ],
         "rumorhoneybottoms": [
@@ -2579,7 +2585,7 @@
                 "name": "",
                 "time": 50.89,
                 "player": "Yuka",
-                "url": "https://youtu.be/W1F_oIS3O74"
+                "url": "https://youtu.be/Cr8CU3Htyl4"
             },
             {
                 "name": "Bad Ghoul RNG",
@@ -3806,7 +3812,7 @@
         ],
         "grimmatchstick": [
             {
-                "name": "",
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
                 "time": 46,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/wsPFg12OtdQ"
@@ -4146,7 +4152,7 @@
         ],
         "grimmatchstick": [
             {
-                "name": "",
+                "name": "2 Lasers, 2 Lasers, 2 Meteors",
                 "time": 44.67,
                 "player": "myekul",
                 "url": "https://youtu.be/NHv_BjXu-ZA"
@@ -4410,7 +4416,7 @@
         ],
         "grimmatchstick": [
             {
-                "name": "",
+                "name": "3 Lasers, 3 Meteors, 2 Meteors",
                 "time": "1:05",
                 "player": "Kaleva",
                 "url": "https://youtu.be/CLAn75HEDu0"
@@ -4504,6 +4510,66 @@
                 "url": "https://youtu.be/Kpmtmtbj82I"
             }
         ],
+        "cagneycarnation": [
+            {
+                "name": "Lunge, Lunge, Pods",
+                "time": 38.26,
+                "player": "myekul",
+                "url": "https://youtu.be/Nln6GNmk7V0"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "Beppi Skip",
+                "time": 49.31,
+                "player": "myekul",
+                "url": "https://youtu.be/8uehLn9LTbs"
+            },
+            {
+                "name": "Beppi Skip",
+                "time": "1:05.76",
+                "player": "myekul",
+                "url": "https://youtu.be/KXEP4Y_ZGuo"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "2 Lasers, 3 Meteors, 2 Meteors",
+                "time": 52.68,
+                "player": "myekul",
+                "url": "https://youtu.be/_hbKPRMwSaY"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 37.81,
+                "player": "myekul",
+                "url": "https://youtu.be/iQaoARiW76I"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "2-Gun, Gun",
+                "time": 40.23,
+                "player": "myekul",
+                "url": "https://youtu.be/8PznmPNx-xQ"
+            },
+            {
+                "name": "2-Gun, Shark",
+                "time": 40.62,
+                "player": "myekul",
+                "url": "https://youtu.be/WX9bA0bQ2jQ"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": "1:09",
+                "player": "TheMexicanRunner",
+                "url": "https://www.youtube.com/watch?v=xm5b7jayb-4&t=1670s"
+            }
+        ],
         "thedevil": [
             {
                 "name": "Clap, Bubbles",
@@ -4564,7 +4630,7 @@
         ],
         "grimmatchstick": [
             {
-                "name": "",
+                "name": "2 Lasers, 1 Laser, 2 Meteors",
                 "time": 51.91,
                 "player": "Yuka",
                 "url": "https://youtu.be/dtTKEJUjWSs"
@@ -4676,7 +4742,7 @@
         ],
         "grimmatchstick": [
             {
-                "name": "",
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
                 "time": 48,
                 "player": "Grondious",
                 "url": "https://youtu.be/EV_NRKKCUTU"
@@ -4873,6 +4939,24 @@
                 "time": "1:10.65",
                 "player": "myekul",
                 "url": "https://youtu.be/SEDZ-MsZDCI"
+            }
+        ]
+    },
+    "DLC P/S":{
+        "glumstonethegiant": [
+            {
+                "name": "",
+                "time": "49.80",
+                "player": "myekul",
+                "url": "https://youtu.be/Kzh7W5MC9pQ"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": "42.50",
+                "player": "myekul",
+                "url": "https://youtu.be/CiWhSQchNwE"
             }
         ]
     },
@@ -5076,10 +5160,10 @@
                 "title": "Standard Strats"
             },
             {
-                "name": "Beppi Skip",
-                "time": 38.17,
+                "name": "Parries",
+                "time": 37.33,
                 "player": "myekul",
-                "url": "https://youtu.be/dBJjpQc4Nr0"
+                "url": "https://youtu.be/C_NjDq49Wtk"
             },
             {
                 "name": "Parryless",
