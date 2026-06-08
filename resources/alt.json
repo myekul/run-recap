@@ -334,6 +334,15 @@
                 "time": "1:03.80",
                 "player": "Quincely0",
                 "url": "https://youtu.be/_cCNp2fvkdY"
+            },
+            {
+                "title": "Parries, Accidental Hit"
+            },
+            {
+                "name": "Gemini",
+                "time": "1:05.65",
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=O3ew6NEai84&t=317s"
             }
         ],
         "cagneycarnation": [
@@ -2475,16 +2484,16 @@
         ],
         "grimmatchstick": [
             {
+                "name": "2 Lasers, 2 Lasers",
+                "time": 29.07,
+                "player": "Yuka",
+                "url": "https://www.youtube.com/watch?v=uPhmJ_-zqHY&t=859s"
+            },
+            {
                 "name": "2 Lasers, 1 Laser",
                 "time": 29.68,
                 "player": "Yuka",
                 "url": "https://youtu.be/tpvTZ5YQ5a8"
-            },
-            {
-                "name": "2 Lasers, 2 Lasers",
-                "time": 29.99,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/mEJMFlwY1Wo"
             }
         ],
         "rumorhoneybottoms": [
@@ -3273,9 +3282,27 @@
             },
             {
                 "name": "Clap Ring Dragon",
-                "time": 50.93,
+                "time": 49.17,
                 "player": "myekul",
-                "url": "https://youtu.be/MJHV6pkigdk"
+                "url": "https://youtu.be/597_fQkPHsM"
+            },
+            {
+                "name": "Clap Pinwheel Dragon",
+                "time": "49.60",
+                "player": "myekul",
+                "url": "https://youtu.be/G9CbemRUvJQ"
+            },
+            {
+                "name": "Ring Clap Dragon",
+                "time": 49.32,
+                "player": "myekul",
+                "url": "https://youtu.be/HCE5GJGEMbM"
+            },
+            {
+                "name": "Pinwheel Clap Dragon",
+                "time": 49.41,
+                "player": "myekul",
+                "url": "https://youtu.be/3NAk0PVY7wk"
             },
             {
                 "title": "Head Skip"
@@ -3303,6 +3330,15 @@
                 "time": "50.90",
                 "player": "myekul",
                 "url": "https://youtu.be/8y-I_UkvuP0"
+            },
+            {
+                "title": "Freeze"
+            },
+            {
+                "name": "Clap Bubbles Dragon",
+                "time": 49.38,
+                "player": "myekul",
+                "url": "https://youtu.be/4CmSdn8ysSA"
             }
         ]
     },
@@ -3647,6 +3683,12 @@
                 "url": "https://youtu.be/eYCNjX6PrVE"
             },
             {
+                "name": "LDL",
+                "time": 51.77,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/q4a8B3MRyV0"
+            },
+            {
                 "name": "LDS",
                 "time": 51.91,
                 "player": "myekul",
@@ -3711,9 +3753,9 @@
             },
             {
                 "name": "DLS",
-                "time": 50.37,
-                "player": "myekul",
-                "url": "https://youtu.be/v3PnOSJGOmo"
+                "time": 50.24,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/AHiTeopVLUg"
             },
             {
                 "title": "2.5-cycle"
@@ -4076,6 +4118,18 @@
                 "url": "https://youtu.be/GSSuIjR4bQk"
             },
             {
+                "name": "Waffle, Gumball, Jawbreaker",
+                "time": 34.31,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/olQktmzDd04"
+            },
+            {
+                "name": "Waffle, Jawbreaker, Gumball",
+                "time": 34.66,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/9ubRZPsxq00"
+            },
+            {
                 "name": "Cupcake, Gumball, Waffle",
                 "time": 31.36,
                 "player": "DaniStuff2345",
@@ -4219,14 +4273,20 @@
                 "time": 43.94,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/WkFG97K2yyo"
+            },
+            {
+                "name": "Cherry Bombs, Catapult",
+                "time": 44.48,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/gFZgWfw99Ks"
             }
         ],
         "captainbrineybeard": [
             {
                 "name": "2-Gun, Gun",
-                "time": "39.10",
-                "player": "Quincely0",
-                "url": "https://youtu.be/ait78oDCd8o"
+                "time": 38.92,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/AuWgyu4ba7I"
             },
             {
                 "name": "Shark, Gun",
@@ -4336,12 +4396,20 @@
                 "url": "https://youtu.be/Y2RPdmtaaOA"
             }
         ],
+        "ruggedridge": [
+            {
+                "name": "",
+                "time": "1:12.92",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/R8-JRd-4kCw"
+            }
+        ],
         "perilouspiers": [
             {
                 "name": "",
-                "time": 57.78,
-                "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=4oyczxkltU0&t=104s"
+                "time": 56.53,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/edRW2lxcB1k"
             }
         ]
     },
@@ -4994,9 +5062,9 @@
         "thehowlingaces": [
             {
                 "name": "",
-                "time": 49.06,
+                "time": 47.99,
                 "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=SiLTxwGIs8Y&t=377s"
+                "url": "https://youtu.be/sX_ApJf8u5o"
             }
         ],
         "moonshinemob": [
@@ -5081,6 +5149,124 @@
                 "time": 55,
                 "player": "myekul",
                 "url": "https://youtu.be/fGhgm62RVaY"
+            }
+        ]
+    },
+    "DLC+Base Simple L/S": {
+        "glumstonethegiant": [
+            {
+                "name": "Parries",
+                "time": 30.51,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/s0ZClYzW1F4"
+            },
+            {
+                "name": "Parryless",
+                "time": 32.37,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/mfYyNc4PeBQ"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "Whale",
+                "time": 33.01,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/ennPw50TOOY"
+            },
+            {
+                "name": "Cards",
+                "time": 33.62,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/AHo-8qKvvw0"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 22.89,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/VT4Id3m3i4c"
+            }
+        ],
+        "therootpack": [
+            {
+                "name": "",
+                "time": 26.82,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/Vm2cM_maoYI"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "",
+                "time": 22.48,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/RWD8tLvdMfs"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 29.26,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/KD3a8Z7IPCc"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Waffle, Candy Corn, Jawbreaker",
+                "time": 32.91,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/_QQklz6c2xg"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": 37.43,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/6bEffF5Z0e4"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": "28.90",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/ox14uKZ9PXY"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "",
+                "time": 35.71,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/eqPLoTHrh_I"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 39.99,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/l3lYwymN9oc"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "",
+                "time": 28.81,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/BdtFC9NCVac"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": 39.82,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/S9qJAGyMUyU"
             }
         ]
     },

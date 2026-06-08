@@ -216,11 +216,13 @@ function reconstructRRC(category, endTimes, playerIndex) {
     })
 }
 function organizeAltStrats() {
+    const uniqueURLs = new Set()
     for (const category in alt) {
         for (const boss in alt[category]) {
             for (const obj of alt[category][boss]) {
-                if (!obj.title) {
+                if (!obj.title && !uniqueURLs.has(obj.url)) {
                     altStratNum++
+                    uniqueURLs.add(obj.url)
                 }
             }
         }
@@ -250,13 +252,10 @@ function organizeAltStrats() {
     alt['NMG'].captainbrineybeard = alt['1.1+'].captainbrineybeard
         .filter(strat => strat.title || !strat.name.includes('Squid'))
         .map(strat => ({ ...strat, copy: '1.1+' }))
-    const nmgDuplicate = ['NMG P/S', 'NMG R/S', 'NMG Expert']
-    const dlcDuplicate = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
-    const estherDuplicate = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC OG Charge']
-    copyDuplicate('NMG', nmgDuplicate, 'forestfollies')
-    copyDuplicate('DLC L/S', dlcDuplicate, 'forestfollies')
-    copyDuplicate('DLC L/S', dlcDuplicate, 'mausoleum')
-    copyDuplicate('DLC L/S', estherDuplicate, 'estherwinchester')
+    copyDuplicate('NMG', DUPLICATE_FOLLIES_NMG, 'forestfollies')
+    copyDuplicate('DLC L/S', DUPLICATE_FOLLIES_MAUS, 'forestfollies')
+    copyDuplicate('DLC L/S', DUPLICATE_FOLLIES_MAUS, 'mausoleum')
+    copyDuplicate('DLC L/S', DUPLICATE_ESTHER, 'estherwinchester')
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
     copyBulk('1.1+', '1.1+ All Flags', bosses.slice(0, 19).map(boss => boss.id))
