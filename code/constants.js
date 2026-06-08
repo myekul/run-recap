@@ -51,14 +51,17 @@ const MINIBOSSES = {
 
 const ATTACKS = {
     ribbyandcroaks: ['5 Flies', '6 Flies', '7 Flies', 'Punches', 'Snakes', 'Tigers', 'Bulls'],
+    hildaberg: ['Gemini', 'Sagittarius'],
     cagneycarnation: ['Lunge', 'Pods', 'Seeds'],
     baronessvonbonbon: ['Waffle', 'Candy Corn', 'Cupcake', 'Gumball', 'Jawbreaker'],
     grimmatchstick: ['1 Laser', '2 Lasers', '3 Lasers', '2 Meteors', '3 Meteors', '4 Meteors'],
     rumorhoneybottoms: ['Middle', 'Orbs', 'Triangles'],
+    drkahlsrobot: ['Red Gem', 'Blue Gem'],
     wernerwerman: ['Catapult', 'Cherry Bombs', 'Charge'],
     captainbrineybeard: ['Gun', '2-Gun', '4-Gun', 'Squid', 'Shark', 'Dogfish'],
     calamaria: ['Pufferfish', 'Turtle', 'Seahorse', 'Ghosts', 'Red Fish', 'Yellow Fish'],
     thedevil: ['Clap', 'Bubbles', 'Ring', 'Pinwheel', 'Dragon', 'Spider'],
+    glumstonethegiant: ['Cauldron', 'Geese', 'Bear'],
     chefsaltbaker: ['L', 'S', 'D', '-']
 }
 

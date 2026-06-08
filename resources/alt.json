@@ -1127,6 +1127,16 @@
                 "url": "https://youtu.be/BOauylYSFDw"
             },
             {
+                "title": "Phase 2 Nuke"
+            },
+            {
+                "name": "Blue Gem",
+                "time": 44.65,
+                "rta": 46.88,
+                "player": "Lewzr",
+                "url": "https://youtu.be/WUWPp9uZqo8"
+            },
+            {
                 "title": "Other"
             },
             {
@@ -1135,13 +1145,6 @@
                 "rta": 42.64,
                 "player": "myekul",
                 "url": "https://youtu.be/RpmZiYmNrM0"
-            },
-            {
-                "name": "Phase 2 Nuke",
-                "time": 44.65,
-                "rta": 46.88,
-                "player": "Lewzr",
-                "url": "https://youtu.be/WUWPp9uZqo8"
             }
         ],
         "sallystageplay": [
@@ -3403,6 +3406,9 @@
         ],
         "glumstonethegiant": [
             {
+                "title": "No Jumproll"
+            },
+            {
                 "name": "Cauldron",
                 "time": 45.44,
                 "player": "ExclamationMarkYT",
@@ -3415,7 +3421,10 @@
                 "url": "https://youtu.be/LkoGPolMh4M"
             },
             {
-                "name": "Jumproll",
+                "title": "Jumproll"
+            },
+            {
+                "name": "Cauldron",
                 "time": 46.98,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/LZVPSIjRYvI"
@@ -3590,17 +3599,20 @@
                 "url": "https://www.youtube.com/watch?v=P0MFWuBBQ_Y&t=29s"
             },
             {
-                "title": "Other"
+                "title": "Parries"
             },
             {
-                "name": "Parries",
+                "name": "Geese",
                 "time": 46.25,
                 "rta": "47.00",
                 "player": "myekul",
                 "url": "https://youtu.be/DIH3GtVWBMg"
             },
             {
-                "name": "Right Puppet",
+                "title": "Right Puppet"
+            },
+            {
+                "name": "Cauldron",
                 "time": 47.79,
                 "player": "myekul",
                 "url": "https://youtu.be/FB448m0eSYc}"
@@ -3870,16 +3882,28 @@
         ],
         "drkahlsrobot": [
             {
-                "name": "Cup/Mug",
+                "title": "Cup/Mug"
+            },
+            {
+                "name": "Blue Gem",
                 "time": 41.84,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/OTYbNuwYO-M"
             },
             {
-                "name": "Chalice, 1 Nuke",
+                "title": "Chalice"
+            },
+            {
+                "name": "Blue Gem",
                 "time": 43.83,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/hNf3fEyQHak"
+            },
+            {
+                "name": "Red Gem",
+                "time": 47.86,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=1660s"
             }
         ],
         "sallystageplay": [
@@ -4570,6 +4594,20 @@
                 "url": "https://youtu.be/KYv8k6AtLuU"
             }
         ],
+        "ribbyandcroaks": [
+            {
+                "name": "Punches, 5 Flies, Bulls, Bulls",
+                "time": "1:08",
+                "player": "myekul",
+                "url": "https://youtu.be/3p1ZQrI6ad8?si=FR7VPpRfn28ZmJ0j&t=261"
+            },
+            {
+                "name": "7 Flies, Punches, Snakes, Bulls",
+                "time": "1:08",
+                "player": "TheMexicanRunner",
+                "url": "https://youtu.be/xm5b7jayb-4?si=qiUvLWRo6y89KG9M&t=263"
+            }
+        ],
         "goopylegrande": [
             {
                 "name": "",
@@ -4584,6 +4622,20 @@
                 "time": 38.26,
                 "player": "myekul",
                 "url": "https://youtu.be/Nln6GNmk7V0"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Candy Corn, Gumball, Cupcake",
+                "time": 41,
+                "player": "TheMexicanRunner",
+                "url": "https://youtu.be/xm5b7jayb-4?si=6Og1wGHqqPbKTaFz&t=627"
+            },
+            {
+                "name": "Jawbreaker, Waffle, Candy Corn",
+                "time": 46,
+                "player": "myekul",
+                "url": "https://youtu.be/xm5b7jayb-4?si=6Og1wGHqqPbKTaFz&t=627"
             }
         ],
         "beppitheclown": [
@@ -4608,12 +4660,34 @@
                 "url": "https://youtu.be/_hbKPRMwSaY"
             }
         ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Triangles",
+                "time": 46,
+                "player": "myekul",
+                "url": "https://youtu.be/3p1ZQrI6ad8?si=S4vdT0hN-Z62gmkA&t=1129"
+            },
+            {
+                "name": "Orbs",
+                "time": 54,
+                "player": "TheMexicanRunner",
+                "url": "https://youtu.be/xm5b7jayb-4?si=F7sZvjJKsl_76ABb&t=1134"
+            }
+        ],
         "sallystageplay": [
             {
                 "name": "",
                 "time": 37.81,
                 "player": "myekul",
                 "url": "https://youtu.be/iQaoARiW76I"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "Cherry Bombs, Charge",
+                "time": 58,
+                "player": "myekul",
+                "url": "https://youtu.be/3p1ZQrI6ad8?si=v9WVtW0o9G13DR-1&t=1391"
             }
         ],
         "captainbrineybeard": [
@@ -4628,6 +4702,18 @@
                 "time": 40.62,
                 "player": "myekul",
                 "url": "https://youtu.be/WX9bA0bQ2jQ"
+            },
+            {
+                "name": "Squid, Gun",
+                "time": 42,
+                "player": "TheMexicanRunner",
+                "url": "https://youtu.be/xm5b7jayb-4?si=fpABgyzBJVPMi5ZG&t=1487"
+            },
+            {
+                "name": "Squid, Dogfish",
+                "time": 45,
+                "player": "myekul",
+                "url": "https://youtu.be/3p1ZQrI6ad8?si=YFC3Hz0ZU_K1T-Fk&t=1481"
             }
         ],
         "phantomexpress": [
@@ -4638,12 +4724,32 @@
                 "url": "https://www.youtube.com/watch?v=xm5b7jayb-4&t=1670s"
             }
         ],
+        "kingdice": [
+            {
+                "name": "2-4-8",
+                "time": "2:03",
+                "player": "myekul",
+                "url": "https://youtu.be/3p1ZQrI6ad8?si=fM2rldcrnApyzDQa&t=1783"
+            }
+        ],
         "thedevil": [
             {
                 "name": "Clap, Bubbles",
                 "time": 54.11,
                 "player": "myekul",
                 "url": "https://youtu.be/cvzEl4Pk0H8"
+            },
+            {
+                "name": "Pinwheel Spider Clap",
+                "time": 59,
+                "player": "myekul",
+                "url": "https://youtu.be/3p1ZQrI6ad8?si=5T6AbVGuaFDjAWLM&t=1976"
+            },
+            {
+                "name": "Clap Pinwheel Clap Dragon",
+                "time": "1:09",
+                "player": "TheMexicanRunner",
+                "url": "https://youtu.be/xm5b7jayb-4?si=_6IW_Tpp9idMfLEN&t=1981"
             }
         ]
     },
@@ -4811,9 +4917,9 @@
         "grimmatchstick": [
             {
                 "name": "3 Lasers, 2 Lasers, 2 Meteors",
-                "time": 48,
-                "player": "Grondious",
-                "url": "https://youtu.be/EV_NRKKCUTU"
+                "time": 46.52,
+                "player": "myekul",
+                "url": "https://youtu.be/_XZTSkuagek"
             }
         ],
         "sallystageplay": [
@@ -4878,7 +4984,7 @@
     "DLC Low%": {
         "glumstonethegiant": [
             {
-                "name": "Parryless",
+                "name": "Geese",
                 "time": "1:04",
                 "player": "Chory",
                 "url": "https://youtu.be/yJTerNbVlzE"
@@ -4920,7 +5026,7 @@
     "DLC C/T": {
         "glumstonethegiant": [
             {
-                "name": "",
+                "name": "Cauldron, Geese",
                 "time": 51.79,
                 "player": "myekul",
                 "url": "https://youtu.be/KNn8cCljEZs"
@@ -4971,7 +5077,7 @@
     "DLC R/S": {
         "glumstonethegiant": [
             {
-                "name": "",
+                "name": "Cauldron",
                 "time": 47.71,
                 "player": "myekul",
                 "url": "https://youtu.be/Oj7R2m3FyFw"
@@ -5013,7 +5119,7 @@
     "DLC P/S": {
         "glumstonethegiant": [
             {
-                "name": "",
+                "name": "Cauldron",
                 "time": "49.80",
                 "player": "myekul",
                 "url": "https://youtu.be/Kzh7W5MC9pQ"
@@ -5093,7 +5199,7 @@
     "DLC Expert": {
         "glumstonethegiant": [
             {
-                "name": "",
+                "name": "Cauldron, Geese",
                 "time": 52.13,
                 "player": "myekul",
                 "url": "https://youtu.be/6WqmwLRGV2Q"
@@ -5155,13 +5261,19 @@
     "DLC+Base Simple L/S": {
         "glumstonethegiant": [
             {
-                "name": "Parries",
+                "title": "Parries"
+            },
+            {
+                "name": "Cauldron",
                 "time": 30.51,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/s0ZClYzW1F4"
             },
             {
-                "name": "Parryless",
+                "title": "Parryless"
+            },
+            {
+                "name": "Cauldron, Bear",
                 "time": 32.37,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/mfYyNc4PeBQ"
@@ -5273,7 +5385,7 @@
     "DLC+Base Simple C/S": {
         "glumstonethegiant": [
             {
-                "name": "",
+                "name": "Cauldron, Geese",
                 "time": 32.38,
                 "player": "myekul",
                 "url": "https://youtu.be/D_Xa8VsYQ8A"
