@@ -5,6 +5,7 @@ function rrcCustomTooltip(delta, split, segmentDelta, title, sceneName) {
     <br>
     <br>Split: ${secondsToHMS(split)} (<span class='${redGreen(delta)}'>${getDelta(delta.toFixed(2))}</span>)
     <br>Segment: <span class='${redGreen(segmentDelta)}'>${getDelta(segmentDelta.toFixed(2))}</span>`;
+    // Level Time
 }
 
 function rrcChartData() {

@@ -341,6 +341,7 @@
             {
                 "name": "Gemini",
                 "time": "1:05.65",
+                "rta": "1:06.02",
                 "player": "myekul",
                 "url": "https://www.youtube.com/watch?v=O3ew6NEai84&t=317s"
             }
@@ -2041,18 +2042,30 @@
                 "odds": "3/14"
             },
             {
-                "name": "Spider",
-                "time": 50.92,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/00lelICyxe4",
+                "name": "Spider Clap",
+                "time": 49.27,
+                "player": "myekul",
+                "url": "https://youtu.be/-VjKad7h7D4",
                 "odds": "1/7"
             },
             {
+                "name": "Spider",
+                "time": 50.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/00lelICyxe4"
+            },
+            {
                 "name": "Clap Spider",
+                "time": 47.76,
+                "player": "myekul",
+                "url": "https://youtu.be/MGGhCdQNWpg",
+                "odds": "1/14"
+            },
+            {
+                "name": "Clap Spider (5 Bounce)",
                 "time": 49.25,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/6C9dO0JKQI4",
-                "odds": "1/14"
+                "url": "https://youtu.be/6C9dO0JKQI4"
             },
             {
                 "title": "Freeze Spider",
@@ -2313,12 +2326,14 @@
             {
                 "name": "Triple Triple",
                 "time": 16.19,
+                "rta": 16.56,
                 "player": "Yuka",
                 "url": "https://youtu.be/Mp0q1udGU08"
             },
             {
                 "name": "Far Away",
                 "time": 17.33,
+                "rta": "17.70",
                 "player": "Yuka",
                 "url": "https://youtu.be/QHujccQie7o"
             }
@@ -2896,6 +2911,7 @@
             {
                 "name": "Seeds, Lunge",
                 "time": "35.80",
+                "rta": 35.98,
                 "player": "minamikori",
                 "url": "https://youtu.be/nbpm-KzwBek"
             },
@@ -4142,6 +4158,12 @@
                 "url": "https://youtu.be/GSSuIjR4bQk"
             },
             {
+                "name": "Waffle, Gumball, Cupcake",
+                "time": 31.45,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ZZaU1wrF5C8"
+            },
+            {
                 "name": "Waffle, Gumball, Jawbreaker",
                 "time": 34.31,
                 "player": "DaniStuff2345",
@@ -4206,6 +4228,12 @@
                 "time": 37.22,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/YXYDsDLL8Mc"
+            },
+            {
+                "name": "Candy Corn, Gumball, Waffle",
+                "time": 30.77,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/PJnF3xd_8oA"
             },
             {
                 "name": "Candy Corn, Gumball, Jawbreaker",
@@ -5266,6 +5294,7 @@
             {
                 "name": "Cauldron",
                 "time": 30.51,
+                "rta": 30.87,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/s0ZClYzW1F4"
             },
@@ -5448,9 +5477,9 @@
             },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
-                "time": 32,
-                "player": "myekul",
-                "url": "https://youtu.be/fd3iMvS5Mt8"
+                "time": 29.52,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/avDHep_jpq8"
             }
         ],
         "beppitheclown": [
@@ -5460,6 +5489,7 @@
             {
                 "name": "Parries",
                 "time": 37.33,
+                "rta": "37.70",
                 "player": "myekul",
                 "url": "https://youtu.be/C_NjDq49Wtk"
             },
