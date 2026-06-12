@@ -2056,9 +2056,9 @@
             },
             {
                 "name": "Clap Spider",
-                "time": 47.76,
+                "time": 47.49,
                 "player": "myekul",
-                "url": "https://youtu.be/MGGhCdQNWpg",
+                "url": "https://youtu.be/Dp8TyzVV4Y0",
                 "odds": "1/14"
             },
             {
@@ -3351,6 +3351,21 @@
                 "url": "https://youtu.be/8y-I_UkvuP0"
             },
             {
+                "title": "Spider"
+            },
+            {
+                "name": "Clap Spider",
+                "time": "50.60",
+                "player": "myekul",
+                "url": "https://youtu.be/xUQfmuU8SLk"
+            },
+            {
+                "name": "Spider Clap",
+                "time": "50.97",
+                "player": "myekul",
+                "url": "https://youtu.be/T9y4Qmbindo"
+            },
+            {
                 "title": "Freeze"
             },
             {
@@ -3409,9 +3424,9 @@
             },
             {
                 "name": "2",
-                "time": 48.99,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=MI-K-oZjQdA&t=111s"
+                "time": 47.97,
+                "player": "ExclamationMarkYT",
+                "url": "https://www.youtube.com/watch?v=UHeX2KnTp4o&t=6s"
             },
             {
                 "name": "1-2",
@@ -3449,9 +3464,9 @@
         "mortimerfreeze": [
             {
                 "name": "Whale",
-                "time": "40.20",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/kkpeKDb7344"
+                "time": 40.08,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/nnUcwIws-Ns"
             },
             {
                 "name": "Cards",
@@ -4411,6 +4426,12 @@
             },
             {
                 "name": "Spider Clap",
+                "time": 49.78,
+                "player": "myekul",
+                "url": "https://youtu.be/81GsqYKoLM4"
+            },
+            {
+                "name": "Spider Clap (4 Bounce)",
                 "time": 56.13,
                 "player": "myekul",
                 "url": "https://www.youtube.com/watch?v=hwv5dQf1nK8&t=2357s"
@@ -5093,6 +5114,12 @@
             },
             {
                 "title": "Half Chargimate"
+            },
+            {
+                "name": "LD-S",
+                "time": "1:02.23",
+                "player": "HappyWolf",
+                "url": "https://www.youtube.com/watch?v=m8NsW68dhfc&t=436s"
             },
             {
                 "name": "SLD",
