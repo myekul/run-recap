@@ -10,9 +10,10 @@ function modalSubmit() {
             bossSelectHTML += `</optgroup>`
         }
     })
-    if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
+    if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+        const levels = altStratOther == '300%' ? OTHER_LEVELS : OTHER_LEVELS.slice(-5)
         bossSelectHTML += `<optgroup label='Other'>`
-        OTHER_LEVELS.forEach(level => {
+        levels.forEach(level => {
             bossSelectHTML += `<option value='${level}'>${level}</option>`
         })
         bossSelectHTML += `</optgroup>`
