@@ -2230,22 +2230,22 @@
     "Legacy": {
         "therootpack": [
             {
-                "name": "Potato EX",
+                "name": "",
                 "time": "26.20",
                 "player": "Yuka",
                 "url": "https://youtu.be/l9Rbi9SOiwA"
             },
             {
-                "name": "No Potato EXs, Onion Dash",
+                "name": "No Potato EX, Onion Dash",
                 "time": 27.16,
                 "player": "graven_",
                 "url": "https://youtu.be/uVqd14xZ-zk"
             },
             {
                 "name": "All Doubles",
-                "time": 27.47,
+                "time": 27.27,
                 "player": "Yuka",
-                "url": "https://youtu.be/Yl8vNUhaX5Q"
+                "url": "https://youtu.be/-td9Yp7yDfk"
             },
             {
                 "name": "No Doubles/Triples",
@@ -2254,10 +2254,19 @@
                 "url": "https://youtu.be/ZPR2PWzL9gI"
             },
             {
-                "name": "TAS Lobber",
+                "title": "TAS Lobber"
+            },
+            {
+                "name": "",
                 "time": 25.95,
                 "player": "Yuka",
                 "url": "https://youtu.be/ebtFaKM2NlY"
+            },
+            {
+                "name": "All Doubles",
+                "time": 26.81,
+                "player": "Yuka",
+                "url": "https://youtu.be/Kpx2ADfrBd0"
             }
         ],
         "ribbyandcroaks": [
@@ -2290,18 +2299,30 @@
             },
             {
                 "name": "Punches, Bulls",
-                "time": 34.59,
-                "player": "graven_",
-                "url": "https://youtu.be/VHftKOTABRs"
+                "time": 34.38,
+                "player": "Yuka",
+                "url": "https://youtu.be/cF2LEDD5lfs"
+            },
+            {
+                "name": "Punches, Snakes",
+                "time": 34.96,
+                "player": "Yuka",
+                "url": "https://youtu.be/_Lkfyi5XX68"
+            },
+            {
+                "name": "Punches, Tigers",
+                "time": 35.73,
+                "player": "Yuka",
+                "url": "https://youtu.be/9HzyD5rtX5Q"
             },
             {
                 "title": "Regular Skip"
             },
             {
                 "name": "5 Flies, Bulls",
-                "time": 38.66,
-                "player": "Lewzr",
-                "url": "https://youtu.be/DD2wlQ3TfyA"
+                "time": 38.56,
+                "player": "Yuka",
+                "url": "https://youtu.be/Sd-DH1dgeSM"
             }
         ],
         "goopylegrande": [
@@ -2316,9 +2337,9 @@
             },
             {
                 "name": "4 Bounce",
-                "time": 17.36,
+                "time": 17.28,
                 "player": "Yuka",
-                "url": "https://youtu.be/-5tSxahrEHc"
+                "url": "https://youtu.be/SBDjd9nz68o"
             },
             {
                 "title": "Parries"
@@ -2570,6 +2591,12 @@
                 "url": "https://youtu.be/51XKGUeAUpI"
             },
             {
+                "name": "Cherry Bombs, Charge (5)",
+                "time": 26.72,
+                "player": "Yuka",
+                "url": "https://www.youtube.com/watch?v=BaboSKgIVe8&t=1076s"
+            },
+            {
                 "name": "Catapult",
                 "time": "26.70",
                 "player": "Yuka",
@@ -2719,6 +2746,12 @@
                 "url": "https://youtu.be/urC70JVICcQ?si=fgJRIKN9J0iKApok&t=32"
             },
             {
+                "name": "Pinwheel Dragon R",
+                "time": 27.93,
+                "player": "Yuka",
+                "url": "https://www.youtube.com/watch?v=mgldKD6f41k&t=44s"
+            },
+            {
                 "name": "Ring Clap Dragon R",
                 "time": "28.60",
                 "player": "graven_",
@@ -2744,6 +2777,12 @@
                 "time": 29.48,
                 "player": "Yuka",
                 "url": "https://youtu.be/J3FHqoyTHJM"
+            },
+            {
+                "name": "Clap Pinwheel Spider",
+                "time": "29.80",
+                "player": "Yuka",
+                "url": "https://www.youtube.com/watch?v=BaboSKgIVe8&t=1543s"
             },
             {
                 "name": "Clap Spider",
@@ -2933,6 +2972,12 @@
                 "url": "https://youtu.be/8w8ZzhYGUCo"
             },
             {
+                "name": "Waffle, Cupcake, Gumball",
+                "time": 34.68,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/CDO4WD1o8HI"
+            },
+            {
                 "name": "Candy Corn, Cupcake, Waffle",
                 "time": "32.90",
                 "player": "Quincely0",
@@ -2945,16 +2990,16 @@
                 "url": "https://youtu.be/b4EY5kpeMcE"
             },
             {
-                "name": "Waffle, Cupcake, Gumball",
-                "time": 34.68,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/CDO4WD1o8HI"
-            },
-            {
                 "name": "Jawbreaker, Gumball, Cupcake",
                 "time": 36.87,
                 "player": "Quincely0",
                 "url": "https://youtu.be/xhOCY89EEk0"
+            },
+            {
+                "name": "Gumball, Cupcake, Waffle",
+                "time": 36.91,
+                "player": "MarkinSws",
+                "url": "https://www.youtube.com/watch?v=-yft9MP9Z9A&t=501s"
             }
         ],
         "wallywarbles": [
@@ -3173,16 +3218,16 @@
                 "url": "https://youtu.be/dJ_fXJd1sPk"
             },
             {
-                "name": "Turtle, Yellow Fish, Ghosts",
-                "time": "1:00.36",
-                "player": "Quincely0",
-                "url": "https://youtu.be/Jn7ogCSniog"
-            },
-            {
                 "name": "Ghosts, Seahorse, Yellow Fish",
                 "time": "1:00.86",
                 "player": "Quincely0",
                 "url": "https://youtu.be/QsjsoH_SFB4"
+            },
+            {
+                "name": "Turtle, Yellow Fish, Ghosts",
+                "time": "1:00.36",
+                "player": "Quincely0",
+                "url": "https://youtu.be/Jn7ogCSniog"
             },
             {
                 "name": "Turtle, Ghosts, Seahorse, Red Fish",
@@ -3191,16 +3236,22 @@
                 "url": "https://youtu.be/oxBJCXfab4Q"
             },
             {
+                "name": "Turtle, Red Fish, Seahorse, Ghosts",
+                "time": "1:01.97",
+                "player": "HappyWolf",
+                "url": "https://youtu.be/sn-jiBcwTDo"
+            },
+            {
                 "name": "Red Fish, Turtle, Ghosts",
                 "time": "1:01.70",
                 "player": "HappyWolf",
                 "url": "https://www.youtube.com/watch?v=OqBT_yd1sVY&t=37s"
             },
             {
-                "name": "Turtle, Red Fish, Seahorse, Ghosts",
-                "time": "1:01.97",
-                "player": "HappyWolf",
-                "url": "https://youtu.be/sn-jiBcwTDo"
+                "name": "Seahorse, Red Fish, Turtle, Ghosts",
+                "time": "1:02.79",
+                "player": "MarkinSws",
+                "url": "https://www.youtube.com/watch?v=-yft9MP9Z9A&t=1369s"
             }
         ],
         "phantomexpress": [
@@ -4638,12 +4689,18 @@
         "therootpack": [
             {
                 "name": "",
-                "time": 41.66,
-                "player": "myekul",
-                "url": "https://youtu.be/KYv8k6AtLuU"
+                "time": 41.43,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/_l5NDV5bng0"
             }
         ],
         "ribbyandcroaks": [
+            {
+                "name": "Punches, 5 Flies, Snakes, Snakes",
+                "time": "1:06.34",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/gPE8y1_biyQ"
+            },
             {
                 "name": "Punches, 5 Flies, Bulls, Bulls",
                 "time": "1:08",
@@ -4674,6 +4731,12 @@
             }
         ],
         "baronessvonbonbon": [
+            {
+                "name": "Cupcake, Gumball, Waffle",
+                "time": 35.19,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/lt1Ory-shG8"
+            },
             {
                 "name": "Candy Corn, Gumball, Cupcake",
                 "time": 41,
@@ -4732,6 +4795,12 @@
             }
         ],
         "wernerwerman": [
+            {
+                "name": "Cherry Bombs, Catapult",
+                "time": 55.78,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ugM7Gdmaf7w"
+            },
             {
                 "name": "Cherry Bombs, Charge",
                 "time": 58,
