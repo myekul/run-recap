@@ -12,14 +12,14 @@ function generateInfo() {
                     <source src='images/sizzle.mp4' type='video/mp4' />
                 </video>
                 <div class='dim' style='font-size:90%'>
-                    I'm gonna check my stats,
-                    <br>So I'm gonna have to use Run Recap...
-                    <br>Inkwell Isle, uploading my file,
+                    I'm gonna check my stats
+                    <br>So I'm gonna have to use Run Recap
+                    <br>Inkwell Isle, uploading my file
                     <br>myekul's freaking awesome!
                     <br>
-                    <br>I use Run Recap,
-                    <br>I know my decimals,
-                    <br>My run's incredible,
+                    <br>I use Run Recap
+                    <br>I know my decimals
+                    <br>My run's incredible
                     <br>But my residual's terrible!
                 </div>
             </div>
