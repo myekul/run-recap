@@ -6344,157 +6344,153 @@
             "name": "ExclamationMarkYT",
             "scenes": [
                 {
-                    "name": "cutscene_intro",
-                    "endTime": 1.612
+                    "endTime": 1.574,
+                    "name": "cutscene_intro"
                 },
                 {
-                    "name": "level_house_elder_kettle",
-                    "endTime": 10.154
+                    "endTime": 9.907,
+                    "name": "level_house_elder_kettle"
                 },
                 {
-                    "endTime": 22.926,
-                    "name": "map_world_1"
+                    "name": "map_world_1",
+                    "endTime": 22.774
                 },
                 {
-                    "levelTime": 34.07,
+                    "levelTime": 34.35,
                     "name": "level_platforming_1_1F",
-                    "endTime": 61.205
+                    "endTime": 61.319
                 },
                 {
-                    "name": "win",
                     "parries": 1,
-                    "endTime": 69.977,
+                    "name": "win",
                     "coins": 5,
+                    "endTime": 70.148,
                     "hp": 1
                 },
                 {
-                    "endTime": 76.998,
-                    "name": "map_world_1"
+                    "name": "map_world_1",
+                    "endTime": 77.164
                 },
                 {
-                    "endTime": 82.902,
+                    "endTime": 83.026,
                     "name": "shop"
                 },
                 {
                     "name": "map_world_1",
-                    "endTime": 93.987
+                    "endTime": 94.023
                 },
                 {
-                    "name": "level_mausoleum",
-                    "endTime": 158.53
+                    "endTime": 158.96,
+                    "name": "level_mausoleum"
                 },
                 {
-                    "endTime": 170.57999999999998,
-                    "name": "map_world_1"
+                    "name": "map_world_1",
+                    "endTime": 170.9
                 },
                 {
                     "name": "cutscene_dlc_intro",
-                    "endTime": 172.365
+                    "endTime": 172.656
                 },
                 {
                     "name": "level_kitchen",
-                    "endTime": 174.713
+                    "endTime": 174.973
                 },
                 {
-                    "endTime": 184.777,
+                    "endTime": 184.919,
                     "name": "map_world_DLC"
                 },
                 {
-                    "name": "level_old_man",
-                    "endTime": 239.65800000000002,
-                    "levelTime": 47.64
+                    "levelTime": 46.94,
+                    "endTime": 238.703,
+                    "name": "level_old_man"
                 },
                 {
-                    "superMeter": 10,
-                    "parries": 3,
-                    "starSkips": 1,
                     "name": "win",
-                    "endTime": 247.864,
-                    "hp": 1
-                },
-                {
-                    "endTime": 260.015,
-                    "name": "map_world_DLC"
-                },
-                {
-                    "endTime": 308.585,
-                    "name": "level_snow_cult",
-                    "levelTime": 42.1
-                },
-                {
-                    "endTime": 316.501,
-                    "hp": 1,
-                    "parries": 0,
-                    "superMeter": 8,
-                    "name": "win"
-                },
-                {
-                    "endTime": 327.998,
-                    "name": "map_world_DLC"
-                },
-                {
-                    "levelTime": 47.42,
-                    "name": "level_airplane",
-                    "endTime": 381.904
-                },
-                {
-                    "starSkips": 2,
-                    "name": "win",
-                    "parries": 0,
-                    "superMeter": 7,
-                    "endTime": 388.925,
-                    "hp": 2
+                    "endTime": 247.632,
+                    "hp": 3,
+                    "parries": 2,
+                    "superMeter": 9
                 },
                 {
                     "name": "map_world_DLC",
-                    "endTime": 402.666
+                    "endTime": 259.678
                 },
                 {
-                    "levelTime": 61,
-                    "endTime": 472.15999999999997,
-                    "name": "level_flying_cowboy"
+                    "name": "level_snow_cult",
+                    "endTime": 307.272,
+                    "levelTime": 41.11
                 },
                 {
-                    "superMeter": 29,
-                    "parries": 5,
-                    "starSkips": 1,
+                    "starSkips": 2,
+                    "hp": 1,
                     "name": "win",
-                    "endTime": 480.667,
+                    "endTime": 314.36,
+                    "parries": 0,
+                    "superMeter": 8
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 325.85699999999997
+                },
+                {
+                    "levelTime": 48.83,
+                    "endTime": 381.16700000000003,
+                    "name": "level_airplane"
+                },
+                {
+                    "parries": 0,
+                    "superMeter": 7,
+                    "name": "win",
+                    "endTime": 389.16700000000003,
                     "hp": 1
                 },
                 {
-                    "endTime": 492.18,
+                    "endTime": 402.862,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "endTime": 475.514,
+                    "name": "level_flying_cowboy",
+                    "levelTime": 65.45
+                },
+                {
+                    "superMeter": 32,
+                    "parries": 4,
+                    "endTime": 483.817,
+                    "name": "win",
+                    "hp": 1,
+                    "starSkips": 1
+                },
+                {
+                    "endTime": 495.269,
                     "name": "map_world_DLC"
                 },
                 {
                     "name": "level_rum_runners",
-                    "endTime": 539.685,
-                    "levelTime": 41.02
+                    "endTime": 539.082,
+                    "levelTime": 37.33
                 },
                 {
-                    "endTime": 547.036,
-                    "hp": 1,
-                    "name": "win",
-                    "starSkips": 1,
-                    "parries": 0,
-                    "superMeter": 6
+                    "endTime": 546.096,
+                    "superMeter": 8,
+                    "name": "win"
                 },
                 {
-                    "endTime": 562.47,
-                    "name": "map_world_DLC"
+                    "name": "map_world_DLC",
+                    "endTime": 561.494
                 },
                 {
-                    "endTime": 569.105,
+                    "endTime": 568.102,
                     "name": "level_kitchen"
                 },
                 {
-                    "name": "cutscene_dlc_saltbaker_prebattle",
-                    "endTime": 570.804
+                    "endTime": 569.84,
+                    "name": "cutscene_dlc_saltbaker_prebattle"
                 },
                 {
-                    "levelTime": 53.16,
-                    "endTime": 624.326,
-                    "name": "level_saltbaker"
+                    "name": "level_saltbaker",
+                    "endTime": 623.999,
+                    "levelTime": 54.13
                 }
             ]
         },
