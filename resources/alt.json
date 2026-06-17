@@ -1852,10 +1852,19 @@
         ],
         "kingdice2": [
             {
-                "name": "<1 Card",
+                "title": "Damageless"
+            },
+            {
+                "name": "Extra Card",
                 "time": "25.30",
                 "player": "Misterbutter444",
                 "url": "https://www.youtube.com/watch?v=L6aavF1k9eI&t=122s"
+            },
+            {
+                "name": "No Cards",
+                "time": "25.30",
+                "player": "Misterbutter444",
+                "url": "https://youtu.be/_h33HTx6Q9A"
             }
         ],
         "thedevil": [
@@ -4088,6 +4097,12 @@
                 "time": 36.44,
                 "player": "myekul",
                 "url": "https://youtu.be/yU4c2KVBnIY"
+            },
+            {
+                "name": "No Secret Phase",
+                "time": 37.43,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/AlnfzrzQQYc"
             }
         ],
         "ribbyandcroaks": [
@@ -4408,15 +4423,42 @@
         "captainbrineybeard": [
             {
                 "name": "2-Gun, Gun",
-                "time": 38.92,
+                "time": 38.75,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/AuWgyu4ba7I"
+                "url": "https://youtu.be/5AuUgTlyK7k"
+            },
+            {
+                "name": "2-Gun, Dogfish",
+                "time": 39.64,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/P1Idl8DpyKU"
             },
             {
                 "name": "Shark, Gun",
-                "time": 42.86,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=1885s"
+                "time": 41.93,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/kL7EWIlPfD8"
+            },
+            {
+                "name": "Dogfish, Dogfish",
+                "time": "43.60",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/nK5RhdtQGkc"
+            },
+            {
+                "title": "Other"
+            },
+            {
+                "name": "Dogfish",
+                "time": 37.87,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/2eFmcxOWlNU"
+            },
+            {
+                "name": "Dogfish, Dogfish (Max)",
+                "time": 48.99,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/AZdaKBqBVmk"
             }
         ],
         "phantomexpress": [
@@ -4473,10 +4515,16 @@
                 "title": "Dragon"
             },
             {
-                "name": "Clap Dragon",
-                "time": 52.77,
+                "name": "Dragon Clap",
+                "time": "48.30",
                 "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=fMCBzfN-6tI&t=2404s"
+                "url": "https://youtu.be/eegyIdSYlgI"
+            },
+            {
+                "name": "Clap Dragon",
+                "time": 48.48,
+                "player": "myekul",
+                "url": "https://youtu.be/Q-QuWFHmNgg"
             },
             {
                 "title": "Spider"
@@ -4739,9 +4787,9 @@
         "baronessvonbonbon": [
             {
                 "name": "Cupcake, Gumball, Waffle",
-                "time": 35.19,
+                "time": 34.87,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/lt1Ory-shG8"
+                "url": "https://youtu.be/ItKoIJ_IXtA"
             },
             {
                 "name": "Candy Corn, Gumball, Cupcake",
@@ -4864,7 +4912,7 @@
         ],
         "thedevil": [
             {
-                "name": "Clap, Bubbles",
+                "name": "Clap Bubbles",
                 "time": 54.11,
                 "player": "myekul",
                 "url": "https://youtu.be/cvzEl4Pk0H8"
@@ -5094,7 +5142,7 @@
         ],
         "thedevil": [
             {
-                "name": "Clap, Bubbles",
+                "name": "Clap Bubbles",
                 "time": 51.93,
                 "player": "myekul",
                 "url": "https://youtu.be/6zI1ViWFknc"

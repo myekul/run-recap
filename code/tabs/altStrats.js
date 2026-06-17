@@ -321,13 +321,13 @@ function altStrats(query) {
                 </td>
             </tr>`
     const altStratCategories = []
-    const categoryNames = []
+    const cataNames = []
     let RTAcheck = false
     if (commBestILsAll) {
         for (const category in alt) {
             if (alt[category][query] && !alt[category][query][0].copy) {
                 altStratCategories.push(alt[category])
-                categoryNames.push(category)
+                cataNames.push(category)
                 if (alt[category][query].some(strat => strat.rta)) RTAcheck = true
             }
         }
@@ -339,7 +339,7 @@ function altStrats(query) {
         if (altStratCategories.length > 1) {
             HTMLContent += `
             <tr>
-                <td colspan=10><div class='container gray' style='padding:6px 0'>${generateBoardTitle(categoryNames[cataIndex])}</div></td>
+                <td colspan=10><div class='container gray' style='padding:6px 0'>${generateBoardTitle(cataNames[cataIndex])}</div></td>
             </tr>`
         }
         const baronessCheck = query == 'baronessvonbonbon'
