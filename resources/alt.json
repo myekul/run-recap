@@ -2214,10 +2214,16 @@
                 "url": "https://youtu.be/UM_GwElcLiU"
             },
             {
-                "name": "Bubbles Clap Spider",
-                "time": 41.93,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/wmvDccZy624"
+                "name": "Bubbles Clap Spider (Slower)",
+                "time": 40.56,
+                "player": "Lewzr",
+                "url": "https://youtu.be/nsVPQegdQKk"
+            },
+            {
+                "name": "Bubbles Clap Spider (Slowest)",
+                "time": "41.90",
+                "player": "Lewzr",
+                "url": "https://youtu.be/0RABNor0MPE"
             },
             {
                 "title": "Head Skip"
@@ -4147,9 +4153,9 @@
             },
             {
                 "name": "5 Flies, Punches, Tigers",
-                "time": 49.06,
-                "player": "myekul",
-                "url": "https://youtu.be/z23DklK7ETg?si=FnUdSu0_DOhvWtXb&t=801"
+                "time": 48.91,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/JEb7B-TjFIQ"
             },
             {
                 "title": "Punches Regular Skip"
@@ -4212,12 +4218,6 @@
         ],
         "baronessvonbonbon": [
             {
-                "name": "Gumball, Cupcake, Waffle",
-                "time": 30.67,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/I3zf7bT8kwI"
-            },
-            {
                 "name": "Gumball, Candy Corn, Waffle",
                 "time": 30.28,
                 "player": "DaniStuff2345",
@@ -4248,10 +4248,34 @@
                 "url": "https://youtu.be/HvfIX8BzGBc"
             },
             {
+                "name": "Gumball, Cupcake, Waffle",
+                "time": 30.67,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/I3zf7bT8kwI"
+            },
+            {
                 "name": "Gumball, Jawbreaker, Waffle",
                 "time": 33.76,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/bKWGGvJG-N4"
+            },
+            {
+                "name": "Candy Corn, Gumball, Waffle",
+                "time": 30.59,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ycVCEPR5Pu8"
+            },
+            {
+                "name": "Candy Corn, Gumball, Jawbreaker",
+                "time": 34.79,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/hP6x9oAhh5s"
+            },
+            {
+                "name": "Candy Corn, Jawbreaker, Gumball",
+                "time": 35.58,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/dxtwt8nwfPo"
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
@@ -4336,24 +4360,6 @@
                 "time": 37.22,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/YXYDsDLL8Mc"
-            },
-            {
-                "name": "Candy Corn, Gumball, Waffle",
-                "time": 30.77,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/PJnF3xd_8oA"
-            },
-            {
-                "name": "Candy Corn, Gumball, Jawbreaker",
-                "time": 34.88,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/KZwbwG_Cf9c"
-            },
-            {
-                "name": "Candy Corn, Jawbreaker, Gumball",
-                "time": 35.58,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/dxtwt8nwfPo"
             }
         ],
         "beppitheclown": [
@@ -4848,6 +4854,12 @@
             }
         ],
         "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 41.94,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Z00G4pzKlxU"
+            },
             {
                 "name": "Triangles",
                 "time": 46,
