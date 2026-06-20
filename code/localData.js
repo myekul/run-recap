@@ -252,6 +252,7 @@ function organizeAltStrats() {
     alt['NMG'].captainbrineybeard = alt['1.1+'].captainbrineybeard
         .filter(strat => strat.title || !strat.name.includes('Squid'))
         .map(strat => ({ ...strat, copy: '1.1+' }))
+    copyDuplicate('1.1+', DUPLICATE_FOLLIES_1_1, 'forestfollies')
     copyDuplicate('NMG', DUPLICATE_FOLLIES_NMG, 'forestfollies')
     copyDuplicate('DLC L/S', DUPLICATE_FOLLIES_MAUS, 'forestfollies')
     copyDuplicate('DLC L/S', DUPLICATE_FOLLIES_MAUS, 'mausoleum')

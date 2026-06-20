@@ -363,7 +363,7 @@ function altStrats(query) {
         let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
         altStrats.forEach((strat, index) => {
             if (!(commBestILsAll && strat.copy)) {
-                if (strat.title && !(["Spider's Kiss", 'Head Skip'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
+                if (strat.title && !(["Spider's Kiss", 'Head Skip', 'Other'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
                     if (index > 0) {
                         HTMLContent += `
                         <tr>
@@ -385,7 +385,7 @@ function altStrats(query) {
                         HTMLContent += `
                         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
                             <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
-                        if (runRecapCategory.name == '1.1+' && ((query == 'thedevil' && isolatePatterns) || query == 'captainbrineybeard') && !commBestILsAll) {
+                        if (runRecapCategory.name == '1.1+' && ((query == 'thedevil' && isolatePatterns) || ODDS_BOSSES.includes(query)) && !commBestILsAll) {
                             HTMLContent += altStrats.some(strat => strat.odds3) ? oddsLayer(altStrats, index, strat, 'odds3') : ''
                             HTMLContent += oddsLayer(altStrats, index, strat, 'odds2')
                             HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`

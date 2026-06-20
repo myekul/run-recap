@@ -123,31 +123,54 @@
                 "name": "5 Flies, Bulls",
                 "time": 40.79,
                 "player": "Grondious",
-                "url": "https://youtu.be/-KvAjbtm56E"
+                "url": "https://youtu.be/-KvAjbtm56E",
+                "odds": "1/24",
+                "odds2": 2,
+                "odds3": 7
             },
             {
                 "name": "5 Flies, Tigers",
                 "time": 42.18,
                 "player": "Quincely0",
-                "url": "https://youtu.be/-SZruEmwtf0"
+                "url": "https://youtu.be/-SZruEmwtf0",
+                "odds": "1/24"
             },
             {
                 "name": "6 Flies, Tigers",
                 "time": 42.08,
                 "player": "Quincely0",
-                "url": "https://youtu.be/PELA-xDl1LU"
+                "url": "https://youtu.be/PELA-xDl1LU",
+                "odds": "1/24",
+                "odds2": 2
+            },
+            {
+                "name": "6 Flies, Snakes",
+                "time": 43.22,
+                "player": "myekul",
+                "url": "https://youtu.be/APBa43v8rF8",
+                "odds": "1/24"
             },
             {
                 "name": "7 Flies, Bulls",
                 "time": 42.26,
                 "player": "graven_",
-                "url": "https://youtu.be/BjyU2hzLh-E"
+                "url": "https://youtu.be/BjyU2hzLh-E",
+                "odds": "1/12",
+                "odds2": 3
             },
             {
                 "name": "7 Flies, Tigers",
                 "time": 43.03,
                 "player": "ClipBoardGuy",
-                "url": "https://youtu.be/m3ICEKRywRE"
+                "url": "https://youtu.be/m3ICEKRywRE",
+                "odds": "1/12"
+            },
+            {
+                "name": "7 Flies, Snakes",
+                "time": 43.34,
+                "player": "myekul",
+                "url": "https://youtu.be/zQMkUW3utME",
+                "odds": "1/12"
             },
             {
                 "title": "Punches Regular Skip"
@@ -156,19 +179,23 @@
                 "name": "Punches, Tigers",
                 "time": 43.24,
                 "player": "SBDWolf",
-                "url": "https://www.youtube.com/live/HFRhIWZuZPo?si=hKsY0NAu-ZtFQge-&t=10375"
+                "url": "https://www.youtube.com/live/HFRhIWZuZPo?si=hKsY0NAu-ZtFQge-&t=10375",
+                "odds": "1/6",
+                "odds3": 3
             },
             {
                 "name": "Punches, Bulls",
                 "time": 43.65,
                 "player": "graven_",
-                "url": "https://youtu.be/p6Q_JfXKx5Y"
+                "url": "https://youtu.be/p6Q_JfXKx5Y",
+                "odds": "1/6"
             },
             {
                 "name": "Punches, Snakes",
                 "time": 44.99,
                 "player": "Lewzr",
-                "url": "https://youtu.be/6tt6L1itrvU"
+                "url": "https://youtu.be/6tt6L1itrvU",
+                "odds": "1/6"
             },
             {
                 "title": "Flies Super Skip"
@@ -615,9 +642,9 @@
             },
             {
                 "name": "Cupcake, Candy Corn, Waffle",
-                "time": 31.22,
-                "player": "myekul",
-                "url": "https://youtu.be/Qbay_OREtJI"
+                "time": 31.04,
+                "player": "Quincely0",
+                "url": "https://youtu.be/aSpqgRDxu2k"
             },
             {
                 "name": "Cupcake, Candy Corn, Gumball",
@@ -1027,31 +1054,38 @@
                 "name": "3 Lasers, 2 Lasers, 2 Meteors",
                 "time": 45.89,
                 "player": "Quincely0",
-                "url": "https://youtu.be/wADPxhZkybg"
+                "url": "https://youtu.be/wADPxhZkybg",
+                "odds": "1/18",
+                "odds2": 3
             },
             {
                 "name": "3 Lasers, 1 Laser, 2 Meteors",
                 "time": 46.14,
                 "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=kawoqMzhDUI&t=6s"
-            },
-            {
-                "name": "2 Lasers, 4 Meteors",
-                "time": 46.76,
-                "player": "Quincely0",
-                "url": "https://youtu.be/IUQlETD7h-M"
-            },
-            {
-                "name": "2 Lasers, 3 Meteors",
-                "time": 47.41,
-                "player": "Quincely0",
-                "url": "https://youtu.be/C0HroKTUd8s"
+                "url": "https://www.youtube.com/watch?v=kawoqMzhDUI&t=6s",
+                "odds": "1/9"
             },
             {
                 "name": "3 Lasers, 2 Meteors",
                 "time": 47.47,
                 "player": "Quincely0",
-                "url": "https://youtu.be/xVOLot9AMUU"
+                "url": "https://youtu.be/xVOLot9AMUU",
+                "odds": "1/6"
+            },
+            {
+                "name": "2 Lasers, 4 Meteors",
+                "time": 46.76,
+                "player": "Quincely0",
+                "url": "https://youtu.be/IUQlETD7h-M",
+                "odds": "1/3",
+                "odds2": 2
+            },
+            {
+                "name": "2 Lasers, 3 Meteors",
+                "time": 47.41,
+                "player": "Quincely0",
+                "url": "https://youtu.be/C0HroKTUd8s",
+                "odds": "1/3"
             },
             {
                 "title": "Grim Glitch"
@@ -1523,7 +1557,7 @@
             },
             {
                 "name": "Pufferfish, Ghosts, Turtle, Red Fish",
-                "time": 56.30,
+                "time": "56.30",
                 "player": "ClipBoardGuy",
                 "url": "https://youtu.be/nUnVW7aX4zQ"
             },
@@ -1717,58 +1751,79 @@
         ],
         "mrwheezy": [
             {
-                "title": "Triples"
+                "title": "3 Triples"
             },
             {
-                "name": "1 Flame, 3 EXs",
+                "name": "1 Flame",
                 "time": 16.97,
                 "player": "Lewzr",
-                "url": "https://youtu.be/MGte7j1LDgw"
+                "url": "https://youtu.be/MGte7j1LDgw",
+                "odds": "3/8"
             },
             {
-                "name": "1 Flame, 2 EXs",
+                "name": "2 Flame",
+                "time": 18.44,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=JgCIPJ7CkkU&t=1553s",
+                "odds": "1/2"
+            },
+            {
+                "name": "3 Flame",
+                "time": "19.50",
+                "player": "Taylz",
+                "url": "https://www.youtube.com/watch?v=tjg5Uo9ptWQ&t=1556s",
+                "odds": "1/8"
+            },
+            {
+                "title": "2 Triples"
+            },
+            {
+                "name": "1 Flame",
                 "time": 17.91,
                 "player": "Grondious",
                 "url": "https://youtu.be/0OyBZFzT6BA?si=k7eF3WLVbEeIuVpW&t=20"
             },
             {
-                "name": "3 Flame, 2 EXs",
+                "name": "3 Flame",
                 "time": 19.05,
                 "player": "myekul",
                 "url": "https://youtu.be/3eR9NhyQp2k"
             },
             {
-                "title": "Doubles"
+                "title": "3 Doubles"
             },
             {
-                "name": "1 Flame, 2 EXs",
-                "time": 19.65,
-                "player": "Quincely0",
-                "url": "https://youtu.be/P8FTg7l0wok?si=OeI57B-zMah1ddTT&t=16"
-            },
-            {
-                "name": "3 Flame, 3 EXs",
+                "name": "3 Flame",
                 "time": 20.58,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/eKWOeYdjTQM?si=pjmCrLU41OjKdZcE&t=14"
             },
             {
-                "title": "Safe Strat"
+                "title": "2 Doubles"
             },
             {
-                "name": "1 Flame, 2 EXs",
+                "name": "1 Flame",
+                "time": 19.65,
+                "player": "Quincely0",
+                "url": "https://youtu.be/P8FTg7l0wok?si=OeI57B-zMah1ddTT&t=16"
+            },
+            {
+                "title": "Safe Strat, 2 EXs"
+            },
+            {
+                "name": "1 Flame",
                 "time": 19.74,
                 "player": "Quincely0",
                 "url": "https://youtu.be/rk0TFlxQYss"
             },
             {
-                "name": "2 Flame, 2 EXs",
+                "name": "2 Flame",
                 "time": 20.19,
                 "player": "Quincely0",
                 "url": "https://youtu.be/wD6N2BXQMHU"
             },
             {
-                "name": "3 Flame, 2 EXs",
+                "name": "3 Flame",
                 "time": 20.73,
                 "player": "Quincely0",
                 "url": "https://youtu.be/Glp2RRDSfD0"
@@ -2335,7 +2390,7 @@
             },
             {
                 "name": "7 Flies, Tigers",
-                "time": 33.60,
+                "time": "33.60",
                 "player": "Yuka",
                 "url": "https://youtu.be/shYqplW41Mc?si=jj19H6TGJApp_kau&t=7"
             },
@@ -4574,9 +4629,9 @@
         "treetoptrouble": [
             {
                 "name": "",
-                "time": 39.86,
+                "time": 39.62,
                 "player": "Quincely0",
-                "url": "https://youtu.be/ihz1nTZnVTk"
+                "url": "https://youtu.be/-8CCP5kUn1I"
             },
             {
                 "name": "Quincely Skip",
@@ -4961,6 +5016,16 @@
                 "time": "1:09",
                 "player": "TheMexicanRunner",
                 "url": "https://youtu.be/xm5b7jayb-4?si=_6IW_Tpp9idMfLEN&t=1981"
+            }
+        ]
+    },
+    "1.1+ Expert": {
+        "wernerwerman": [
+            {
+                "name": "",
+                "time": 39.39,
+                "player": "myekul",
+                "url": "https://youtu.be/vAk41buFdjo"
             }
         ]
     },

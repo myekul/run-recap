@@ -5,13 +5,16 @@ const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefr
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
-const OTHER_CATEGORIES = ['1.1+ All Flags', 'Low%', 'OG Charge', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
+const OTHER_CATEGORIES = ['1.1+ All Flags', 'Low%', 'OG Charge', '1.1+ Expert', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
 const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
 
 const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert']
+const DUPLICATE_FOLLIES_1_1 = ['1.1+ Expert']
 const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert']
 const DUPLICATE_FOLLIES_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
 const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge']
+
+const ODDS_BOSSES = ['captainbrineybeard', 'grimmatchstick', 'ribbyandcroaks', 'mrwheezy']
 
 const LOADOUTS = {
     'NMG P/S': ['peashooter', 'spread'],
