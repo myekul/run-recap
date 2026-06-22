@@ -136,6 +136,13 @@
                 "odds": "1/24"
             },
             {
+                "name": "5 Flies, Snakes",
+                "time": 42.74,
+                "player": "myekul",
+                "url": "https://youtu.be/W2bLCu9Ucd4",
+                "odds": "1/24"
+            },
+            {
                 "name": "6 Flies, Tigers",
                 "time": 42.08,
                 "player": "Quincely0",
@@ -309,9 +316,9 @@
             },
             {
                 "name": "Sneeze",
-                "time": "21.94",
-                "player": "Lewzr",
-                "url": "https://youtu.be/g_OgLNKxaiU"
+                "time": 21.86,
+                "player": "myekul",
+                "url": "https://youtu.be/y5H_krM5_tY"
             },
             {
                 "title": "Doubles"
@@ -1104,6 +1111,15 @@
                 "time": 48.37,
                 "player": "Quincely0",
                 "url": "https://youtu.be/A3arV8RFfAg"
+            },
+            {
+                "title": "Parries"
+            },
+            {
+                "name": "3 Lasers, 1 Laser",
+                "time": 44.64,
+                "player": "Quincely0",
+                "url": "https://youtu.be/CVK0R1gkFmQ"
             }
         ],
         "rumorhoneybottoms": [
@@ -1975,9 +1991,9 @@
             },
             {
                 "name": "Bubbles Dragon (Slower)",
-                "time": 40.74,
+                "time": 39.75,
                 "player": "myekul",
-                "url": "https://youtu.be/_mwCwD0Os2o",
+                "url": "https://youtu.be/PruXa1dP08A",
                 "odds": "3/385"
             },
             {
@@ -2016,9 +2032,9 @@
             },
             {
                 "name": "Clap Pinwheel Dragon",
-                "time": 40.94,
+                "time": 40.77,
                 "player": "myekul",
-                "url": "https://youtu.be/3ZQsQKUIVI0",
+                "url": "https://youtu.be/qLTn5_69nLI",
                 "odds": "3/140"
             },
             {
@@ -2102,9 +2118,9 @@
             },
             {
                 "name": "Clap Bubbles Clap Dragon (Slowest)",
-                "time": 51.67,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/hL_I1_63fpU",
+                "time": 51.51,
+                "player": "myekul",
+                "url": "https://youtu.be/g2lLw258c4c",
                 "odds": "1/385"
             },
             {
@@ -2302,6 +2318,21 @@
                 "url": "https://youtu.be/EXK3Ki0Lkso"
             },
             {
+                "title": "Max Delays"
+            },
+            {
+                "name": "Clap Bubbles Clap Dragon",
+                "time": 52.41,
+                "player": "myekul",
+                "url": "https://youtu.be/13Xk2QpFhTc"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider",
+                "time": "1:01.08",
+                "player": "myekul",
+                "url": "https://youtu.be/GY2AnaWzUYM"
+            },
+            {
                 "title": "Other"
             },
             {
@@ -2309,12 +2340,6 @@
                 "time": 41.35,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/zdkiIrRID9A"
-            },
-            {
-                "name": "Clap Bubbles Clap Spider (Max Delays)",
-                "time": "1:01.08",
-                "player": "myekul",
-                "url": "https://youtu.be/GY2AnaWzUYM"
             }
         ]
     },
@@ -3566,9 +3591,9 @@
         "mausoleum": [
             {
                 "name": "1-1",
-                "time": 47.53,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=nNCr56OaxZs&t=110s"
+                "time": 47.42,
+                "player": "Freakykkj",
+                "url": "https://youtu.be/qoURDdrts-U"
             },
             {
                 "name": "2",
@@ -4340,9 +4365,9 @@
             },
             {
                 "name": "Waffle, Cupcake, Gumball",
-                "time": "31.10",
+                "time": "31.09",
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/GSSuIjR4bQk"
+                "url": "https://youtu.be/hRz6Ynbtff4"
             },
             {
                 "name": "Waffle, Gumball, Cupcake",
@@ -4367,6 +4392,12 @@
                 "time": 31.36,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/jch-y4jVlbE"
+            },
+            {
+                "name": "Cupcake, Waffle, Gumball",
+                "time": 31.51,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/eLitcYhDeSk"
             },
             {
                 "name": "Cupcake, Gumball, Candy Corn",
@@ -4673,16 +4704,81 @@
             }
         ]
     },
-    "Low%": {
+    "Legacy Low%": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 52,
+                "player": "Kirthar",
+                "url": "https://www.twitch.tv/videos/1289538986"
+            }
+        ],
+        "djimmithegreat": [
+            {
+                "name": "Freeze",
+                "time": "1:21.90",
+                "player": "Yuka",
+                "url": "https://youtu.be/SFkeHPttTxM"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "2 Lasers, 4 Meteors, 2 Meteors",
+                "time": 58.32,
+                "player": "Yuka",
+                "url": "https://youtu.be/I6E_yQ-95zY"
+            }
+        ],
+        "drkhalsrobot": [
+            {
+                "name": "",
+                "time": 52.65,
+                "player": "Yuka",
+                "url": "https://youtu.be/mLLj1PMTyys"
+            }
+        ],
+        "calamaria": [
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "Red Fish, Seahorse, Ghosts, Pufferfish",
+                "time": "1:02",
+                "player": "Kirthar",
+                "url": "https://www.twitch.tv/videos/1280481637"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap Bubbles Clap Dragon R",
+                "time": "1:12.81",
+                "player": "Yuka",
+                "url": "https://youtu.be/JHHz0Czk8Mg"
+            }
+        ]
+    },
+    "1.1+ Low%": {
         "therootpack": [
             {
                 "name": "",
                 "time": "47.90",
                 "player": "Quincely0",
                 "url": "https://youtu.be/usYVgDZEdtg"
+            },
+            {
+                "name": "No Secret Phase",
+                "time": 52,
+                "player": "Kirthar",
+                "url": "https://www.twitch.tv/videos/1289538986"
             }
         ],
         "ribbyandcroaks": [
+            {
+                "name": "Punches, 5 Flies, Bulls",
+                "time": "1:03.84",
+                "player": "Yuka",
+                "url": "https://youtu.be/OMBP3q1h094"
+            },
             {
                 "name": "Punches, 5 Flies, Tigers",
                 "time": "1:04.01",
@@ -4715,7 +4811,7 @@
         "baronessvonbonbon": [
             {
                 "name": "Candy Corn, Gumball, Cupcake",
-                "time": 53,
+                "time": 53.84,
                 "player": "Yuka",
                 "url": "https://youtu.be/d8Q4ew5umpo"
             },
@@ -4724,6 +4820,14 @@
                 "time": 59.37,
                 "player": "BlackTower",
                 "url": "https://www.youtube.com/watch?v=oWKMXYyq8oc&t=538s"
+            }
+        ],
+        "wallywarbles": [
+            {
+                "name": "",
+                "time": 55.94,
+                "player": "Yuka",
+                "url": "https://youtu.be/HltY_wXvIVg"
             }
         ],
         "djimmithegreat": [
@@ -4737,9 +4841,9 @@
         "beppitheclown": [
             {
                 "name": "",
-                "time": "1:19.63",
-                "player": "BlackTower",
-                "url": "https://www.youtube.com/watch?v=oWKMXYyq8oc&t=839s"
+                "time": "1:14.79",
+                "player": "Yuka",
+                "url": "https://youtu.be/43Oh19cWK50"
             }
         ],
         "grimmatchstick": [
@@ -4753,9 +4857,9 @@
         "rumorhoneybottoms": [
             {
                 "name": "Triangles",
-                "time": 52.15,
-                "player": "BlackTower",
-                "url": "https://youtu.be/oWKMXYyq8oc?si=QbIfIcRFdiEn94CM&t=1067"
+                "time": 50.99,
+                "player": "Yuka",
+                "url": "https://youtu.be/VUiJeiqKZ1A"
             }
         ],
         "sallystageplay": [
@@ -4786,6 +4890,17 @@
                 "time": 47.97,
                 "player": "Yuka",
                 "url": "https://youtu.be/QuKFMhTJ_dQ"
+            }
+        ],
+        "calamaria": [
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "Red Fish, Seahorse, Ghosts, Pufferfish",
+                "time": "1:02",
+                "player": "Kirthar",
+                "url": "https://www.twitch.tv/videos/1280481637"
             }
         ],
         "phantomexpress": [

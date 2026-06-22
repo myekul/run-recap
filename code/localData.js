@@ -9,6 +9,8 @@ async function prepareLocalData() {
     commBest = commBestData
     runViable = runViableData
     alt = altData
+    runViable['DLC+Base L/S'].unshift(...runViable['DLC L/S'])
+    runViable['DLC+Base C/S'].unshift(...runViable['DLC C/S'])
     // scenes
     scenes['DLC+Base'] = scenes['DLC+Base C/S']
     for (const category in scenes) {
@@ -231,14 +233,15 @@ function organizeAltStrats() {
         ['1.1+', 'Legacy', 'forestfollies'],
         ['1.1+', '1.1+ All Flags', 'forestfollies'],
         ['1.1+', 'OG Charge', 'hildaberg'],
-        ['1.1+', 'Low%', 'hildaberg'],
+        ['1.1+', '1.1+ Low%', 'hildaberg'],
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
+        ['Legacy', 'Low% 1.0', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
-        ['Low%', 'OG Charge', 'djimmithegreat'],
+        ['1.1+ Low%', 'OG Charge', 'djimmithegreat'],
         ['DLC L/S', 'DLC OG Charge', 'mausoleum'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
@@ -277,16 +280,18 @@ function organizeAltStrats() {
         )
     })
     let sum = 0
-    OTHER_CATEGORIES.forEach((altStratCategory, index) => {
-        const category = commBestILs[altStratCategory]
-        const altStrats = alt[altStratCategory]
-        for (const boss in altStrats) {
-            for (const obj of altStrats[boss]) {
-                if (!obj.title && !obj.copy) {
-                    sum++
+    OTHER_CATEGORIES.forEach(categoryArray => {
+        categoryArray.forEach((altStratCategory, index) => {
+            const category = commBestILs[altStratCategory]
+            const altStrats = alt[altStratCategory]
+            for (const boss in altStrats) {
+                for (const obj of altStrats[boss]) {
+                    if (!obj.title && !obj.copy) {
+                        sum++
+                    }
                 }
             }
-        }
+        })
     })
     document.getElementById('otherCategoryButton').insertAdjacentHTML(
         'afterend',

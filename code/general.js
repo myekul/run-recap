@@ -152,15 +152,19 @@ function altStratSum(category) {
     return sum
 }
 function otherCategories() {
-    let HTMLContent = `<div class='container' style='margin:10px'><div class='otherCategories'>`
-    OTHER_CATEGORIES.forEach(category => {
-        HTMLContent += `
+    let HTMLContent = `<div class='container' style='margin:10px'>`
+    OTHER_CATEGORIES.forEach(categoryArray => {
+        HTMLContent += `<div class='otherCategories'>`
+        categoryArray.forEach(category => {
+            HTMLContent += `
         <div class='container' style='justify-content:flex-start'>
             <button class='button ${category == altStratOther && runRecapCategory.name == 'Other' ? 'selected' : ''}' style='background-color:gray;width:200px' onclick="chooseOtherCategory('${category}')">${category}</button>
             <div class='altStratNum'>${altStratSum(category)}</div>
         </div>`
+        })
+        HTMLContent += `</div>`
     })
-    HTMLContent += `</div></div>`
+    HTMLContent += `</div>`
     openModal(HTMLContent, 'OTHER CATEGORIES')
 }
 function chooseOtherCategory(category) {
