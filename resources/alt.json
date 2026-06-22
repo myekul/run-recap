@@ -3772,13 +3772,13 @@
                 "title": "2.5-cycle"
             },
             {
-                "name": "LL",
+                "name": "L-L",
                 "time": "51.80",
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/ARbNnh0vRJQ"
             },
             {
-                "name": "LS",
+                "name": "L-S",
                 "time": 53.08,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/RRyPkfHkqTw"
@@ -4729,7 +4729,7 @@
                 "url": "https://youtu.be/I6E_yQ-95zY"
             }
         ],
-        "drkhalsrobot": [
+        "drkahlsrobot": [
             {
                 "name": "",
                 "time": 52.65,

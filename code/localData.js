@@ -238,7 +238,7 @@ function organizeAltStrats() {
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
-        ['Legacy', 'Low% 1.0', 'hildaberg'],
+        ['Legacy', 'Legacy Low%', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
         ['1.1+ Low%', 'OG Charge', 'djimmithegreat'],
@@ -263,6 +263,7 @@ function organizeAltStrats() {
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
     copyBulk('1.1+', '1.1+ All Flags', bosses.slice(0, 19).map(boss => boss.id))
+    copyBulk('1.1+ Low%', 'Legacy Low%', LOW_PERCENT)
     copyBulk('DLC L/S', 'DLC+Base L/S', dlc)
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)

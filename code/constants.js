@@ -17,6 +17,8 @@ const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert']
 const DUPLICATE_FOLLIES_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
 const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge']
 
+const LOW_PERCENT = ['ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles', 'beppitheclown', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice']
+
 const ODDS_BOSSES = ['captainbrineybeard', 'grimmatchstick', 'ribbyandcroaks', 'mrwheezy']
 
 const LOADOUTS = {

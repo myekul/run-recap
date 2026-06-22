@@ -10,7 +10,7 @@ async function generateAltStrats() {
             <div class='container' style='gap:10px;margin-top:8px'>`
         assignIsles()
         const isle1 = []
-        if (!(runRecapCategory.name == 'Other' && ['Low%', 'NMG P/S'].includes(altStratOther))) isle1.push('forestfollies')
+        if (!(runRecapCategory.name == 'Other' && ['1.1+ Low%', 'Legacy Low%', 'NMG P/S'].includes(altStratOther))) isle1.push('forestfollies')
         if (mausCriteria()) isle1.push('mausoleum')
         if (runRecapCategory.name == 'Other' && altStratOther == 'OG Charge') isle1.push('treetoptrouble')
         HTMLContent += `
@@ -426,7 +426,7 @@ function altStrats(query) {
         })
         HTMLContent += `</table>`
     }
-    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query].length > 1 || commBestILsAll) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
+    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query].filter(strat => !strat.title).length > 1 || commBestILsAll) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
     HTMLContent += `</div></div>`
     return HTMLContent
 }
@@ -508,7 +508,7 @@ function bossPattern(boss, pattern) {
 function userContributions(playerName) {
     let HTMLContent = `
     ${playerDisplay(playerName)}
-    <table style='margin:10px'>`
+    <table style='margin:10px auto'>`
     const altStratCategories = []
     const categoryNames = []
     if (commBestILsAll) {
