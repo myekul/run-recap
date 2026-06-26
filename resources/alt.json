@@ -117,7 +117,7 @@
         ],
         "ribbyandcroaks": [
             {
-                "title": "Flies Regular Skip"
+                "title": "Regular Skip"
             },
             {
                 "name": "5 Flies, Bulls",
@@ -125,8 +125,8 @@
                 "player": "Grondious",
                 "url": "https://youtu.be/-KvAjbtm56E",
                 "odds": "1/24",
-                "odds2": 2,
-                "odds3": 7
+                "odds2": 3,
+                "odds3": 9
             },
             {
                 "name": "5 Flies, Tigers",
@@ -143,12 +143,19 @@
                 "odds": "1/24"
             },
             {
+                "name": "6 Flies, Bulls",
+                "time": 41.28,
+                "player": "Quincely0",
+                "url": "https://youtu.be/20XK9n3JueU",
+                "odds": "1/24",
+                "odds2": 3
+            },
+            {
                 "name": "6 Flies, Tigers",
                 "time": 42.08,
                 "player": "Quincely0",
                 "url": "https://youtu.be/PELA-xDl1LU",
-                "odds": "1/24",
-                "odds2": 2
+                "odds": "1/24"
             },
             {
                 "name": "6 Flies, Snakes",
@@ -180,9 +187,6 @@
                 "odds": "1/12"
             },
             {
-                "title": "Punches Regular Skip"
-            },
-            {
                 "name": "Punches, Tigers",
                 "time": 43.24,
                 "player": "SBDWolf",
@@ -205,7 +209,7 @@
                 "odds": "1/6"
             },
             {
-                "title": "Flies Super Skip"
+                "title": "Super Skip"
             },
             {
                 "name": "5 Flies, Punches, Tigers",
@@ -236,9 +240,6 @@
                 "time": 46.99,
                 "player": "Quincely0",
                 "url": "https://youtu.be/PkdpDejrXQM"
-            },
-            {
-                "title": "Punches Super Skip"
             },
             {
                 "name": "Punches, 5 Flies, Bulls",
@@ -940,9 +941,9 @@
             },
             {
                 "name": "5B, 4B+, 2B+",
-                "time": 42.15,
-                "player": "Lewzr",
-                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=87s"
+                "time": 41.81,
+                "player": "Quincely0",
+                "url": "https://youtu.be/L9WpRmljeag"
             },
             {
                 "name": "4B+, 2B+, 5B",
@@ -958,9 +959,9 @@
             },
             {
                 "name": "5B, 4B+, 5B+",
-                "time": 42.27,
-                "player": "Lewzr",
-                "url": "https://www.youtube.com/watch?v=aoeu3iwQCMI&t=218s"
+                "time": 41.83,
+                "player": "Quincely0",
+                "url": "https://youtu.be/IFnKuQrC8bI"
             },
             {
                 "name": "4B+, 5B+, 3B",
@@ -1883,9 +1884,15 @@
             },
             {
                 "name": "Spin, 5 Cards",
-                "time": 9.74,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/UguybSEYODk?si=gRolEVqLq3rAT12K&t=97"
+                "time": 9.59,
+                "player": "Quincely0",
+                "url": "https://youtu.be/I3N8qy3ouYY"
+            },
+            {
+                "name": "Spin, 4 Cards",
+                "time": 10.35,
+                "player": "Quincely0",
+                "url": "https://youtu.be/wKFVywxzKHY"
             },
             {
                 "name": "Charge, 5 Cards, 3 HP",
@@ -2017,17 +2024,17 @@
             },
             {
                 "name": "Clap Ring Dragon",
-                "time": 40.92,
+                "time": 40.66,
                 "player": "myekul",
-                "url": "https://youtu.be/-97awXJUARI",
+                "url": "https://youtu.be/WpQAuwPvzP0",
                 "odds": "3/140",
                 "odds2": 4
             },
             {
                 "name": "Ring Clap Dragon",
-                "time": 41.27,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/EKJTvJiG8Qc",
+                "time": 40.84,
+                "player": "myekul",
+                "url": "https://youtu.be/QyfRUjpIGsg",
                 "odds": "3/140"
             },
             {
@@ -2039,9 +2046,9 @@
             },
             {
                 "name": "Pinwheel Clap Dragon",
-                "time": 41.12,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/iMmPMKVbh6o",
+                "time": "40.90",
+                "player": "myekul",
+                "url": "https://youtu.be/EmeI-RUmnHU",
                 "odds": "3/140"
             },
             {
@@ -2975,7 +2982,7 @@
         ],
         "ribbyandcroaks": [
             {
-                "title": "Flies Regular Skip"
+                "title": "Regular Skip"
             },
             {
                 "name": "7 Flies, Snakes",
@@ -2988,9 +2995,6 @@
                 "time": 47.31,
                 "player": "Quincely0",
                 "url": "https://youtu.be/l-GNrtItWw4"
-            },
-            {
-                "title": "Punches Regular Skip"
             },
             {
                 "name": "Punches, Snakes",
@@ -3011,7 +3015,7 @@
                 "url": "https://youtu.be/pN_4I4dbKUQ"
             },
             {
-                "title": "Punches Super Skip"
+                "title": "Super Skip"
             },
             {
                 "name": "Punches, 5 Flies, Bulls",
@@ -3024,9 +3028,6 @@
                 "time": 48.03,
                 "player": "HappyWolf",
                 "url": "https://youtu.be/4fVsVD-EokY"
-            },
-            {
-                "title": "Flies Super Skip"
             },
             {
                 "name": "5 Flies, Punches, Bulls",
@@ -3882,9 +3883,9 @@
             },
             {
                 "name": "SLD 2P",
-                "time": 51.25,
-                "player": "myekul",
-                "url": "https://youtu.be/YX-NBn8AEbs"
+                "time": 51.19,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/1FH0an7BqfM"
             },
             {
                 "name": "SLD 1P",
@@ -3951,6 +3952,12 @@
             },
             {
                 "title": "4+3"
+            },
+            {
+                "name": "SLD",
+                "time": 49.89,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ElfygiPDWGY"
             },
             {
                 "name": "LSL",
@@ -4214,7 +4221,7 @@
         ],
         "ribbyandcroaks": [
             {
-                "title": "Flies Regular Skip"
+                "title": "Regular Skip"
             },
             {
                 "name": "7 Flies, Snakes",
@@ -4229,18 +4236,6 @@
                 "url": "https://youtu.be/uVCmcN7Npm4"
             },
             {
-                "title": "Flies Super Skip"
-            },
-            {
-                "name": "5 Flies, Punches, Tigers",
-                "time": 48.91,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/JEb7B-TjFIQ"
-            },
-            {
-                "title": "Punches Regular Skip"
-            },
-            {
                 "name": "Punches, Tigers",
                 "time": 47.76,
                 "player": "DaniStuff2345",
@@ -4253,7 +4248,13 @@
                 "url": "https://youtu.be/wPrrXcWnVPc"
             },
             {
-                "title": "Punches Super Skip"
+                "title": "Super Skip"
+            },
+            {
+                "name": "5 Flies, Punches, Tigers",
+                "time": 48.91,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/JEb7B-TjFIQ"
             },
             {
                 "name": "Punches, 5 Flies, Bulls",
