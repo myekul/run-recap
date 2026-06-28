@@ -248,12 +248,6 @@
                 "url": "https://youtu.be/Ei57c2WMg0U"
             },
             {
-                "name": "Punches, 5 Flies, Snakes",
-                "time": 43.98,
-                "player": "Lewzr",
-                "url": "https://youtu.be/esyIzOefrX4"
-            },
-            {
                 "title": "Flies Regular Skip (Phase 1 Triples)"
             },
             {
@@ -308,6 +302,12 @@
         "goopylegrande": [
             {
                 "title": "Triples"
+            },
+            {
+                "name": "Sneeze Skip, 2 D-boosts",
+                "time": 21.66,
+                "player": "Lewzr",
+                "url": "https://youtu.be/gKXVDRzUqdE"
             },
             {
                 "name": "Sneeze Skip",
@@ -393,15 +393,15 @@
             },
             {
                 "name": "Lunge, Lunge, Pods 3x",
-                "time": "30.40",
-                "player": "SBDWolf",
-                "url": "https://youtu.be/i8vd7vISkeQ"
+                "time": "30.23",
+                "player": "Quincely0",
+                "url": "https://youtu.be/TjgpixOQNvU"
             },
             {
                 "name": "Lunge, Lunge, Pods 2x",
-                "time": 31.74,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/ULFT1djfNq4"
+                "time": 31.35,
+                "player": "Quincely0",
+                "url": "https://www.youtube.com/watch?v=qhj2lwHYKfA&t=32s"
             },
             {
                 "name": "Lunge, Lunge, Pods 1x",
@@ -411,9 +411,9 @@
             },
             {
                 "name": "Lunge, Lunge, Seeds",
-                "time": 32.29,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/Fsttqj6NFyE"
+                "time": 32.26,
+                "player": "Quincely0",
+                "url": "https://youtu.be/5L1Gk1OXhXo"
             },
             {
                 "name": "Lunge, Pods, Seeds",
@@ -880,9 +880,9 @@
             },
             {
                 "name": "Down Eggs",
-                "time": 48.87,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/r0H3T41dgUA"
+                "time": 48.68,
+                "player": "Quincely0",
+                "url": "https://youtu.be/datvNKY2Ojk"
             },
             {
                 "name": "Down Gun",
@@ -1119,6 +1119,7 @@
             {
                 "name": "3 Lasers, 1 Laser",
                 "time": 44.64,
+                "rta": 45.36,
                 "player": "Quincely0",
                 "url": "https://youtu.be/CVK0R1gkFmQ"
             }
@@ -1199,10 +1200,10 @@
             },
             {
                 "name": "Red Gem, 1st Parry",
-                "time": 41.91,
-                "rta": 42.64,
-                "player": "myekul",
-                "url": "https://youtu.be/RpmZiYmNrM0"
+                "time": 41.24,
+                "rta": 42.15,
+                "player": "Quincely0",
+                "url": "https://www.twitch.tv/videos/2807227996"
             }
         ],
         "sallystageplay": [
@@ -1597,8 +1598,14 @@
                 "url": "https://youtu.be/jzSTQrF66E8?si=ibROTQ1FIjaXiuDF&t=1366"
             },
             {
+                "name": "Seahorse, Yellow Fish, Turtle, Ghosts",
+                "time": 56.28,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=D0D_sagsJos&t=1367s"
+            },
+            {
                 "name": "Seahorse, Ghosts, Turtle, Red Fish",
-                "time": 56.24,
+                "time": 59.06,
                 "player": "myekul",
                 "url": "https://www.youtube.com/watch?v=lW-xBuVdnm4&t=1343s"
             },
@@ -1729,6 +1736,7 @@
             {
                 "name": "Charge Pirouletta",
                 "time": "1:46.99",
+                "rta": "1:49.31",
                 "player": "Quincely0",
                 "url": "https://youtu.be/olWfSkoJiLg"
             },
@@ -2242,7 +2250,7 @@
                 "player": "SBDWolf",
                 "url": "https://youtu.be/srbUeriKqJE",
                 "odds": "3/140",
-                "odds2": 3
+                "odds2": 5
             },
             {
                 "name": "Clap Pinwheel Clap Spider",
@@ -2256,7 +2264,21 @@
                 "time": 51.07,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/Tqj8eXzo4Kc",
-                "odds": "3/105"
+                "odds": "1/105"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider (Slower)",
+                "time": "1:01.08",
+                "player": "myekul",
+                "url": "https://youtu.be/GY2AnaWzUYM",
+                "odds": "1/105"
+            },
+            {
+                "name": "Clap Bubbles Clap Spider (Slowest)",
+                "time": "1:01.08",
+                "player": "myekul",
+                "url": "https://youtu.be/GY2AnaWzUYM",
+                "odds": "1/105"
             },
             {
                 "title": "Spider's Kiss"

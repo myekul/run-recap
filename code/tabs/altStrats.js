@@ -188,7 +188,7 @@ function altStrat_topContributors(root, level) {
         </tr>`
     countArray.forEach((player, index) => {
         HTMLContent += `
-        <tr class='grow ${getRowColor(index)}' onclick="openModal(userContributions('${player.player}'),'CONTRIBUTIONS')">
+        <tr class='grow ${getRowColor(index)}' onclick="userContributions('${player.player}')">
             <td>${getPlayerDisplay(allPlayers.find(player2 => player2.name == player.player) || player.player)}</td>
             <td>${player.count}</td>
         </tr>`
@@ -363,7 +363,7 @@ function altStrats(query) {
         let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
         altStrats.forEach((strat, index) => {
             if (!(commBestILsAll && strat.copy)) {
-                if (strat.title && !(["Spider's Kiss", 'Head Skip', 'Other'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
+                if (strat.title && !(["Spider's Kiss", 'Head Skip', 'Max Delays', 'Other'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
                     if (index > 0) {
                         HTMLContent += `
                         <tr>
@@ -508,7 +508,7 @@ function bossPattern(boss, pattern) {
 function userContributions(playerName) {
     let HTMLContent = `
     ${playerDisplay(playerName)}
-    <table style='margin:10px auto'>`
+    <table style='margin:10px'>`
     const altStratCategories = []
     const categoryNames = []
     if (commBestILsAll) {
@@ -557,7 +557,7 @@ function userContributions(playerName) {
         })
     })
     HTMLContent += `</table>`
-    return HTMLContent
+    openModal(HTMLContent, 'CONTRIBUTIONS')
 }
 function altStats() {
     const cfg = STATS_CONFIG[altStratLevel]
