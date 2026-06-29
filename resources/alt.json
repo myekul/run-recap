@@ -1150,6 +1150,13 @@
                 "title": "Parries / Overdamage"
             },
             {
+                "name": "Orbs",
+                "time": 39.98,
+                "rta": 43.29,
+                "player": "myekul",
+                "url": "https://youtu.be/WALYpkULftY"
+            },
+            {
                 "name": "Triangles",
                 "time": 40.42,
                 "rta": 41.55,
@@ -1258,6 +1265,12 @@
                 "time": 37.75,
                 "player": "myekul",
                 "url": "https://youtu.be/OKNDtRCh6MU"
+            },
+            {
+                "name": "Catapult, Cherry Bombs",
+                "time": 38.58,
+                "player": "myekul",
+                "url": "https://youtu.be/M176R8sU-HI"
             },
             {
                 "title": "1 HP Backup"
@@ -2006,9 +2019,9 @@
             },
             {
                 "name": "Bubbles Dragon (Slower)",
-                "time": 39.75,
+                "time": 39.39,
                 "player": "myekul",
-                "url": "https://youtu.be/PruXa1dP08A",
+                "url": "https://youtu.be/aN3ZNQVbyE4",
                 "odds": "3/385"
             },
             {
@@ -4661,6 +4674,18 @@
                 "time": 48.48,
                 "player": "myekul",
                 "url": "https://youtu.be/Q-QuWFHmNgg"
+            },
+            {
+                "name": "Ring Dragon",
+                "time": 48.48,
+                "player": "myekul",
+                "url": "https://youtu.be/VPzCfeBZSlI"
+            },
+            {
+                "name": "Pinwheel Dragon",
+                "time": 48.45,
+                "player": "myekul",
+                "url": "https://youtu.be/lISyZiWhTmM"
             },
             {
                 "title": "Spider"
