@@ -64,6 +64,8 @@ let alt
 let altStratNum = 0
 let altStratLevel
 
+let nonviable
+
 let categoryNames = []
 
 let isolatePatterns

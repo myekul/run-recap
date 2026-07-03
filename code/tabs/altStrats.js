@@ -201,6 +201,7 @@ function altStrat_topContributors(root, level) {
     }
 }
 function altStrat_bestTimes(root) {
+    let viableCategory
     let HTMLContent = `
     <table class='shadow'>
         <tr>
@@ -219,9 +220,17 @@ function altStrat_bestTimes(root) {
         }
         if (altGroup) {
             let fastest = altGroup[0]
+            let viable
             altGroup.forEach(strat => {
                 if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
-                    fastest = strat
+                    if (!viable) fastest = strat
+                }
+                if (strat.viable) {
+                    viableCategory = true
+                    if (!nonviable) {
+                        fastest = strat
+                        viable = true
+                    }
                 }
             })
             HTMLContent += `
@@ -241,7 +250,14 @@ function altStrat_bestTimes(root) {
         }
     })
     HTMLContent += `</table>`
+    if (viableCategory) HTMLContent += `<div class='grow' style='position:absolute;left:10px;top:9px;font-size:110%' onclick="toggleViable()">${fontAwesome('toggle-' + (nonviable ? 'off' : 'on'))}</div>`
     root.querySelector('#altStrat_bestTimes').innerHTML = HTMLContent
+}
+function toggleViable() {
+    nonviable = !nonviable
+    playSound('move')
+    action()
+    toast(nonviable ? 'Nonviable' : 'Run Viable')
 }
 function drawChart() {
     let data = [['Value']]

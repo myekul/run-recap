@@ -126,7 +126,8 @@
                 "url": "https://youtu.be/-KvAjbtm56E",
                 "odds": "1/24",
                 "odds2": 3,
-                "odds3": 9
+                "odds3": 9,
+                "viable": true
             },
             {
                 "name": "5 Flies, Tigers",
@@ -500,9 +501,9 @@
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
-                "time": "31.80",
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/w9LvRPSIQUw"
+                "time": 31.74,
+                "player": "Quincely0",
+                "url": "https://youtu.be/IWAfWk7dKzA"
             },
             {
                 "name": "Waffle, Candy Corn, Jawbreaker",
@@ -548,9 +549,9 @@
             },
             {
                 "name": "Waffle, Jawbreaker, Candy Corn",
-                "time": 34.79,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=QfMFQJ-Vu3h4Mnrs&t=752"
+                "time": 34.48,
+                "player": "Quincely0",
+                "url": "https://youtu.be/gGKoa2MkC8Y"
             },
             {
                 "name": "Waffle, Jawbreaker, Cupcake",
@@ -560,15 +561,15 @@
             },
             {
                 "name": "Waffle, Jawbreaker, Gumball",
-                "time": 35.99,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=Wci0uBeV9l_loNWv&t=823"
+                "time": 35.23,
+                "player": "Quincely0",
+                "url": "https://youtu.be/1SgLcOu4NVg"
             },
             {
                 "name": "Candy Corn, Waffle, Cupcake",
-                "time": 32.39,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=6mKwfbBS2IsqV6n0"
+                "time": 32.12,
+                "player": "Quincely0",
+                "url": "https://youtu.be/FgP5v3AL5H0"
             },
             {
                 "name": "Candy Corn, Waffle, Gumball",
@@ -882,6 +883,15 @@
                 "url": "https://youtu.be/3OiJDkuHcYQ"
             },
             {
+                "title": "Left Garbage"
+            },
+            {
+                "name": "Down Eggs",
+                "time": 46.86,
+                "player": "Lewzr",
+                "url": "https://youtu.be/h8u_SQAvCDc"
+            },
+            {
                 "title": "Heart"
             },
             {
@@ -985,7 +995,8 @@
                 "name": "3B, 2B+, 5B",
                 "time": 37.91,
                 "player": "Lewzr",
-                "url": "https://youtu.be/moBcYR2UqgQ"
+                "url": "https://youtu.be/moBcYR2UqgQ",
+                "viable": true
             },
             {
                 "name": "2B+, 5B, 3B++",
@@ -1070,7 +1081,8 @@
                 "player": "Quincely0",
                 "url": "https://youtu.be/wADPxhZkybg",
                 "odds": "1/18",
-                "odds2": 3
+                "odds2": 3,
+                "viable": true
             },
             {
                 "name": "3 Lasers, 1 Laser, 2 Meteors",
@@ -1264,7 +1276,8 @@
                 "name": "Catapult, Charge",
                 "time": 36.56,
                 "player": "Quincely0",
-                "url": "https://youtu.be/fCUaQR0V4V4"
+                "url": "https://youtu.be/fCUaQR0V4V4",
+                "viable": true
             },
             {
                 "name": "Cherry Bombs, Charge",
@@ -2034,7 +2047,8 @@
                 "time": 39.39,
                 "player": "myekul",
                 "url": "https://youtu.be/aN3ZNQVbyE4",
-                "odds": "3/385"
+                "odds": "3/385",
+                "viable": true
             },
             {
                 "name": "Bubbles Dragon (Slowest)",
@@ -2407,9 +2421,9 @@
             },
             {
                 "name": "No Potato EX, Onion Dash",
-                "time": 27.16,
+                "time": 26.99,
                 "player": "graven_",
-                "url": "https://youtu.be/uVqd14xZ-zk"
+                "url": "https://youtu.be/rTCbUDLpWwU"
             },
             {
                 "name": "All Doubles",
@@ -3085,11 +3099,7 @@
         ],
         "goopylegrande": [
             {
-                "name": "Parries + Doubles",
-                "time": 26.35,
-                "rta": 26.72,
-                "player": "myekul",
-                "url": "https://youtu.be/vdr956VHZ60"
+                "title": "Standard Strats"
             },
             {
                 "name": "Doubles",
@@ -3101,7 +3111,18 @@
                 "name": "Transition Doubles",
                 "time": 27.95,
                 "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=_CaxGv2u0iI&t=22s"
+                "url": "https://www.youtube.com/watch?v=_CaxGv2u0iI&t=22s",
+                "viable": true
+            },
+            {
+                "title": "Parries"
+            },
+            {
+                "name": "Doubles",
+                "time": 26.35,
+                "rta": 26.72,
+                "player": "myekul",
+                "url": "https://youtu.be/vdr956VHZ60"
             }
         ],
         "cagneycarnation": [
@@ -3112,7 +3133,8 @@
                 "name": "Lunge, Lunge, Pods",
                 "time": 35.57,
                 "player": "Quincely0",
-                "url": "https://youtu.be/S2iW1ebfbq8"
+                "url": "https://youtu.be/S2iW1ebfbq8",
+                "viable": true
             },
             {
                 "title": "Spread EXs, Parries"
@@ -3442,7 +3464,8 @@
                 "name": "R Pumpkin",
                 "time": 58.92,
                 "player": "Quincely0",
-                "url": "https://youtu.be/akGntRCM24A"
+                "url": "https://youtu.be/akGntRCM24A",
+                "viable": true
             },
             {
                 "name": "L Pumpkin",
@@ -3728,7 +3751,8 @@
                 "time": 59.72,
                 "rta": "1:00.99",
                 "player": "MarkinSws",
-                "url": "https://youtu.be/4nrjrwTZHw8"
+                "url": "https://youtu.be/4nrjrwTZHw8",
+                "viable": true
             },
             {
                 "name": "1 Nuke",
@@ -3842,7 +3866,8 @@
                 "name": "Geese",
                 "time": 47.15,
                 "player": "myekul",
-                "url": "https://youtu.be/e3hJNxOG_mQ"
+                "url": "https://youtu.be/e3hJNxOG_mQ",
+                "viable": true
             },
             {
                 "name": "Cauldron",
@@ -3892,7 +3917,8 @@
                 "name": "Left Cat, No Delay",
                 "time": 42.58,
                 "player": "myekul",
-                "url": "https://youtu.be/J8Ko-d3MMjo"
+                "url": "https://youtu.be/J8Ko-d3MMjo",
+                "viable": true
             },
             {
                 "title": "Other"
@@ -3915,7 +3941,8 @@
                 "name": "3-Cycle",
                 "time": 37.01,
                 "player": "Quincely0",
-                "url": "https://youtu.be/C4yaobQyGC8"
+                "url": "https://youtu.be/C4yaobQyGC8",
+                "viable": true
             },
             {
                 "name": "2-Cycle",
@@ -4586,7 +4613,8 @@
                 "name": "2-Gun, Gun",
                 "time": 38.75,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/5AuUgTlyK7k"
+                "url": "https://youtu.be/5AuUgTlyK7k",
+                "viable": true
             },
             {
                 "name": "2-Gun, Dogfish",
