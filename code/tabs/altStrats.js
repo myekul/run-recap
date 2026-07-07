@@ -184,7 +184,7 @@ function altStrat_topContributors(root, level) {
     HTMLContent += `
     <table class='shadow'>
         <tr>
-            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px 8px;white-space:nowrap'>Top Contributors</td>
+            <td colspan=5 class='gray bigHeader'>Top Contributors</td>
         </tr>`
     countArray.forEach((player, index) => {
         HTMLContent += `
@@ -205,7 +205,7 @@ function altStrat_bestTimes(root) {
     let HTMLContent = `
     <table class='shadow'>
         <tr>
-            <td colspan=5 class='font2 gray' style='font-size:120%;padding:5px'>Best Times</td>
+            <td colspan=5 class='gray bigHeader'>Best Times</td>
         </tr>`
     categories.forEach((category, categoryIndex) => {
         let altGroup = []

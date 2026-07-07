@@ -302,13 +302,22 @@
         ],
         "goopylegrande": [
             {
-                "title": "Triples"
+                "title": "Triples / 2 D-boosts"
             },
             {
-                "name": "Sneeze Skip, 2 D-boosts",
+                "name": "Sneeze Skip",
                 "time": 21.66,
                 "player": "Lewzr",
                 "url": "https://youtu.be/gKXVDRzUqdE"
+            },
+            {
+                "name": "Sneeze",
+                "time": 21.76,
+                "player": "Lewzr",
+                "url": "https://youtu.be/hA7cF8xJgJ8"
+            },
+            {
+                "title": "Triples / Triple Triple"
             },
             {
                 "name": "Sneeze Skip",
@@ -3137,6 +3146,30 @@
                 "viable": true
             },
             {
+                "name": "Lunge, Pods",
+                "time": 36,
+                "player": "Uramatsu",
+                "url": "https://www.youtube.com/watch?v=nPejoCVUyQM&t=442s"
+            },
+            {
+                "name": "Lunge, Pods, Pods",
+                "time": 38.09,
+                "player": "Lewzr",
+                "url": "https://www.youtube.com/watch?v=3vX9KGjB__o&t=429s"
+            },
+            {
+                "name": "Lunge, Pods, Seeds",
+                "time": 40.27,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=FngWkJ-NEzo&t=422s"
+            },
+            {
+                "name": "Seeds, Pods",
+                "time": 38.54,
+                "player": "GamerAttack27",
+                "url": "https://www.youtube.com/watch?v=gFQzBVZ-PPY&t=431s"
+            },
+            {
                 "title": "Spread EXs, Parries"
             },
             {
@@ -3824,9 +3857,9 @@
             },
             {
                 "name": "LSL 4+1 Shakers",
-                "time": 49.76,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/hajyDdpLwyA"
+                "time": 49.74,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/N18iuwnwrDg"
             },
             {
                 "name": "SLD 5+1 Shakers",
@@ -3980,10 +4013,16 @@
                 "url": "https://youtu.be/q4a8B3MRyV0"
             },
             {
-                "name": "LDS",
+                "name": "LDS 1P",
                 "time": 51.91,
                 "player": "myekul",
                 "url": "https://www.youtube.com/watch?v=z23DklK7ETg&t=644s"
+            },
+            {
+                "name": "LDS 2P",
+                "time": 51.35,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/YfTf3qrBdp8"
             },
             {
                 "name": "L-LD 1P",
@@ -4029,9 +4068,9 @@
             },
             {
                 "name": "SLD",
-                "time": 49.89,
+                "time": 49.79,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/ElfygiPDWGY"
+                "url": "https://youtu.be/RxvuqdW8hxk"
             },
             {
                 "name": "LSL",
@@ -4749,7 +4788,7 @@
             {
                 "name": "",
                 "time": 39.62,
-                "player": "Quincely0",
+                "player": "GamerAttack27",
                 "url": "https://youtu.be/-8CCP5kUn1I"
             },
             {
