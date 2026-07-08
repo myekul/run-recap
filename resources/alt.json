@@ -1197,10 +1197,9 @@
             },
             {
                 "name": "Red Gem",
-                "time": "40.90",
-                "rta": 41.83,
+                "time": "40.80",
                 "player": "Lewzr",
-                "url": "https://youtu.be/X-3BKVEpcU4"
+                "url": "https://www.twitch.tv/lewzr__/clip/TenaciousTallPicklesANELE-JQIc1MZ2FLA3ZBaz"
             },
             {
                 "name": "Blue Gem",
@@ -2408,6 +2407,21 @@
                 "time": "1:01.08",
                 "player": "myekul",
                 "url": "https://youtu.be/GY2AnaWzUYM"
+            },
+            {
+                "title": "Parryless / No Crits"
+            },
+            {
+                "name": "Clap Dragon",
+                "time": 47.95,
+                "player": "myekul",
+                "url": "https://youtu.be/YOwzH1vNavE"
+            },
+            {
+                "name": "Dragon Clap",
+                "time": 49.81,
+                "player": "myekul",
+                "url": "https://youtu.be/rEiJV_9l_Mc"
             },
             {
                 "title": "Other"
@@ -4092,6 +4106,12 @@
                 "time": 50.24,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/AHiTeopVLUg"
+            },
+            {
+                "name": "L-LD",
+                "time": 51.23,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/4P_YzQSv_5Q"
             },
             {
                 "title": "2.5-cycle"
