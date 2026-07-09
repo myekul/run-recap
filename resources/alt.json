@@ -4474,6 +4474,12 @@
                 "url": "https://youtu.be/bKWGGvJG-N4"
             },
             {
+                "name": "Candy Corn, Waffle, Gumball",
+                "time": 30.56,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Bs1gjY-xUc0"
+            },
+            {
                 "name": "Candy Corn, Gumball, Waffle",
                 "time": 30.59,
                 "player": "DaniStuff2345",
@@ -4498,10 +4504,22 @@
                 "url": "https://youtu.be/HmO7ME9OpOQ"
             },
             {
+                "name": "Waffle, Candy Corn, Cupcake",
+                "time": 32.68,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Lxy81C9WYLo"
+            },
+            {
                 "name": "Waffle, Cupcake, Gumball",
-                "time": "31.09",
+                "time": 31.09,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/hRz6Ynbtff4"
+            },
+            {
+                "name": "Waffle, Cupcake, Candy Corn",
+                "time": 32.91,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/3Ox_2SIwk74"
             },
             {
                 "name": "Waffle, Gumball, Cupcake",
@@ -4526,6 +4544,12 @@
                 "time": 31.36,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/jch-y4jVlbE"
+            },
+            {
+                "name": "Cupcake, Gumball, Jawbreaker",
+                "time": 35.41,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/EXXbaEw9ENs"
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
@@ -4559,9 +4583,9 @@
             },
             {
                 "name": "Jawbreaker, Gumball, Cupcake",
-                "time": 35.75,
+                "time": 35.53,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/j8GltoAVoFY"
+                "url": "https://youtu.be/Zja1R8baEH8"
             },
             {
                 "name": "Jawbreaker, Waffle, Gumball",
@@ -4574,6 +4598,12 @@
                 "time": 35.98,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/9x7rQ-E1_vA"
+            },
+            {
+                "name": "Jawbreaker, Cupcake, Gumball",
+                "time": 35.49,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/LE7YegzdlnQ"
             },
             {
                 "name": "Jawbreaker, Cupcake, Candy Corn",
@@ -4601,9 +4631,9 @@
         "rumorhoneybottoms": [
             {
                 "name": "Middle",
-                "time": 37.11,
+                "time": 36.87,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/bfPjdMM6tCI"
+                "url": "https://youtu.be/KR07ooa-EMQ"
             },
             {
                 "name": "Orbs",
