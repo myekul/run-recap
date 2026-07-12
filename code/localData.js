@@ -11,6 +11,18 @@ async function prepareLocalData() {
     alt = altData
     runViable['DLC+Base L/S'].unshift(...runViable['DLC L/S'])
     runViable['DLC+Base C/S'].unshift(...runViable['DLC C/S'])
+    copyRunViable('1.1+', 'NMG', 3, 3) // Hilda Berg
+    copyRunViable('1.1+', 'NMG', 9, 9) // Grim Matchstick
+    copyRunViable('1.1+', 'NMG', 10, 10) // Rumor Honeybottoms
+    copyRunViable('1.1+', 'NMG', 14, 14) // Captain Brineybeard
+    copyRunViable('1.1+', 'DLC+Base L/S', 3, 9) // Hilda Berg
+    copyRunViable('1.1+', 'DLC+Base C/S', 3, 9) // Hilda Berg
+    copyRunViable('NMG', 'DLC+Base L/S', 4, 10) // Cagney Carnation
+    copyRunViable('NMG', 'DLC+Base L/S', 5, 11) // Baroness Von Bon Bon
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 12, 12) // Wally Warbles
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 13, 13) // Djimmi The Great
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 17, 17) // Dr. Kahl's Robot
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 21, 21) // Cala Maria
     // scenes
     scenes['DLC+Base'] = scenes['DLC+Base C/S']
     for (const category in scenes) {
@@ -298,6 +310,9 @@ function organizeAltStrats() {
         'afterend',
         `<div class='altStratNum dim' style='display:none'>${sum}</div>`
     )
+}
+function copyRunViable(copy, paste, copyIndex, pasteIndex) {
+    runViable[paste][pasteIndex] = { ...runViable[copy][copyIndex], copy: copy }
 }
 function copyBulk(copy, paste, bosses) {
     bosses.forEach(boss => {

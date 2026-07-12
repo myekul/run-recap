@@ -367,9 +367,9 @@
             },
             {
                 "name": "Sagittarius",
-                "time": "1:00",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/SKcVXh-sUwc"
+                "time": "1:00.33",
+                "player": "Quincely0",
+                "url": "https://www.twitch.tv/videos/2817671833"
             },
             {
                 "title": "Parryless"
@@ -2020,17 +2020,17 @@
                 "odds": "9/35"
             },
             {
+                "name": "Ring Dragon (3 Quads)",
+                "time": 45.18,
+                "player": "myekul",
+                "url": "https://youtu.be/6yT_tk_WnTo",
+                "odds": "3/140"
+            },
+            {
                 "name": "Pinwheel Dragon (3 Quads)",
                 "time": 45.32,
                 "player": "myekul",
                 "url": "https://youtu.be/bsUSWNi9xvA",
-                "odds": "3/140"
-            },
-            {
-                "name": "Ring Dragon (3 Quads)",
-                "time": 45.51,
-                "player": "myekul",
-                "url": "https://youtu.be/Lb8FPGPBt4Y",
                 "odds": "3/140"
             },
             {
@@ -2053,9 +2053,9 @@
             },
             {
                 "name": "Bubbles Dragon",
-                "time": "39.90",
-                "player": "Lewzr",
-                "url": "https://youtu.be/7uJ5MxzzCQk",
+                "time": 39.78,
+                "player": "myekul",
+                "url": "https://youtu.be/B1ZXTqOeZ-g",
                 "odds": "1/55",
                 "odds2": 3
             },
@@ -2069,16 +2069,16 @@
             },
             {
                 "name": "Bubbles Dragon (Slowest)",
-                "time": "40.40",
+                "time": 39.94,
                 "player": "myekul",
-                "url": "https://youtu.be/bwF4W170ctc",
+                "url": "https://youtu.be/ALNHxIdGrMI",
                 "odds": "1/385"
             },
             {
                 "name": "Ring Dragon (4 Quads)",
-                "time": 42.15,
-                "player": "Lewzr",
-                "url": "https://youtu.be/SeaoWgXfEbA"
+                "time": 41.01,
+                "player": "myekul",
+                "url": "https://youtu.be/71vn8EfRHng"
             },
             {
                 "name": "Pinwheel Dragon (4 Quads)",
@@ -2206,23 +2206,11 @@
                 "odds": "1/7"
             },
             {
-                "name": "Spider",
-                "time": 50.92,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/00lelICyxe4"
-            },
-            {
                 "name": "Clap Spider",
                 "time": 47.49,
                 "player": "myekul",
                 "url": "https://youtu.be/Dp8TyzVV4Y0",
                 "odds": "1/14"
-            },
-            {
-                "name": "Clap Spider (5 Bounce)",
-                "time": 49.25,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/6C9dO0JKQI4"
             },
             {
                 "title": "Freeze Spider",
@@ -2317,23 +2305,23 @@
             },
             {
                 "name": "Clap Bubbles Clap Spider",
-                "time": 51.07,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/Tqj8eXzo4Kc",
+                "time": 51.06,
+                "player": "myekul",
+                "url": "https://youtu.be/w-QgNMlrYwQ",
                 "odds": "1/105"
             },
             {
                 "name": "Clap Bubbles Clap Spider (Slower)",
-                "time": "1:01.08",
+                "time": 52.65,
                 "player": "myekul",
-                "url": "https://youtu.be/GY2AnaWzUYM",
+                "url": "https://youtu.be/WNOrZHfYi0w",
                 "odds": "1/105"
             },
             {
                 "name": "Clap Bubbles Clap Spider (Slowest)",
-                "time": "1:01.08",
+                "time": 54.22,
                 "player": "myekul",
-                "url": "https://youtu.be/GY2AnaWzUYM",
+                "url": "https://youtu.be/aAWSJAQUATg",
                 "odds": "1/105"
             },
             {
@@ -2413,9 +2401,9 @@
             },
             {
                 "name": "Clap Bubbles Clap Spider",
-                "time": "1:01.08",
+                "time": "1:00.96",
                 "player": "myekul",
-                "url": "https://youtu.be/GY2AnaWzUYM"
+                "url": "https://youtu.be/numxFhlVb64"
             },
             {
                 "title": "Parryless / No Crits"
@@ -2436,10 +2424,28 @@
                 "title": "Other"
             },
             {
+                "name": "Bubbles Dragon (4 Quads)",
+                "time": "39.90",
+                "player": "Lewzr",
+                "url": "https://youtu.be/7uJ5MxzzCQk"
+            },
+            {
                 "name": "Bubbles Dragon (Slowest) (3 Quads)",
                 "time": 41.35,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/zdkiIrRID9A"
+            },
+            {
+                "name": "Clap Spider (5 Bounce)",
+                "time": 49.25,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/6C9dO0JKQI4"
+            },
+            {
+                "name": "Spider",
+                "time": 50.92,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/00lelICyxe4"
             }
         ]
     },
@@ -3819,10 +3825,10 @@
             },
             {
                 "name": "2 Nuke",
-                "time": 59.83,
-                "rta": "1:02.94",
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/3nABn2LDEes"
+                "time": 59.55,
+                "rta": "1:02.65",
+                "player": "HappyWolf",
+                "url": "https://youtu.be/THNuvACAopM"
             },
             {
                 "name": "3 Nuke",
@@ -4031,9 +4037,9 @@
             },
             {
                 "name": "LDL",
-                "time": 51.77,
+                "time": 51.34,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/q4a8B3MRyV0"
+                "url": "https://youtu.be/rl9iJBaYxPM"
             },
             {
                 "name": "LDS 1P",
@@ -4058,6 +4064,46 @@
                 "time": 55.61,
                 "player": "myekul",
                 "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=646s"
+            },
+            {
+                "title": "M-Swap 4+3"
+            },
+            {
+                "name": "SLD",
+                "time": 49.79,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/RxvuqdW8hxk"
+            },
+            {
+                "name": "LSL 4P",
+                "time": 49.93,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/IxIEfCLBDmk"
+            },
+            {
+                "name": "LSL 3P",
+                "time": 49.84,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ZTuyj3HYtNw",
+                "viable": true
+            },
+            {
+                "name": "LSL 2P",
+                "time": 50.42,
+                "player": "myekul",
+                "url": "https://youtu.be/BQ_izsT3P5c"
+            },
+            {
+                "name": "DLS",
+                "time": "50.80",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Y93ZHSW0XN4"
+            },
+            {
+                "name": "L-LD",
+                "time": 53.26,
+                "player": "myekul",
+                "url": "https://youtu.be/nyD7tfeUwXM"
             },
             {
                 "title": "Baby Chargimate"
@@ -4087,27 +4133,6 @@
                 "url": "https://youtu.be/zvhuxEeZc1I"
             },
             {
-                "title": "4+3"
-            },
-            {
-                "name": "SLD",
-                "time": 49.79,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/RxvuqdW8hxk"
-            },
-            {
-                "name": "LSL",
-                "time": 50.42,
-                "player": "myekul",
-                "url": "https://youtu.be/BQ_izsT3P5c"
-            },
-            {
-                "name": "L-LD",
-                "time": 53.26,
-                "player": "myekul",
-                "url": "https://youtu.be/nyD7tfeUwXM"
-            },
-            {
                 "title": "3+3"
             },
             {
@@ -4124,6 +4149,12 @@
             },
             {
                 "title": "2.5-cycle"
+            },
+            {
+                "name": "L-L 9+3",
+                "time": 52.73,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/8uw6Vd6bpE8"
             },
             {
                 "name": "L-S 9+3",
@@ -4658,15 +4689,25 @@
             },
             {
                 "name": "Orbs",
-                "time": 40.32,
-                "player": "myekul",
-                "url": "https://youtu.be/bW0g7PjDU1w"
+                "time": 40.05,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/GpUIhnH5Ln4"
             },
             {
                 "name": "Triangles",
                 "time": 41.18,
                 "player": "myekul",
                 "url": "https://youtu.be/WEQYF0pkf4k"
+            },
+            {
+                "title": "Parries / Overdamage"
+            },
+            {
+                "name": "Triangles",
+                "time": 39.33,
+                "rta": 39.88,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/0SRsqw-fVVs"
             }
         ],
         "sallystageplay": [
@@ -4765,7 +4806,8 @@
                 "name": "Two-cycle",
                 "time": "1:02.26",
                 "player": "myekul",
-                "url": "https://youtu.be/Sb4Pe1Txf0k"
+                "url": "https://youtu.be/Sb4Pe1Txf0k",
+                "viable": true
             },
             {
                 "name": "One-cycle",
@@ -5509,6 +5551,14 @@
                 "time": 46.52,
                 "player": "myekul",
                 "url": "https://youtu.be/_XZTSkuagek"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 36.93,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/-gQhQNbv69E"
             }
         ],
         "sallystageplay": [

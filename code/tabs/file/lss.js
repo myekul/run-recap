@@ -424,8 +424,8 @@ function runRecapSegment(index) {
     const resetRate = 100 * (numResets / segmentAttemptCount)
     const display = resetRate ? displayPercentage(resetRate) : 0
     const grade = getLetterGrade(100 - resetRate)
-    const sortedSplits = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.split - b.split)
-    const sortedSegments = runRecap_lssFile.segmentHistory[index].sort((a, b) => a.segment - b.segment)
+    const sortedSplits = [...runRecap_lssFile.segmentHistory[index]].sort((a, b) => a.split - b.split)
+    const sortedSegments = [...runRecap_lssFile.segmentHistory[index]].sort((a, b) => a.segment - b.segment)
     return `
     <div class='container' style='gap:8px'>
         <div>Reset rate:</div>
