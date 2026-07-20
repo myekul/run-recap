@@ -38,6 +38,12 @@
                 "url": "https://youtu.be/AP-yUBmASz4"
             },
             {
+                "name": "1 Ledge Clip",
+                "time": 32.59,
+                "player": "myekul",
+                "url": "https://youtu.be/J4Nv0DKiUkA"
+            },
+            {
                 "name": "Ninja Clip",
                 "time": 33.53,
                 "player": "myekul",
@@ -327,22 +333,22 @@
             },
             {
                 "name": "Sneeze",
-                "time": 21.86,
+                "time": 21.63,
                 "player": "myekul",
-                "url": "https://youtu.be/y5H_krM5_tY"
+                "url": "https://youtu.be/mEB9nOaoZ18"
             },
             {
                 "title": "Doubles"
             },
             {
                 "name": "Sneeze Skip",
-                "time": "24.42",
+                "time": 24.42,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/CFr6D14yACY"
             },
             {
                 "name": "Sneeze",
-                "time": "24.03",
+                "time": 24.03,
                 "player": "Lewzr",
                 "url": "https://youtu.be/G64vi7pxRgQ"
             }
@@ -648,9 +654,9 @@
             },
             {
                 "name": "Cupcake, Waffle, Candy Corn",
-                "time": 31.99,
+                "time": 31.87,
                 "player": "myekul",
-                "url": "https://youtu.be/Sao77G1QFws"
+                "url": "https://youtu.be/M7LDY4HQu6w"
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
@@ -1172,6 +1178,15 @@
                 "time": 40.91,
                 "player": "Lewzr",
                 "url": "https://youtu.be/DhCxFrpfDa0"
+            },
+            {
+                "title": "Spread EX Opener"
+            },
+            {
+                "name": "Middle",
+                "time": 36.86,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/NS_sz7DyWh8"
             },
             {
                 "title": "Police Bee Overdamage"
@@ -2074,9 +2089,9 @@
             },
             {
                 "name": "Bubbles Dragon (Slower)",
-                "time": 39.39,
+                "time": 39.25,
                 "player": "myekul",
-                "url": "https://youtu.be/aN3ZNQVbyE4",
+                "url": "https://youtu.be/KfvTF_HlRNU",
                 "odds": "3/385",
                 "viable": true
             },
@@ -2387,9 +2402,9 @@
             },
             {
                 "name": "Clap Bubbles",
-                "time": 49.75,
+                "time": 48.67,
                 "player": "myekul",
-                "url": "https://youtu.be/Jiw6U1wW2IE"
+                "url": "https://youtu.be/_gSWrXQv6u8"
             },
             {
                 "name": "Clap Ring Clap",
@@ -2402,6 +2417,15 @@
                 "time": 52.69,
                 "player": "myekul",
                 "url": "https://youtu.be/EXK3Ki0Lkso"
+            },
+            {
+                "title": "Double Head"
+            },
+            {
+                "name": "Spider Clap Pinwheel Dragon",
+                "time": "52.20",
+                "player": "myekul",
+                "url": "https://youtu.be/1NYsMDhIMXg"
             },
             {
                 "title": "Max Delays"
@@ -2973,6 +2997,12 @@
             },
             {
                 "title": "Dragon Kiss"
+            },
+            {
+                "name": "Bubbles Dragon L",
+                "time": 25.43,
+                "player": "graven_",
+                "url": "https://youtu.be/UHWfx17S8-w"
             },
             {
                 "name": "Ring Dragon R",
@@ -4546,9 +4576,9 @@
             },
             {
                 "name": "Candy Corn, Jawbreaker, Gumball",
-                "time": 35.58,
+                "time": 34.88,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/dxtwt8nwfPo"
+                "url": "https://youtu.be/x1i2Cx-N6Yg"
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
@@ -4672,9 +4702,9 @@
             },
             {
                 "name": "Jawbreaker, Candy Corn, Waffle",
-                "time": 35.63,
+                "time": 35.55,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/WmRFyGpKDRc"
+                "url": "https://youtu.be/UvTtVcwIIUA"
             }
         ],
         "beppitheclown": [
@@ -5394,6 +5424,26 @@
                 "time": 39.39,
                 "player": "myekul",
                 "url": "https://youtu.be/vAk41buFdjo"
+            }
+        ]
+    },
+    "1.1+ NG+": {
+        "thedevil": [
+            {
+                "name": "Bubbles Dragon",
+                "time": 37.94,
+                "player": "myekul",
+                "url": "https://youtu.be/pFYFx8x9Mx4"
+            }
+        ]
+    },
+    "NMG P/S Simple": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 29.47,
+                "player": "myekul",
+                "url": "https://youtu.be/gP87PXbGR68"
             }
         ]
     },

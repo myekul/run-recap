@@ -6,10 +6,12 @@ const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Dem
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
 const OTHER_CATEGORIES = [
-    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Expert', 'Legacy Low%', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'OG Charge'],
+    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Expert', '1.1+ NG+', 'Legacy Low%', 'NMG P/S Simple', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'OG Charge'],
     ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%'],
 ]
 const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
+
+const NO_FOLLIES = ['1.1+ Low%', 'Legacy Low%', 'NMG P/S', 'NMG P/S Simple']
 
 const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert']
 const DUPLICATE_FOLLIES_1_1 = ['1.1+ Expert']
