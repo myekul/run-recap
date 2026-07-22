@@ -2089,9 +2089,9 @@
             },
             {
                 "name": "Bubbles Dragon (Slower)",
-                "time": 39.25,
+                "time": 39.13,
                 "player": "myekul",
-                "url": "https://youtu.be/KfvTF_HlRNU",
+                "url": "https://youtu.be/ad58D-Gg1Ns",
                 "odds": "3/385",
                 "viable": true
             },
@@ -2490,9 +2490,9 @@
         "therootpack": [
             {
                 "name": "",
-                "time": "26.20",
+                "time": 26.02,
                 "player": "Yuka",
-                "url": "https://youtu.be/l9Rbi9SOiwA"
+                "url": "https://www.twitch.tv/yukaa_1030/clip/SucculentAuspiciousBeeFunRun-1fx-Adj-to5bZ1XC"
             },
             {
                 "name": "No Potato EX, Onion Dash",
@@ -3842,9 +3842,9 @@
             },
             {
                 "name": "Parryless",
-                "time": 45.58,
+                "time": 45.38,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/TZnIDrMsWy4"
+                "url": "https://youtu.be/sdHkVtUKhdk"
             }
         ],
         "estherwinchester": [
@@ -3938,6 +3938,12 @@
                 "time": 51.15,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/XCph9LTdJHU"
+            },
+            {
+                "name": "L-LD 4+1 Shakers",
+                "time": 51.39,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/uP9quZ4hKhA"
             },
             {
                 "name": "L-SL",
