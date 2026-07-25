@@ -408,8 +408,14 @@
                 "title": "Triples"
             },
             {
+                "name": "Lunge, Lunge, Pods 4x",
+                "time": 29.81,
+                "player": "Quincely0",
+                "url": "https://youtu.be/l8oRg_H0yUM"
+            },
+            {
                 "name": "Lunge, Lunge, Pods 3x",
-                "time": "30.23",
+                "time": 30.23,
                 "player": "Quincely0",
                 "url": "https://youtu.be/TjgpixOQNvU"
             },
@@ -588,15 +594,15 @@
             },
             {
                 "name": "Candy Corn, Waffle, Gumball",
-                "time": 33.37,
-                "player": "myekul",
-                "url": "https://youtu.be/lQP1FxdDifg"
+                "time": 33.34,
+                "player": "Quincely0",
+                "url": "https://youtu.be/7N34-_n1DGE"
             },
             {
                 "name": "Candy Corn, Waffle, Jawbreaker",
-                "time": 34.83,
-                "player": "myekul",
-                "url": "https://youtu.be/AL7h5H86A60"
+                "time": 34.57,
+                "player": "Quincely0",
+                "url": "https://youtu.be/dE2G9xxQoOg"
             },
             {
                 "name": "Candy Corn, Cupcake, Waffle",
@@ -672,9 +678,9 @@
             },
             {
                 "name": "Cupcake, Candy Corn, Waffle",
-                "time": 31.04,
-                "player": "Quincely0",
-                "url": "https://youtu.be/aSpqgRDxu2k"
+                "time": "30.80",
+                "player": "myekul",
+                "url": "https://youtu.be/ENoTiYzmoVg"
             },
             {
                 "name": "Cupcake, Candy Corn, Gumball",
@@ -726,9 +732,9 @@
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
-                "time": 33.98,
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=yI2wDkHXLxGG0T6K&t=1394"
+                "time": 33.27,
+                "player": "myekul",
+                "url": "https://youtu.be/wWKAT28guDs"
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
@@ -3200,10 +3206,10 @@
             },
             {
                 "name": "Doubles",
-                "time": 26.35,
-                "rta": 26.72,
+                "time": 25.71,
+                "rta": 26.08,
                 "player": "myekul",
-                "url": "https://youtu.be/vdr956VHZ60"
+                "url": "https://youtu.be/iwqCIlN_UmU"
             }
         ],
         "cagneycarnation": [
@@ -3262,6 +3268,12 @@
             }
         ],
         "baronessvonbonbon": [
+            {
+                "name": "Cupcake, Candy Corn, Waffle",
+                "time": 31.42,
+                "player": "myekul",
+                "url": "https://youtu.be/rPAcdvcBQK0"
+            },
             {
                 "name": "Waffle, Candy Corn, Cupcake",
                 "time": 31.67,
@@ -3433,9 +3445,9 @@
             },
             {
                 "name": "Catapult, Charge",
-                "time": 43.86,
+                "time": "43.20",
                 "player": "myekul",
-                "url": "https://youtu.be/Xn8V3z-bSEE"
+                "url": "https://youtu.be/zFYxjT8Dtmk"
             },
             {
                 "name": "Catapult, Cherry Bombs",
@@ -3719,9 +3731,9 @@
             },
             {
                 "name": "Clap Bubbles Dragon",
-                "time": 49.38,
+                "time": "47.60",
                 "player": "myekul",
-                "url": "https://youtu.be/4CmSdn8ysSA"
+                "url": "https://youtu.be/zFYxjT8Dtmk"
             }
         ]
     },

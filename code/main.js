@@ -137,6 +137,22 @@ function action() {
     } else {
         hide('backButton')
     }
+    if (['sav', 'lss', 'rrc'].includes(globalTab) && runRecapExample) {
+        show('exampleThumbnail')
+    } else {
+        hide('exampleThumbnail')
+    }
+    if (['sav', 'lss', 'rrc'].includes(globalTab) && (savComparison.split(' ')[0] == 'Player' || rrcComparison.split(' ')[0] == 'Player')) {
+        show('comparisonThumbnail')
+        if (savComparison.split(' ')[0] == 'Player') {
+            document.getElementById('comparisonThumbnail').innerHTML = getThumbnail(runRecapCategory.runs[savComparison.split(' ')[1]].url)
+        }
+        if (rrcComparison.split(' ')[0] == 'Player') {
+            document.getElementById('comparisonThumbnail').innerHTML = getThumbnail(runRecapCategory.runs[rrcComparison.split(' ')[1]].url)
+        }
+    } else {
+        hide('comparisonThumbnail')
+    }
     document.getElementById('boardTitle').classList.remove('grayedOut')
     if (globalTab == 'altStrats') {
         document.querySelectorAll('.altStratNum').forEach(elem => { show(elem) })
@@ -164,7 +180,8 @@ document.querySelectorAll('select').forEach(elem => {
     })
 })
 function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
-    if (forceHome && runRecapExample) showTab('home')
+    if (forceHome && runRecapExample && ['sav', 'lss', 'rrc'].includes(globalTab)) showTab('home')
+    if (runRecapExample) unloadExample()
     runRecapCategory = commBestILs[categoryName]
     categoryButtonClick(runRecapCategory)
     players = []
@@ -183,7 +200,6 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     updateBoardTitle()
     const musicID = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? 'L6T3fpUGSmE' : 'cdvSNkW3Uyk'
     document.getElementById('musicDiv').href = `https://youtu.be/${musicID}`
-    // if (runRecapExample) showTab('home')
     organizeCategories()
     if (category > -1) prepareData()
     let HTMLContent = ''

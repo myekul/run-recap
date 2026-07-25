@@ -52,6 +52,7 @@ function processSavFile(playerIndex, display) {
                     level.played = true
                     level.completed = true
                 })
+                document.getElementById('exampleThumbnail').innerHTML = getThumbnail(runRecapCategory.runs[playerIndex].url)
                 rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
                 lssPlayerIndex = playerIndex
                 lssExample(lssPlayerIndex)
@@ -73,7 +74,7 @@ function assignIsles() {
     categories.forEach((category, categoryIndex) => {
         isles[category.info.isle - 1].runRecapCategories.push(categoryIndex)
     })
-    if (['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (runRecapCategory.name == 'Other' && ['DLC+Base Simple C/S','300%'].includes(altStratOther))) isles.unshift(isles.pop())
+    if (['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (runRecapCategory.name == 'Other' && ['DLC+Base Simple C/S', '300%'].includes(altStratOther))) isles.unshift(isles.pop())
 }
 function getCupheadLevel(param, other) {
     const id = other ? param : categories[param].info.levelID

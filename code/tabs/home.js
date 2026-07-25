@@ -19,13 +19,7 @@ function generateHome() {
     HTMLContent += `<div id='fileTypes' class="container" style="gap:30px;align-items:flex-start"></div>`
     document.getElementById('content').innerHTML = HTMLContent
     if (runRecapExample) {
-        runRecapDefault()
-        runRecapUnload('sav')
-        runRecapUnload('lss')
-        runRecapUnload('rrc')
-        rrcAttemptIndex = 0
-        runRecapExample = false
-        hide('runRecap_example_div')
+        unloadExample()
     }
     hide('runRecap_chart')
     show('uploadButton')
@@ -42,4 +36,13 @@ function runRecapDefault() {
     <div style='font-size:150%'>XX:XX</div>
     <div style='font-size:160%'>${fontAwesome('edit')}</div>`
     runRecapTime = 'XX:XX'
+}
+function unloadExample() {
+    runRecapDefault()
+    runRecapUnload('sav')
+    runRecapUnload('lss')
+    runRecapUnload('rrc')
+    rrcAttemptIndex = 0
+    runRecapExample = false
+    hide('runRecap_example_div')
 }

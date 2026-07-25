@@ -170,3 +170,8 @@ th {
     margin: 0 4px;
     font-size: 90%
 }
+
+#comparisonThumbnail a img {
+    width: 120px !important;
+    height: 67.5px !important
+}
