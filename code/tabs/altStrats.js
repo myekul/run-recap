@@ -220,12 +220,14 @@ function altStrat_bestTimes(root) {
         }
         if (altGroup) {
             let fastest = altGroup[0]
+            let trueFastest = altGroup[0]
             let viable
             altGroup.forEach(strat => {
                 if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
                     if (!viable) fastest = strat
+                    trueFastest = strat
                 }
-                if (strat.viable) {
+                if (strat.viable && !commBestILsAll) {
                     viableCategory = true
                     if (!nonviable) {
                         fastest = strat
@@ -234,11 +236,13 @@ function altStrat_bestTimes(root) {
                 }
             })
             HTMLContent += `
-            <tr class='grow ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
+            <tr class='clickable ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
                 <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                 <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
                 <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
-                <td class='${fastest.copy ? commBestILs[fastest.copy]?.className ?? 'gray' : ''}'></td>
+                <td style='position:relative' class='${fastest.copy ? commBestILs[fastest.copy]?.className ?? 'gray' : ''}'>
+                    ${viable && !commBestILsAll ? `<div class='dim' style='position: absolute;margin-left: 10px;transform: translateY(-50%);' onmouseover="runViableToast('${fastest.viable}','${trueFastest.time}','${trueFastest.player}')">${fontAwesome('info-circle')}</div>` : ''}
+                </td>
             </tr>`
         } else {
             HTMLContent += `
@@ -252,6 +256,10 @@ function altStrat_bestTimes(root) {
     HTMLContent += `</table>`
     if (viableCategory) HTMLContent += `<div class='grow' style='position:absolute;left:10px;top:9px;font-size:110%' onclick="toggleViable()">${fontAwesome('toggle-' + (nonviable ? 'off' : 'on'))}</div>`
     root.querySelector('#altStrat_bestTimes').innerHTML = HTMLContent
+}
+function runViableToast(explanation, trueFastestTime, trueFastestPlayer) {
+    const message = `<div style='text-align:left'>The true fastest time is ${trueFastestTime} by ${getPlayerName(allPlayers.find(player => player.name == trueFastestPlayer))}.<br>` + explanation + `</div>`
+    toast(message, 5000)
 }
 function toggleViable() {
     nonviable = !nonviable

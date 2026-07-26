@@ -133,7 +133,7 @@
                 "odds": "1/24",
                 "odds2": 3,
                 "odds3": 9,
-                "viable": true
+                "viable": "It goes for triples in Phase 1/2, which is risky."
             },
             {
                 "name": "5 Flies, Tigers",
@@ -1017,7 +1017,7 @@
                 "time": 37.91,
                 "player": "Lewzr",
                 "url": "https://youtu.be/moBcYR2UqgQ",
-                "viable": true
+                "viable": "It goes for 2-cycle, which is risky."
             },
             {
                 "name": "2B+, 5B, 3B++",
@@ -1103,7 +1103,7 @@
                 "url": "https://youtu.be/wADPxhZkybg",
                 "odds": "1/18",
                 "odds2": 3,
-                "viable": true
+                "viable": "It goes for parries, which is risky and loses RTA time."
             },
             {
                 "name": "3 Lasers, 1 Laser, 2 Meteors",
@@ -1315,7 +1315,7 @@
                 "time": 36.56,
                 "player": "Quincely0",
                 "url": "https://youtu.be/fCUaQR0V4V4",
-                "viable": true
+                "viable": "It goes for parries, which is risky and inconsistent."
             },
             {
                 "name": "Cherry Bombs, Charge",
@@ -2099,7 +2099,7 @@
                 "player": "myekul",
                 "url": "https://youtu.be/ad58D-Gg1Ns",
                 "odds": "3/385",
-                "viable": true
+                "viable": "It goes for Spider\\'s Kiss, which is risky, difficult, and unlikely."
             },
             {
                 "name": "Bubbles Dragon (Slowest)",
@@ -3199,7 +3199,7 @@
                 "time": 27.95,
                 "player": "Quincely0",
                 "url": "https://www.youtube.com/watch?v=_CaxGv2u0iI&t=22s",
-                "viable": true
+                "viable": "It goes for parries and doubles, which is inconsistent."
             },
             {
                 "title": "Parries"
@@ -3221,7 +3221,7 @@
                 "time": 35.57,
                 "player": "Quincely0",
                 "url": "https://youtu.be/S2iW1ebfbq8",
-                "viable": true
+                "viable": "It goes for doubles, which is inconsistent."
             },
             {
                 "name": "Lunge, Pods",
@@ -3582,7 +3582,7 @@
                 "time": 58.92,
                 "player": "Quincely0",
                 "url": "https://youtu.be/akGntRCM24A",
-                "viable": true
+                "viable": "It goes for 2 doubles, which is risky."
             },
             {
                 "name": "L Pumpkin",
@@ -3827,7 +3827,8 @@
                 "name": "Whale",
                 "time": 40.08,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/nnUcwIws-Ns"
+                "url": "https://youtu.be/nnUcwIws-Ns",
+                "viable": "It goes for doubles, which is inconsistent."
             },
             {
                 "name": "Cards",
@@ -3869,7 +3870,7 @@
                 "rta": "1:00.99",
                 "player": "MarkinSws",
                 "url": "https://youtu.be/4nrjrwTZHw8",
-                "viable": true
+                "viable": "It goes for 3 nukes, which loses RTA time."
             },
             {
                 "name": "1 Nuke",
@@ -3921,6 +3922,7 @@
                 "time": 35.26,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/3u0WkdBYqbA",
+                "viable": "It goes for 2-cycle, which is risky.",
                 "tie": [
                     {
                         "player": "ExclamationMarkYT",
@@ -3990,7 +3992,7 @@
                 "time": 47.15,
                 "player": "myekul",
                 "url": "https://youtu.be/e3hJNxOG_mQ",
-                "viable": true
+                "viable": "It goes for parries, which loses RTA time."
             },
             {
                 "name": "Cauldron",
@@ -4041,7 +4043,7 @@
                 "time": 42.58,
                 "player": "myekul",
                 "url": "https://youtu.be/J8Ko-d3MMjo",
-                "viable": true
+                "viable": "It blindly guesses the Phase 3 laser pattern, which is risky."
             },
             {
                 "title": "Other"
@@ -4065,7 +4067,7 @@
                 "time": 37.01,
                 "player": "Quincely0",
                 "url": "https://youtu.be/C4yaobQyGC8",
-                "viable": true
+                "viable": "It goes for 2-cycle, which is risky."
             },
             {
                 "name": "2-Cycle",
@@ -4146,7 +4148,7 @@
                 "time": 49.84,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/ZTuyj3HYtNw",
-                "viable": true
+                "viable": "It goes for 4+3 on SLD, which is difficult and risky."
             },
             {
                 "name": "LSL 2P",
@@ -4826,7 +4828,7 @@
                 "time": 38.75,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/5AuUgTlyK7k",
-                "viable": true
+                "viable": "It goes for 2-cycle dogfish, which is risky and unlikely."
             },
             {
                 "name": "2-Gun, Dogfish",
@@ -4868,7 +4870,7 @@
                 "time": "1:02.26",
                 "player": "myekul",
                 "url": "https://youtu.be/Sb4Pe1Txf0k",
-                "viable": true
+                "viable": "It goes for 1-cycle, which is risky."
             },
             {
                 "name": "One-cycle",
