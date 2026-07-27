@@ -39,9 +39,9 @@
             },
             {
                 "name": "1 Ledge Clip",
-                "time": 32.59,
-                "player": "myekul",
-                "url": "https://youtu.be/J4Nv0DKiUkA"
+                "time": 32.25,
+                "player": "ClipBoardGuy",
+                "url": "https://www.youtube.com/watch?v=a0G4GsgI04c&t=37s"
             },
             {
                 "name": "Ninja Clip",
@@ -351,6 +351,15 @@
                 "time": 24.03,
                 "player": "Lewzr",
                 "url": "https://youtu.be/G64vi7pxRgQ"
+            },
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "Sneeze Skip",
+                "time": 23.94,
+                "player": "myekul",
+                "url": "https://youtu.be/j2tjzU8i0kI"
             }
         ],
         "hildaberg": [
@@ -945,6 +954,15 @@
         ],
         "djimmithegreat": [
             {
+                "title": "Standard Strats"
+            },
+            {
+                "name": "Cats",
+                "time": "1:16.67",
+                "player": "myekul",
+                "url": "https://youtu.be/eySeGof3Tys"
+            },
+            {
                 "title": "Phase 2 Extra Bullets"
             },
             {
@@ -952,12 +970,6 @@
                 "time": "1:14.96",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/35_5D9qWfLA"
-            },
-            {
-                "name": "Cats / Swords",
-                "time": "1:16.83",
-                "player": "Quincely0",
-                "url": "https://youtu.be/5GDd1k1g_og"
             }
         ],
         "beppitheclown": [
@@ -3035,10 +3047,22 @@
                 "url": "https://youtu.be/euAEOWZqbwI"
             },
             {
+                "name": "Clap Ring Dragon L",
+                "time": 28.91,
+                "player": "graven_",
+                "url": "https://youtu.be/eoAC6pWGhTs"
+            },
+            {
                 "name": "Clap Ring Dragon R",
                 "time": 31.79,
                 "player": "Yuka",
                 "url": "https://youtu.be/MBF6Qtq0UBU"
+            },
+            {
+                "name": "Clap Pinwheel Dragon L",
+                "time": 29.21,
+                "player": "graven_",
+                "url": "https://youtu.be/gwaotBeGNdU"
             },
             {
                 "title": "Spider's Kiss"
@@ -3231,21 +3255,21 @@
             },
             {
                 "name": "Lunge, Pods, Pods",
-                "time": 38.09,
-                "player": "Lewzr",
-                "url": "https://www.youtube.com/watch?v=3vX9KGjB__o&t=429s"
+                "time": 36.85,
+                "player": "Freakykkj",
+                "url": "https://youtu.be/CODEsXa6i7Y"
             },
             {
                 "name": "Lunge, Pods, Seeds",
-                "time": 40.27,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=FngWkJ-NEzo&t=422s"
+                "time": 38.90,
+                "player": "Freakykkj",
+                "url": "https://youtu.be/_zg1O9IpTYU"
             },
             {
                 "name": "Seeds, Pods",
-                "time": 38.54,
-                "player": "GamerAttack27",
-                "url": "https://www.youtube.com/watch?v=gFQzBVZ-PPY&t=431s"
+                "time": 37.86,
+                "player": "Freakykkj",
+                "url": "https://youtu.be/WKX-ErolJ0c"
             },
             {
                 "title": "Spread EXs, Parries"
@@ -3306,9 +3330,9 @@
             },
             {
                 "name": "Gumball, Cupcake, Waffle",
-                "time": 36.91,
+                "time": 35.69,
                 "player": "MarkinSws",
-                "url": "https://www.youtube.com/watch?v=-yft9MP9Z9A&t=501s"
+                "url": "https://youtu.be/0cQtiBtqyz8"
             }
         ],
         "wallywarbles": [
@@ -4548,9 +4572,9 @@
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
-                "time": 30.59,
+                "time": 30.46,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/FU0fMCHW6iA"
+                "url": "https://youtu.be/x8OdJz6FqAE"
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
@@ -4667,6 +4691,12 @@
                 "url": "https://youtu.be/eLitcYhDeSk"
             },
             {
+                "name": "Cupcake, Waffle, Jawbreaker",
+                "time": 35.44,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/hMyUByDSJPs"
+            },
+            {
                 "name": "Cupcake, Gumball, Candy Corn",
                 "time": 32.33,
                 "player": "DaniStuff2345",
@@ -4679,10 +4709,22 @@
                 "url": "https://youtu.be/ZAbXGU2nbdo"
             },
             {
+                "name": "Cupcake, Candy Corn, Waffle",
+                "time": 32.28,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/rhxpetlqSpc"
+            },
+            {
                 "name": "Cupcake, Jawbreaker, Gumball",
                 "time": 35.53,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/pN8mEqffelQ"
+            },
+            {
+                "name": "Cupcake, Jawbreaker, Waffle",
+                "time": 35.92,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ml_ThN5cnsg"
             },
             {
                 "name": "Jawbreaker, Waffle, Gumball",
@@ -5904,9 +5946,9 @@
         "moonshinemob": [
             {
                 "name": "",
-                "time": 49.79,
+                "time": 42.53,
                 "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=SiLTxwGIs8Y&t=552s"
+                "url": "https://youtu.be/DmMSdZq5npU"
             }
         ],
         "chefsaltbaker": [
