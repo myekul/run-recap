@@ -1,6 +1,9 @@
 function mausCriteria() {
     return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || altStratOther == 'DLC OG Charge'))
 }
+function altStatCriteria(level) {
+    return level == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) || level == 'captainbrineybeard' && runRecapCategory.tabName == '1.1+'
+}
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
@@ -129,7 +132,7 @@ async function generateAltStrats() {
         window.firebaseUtils.firestoreReadCommBestILs()
     }
     document.getElementById('content').innerHTML = temp.innerHTML
-    if (['baronessvonbonbon', 'captainbrineybeard'].includes(altStratLevel) && runRecapCategory.name == '1.1+') drawChart()
+    if (altStatCriteria(altStratLevel)) drawChart()
 }
 function altStratHeader(level) {
     const copy = altStratCategory[level] ? altStratCategory[level][0]?.copy : null
@@ -327,7 +330,7 @@ function levelName(query) {
 }
 function altStrats(query) {
     let HTMLContent = ''
-    if (['baronessvonbonbon', 'captainbrineybeard'].includes(query) && runRecapCategory.name == '1.1+' && !commBestILsAll) {
+    if (altStatCriteria(query) && !commBestILsAll) {
         HTMLContent += altStats(query)
     }
     if (query == 'thedevil' && runRecapCategory.name == '1.1+' && !commBestILsAll) {
@@ -376,7 +379,7 @@ function altStrats(query) {
         //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
         // }
         const altStrats = [...altStratCata[query]]
-        if (query == 'baronessvonbonbon' && runRecapCategory.name == '1.1+' && !commBestILsAll) {
+        if (query == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) && !commBestILsAll) {
             if (bonbonSort == 'Best') {
                 altStrats.sort((a, b) => a.time - b.time)
             } else if (bonbonSort == 'Worst') {
