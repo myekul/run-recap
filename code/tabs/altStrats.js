@@ -319,16 +319,36 @@ function altStratClick(level) {
     playSound('move')
     action()
 }
-function levelName(query) {
-    const category = categories.find(category => category.info.id == query)
+function levelName(level) {
+    const category = categories.find(category => category.info.id == level)
     if (category) return category.info.name
-    const otherName = OTHER_LEVELS.find(level => query == level.toLowerCase().replaceAll(" ", ""))
+    const otherName = OTHER_LEVELS.find(otherLevel => level == otherLevel.toLowerCase().replaceAll(" ", ""))
     if (otherName) return otherName
-    if (query == 'angelanddemon') return 'Angel & Demon'
-    if (query == 'mausoleum') return 'Mausoleum'
-    return OTHER_NAMES[query]
+    if (level == 'angelanddemon') return 'Angel & Demon'
+    if (level == 'mausoleum') return 'Mausoleum'
+    return OTHER_NAMES[level]
 }
 function altStrats(query) {
+    if (!commBestILsAll) {
+        altGroup = altStratCategory[query]
+        let fastest = altGroup[0]
+        let trueFastest = altGroup[0]
+        let viable
+        altGroup.forEach(strat => {
+            if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
+                if (!viable) fastest = strat
+                trueFastest = strat
+            }
+            if (strat.viable && !commBestILsAll) {
+                viableCategory = true
+                if (!nonviable) {
+                    fastest = strat
+                    viable = true
+                }
+            }
+        })
+        document.getElementById('primaryThumbnail').innerHTML=getThumbnail(fastest.url)
+    }
     let HTMLContent = ''
     if (altStatCriteria(query) && !commBestILsAll) {
         HTMLContent += altStats(query)

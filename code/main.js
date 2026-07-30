@@ -137,10 +137,12 @@ function action() {
     } else {
         hide('backButton')
     }
-    if (['sav', 'lss', 'rrc'].includes(globalTab) && runRecapExample) {
-        show('exampleThumbnail')
+    if ((['sav', 'lss', 'rrc'].includes(globalTab) && runRecapExample) || (globalTab == 'altStrats' && altStratCategory[altStratLevel])) {
+        show('primaryThumbnail')
+        hide('musicDiv')
     } else {
-        hide('exampleThumbnail')
+        hide('primaryThumbnail')
+        show('musicDiv')
     }
     if (['sav', 'lss', 'rrc'].includes(globalTab) && (savComparison.split(' ')[0] == 'Player' || rrcComparison.split(' ')[0] == 'Player')) {
         show('comparisonThumbnail')

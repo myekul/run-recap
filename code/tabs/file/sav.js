@@ -52,7 +52,7 @@ function processSavFile(playerIndex, display) {
                     level.played = true
                     level.completed = true
                 })
-                document.getElementById('exampleThumbnail').innerHTML = getThumbnail(runRecapCategory.runs[playerIndex].url)
+                document.getElementById('primaryThumbnail').innerHTML = getThumbnail(runRecapCategory.runs[playerIndex].url)
                 rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
                 lssPlayerIndex = playerIndex
                 lssExample(lssPlayerIndex)
