@@ -1283,25 +1283,65 @@
         ],
         "sallystageplay": [
             {
-                "name": "Triples",
+                "title": "Triples"
+            },
+            {
+                "name": "Umbrella",
                 "time": 43.69,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/OHhH3Wruraw"
-            },
-            {
-                "name": "Doubles",
-                "time": 47.74,
-                "player": "Quincely0",
-                "url": "https://youtu.be/VSN6AroJlW0"
             },
             {
                 "name": "No Umbrella",
                 "time": 45.63,
                 "player": "Quincely0",
                 "url": "https://youtu.be/5nIrqgxieWQ"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Umbrella",
+                "time": 47.74,
+                "player": "Quincely0",
+                "url": "https://youtu.be/VSN6AroJlW0"
             }
         ],
         "wernerwerman": [
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "Catapult, Charge",
+                "time": 36.56,
+                "player": "Quincely0",
+                "url": "https://youtu.be/fCUaQR0V4V4",
+                "viable": "It goes for parries, which is risky and inconsistent.",
+                "odds": "2/13",
+                "odds2": 2
+            },
+            {
+                "name": "Cherry Bombs, Charge",
+                "time": 36.96,
+                "player": "Quincely0",
+                "url": "https://youtu.be/3WyF0cd09Qk",
+                "odds": "3/13"
+            },
+            {
+                "name": "Cherry Bombs, Catapult",
+                "time": 37.75,
+                "player": "myekul",
+                "url": "https://youtu.be/OKNDtRCh6MU",
+                "odds": "6/13",
+                "odds2": 2
+            },
+            {
+                "name": "Catapult, Cherry Bombs",
+                "time": 38.58,
+                "player": "myekul",
+                "url": "https://youtu.be/M176R8sU-HI",
+                "odds": "1/13"
+            },
             {
                 "title": "Parries"
             },
@@ -1318,34 +1358,6 @@
                 "rta": 36.37,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/qT3E2UTicUw"
-            },
-            {
-                "title": "Parryless"
-            },
-            {
-                "name": "Catapult, Charge",
-                "time": 36.56,
-                "player": "Quincely0",
-                "url": "https://youtu.be/fCUaQR0V4V4",
-                "viable": "It goes for parries, which is risky and inconsistent."
-            },
-            {
-                "name": "Cherry Bombs, Charge",
-                "time": 36.96,
-                "player": "Quincely0",
-                "url": "https://youtu.be/3WyF0cd09Qk"
-            },
-            {
-                "name": "Cherry Bombs, Catapult",
-                "time": 37.75,
-                "player": "myekul",
-                "url": "https://youtu.be/OKNDtRCh6MU"
-            },
-            {
-                "name": "Catapult, Cherry Bombs",
-                "time": 38.58,
-                "player": "myekul",
-                "url": "https://youtu.be/M176R8sU-HI"
             },
             {
                 "title": "1 HP Backup"
@@ -3450,28 +3462,19 @@
         ],
         "wernerwerman": [
             {
-                "title": "Doubles"
-            },
-            {
-                "name": "Catapult, Charge",
-                "time": 43.78,
-                "player": "Quincely0",
-                "url": "https://youtu.be/4EwmIvZSv24"
-            },
-            {
                 "title": "Spread EXs"
-            },
-            {
-                "name": "Cherry Bombs, Charge",
-                "time": "43.40",
-                "player": "myekul",
-                "url": "https://youtu.be/Q9DJZt3o1Pw"
             },
             {
                 "name": "Catapult, Charge",
                 "time": "43.20",
                 "player": "myekul",
                 "url": "https://youtu.be/zFYxjT8Dtmk"
+            },
+            {
+                "name": "Cherry Bombs, Charge",
+                "time": "43.40",
+                "player": "myekul",
+                "url": "https://youtu.be/Q9DJZt3o1Pw"
             },
             {
                 "name": "Catapult, Cherry Bombs",
@@ -3484,6 +3487,15 @@
                 "time": 44.01,
                 "player": "myekul",
                 "url": "https://youtu.be/my-lO9CKc2s"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "Catapult, Charge",
+                "time": 43.78,
+                "player": "Quincely0",
+                "url": "https://youtu.be/4EwmIvZSv24"
             }
         ],
         "calamaria": [
@@ -4590,9 +4602,15 @@
             },
             {
                 "name": "Gumball, Cupcake, Waffle",
-                "time": 30.67,
+                "time": 30.45,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/I3zf7bT8kwI"
+                "url": "https://youtu.be/FxZkjrwuROQ"
+            },
+            {
+                "name": "Gumball, Cupcake, Jawbreaker",
+                "time": 34.96,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/5ZIsucbL5aY"
             },
             {
                 "name": "Gumball, Jawbreaker, Waffle",
@@ -4611,6 +4629,18 @@
                 "time": 30.56,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/Bs1gjY-xUc0"
+            },
+            {
+                "name": "Candy Corn, Waffle, Cupcake",
+                "time": 31.92,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/EwfqgznR1l8"
+            },
+            {
+                "name": "Candy Corn, Waffle, Jawbreaker",
+                "time": 35.43,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/h0WzKZmv6E0"
             },
             {
                 "name": "Candy Corn, Gumball, Waffle",
@@ -4655,6 +4685,12 @@
                 "url": "https://youtu.be/Lxy81C9WYLo"
             },
             {
+                "name": "Waffle, Candy Corn, Jawbreaker",
+                "time": 35.65,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/7bphBzFUW7w"
+            },
+            {
                 "name": "Waffle, Cupcake, Gumball",
                 "time": 31.09,
                 "player": "DaniStuff2345",
@@ -4674,9 +4710,15 @@
             },
             {
                 "name": "Waffle, Gumball, Cupcake",
-                "time": 31.45,
+                "time": 31.17,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/ZZaU1wrF5C8"
+                "url": "https://youtu.be/Kyf4smiUcFE"
+            },
+            {
+                "name": "Waffle, Gumball, Candy Corn",
+                "time": 31.57,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/-V-cXY-BwZ4"
             },
             {
                 "name": "Waffle, Gumball, Jawbreaker",
@@ -4713,6 +4755,12 @@
                 "time": 31.51,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/eLitcYhDeSk"
+            },
+            {
+                "name": "Cupcake, Waffle, Candy Corn",
+                "time": 32.76,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/hu8gBvqWVmk"
             },
             {
                 "name": "Cupcake, Waffle, Jawbreaker",
@@ -4757,6 +4805,12 @@
                 "url": "https://youtu.be/ml_ThN5cnsg"
             },
             {
+                "name": "Cupcake, Jawbreaker, Candy Corn",
+                "time": 36.86,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/1DScupEnun4"
+            },
+            {
                 "name": "Jawbreaker, Waffle, Gumball",
                 "time": 34.31,
                 "player": "DaniStuff2345",
@@ -4782,9 +4836,9 @@
             },
             {
                 "name": "Jawbreaker, Cupcake, Gumball",
-                "time": 35.05,
+                "time": 34.99,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/GKHgDg8K1YA"
+                "url": "https://youtu.be/IfnMt4Sm5MU"
             },
             {
                 "name": "Jawbreaker, Cupcake, Candy Corn",
@@ -5364,10 +5418,16 @@
                 "url": "https://youtu.be/ItKoIJ_IXtA"
             },
             {
+                "name": "Candy Corn, Gumball, Waffle",
+                "time": 35.13,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/hSBzoMLo4Y8"
+            },
+            {
                 "name": "Candy Corn, Gumball, Cupcake",
-                "time": 41,
-                "player": "TheMexicanRunner",
-                "url": "https://youtu.be/xm5b7jayb-4?si=6Og1wGHqqPbKTaFz&t=627"
+                "time": 36.26,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/3CaETbf6AYM"
             },
             {
                 "name": "Jawbreaker, Waffle, Candy Corn",
@@ -5687,9 +5747,9 @@
         "baronessvonbonbon": [
             {
                 "name": "Gumball, Candy Corn, Waffle",
-                "time": 36.92,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/j8DTN1wYU7s"
+                "time": 34.42,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/eAkhGDr2HD8"
             }
         ],
         "beppitheclown": [

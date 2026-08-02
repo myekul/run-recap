@@ -21,7 +21,7 @@ const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S'
 
 const LOW_PERCENT = ['ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles', 'beppitheclown', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice']
 
-const ODDS_BOSSES = ['captainbrineybeard', 'grimmatchstick', 'ribbyandcroaks', 'mrwheezy']
+const ODDS_BOSSES = ['ribbyandcroaks', 'grimmatchstick', 'wernerwerman', 'captainbrineybeard', 'mrwheezy']
 
 const LOADOUTS = {
     'NMG P/S': ['peashooter', 'spread'],
