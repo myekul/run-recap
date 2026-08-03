@@ -308,49 +308,35 @@
         ],
         "goopylegrande": [
             {
-                "title": "Triples / 2 D-boosts"
+                "title": "Triples"
             },
             {
                 "name": "Sneeze Skip",
-                "time": 21.66,
-                "player": "lewzr",
-                "url": "https://youtu.be/gKXVDRzUqdE"
-            },
-            {
-                "name": "Sneeze",
-                "time": 21.76,
-                "player": "lewzr",
-                "url": "https://youtu.be/hA7cF8xJgJ8"
-            },
-            {
-                "title": "Triples / Triple Triple"
-            },
-            {
-                "name": "Sneeze Skip",
-                "time": 21.87,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/kLY3ItaoqEg"
-            },
-            {
-                "name": "Sneeze",
-                "time": 21.63,
+                "time": 21.35,
                 "player": "myekul",
-                "url": "https://youtu.be/mEB9nOaoZ18"
+                "url": "https://youtu.be/tyBiJKlD5vk",
+                "viable":"It goes for 3 parries, which is risky and difficult."
+            },
+            {
+                "name": "Sneeze",
+                "time": 21.54,
+                "player": "myekul",
+                "url": "https://youtu.be/DEUkoAHr01U"
             },
             {
                 "title": "Doubles"
             },
             {
                 "name": "Sneeze Skip",
-                "time": 24.42,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/CFr6D14yACY"
+                "time": "23.90",
+                "player": "myekul",
+                "url": "https://youtu.be/L3ur8f3zNmU"
             },
             {
                 "name": "Sneeze",
-                "time": 24.03,
-                "player": "lewzr",
-                "url": "https://youtu.be/G64vi7pxRgQ"
+                "time": 23.87,
+                "player": "myekul",
+                "url": "https://youtu.be/NdbEqD5U3cE"
             },
             {
                 "title": "Parryless"
@@ -360,6 +346,15 @@
                 "time": 23.94,
                 "player": "myekul",
                 "url": "https://youtu.be/j2tjzU8i0kI"
+            },
+            {
+                "title": "3 Parries"
+            },
+            {
+                "name": "",
+                "time": 20.89,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/mV-W00Vkhkk"
             }
         ],
         "hildaberg": [
