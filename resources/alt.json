@@ -352,9 +352,9 @@
             },
             {
                 "name": "",
-                "time": 20.89,
+                "time": 19.89,
                 "player": "GamerAttack27",
-                "url": "https://youtu.be/mV-W00Vkhkk"
+                "url": "https://youtu.be/imgTLuBsVNM"
             }
         ],
         "hildaberg": [
@@ -2156,9 +2156,9 @@
             },
             {
                 "name": "Clap Pinwheel Dragon",
-                "time": 40.54,
+                "time": 40.33,
                 "player": "myekul",
-                "url": "https://youtu.be/X2opabVYkeE",
+                "url": "https://youtu.be/xaK4-GW4WVg",
                 "odds": "3/140"
             },
             {
@@ -2949,22 +2949,10 @@
         ],
         "kingdice": [
             {
-                "title": "Parryless"
-            },
-            {
                 "name": "2-4-9",
-                "time": "1:26.16",
-                "player": "Yuka",
-                "url": "https://youtu.be/b_QhqaYQqdA?si=DpUJGL89VdPwgQ4y&t=1330"
-            },
-            {
-                "title": "Parry at the very end for some reason"
-            },
-            {
-                "name": "2-4-9",
-                "time": "1:24.98",
-                "player": "Yuka",
-                "url": "https://youtu.be/KnfXMV_4e74"
+                "time": "1:24.93",
+                "player": "graven_",
+                "url": "https://youtu.be/yAIY7Mp6nqQ"
             }
         ],
         "chipsbettigan": [
@@ -2978,9 +2966,9 @@
         "pipanddot": [
             {
                 "name": "",
-                "time": 12.79,
-                "player": "Yuka",
-                "url": "https://youtu.be/RIJ_27MY32M"
+                "time": 12.57,
+                "player": "graven_",
+                "url": "https://youtu.be/yAIY7Mp6nqQ?t=51"
             }
         ],
         "thedevil": [
@@ -3461,9 +3449,9 @@
             },
             {
                 "name": "Catapult, Charge",
-                "time": "43.20",
+                "time": 42.84,
                 "player": "myekul",
-                "url": "https://youtu.be/zFYxjT8Dtmk"
+                "url": "https://youtu.be/cvOeQk9lhIs"
             },
             {
                 "name": "Cherry Bombs, Charge",
@@ -4541,9 +4529,9 @@
         "cagneycarnation": [
             {
                 "name": "Lunge, Lunge, Pods",
-                "time": 34.78,
-                "player": "myekul",
-                "url": "https://youtu.be/gqcEN3JiZAc"
+                "time": "34.70",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/S26QbzfLuh4"
             },
             {
                 "name": "Lunge, Pods",
@@ -4952,16 +4940,34 @@
                 "viable": "It goes for 2-cycle dogfish, which is risky and unlikely."
             },
             {
+                "name": "2-Gun, Shark",
+                "time": "39.60",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/erOTSSLBHzY"
+            },
+            {
                 "name": "2-Gun, Dogfish",
                 "time": 39.64,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/P1Idl8DpyKU"
             },
             {
+                "name": "2-Gun, Squid",
+                "time": 40.12,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/--275DHHFBg"
+            },
+            {
                 "name": "Shark, Gun",
                 "time": 41.93,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/kL7EWIlPfD8"
+            },
+            {
+                "name": "4-Gun, Squid",
+                "time": 42.75,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/E-ML2vMfoCU"
             },
             {
                 "name": "Dogfish, Dogfish",
