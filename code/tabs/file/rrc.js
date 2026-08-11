@@ -474,9 +474,7 @@ function read_rrc(content) {
         let sampleAttempt
         runRecap_rrcFile.attempts.forEach(attempt => {
             ['1.1+', 'Legacy', 'DLC L/S', 'DLC+Base L/S', 'DLC C/S', 'DLC+Base C/S'].forEach(categoryName => {
-                console.log(commBestILs[categoryName].scenes.length == attempt.scenes.length);
                 if ((commBestILs[categoryName].scenes.length == attempt.scenes.length) && lastBossDone(attempt)) {
-                    console.log(categoryName)
                     let matched = true
                     attempt.scenes.forEach((scene, index) => {
                         if (scene.name != commBestILs[categoryName].scenes[index]) matched = false

@@ -315,7 +315,7 @@
                 "time": 21.35,
                 "player": "myekul",
                 "url": "https://youtu.be/tyBiJKlD5vk",
-                "viable":"It goes for 3 parries, which is risky and difficult."
+                "viable": "It goes for 3 parries, which is risky and difficult."
             },
             {
                 "name": "Sneeze",
@@ -352,9 +352,9 @@
             },
             {
                 "name": "",
-                "time": 19.89,
+                "time": 19.73,
                 "player": "GamerAttack27",
-                "url": "https://youtu.be/imgTLuBsVNM"
+                "url": "https://youtu.be/XmGHSQfkVdg"
             }
         ],
         "hildaberg": [
@@ -952,6 +952,12 @@
                 "title": "Standard Strats"
             },
             {
+                "name": "Swords",
+                "time": "1:16.48",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/4HjkFGum0dk?t=10141"
+            },
+            {
                 "name": "Cats",
                 "time": "1:16.67",
                 "player": "myekul",
@@ -1308,9 +1314,9 @@
             },
             {
                 "name": "Catapult, Charge",
-                "time": 36.56,
-                "player": "Quincely0",
-                "url": "https://youtu.be/fCUaQR0V4V4",
+                "time": 35.96,
+                "player": "myekul",
+                "url": "https://youtu.be/O16oNulllw0",
                 "viable": "It goes for parries, which is risky and inconsistent.",
                 "odds": "2/13",
                 "odds2": 2
@@ -1323,19 +1329,33 @@
                 "odds": "3/13"
             },
             {
-                "name": "Cherry Bombs, Catapult",
+                "name": "Cherry Bombs, Catapult, (5)",
                 "time": 37.75,
                 "player": "myekul",
                 "url": "https://youtu.be/OKNDtRCh6MU",
-                "odds": "6/13",
-                "odds2": 2
+                "odds": "3/13",
+                "odds2": 4
             },
             {
-                "name": "Catapult, Cherry Bombs",
+                "name": "Cherry Bombs, Catapult, (6)",
+                "time": 37.51,
+                "player": "myekul",
+                "url": "https://youtu.be/lcmnYRl3tzA",
+                "odds": "3/13"
+            },
+            {
+                "name": "Catapult, Cherry Bombs, (5)",
                 "time": 38.58,
                 "player": "myekul",
                 "url": "https://youtu.be/M176R8sU-HI",
-                "odds": "1/13"
+                "odds": "1/26"
+            },
+            {
+                "name": "Catapult, Cherry Bombs, (6)",
+                "time": 37.69,
+                "player": "myekul",
+                "url": "https://youtu.be/vsRJ8RobIRw",
+                "odds": "1/26"
             },
             {
                 "title": "Parries"
@@ -1353,6 +1373,16 @@
                 "rta": 36.37,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/qT3E2UTicUw"
+            },
+            {
+                "title": "Parries, One-cycle"
+            },
+            {
+                "name": "Catapult",
+                "time": 32.17,
+                "rta": 32.89,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/NDZ2Ksf9z4U"
             },
             {
                 "title": "1 HP Backup"
@@ -2213,9 +2243,9 @@
             },
             {
                 "name": "Clap Ring Clap Dragon",
-                "time": 45.67,
+                "time": "45.30",
                 "player": "myekul",
-                "url": "https://youtu.be/XcEpUCfZrIA",
+                "url": "https://youtu.be/-cQxe5Lk8Co",
                 "odds": "3/140",
                 "odds2": 5
             },
@@ -3576,6 +3606,12 @@
                 "url": "https://www.youtube.com/watch?v=OqBT_yd1sVY&t=37s"
             },
             {
+                "name": "Seahorse, Ghosts, Turtle, Red Fish",
+                "time": "1:01.88",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/s2NKWF6zm4Y"
+            },
+            {
                 "name": "Seahorse, Red Fish, Turtle, Ghosts",
                 "time": "1:02.79",
                 "player": "MarkinSws",
@@ -3798,9 +3834,9 @@
         "mausoleum": [
             {
                 "name": "1-1",
-                "time": 47.38,
-                "player": "lewzr",
-                "url": "https://youtu.be/TuyN1-b-OPA"
+                "time": 47.26,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/ro73lUU8jjQ"
             },
             {
                 "name": "2",
@@ -3823,7 +3859,8 @@
                 "name": "Cauldron",
                 "time": 45.44,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/B6buflKXbnU"
+                "url": "https://youtu.be/B6buflKXbnU",
+                "viable": "It goes for Glumstone Glitch, which is risky and difficult."
             },
             {
                 "name": "Geese",
@@ -3839,6 +3876,15 @@
                 "time": 46.98,
                 "player": "ExclamationMarkYT",
                 "url": "https://youtu.be/LZVPSIjRYvI"
+            },
+            {
+                "title": "Glumstone Glitch"
+            },
+            {
+                "name": "Cauldron, Bear",
+                "time": "41.00",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/MvQ82ogPEwc"
             }
         ],
         "mortimerfreeze": [
@@ -3974,9 +4020,9 @@
             },
             {
                 "name": "L-LD 4+1 Shakers",
-                "time": 51.39,
+                "time": 51.36,
                 "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/uP9quZ4hKhA"
+                "url": "https://youtu.be/jMdRZ4RQ1yk"
             },
             {
                 "name": "L-SL",
@@ -4023,7 +4069,7 @@
                 "title": "Parries"
             },
             {
-                "name": "Geese",
+                "name": "Cauldron",
                 "time": 46.25,
                 "rta": "47.00",
                 "player": "myekul",
@@ -4090,9 +4136,9 @@
             },
             {
                 "name": "2-Cycle",
-                "time": 36.61,
-                "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=3FadpYpXNBI&t=90s"
+                "time": 34.82,
+                "player": "myekul",
+                "url": "https://youtu.be/4678iTPrEuM"
             }
         ],
         "chefsaltbaker": [
@@ -4383,9 +4429,9 @@
         "wernerwerman": [
             {
                 "name": "Catapult, Charge",
-                "time": 43.05,
+                "time": 42.95,
                 "player": "myekul",
-                "url": "https://youtu.be/_jC35fEg_7c"
+                "url": "https://youtu.be/TjXKNRd-tkk"
             }
         ],
         "captainbrineybeard": [
@@ -4535,15 +4581,15 @@
             },
             {
                 "name": "Lunge, Pods",
-                "time": "35.50",
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=fMCBzfN-6tI&t=1070s"
+                "time": 34.64,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/LBtjTFUOBN0"
             },
             {
                 "name": "Lunge, Pods, Pods",
-                "time": 37.02,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=hwv5dQf1nK8&t=1065s"
+                "time": 34.89,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/E6snRCk_0X8"
             },
             {
                 "name": "Seeds, Pods",
@@ -4602,6 +4648,12 @@
                 "url": "https://youtu.be/bKWGGvJG-N4"
             },
             {
+                "name": "Gumball, Jawbreaker, Cupcake",
+                "time": "34.90",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/0N2r7VrFyIo"
+            },
+            {
                 "name": "Gumball, Candy Corn, Jawbreaker",
                 "time": 34.56,
                 "player": "DaniStuff2345",
@@ -4651,9 +4703,9 @@
             },
             {
                 "name": "Candy Corn, Jawbreaker, Gumball",
-                "time": 34.88,
+                "time": 34.83,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/x1i2Cx-N6Yg"
+                "url": "https://youtu.be/pdUqpSpcU7E"
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
@@ -4800,6 +4852,12 @@
                 "url": "https://youtu.be/BCVu3gDqEio"
             },
             {
+                "name": "Jawbreaker, Waffle, Cupcake",
+                "time": 34.96,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Pttk4pCrqnU"
+            },
+            {
                 "name": "Jawbreaker, Waffle, Candy Corn",
                 "time": 35.98,
                 "player": "DaniStuff2345",
@@ -4830,6 +4888,12 @@
                 "url": "https://youtu.be/CBZ6qhoZNxQ"
             },
             {
+                "name": "Jawbreaker, Candy Corn, Gumball",
+                "time": 34.88,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/tbztMo7xBbw"
+            },
+            {
                 "name": "Jawbreaker, Candy Corn, Waffle",
                 "time": 35.55,
                 "player": "DaniStuff2345",
@@ -4850,6 +4914,30 @@
                 "time": 44.67,
                 "player": "myekul",
                 "url": "https://youtu.be/NHv_BjXu-ZA"
+            },
+            {
+                "name": "2 Lasers, 3 Meteors",
+                "time": 45.58,
+                "player": "myekul",
+                "url": "https://youtu.be/jZQtvip4y2w"
+            },
+            {
+                "name": "2 Lasers, 4 Meteors",
+                "time": 47.73,
+                "player": "myekul",
+                "url": "https://youtu.be/D8VmVo2V9k8?t=1503"
+            },
+            {
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
+                "time": 47.43,
+                "player": "myekul",
+                "url": "https://youtu.be/ke9jhGMhCaI?t=1513"
+            },
+            {
+                "name": "3 Lasers, 2 Meteors",
+                "time": "49.70",
+                "player": "myekul",
+                "url": "https://youtu.be/aY1sYbafaFA?t=1492"
             }
         ],
         "rumorhoneybottoms": [
