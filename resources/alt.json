@@ -312,9 +312,9 @@
             },
             {
                 "name": "Sneeze Skip",
-                "time": 21.35,
+                "time": 21.25,
                 "player": "myekul",
-                "url": "https://youtu.be/tyBiJKlD5vk",
+                "url": "https://youtu.be/U2RUrXob6qw",
                 "viable": "It goes for 3 parries, which is risky and difficult."
             },
             {
@@ -1323,9 +1323,9 @@
             },
             {
                 "name": "Cherry Bombs, Charge",
-                "time": 36.96,
-                "player": "Quincely0",
-                "url": "https://youtu.be/3WyF0cd09Qk",
+                "time": 36.13,
+                "player": "myekul",
+                "url": "https://youtu.be/KfEKsqhG8hM",
                 "odds": "3/13"
             },
             {
@@ -4054,9 +4054,9 @@
             },
             {
                 "name": "Geese",
-                "time": 47.15,
+                "time": 47.11,
                 "player": "myekul",
-                "url": "https://youtu.be/e3hJNxOG_mQ",
+                "url": "https://youtu.be/g0cPR5xfrrc",
                 "viable": "It goes for parries, which loses RTA time."
             },
             {
@@ -4128,6 +4128,9 @@
         ],
         "moonshinemob": [
             {
+                "title": "Standard Strats"
+            },
+            {
                 "name": "3-Cycle",
                 "time": 37.01,
                 "player": "Quincely0",
@@ -4135,10 +4138,34 @@
                 "viable": "It goes for 2-cycle, which is risky."
             },
             {
+                "title": "Snout Guess"
+            },
+            {
+                "name": "3-Cycle",
+                "time": 35.64,
+                "player": "myekul",
+                "url": "https://youtu.be/NOcHPYlWvSg"
+            },
+            {
                 "name": "2-Cycle",
                 "time": 34.82,
                 "player": "myekul",
                 "url": "https://youtu.be/4678iTPrEuM"
+            },
+            {
+                "title": "No Snail Skip"
+            },
+            {
+                "name": "3-Cycle",
+                "time": 38.48,
+                "player": "myekul",
+                "url": "https://youtu.be/0KSiWmONXrg"
+            },
+            {
+                "name": "2-Cycle",
+                "time": 37.74,
+                "player": "myekul",
+                "url": "https://youtu.be/lgEatYokZLI"
             }
         ],
         "chefsaltbaker": [
@@ -4911,9 +4938,9 @@
         "grimmatchstick": [
             {
                 "name": "2 Lasers, 2 Lasers, 2 Meteors",
-                "time": 44.67,
+                "time": 44.57,
                 "player": "myekul",
-                "url": "https://youtu.be/NHv_BjXu-ZA"
+                "url": "https://youtu.be/-hqv1G5bgbM"
             },
             {
                 "name": "2 Lasers, 3 Meteors",
@@ -4923,9 +4950,9 @@
             },
             {
                 "name": "2 Lasers, 4 Meteors",
-                "time": 47.73,
+                "time": 44.86,
                 "player": "myekul",
-                "url": "https://youtu.be/D8VmVo2V9k8?t=1503"
+                "url": "https://youtu.be/aWU_f8Kd4PI"
             },
             {
                 "name": "3 Lasers, 2 Lasers, 2 Meteors",
