@@ -269,8 +269,7 @@ function organizeAltStrats() {
         .map(strat => ({ ...strat, copy: '1.1+' }))
     copyDuplicate('1.1+', DUPLICATE_FOLLIES_1_1, 'forestfollies')
     copyDuplicate('NMG', DUPLICATE_FOLLIES_NMG, 'forestfollies')
-    copyDuplicate('DLC L/S', DUPLICATE_FOLLIES_MAUS, 'forestfollies')
-    copyDuplicate('DLC L/S', DUPLICATE_FOLLIES_MAUS, 'mausoleum')
+    copyDuplicate('DLC L/S', DUPLICATE_MAUS, 'mausoleum')
     copyDuplicate('DLC L/S', DUPLICATE_ESTHER, 'estherwinchester')
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']

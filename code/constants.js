@@ -15,8 +15,8 @@ const NO_FOLLIES = ['1.1+ Low%', 'Legacy Low%', 'NMG P/S', 'NMG P/S Simple']
 
 const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert']
 const DUPLICATE_FOLLIES_1_1 = ['1.1+ Expert']
-const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert']
-const DUPLICATE_FOLLIES_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
+const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert','DLC L/S','DLC C/S','DLC+Base L/S','DLC+Base C/S',...MISC_DLC]
+const DUPLICATE_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
 const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge']
 
 const LOW_PERCENT = ['ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles', 'beppitheclown', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice']

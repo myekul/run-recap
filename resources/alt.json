@@ -2159,9 +2159,9 @@
             },
             {
                 "name": "Ring Dragon (4 Quads)",
-                "time": 41.01,
+                "time": 39.89,
                 "player": "myekul",
-                "url": "https://youtu.be/71vn8EfRHng"
+                "url": "https://youtu.be/wyITeLgWjNw"
             },
             {
                 "name": "Pinwheel Dragon (4 Quads)",
@@ -2538,6 +2538,15 @@
                 "time": 50.92,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/00lelICyxe4"
+            },
+            {
+                "title": "No Spread Sprinkles"
+            },
+            {
+                "name": "Bubbles Dragon (Slowest)",
+                "time": 41.84,
+                "player": "myekul",
+                "url": "https://youtu.be/c0tD_B5RC-g"
             }
         ]
     },
@@ -2650,12 +2659,6 @@
                 "title": "Parryless"
             },
             {
-                "name": "3 Bounce",
-                "time": 16.58,
-                "player": "Yuka",
-                "url": "https://youtu.be/KMAPzlswXvY"
-            },
-            {
                 "name": "4 Bounce",
                 "time": 17.28,
                 "player": "Yuka",
@@ -2665,7 +2668,13 @@
                 "title": "Parries"
             },
             {
-                "name": "Triple Triple",
+                "name": "3 Bounce",
+                "time": 16.58,
+                "player": "Yuka",
+                "url": "https://youtu.be/KMAPzlswXvY"
+            },
+            {
+                "name": "4 Bounce, Triple Triple",
                 "time": 16.19,
                 "rta": 16.56,
                 "player": "Yuka",
@@ -3121,16 +3130,13 @@
     "NMG": {
         "forestfollies": [
             {
-                "title": "Parryless"
-            },
-            {
-                "name": "Pink Butterfly",
-                "time": 36.72,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/hoTmPanGOvU"
-            },
-            {
                 "title": "Parry"
+            },
+            {
+                "name": "Ninja Clip",
+                "time": 33.53,
+                "player": "myekul",
+                "url": "https://youtu.be/SNowOje2QZQ"
             },
             {
                 "name": "TSSMTIC",
@@ -3149,6 +3155,15 @@
                 "time": 35.78,
                 "player": "Quincely0",
                 "url": "https://youtu.be/T9PHXkunk8g"
+            },
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "Pink Butterfly",
+                "time": 36.72,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/hoTmPanGOvU"
             }
         ],
         "therootpack": [
@@ -3255,10 +3270,10 @@
             },
             {
                 "name": "Doubles",
-                "time": 25.71,
+                "time": 25.04,
                 "rta": 26.08,
                 "player": "myekul",
-                "url": "https://youtu.be/iwqCIlN_UmU"
+                "url": "https://youtu.be/mWN42a-O6BA"
             }
         ],
         "cagneycarnation": [
@@ -3793,44 +3808,6 @@
         ]
     },
     "DLC L/S": {
-        "forestfollies": [
-            {
-                "title": "Parryless"
-            },
-            {
-                "name": "Pink Butterfly",
-                "time": 36.72,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/hoTmPanGOvU"
-            },
-            {
-                "title": "Parry"
-            },
-            {
-                "name": "Ninja Clip",
-                "time": 33.53,
-                "player": "myekul",
-                "url": "https://youtu.be/SNowOje2QZQ"
-            },
-            {
-                "name": "TSSMTIC",
-                "time": 33.61,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/FGvzOsDOe2k?si=_8CECOyfxCk8LxbE&t=36"
-            },
-            {
-                "name": "TwoTone Hop",
-                "time": 34.91,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/J3DOLwLluSY?t=4"
-            },
-            {
-                "name": "Acorn Maker Kill",
-                "time": 35.78,
-                "player": "Quincely0",
-                "url": "https://youtu.be/T9PHXkunk8g"
-            }
-        ],
         "mausoleum": [
             {
                 "name": "1-1",
@@ -4128,44 +4105,80 @@
         ],
         "moonshinemob": [
             {
-                "title": "Standard Strats"
+                "title": "3-Cycle"
             },
             {
-                "name": "3-Cycle",
-                "time": 37.01,
-                "player": "Quincely0",
-                "url": "https://youtu.be/C4yaobQyGC8",
+                "name": "3 Bombs",
+                "time": 35.83,
+                "player": "myekul",
+                "url": "https://youtu.be/kLlkCLEH-HA",
                 "viable": "It goes for 2-cycle, which is risky."
             },
             {
-                "title": "Snout Guess"
-            },
-            {
-                "name": "3-Cycle",
-                "time": 35.64,
+                "name": "2 Bombs",
+                "time": 36.32,
                 "player": "myekul",
-                "url": "https://youtu.be/NOcHPYlWvSg"
+                "url": "https://youtu.be/m1nuVn4xntA"
             },
             {
-                "name": "2-Cycle",
+                "name": "1 Bomb",
+                "time": 36.86,
+                "player": "myekul",
+                "url": "https://youtu.be/cMy3Zwj_gaw"
+            },
+            {
+                "title": "2-Cycle, Snout Guess"
+            },
+            {
+                "name": "3 Bombs",
                 "time": 34.82,
                 "player": "myekul",
                 "url": "https://youtu.be/4678iTPrEuM"
             },
             {
-                "title": "No Snail Skip"
+                "name": "2 Bombs",
+                "time": 35.59,
+                "player": "myekul",
+                "url": "https://youtu.be/pXimRIpQDLA"
             },
             {
-                "name": "3-Cycle",
+                "title": "3-Cycle, Snout Guess"
+            },
+            {
+                "name": "3 Bombs",
+                "time": 35.64,
+                "player": "myekul",
+                "url": "https://youtu.be/NOcHPYlWvSg"
+            },
+            {
+                "name": "1 Bomb",
+                "time": 36.72,
+                "player": "myekul",
+                "url": "https://youtu.be/_8W4M5sc_XA"
+            },
+            {
+                "title": "2-Cycle, Snout Guess, No Snail Skip"
+            },
+            {
+                "name": "3 Bombs",
+                "time": 36.75,
+                "player": "myekul",
+                "url": "https://youtu.be/5Tl0uy4ynSI"
+            },
+            {
+                "name": "2 Bombs",
+                "time": 37.49,
+                "player": "myekul",
+                "url": "https://youtu.be/EQaTIUxFdKs"
+            },
+            {
+                "title": "3-Cycle, Snout Guess, No Snail Skip"
+            },
+            {
+                "name": "3 Bombs",
                 "time": 38.48,
                 "player": "myekul",
                 "url": "https://youtu.be/0KSiWmONXrg"
-            },
-            {
-                "name": "2-Cycle",
-                "time": 37.74,
-                "player": "myekul",
-                "url": "https://youtu.be/lgEatYokZLI"
             }
         ],
         "chefsaltbaker": [
@@ -4936,6 +4949,12 @@
             }
         ],
         "grimmatchstick": [
+            {
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
+                "time": 44.15,
+                "player": "myekul",
+                "url": "https://youtu.be/NB0mmtSrsZo"
+            },
             {
                 "name": "2 Lasers, 2 Lasers, 2 Meteors",
                 "time": 44.57,
@@ -6211,6 +6230,12 @@
                 "time": 42.73,
                 "player": "myekul",
                 "url": "https://youtu.be/9TwN0Y2AIlw"
+            },
+            {
+                "name": "Snout Guess",
+                "time": 39.96,
+                "player": "myekul",
+                "url": "https://youtu.be/WkFht8p_9VE"
             }
         ],
         "chefsaltbaker": [
@@ -6386,8 +6411,14 @@
         ],
         "moonshinemob": [
             {
-                "name": "",
-                "time": 32.88,
+                "name": "2 Bombs",
+                "time": 27.46,
+                "player": "myekul",
+                "url": "https://youtu.be/CZBWGD0End8"
+            },
+            {
+                "name": "1 Bomb",
+                "time": 28.23,
                 "player": "myekul",
                 "url": "https://youtu.be/latPG4QDnuc"
             }
