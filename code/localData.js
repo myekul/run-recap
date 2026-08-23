@@ -9,22 +9,38 @@ async function prepareLocalData() {
     commBest = commBestData
     runViable = runViableData
     alt = altData
-    runViable['DLC+Base L/S'].unshift(...runViable['DLC L/S'])
+    runViable['DLC+Base L/S DLC First'].unshift(...runViable['DLC L/S'])
     runViable['DLC+Base C/S'].unshift(...runViable['DLC C/S'])
     copyRunViable('1.1+', 'NMG', 3, 3) // Hilda Berg
     copyRunViable('1.1+', 'NMG', 9, 9) // Grim Matchstick
     copyRunViable('1.1+', 'NMG', 10, 10) // Rumor Honeybottoms
     copyRunViable('1.1+', 'NMG', 14, 14) // Captain Brineybeard
-    copyRunViable('1.1+', 'DLC+Base L/S', 3, 9) // Hilda Berg
+    copyRunViable('1.1+', 'DLC+Base L/S DLC First', 3, 9) // Hilda Berg
     copyRunViable('1.1+', 'DLC+Base C/S', 3, 9) // Hilda Berg
-    copyRunViable('NMG', 'DLC+Base L/S', 4, 10) // Cagney Carnation
-    copyRunViable('NMG', 'DLC+Base L/S', 5, 11) // Baroness Von Bon Bon
+    copyRunViable('NMG', 'DLC+Base L/S', 0, 1) // The Root Pack
+    copyRunViable('NMG', 'DLC+Base L/S', 1, 2) // Ribby and Croaks
+    copyRunViable('NMG', 'DLC+Base L/S', 2, 0) // Goopy Le Grande
+    copyRunViable('NMG', 'DLC+Base L/S', 3, 3) // Hilda Berg
+    copyRunViable('NMG', 'DLC+Base L/S', 4, 4) // Cagney Carnation
+    copyRunViable('NMG', 'DLC+Base L/S DLC First', 4, 10) // Cagney Carnation
+    copyRunViable('NMG', 'DLC+Base L/S', 5, 5) // Baroness Von Bon Bon
+    copyRunViable('NMG', 'DLC+Base L/S DLC First', 5, 11) // Baroness Von Bon Bon
+    copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', 6, 12) // Wally Warbles
+    copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', 7, 13) // Djimmi The Great
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 0, 8) // Glumstone The Giant
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 1, 9) // Mortimer Freeze
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 2, 10) // The Howling Aces
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 4, 12) // Moonshine Mob
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 5, 13) // Chef Saltbaker
     copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 12, 12) // Wally Warbles
     copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 13, 13) // Djimmi The Great
     copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 17, 17) // Dr. Kahl's Robot
     copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 21, 21) // Cala Maria
+    for (let i = 14; i < 25; i++) {
+        copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', i, i)
+    }
     // scenes
-    scenes['DLC+Base'] = scenes['DLC+Base C/S']
+    scenes['DLC+Base'] = scenes['DLC+Base L/S']
     for (const category in scenes) {
         if (commBestILs[category]) commBestILs[category].scenes = scenes[category]
     }
@@ -34,10 +50,10 @@ async function prepareLocalData() {
     commBestILs['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
     commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
     commBestILs['DLC'].scenes = commBestILs['DLC L/S'].scenes
-    commBestILs['DLC+Base'].scenes = commBestILs['DLC+Base C/S'].scenes
+    commBestILs['DLC+Base'].scenes = commBestILs['DLC+Base L/S'].scenes
     // rrcData
-    rrcData['DLC+Base'] = rrcData['DLC+Base C/S']
     rrcData['DLC'] = rrcData['DLC L/S']
+    rrcData['DLC+Base'] = rrcData['DLC+Base L/S']
     for (const category in rrcData) {
         commBestILs[category].topRuns = rrcData[category]
         const categoryScenes = commBestILs[category].scenes
@@ -128,12 +144,12 @@ async function prepareLocalData() {
             })
         })
     }
-    commBest['DLC+Base L/S'].before.unshift(...commBest['DLC L/S'].before)
+    commBest['DLC+Base L/S DLC First'].before.unshift(...commBest['DLC L/S'].before)
     commBest['DLC+Base C/S'].before.unshift(...commBest['DLC C/S'].before)
     commBest['DLC+Base C/S'].after.unshift(...commBest['DLC C/S'].after);
-    ['NMG', 'DLC L/S', 'DLC+Base L/S'].forEach(category => {
-        commBest[category].after = []
+    ['NMG', 'DLC L/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First'].forEach(category => {
         const WR = commBestILs[category].topRuns[0]
+        commBest[category].after = []
         for (let i = 0; i < WR.splitAfter.length; i++) {
             commBest[category].after.push({
                 segment: WR.segmentAfter[i],
@@ -250,9 +266,15 @@ function organizeAltStrats() {
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
+        ['1.1+', 'DLC+Base L/S DLC First', 'hildaberg'],
         ['Legacy', 'Legacy Low%', 'hildaberg'],
+        ['NMG', 'DLC+Base L/S', 'goopylegrande'],
+        ['NMG', 'DLC+Base L/S', 'therootpack'],
+        ['NMG', 'DLC+Base L/S', 'ribbyandcroaks'],
         ['NMG', 'DLC+Base L/S', 'cagneycarnation'],
+        ['NMG', 'DLC+Base L/S DLC First', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
+        ['NMG', 'DLC+Base L/S DLC First', 'baronessvonbonbon'],
         ['1.1+ Low%', 'OG Charge', 'djimmithegreat'],
         ['DLC L/S', 'DLC OG Charge', 'mausoleum'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
@@ -272,11 +294,16 @@ function organizeAltStrats() {
     copyDuplicate('DLC L/S', DUPLICATE_MAUS, 'mausoleum')
     copyDuplicate('DLC L/S', DUPLICATE_ESTHER, 'estherwinchester')
     const dlc = bosses.slice(19, 25).map(boss => boss.id)
+    const dlcNoEsther = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'moonshinemob', 'chefsaltbaker']
+    const dlcFirstRest = ['beppitheclown', 'grimmatchstick', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice', 'thedevil']
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
     copyBulk('1.1+', '1.1+ All Flags', bosses.slice(0, 19).map(boss => boss.id))
     copyBulk('1.1+ Low%', 'Legacy Low%', LOW_PERCENT)
-    copyBulk('DLC L/S', 'DLC+Base L/S', dlc)
+    copyBulk('DLC L/S', 'DLC+Base L/S', dlcNoEsther)
+    copyBulk('DLC L/S', 'DLC+Base L/S DLC First', dlc)
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
+    copyBulk('DLC+Base L/S', 'DLC+Base L/S DLC First', plane)
+    copyBulk('DLC+Base L/S', 'DLC+Base L/S DLC First', dlcFirstRest)
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)
     copyBulk('NMG', 'NMG P/S', plane)
     copyBulk('NMG', 'NMG R/S', plane)
@@ -285,6 +312,9 @@ function organizeAltStrats() {
         buttonID = category.className
         if (['dlc', 'dlcbase'].includes(buttonID) && category.shot1) {
             buttonID = category.className + (category.shot1?.charAt(0) || '') + (category.shot2?.charAt(0) || '')
+            if (categoryName == 'DLC+Base L/S DLC First') {
+                buttonID = 'dlcbaseFirst'
+            }
         }
         document.getElementById(buttonID + 'Button').insertAdjacentHTML(
             'afterend',
@@ -338,8 +368,7 @@ function organizeCategories() {
         const elem = bossesCopy.splice(18, 1)[0];
         bossesCopy.splice(21, 0, elem);
     }
-    // OOB Route
-    if (runRecapCategory.tabName == 'DLC+Base L/S OoB') {
+    if (runRecapCategory.tabName == 'DLC+Base L/S') {
         const elementsToMove = bossesCopy.slice(0, 6);
         bossesCopy.splice(0, 6);
         bossesCopy.splice(8, 0, ...elementsToMove);

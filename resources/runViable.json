@@ -29,6 +29,10 @@
                 {
                     "name": "*Grondious",
                     "url": "https://youtu.be/-KvAjbtm56E"
+                },
+                {
+                    "name": "*graven_",
+                    "url": "https://youtu.be/wXF9H3rBSaY"
                 }
             ]
         },
@@ -604,10 +608,6 @@
                 {
                     "name": "*Quincely0",
                     "url": "https://youtu.be/S2iW1ebfbq8"
-                },
-                {
-                    "name": "*Freakykkj",
-                    "url": "https://youtu.be/VfacW0jEu6c"
                 }
             ]
         },
@@ -941,34 +941,13 @@
     ],
     "DLC+Base L/S": [
         {
-            "name": "therootpack",
-            "time": 35,
-            "ILs": [
-                {
-                    "name": "MarkinSws",
-                    "url": "https://youtu.be/rwB_nGITe2A"
-                }
-            ]
+            "name": "goopylegrande"
         },
         {
-            "name": "ribbyandcroaks",
-            "time": 46,
-            "ILs": [
-                {
-                    "name": "ExclamationMarkYT",
-                    "url": "https://youtu.be/EOVr6rSl25I"
-                }
-            ]
+            "name": "therootpack"
         },
         {
-            "name": "goopylegrande",
-            "time": 28,
-            "ILs": [
-                {
-                    "name": "*MarkinSws",
-                    "url": "https://youtu.be/c5-l2z3rrew"
-                }
-            ]
+            "name": "ribbyandcroaks"
         },
         {
             "name": "hildaberg"
@@ -998,6 +977,31 @@
                     "url": "https://youtu.be/ropB_3XDZBU"
                 }
             ]
+        },
+        {
+            "name": "glumstonethegiant"
+        },
+        {
+            "name": "mortimerfreeze"
+        },
+        {
+            "name": "thehowlingaces"
+        },
+        {
+            "name": "estherwinchester",
+            "time": 52,
+            "ILs": [
+                {
+                    "name": "GamerAttack27",
+                    "url": "https://youtu.be/Uk-A0I48vbw?t=1157"
+                }
+            ]
+        },
+        {
+            "name": "moonshinemob"
+        },
+        {
+            "name": "chefsaltbaker"
         },
         {
             "name": "beppitheclown",
@@ -1110,6 +1114,86 @@
             ]
         }
     ],
+    "DLC+Base L/S DLC First": [
+        {
+            "name": "therootpack",
+            "time": 35,
+            "ILs": [
+                {
+                    "name": "MarkinSws",
+                    "url": "https://youtu.be/rwB_nGITe2A"
+                }
+            ]
+        },
+        {
+            "name": "ribbyandcroaks",
+            "time": 46,
+            "ILs": [
+                {
+                    "name": "ExclamationMarkYT",
+                    "url": "https://youtu.be/EOVr6rSl25I"
+                }
+            ]
+        },
+        {
+            "name": "goopylegrande",
+            "time": 28,
+            "ILs": [
+                {
+                    "name": "*MarkinSws",
+                    "url": "https://youtu.be/c5-l2z3rrew"
+                }
+            ]
+        },
+        {
+            "name": "hildaberg"
+        },
+        {
+            "name": "cagneycarnation"
+        },
+        {
+            "name": "baronessvonbonbon"
+        },
+        {
+            "name": "wallywarbles"
+        },
+        {
+            "name": "djimmithegreat"
+        },
+        {
+            "name": "beppitheclown"
+        },
+        {
+            "name": "grimmatchstick"
+        },
+        {
+            "name": "rumorhoneybottoms"
+        },
+        {
+            "name": "drkahlsrobot"
+        },
+        {
+            "name": "sallystageplay"
+        },
+        {
+            "name": "wernerwerman"
+        },
+        {
+            "name": "captainbrineybeard"
+        },
+        {
+            "name": "calamaria"
+        },
+        {
+            "name": "phantomexpress"
+        },
+        {
+            "name": "kingdice"
+        },
+        {
+            "name": "thedevil"
+        }
+    ],
     "DLC+Base C/S": [
         {
             "name": "therootpack",
@@ -1187,6 +1271,10 @@
                 {
                     "name": "*Quincely0",
                     "url": "https://youtu.be/qozAGjG2bCY"
+                },
+                {
+                    "name": "*DaniStuff2345",
+                    "url": "https://youtu.be/LBtjTFUOBN0"
                 }
             ]
         },

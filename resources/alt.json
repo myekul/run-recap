@@ -1111,9 +1111,9 @@
             },
             {
                 "name": "3 Lasers, 2 Lasers, 2 Meteors",
-                "time": 45.89,
+                "time": 45.62,
                 "player": "Quincely0",
-                "url": "https://youtu.be/wADPxhZkybg",
+                "url": "https://youtu.be/lWxR3KMv7Ks",
                 "odds": "1/18",
                 "odds2": 3,
                 "viable": "It goes for parries, which is risky and loses RTA time."
@@ -1515,9 +1515,9 @@
             },
             {
                 "name": "Shark, Dogfish",
-                "time": 43.39,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/OGkQ2Aj1F0w",
+                "time": 43.15,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/NUnf0keyp0w",
                 "odds": "1/36"
             },
             {
@@ -1538,9 +1538,9 @@
             },
             {
                 "name": "Dogfish, Shark",
-                "time": 43.48,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/sM4s3bBgqhw",
+                "time": 43.38,
+                "player": "HappyWolf",
+                "url": "https://youtu.be/jUx6qjXRGUI",
                 "odds": "1/36"
             },
             {
@@ -3103,9 +3103,9 @@
             },
             {
                 "name": "Bubbles Spider",
-                "time": 28.88,
-                "player": "Yuka",
-                "url": "https://youtu.be/SH90DKta1qw"
+                "time": 28.55,
+                "player": "graven_",
+                "url": "https://youtu.be/tcYUaOISWts"
             },
             {
                 "name": "Ring Clap Spider",
@@ -3294,24 +3294,6 @@
                 "url": "https://www.youtube.com/watch?v=nPejoCVUyQM&t=442s"
             },
             {
-                "name": "Lunge, Pods, Pods",
-                "time": 36.85,
-                "player": "Freakykkj",
-                "url": "https://youtu.be/CODEsXa6i7Y"
-            },
-            {
-                "name": "Lunge, Pods, Seeds",
-                "time": 38.90,
-                "player": "Freakykkj",
-                "url": "https://youtu.be/_zg1O9IpTYU"
-            },
-            {
-                "name": "Seeds, Pods",
-                "time": 37.86,
-                "player": "Freakykkj",
-                "url": "https://youtu.be/WKX-ErolJ0c"
-            },
-            {
                 "title": "Spread EXs, Parries"
             },
             {
@@ -3367,12 +3349,6 @@
                 "time": 36.87,
                 "player": "Quincely0",
                 "url": "https://youtu.be/xhOCY89EEk0"
-            },
-            {
-                "name": "Gumball, Cupcake, Waffle",
-                "time": 35.69,
-                "player": "Freakykkj",
-                "url": "https://youtu.be/0cQtiBtqyz8"
             }
         ],
         "wallywarbles": [
@@ -3954,13 +3930,16 @@
         ],
         "moonshinemob": [
             {
-                "name": "Lunar Eclipse, 2-cycle",
-                "time": "34.50",
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/2AO5ASAtGeA"
+                "title": "3-Cycle"
             },
             {
-                "name": "Lunar Eclipse, 3-cycle",
+                "name": "2 Bombs",
+                "time": 34.27,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/Hnuzzs87QZc"
+            },
+            {
+                "name": "1 Bomb",
                 "time": 35.26,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/3u0WkdBYqbA",
@@ -3973,10 +3952,34 @@
                 ]
             },
             {
+                "title": "3-Cycle, No Lunar Eclipse"
+            },
+            {
                 "name": "No Lunar Eclipse",
                 "time": 37.61,
                 "player": "MarkinSws",
-                "url": "https://youtu.be/eEc9lHX2BYU?feature=shared&t=12"
+                "url": "https://youtu.be/eEc9lHX2BYU?t=12"
+            },
+            {
+                "title": "2-cycle"
+            },
+            {
+                "name": "1 Bomb",
+                "time": "34.50",
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/2AO5ASAtGeA"
+            },
+            {
+                "name": "2 Bombs, Double K.O.",
+                "time": "32.80",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/FTDk8us4gac"
+            },
+            {
+                "name": "2 Bombs",
+                "time": 32.51,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/bbHnshtWZyQ"
             }
         ],
         "chefsaltbaker": [
@@ -4348,50 +4351,6 @@
         ]
     },
     "DLC+Base L/S": {
-        "estherwinchester": [
-            {
-                "name": "Luigi Swaps",
-                "time": "53.XX",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/CpZI5-umKgg"
-            }
-        ],
-        "therootpack": [
-            {
-                "name": "",
-                "time": 35.72,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/rwB_nGITe2A"
-            }
-        ],
-        "ribbyandcroaks": [
-            {
-                "title": "Regular Skip"
-            },
-            {
-                "name": "7 Flies, Snakes",
-                "time": 46,
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/EOVr6rSl25I"
-            },
-            {
-                "title": "Super Skip"
-            },
-            {
-                "name": "Punches, 5 Flies, Bulls",
-                "time": 47.67,
-                "player": "MarkinSws",
-                "url": "https://youtu.be/Yc22tnK95G0"
-            }
-        ],
-        "goopylegrande": [
-            {
-                "name": "",
-                "time": "28.30",
-                "player": "MarkinSws",
-                "url": "https://youtu.be/c5-l2z3rrew"
-            }
-        ],
         "wallywarbles": [
             {
                 "name": "",
@@ -4408,6 +4367,14 @@
                 "url": "https://youtu.be/ropB_3XDZBU"
             }
         ],
+        "estherwinchester": [
+            {
+                "name": "Luigi Swaps",
+                "time": 52.53,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/Uk-A0I48vbw?t=1157"
+            }
+        ],
         "beppitheclown": [
             {
                 "name": "",
@@ -4422,6 +4389,12 @@
                 "time": 46,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/wsPFg12OtdQ"
+            },
+            {
+                "name": "3 Lasers, 2 Meteors",
+                "time": "49.80",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/lYgtrROKi_E?t=1499"
             }
         ],
         "rumorhoneybottoms": [
@@ -4441,6 +4414,12 @@
                 "time": 41.84,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/OTYbNuwYO-M"
+            },
+            {
+                "name": "Red Gem",
+                "time": "45.90",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/lYgtrROKi_E?t=1668"
             },
             {
                 "title": "Chalice"
@@ -4480,9 +4459,18 @@
                 "time": 37.98,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/esv0BG2bPUI"
+            },
+            {
+                "name": "Squid, Shark",
+                "time": 43.49,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/lYgtrROKi_E?t=1899"
             }
         ],
         "calamaria": [
+            {
+                "title": "Parries"
+            },
             {
                 "name": "Red Fish, Pufferfish, Ghosts",
                 "time": 48.59,
@@ -4502,22 +4490,31 @@
                 "url": "https://youtu.be/HLQ8oXjoD4g"
             },
             {
-                "name": "Ghosts, Turtle, Red Fish, Pufferfish",
-                "time": 58.06,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=1960s"
-            },
-            {
                 "name": "Turtle, Red Fish, Seahorse",
                 "time": 49.95,
                 "player": "MarkinSws",
                 "url": "https://youtu.be/MrPwmMw-sP0"
             },
             {
+                "name": "Seahorse, Yellow Fish, Pufferfish, Ghosts",
+                "time": 54.67,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/lYgtrROKi_E?t=1979"
+            },
+            {
+                "title": "Parryless"
+            },
+            {
                 "name": "Seahorse, Yellow Fish, Turtle, Ghosts",
                 "time": 55.12,
                 "player": "myekul",
                 "url": "https://www.youtube.com/watch?v=hwv5dQf1nK8&t=1980s"
+            },
+            {
+                "name": "Ghosts, Turtle, Red Fish, Pufferfish",
+                "time": 58.06,
+                "player": "myekul",
+                "url": "https://www.youtube.com/watch?v=aY1sYbafaFA&t=1960s"
             }
         ],
         "phantomexpress": [
@@ -4542,6 +4539,44 @@
                 "time": 48.98,
                 "player": "myekul",
                 "url": "https://youtu.be/5QxHk3tFjMc"
+            }
+        ]
+    },
+    "DLC+Base L/S DLC First": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 35.72,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/rwB_nGITe2A"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "title": "Regular Skip"
+            },
+            {
+                "name": "7 Flies, Snakes",
+                "time": 46,
+                "player": "ExclamationMarkYT",
+                "url": "https://youtu.be/EOVr6rSl25I"
+            },
+            {
+                "title": "Super Skip"
+            },
+            {
+                "name": "Punches, 5 Flies, Bulls",
+                "time": 47.67,
+                "player": "MarkinSws",
+                "url": "https://youtu.be/Yc22tnK95G0"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": "28.30",
+                "player": "MarkinSws",
+                "url": "https://youtu.be/c5-l2z3rrew"
             }
         ]
     },
@@ -4676,6 +4711,12 @@
                 "url": "https://youtu.be/FxZkjrwuROQ"
             },
             {
+                "name": "Gumball, Cupcake, Candy Corn",
+                "time": 32.38,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/J7n4jjWl-48"
+            },
+            {
                 "name": "Gumball, Cupcake, Jawbreaker",
                 "time": 34.96,
                 "player": "DaniStuff2345",
@@ -4698,54 +4739,6 @@
                 "time": 34.56,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/9FrFYne2USI"
-            },
-            {
-                "name": "Candy Corn, Waffle, Gumball",
-                "time": 30.56,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/Bs1gjY-xUc0"
-            },
-            {
-                "name": "Candy Corn, Waffle, Cupcake",
-                "time": 31.92,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/EwfqgznR1l8"
-            },
-            {
-                "name": "Candy Corn, Waffle, Jawbreaker",
-                "time": 35.43,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/h0WzKZmv6E0"
-            },
-            {
-                "name": "Candy Corn, Gumball, Waffle",
-                "time": 30.59,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/ycVCEPR5Pu8"
-            },
-            {
-                "name": "Candy Corn, Gumball, Cupcake",
-                "time": 31.03,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/5-ud0SjHjCs"
-            },
-            {
-                "name": "Candy Corn, Gumball, Jawbreaker",
-                "time": 34.79,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/hP6x9oAhh5s"
-            },
-            {
-                "name": "Candy Corn, Cupcake, Gumball",
-                "time": 31.76,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/Dh3HQ9vk570"
-            },
-            {
-                "name": "Candy Corn, Jawbreaker, Gumball",
-                "time": 34.83,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/pdUqpSpcU7E"
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
@@ -4812,6 +4805,60 @@
                 "time": 35.85,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/TXZU5OZSG_s"
+            },
+            {
+                "name": "Candy Corn, Waffle, Gumball",
+                "time": 30.56,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Bs1gjY-xUc0"
+            },
+            {
+                "name": "Candy Corn, Waffle, Cupcake",
+                "time": 31.92,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/EwfqgznR1l8"
+            },
+            {
+                "name": "Candy Corn, Waffle, Jawbreaker",
+                "time": 35.43,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/h0WzKZmv6E0"
+            },
+            {
+                "name": "Candy Corn, Gumball, Waffle",
+                "time": 30.59,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ycVCEPR5Pu8"
+            },
+            {
+                "name": "Candy Corn, Gumball, Cupcake",
+                "time": 31.03,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/5-ud0SjHjCs"
+            },
+            {
+                "name": "Candy Corn, Gumball, Jawbreaker",
+                "time": 34.79,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/hP6x9oAhh5s"
+            },
+            {
+                "name": "Candy Corn, Cupcake, Gumball",
+                "time": 31.76,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/Dh3HQ9vk570"
+            },
+            {
+                "name": "Candy Corn, Cupcake, Waffle",
+                "time": 31.83,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/45Q8CWxlcBA"
+            },
+            {
+                "name": "Candy Corn, Jawbreaker, Gumball",
+                "time": 34.83,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/pdUqpSpcU7E"
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
@@ -4916,10 +4963,22 @@
                 "url": "https://youtu.be/r_5oB8vBkp4"
             },
             {
+                "name": "Jawbreaker, Gumball, Candy Corn",
+                "time": 35.49,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/MWfvmxjYpiA"
+            },
+            {
                 "name": "Jawbreaker, Cupcake, Gumball",
                 "time": 34.99,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/IfnMt4Sm5MU"
+            },
+            {
+                "name": "Jawbreaker, Cupcake, Waffle",
+                "time": 35.71,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/PGT7TDIqNUc"
             },
             {
                 "name": "Jawbreaker, Cupcake, Candy Corn",
@@ -4938,6 +4997,12 @@
                 "time": 35.55,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/UvTtVcwIIUA"
+            },
+            {
+                "name": "Jawbreaker, Candy Corn, Cupcake",
+                "time": 36.72,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/qItNy8gnyxA"
             }
         ],
         "beppitheclown": [
@@ -4989,9 +5054,9 @@
         "rumorhoneybottoms": [
             {
                 "name": "Middle",
-                "time": 36.87,
+                "time": 36.75,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/KR07ooa-EMQ"
+                "url": "https://youtu.be/IWKMjAK7iT8"
             },
             {
                 "name": "Orbs",
@@ -5135,9 +5200,9 @@
             },
             {
                 "name": "One-cycle",
-                "time": 59.67,
-                "player": "myekul",
-                "url": "https://youtu.be/Sr_aSrkt9Kw"
+                "time": 59.03,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/QQret9v_90M"
             }
         ],
         "kingdice": [
@@ -6129,6 +6194,65 @@
             }
         ]
     },
+    "DLC Charmless": {
+        "glumstonethegiant": [
+            {
+                "name": "Cauldron",
+                "time": 53.76,
+                "player": "myekul",
+                "url": "https://youtu.be/PfOvwumhcc4?t=208"
+            }
+        ],
+        "mortimerfreeze": [
+            {
+                "name": "",
+                "time": 46.18,
+                "player": "myekul",
+                "url": "https://youtu.be/PfOvwumhcc4?t=292"
+            }
+        ],
+        "thehowlingaces": [
+            {
+                "name": "",
+                "time": 47.61,
+                "player": "myekul",
+                "url": "https://youtu.be/PfOvwumhcc4?t=367"
+            }
+        ],
+        "estherwinchester": [
+            {
+                "name": "1 Nuke",
+                "time": "1:08.37",
+                "player": "myekul",
+                "url": "https://youtu.be/PfOvwumhcc4?t=446"
+            }
+        ],
+        "moonshinemob": [
+            {
+                "name": "",
+                "time": 42.27,
+                "player": "myekul",
+                "url": "https://youtu.be/PfOvwumhcc4?t=546"
+            }
+        ],
+        "chefsaltbaker": [
+            {
+                "name": "DLS",
+                "time": "1:13.97",
+                "player": "myekul",
+                "url": "https://youtu.be/PfOvwumhcc4?t=633"
+            },
+            {
+                "title": "Twistimate"
+            },
+            {
+                "name": "LS-L",
+                "time": 56.01,
+                "player": "myekul",
+                "url": "https://youtu.be/h1-75Zvp-PQ"
+            }
+        ]
+    },
     "DLC OG Charge": {
         "forestfollies": [
             {
@@ -6495,15 +6619,39 @@
                 "player": "myekul",
                 "url": "https://youtu.be/WHbTrE0rumc"
             }
+        ],
+        "wernerwerman": [
+            {
+                "name": "",
+                "time": 36.66,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/PYpB_UWOdmA"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "",
+                "time": 28.78,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/-DmOahLD5f0"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": 40.69,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/HwmbQl52g9U"
+            }
         ]
     },
     "300%": {
         "therootpack": [
             {
                 "name": "",
-                "time": 37.79,
-                "player": "myekul",
-                "url": "https://youtu.be/WF-NVrfbNcs"
+                "time": 37.42,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/26sKcfBKhao"
             }
         ],
         "ribbyandcroaks": [

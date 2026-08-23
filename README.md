@@ -2,8 +2,8 @@
 - Comm Best Any% DLC boards merge bug - 1st placement
 - Organize Run Recap database
 - Find player or display player name
-- DLC+Base L/S Routes
 - Ground vs. Plane
+- Vanilla
 
 - Duplicate URLs in Firebase cache
 

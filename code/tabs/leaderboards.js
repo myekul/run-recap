@@ -62,5 +62,6 @@ function horiztonalCategories() {
         <button id='dlcbaseButton' class="dlcbase button ${runRecapCategory.name == 'DLC+Base' ? 'selected' : ''}" onclick="${functionName}('DLC+Base',true)">DLC+Base</button>
         <button id='dlcbaselsButton' class="dlcbase lobber button ${runRecapCategory.tabName == 'DLC+Base L/S' ? 'selected' : ''}" onclick="${functionName}('DLC+Base L/S',true)"></button>
         <button id='dlcbasecsButton' class="dlcbase charge button ${runRecapCategory.tabName == 'DLC+Base C/S' ? 'selected' : ''}" onclick="${functionName}('DLC+Base C/S',true)"></button>
+        <button id='dlcbaseFirstButton' class="dlcbase sai button ${runRecapCategory.tabName == 'DLC+Base L/S DLC First' ? 'selected' : ''}" onclick="${functionName}('DLC+Base L/S DLC First',true)"></button>
     </div>`
 }

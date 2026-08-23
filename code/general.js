@@ -129,6 +129,7 @@ function categorySelect(database) {
             <button id='dlcbaseButton' class="dlcbase button" onclick="${functionName}('DLC+Base',true)">DLC+Base</button>
             <button id='dlcbaselsButton' class="dlcbase lobber button" onclick="${functionName}('DLC+Base L/S',true)"></button>
             <button id='dlcbasecsButton' class="dlcbase charge button" onclick="${functionName}('DLC+Base C/S',true)"></button>
+            <button id='dlcbaseFirstButton' class="dlcbase sai button" onclick="${functionName}('DLC+Base L/S DLC First',true)"></button>
         </div>`
     if (!database) {
         HTMLContent += `

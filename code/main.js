@@ -219,6 +219,9 @@ function categoryButtonClick(category, database) {
         buttonID = category.className
         if (['dlc', 'dlcbase'].includes(buttonID) && category.shot1) {
             buttonID = category.className + (category.shot1?.charAt(0) || '') + (category.shot2?.charAt(0) || '')
+            if (category.tabName == 'DLC+Base L/S DLC First') {
+                buttonID = 'dlcbaseFirst'
+            }
         }
         document.getElementById('allButtonDatabase')?.classList.remove('grayedOut')
     } else {
@@ -343,6 +346,9 @@ function buttonShots() {
     })
     document.querySelectorAll('.charge').forEach(button => {
         button.innerHTML = cupheadShot('charge', 21)
+    })
+    document.querySelectorAll('.sai').forEach(button => {
+        button.innerHTML = cupheadItem('superarti', 21, true, 'super')
     })
 }
 buttonShots()

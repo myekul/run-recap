@@ -178,18 +178,11 @@
     },
     "DLC+Base": {
         "name": "DLC+Base",
-        "tabName": "DLC+Base C/S",
+        "tabName": "DLC+Base L/S",
         "className": "dlcbase",
         "category": 4,
-        "shot1": "charge",
+        "shot1": "lobber",
         "shot2": "spread"
-    },
-    "DLC+Base L/S OoB": {
-        "name": "DLC+Base",
-        "tabName": "DLC+Base L/S OoB",
-        "className": "dlcbase",
-        "category": 4,
-        "subcat": "OoB"
     },
     "DLC+Base L/S": {
         "name": "DLC+Base",
@@ -199,9 +192,20 @@
         "shot1": "lobber",
         "shot2": "spread",
         "extraPlayers": [
+            "GamerAttack27"
+        ]
+    },
+    "DLC+Base L/S DLC First": {
+        "name": "DLC+Base",
+        "tabName": "DLC+Base L/S DLC First",
+        "className": "dlcbase",
+        "category": 4,
+        "subcat": "DLC First",
+        "shot1": "lobber",
+        "shot2": "spread",
+        "extraPlayers": [
             "BlackTower",
             "ExclamationMarkYT",
-            "GamerAttack27",
             "Grondious",
             "HappyWolf",
             "jaan_971",

@@ -4,20 +4,20 @@ const CHESS = ['pawns', 'knight', 'bishop', 'rook', 'queen']
 const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefrazzle', 'ruggedridge', 'perilouspiers']
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
-const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S']
+const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S']
 const OTHER_CATEGORIES = [
     ['1.1+ All Flags', '1.1+ Low%', '1.1+ Expert', '1.1+ NG+', 'Legacy Low%', 'NMG P/S Simple', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'OG Charge'],
-    ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%'],
+    ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%'],
 ]
-const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
+const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
 
 const NO_FOLLIES = ['1.1+ Low%', 'Legacy Low%', 'NMG P/S', 'NMG P/S Simple']
 
-const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge', 'DLC Expert']
+const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert']
 const DUPLICATE_FOLLIES_1_1 = ['1.1+ Expert']
-const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert','DLC L/S','DLC C/S','DLC+Base L/S','DLC+Base C/S',...MISC_DLC]
-const DUPLICATE_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base C/S', ...MISC_DLC]
-const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC OG Charge']
+const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
+const DUPLICATE_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
+const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge']
 
 const LOW_PERCENT = ['ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles', 'beppitheclown', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice']
 
