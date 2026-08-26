@@ -177,9 +177,9 @@
                 "split": "26:59.56",
                 "splitRunner": "SBDWolf",
                 "splitURL": "https://youtu.be/kYlpTMY9W2M",
-                "segment": "1:12.71",
-                "segmentRunner": "SBDWolf",
-                "segmentURL": "https://www.youtube.com/watch?v=uiurXsFxMfw&t=1661s"
+                "segment": "1:12.38",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/6n9rNKqjVOQ"
             }
         ],
         "after": [
@@ -215,15 +215,15 @@
                 "split": "4:12.89",
                 "splitRunner": "SBDWolf",
                 "splitURL": "https://youtu.be/kYlpTMY9W2M",
-                "segment": "50.39",
+                "segment": "50.11",
                 "segmentRunner": "myekul",
-                "segmentURL": "https://youtu.be/vcVceAT6I1c"
+                "segmentURL": "https://youtu.be/xeJzWO8PRGY?t=228"
             },
             {
                 "title": "hildaberg",
-                "split": "5:52.51",
-                "splitRunner": "SBDWolf",
-                "splitURL": "https://www.youtube.com/live/_a1po4eONrI?si=B-2bDHgHmVXREVyK&t=12383",
+                "split": "5:52.36",
+                "splitRunner": "myekul",
+                "splitURL": "https://youtu.be/xeJzWO8PRGY",
                 "segment": "1:36.56",
                 "segmentRunner": "myekul",
                 "segmentURL": "https://youtu.be/I96MlR9mnwI"
@@ -359,9 +359,9 @@
                 "split": "26:59.56",
                 "splitRunner": "SBDWolf",
                 "splitURL": "https://youtu.be/kYlpTMY9W2M",
-                "segment": "58.73",
-                "segmentRunner": "SBDWolf",
-                "segmentURL": "https://www.youtube.com/live/GHE-2WaxRDQ?si=RV9non-amIkHRHaH&t=5056"
+                "segment": "58.44",
+                "segmentRunner": "myekul",
+                "segmentURL": "https://youtu.be/6n9rNKqjVOQ"
             }
         ]
     },
