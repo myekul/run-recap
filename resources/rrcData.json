@@ -839,6 +839,432 @@
             ]
         },
         {
+            "name": "myekul",
+            "thedevil": "Ring Dragon",
+            "scenes": [
+                {
+                    "name": "cutscene_intro",
+                    "endTime": 1.439
+                },
+                {
+                    "name": "level_house_elder_kettle",
+                    "endTime": 9.674
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 22.351
+                },
+                {
+                    "name": "level_platforming_1_1F",
+                    "levelTime": 34.23,
+                    "endTime": 60.753
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 1,
+                    "coins": 5,
+                    "starSkips": 2,
+                    "endTime": 68.437
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 75.535
+                },
+                {
+                    "name": "shop",
+                    "endTime": 81.325
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 86.249
+                },
+                {
+                    "name": "level_veggies",
+                    "levelTime": 35.42,
+                    "endTime": 128.107
+                },
+                {
+                    "name": "win",
+                    "hp": 2,
+                    "parries": 0,
+                    "superMeter": 11,
+                    "starSkips": 2,
+                    "endTime": 135.155
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 145.74099999999999
+                },
+                {
+                    "name": "level_frogs",
+                    "levelTime": 45.69,
+                    "endTime": 198.056
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 20,
+                    "starSkips": 2,
+                    "endTime": 205.015
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 218.65
+                },
+                {
+                    "name": "level_slime",
+                    "levelTime": 23.84,
+                    "endTime": 249.307
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 2,
+                    "superMeter": 13,
+                    "starSkips": 1,
+                    "endTime": 257.646
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 271.342
+                },
+                {
+                    "name": "level_shmup_tutorial",
+                    "endTime": 275.138
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 278.91700000000003
+                },
+                {
+                    "name": "level_flying_blimp",
+                    "levelTime": 63.83,
+                    "endTime": 349.55899999999997
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 2,
+                    "superMeter": 13,
+                    "starSkips": 2,
+                    "endTime": 357.611
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 371.458
+                },
+                {
+                    "name": "level_flower",
+                    "levelTime": 39.59,
+                    "endTime": 417.514
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 10,
+                    "starSkips": 2,
+                    "endTime": 424.754
+                },
+                {
+                    "name": "map_world_1",
+                    "levelTime": 39.59,
+                    "endTime": 436.625
+                },
+                {
+                    "name": "level_dice_gate",
+                    "endTime": 443.26
+                },
+                {
+                    "name": "cutscene_world2",
+                    "endTime": 444.976
+                },
+                {
+                    "name": "map_world_2",
+                    "endTime": 449.188
+                },
+                {
+                    "name": "level_baroness",
+                    "levelTime": 34.82,
+                    "endTime": 490.462
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 7,
+                    "starSkips": 2,
+                    "endTime": 497.464
+                },
+                {
+                    "name": "map_world_2",
+                    "endTime": 514.982
+                },
+                {
+                    "name": "level_flying_bird",
+                    "levelTime": 49.43,
+                    "endTime": 572.216
+                },
+                {
+                    "name": "win",
+                    "hp": 2,
+                    "parries": 5,
+                    "superMeter": 21,
+                    "starSkips": 2,
+                    "endTime": 580.109
+                },
+                {
+                    "name": "map_world_2",
+                    "endTime": 593.658
+                },
+                {
+                    "name": "level_flying_genie",
+                    "levelTime": 78.66,
+                    "endTime": 679.335
+                },
+                {
+                    "name": "win",
+                    "hp": 2,
+                    "parries": 3,
+                    "superMeter": 17,
+                    "starSkips": 2,
+                    "endTime": 687.094
+                },
+                {
+                    "name": "map_world_2",
+                    "endTime": 699.409
+                },
+                {
+                    "name": "level_clown",
+                    "levelTime": 43.5,
+                    "endTime": 750.122
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 4,
+                    "superMeter": 13,
+                    "starSkips": 2,
+                    "endTime": 757.9590000000001
+                },
+                {
+                    "name": "map_world_2",
+                    "endTime": 774.578
+                },
+                {
+                    "name": "level_dragon",
+                    "levelTime": 49.6,
+                    "endTime": 830.643
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 9,
+                    "endTime": 838.695
+                },
+                {
+                    "name": "map_world_2",
+                    "levelTime": 49.6,
+                    "endTime": 850.532
+                },
+                {
+                    "name": "level_dice_gate",
+                    "endTime": 857.211
+                },
+                {
+                    "name": "cutscene_world3",
+                    "endTime": 858.904
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 862.26
+                },
+                {
+                    "name": "level_bee",
+                    "levelTime": 43.44,
+                    "endTime": 912.155
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 6,
+                    "starSkips": 1,
+                    "endTime": 919.856
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 935.168
+                },
+                {
+                    "name": "level_robot",
+                    "levelTime": 46.47,
+                    "endTime": 988.815
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 4,
+                    "superMeter": 15,
+                    "endTime": 997.769
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 1009.727
+                },
+                {
+                    "name": "level_sally_stage_play",
+                    "levelTime": 51.67,
+                    "endTime": 1067.851
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 10,
+                    "endTime": 1075.808
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 1092.666
+                },
+                {
+                    "name": "level_mouse",
+                    "levelTime": 38.14,
+                    "endTime": 1137.264
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 0,
+                    "superMeter": 24,
+                    "endTime": 1145.323
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 1160.23
+                },
+                {
+                    "name": "level_pirate",
+                    "levelTime": 38.65,
+                    "endTime": 1206.254
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 5,
+                    "superMeter": 11,
+                    "starSkips": 2,
+                    "endTime": 1214.166
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 1229.699
+                },
+                {
+                    "name": "level_flying_mermaid",
+                    "levelTime": 55.43,
+                    "endTime": 1292.163
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 3,
+                    "superMeter": 14,
+                    "starSkips": 2,
+                    "endTime": 1299.898
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 1314.639
+                },
+                {
+                    "name": "level_train",
+                    "levelTime": 61.54,
+                    "endTime": 1384.268
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 5,
+                    "superMeter": 11,
+                    "starSkips": 1,
+                    "endTime": 1392.668
+                },
+                {
+                    "name": "map_world_3",
+                    "endTime": 1404.819
+                },
+                {
+                    "name": "map_world_4",
+                    "endTime": 1410.408
+                },
+                {
+                    "name": "cutscene_kingdice",
+                    "levelTime": 61.54,
+                    "endTime": 1413.673
+                },
+                {
+                    "name": "level_dice_palace_main",
+                    "levelTime": 9.66,
+                    "endTime": 1425.568
+                },
+                {
+                    "name": "level_dice_palace_cigar",
+                    "levelTime": 28.3,
+                    "endTime": 1450.668
+                },
+                {
+                    "name": "level_dice_palace_main",
+                    "levelTime": 37.96,
+                    "endTime": 1462.578
+                },
+                {
+                    "name": "level_dice_palace_rabbit",
+                    "levelTime": 61.64,
+                    "endTime": 1493.068
+                },
+                {
+                    "name": "level_dice_palace_main",
+                    "levelTime": 71.3,
+                    "endTime": 1504.967
+                },
+                {
+                    "name": "level_dice_palace_roulette",
+                    "levelTime": 82.37,
+                    "endTime": 1522.499
+                },
+                {
+                    "name": "level_dice_palace_main",
+                    "levelTime": 108.69,
+                    "endTime": 1556.763
+                },
+                {
+                    "name": "win",
+                    "hp": 1,
+                    "parries": 8,
+                    "superMeter": 26,
+                    "endTime": 1565.719
+                },
+                {
+                    "name": "map_world_4",
+                    "endTime": 1575.971
+                },
+                {
+                    "name": "cutscene_devil",
+                    "endTime": 1580.661
+                },
+                {
+                    "name": "level_devil",
+                    "levelTime": 49.96,
+                    "endTime": 1631.368
+                }
+            ]
+        },
+        {
             "name": "lewzr",
             "thedevil": "Clap Pinwheel Dragon",
             "scenes": [
@@ -2234,430 +2660,6 @@
                     "levelTime": 51.72,
                     "name": "level_devil",
                     "endTime": 1638.902
-                }
-            ]
-        },
-        {
-            "name": "myekul",
-            "thedevil": "Pinwheel Dragon",
-            "scenes": [
-                {
-                    "endTime": 1.465,
-                    "name": "cutscene_intro"
-                },
-                {
-                    "endTime": 9.89,
-                    "name": "level_house_elder_kettle"
-                },
-                {
-                    "endTime": 22.625,
-                    "name": "map_world_1"
-                },
-                {
-                    "levelTime": 33.48,
-                    "name": "level_platforming_1_1F",
-                    "endTime": 60.291
-                },
-                {
-                    "endTime": 68.123,
-                    "name": "win",
-                    "parries": 1,
-                    "coins": 5,
-                    "starSkips": 2,
-                    "hp": 1
-                },
-                {
-                    "endTime": 75.19,
-                    "name": "map_world_1"
-                },
-                {
-                    "endTime": 80.98,
-                    "name": "shop"
-                },
-                {
-                    "endTime": 85.91499999999999,
-                    "name": "map_world_1"
-                },
-                {
-                    "name": "level_veggies",
-                    "endTime": 128.612,
-                    "levelTime": 36.26
-                },
-                {
-                    "hp": 1,
-                    "endTime": 136.63,
-                    "name": "win",
-                    "superMeter": 10,
-                    "parries": 0
-                },
-                {
-                    "endTime": 147.278,
-                    "name": "map_world_1"
-                },
-                {
-                    "levelTime": 46.85,
-                    "name": "level_frogs",
-                    "endTime": 200.762
-                },
-                {
-                    "hp": 1,
-                    "starSkips": 2,
-                    "superMeter": 18,
-                    "parries": 0,
-                    "name": "win",
-                    "endTime": 207.681
-                },
-                {
-                    "endTime": 221.339,
-                    "name": "map_world_1"
-                },
-                {
-                    "name": "level_slime",
-                    "endTime": 252.462,
-                    "levelTime": 24.3
-                },
-                {
-                    "name": "win",
-                    "endTime": 261.209,
-                    "parries": 2,
-                    "superMeter": 13,
-                    "hp": 1
-                },
-                {
-                    "endTime": 275.067,
-                    "name": "map_world_1"
-                },
-                {
-                    "endTime": 278.911,
-                    "name": "level_shmup_tutorial"
-                },
-                {
-                    "endTime": 282.709,
-                    "name": "map_world_1"
-                },
-                {
-                    "levelTime": 62.52,
-                    "name": "level_flying_blimp",
-                    "endTime": 352.043
-                },
-                {
-                    "hp": 1,
-                    "parries": 2,
-                    "starSkips": 1,
-                    "superMeter": 13,
-                    "endTime": 360.272,
-                    "name": "win"
-                },
-                {
-                    "endTime": 374.168,
-                    "name": "map_world_1"
-                },
-                {
-                    "name": "level_flower",
-                    "endTime": 415.781,
-                    "levelTime": 35.17
-                },
-                {
-                    "name": "win",
-                    "endTime": 422.749,
-                    "parries": 0,
-                    "superMeter": 13,
-                    "starSkips": 2,
-                    "hp": 1
-                },
-                {
-                    "name": "map_world_1",
-                    "endTime": 434.649,
-                    "levelTime": 35.17
-                },
-                {
-                    "endTime": 442.1,
-                    "name": "level_dice_gate"
-                },
-                {
-                    "endTime": 443.841,
-                    "name": "cutscene_world2"
-                },
-                {
-                    "endTime": 448.041,
-                    "name": "map_world_2"
-                },
-                {
-                    "levelTime": 35.7,
-                    "endTime": 490.199,
-                    "name": "level_baroness"
-                },
-                {
-                    "hp": 1,
-                    "name": "win",
-                    "endTime": 497.157,
-                    "superMeter": 7,
-                    "starSkips": 2,
-                    "parries": 0
-                },
-                {
-                    "endTime": 514.744,
-                    "name": "map_world_2"
-                },
-                {
-                    "levelTime": 51.37,
-                    "endTime": 573.723,
-                    "name": "level_flying_bird"
-                },
-                {
-                    "parries": 4,
-                    "superMeter": 20,
-                    "starSkips": 2,
-                    "endTime": 581.53,
-                    "name": "win",
-                    "hp": 2
-                },
-                {
-                    "endTime": 595.174,
-                    "name": "map_world_2"
-                },
-                {
-                    "name": "level_flying_genie",
-                    "endTime": 680.672,
-                    "levelTime": 78.67
-                },
-                {
-                    "parries": 2,
-                    "superMeter": 17,
-                    "name": "win",
-                    "endTime": 689.363,
-                    "hp": 2
-                },
-                {
-                    "endTime": 701.752,
-                    "name": "map_world_2"
-                },
-                {
-                    "levelTime": 44.31,
-                    "name": "level_clown",
-                    "endTime": 753.262
-                },
-                {
-                    "name": "win",
-                    "endTime": 760.971,
-                    "superMeter": 12,
-                    "starSkips": 2,
-                    "parries": 4,
-                    "hp": 1
-                },
-                {
-                    "endTime": 777.568,
-                    "name": "map_world_2"
-                },
-                {
-                    "levelTime": 51.35,
-                    "name": "level_dragon",
-                    "endTime": 835.381
-                },
-                {
-                    "hp": 1,
-                    "starSkips": 1,
-                    "superMeter": 9,
-                    "parries": 0,
-                    "name": "win",
-                    "endTime": 842.838
-                },
-                {
-                    "name": "map_world_2",
-                    "endTime": 854.753,
-                    "levelTime": 51.35
-                },
-                {
-                    "endTime": 861.55,
-                    "name": "level_dice_gate"
-                },
-                {
-                    "endTime": 863.284,
-                    "name": "cutscene_world3"
-                },
-                {
-                    "endTime": 866.755,
-                    "name": "map_world_3"
-                },
-                {
-                    "levelTime": 41.73,
-                    "name": "level_bee",
-                    "endTime": 914.946
-                },
-                {
-                    "endTime": 921.789,
-                    "name": "win",
-                    "parries": 0,
-                    "starSkips": 2,
-                    "superMeter": 6,
-                    "hp": 1
-                },
-                {
-                    "endTime": 937.048,
-                    "name": "map_world_3"
-                },
-                {
-                    "levelTime": 51.47,
-                    "endTime": 995.353,
-                    "name": "level_robot"
-                },
-                {
-                    "hp": 1,
-                    "name": "win",
-                    "endTime": 1004.415,
-                    "parries": 2,
-                    "superMeter": 14
-                },
-                {
-                    "endTime": 1016.4110000000001,
-                    "name": "map_world_3"
-                },
-                {
-                    "levelTime": 51.79,
-                    "name": "level_sally_stage_play",
-                    "endTime": 1074.647
-                },
-                {
-                    "starSkips": 2,
-                    "superMeter": 11,
-                    "parries": 0,
-                    "endTime": 1081.84,
-                    "name": "win",
-                    "hp": 1
-                },
-                {
-                    "endTime": 1098.538,
-                    "name": "map_world_3"
-                },
-                {
-                    "endTime": 1144.223,
-                    "name": "level_mouse",
-                    "levelTime": 39.23
-                },
-                {
-                    "hp": 1,
-                    "superMeter": 23,
-                    "starSkips": 2,
-                    "parries": 0,
-                    "name": "win",
-                    "endTime": 1151.093
-                },
-                {
-                    "endTime": 1166.008,
-                    "name": "map_world_3"
-                },
-                {
-                    "endTime": 1215.785,
-                    "name": "level_pirate",
-                    "levelTime": 42.94
-                },
-                {
-                    "endTime": 1224.295,
-                    "name": "win",
-                    "superMeter": 9,
-                    "starSkips": 1,
-                    "parries": 2,
-                    "hp": 2
-                },
-                {
-                    "endTime": 1239.868,
-                    "name": "map_world_3"
-                },
-                {
-                    "name": "level_flying_mermaid",
-                    "endTime": 1304.475,
-                    "levelTime": 58.15
-                },
-                {
-                    "superMeter": 13,
-                    "starSkips": 1,
-                    "parries": 0,
-                    "name": "win",
-                    "endTime": 1311.974,
-                    "hp": 1
-                },
-                {
-                    "endTime": 1326.742,
-                    "name": "map_world_3"
-                },
-                {
-                    "levelTime": 60.66,
-                    "endTime": 1395.53,
-                    "name": "level_train"
-                },
-                {
-                    "starSkips": 2,
-                    "superMeter": 12,
-                    "parries": 5,
-                    "endTime": 1403.354,
-                    "name": "win",
-                    "hp": 2
-                },
-                {
-                    "endTime": 1415.477,
-                    "name": "map_world_3"
-                },
-                {
-                    "endTime": 1421.036,
-                    "name": "map_world_4"
-                },
-                {
-                    "levelTime": 60.66,
-                    "name": "cutscene_kingdice",
-                    "endTime": 1424.267
-                },
-                {
-                    "levelTime": 9.66,
-                    "endTime": 1436.182,
-                    "name": "level_dice_palace_main"
-                },
-                {
-                    "levelTime": 27.65,
-                    "name": "level_dice_palace_cigar",
-                    "endTime": 1460.615
-                },
-                {
-                    "levelTime": 37.31,
-                    "name": "level_dice_palace_main",
-                    "endTime": 1472.519
-                },
-                {
-                    "levelTime": 62.02,
-                    "name": "level_dice_palace_rabbit",
-                    "endTime": 1503.666
-                },
-                {
-                    "endTime": 1515.607,
-                    "name": "level_dice_palace_main",
-                    "levelTime": 71.73
-                },
-                {
-                    "levelTime": 83.87,
-                    "name": "level_dice_palace_roulette",
-                    "endTime": 1534.211
-                },
-                {
-                    "levelTime": 110.38,
-                    "name": "level_dice_palace_main",
-                    "endTime": 1568.649
-                },
-                {
-                    "superMeter": 25,
-                    "name": "win",
-                    "endTime": 1576.846
-                },
-                {
-                    "endTime": 1587.176,
-                    "name": "map_world_4"
-                },
-                {
-                    "endTime": 1591.942,
-                    "name": "cutscene_devil"
-                },
-                {
-                    "name": "level_devil",
-                    "endTime": 1641.797,
-                    "levelTime": 49.1
                 }
             ]
         },

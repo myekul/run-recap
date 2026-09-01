@@ -312,9 +312,9 @@
             },
             {
                 "name": "Sneeze Skip",
-                "time": 21.25,
+                "time": 21.17,
                 "player": "myekul",
-                "url": "https://youtu.be/U2RUrXob6qw",
+                "url": "https://youtu.be/xI9m9qXCp3Q",
                 "viable": "It goes for 3 parries, which is risky and difficult."
             },
             {
@@ -1317,15 +1317,15 @@
                 "time": 35.96,
                 "player": "myekul",
                 "url": "https://youtu.be/O16oNulllw0",
-                "viable": "It goes for parries, which is risky and inconsistent.",
                 "odds": "2/13",
                 "odds2": 2
             },
             {
                 "name": "Cherry Bombs, Charge",
-                "time": 36.13,
+                "time": 35.93,
                 "player": "myekul",
-                "url": "https://youtu.be/KfEKsqhG8hM",
+                "url": "https://youtu.be/YFxJIWKmoOM",
+                "viable": "It goes for parries, which is risky and inconsistent.",
                 "odds": "3/13"
             },
             {
@@ -1642,6 +1642,13 @@
                 "url": "https://youtu.be/NZIqbtVepwc"
             },
             {
+                "name": "Pufferfish, Red Fish, Turtle, Ghosts",
+                "time": 55.43,
+                "rta": 56.01,
+                "player": "myekul",
+                "url": "https://youtu.be/hpx2a2RGIFg?t=1342"
+            },
+            {
                 "name": "Turtle, Red Fish, Seahorse, Ghosts",
                 "time": 53.93,
                 "rta": 54.47,
@@ -1877,6 +1884,12 @@
                 "rta": "1:49.31",
                 "player": "Quincely0",
                 "url": "https://youtu.be/olWfSkoJiLg"
+            },
+            {
+                "name": "No Hearts, Charge",
+                "time": "1:49.67",
+                "player": "myekul",
+                "url": "https://youtu.be/iETLDrERmDA?t=1560"
             },
             {
                 "name": "Worst RNG",
