@@ -332,9 +332,9 @@
                 "split": "21:29.46",
                 "splitRunner": "Quincely0",
                 "splitURL": "https://www.twitch.tv/videos/2816411668",
-                "segment": "1:23.24",
-                "segmentRunner": "lewzr",
-                "segmentURL": "https://youtu.be/su4HVag-9qo"
+                "segment": "1:22.67",
+                "segmentRunner": "Taylz",
+                "segmentURL": "https://youtu.be/rjmAb277AS0"
             },
             {
                 "title": "phantomexpress",
@@ -735,12 +735,12 @@
         "before": [
             {
                 "title": "forestfollies",
-                "split": "57.34",
+                "split": "57.11",
                 "splitRunner": "GamerAttack27",
-                "splitURL": "https://youtu.be/FGvzOsDOe2k",
-                "segment": "57.34",
+                "splitURL": "https://youtu.be/q6M5TBPLKps",
+                "segment": "57.11",
                 "segmentRunner": "GamerAttack27",
-                "segmentURL": "https://youtu.be/FGvzOsDOe2k"
+                "segmentURL": "https://youtu.be/q6M5TBPLKps"
             },
             {
                 "title": "therootpack",
@@ -919,12 +919,12 @@
         "before": [
             {
                 "title": "forestfollies",
-                "split": "57.13",
-                "splitRunner": "MarkinSws",
-                "splitURL": "https://youtu.be/25YYHXBrwCI",
-                "segment": "57.13",
-                "segmentRunner": "MarkinSws",
-                "segmentURL": "https://youtu.be/25YYHXBrwCI"
+                "split": "57.11",
+                "splitRunner": "GamerAttack27",
+                "splitURL": "https://youtu.be/q6M5TBPLKps",
+                "segment": "57.11",
+                "segmentRunner": "GamerAttack27",
+                "segmentURL": "https://youtu.be/q6M5TBPLKps"
             },
             {
                 "title": "mausoleum",

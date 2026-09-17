@@ -6530,6 +6530,162 @@
     ],
     "DLC L/S": [
         {
+            "name": "GamerAttack27",
+            "scenes": [
+                {
+                    "endTime": 1.583,
+                    "name": "cutscene_intro"
+                },
+                {
+                    "endTime": 9.848,
+                    "name": "level_house_elder_kettle"
+                },
+                {
+                    "endTime": 22.635,
+                    "name": "map_world_1"
+                },
+                {
+                    "levelTime": 34.14,
+                    "endTime": 60.988,
+                    "name": "level_platforming_1_1F"
+                },
+                {
+                    "parries": 1,
+                    "endTime": 69.904,
+                    "name": "win",
+                    "hp": 1,
+                    "coins": 5
+                },
+                {
+                    "endTime": 76.892,
+                    "name": "map_world_1"
+                },
+                {
+                    "endTime": 82.646,
+                    "name": "shop"
+                },
+                {
+                    "endTime": 93.844,
+                    "name": "map_world_1"
+                },
+                {
+                    "name": "level_mausoleum",
+                    "endTime": 158.744
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 170.938
+                },
+                {
+                    "endTime": 172.728,
+                    "name": "cutscene_dlc_intro"
+                },
+                {
+                    "endTime": 175.05700000000002,
+                    "name": "level_kitchen"
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 184.681
+                },
+                {
+                    "endTime": 240.831,
+                    "levelTime": 49.45,
+                    "name": "level_old_man"
+                },
+                {
+                    "hp": 1,
+                    "endTime": 247.771,
+                    "parries": 0,
+                    "starSkips": 2,
+                    "superMeter": 7,
+                    "name": "win"
+                },
+                {
+                    "endTime": 259.829,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "levelTime": 42.86,
+                    "endTime": 309.177,
+                    "name": "level_snow_cult"
+                },
+                {
+                    "endTime": 316.799,
+                    "parries": 0,
+                    "hp": 1,
+                    "starSkips": 1,
+                    "superMeter": 8,
+                    "name": "win"
+                },
+                {
+                    "endTime": 328.487,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "levelTime": 46.8,
+                    "name": "level_airplane",
+                    "endTime": 381.775
+                },
+                {
+                    "endTime": 388.883,
+                    "parries": 0,
+                    "hp": 2,
+                    "name": "win",
+                    "starSkips": 2,
+                    "superMeter": 7
+                },
+                {
+                    "endTime": 402.55899999999997,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "endTime": 472.429,
+                    "levelTime": 62.08,
+                    "name": "level_flying_cowboy"
+                },
+                {
+                    "starSkips": 2,
+                    "name": "win",
+                    "endTime": 480.259,
+                    "superMeter": 36,
+                    "hp": 1,
+                    "parries": 7
+                },
+                {
+                    "endTime": 491.753,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "name": "level_rum_runners",
+                    "endTime": 534.76,
+                    "levelTime": 36.52
+                },
+                {
+                    "name": "win",
+                    "superMeter": 8,
+                    "endTime": 541.932
+                },
+                {
+                    "endTime": 557.37,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "endTime": 563.774,
+                    "name": "level_kitchen"
+                },
+                {
+                    "name": "cutscene_dlc_saltbaker_prebattle",
+                    "endTime": 565.493
+                },
+                {
+                    "name": "level_saltbaker",
+                    "endTime": 617.876,
+                    "levelTime": 52.12
+                }
+            ]
+        },
+        {
             "name": "MarkinSws",
             "igt": [
                 46.82,
@@ -6579,58 +6735,6 @@
                 "9:23.96",
                 "9:25.70",
                 "10:19.01"
-            ]
-        },
-        {
-            "name": "GamerAttack27",
-            "igt": [
-                49.60,
-                42.94,
-                46.31,
-                61.61,
-                36.86,
-                56.18
-            ],
-            "starSkips": [
-                1,
-                1,
-                1,
-                0,
-                1,
-                0.5
-            ],
-            "endTimes": [
-                "1.63",
-                "10.25",
-                "22.95",
-                "1:01.25",
-                "1:09.71",
-                "1:16.68",
-                "1:22.47",
-                "1:33.42",
-                "2:37.79",
-                "2:49.78",
-                "2:51.52",
-                "2:53.91",
-                "3:03.52",
-                "3:58.80",
-                "4:07.80",
-                "4:19.90",
-                "5:08.66",
-                "5:16.51",
-                "5:28.05",
-                "6:20.55",
-                "6:28.63",
-                "6:42.26",
-                "7:50.20",
-                "7:59.17",
-                "8:10.66",
-                "8:53.19",
-                "9:00.43",
-                "9:15.98",
-                "9:22.49",
-                "9:24.29",
-                "10:19.30"
             ]
         },
         {

@@ -272,7 +272,9 @@ function toggleViable() {
 }
 function drawChart() {
     let data = [['Value']]
-    altStratCategory[altStratLevel].forEach(strat => {
+    let endIndex = altStratCategory[altStratLevel].length
+    if (runRecapCategory.name == '1.1+' && altStratLevel == 'baronessvonbonbon') endIndex -= 25
+    altStratCategory[altStratLevel].slice(0, endIndex).forEach(strat => {
         data.push([parseFloat(strat.time)])
     })
     data = google.visualization.arrayToDataTable(data);
@@ -332,7 +334,6 @@ function altStrats(query) {
     if (!commBestILsAll) {
         altGroup = altStratCategory[query]
         let fastest = altGroup[0]
-        let trueFastest = altGroup[0]
         let viable
         altGroup.forEach(strat => {
             if (fastest.title || convertToSeconds(strat.time) < convertToSeconds(fastest.time)) {
@@ -341,13 +342,11 @@ function altStrats(query) {
             }
             if (strat.viable && !commBestILsAll) {
                 viableCategory = true
-                if (!nonviable) {
-                    fastest = strat
-                    viable = true
-                }
+                fastest = strat
+                viable = true
             }
         })
-        document.getElementById('primaryThumbnail').innerHTML=getThumbnail(fastest.url)
+        document.getElementById('primaryThumbnail').innerHTML = getThumbnail(fastest.url)
     }
     let HTMLContent = ''
     if (altStatCriteria(query) && !commBestILsAll) {
@@ -398,12 +397,14 @@ function altStrats(query) {
         //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
         //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
         // }
-        const altStrats = [...altStratCata[query]]
+        let altStrats = [...altStratCata[query]]
         if (query == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) && !commBestILsAll) {
             if (bonbonSort == 'Best') {
                 altStrats.sort((a, b) => a.time - b.time)
+                altStrats = altStrats.filter(strat => !strat.title)
             } else if (bonbonSort == 'Worst') {
                 altStrats.sort((a, b) => b.time - a.time)
+                altStrats = altStrats.filter(strat => !strat.title)
             }
         }
         let min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
@@ -608,8 +609,9 @@ function userContributions(playerName) {
 }
 function altStats() {
     const cfg = STATS_CONFIG[altStratLevel]
-    let allStrats = altStratCategory[altStratLevel]
-    const endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
+    let allStrats = altStratCategory[altStratLevel].filter(strat => !strat.title)
+    let endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
+    if (runRecapCategory.name == '1.1+' && altStratLevel == 'baronessvonbonbon') endIndex -= 25
     allStrats = allStrats.slice(cfg.startIndex, endIndex)
     let HTMLContent = `
     <div class='container' style='gap:10px'>
@@ -627,13 +629,15 @@ function altStats() {
             : getImage('phase/' + altStratLevel + cfg.minibosses[minibossName])
         HTMLContent += `<td class='${cfg.minibosses[minibossName]}'>${imageHtml}</td>`
         for (const obj of allStrats) {
-            obj.name.split(', ').forEach((name, index) => {
-                if (name == minibossName) {
-                    minibossInfo.overall.push(obj)
-                    const positionField = cfg.fields[index + 1]
-                    if (positionField) minibossInfo[positionField].push(obj)
-                }
-            })
+            if (!obj.title) {
+                obj.name.split(', ').forEach((name, index) => {
+                    if (name == minibossName) {
+                        minibossInfo.overall.push(obj)
+                        const positionField = cfg.fields[index + 1]
+                        if (positionField) minibossInfo[positionField].push(obj)
+                    }
+                })
+            }
         }
         minibossArray.push(minibossInfo)
     }

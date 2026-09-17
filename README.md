@@ -4,6 +4,7 @@
 - Find player or display player name
 - Ground vs. Plane
 - Vanilla
+- Clean up Baroness viable / nonviable
 
 - Duplicate URLs in Firebase cache
 
@@ -25,5 +26,3 @@
 - Random database errors:
     - Viewing rrc from home/sav/lss/rrc will produce error
     - Viewing sav/rrc from alt strats page will produce error
-
-- Baroness patterns vs alt strat
