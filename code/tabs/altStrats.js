@@ -7,7 +7,7 @@ function altStatCriteria(level) {
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
-    if (altStratCategory) {
+    if (altStratCategory || commBestILsAll) {
         HTMLContent += `
         <div>
             <div class='container' style='gap:10px;margin-top:8px'>`
@@ -101,7 +101,7 @@ async function generateAltStrats() {
             HTMLContent += `<div id='altStratsHTML' class='container' style='margin-top:20px;gap:30px;align-items:flex-start'></div>`
         } else {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
-            if (altStratCategory[altStratLevel]) {
+            if (altStratCategory[altStratLevel] || commBestILsAll) {
                 HTMLContent += altStrats(altStratLevel)
                 if (runRecapCategory.name == '1.1+' && altStratLevel == 'kingdice') {
                     ['mrwheezy', 'hopuspocus', 'pirouletta', 'kingdice2'].forEach(miniboss => {
@@ -474,7 +474,7 @@ function altStrats(query) {
         })
         HTMLContent += `</table>`
     }
-    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query].filter(strat => !strat.title).length > 1 || commBestILsAll) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
+    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query]?.filter(strat => !strat.title).length > 1 || commBestILsAll) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
     HTMLContent += `</div></div>`
     return HTMLContent
 }

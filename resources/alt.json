@@ -1982,9 +1982,9 @@
             },
             {
                 "name": "2 Flame",
-                "time": 17.99,
-                "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=yigQGbyxQbM&t=1575s",
+                "time": 17.77,
+                "player": "Taylz",
+                "url": "https://youtu.be/wEX0btpP5nY?t=18",
                 "odds": "1/2"
             },
             {
@@ -2417,9 +2417,9 @@
             },
             {
                 "name": "Clap Bubbles Spider",
-                "time": 45.76,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/Q_zXAoQ8Lyc",
+                "time": 45.44,
+                "player": "myekul",
+                "url": "https://youtu.be/Der-vt3y5Ak",
                 "odds": "3/105"
             },
             {
@@ -2766,6 +2766,15 @@
                 "time": 55.42,
                 "player": "Yuka",
                 "url": "https://youtu.be/xrE525etW14"
+            },
+            {
+                "title": "Nuke"
+            },
+            {
+                "name": "Ha-Ha",
+                "time": 55.65,
+                "player": "graven_",
+                "url": "https://youtu.be/57LHja6eDC0"
             }
         ],
         "cagneycarnation": [
@@ -3133,9 +3142,9 @@
             },
             {
                 "name": "Pinwheel Dragon R",
-                "time": 27.93,
-                "player": "Yuka",
-                "url": "https://www.youtube.com/watch?v=mgldKD6f41k&t=44s"
+                "time": 26.76,
+                "player": "graven_",
+                "url": "https://youtu.be/0w0iDcOi-iQ"
             },
             {
                 "name": "Ring Clap Dragon R",
@@ -3323,10 +3332,10 @@
             },
             {
                 "name": "Transition Doubles",
-                "time": 27.95,
-                "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=_CaxGv2u0iI&t=22s",
-                "viable": "It goes for parries and doubles, which is inconsistent."
+                "time": 26.81,
+                "player": "myekul",
+                "url": "https://youtu.be/mr_EBTA7NoY",
+                "viable": "It goes for parries and extra doubles, which is inconsistent."
             },
             {
                 "title": "Parries"
@@ -3334,7 +3343,7 @@
             {
                 "name": "Doubles",
                 "time": 25.04,
-                "rta": 26.08,
+                "rta": "25.40",
                 "player": "myekul",
                 "url": "https://youtu.be/mWN42a-O6BA"
             }
@@ -4077,10 +4086,16 @@
                 "title": "2.5-cycle"
             },
             {
-                "name": "L-L",
-                "time": "51.80",
+                "name": "D-S",
+                "time": 49.85,
                 "player": "GamerAttack27",
-                "url": "https://youtu.be/ARbNnh0vRJQ"
+                "url": "https://youtu.be/gfTbIzo7kH4"
+            },
+            {
+                "name": "L-L",
+                "time": 51.16,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/Xeam7xucfFM"
             },
             {
                 "name": "L-S",
@@ -5426,59 +5441,6 @@
             }
         ]
     },
-    "Legacy Low%": {
-        "therootpack": [
-            {
-                "name": "",
-                "time": 52,
-                "player": "Kirthar",
-                "url": "https://www.twitch.tv/videos/1289538986"
-            }
-        ],
-        "djimmithegreat": [
-            {
-                "name": "Freeze",
-                "time": "1:21.90",
-                "player": "Yuka",
-                "url": "https://youtu.be/SFkeHPttTxM"
-            }
-        ],
-        "grimmatchstick": [
-            {
-                "name": "2 Lasers, 4 Meteors, 2 Meteors",
-                "time": 58.32,
-                "player": "Yuka",
-                "url": "https://youtu.be/I6E_yQ-95zY"
-            }
-        ],
-        "drkahlsrobot": [
-            {
-                "name": "",
-                "time": 52.65,
-                "player": "Yuka",
-                "url": "https://youtu.be/mLLj1PMTyys"
-            }
-        ],
-        "calamaria": [
-            {
-                "title": "Parryless"
-            },
-            {
-                "name": "Red Fish, Seahorse, Ghosts, Pufferfish",
-                "time": "1:02",
-                "player": "Kirthar",
-                "url": "https://www.twitch.tv/videos/1280481637"
-            }
-        ],
-        "thedevil": [
-            {
-                "name": "Clap Bubbles Clap Dragon R",
-                "time": "1:12.81",
-                "player": "Yuka",
-                "url": "https://youtu.be/JHHz0Czk8Mg"
-            }
-        ]
-    },
     "1.1+ Low%": {
         "therootpack": [
             {
@@ -5647,6 +5609,383 @@
                 "time": "1:15.61",
                 "player": "BlackTower",
                 "url": "https://www.youtube.com/watch?v=oWKMXYyq8oc&t=1954s"
+            }
+        ]
+    },
+    "1.1+ Simple": {
+        "ribbyandcroaks": [
+            {
+                "name": "",
+                "time": 20.96,
+                "player": "myekul",
+                "url": "https://youtu.be/8WQXRe-gqAM"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 20.87,
+                "player": "myekul",
+                "url": "https://youtu.be/16oVPuISDsE"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": 28.91,
+                "player": "myekul",
+                "url": "https://youtu.be/_wUmgnK9omI"
+            }
+        ]
+    },
+    "1.1+ Expert": {
+        "wernerwerman": [
+            {
+                "name": "",
+                "time": 39.39,
+                "player": "myekul",
+                "url": "https://youtu.be/vAk41buFdjo"
+            }
+        ]
+    },
+    "1.1+ NG+": {
+        "thedevil": [
+            {
+                "name": "Bubbles Dragon",
+                "time": 37.94,
+                "player": "myekul",
+                "url": "https://youtu.be/pFYFx8x9Mx4"
+            }
+        ]
+    },
+    "Legacy Low%": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 52,
+                "player": "Kirthar",
+                "url": "https://www.twitch.tv/videos/1289538986"
+            }
+        ],
+        "djimmithegreat": [
+            {
+                "name": "Freeze",
+                "time": "1:21.90",
+                "player": "Yuka",
+                "url": "https://youtu.be/SFkeHPttTxM"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "2 Lasers, 4 Meteors, 2 Meteors",
+                "time": 58.32,
+                "player": "Yuka",
+                "url": "https://youtu.be/I6E_yQ-95zY"
+            }
+        ],
+        "drkahlsrobot": [
+            {
+                "name": "",
+                "time": 52.65,
+                "player": "Yuka",
+                "url": "https://youtu.be/mLLj1PMTyys"
+            }
+        ],
+        "calamaria": [
+            {
+                "title": "Parryless"
+            },
+            {
+                "name": "Red Fish, Seahorse, Ghosts, Pufferfish",
+                "time": "1:02",
+                "player": "Kirthar",
+                "url": "https://www.twitch.tv/videos/1280481637"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap Bubbles Clap Dragon R",
+                "time": "1:12.81",
+                "player": "Yuka",
+                "url": "https://youtu.be/JHHz0Czk8Mg"
+            }
+        ]
+    },
+    "Legacy Simple":{
+        "therootpack": [
+            {
+                "name": "",
+                "time": 18.99,
+                "player": "Yuka",
+                "url": "https://youtu.be/JOuAXNH5Hlg"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "Flies",
+                "time": 14.96,
+                "player": "Yuka",
+                "url": "https://youtu.be/bBAcfVoEALA"
+            },
+            {
+                "name": "Punches",
+                "time": 15.67,
+                "player": "Yuka",
+                "url": "https://youtu.be/FgAvT5r5TOY"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": 15.85,
+                "player": "Yuka",
+                "url": "https://youtu.be/vgp0RFk6uj4"
+            }
+        ]
+    },
+    "NMG P/S": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": "40.80",
+                "player": "Yuka",
+                "url": "https://youtu.be/7DjKjJCfJjQ"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "Punches, Tigers",
+                "time": "49.60",
+                "player": "Quincely0",
+                "url": "https://youtu.be/j-Wnt-IzCwk"
+            }
+        ],
+        "goopylegrande": [
+            {
+                "name": "",
+                "time": "29.90",
+                "player": "Yuka",
+                "url": "https://youtu.be/1GsKhxIRmYc"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "Lunge, Lunge, Pods",
+                "time": 36.87,
+                "player": "Yuka",
+                "url": "https://youtu.be/J4Jih-NB_sY"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Gumball, Waffle, Candy Corn",
+                "time": 41.64,
+                "player": "Quincely0",
+                "url": "https://youtu.be/KQruyG-403o"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": "1:01.30",
+                "player": "Yuka",
+                "url": "https://youtu.be/JofDjGRuSWY"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "2 Lasers, 1 Laser, 2 Meteors",
+                "time": 51.91,
+                "player": "Yuka",
+                "url": "https://youtu.be/dtTKEJUjWSs"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 39.18,
+                "player": "myekul",
+                "url": "https://youtu.be/kD2P74Ov71I"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 53.25,
+                "player": "Quincely0",
+                "url": "https://youtu.be/gzZrbCefpMk"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "Catapult, Charge",
+                "time": 46.81,
+                "player": "myekul",
+                "url": "https://youtu.be/1qHfDiHJP8o"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "2-Gun, Gun",
+                "time": 39.53,
+                "player": "Quincely0",
+                "url": "https://youtu.be/A0Xbf0udbe0"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": "1:09.76",
+                "player": "Yuka",
+                "url": "https://youtu.be/4rs72tsHQKw"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "3-5-7",
+                "time": "1:59",
+                "player": "Yuka",
+                "url": "https://youtu.be/bIqH4HawKY4"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap Bubbles (Slowest)",
+                "time": 52.39,
+                "player": "myekul",
+                "url": "https://youtu.be/2E4kQLjhz80"
+            },
+            {
+                "name": "Bubbles Dragon (Slower)",
+                "time": 57.86,
+                "player": "Quincely0",
+                "url": "https://youtu.be/ln4yU0PGgnE"
+            }
+        ]
+    },
+    "NMG R/S": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 39.15,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/2wYCLEbc_bU"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "Punches, Tigers",
+                "time": 46,
+                "player": "Grondious",
+                "url": "https://www.twitch.tv/grondious/clip/PopularPeacefulEelStoneLightning"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "Lunge, Pods, Pods",
+                "time": 37.38,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/tGt8mErDkQM"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Gumball, Candy Corn, Waffle",
+                "time": 34.42,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/eAkhGDr2HD8"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "Parryless",
+                "time": "1:01.77",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/qo8E91ljPWA"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "3 Lasers, 2 Lasers, 2 Meteors",
+                "time": 46.52,
+                "player": "myekul",
+                "url": "https://youtu.be/_XZTSkuagek"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 36.93,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/-gQhQNbv69E"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": "51.90",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/SuHe0PlzzCc"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "Catapult, Charge",
+                "time": 44.76,
+                "player": "myekul",
+                "url": "https://youtu.be/DCV2T3GBH48"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "2-Gun, Gun",
+                "time": 37.51,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/DjIJXmCWk6Y"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": "1:02.15",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/CrHDAnbB1Ao"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "3-5-7",
+                "time": "1:54.43",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/9Q__Koid79k"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap Bubbles",
+                "time": 51.93,
+                "player": "myekul",
+                "url": "https://youtu.be/6zI1ViWFknc"
+            }
+        ]
+    },
+    "NMG Simple P/S": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": 29.47,
+                "player": "myekul",
+                "url": "https://youtu.be/gP87PXbGR68"
+            }
+        ]
+    },
+    "NMG Expert": {
+        "wernerwerman": [
+            {
+                "name": "Catapult, Charge",
+                "time": 45.25,
+                "player": "myekul",
+                "url": "https://youtu.be/3DxPB0cRIlo"
             }
         ]
     },
@@ -5859,272 +6198,6 @@
                 "time": "1:09",
                 "player": "TheMexicanRunner",
                 "url": "https://youtu.be/xm5b7jayb-4?si=_6IW_Tpp9idMfLEN&t=1981"
-            }
-        ]
-    },
-    "1.1+ Expert": {
-        "wernerwerman": [
-            {
-                "name": "",
-                "time": 39.39,
-                "player": "myekul",
-                "url": "https://youtu.be/vAk41buFdjo"
-            }
-        ]
-    },
-    "1.1+ NG+": {
-        "thedevil": [
-            {
-                "name": "Bubbles Dragon",
-                "time": 37.94,
-                "player": "myekul",
-                "url": "https://youtu.be/pFYFx8x9Mx4"
-            }
-        ]
-    },
-    "NMG P/S Simple": {
-        "therootpack": [
-            {
-                "name": "",
-                "time": 29.47,
-                "player": "myekul",
-                "url": "https://youtu.be/gP87PXbGR68"
-            }
-        ]
-    },
-    "NMG P/S": {
-        "therootpack": [
-            {
-                "name": "",
-                "time": "40.80",
-                "player": "Yuka",
-                "url": "https://youtu.be/7DjKjJCfJjQ"
-            }
-        ],
-        "ribbyandcroaks": [
-            {
-                "name": "Punches, Tigers",
-                "time": "49.60",
-                "player": "Quincely0",
-                "url": "https://youtu.be/j-Wnt-IzCwk"
-            }
-        ],
-        "goopylegrande": [
-            {
-                "name": "",
-                "time": "29.90",
-                "player": "Yuka",
-                "url": "https://youtu.be/1GsKhxIRmYc"
-            }
-        ],
-        "cagneycarnation": [
-            {
-                "name": "Lunge, Lunge, Pods",
-                "time": 36.87,
-                "player": "Yuka",
-                "url": "https://youtu.be/J4Jih-NB_sY"
-            }
-        ],
-        "baronessvonbonbon": [
-            {
-                "name": "Gumball, Waffle, Candy Corn",
-                "time": 41.64,
-                "player": "Quincely0",
-                "url": "https://youtu.be/KQruyG-403o"
-            }
-        ],
-        "beppitheclown": [
-            {
-                "name": "",
-                "time": "1:01.30",
-                "player": "Yuka",
-                "url": "https://youtu.be/JofDjGRuSWY"
-            }
-        ],
-        "grimmatchstick": [
-            {
-                "name": "2 Lasers, 1 Laser, 2 Meteors",
-                "time": 51.91,
-                "player": "Yuka",
-                "url": "https://youtu.be/dtTKEJUjWSs"
-            }
-        ],
-        "rumorhoneybottoms": [
-            {
-                "name": "Middle",
-                "time": 39.18,
-                "player": "myekul",
-                "url": "https://youtu.be/kD2P74Ov71I"
-            }
-        ],
-        "sallystageplay": [
-            {
-                "name": "",
-                "time": 53.25,
-                "player": "Quincely0",
-                "url": "https://youtu.be/gzZrbCefpMk"
-            }
-        ],
-        "wernerwerman": [
-            {
-                "name": "Catapult, Charge",
-                "time": 46.81,
-                "player": "myekul",
-                "url": "https://youtu.be/1qHfDiHJP8o"
-            }
-        ],
-        "captainbrineybeard": [
-            {
-                "name": "2-Gun, Gun",
-                "time": 39.53,
-                "player": "Quincely0",
-                "url": "https://youtu.be/A0Xbf0udbe0"
-            }
-        ],
-        "phantomexpress": [
-            {
-                "name": "",
-                "time": "1:09.76",
-                "player": "Yuka",
-                "url": "https://youtu.be/4rs72tsHQKw"
-            }
-        ],
-        "kingdice": [
-            {
-                "name": "3-5-7",
-                "time": "1:59",
-                "player": "Yuka",
-                "url": "https://youtu.be/bIqH4HawKY4"
-            }
-        ],
-        "thedevil": [
-            {
-                "name": "Clap Bubbles (Slowest)",
-                "time": 52.48,
-                "player": "myekul",
-                "url": "https://youtu.be/4cL72dtqBFM"
-            },
-            {
-                "name": "Bubbles Dragon (Slower)",
-                "time": 57.86,
-                "player": "Quincely0",
-                "url": "https://youtu.be/ln4yU0PGgnE"
-            }
-        ]
-    },
-    "NMG R/S": {
-        "therootpack": [
-            {
-                "name": "",
-                "time": 39.15,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/2wYCLEbc_bU"
-            }
-        ],
-        "ribbyandcroaks": [
-            {
-                "name": "Punches, Tigers",
-                "time": 46,
-                "player": "Grondious",
-                "url": "https://www.twitch.tv/grondious/clip/PopularPeacefulEelStoneLightning"
-            }
-        ],
-        "cagneycarnation": [
-            {
-                "name": "Lunge, Pods, Pods",
-                "time": 37.38,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/tGt8mErDkQM"
-            }
-        ],
-        "baronessvonbonbon": [
-            {
-                "name": "Gumball, Candy Corn, Waffle",
-                "time": 34.42,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/eAkhGDr2HD8"
-            }
-        ],
-        "beppitheclown": [
-            {
-                "name": "Parryless",
-                "time": "1:01.77",
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/qo8E91ljPWA"
-            }
-        ],
-        "grimmatchstick": [
-            {
-                "name": "3 Lasers, 2 Lasers, 2 Meteors",
-                "time": 46.52,
-                "player": "myekul",
-                "url": "https://youtu.be/_XZTSkuagek"
-            }
-        ],
-        "rumorhoneybottoms": [
-            {
-                "name": "Middle",
-                "time": 36.93,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/-gQhQNbv69E"
-            }
-        ],
-        "sallystageplay": [
-            {
-                "name": "",
-                "time": "51.90",
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/SuHe0PlzzCc"
-            }
-        ],
-        "wernerwerman": [
-            {
-                "name": "Catapult, Charge",
-                "time": 44.76,
-                "player": "myekul",
-                "url": "https://youtu.be/DCV2T3GBH48"
-            }
-        ],
-        "captainbrineybeard": [
-            {
-                "name": "2-Gun, Gun",
-                "time": 37.51,
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/DjIJXmCWk6Y"
-            }
-        ],
-        "phantomexpress": [
-            {
-                "name": "",
-                "time": "1:02.15",
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/CrHDAnbB1Ao"
-            }
-        ],
-        "kingdice": [
-            {
-                "name": "3-5-7",
-                "time": "1:54.43",
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/9Q__Koid79k"
-            }
-        ],
-        "thedevil": [
-            {
-                "name": "Clap Bubbles",
-                "time": 51.93,
-                "player": "myekul",
-                "url": "https://youtu.be/6zI1ViWFknc"
-            }
-        ]
-    },
-    "NMG Expert": {
-        "wernerwerman": [
-            {
-                "name": "Catapult, Charge",
-                "time": 45.25,
-                "player": "myekul",
-                "url": "https://youtu.be/3DxPB0cRIlo"
             }
         ]
     },

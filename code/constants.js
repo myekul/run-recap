@@ -6,15 +6,17 @@ const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Dem
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S']
 const OTHER_CATEGORIES = [
-    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Expert', '1.1+ NG+', 'Legacy Low%', 'NMG P/S Simple', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'OG Charge'],
+    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Simple', '1.1+ Expert', '1.1+ NG+', 'Legacy Low%', 'Legacy Simple', 'NMG P/S', 'NMG R/S', 'NMG Simple P/S', 'NMG Expert', 'OG Charge'],
     ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%'],
 ]
+const BASE_SIMPLE = ['1.1+ Simple', 'Legacy Simple', 'NMG Simple P/S']
+const DLCBASE_SIMPLE = ['DLC+Base Simple L/S', 'DLC+Base Simple C/S']
 const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
 
-const NO_FOLLIES = ['1.1+ Low%', 'Legacy Low%', 'NMG P/S', 'NMG P/S Simple']
+const NO_FOLLIES = ['1.1+ Low%', '1.1+ NG+', 'Legacy Low%', 'NMG P/S', 'NMG Simple P/S']
 
 const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert']
-const DUPLICATE_FOLLIES_1_1 = ['1.1+ Expert']
+const DUPLICATE_FOLLIES_1_1 = ['1.1+ Simple', '1.1+ Expert', 'Legacy Simple']
 const DUPLICATE_FOLLIES_NMG = ['NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
 const DUPLICATE_MAUS = ['DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
 const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge']
@@ -23,13 +25,31 @@ const LOW_PERCENT = ['ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baro
 
 const ODDS_BOSSES = ['ribbyandcroaks', 'grimmatchstick', 'wernerwerman', 'captainbrineybeard', 'mrwheezy']
 
-const LOADOUTS = {
+// Board title with weapon icons
+const LOADOUTS_REPLACE = {
     'NMG P/S': ['peashooter', 'spread'],
     'NMG R/S': ['roundabout', 'spread'],
+    'NMG Simple P/S': ['peashooter', 'spread'],
     'DLC C/T': ['charge', 'twist-up'],
     'DLC R/S': ['roundabout', 'spread'],
     'DLC P/S': ['peashooter', 'spread'],
+    'DLC+Base Simple L/S': ['lobber', 'spread'],
     'DLC+Base Simple C/S': ['charge', 'spread'],
+}
+
+const LOADOUTS_ADDITION = {
+    '1.1+ All Flags': ['lobber', 'spread'],
+    '1.1+ Low%': ['peashooter'],
+    '1.1+ Simple': ['lobber', 'spread'],
+    '1.1+ Expert': ['lobber', 'spread'],
+    'NMG Expert': ['lobber', 'spread'],
+    'Legacy Low%': ['peashooter'],
+    'Legacy Simple': ['lobber', 'roundabout'],
+    'OG Charge': ['charge'],
+    'DLC Low%': ['peashooter'],
+    'DLC Charmless': ['charge', 'twist-up'],
+    'DLC OG Charge': ['charge'],
+    'DLC Expert': ['charge', 'spread']
 }
 
 const IMG_LOCATION = {

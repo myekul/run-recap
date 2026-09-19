@@ -362,8 +362,9 @@ function organizeCategories() {
     } else if (runRecapCategory.name != 'DLC+Base' && !(runRecapCategory.name == 'Other' && altStratOther == '300%')) {
         bossesCopy = bossesCopy.slice(0, 19)
     }
-    if (runRecapCategory.name == 'Other' && altStratOther == 'DLC+Base Simple C/S') bossesCopy = [...bosses.slice(0, 17), ...bosses.slice(19, 24)]
-    bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0));
+    if (runRecapCategory.name == 'Other' && BASE_SIMPLE.includes(altStratOther)) bossesCopy = bosses.slice(0, 17)
+    if (runRecapCategory.name == 'Other' && DLCBASE_SIMPLE.includes(altStratOther)) bossesCopy = [...bosses.slice(0, 17), ...bosses.slice(19, 24)]
+    bossesCopy.sort((a, b) => (a.order || 0) - (b.order || 0))
     if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
         const elem = bossesCopy.splice(18, 1)[0];
         bossesCopy.splice(21, 0, elem);
