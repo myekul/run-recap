@@ -319,9 +319,9 @@
             },
             {
                 "name": "Sneeze",
-                "time": 21.54,
+                "time": 21.26,
                 "player": "myekul",
-                "url": "https://youtu.be/DEUkoAHr01U"
+                "url": "https://youtu.be/iuiomZgRXc8"
             },
             {
                 "title": "Doubles"
@@ -380,6 +380,13 @@
                 "time": "1:00.33",
                 "player": "Quincely0",
                 "url": "https://www.twitch.tv/videos/2817671833"
+            },
+            {
+                "name": "Sagittarius, Trollnado",
+                "time": "1:03.14",
+                "rta": "1:03.87",
+                "player": "graven_",
+                "url": "https://youtu.be/o7w9v1ICqWQ"
             },
             {
                 "title": "Parryless"
@@ -1693,6 +1700,12 @@
                 "url": "https://youtu.be/FNJBBiNqcXM"
             },
             {
+                "name": "Ghosts, Seahorse, Red Fish",
+                "time": 55.22,
+                "player": "suspiencce",
+                "url": "https://youtu.be/StYSN9uH3bo?t=1471"
+            },
+            {
                 "title": "Parryless"
             },
             {
@@ -1989,9 +2002,9 @@
             },
             {
                 "name": "3 Flame",
-                "time": "19.50",
+                "time": 18.64,
                 "player": "Taylz",
-                "url": "https://www.youtube.com/watch?v=tjg5Uo9ptWQ&t=1556s",
+                "url": "https://youtu.be/uGw9_15_qpA?t=14",
                 "odds": "1/8"
             },
             {
@@ -2709,6 +2722,12 @@
                 "time": 38.56,
                 "player": "Yuka",
                 "url": "https://youtu.be/Sd-DH1dgeSM"
+            },
+            {
+                "name": "5 Flies, Snakes",
+                "time": 39.35,
+                "player": "graven_",
+                "url": "https://youtu.be/qFIc0yXmILs"
             }
         ],
         "goopylegrande": [
@@ -2920,6 +2939,18 @@
                 "time": 27.87,
                 "player": "Yuka",
                 "url": "https://youtu.be/CD6fUOXUfH8"
+            },
+            {
+                "name": "4B+, 2B+",
+                "time": 27.91,
+                "player": "graven_",
+                "url": "https://youtu.be/i0w3v139dJ4"
+            },
+            {
+                "name": "3B++",
+                "time": 28.52,
+                "player": "graven_",
+                "url": "https://youtu.be/stQvMFCLvmk"
             }
         ],
         "grimmatchstick": [
@@ -3016,6 +3047,24 @@
                 "time": 26.72,
                 "player": "Yuka",
                 "url": "https://youtu.be/YjtVVG-YHds"
+            },
+            {
+                "name": "Gun",
+                "time": 29.22,
+                "player": "graven_",
+                "url": "https://youtu.be/9UPpgF96miM"
+            },
+            {
+                "name": "Shark",
+                "time": 30.82,
+                "player": "graven_",
+                "url": "https://youtu.be/uvIe783ftwE"
+            },
+            {
+                "name": "Dogfish",
+                "time": 30.99,
+                "player": "graven_",
+                "url": "https://youtu.be/NGcuSAjvbSI"
             },
             {
                 "name": "4-Gun",
@@ -3338,14 +3387,14 @@
                 "viable": "It goes for parries and extra doubles, which is inconsistent."
             },
             {
-                "title": "Parries"
+                "title": "Parries, Doubles"
             },
             {
-                "name": "Doubles",
-                "time": 25.04,
-                "rta": "25.40",
+                "name": "",
+                "time": 24.88,
+                "rta": 25.24,
                 "player": "myekul",
-                "url": "https://youtu.be/mWN42a-O6BA"
+                "url": "https://youtu.be/5vqLpeA2S04"
             }
         ],
         "cagneycarnation": [
@@ -3548,9 +3597,9 @@
             },
             {
                 "name": "Cherry Bombs, Charge",
-                "time": "43.40",
+                "time": 42.86,
                 "player": "myekul",
-                "url": "https://youtu.be/Q9DJZt3o1Pw"
+                "url": "https://youtu.be/o212NS_qwto"
             },
             {
                 "name": "Catapult, Cherry Bombs",
@@ -3634,7 +3683,7 @@
             },
             {
                 "name": "Ghosts, Turtle, Red Fish",
-                "time": "1:00.26",
+                "time": "1:00.21",
                 "player": "Quincely0",
                 "url": "https://youtu.be/dJ_fXJd1sPk"
             },
@@ -3753,6 +3802,12 @@
                 "time": 47.78,
                 "player": "myekul",
                 "url": "https://youtu.be/x0iCrcdcNyc"
+            },
+            {
+                "name": "Ring Dragon",
+                "time": 47.94,
+                "player": "myekul",
+                "url": "https://youtu.be/0VI9FLFTjYw"
             },
             {
                 "name": "Clap Dragon",
@@ -5377,6 +5432,12 @@
                 "url": "https://youtu.be/lISyZiWhTmM"
             },
             {
+                "name": "Bubbles Dragon",
+                "time": 49.34,
+                "player": "myekul",
+                "url": "https://youtu.be/ePxNup0dMqk"
+            },
+            {
                 "title": "Spider"
             },
             {
@@ -5849,6 +5910,12 @@
             }
         ],
         "thedevil": [
+            {
+                "name": "Bubbles Clap (Slower)",
+                "time": 51.92,
+                "player": "myekul",
+                "url": "https://youtu.be/chwbekYS83k"
+            },
             {
                 "name": "Clap Bubbles (Slowest)",
                 "time": 52.39,
@@ -6642,9 +6709,9 @@
         "grimmatchstick": [
             {
                 "name": "",
-                "time": "28.90",
-                "player": "GamerAttack27",
-                "url": "https://youtu.be/ox14uKZ9PXY"
+                "time": "28.52",
+                "player": "myekul",
+                "url": "https://youtu.be/MrNJR89r9S0?t=14"
             }
         ],
         "rumorhoneybottoms": [
@@ -6722,9 +6789,17 @@
         "therootpack": [
             {
                 "name": "",
-                "time": 26.18,
-                "player": "myekul",
-                "url": "https://youtu.be/lFUFiUYXvas"
+                "time": 25.98,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/3XpdDEsuHM4"
+            }
+        ],
+        "ribbyandcroaks": [
+            {
+                "name": "Punches",
+                "time": 23.01,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/mEnj9nGiIQ0"
             }
         ],
         "goopylegrande": [

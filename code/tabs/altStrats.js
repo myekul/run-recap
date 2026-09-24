@@ -8,95 +8,7 @@ async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
     if (altStratCategory || commBestILsAll) {
-        HTMLContent += `
-        <div>
-            <div class='container' style='gap:10px;margin-top:8px'>`
-        assignIsles()
-        const isle1 = []
-        if (!(runRecapCategory.name == 'Other' && NO_FOLLIES.includes(altStratOther))) isle1.push('forestfollies')
-        if (mausCriteria()) isle1.push('mausoleum')
-        if (runRecapCategory.name == 'Other' && altStratOther == 'OG Charge') isle1.push('treetoptrouble')
-        HTMLContent += `
-        <table class='shadow'>
-            <tr class='background2'>`
-        isle1.forEach(level => {
-            HTMLContent += altStratHeader(level)
-        })
-        HTMLContent += `</tr><tr>`
-        isle1.forEach(level => {
-            HTMLContent += `
-            <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
-                <div>${getImage(imageLocation(level))}</div>
-            </td>`
-        })
-        HTMLContent += `
-            </tr>
-        </table>`
-        isles.forEach(isle => {
-            if (isle.runRecapCategories.length) {
-                HTMLContent += `<table class='shadow'><tr class='background2'>`
-                isle.runRecapCategories.forEach(categoryIndex => {
-                    const category = categories[categoryIndex]
-                    HTMLContent += altStratHeader(category.info.id)
-                })
-                HTMLContent += `</tr><tr>`
-                isle.runRecapCategories.forEach(categoryIndex => {
-                    const category = categories[categoryIndex]
-                    HTMLContent += `
-                    <td style='width:36px' class='grow ${category.info.id} ${category.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${category.info.id}')">
-                        <div>${getImage(category.info.id)}</div>
-                    </td>`
-                })
-                HTMLContent += `</tr></table>`
-            }
-        })
-        HTMLContent += `</div>`
-        if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
-            HTMLContent += `<div class='container' style='gap:10px;margin-top:10px'>`
-        }
-        if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
-            HTMLContent += `<table class='shadow'><tr class='background2'>`
-            CHESS.forEach(level => {
-                HTMLContent += altStratHeader(level)
-            })
-            HTMLContent += `</tr><tr>`
-            CHESS.forEach(level => {
-                HTMLContent += `
-                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
-                    <div>${getImage('other/' + level)}</div>
-                </td>`
-            })
-            HTMLContent += `
-                </tr>
-            </table>
-            <table class='shadow'>
-                <tr>
-                    <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.angelanddemon?.filter(IL => !IL.title).length || '&nbsp;'}</td>
-                </tr>
-                <tr>
-                    <td class='grow ${'angelanddemon' == altStratLevel ? 'selected' : ''}' onclick="altStratClick('angelanddemon')"><div>${getImage('other/angelanddemon')}</div></td>
-                </tr>
-            </table>`
-        }
-        if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
-            HTMLContent += `<table class='shadow'>
-                <tr class='background2'>`
-            RUNNGUNS.slice(1).forEach(level => {
-                HTMLContent += altStratHeader(level)
-            })
-            HTMLContent += `</tr><tr>`
-            RUNNGUNS.slice(1).forEach(level => {
-                HTMLContent += `
-                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
-                    <div>${getImage('runnguns/' + level)}</div>
-                </td>`
-            })
-            HTMLContent += `
-                    </tr>
-                </table>
-            </div>`
-        }
-        HTMLContent += `</div>`
+        HTMLContent += bossSelect()
         if (!altStratLevel) {
             HTMLContent += `<div id='altStratsHTML' class='container' style='margin-top:20px;gap:30px;align-items:flex-start'></div>`
         } else {
@@ -133,6 +45,98 @@ async function generateAltStrats() {
     }
     document.getElementById('content').innerHTML = temp.innerHTML
     if (altStatCriteria(altStratLevel)) drawChart()
+}
+function bossSelect() {
+    let HTMLContent = `
+    <div>
+        <div class='container' style='gap:10px;margin-top:8px'>`
+    assignIsles()
+    const isle1 = []
+    if (!(runRecapCategory.name == 'Other' && NO_FOLLIES.includes(altStratOther))) isle1.push('forestfollies')
+    if (mausCriteria()) isle1.push('mausoleum')
+    if (runRecapCategory.name == 'Other' && altStratOther == 'OG Charge') isle1.push('treetoptrouble')
+    HTMLContent += `
+    <table class='shadow'>
+        <tr class='background2'>`
+    isle1.forEach(level => {
+        HTMLContent += altStratHeader(level)
+    })
+    HTMLContent += `</tr><tr>`
+    isle1.forEach(level => {
+        HTMLContent += `
+        <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+            <div>${getImage(imageLocation(level))}</div>
+        </td>`
+    })
+    HTMLContent += `
+        </tr>
+    </table>`
+    isles.forEach(isle => {
+        if (isle.runRecapCategories.length) {
+            HTMLContent += `<table class='shadow'><tr class='background2'>`
+            isle.runRecapCategories.forEach(categoryIndex => {
+                const category = categories[categoryIndex]
+                HTMLContent += altStratHeader(category.info.id)
+            })
+            HTMLContent += `</tr><tr>`
+            isle.runRecapCategories.forEach(categoryIndex => {
+                const category = categories[categoryIndex]
+                HTMLContent += `
+                    <td style='width:36px' class='grow ${category.info.id} ${category.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${category.info.id}')">
+                        <div>${getImage(category.info.id)}</div>
+                    </td>`
+            })
+            HTMLContent += `</tr></table>`
+        }
+    })
+    HTMLContent += `</div>`
+    if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+        HTMLContent += `<div class='container' style='gap:10px;margin-top:10px'>`
+    }
+    if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
+        HTMLContent += `<table class='shadow'><tr class='background2'>`
+        CHESS.forEach(level => {
+            HTMLContent += altStratHeader(level)
+        })
+        HTMLContent += `</tr><tr>`
+        CHESS.forEach(level => {
+            HTMLContent += `
+            <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+                <div>${getImage('other/' + level)}</div>
+            </td>`
+        })
+        HTMLContent += `
+            </tr>
+        </table>
+        <table class='shadow'>
+            <tr>
+                <td class='background2' style='font-size:80%;color:gray'>${altStratCategory.angelanddemon?.filter(IL => !IL.title).length || '&nbsp;'}</td>
+            </tr>
+            <tr>
+                <td class='grow ${'angelanddemon' == altStratLevel ? 'selected' : ''}' onclick="altStratClick('angelanddemon')"><div>${getImage('other/angelanddemon')}</div></td>
+            </tr>
+        </table>`
+    }
+    if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+        HTMLContent += `<table class='shadow'>
+                <tr class='background2'>`
+        RUNNGUNS.slice(1).forEach(level => {
+            HTMLContent += altStratHeader(level)
+        })
+        HTMLContent += `</tr><tr>`
+        RUNNGUNS.slice(1).forEach(level => {
+            HTMLContent += `
+                <td style='width:36px' class='grow ${level == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level}')">
+                    <div>${getImage('runnguns/' + level)}</div>
+                </td>`
+        })
+        HTMLContent += `
+                    </tr>
+                </table>
+            </div>`
+    }
+    HTMLContent += `</div>`
+    return HTMLContent
 }
 function altStratHeader(level) {
     const copy = altStratCategory[level] ? altStratCategory[level][0]?.copy : null
