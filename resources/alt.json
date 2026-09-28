@@ -1164,9 +1164,9 @@
             },
             {
                 "name": "3 Lasers, 1 Laser, 2 Meteors",
-                "time": 46.14,
+                "time": 45.83,
                 "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=kawoqMzhDUI&t=6s",
+                "url": "https://youtu.be/eV3Y7t8hagU",
                 "odds": "1/9"
             },
             {
@@ -4827,9 +4827,9 @@
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
-                "time": 30.46,
+                "time": 30.07,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/x8OdJz6FqAE"
+                "url": "https://youtu.be/CUYqSDHQKOo"
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
@@ -4845,9 +4845,9 @@
             },
             {
                 "name": "Gumball, Cupcake, Waffle",
-                "time": 30.45,
+                "time": 30.09,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/FxZkjrwuROQ"
+                "url": "https://youtu.be/1IeOjLbFP6g"
             },
             {
                 "name": "Gumball, Cupcake, Candy Corn",
@@ -4857,9 +4857,9 @@
             },
             {
                 "name": "Gumball, Cupcake, Jawbreaker",
-                "time": 34.96,
+                "time": 34.35,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/5ZIsucbL5aY"
+                "url": "https://youtu.be/s9PP8qqccZc"
             },
             {
                 "name": "Gumball, Jawbreaker, Waffle",
@@ -5037,9 +5037,9 @@
             },
             {
                 "name": "Cupcake, Gumball, Jawbreaker",
-                "time": 34.23,
+                "time": 34.16,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/6nm5HG-yfxw"
+                "url": "https://youtu.be/VAqODBQ7ISU"
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
@@ -5121,9 +5121,9 @@
             },
             {
                 "name": "Jawbreaker, Gumball, Cupcake",
-                "time": 35.13,
+                "time": "34.90",
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/r_5oB8vBkp4"
+                "url": "https://youtu.be/Kia5DQ5bvq4"
             },
             {
                 "name": "Jawbreaker, Gumball, Candy Corn",
@@ -5371,15 +5371,23 @@
         "kingdice": [
             {
                 "name": "3 Hearts",
-                "time": "1:50.28",
-                "player": "myekul",
-                "url": "https://youtu.be/L90GJH7EAxA"
+                "time": "1:49.18",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/i2YazJUzq_U"
             },
             {
                 "name": "No Hearts",
-                "time": "1:51.32",
+                "time": "1:50.52",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/xHSZt6NZK3s"
+            }
+        ],
+        "chipsbettigan": [
+            {
+                "name": "",
+                "time": 15.38,
                 "player": "myekul",
-                "url": "https://youtu.be/aY1sYbafaFA?si=KGKOcrx_SyT8SSje&t=2158"
+                "url": "https://youtu.be/L90GJH7EAxA?t=13"
             }
         ],
         "thedevil": [
@@ -5674,12 +5682,20 @@
         ]
     },
     "1.1+ Simple": {
+        "therootpack": [
+            {
+                "name": "",
+                "time": "25.90",
+                "player": "Quincely0",
+                "url": "https://youtu.be/KG2sbWFsCkQ"
+            }
+        ],
         "ribbyandcroaks": [
             {
                 "name": "",
-                "time": 20.96,
-                "player": "myekul",
-                "url": "https://youtu.be/8WQXRe-gqAM"
+                "time": 20.69,
+                "player": "Quincely0",
+                "url": "https://youtu.be/CxAe85g8Qkc"
             }
         ],
         "goopylegrande": [
@@ -5690,12 +5706,108 @@
                 "url": "https://youtu.be/16oVPuISDsE"
             }
         ],
+        "hildaberg": [
+            {
+                "name": "",
+                "time": 49.61,
+                "player": "Yuka",
+                "url": "https://youtu.be/Bee-L8JOwH8"
+            }
+        ],
+        "cagneycarnation": [
+            {
+                "name": "",
+                "time": 26.99,
+                "player": "Quincely0",
+                "url": "https://youtu.be/e7tiFI5YXJQ"
+            }
+        ],
+        "baronessvonbonbon": [
+            {
+                "name": "Waffle, Candy Corn, Jawbreaker",
+                "time": 31.81,
+                "player": "Quincely0",
+                "url": "https://youtu.be/GQCHRDThuN4"
+            }
+        ],
+        "wallywarbles": [
+            {
+                "name": "",
+                "time": 43.36,
+                "player": "Quincely0",
+                "url": "https://youtu.be/sRQoPrtVYxk"
+            }
+        ],
+        "djimmithegreat": [
+            {
+                "name": "",
+                "time": "1:06.91",
+                "player": "Quincely0",
+                "url": "https://youtu.be/iJx2ZqD8SxA"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": 30.99,
+                "player": "Quincely0",
+                "url": "https://youtu.be/ZGYxg8HnfQs"
+            }
+        ],
         "grimmatchstick": [
             {
                 "name": "",
                 "time": 28.91,
                 "player": "myekul",
                 "url": "https://youtu.be/_wUmgnK9omI"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "",
+                "time": 35.87,
+                "player": "Quincely0",
+                "url": "https://youtu.be/HrOmdYx8OnA"
+            }
+        ],
+        "drkahlsrobot": [
+            {
+                "name": "",
+                "time": 27.76,
+                "player": "Quincely0",
+                "url": "https://youtu.be/c77xqj9KhyE"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 36.59,
+                "player": "Quincely0",
+                "url": "https://youtu.be/_R-eesfV3rk"
+            }
+        ],
+        "captainbrineybeard": [
+            {
+                "name": "",
+                "time": 30.65,
+                "player": "Quincely0",
+                "url": "https://youtu.be/gHCPmlVSfps"
+            }
+        ],
+        "calamaria": [
+            {
+                "name": "",
+                "time": 40.76,
+                "player": "Quincely0",
+                "url": "https://youtu.be/S0Bvxw5sYds"
+            }
+        ],
+        "phantomexpress": [
+            {
+                "name": "",
+                "time": 40.97,
+                "player": "Quincely0",
+                "url": "https://youtu.be/wO2eULWW4Ss"
             }
         ]
     },
@@ -5772,7 +5884,7 @@
             }
         ]
     },
-    "Legacy Simple":{
+    "Legacy Simple": {
         "therootpack": [
             {
                 "name": "",

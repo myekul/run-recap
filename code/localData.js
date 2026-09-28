@@ -267,6 +267,7 @@ function organizeAltStrats() {
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
         ['1.1+', 'DLC+Base L/S DLC First', 'hildaberg'],
+        ['1.1+ Simple', 'Legacy Simple', 'hildaberg'],
         ['Legacy', 'Legacy Low%', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'goopylegrande'],
         ['NMG', 'DLC+Base L/S', 'therootpack'],
