@@ -89,9 +89,9 @@
             },
             {
                 "name": "2 Triples, 1 Double",
-                "time": 34.67,
-                "player": "Rayted",
-                "url": "https://youtu.be/E6D5bb6-lws"
+                "time": 34.61,
+                "player": "Taylz",
+                "url": "https://youtu.be/iLPNt0uHeRE"
             },
             {
                 "name": "1 Triple, 2 Doubles",
@@ -4827,9 +4827,9 @@
             },
             {
                 "name": "Gumball, Waffle, Cupcake",
-                "time": 30.07,
+                "time": 29.97,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/CUYqSDHQKOo"
+                "url": "https://youtu.be/1g7m8ecpH6I"
             },
             {
                 "name": "Gumball, Waffle, Candy Corn",
@@ -4845,9 +4845,9 @@
             },
             {
                 "name": "Gumball, Cupcake, Waffle",
-                "time": 30.09,
+                "time": 29.96,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/1IeOjLbFP6g"
+                "url": "https://youtu.be/jsBzKDewvVk"
             },
             {
                 "name": "Gumball, Cupcake, Candy Corn",
@@ -4863,9 +4863,9 @@
             },
             {
                 "name": "Gumball, Jawbreaker, Waffle",
-                "time": 33.59,
+                "time": 33.55,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/SgZFHmppRfA"
+                "url": "https://youtu.be/uDXmHk0lobw"
             },
             {
                 "name": "Gumball, Jawbreaker, Cupcake",
@@ -5223,9 +5223,9 @@
             },
             {
                 "name": "Orbs",
-                "time": 40.05,
+                "time": "39.80",
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/GpUIhnH5Ln4"
+                "url": "https://youtu.be/j54vGqK2gWU"
             },
             {
                 "name": "Triangles",
@@ -5548,17 +5548,23 @@
         "goopylegrande": [
             {
                 "name": "",
-                "time": 43.18,
-                "player": "Quincely0",
-                "url": "https://youtu.be/n84d6NPnImc"
+                "time": 42.82,
+                "player": "Yuka",
+                "url": "https://youtu.be/q5GWiBWwBQY"
             }
         ],
         "cagneycarnation": [
             {
+                "name": "Lunge, Lunge, Pods, Pods",
+                "time": 46.19,
+                "player": "Yuka",
+                "url": "https://youtu.be/Lfzjuwx1oRc"
+            },
+            {
                 "name": "Seeds, Pods, Pods",
-                "time": 46.93,
-                "player": "Quincely0",
-                "url": "https://youtu.be/ZN8H-pef7Jk"
+                "time": 46.63,
+                "player": "Yuka",
+                "url": "https://youtu.be/breoELg53hw"
             }
         ],
         "baronessvonbonbon": [
