@@ -3,8 +3,9 @@
 - Organize Run Recap database
 - Find player or display player name
 - Ground vs. Plane
-- Vanilla
 - Clean up Baroness viable / nonviable
+- playerDisplay with allPlayers
+- submitIL Follies criteria
 
 - Duplicate URLs in Firebase cache
 

@@ -315,7 +315,7 @@
                 "time": 21.17,
                 "player": "myekul",
                 "url": "https://youtu.be/xI9m9qXCp3Q",
-                "viable": "It goes for 3 parries, which is risky and difficult."
+                "viable": "It goes for a 4 bounce kill, which is risky and difficult."
             },
             {
                 "name": "Sneeze",
@@ -348,10 +348,10 @@
                 "url": "https://youtu.be/j2tjzU8i0kI"
             },
             {
-                "title": "3 Parries"
+                "title": "Other"
             },
             {
-                "name": "",
+                "name": "4 Bounce, 3 Parries",
                 "time": 19.73,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/XmGHSQfkVdg"
@@ -941,9 +941,9 @@
             },
             {
                 "name": "Up Eggs",
-                "time": 47.75,
-                "player": "Quincely0",
-                "url": "https://youtu.be/_pV_kV2jT2s"
+                "time": 46.93,
+                "player": "Rayted",
+                "url": "https://youtu.be/uwLANEja5aw"
             },
             {
                 "name": "Up Gun",
@@ -1373,7 +1373,7 @@
                 "odds": "3/13"
             },
             {
-                "name": "Cherry Bombs, Catapult, (5)",
+                "name": "Cherry Bombs, Catapult (5)",
                 "time": 37.75,
                 "player": "myekul",
                 "url": "https://youtu.be/OKNDtRCh6MU",
@@ -1381,21 +1381,21 @@
                 "odds2": 4
             },
             {
-                "name": "Cherry Bombs, Catapult, (6)",
+                "name": "Cherry Bombs, Catapult (6)",
                 "time": 37.51,
                 "player": "myekul",
                 "url": "https://youtu.be/lcmnYRl3tzA",
                 "odds": "3/13"
             },
             {
-                "name": "Catapult, Cherry Bombs, (5)",
+                "name": "Catapult, Cherry Bombs (5)",
                 "time": 38.58,
                 "player": "myekul",
                 "url": "https://youtu.be/M176R8sU-HI",
                 "odds": "1/26"
             },
             {
-                "name": "Catapult, Cherry Bombs, (6)",
+                "name": "Catapult, Cherry Bombs (6)",
                 "time": 37.69,
                 "player": "myekul",
                 "url": "https://youtu.be/vsRJ8RobIRw",
@@ -1669,7 +1669,7 @@
                 "time": 53.41,
                 "rta": 53.81,
                 "player": "Quincely0",
-                "url": "https://www.youtube.com/watch?v=tkQaDlPTCpI&t=1343s"
+                "url": "https://youtu.be/tkQaDlPTCpI?t=1343"
             },
             {
                 "name": "Pufferfish, Ghosts, Turtle, Red Fish",
@@ -1718,7 +1718,7 @@
                 "name": "Yellow Fish, Seahorse, Ghosts",
                 "time": 55.51,
                 "player": "lewzr",
-                "url": "https://youtu.be/K0Cqq0nSMr0?si=nL_LpyUm4MorNfW7&t=296"
+                "url": "https://youtu.be/K0Cqq0nSMr0?t=296"
             },
             {
                 "name": "Yellow Fish, Pufferfish, Ghosts",
@@ -1730,7 +1730,13 @@
                 "name": "Red Fish, Pufferfish, Ghosts",
                 "time": 55.54,
                 "player": "SBDWolf",
-                "url": "https://www.youtube.com/live/TKqk-CQkGDQ?si=n-SaaPV5Pl3N8Mxk&t=6502"
+                "url": "https://youtu.be/TKqk-CQkGDQ?t=6502"
+            },
+            {
+                "name": "Red Fish, Turtle, Ghosts",
+                "time": 55,
+                "player": "Grondious",
+                "url": "https://youtu.be/Eq723ClerkM?t=1797"
             },
             {
                 "name": "Ghosts, Turtle, Red Fish",
@@ -1739,10 +1745,16 @@
                 "url": "https://youtu.be/NLNBC0fZiQ4"
             },
             {
+                "name": "Ghosts, Turtle, Yellow Fish, Seahorse",
+                "time": 58.25,
+                "player": "Rayted",
+                "url": "https://youtu.be/S7KgmjnGjsE?t=1374"
+            },
+            {
                 "name": "Ghosts, Turtle, Yellow Fish, Pufferfish",
                 "time": 59.85,
                 "player": "myekul",
-                "url": "https://www.youtube.com/watch?v=mtux2J-s28A&t=1362s"
+                "url": "https://youtu.be/mtux2J-s28A?t=1362"
             },
             {
                 "name": "Ghosts, Pufferfish, Yellow Fish, Turtle",
@@ -3110,25 +3122,41 @@
         "kingdice": [
             {
                 "name": "2-4-9",
-                "time": "1:24.93",
+                "time": "1:22.57",
                 "player": "graven_",
-                "url": "https://youtu.be/yAIY7Mp6nqQ"
+                "url": "https://youtu.be/wJPHS_n2q0Y"
             }
         ],
         "chipsbettigan": [
             {
                 "name": "",
-                "time": 11.05,
-                "player": "Yuka",
-                "url": "https://www.youtube.com/watch?v=LtdcCsrf4Cw&t=12s"
+                "time": 10.93,
+                "player": "graven_",
+                "url": "https://youtu.be/wJPHS_n2q0Y?t=16"
             }
         ],
         "pipanddot": [
             {
                 "name": "",
-                "time": 12.57,
+                "time": 12.22,
                 "player": "graven_",
-                "url": "https://youtu.be/yAIY7Mp6nqQ?t=51"
+                "url": "https://youtu.be/wJPHS_n2q0Y?t=49"
+            }
+        ],
+        "mrchimes": [
+            {
+                "name": "",
+                "time": "7.80",
+                "player": "graven_",
+                "url": "https://youtu.be/wJPHS_n2q0Y?t=91"
+            }
+        ],
+        "kingdice2":[
+            {
+                "name": "3 HP",
+                "time": 14.97,
+                "player": "graven_",
+                "url": "https://youtu.be/8TlIJEE8fHQ"
             }
         ],
         "thedevil": [
@@ -3143,30 +3171,21 @@
             },
             {
                 "name": "Clap Dragon R",
-                "time": 31.57,
-                "player": "graven_",
-                "url": "https://youtu.be/N1WPuneio_k"
+                "time": "31.40",
+                "player": "Yuka",
+                "url": "https://youtu.be/J3PQps3jTKU"
             },
             {
                 "name": "Clap Dragon L",
-                "time": 31.91,
-                "player": "graven_",
-                "url": "https://youtu.be/EXsDWaewZUI"
+                "time": 31.66,
+                "player": "Yuka",
+                "url": "https://youtu.be/HeUnU-24CGo"
             },
             {
                 "name": "Dragon R Clap",
                 "time": 35.11,
                 "player": "Yuka",
                 "url": "https://youtu.be/h3Bv13EZFVY"
-            },
-            {
-                "title": "Freeze Spider"
-            },
-            {
-                "name": "Clap Spider",
-                "time": 37.25,
-                "player": "Yuka",
-                "url": "https://youtu.be/Nj3V4xIMN9s"
             },
             {
                 "title": "Dragon Kiss"
@@ -3179,9 +3198,9 @@
             },
             {
                 "name": "Ring Dragon R",
-                "time": 26.43,
-                "player": "graven_",
-                "url": "https://youtu.be/C-Daw32hI70"
+                "time": 26.23,
+                "player": "Yuka",
+                "url": "https://youtu.be/OV21cWBBqSs"
             },
             {
                 "name": "Clap Dragon R",
@@ -3212,6 +3231,12 @@
                 "time": 31.79,
                 "player": "Yuka",
                 "url": "https://youtu.be/MBF6Qtq0UBU"
+            },
+            {
+                "name": "Pinwheel Clap Dragon R",
+                "time": 26.91,
+                "player": "Yuka",
+                "url": "https://youtu.be/h9590itZyug"
             },
             {
                 "name": "Clap Pinwheel Dragon L",
@@ -5296,9 +5321,9 @@
         "captainbrineybeard": [
             {
                 "name": "2-Gun, Gun",
-                "time": 38.75,
+                "time": 38.71,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/5AuUgTlyK7k",
+                "url": "https://youtu.be/ifo7pfTg2Uw",
                 "viable": "It goes for 2-cycle dogfish, which is risky and unlikely."
             },
             {
@@ -5315,15 +5340,9 @@
             },
             {
                 "name": "2-Gun, Squid",
-                "time": 40.12,
+                "time": 39.77,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/--275DHHFBg"
-            },
-            {
-                "name": "Shark, Gun",
-                "time": 41.93,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/kL7EWIlPfD8"
+                "url": "https://youtu.be/iman7B86kLI"
             },
             {
                 "name": "4-Gun, Squid",
@@ -5332,25 +5351,55 @@
                 "url": "https://youtu.be/E-ML2vMfoCU"
             },
             {
-                "name": "Dogfish, Dogfish",
-                "time": "43.60",
+                "name": "4-Gun, Dogfish",
+                "time": 43.71,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/nK5RhdtQGkc"
+                "url": "https://youtu.be/RV2I1ODiTOM"
+            },
+            {
+                "name": "4-Gun, Shark",
+                "time": 43.84,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/v9N8AtIp1zw"
+            },
+            {
+                "name": "Shark, Gun",
+                "time": 41.93,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/kL7EWIlPfD8"
+            },
+            {
+                "name": "Dogfish, Gun",
+                "time": 41.71,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/nAshbVXOZC4"
+            },
+            {
+                "name": "Dogfish, Dogfish",
+                "time": 43.32,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/0q5U8UEcJ30"
             },
             {
                 "title": "Other"
             },
             {
                 "name": "Dogfish",
-                "time": 37.87,
+                "time": 37.42,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/2eFmcxOWlNU"
+                "url": "https://youtu.be/_HbmwdZuFKA"
             },
             {
                 "name": "Dogfish, Dogfish (Max)",
-                "time": 48.99,
+                "time": 48.71,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/AZdaKBqBVmk"
+                "url": "https://youtu.be/6_4LAJYFfvM"
+            },
+            {
+                "name": "4-Gun, Squid (EXs)",
+                "time": 40.57,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/PXP6SnR8Wpg"
             }
         ],
         "phantomexpress": [
@@ -5919,6 +5968,24 @@
                 "time": 15.85,
                 "player": "Yuka",
                 "url": "https://youtu.be/vgp0RFk6uj4"
+            }
+        ]
+    },
+    "NMG Full Clear": {
+        "wernerwerman": [
+            {
+                "name": "Catapult",
+                "time": 36,
+                "player": "myekul",
+                "url": "https://youtu.be/huIKOogXP8s"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Clap Bubbles (Slower)",
+                "time": 41.68,
+                "player": "myekul",
+                "url": "https://youtu.be/kX6loizVhd8"
             }
         ]
     },
@@ -6983,6 +7050,14 @@
                 "time": "28.50",
                 "player": "myekul",
                 "url": "https://youtu.be/WHbTrE0rumc"
+            }
+        ],
+        "sallystageplay": [
+            {
+                "name": "",
+                "time": 40.71,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/kWWitGf-v0A"
             }
         ],
         "wernerwerman": [

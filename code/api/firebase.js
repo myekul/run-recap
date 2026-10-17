@@ -94,34 +94,34 @@ window.firebaseUtils = {
             console.error('Error reading runRecap documents:', error)
         }
     },
-    firestoreWriteCommBestILs: async () => {
+    firestoreWriteIL: async () => {
         const obj = {
             player: localStorage.getItem('username'),
             category: runRecapCategory.tabName || altStratOther,
-            boss: document.getElementById('dropdown_commBestILs_level').value,
-            time: document.getElementById('input_commBestILs_time').value,
-            altstrat: document.getElementById('dropdown_commBestILs_altStrat').value,
-            other: document.getElementById('input_commBestILs_other').value,
-            url: document.getElementById('input_commBestILs_url').value,
+            boss: document.getElementById('dropdown_submitIL_level').value,
+            time: document.getElementById('input_submitIL_time').value,
+            altstrat: document.getElementById('dropdown_submitIL_altStrat').value,
+            other: document.getElementById('input_submitIL_other').value,
+            url: document.getElementById('input_submitIL_url').value,
             date: new Date().toISOString().slice(0, 10)
         }
-        const uploadCheck = document.getElementById('commBest_uploadCheck')
+        const uploadCheck = document.getElementById('submitIL_uploadCheck')
         uploadCheck.innerHTML = `<div class='loader'></div>`
-        hide('commBest_uploadButton')
-        show('commBest_uploadCheck')
-        await addDoc(collection(db, 'commBestILs'), obj)
+        hide('submitIL_uploadButton')
+        show('submitIL_uploadCheck')
+        await addDoc(collection(db, 'submitIL'), obj)
             .then(() => {
-                console.log(`Comm Best IL submitted`);
+                toast(`IL submitted!`);
                 uploadCheck.innerHTML = fontAwesome('check')
-                if (!altStratLevel) window.firebaseUtils.firestoreReadCommBestILs()
+                if (!altStratLevel) window.firebaseUtils.firestoreReadILs()
             })
             .catch((error) => {
                 console.error(`Error writing document ${i}: `, error);
             });
     },
-    firestoreReadCommBestILs: async () => {
+    firestoreReadILs: async () => {
         try {
-            const collectionRef = collection(db, 'commBestILs');
+            const collectionRef = collection(db, 'submitIL');
             const q = query(collectionRef);
             const querySnapshot = await getDocs(q);
             const results = [];
@@ -129,7 +129,7 @@ window.firebaseUtils = {
                 results.push({ id: docSnap.id, ...docSnap.data() });
             });
             results.sort((a, b) => new Date(a.date) - new Date(b.date))
-            document.getElementById('commBest_queue').innerHTML = pendingSubmissions(results, true)
+            document.getElementById('submitIL_queue').innerHTML = pendingSubmissions(results, true)
         } catch (error) {
             console.error('Error reading runRecap documents:', error)
         }

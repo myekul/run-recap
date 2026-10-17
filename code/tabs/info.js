@@ -51,7 +51,7 @@ async function generateInfo() {
     //     </table>
     // </div>`
     document.getElementById('javaSav').innerHTML = javaSav
-    const flags = ['us', 'gb', 'gb/sct', 'de', 'ch', 'it', 'se', 'rs', 'cn', 'kr', 'jp', 'br']
+    const flags = ['us', 'gb', 'de', 'it', 'gb/sct', 'ch', 'se', 'rs', 'cn', 'kr', 'jp', 'au', 'br']
     let flagsContent = `<div class='container' style='gap:8px;margin:10px'>`
     flags.forEach(flag => {
         flagsContent += `<img src='https://speedrun.com/images/flags/${flag}.png' style='height:20px'>`

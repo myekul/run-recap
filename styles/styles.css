@@ -94,12 +94,12 @@ th {
     width: 500px !important
 }
 
-#commBestILsSubmit td {
+#submitILTable td {
     text-align: left;
     font-size: 100%
 }
 
-#commBestILsSubmit select {
+#submitILTable select {
     font-size: 100%;
 }
 

@@ -1,14 +1,16 @@
 async function prepareLocalData() {
-    const [scenes, rrcData, commBestData, runViableData, altData] = await Promise.all([
+    const [scenes, rrcData, commBestData, altData, runViableData, vanillaData] = await Promise.all([
         fetch('resources/scenes.json').then(r => r.json()),
         fetch('resources/rrcData.json').then(r => r.json()),
         fetch('resources/commBest.json').then(r => r.json()),
+        fetch('resources/alt.json').then(r => r.json()),
         fetch('resources/runViable.json').then(r => r.json()),
-        fetch('resources/alt.json').then(r => r.json())
+        fetch('resources/vanilla.json').then(r => r.json())
     ])
-    commBest = commBestData
-    runViable = runViableData
     alt = altData
+    runViable = runViableData
+    commBest = commBestData
+    vanilla = vanillaData
     runViable['DLC+Base L/S DLC First'].unshift(...runViable['DLC L/S'])
     runViable['DLC+Base C/S'].unshift(...runViable['DLC C/S'])
     copyRunViable('1.1+', 'NMG', 3, 3) // Hilda Berg

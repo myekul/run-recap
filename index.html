@@ -22,6 +22,11 @@
 </head>
 
 <body>
+    <svg width="0" height="0" style="position:absolute">
+        <symbol id="vanilla-icon" viewBox="0 0 448 512">
+            <path d="M368 160h-.94a144 144 0 1 0-286.12 0H80a48 48 0 0 0 0 96h288a48 48 0 0 0 0-96zM195.38 493.69a31.52 31.52 0 0 0 57.24 0L352 288H96z" />
+        </symbol>
+    </svg>
     <div id="bodyContent">
         <header>
             <div class='container' style="padding-top:5px">
@@ -35,19 +40,20 @@
         <main>
             <div class="sticky">
                 <div id="headerRow" class="container">
-                    <button onclick="document.getElementById('input_upload').click()" class='button cuphead' style="width:120px;position:absolute;left:15px">
-                        <i class="fa fa-folder-open"></i>&nbsp;Open file
-                    </button>
-                    <div class="font2" style="margin-right:8px">Comm Best</div>
-                    <button id='altStratsButton' onclick="altStratLevel=null;showTab('altStrats')" class="button headerButton" style="width:60px">
-                        <i class="fa fa-database"></i>ILs
+                    <button id='altStratsButton' onclick="altStratLevel=null;showTab('altStrats')" class="button headerButton" style="width:110px">
+                        <i class="fa fa-database"></i>Alt Strats
                     </button>
                     <button id='runViableILsButton' onclick="altStratLevel=null;showTab('runViableILs')" class="button headerButton" style="width:30px">
                         <i class="fa fa-trophy"></i>
                     </button>
+                    <button id='vanillaILsButton' onclick="altStratLevel=null;showTab('vanillaILs')" class="button headerButton" style="width:30px">
+                        <svg style="width: 15px; height: 15px">
+                            <use href="#vanilla-icon"></use>
+                        </svg>
+                    </button>
                     <div class="dot"></div>
-                    <button id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button headerButton" style="width:80px">
-                        <i class="fa fa-tasks"></i>Splits
+                    <button id='commBestSplitsButton' onclick="showTab('commBestSplits')" class="button headerButton" style="width:130px">
+                        <i class="fa fa-tasks"></i>Comm Bests
                     </button>
                     <button id='theTopButton' onclick="showTab('theTop')" class="button headerButton" style="width:30px">
                         <i class="fa fa-bullseye"></i>
@@ -153,33 +159,36 @@
 
 <script src="code/localData.js"></script>
 
-<script src="code/runRecap.js"></script>
-<script src="code/classic.js"></script>
-<script src="code/comparison.js"></script>
+<script src="code/runRecap/runRecap.js"></script>
+<script src="code/runRecap/classic.js"></script>
+<script src="code/runRecap/comparison.js"></script>
 
 <script src="code/api/firebase.js" type="module"></script>
 
 <script src="code/tabs/home.js"></script>
 <script src="code/tabs/leaderboards.js"></script>
 
-<script src="code/tabs/file/sav.js"></script>
-<script src="code/tabs/file/lss.js"></script>
-<script src="code/tabs/file/rrc.js"></script>
+<script src="code/runRecap/file/sav.js"></script>
+<script src="code/runRecap/file/lss.js"></script>
+<script src="code/runRecap/file/rrc.js"></script>
 
-<script src="code/tabs/file/rrc/rrcChart.js"></script>
+<script src="code/runRecap/rrcChart.js"></script>
 
 <script src="code/tabs/ballpit.js"></script>
 
-<script src="code/tabs/runViableILs.js"></script>
 <script src="code/tabs/altStrats.js"></script>
+<script src="code/tabs/runViableILs.js"></script>
+<script src="code/tabs/vanillaILs.js"></script>
 <script src="code/tabs/commBestSplits.js"></script>
 <script src="code/tabs/theTop.js"></script>
 
 <script src="code/tabs/info.js"></script>
 
 <script src="code/submitIL.js"></script>
-<script src="code/database.js"></script>
+<script src="code/runRecap/database.js"></script>
 <script src="code/general.js"></script>
+
+<script src="code/runRecap/file.js"></script>
 
 <script src="code/aprilFools.js"></script>
 

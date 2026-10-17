@@ -1,5 +1,5 @@
 function mausCriteria() {
-    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || altStratOther == 'DLC OG Charge'))
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || ['NMG Full Clear', 'DLC OG Charge'].includes(altStratOther)))
 }
 function altStatCriteria(level) {
     return level == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) || level == 'captainbrineybeard' && runRecapCategory.tabName == '1.1+'
@@ -21,7 +21,7 @@ async function generateAltStrats() {
                     })
                 }
                 if (runRecapCategory.name == 'Legacy' && altStratLevel == 'kingdice') {
-                    ['chipsbettigan', 'pipanddot'].forEach(miniboss => {
+                    ['chipsbettigan', 'pipanddot', 'mrchimes', 'kingdice2'].forEach(miniboss => {
                         HTMLContent += altStrats(miniboss)
                     })
                 }
@@ -40,8 +40,8 @@ async function generateAltStrats() {
         altStrat_topContributors(temp)
         altStrat_bestTimes(temp)
         temp.querySelector('#altStratNum').innerText = altStratNum
-        temp.querySelector('#commBest_queue').innerHTML = pendingSubmissions()
-        window.firebaseUtils.firestoreReadCommBestILs()
+        temp.querySelector('#submitIL_queue').innerHTML = pendingSubmissions()
+        window.firebaseUtils.firestoreReadILs()
     }
     document.getElementById('content').innerHTML = temp.innerHTML
     if (altStatCriteria(altStratLevel)) drawChart()
@@ -90,7 +90,7 @@ function bossSelect() {
         }
     })
     HTMLContent += `</div>`
-    if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+    if (runRecapCategory.name == 'Other' && ALL_RUNNGUNS.includes(altStratOther)) {
         HTMLContent += `<div class='container' style='gap:10px;margin-top:10px'>`
     }
     if (runRecapCategory.name == 'Other' && altStratOther == '300%') {
@@ -117,7 +117,7 @@ function bossSelect() {
             </tr>
         </table>`
     }
-    if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+    if (runRecapCategory.name == 'Other' && ALL_RUNNGUNS.includes(altStratOther)) {
         HTMLContent += `<table class='shadow'>
                 <tr class='background2'>`
         RUNNGUNS.slice(1).forEach(level => {
@@ -544,6 +544,7 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
 function bossPattern(boss, pattern) {
     let HTMLContent = `<td><div class='container'>`
     const split = boss == 'thedevil' ? ' ' : ', '
+    pattern = String(pattern ?? '').split('(')[0].trim()
     const patterns = boss == 'chefsaltbaker' ? [...pattern.split(' ')[0]] : pattern.split(split)
     patterns.forEach(attack => {
         if (boss == 'cagneycarnation') attack = attack.split(' ')[0]
