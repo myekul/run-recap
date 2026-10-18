@@ -16,7 +16,7 @@ async function generate_rrc() {
     }
     if (dropboxEligible) initializeDropbox()
     if (chartEligible) rrcChart()
-    await setHTML('code/tabs/file/rrc/rrcCredits.html', 'rrcCredits');
+    await setHTML('html/rrcCredits.html', 'rrcCredits');
     ['SBDWolf', 'myekul', 'diggity', 'Misterbutter444'].forEach((player, index) => {
         document.getElementById('rrcCredits' + (index + 1)).innerHTML = playerDisplay(player)
     })

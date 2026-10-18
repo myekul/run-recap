@@ -6,9 +6,9 @@
             "url": "https://youtu.be/z7ep_y600FA"
         },
         "ribbyandcroaks": {
-            "time": 42.61,
-            "player": "SBDWolf",
-            "url": "https://youtu.be/vA7KoQu34as?t=11499"
+            "time": 41.68,
+            "player": "Quincely0",
+            "url": "https://youtu.be/P4LDAalU78s"
         },
         "goopylegrande": {
             "time": 21.63,
@@ -46,9 +46,9 @@
             "url": "https://www.twitch.tv/videos/2811006787?t=00h00m38s"
         },
         "grimmatchstick": {
-            "time": "47.30",
-            "player": "ClipBoardGuy",
-            "url": "https://youtu.be/ZEdYrp2Ogx8?t=20660"
+            "time": 46.91,
+            "player": "Quincely0",
+            "url": "https://youtu.be/vo1yZkUN29U"
         },
         "rumorhoneybottoms": {
             "time": 38.46,
@@ -94,6 +94,93 @@
             "time": 40.57,
             "player": "myekul",
             "url": "https://youtu.be/BUkJ2Kv2-Lc"
+        }
+    },
+    "Legacy": {
+        "therootpack": {
+            "time": 25.97,
+            "player": "graven_",
+            "url": "https://youtu.be/510T0RT2nCo"
+        },
+        "ribbyandcroaks": {
+            "time": 33.57,
+            "player": "graven_",
+            "url": "https://youtu.be/W2sOynctumk?t=21"
+        },
+        "goopylegrande": {
+            "time": 18.17,
+            "player": "Yuka",
+            "url": "https://youtu.be/HP_zMbG2B9I?t=32"
+        },
+        "hildaberg": {
+            "time": 54.98,
+            "player": "Yuka",
+            "url": "https://youtu.be/IBkIwcsE3HI?t=299"
+        },
+        "cagneycarnation": {
+            "time": 23.24,
+            "player": "Yuka",
+            "url": "https://youtu.be/YUlYqmE-f7s?t=425"
+        },
+        "baronessvonbonbon": {
+            "time": "26.70",
+            "player": "Yuka",
+            "url": "https://youtu.be/-6eqLqigR1A?t=464"
+        },
+        "djimmithegreat": {
+            "time": 48.84,
+            "player": "Yuka",
+            "url": "https://youtu.be/8hd4CPcZpuM?t=31"
+        },
+        "beppitheclown": {
+            "time": "28.30",
+            "player": "graven_",
+            "url": "https://youtu.be/jb9lfDHs_dM?t=21"
+        },
+        "grimmatchstick": {
+            "time": 29.07,
+            "player": "Yuka",
+            "url": "https://youtu.be/uPhmJ_-zqHY?t=859"
+        },
+        "rumorhoneybottoms": {
+            "time": 28.03,
+            "player": "Yuka",
+            "url": "https://youtu.be/MxVSKABdv6c?t=42"
+        },
+        "drkahlsrobot": {
+            "time": 12.69,
+            "player": "Yuka",
+            "url": "https://youtu.be/VC-U4nQZF0g?t=42"
+        },
+        "sallystageplay": {
+            "time": 45.55,
+            "player": "SBDWolf",
+            "url": "https://youtu.be/ICvTJwh-km0?&t=6739"
+        },
+        "wernerwerman": {
+            "time": 26.72,
+            "player": "Yuka",
+            "url": "https://youtu.be/BaboSKgIVe8?t=1077"
+        },
+        "captainbrineybeard": {
+            "time": 26.66,
+            "player": "graven_",
+            "url": "https://youtu.be/ecmM2pg5JOE"
+        },
+        "phantomexpress": {
+            "time": 50.87,
+            "player": "graven_",
+            "url": "https://youtu.be/EAELotbZ4Yk?t=1233"
+        },
+        "kingdice": {
+            "time": "1:25.26",
+            "player": "Yuka",
+            "url": "https://youtu.be/fJp-0J6Zuzg?t=38"
+        },
+        "thedevil": {
+            "time": 26.88,
+            "player": "graven_",
+            "url": "https://youtu.be/ecVRDt6VAEQ"
         }
     }
 }

@@ -137,9 +137,9 @@
             },
             {
                 "name": "5 Flies, Tigers",
-                "time": 42.18,
+                "time": 41.68,
                 "player": "Quincely0",
-                "url": "https://youtu.be/-SZruEmwtf0",
+                "url": "https://youtu.be/P4LDAalU78s",
                 "odds": "1/24"
             },
             {
@@ -2996,9 +2996,9 @@
             },
             {
                 "name": "Luigi Swaps",
-                "time": 13.26,
+                "time": 13.24,
                 "player": "Yuka",
-                "url": "https://youtu.be/4lpkJ5VExks"
+                "url": "https://www.twitch.tv/yukaa_1030/clip/IgnorantStrongCurrySmoocherZ-YHjpSYz0MqdXLBQr"
             },
             {
                 "name": "No Luigi Swaps",
@@ -3016,9 +3016,9 @@
             },
             {
                 "name": "Phase 4 K.O.",
-                "time": 35.35,
-                "player": "Yuka",
-                "url": "https://youtu.be/76p70xDpB2g?t=967"
+                "time": 34.43,
+                "player": "graven_",
+                "url": "https://youtu.be/ff8j8INPA7w?t=2"
             }
         ],
         "wernerwerman": [
@@ -5982,10 +5982,46 @@
         ],
         "thedevil": [
             {
+                "name": "Clap Dragon",
+                "time": 41.65,
+                "player": "myekul",
+                "url": "https://youtu.be/ozQy11l_Gis"
+            },
+            {
                 "name": "Clap Bubbles (Slower)",
                 "time": 41.68,
                 "player": "myekul",
                 "url": "https://youtu.be/kX6loizVhd8"
+            },
+            {
+                "name": "Ring Clap",
+                "time": 41.85,
+                "player": "myekul",
+                "url": "https://youtu.be/jq8AVHG52Eg"
+            },
+            {
+                "name": "Clap Bubbles",
+                "time": 42.64,
+                "player": "myekul",
+                "url": "https://youtu.be/FH785XeSeNM"
+            },
+            {
+                "name": "Bubbles (Slower)",
+                "time": 43.18,
+                "player": "myekul",
+                "url": "https://youtu.be/YrTyNKTmGpI"
+            },
+            {
+                "name": "Clap Spider",
+                "time": 44.42,
+                "player": "myekul",
+                "url": "https://youtu.be/vKJUjP7KgsU"
+            },
+            {
+                "name": "Spider",
+                "time": 45.86,
+                "player": "myekul",
+                "url": "https://youtu.be/zUqA09XKs8g"
             }
         ]
     },
@@ -7190,10 +7226,40 @@
                 "title": "Whetstone"
             },
             {
+                "name": "Clap Pinwheel",
+                "time": 45.88,
+                "player": "myekul",
+                "url": "https://youtu.be/d8Nw3zVCjp4"
+            },
+            {
+                "name": "Clap Bubbles",
+                "time": 46.84,
+                "player": "myekul",
+                "url": "https://youtu.be/ZXkwMSf8FP4"
+            },
+            {
                 "name": "Clap Dragon",
                 "time": 46.99,
                 "player": "myekul",
                 "url": "https://youtu.be/XjIPBZitqC0"
+            },
+            {
+                "name": "Spider Clap",
+                "time": 47.31,
+                "player": "myekul",
+                "url": "https://youtu.be/uZEskYOiPHw"
+            },
+            {
+                "name": "Clap Ring",
+                "time": 48.77,
+                "player": "myekul",
+                "url": "https://youtu.be/zUJDd_jIrEE"
+            },
+            {
+                "name": "Clap Spider",
+                "time": "48.80",
+                "player": "myekul",
+                "url": "https://youtu.be/If9XjgJwoWA"
             },
             {
                 "title": "Chalice"
