@@ -89,21 +89,21 @@ function lssView() {
                 }
                 comparisonContents += `<div>${secondsToHMS(comparisonTime)}</div></div>`
                 HTMLContent += `
-                    <td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>
-                    ${image}
-                    <td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>
-                    <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>
-                    <td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
+                <td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>
+                ${image}
+                <td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>
+                <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>
+                <td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
             } else if (index == 2) {
                 HTMLContent += `<td colspan=5></td>`
             } else {
                 const levelID = index == 0 ? runNguns[0].levelID : mausoleumID
                 const level = getCupheadLevel(levelID, true)
                 HTMLContent += `
-                    <td>${level.bestTime != nullTime ? image : ''}</td>
-                    <td>${level.bestTime != nullTime ? secondsToHMS(level.bestTime, true) : ''}</td>
-                    <td></td>
-                    <td></td>`
+                <td>${level.bestTime != nullTime ? image : ''}</td>
+                <td>${level.bestTime != nullTime ? secondsToHMS(level.bestTime, true) : ''}</td>
+                <td></td>
+                <td></td>`
             }
         }
         HTMLContent += `</tr>`

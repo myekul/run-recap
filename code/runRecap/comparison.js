@@ -17,23 +17,26 @@ function comparisonPopup(type) {
     const comparisonInfo = type == 'sav' ? savComparisonInfo : rrcComparisonInfo
     const comparisonOptions = type == 'sav' ? savComparisonOptions : rrcComparisonOptions
     const comparison = type == 'sav' ? savComparison : rrcComparison
-    let HTMLContent = `<div class='container' style='gap:10px'><div style='width:250px'>`;
+    let HTMLContent_comparisons = ''
     comparisonOptions.forEach((option, index) => {
-        HTMLContent += `
+        HTMLContent_comparisons += `
         <div class='grow ${getRowColor(index)} ${comparison == option ? 'cuphead' : ''}' style='padding:8px 6px' onclick="changeComparison('${type}','${option}');action()">
             <div>${option}</div>
             <div style='color:gray;font-size:70%;'>${comparisonInfo[option] || ''}</div>
         </div>`
     })
-    HTMLContent += `
+    return `
+    <div class='container' style='gap:10px'>
+        <div style='width:250px'>
+            ${HTMLContent_comparisons}
         </div>
         <div>
             <div>
                 ${!runRecapExample && globalTab == 'rrc' ? `<div style='margin-bottom:10px'>${rrcBrowser(true)}</div>` : ''}
                 ${runRecapExamples(type)}
             </div>
+        </div>
     </div>`
-    return HTMLContent
 }
 function changeComparison(type, comparison, custom) {
     let HTMLContent = custom || comparison

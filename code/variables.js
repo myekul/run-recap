@@ -50,10 +50,10 @@ let databaseCategory
 
 let loaded
 
-let commBestILs_readyToSubmit
-let commBestILsAll = false
+let submitIL_readyToSubmit
+let altStratsAll = false
 
-let commBestILs
+let allCategories
 
 let onlyShowFinished = false
 let onlyShowDeathless = false

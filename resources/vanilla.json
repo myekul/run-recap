@@ -123,9 +123,9 @@
             "url": "https://youtu.be/YUlYqmE-f7s?t=425"
         },
         "baronessvonbonbon": {
-            "time": "26.70",
+            "time": 26.46,
             "player": "Yuka",
-            "url": "https://youtu.be/-6eqLqigR1A?t=464"
+            "url": "https://youtu.be/bW8vniDnIuk?t=39"
         },
         "djimmithegreat": {
             "time": 48.84,
@@ -181,6 +181,54 @@
             "time": 26.88,
             "player": "graven_",
             "url": "https://youtu.be/ecVRDt6VAEQ"
+        }
+    },
+    "NMG":{
+        "therootpack": {
+            "time": 35.13,
+            "player": "SBDWolf",
+            "url": "https://www.twitch.tv/sbdwolf/clip/LachrymoseDifferentPastaHoneyBadger-d5IGUKvTWxM9jq_a?range=30d"
+        }
+    },
+    "DLC L/S": {
+        "estherwinchester": {
+            "time": "1:00.04",
+            "player": "MarkinSws",
+            "url": "https://youtu.be/SKxj-gOE_E4?t=33"
+        }
+    },
+     "DLC C/S": {
+        "glumstonethegiant": {
+            "time": 47.15,
+            "player": "myekul",
+            "url": "https://youtu.be/e3hJNxOG_mQ"
+        },
+        "mortimerfreeze": {
+            "time": 38.47,
+            "player": "myekul",
+            "url": "https://youtu.be/hYkCoXfQwM8?t=317"
+        },
+        "thehowlingaces": {
+            "time": 42.97,
+            "player": "myekul",
+            "url": "https://youtu.be/dqqT2n-83cw?t=30"
+        },
+        "moonshinemob": {
+            "time": 37.66,
+            "player": "myekul",
+            "url": "https://youtu.be/UCLkF-T0jUo?t=30"
+        }
+    },
+    "DLC+Base C/S": {
+        "therootpack": {
+            "time": 36.44,
+            "player": "myekul",
+            "url": "https://youtu.be/yU4c2KVBnIY"
+        },
+        "baronessvonbonbon": {
+            "time": 30.81,
+            "player": "DaniStuff2345",
+            "url": "https://youtu.be/FoGWOA7lasY"
         }
     }
 }

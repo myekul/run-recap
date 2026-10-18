@@ -48,7 +48,7 @@ function openDatabase(type, comparison, shh) {
             || !comparison && !databaseCategory
             || !comparison && databaseCategory == run.category) {
             empty = false
-            const category = commBestILs[run.category]
+            const category = allCategories[run.category]
             const onclick = comparison ? `databaseCompare('${type}','${index}','${run.player}','${run.time}')` : `databaseView('${type}',${index},'${run.player}','${run.time}','${category.tabName}')`
             HTMLContent += `
             <tr class='${getRowColor(index)} grow' onclick="${onclick}">
@@ -72,7 +72,7 @@ function openDatabase(type, comparison, shh) {
     buttonShots()
     const buttons = document.querySelectorAll('#databaseCategorySelect .categorySelect > .container > button[id]')
     buttons.forEach(btn => btn.id += 'Database')
-    categoryButtonClick(commBestILs[databaseCategory], true)
+    categoryButtonClick(allCategories[databaseCategory], true)
 }
 function databaseView(type, databaseIndex, player, time, categoryName) {
     runRecapUnload('sav')

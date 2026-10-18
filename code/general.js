@@ -71,7 +71,7 @@ function bigPlayerDisplay(player) {
     return HTMLContent
 }
 function generateBoardTitle(categoryName = runRecapCategory.tabName || runRecapCategory.name) {
-    const category = commBestILs[categoryName]
+    const category = allCategories[categoryName]
     let HTMLContent = ''
     const shotSize = 30
     let otherName = category ? altStratOther : categoryName
@@ -80,7 +80,7 @@ function generateBoardTitle(categoryName = runRecapCategory.tabName || runRecapC
     if (shot1 && (category?.name == 'Other' || category == null) && LOADOUTS_REPLACE[otherName]) otherName = otherName.split(' ').slice(0, -1).join(' ')
     HTMLContent += boardTitleCell(category?.className ?? 'gray', category?.name || 'Other')
     HTMLContent += category?.name == 'Other' || category == null ? `<td class='grow' style='height:32px;padding:0 5px;color:white' onclick="otherCategories()">${otherName}</td>` : ''
-    HTMLContent += shot1 ? `<td id='commBestILsWeapons' class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
+    HTMLContent += shot1 ? `<td class='container' style='margin:0;gap:4px;padding:0 3px'>` : ''
     HTMLContent += shot1 ? cupheadShot(shot1, shotSize) : ''
     HTMLContent += shot2 ? cupheadShot(shot2, shotSize) : ''
     HTMLContent += shot1 ? `</td>` : ''

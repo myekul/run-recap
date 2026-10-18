@@ -1,32 +1,27 @@
 function classicView() {
-    let HTMLContent = `
-    <div class='container'>
-        ${savComparisonDisplay()}
-        ${handleNumDeaths()}
-    </div>`
-    HTMLContent += `<div class='container' style='gap:25px;margin:20px'>`
+    let HTMLContent_isles = ''
     assignIsles()
     if (globalTab == 'sav') {
         const follies = getCupheadLevel(runNguns[0].levelID, true)
         const treetop = getCupheadLevel(runNguns[1].levelID, true)
         if (follies.bestTime != nullTime) {
-            HTMLContent += `<div>`
+            HTMLContent_isles += `<div>`
             if (follies.bestTime != nullTime && treetop.bestTime == nullTime) {
-                HTMLContent += extraLevel('forestfollies', follies.bestTime)
+                HTMLContent_isles += extraLevel('forestfollies', follies.bestTime)
             }
             const mausoleum = getCupheadLevel(mausoleumID, true)
             if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
-                HTMLContent += extraLevel('mausoleum', mausoleum.bestTime)
+                HTMLContent_isles += extraLevel('mausoleum', mausoleum.bestTime)
             }
-            HTMLContent += `</div>`
+            HTMLContent_isles += `</div>`
         }
     }
     isles.slice(0, 5).forEach((isle, index) => {
-        HTMLContent += isle.runRecapCategories.length ? isleHeader(isle) : ''
+        HTMLContent_isles += isle.runRecapCategories.length ? isleHeader(isle) : ''
         isle.runRecapCategories.forEach(object => {
-            HTMLContent += savBoss(object)
+            HTMLContent_isles += savBoss(object)
         })
-        if (isle.runRecapCategories.length) HTMLContent += `</table>`
+        if (isle.runRecapCategories.length) HTMLContent_isles += `</table>`
         // const levels = [['forestfollies', 'treetoptrouble'], ['funfairfever', 'funhousefrazzle'], ['ruggedridge', 'perilouspiers']]
         // levels.forEach((levelPair, levelIndex) => {
         //     if (index == levelIndex) {
@@ -40,10 +35,16 @@ function classicView() {
         //         HTMLContent += `</div>`
         //     }
         // })
-        if (isle.runRecapCategories.length) HTMLContent += `</div>`
+        if (isle.runRecapCategories.length) HTMLContent_isles += `</div>`
     })
-    HTMLContent += `</div>`
-    return HTMLContent
+    return `
+    <div class='container'>
+        ${savComparisonDisplay()}
+        ${handleNumDeaths()}
+    </div>
+    <div class='container' style='gap:25px;margin:20px'>
+        ${HTMLContent_isles}
+    </div>`
 }
 function savBoss(categoryIndex) {
     const category = categories[categoryIndex]
@@ -92,12 +93,12 @@ function extraLevel(name, time) {
 function isleHeader(isle) {
     return `
     <div style='position:relative'>
-    ${isle.name == 'Hell' ? `<div id='kdPlus' class='grow dim' style='display:none;position:absolute;right:-20px;top:30px' onclick="kdPlus()">${fontAwesome('plus')}</div>` : ''}
-    <table class='shadow'>
-    <tr>
-        <th colspan=3 class='${isle.className}'>${isle.name}</th>
-        <td colspan=2></td>
-    </tr>`
+        ${isle.name == 'Hell' ? `<div id='kdPlus' class='grow dim' style='display:none;position:absolute;right:-20px;top:30px' onclick="kdPlus()">${fontAwesome('plus')}</div>` : ''}
+        <table class='shadow'>
+            <tr>
+                <th colspan=3 class='${isle.className}'>${isle.name}</th>
+                <td colspan=2></td>
+            </tr>`
 }
 function runRecapIL(runTime, categoryIndex) {
     return `<div ${globalTab == 'sav' ? `class='grow' onclick="runRecapPlaceholder('${runTime}',${categoryIndex})"` : ''} style='font-size:130%'>${secondsToHMS(runTime, true)}</div>`

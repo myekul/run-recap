@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch('resources/categoryData.json')
         .then(response => response.json())
         .then(data => {
-            commBestILs = data
+            allCategories = data
             prepareLocalData()
-            runRecapCategory = commBestILs['1.1+']
+            runRecapCategory = allCategories['1.1+']
             window.firebaseUtils.firestoreRead()
         })
 })
@@ -162,11 +162,11 @@ function action() {
     document.getElementById('boardTitle').classList.remove('grayedOut')
     if (globalTab == 'altStrats') {
         document.querySelectorAll('.altStratNum').forEach(elem => { show(elem) })
-        show('commBestILsAll')
-        if (commBestILsAll) document.getElementById('boardTitle').classList.add('grayedOut')
+        show('altStratsAll')
+        if (altStratsAll) document.getElementById('boardTitle').classList.add('grayedOut')
     } else {
         document.querySelectorAll('.altStratNum').forEach(elem => { hide(elem) })
-        hide('commBestILsAll')
+        hide('altStratsAll')
     }
     const grayButtons = ['leaderboards', 'runViableILs', 'vanillaILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
     if (runRecapCategory.name == 'Other') {
@@ -188,7 +188,7 @@ document.querySelectorAll('select').forEach(elem => {
 function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     if (forceHome && runRecapExample && ['sav', 'lss', 'rrc'].includes(globalTab)) showTab('home')
     if (runRecapExample) unloadExample()
-    runRecapCategory = commBestILs[categoryName]
+    runRecapCategory = allCategories[categoryName]
     categoryButtonClick(runRecapCategory)
     players = []
     playerNames = new Set()

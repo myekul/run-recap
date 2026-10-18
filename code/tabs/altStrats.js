@@ -7,13 +7,13 @@ function altStatCriteria(level) {
 async function generateAltStrats() {
     altStratCategory = alt[runRecapCategory.tabName || altStratOther]
     let HTMLContent = ''
-    if (altStratCategory || commBestILsAll) {
+    if (altStratCategory || altStratsAll) {
         HTMLContent += bossSelect()
         if (!altStratLevel) {
             HTMLContent += `<div id='altStratsHTML' class='container' style='margin-top:20px;gap:30px;align-items:flex-start'></div>`
         } else {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
-            if (altStratCategory[altStratLevel] || commBestILsAll) {
+            if (altStratCategory[altStratLevel] || altStratsAll) {
                 HTMLContent += altStrats(altStratLevel)
                 if (runRecapCategory.name == '1.1+' && altStratLevel == 'kingdice') {
                     ['mrwheezy', 'hopuspocus', 'pirouletta', 'kingdice2'].forEach(miniboss => {
@@ -141,7 +141,7 @@ function bossSelect() {
 function altStratHeader(level) {
     const copy = altStratCategory[level] ? altStratCategory[level][0]?.copy : null
     let num = 0
-    if (commBestILsAll) {
+    if (altStratsAll) {
         for (const category in alt) {
             if (alt[category]) {
                 num += alt[category][level]?.filter(IL => !IL.title && !IL.copy).length || 0
@@ -154,14 +154,14 @@ function altStratHeader(level) {
     <td>
         <div style='font-size:80%;color:gray;position:relative'>
             ${num || '&nbsp;'}
-            ${copy && !commBestILsAll ? `<div class='${commBestILs[copy]?.className ?? 'gray'}' style='position:absolute;width:36px;top:-5px;height:2px'></div>` : ''}
+            ${copy && !altStratsAll ? `<div class='${allCategories[copy]?.className ?? 'gray'}' style='position:absolute;width:36px;top:-5px;height:2px'></div>` : ''}
         </div>
     </td>`
 }
 function altStrat_topContributors(root, level) {
     let HTMLContent = ''
     const counts = {};
-    const countCategories = commBestILsAll ? alt : { [runRecapCategory.tabName == 'Other' ? altStratOther : runRecapCategory.tabName]: altStratCategory }
+    const countCategories = altStratsAll ? alt : { [runRecapCategory.tabName == 'Other' ? altStratOther : runRecapCategory.tabName]: altStratCategory }
     if (root) {
         for (const category in countCategories) {
             for (const boss in countCategories[category]) {
@@ -176,7 +176,7 @@ function altStrat_topContributors(root, level) {
     } else {
         for (const category in countCategories) {
             for (const obj of countCategories[category][level] || []) {
-                if (!obj.title && !(commBestILsAll && obj.copy)) {
+                if (!obj.title && !(altStratsAll && obj.copy)) {
                     const player = obj.player;
                     counts[player] = (counts[player] || 0) + 1;
                 }
@@ -209,14 +209,10 @@ function altStrat_topContributors(root, level) {
 }
 function altStrat_bestTimes(root) {
     let viableCategory
-    let HTMLContent = `
-    <table class='shadow'>
-        <tr>
-            <td colspan=5 class='gray bigHeader'>Best Times</td>
-        </tr>`
+    let HTMLContent_bestTimes = ''
     categories.forEach((category, categoryIndex) => {
         let altGroup = []
-        if (commBestILsAll) {
+        if (altStratsAll) {
             for (const cata in alt) {
                 if (alt[cata][category.info?.id]) {
                     altGroup.push(...alt[cata][category.info.id].filter(IL => !IL.copy))
@@ -234,7 +230,7 @@ function altStrat_bestTimes(root) {
                     if (!viable) fastest = strat
                     trueFastest = strat
                 }
-                if (strat.viable && !commBestILsAll) {
+                if (strat.viable && !altStratsAll) {
                     viableCategory = true
                     if (!nonviable) {
                         fastest = strat
@@ -242,17 +238,17 @@ function altStrat_bestTimes(root) {
                     }
                 }
             })
-            HTMLContent += `
+            HTMLContent_bestTimes += `
             <tr class='clickable ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
                 <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                 <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
                 <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
-                <td style='position:relative' class='${fastest.copy ? commBestILs[fastest.copy]?.className ?? 'gray' : ''}'>
-                    ${viable && !commBestILsAll ? `<div class='dim' style='position: absolute;margin-left: 10px;transform: translateY(-50%);' onmouseover="runViableToast('${fastest.viable}','${trueFastest.time}','${trueFastest.player}')">${fontAwesome('info-circle')}</div>` : ''}
+                <td style='position:relative' class='${fastest.copy ? allCategories[fastest.copy]?.className ?? 'gray' : ''}'>
+                    ${viable && !altStratsAll ? `<div class='dim' style='position: absolute;margin-left: 10px;transform: translateY(-50%);' onmouseover="runViableToast('${fastest.viable}','${trueFastest.time}','${trueFastest.player}')">${fontAwesome('info-circle')}</div>` : ''}
                 </td>
             </tr>`
         } else {
-            HTMLContent += `
+            HTMLContent_bestTimes += `
             <tr class='${getRowColor(categoryIndex)}'>
                 <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
                 <td class='${category.info.id}'></td>
@@ -260,7 +256,13 @@ function altStrat_bestTimes(root) {
             </tr>`
         }
     })
-    HTMLContent += `</table>`
+    let HTMLContent = `
+    <table class='shadow'>
+        <tr>
+            <td colspan=5 class='gray bigHeader'>Best Times</td>
+        </tr>
+        ${HTMLContent_bestTimes}
+    </table>`
     if (viableCategory) HTMLContent += `<div class='grow' style='position:absolute;left:10px;top:9px;font-size:110%' onclick="toggleViable()">${fontAwesome('toggle-' + (nonviable ? 'off' : 'on'))}</div>`
     root.querySelector('#altStrat_bestTimes').innerHTML = HTMLContent
 }
@@ -335,7 +337,7 @@ function levelName(level) {
     return OTHER_NAMES[level]
 }
 function altStrats(query) {
-    if (!commBestILsAll) {
+    if (!altStratsAll) {
         altGroup = altStratCategory[query]
         let fastest = altGroup[0]
         let viable
@@ -344,7 +346,7 @@ function altStrats(query) {
                 if (!viable) fastest = strat
                 trueFastest = strat
             }
-            if (strat.viable && !commBestILsAll) {
+            if (strat.viable && !altStratsAll) {
                 viableCategory = true
                 fastest = strat
                 viable = true
@@ -352,28 +354,10 @@ function altStrats(query) {
         })
         document.getElementById('primaryThumbnail').innerHTML = getThumbnail(fastest.url)
     }
-    let HTMLContent = ''
-    if (altStatCriteria(query) && !commBestILsAll) {
-        HTMLContent += altStats(query)
-    }
-    if (query == 'thedevil' && runRecapCategory.name == '1.1+' && !commBestILsAll) {
-        HTMLContent += `
-        <div class='container'>
-            <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
-        </div>`
-    }
-    HTMLContent += `
-    <div class='container'>
-        <div style='margin:0;position:relative'><table class='shadow' style='margin:10px'>
-            <tr>
-                <td colspan=10>
-                    <div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(imageLocation(query))}${levelName(query)}</div>
-                </td>
-            </tr>`
     const altStratCategories = []
     const cataNames = []
     let RTAcheck = false
-    if (commBestILsAll) {
+    if (altStratsAll) {
         for (const category in alt) {
             if (alt[category][query] && !alt[category][query][0].copy) {
                 altStratCategories.push(alt[category])
@@ -385,6 +369,7 @@ function altStrats(query) {
         altStratCategories.push(altStratCategory)
         RTAcheck = altStratCategory[query].some(strat => strat.rta)
     }
+    let HTMLContent_altStrats = ''
     altStratCategories.forEach((altStratCata, cataIndex) => {
         if (altStratCategories.length > 1) {
             HTMLContent += `
@@ -392,17 +377,8 @@ function altStrats(query) {
                 <td colspan=10><div class='container gray' style='padding:6px 0'>${generateBoardTitle(cataNames[cataIndex])}</div></td>
             </tr>`
         }
-        const baronessCheck = query == 'baronessvonbonbon'
-        // if (!altStratCategory[query].some(strat => strat.title)) {
-        //     HTMLContent += `<tr>
-        // <th class='gray'>Pattern / Strat</th>`
-        //     if (baronessCheck) HTMLContent += `<th class='gray'></th>`
-        //     HTMLContent += `<th class='gray'>IGT</th>`
-        //     if (RTAcheck) HTMLContent += `<th class='gray'>RTA</th>`
-        //     HTMLContent += `<th colspan=2 class='gray'>Player</th></tr>`
-        // }
         let altStrats = [...altStratCata[query]]
-        if (query == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) && !commBestILsAll) {
+        if (query == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) && !altStratsAll) {
             if (bonbonSort == 'Best') {
                 altStrats.sort((a, b) => a.time - b.time)
                 altStrats = altStrats.filter(strat => !strat.title)
@@ -414,61 +390,54 @@ function altStrats(query) {
         let min = Math.min(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
         let max = Math.max(...altStrats.filter(obj => !obj.title).map(obj => parseFloat(convertToSeconds(obj.time))))
         altStrats.forEach((strat, index) => {
-            if (!(commBestILsAll && strat.copy)) {
+            if (!(altStratsAll && strat.copy)) {
                 if (strat.title && !(["Spider's Kiss", 'Head Skip', 'Max Delays', 'Other'].includes(strat.title) && runRecapCategory.name == '1.1+' && isolatePatterns && query == 'thedevil')) {
                     if (index > 0) {
-                        HTMLContent += `
+                        HTMLContent_altStrats += `
                         <tr>
                             <td style='height:10px'></td>
                         </tr>`
                     }
-                    HTMLContent += `<tr>`
-                    if (isolatePatterns && strat.odds && !commBestILsAll) {
-                        HTMLContent += `
+                    HTMLContent_altStrats += `<tr>`
+                    if (isolatePatterns && strat.odds && !altStratsAll) {
+                        HTMLContent_altStrats += `
                         <th></th>
                         <th colspan=2 class='gray'>${getOdds(strat.odds)}</th>
                         <th colspan='3' class='gray' style='margin-top:10px'>${strat.title}</th>`
                     } else {
-                        HTMLContent += `<th colspan='9' class='gray' style='margin-top:10px'>${strat.title}</th>`
+                        HTMLContent_altStrats += `<th colspan='9' class='gray' style='margin-top:10px'>${strat.title}</th>`
                     }
-                    HTMLContent += `</tr>`
+                    HTMLContent_altStrats += `</tr>`
                 } else {
                     if (!(query == 'thedevil' && runRecapCategory.name == '1.1+' && isolatePatterns && !strat.odds)) {
-                        HTMLContent += `
+                        HTMLContent_altStrats += `
                         <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
                             <td style='text-align:left;padding-right:8px;font-size:80%'>${strat.name}</td>`
-                        if (runRecapCategory.name == '1.1+' && ((query == 'thedevil' && isolatePatterns) || ODDS_BOSSES.includes(query)) && !commBestILsAll) {
-                            HTMLContent += altStrats.some(strat => strat.odds3) ? oddsLayer(altStrats, index, strat, 'odds3') : ''
-                            HTMLContent += oddsLayer(altStrats, index, strat, 'odds2')
-                            HTMLContent += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
+                        if (runRecapCategory.name == '1.1+' && ((query == 'thedevil' && isolatePatterns) || ODDS_BOSSES.includes(query)) && !altStratsAll) {
+                            HTMLContent_altStrats += altStrats.some(strat => strat.odds3) ? oddsLayer(altStrats, index, strat, 'odds3') : ''
+                            HTMLContent_altStrats += oddsLayer(altStrats, index, strat, 'odds2')
+                            HTMLContent_altStrats += `<td class='odds'>${strat.odds ? getOdds(strat.odds) : ''}</td>`
                         }
-                        if (ATTACKS[query]) HTMLContent += bossPattern(query, strat.name)
-                        HTMLContent += normalizedColorCell(convertToSeconds(strat.time), min, max)
-                        HTMLContent += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
+                        if (ATTACKS[query]) HTMLContent_altStrats += bossPattern(query, strat.name)
+                        HTMLContent_altStrats += normalizedColorCell(convertToSeconds(strat.time), min, max)
+                        HTMLContent_altStrats += `<td class='${query}' style='padding:0 5px'>${strat.time}</td>`
                         if (RTAcheck) {
-                            HTMLContent += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
+                            HTMLContent_altStrats += `<td class='${query}' style='padding:0 5px;font-size:80%'>${strat.rta || ''}</td>`
                         }
                         const player = allPlayers.find(player => player.name == strat.player)
-                        HTMLContent += `<td>${getPlayerDisplay(player || strat.player, true)}</td>`
+                        HTMLContent_altStrats += `<td>${getPlayerDisplay(player || strat.player, true)}</td>`
                     }
                 }
-                HTMLContent += `</tr>`
+                HTMLContent_altStrats += `</tr>`
             }
         })
     })
-    HTMLContent += `</table>`
-    if (runRecapCategory.name == '1.1+' && categoryNames.includes(query) && !commBestILsAll) {
+    let HTMLContent_tas = ''
+    if (runRecapCategory.name == '1.1+' && categoryNames.includes(query) && !altStratsAll) {
         const categoryIndex = categories.findIndex(category => category.info.id == query)
-        HTMLContent += `
-        <table class='shadow' style='position:absolute;left:110%;top:12px'>
-            <tr>
-                <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
-            </tr>
-            <tr>
-                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
-            </tr>`;
+        let HTMLContent_tasRows = '';
         ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
-            HTMLContent += `
+            HTMLContent_tasRows += `
             <tr>
                 <td colspan=2 class='background2 grow' style='font-size:90%'>
                 ${getAnchor(runRecapCategory.tasLinks[vidIndex] + '&t=' + runRecapCategory.tasTimestamps[categoryIndex] + 's')}
@@ -476,11 +445,42 @@ function altStrats(query) {
                 </td>
             </tr>`
         })
-        HTMLContent += `</table>`
+        HTMLContent_tas = `
+        <table class='shadow' style='position:absolute;left:110%;top:12px'>
+            <tr>
+                <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
+            </tr>
+            <tr>
+                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
+            </tr>
+            ${HTMLContent_tasRows}
+        </table>`
     }
-    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query]?.filter(strat => !strat.title).length > 1 || commBestILsAll) HTMLContent += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
-    HTMLContent += `</div></div>`
-    return HTMLContent
+    let HTMLContent_userContributions = ''
+    if (alt[runRecapCategory.tabName ? runRecapCategory.tabName : altStratOther][query]?.filter(strat => !strat.title).length > 1 || altStratsAll) {
+        HTMLContent_userContributions += `<div style='position:absolute;right:110%;top:12px'>${altStrat_topContributors(null, query)}</div>`
+    }
+    return `
+    ${query == 'thedevil' && runRecapCategory.name == '1.1+' && !altStratsAll ? `
+        <div class='container'>
+            <input type='checkbox' ${isolatePatterns ? 'checked' : ''} onchange="playSound('move');isolatePatterns=!isolatePatterns;action()">Isolate Patterns
+        </div>`: ''
+        }
+    ${altStatCriteria(query) && !altStratsAll ? altStats(query) : ''}
+    <div class='container'>
+        <div style='margin:0;position:relative'>
+            <table class='shadow' style='margin:10px'>
+                <tr>
+                    <td colspan=10>
+                        <div class='container ${query}' style='gap:8px;padding:5px;font-size:120%'>${getImage(imageLocation(query))}${levelName(query)}</div>
+                    </td>
+                </tr>
+                ${HTMLContent_altStrats}
+            </table>
+            ${HTMLContent_tas}
+            ${HTMLContent_userContributions}
+        </div>
+    </div>`
 }
 function rawOdds(odds) {
     return odds.split('/')[0] / odds.split('/')[1] * 100
@@ -506,7 +506,7 @@ function oddsLayer(altStrats, index, strat, field) {
 const MIN_ENTRIES = 10
 const MAX_ENTRIES = 50
 function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), done) {
-    let HTMLContent = `
+    return `
     <div class='container'>
         <table class='shadow' style='width:450px;margin-top:20px'>
             <tr>
@@ -515,31 +515,33 @@ function pendingSubmissions(submissions = new Array(MIN_ENTRIES).fill(null), don
                     <div class='font2' style='font-size:120%'>Pending Submissions</div>
                     ${done ? `<div style='position:absolute;right:5px;top:7px'>${submissions.length}</div>` : ''}
                 </td>
-            </tr>`
-    for (let i = 0; i < (submissions.length <= MIN_ENTRIES ? MIN_ENTRIES : submissions.length < MAX_ENTRIES ? submissions.length : MAX_ENTRIES); i++) {
-        const submission = submissions[i]
-        HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')" onmouseenter="toast('${submission.date} - ${daysAgo(getDateDif(new Date(), new Date(submission.date)))}')"` : ''}>`
-        if (submission) {
-            let strat
-            if (submission.altstrat != 'none') {
-                strat = submission.altstrat == 'other' ? submission.other : submission.altstrat
+            </tr>
+            ${pendingSubmissions_HTML(submissions)}
+        </table>
+    </div>`
+    function pendingSubmissions_HTML(submissions) {
+        let HTMLContent = ''
+        for (let i = 0; i < (submissions.length <= MIN_ENTRIES ? MIN_ENTRIES : submissions.length < MAX_ENTRIES ? submissions.length : MAX_ENTRIES); i++) {
+            const submission = submissions[i]
+            HTMLContent += `<tr class='${submission ? 'grow' : ''} ${getRowColor(i)}' ${submission ? `onclick="window.open('${submission.url}', '_blank')" onmouseenter="toast('${submission.date} - ${daysAgo(getDateDif(new Date(), new Date(submission.date)))}')"` : ''}>`
+            if (submission) {
+                let strat
+                if (submission.altstrat != 'none') {
+                    strat = submission.altstrat == 'other' ? submission.other : submission.altstrat
+                }
+                HTMLContent += `
+                <td class='${allCategories[submission.category]?.className || 'gray'}'>${submission.category}</td>
+                <td class='${submission.boss}'><div class='container'>${getImage(imageLocation(submission.boss), 21)}</div></td>
+                <td class='${submission.boss}'>${submission.time}</td>
+                <td style='text-align:left'>${strat || ''}</td>
+                <td>${getPlayerDisplay(allPlayers.find(player => player.name == submission.player) || submission.player, true)}</td>`
+            } else {
+                HTMLContent += `<td colspan=6>&nbsp;</td>`
             }
-            HTMLContent += `
-            <td class='${commBestILs[submission.category]?.className || 'gray'}'>${submission.category}</td>
-            <td class='${submission.boss}'><div class='container'>${getImage(imageLocation(submission.boss), 21)}</div></td>
-            <td class='${submission.boss}'>${submission.time}</td>
-            <td style='text-align:left'>${strat || ''}</td>
-            <td>${getPlayerDisplay(allPlayers.find(player => player.name == submission.player) || submission.player, true)}</td>`
-        } else {
-            // if (done && i == 3 && !submissions[0]) {
-            //     HTMLContent += `<td colspan=5 style='font-size:80%;color:gray'></td>`
-            // }
-            HTMLContent += `<td colspan=6>&nbsp;</td>`
+            HTMLContent += `</tr>`
         }
-        HTMLContent += `</tr>`
+        return HTMLContent
     }
-    HTMLContent += `</table></div>`
-    return HTMLContent
 }
 function bossPattern(boss, pattern) {
     let HTMLContent = `<td><div class='container'>`
@@ -559,12 +561,9 @@ function bossPattern(boss, pattern) {
     return HTMLContent
 }
 function userContributions(playerName) {
-    let HTMLContent = `
-    ${playerDisplay(playerName)}
-    <table style='margin:10px'>`
     const altStratCategories = []
     const categoryNames = []
-    if (commBestILsAll) {
+    if (altStratsAll) {
         for (const category in alt) {
             for (const level in alt[category]) {
                 if (alt[category][level].some(strat => strat.player == playerName && !strat.copy)) {
@@ -592,12 +591,12 @@ function userContributions(playerName) {
                 }
             }
         }
-        HTMLContent += `
+        HTMLContent_userContributions += `
         <tr>
             <td colspan=10><div class='container gray' style='padding:6px 0'>${generateBoardTitle(categoryNames[cataIndex])}</div></td>
         </tr>`
         strats.forEach((strat, index) => {
-            HTMLContent += `
+            HTMLContent_userContributions += `
             <tr class='grow ${getRowColor(index)}' onclick="window.open('${strat.url}', '_blank')">
                 <td class='dim' style='font-size:70%'>${num + 1}</td>
                 <td style='text-align:left;font-size:80%;color:gray;padding:0 5px'>${strat.title}</td>
@@ -609,7 +608,11 @@ function userContributions(playerName) {
             num++
         })
     })
-    HTMLContent += `</table>`
+    let HTMLContent = `
+    ${playerDisplay(playerName)}
+    <table style='margin:10px'>
+        ${HTMLContent_userContributions}
+    </table>`
     openModal(HTMLContent, 'CONTRIBUTIONS')
 }
 function altStats() {
@@ -618,21 +621,15 @@ function altStats() {
     let endIndex = cfg.limit ? cfg.startIndex + cfg.limit : allStrats.length
     if (runRecapCategory.name == '1.1+' && altStratLevel == 'baronessvonbonbon') endIndex -= 25
     allStrats = allStrats.slice(cfg.startIndex, endIndex)
-    let HTMLContent = `
-    <div class='container' style='gap:10px'>
-        <div id='chart_${altStratLevel}' style='width:350px;margin:0'></div>
-            <table>
-                <tr>
-                    <td></td>`
-    if (altStratExtra) HTMLContent += `<td></td>`
     minibossArray = []
+    let HTMLContent_minibossHeader = ''
     for (const minibossName in cfg.minibosses) {
         const minibossInfo = { name: minibossName }
         cfg.fields.forEach(field => minibossInfo[field] = [])
-        const imageHtml = altStratLevel === 'captainbrineybeard'
+        const imageHtml = altStratLevel == 'captainbrineybeard'
             ? `<img src='images/captainbrineybeard/${cfg.minibosses[minibossName]}.png' style='height:36px'>`
             : getImage('phase/' + altStratLevel + cfg.minibosses[minibossName])
-        HTMLContent += `<td class='${cfg.minibosses[minibossName]}'>${imageHtml}</td>`
+        HTMLContent_minibossHeader += `<td class='${cfg.minibosses[minibossName]}'>${imageHtml}</td>`
         for (const obj of allStrats) {
             if (!obj.title) {
                 obj.name.split(', ').forEach((name, index) => {
@@ -646,30 +643,42 @@ function altStats() {
         }
         minibossArray.push(minibossInfo)
     }
-    HTMLContent += `
-    <td rowspan=20 style='width:15px'></td>
-    <td class='${altStratLevel}'>${getImage(altStratLevel)}</div>`
-    HTMLContent += bonbonRow('overall', '', cfg.fields.length)
+    let HTMLContent_extraRows = ''
     if (altStratExtra) {
         for (let i = 1; i < cfg.fields.length; i++) {
-            HTMLContent += bonbonRow(cfg.fields[i], cfg.groupLabels[i], cfg.fields.length)
+            HTMLContent_extraRows += bonbonRow(cfg.fields[i], cfg.groupLabels[i], cfg.fields.length)
         }
     }
-    HTMLContent += `
-                <td colspan=20 class='gray clickable' onclick="altStratExtra=!altStratExtra;playSound('move');action()">${fontAwesome(altStratExtra ? 'close' : 'chevron-down')}</td>
-            </tr>
-        </table>
-    </div>`
+    let HTMLContent_sort = ''
     if (altStratLevel == 'baronessvonbonbon') {
-        HTMLContent += `
+        HTMLContent_sort += `
         <div class='container' style='gap:5px;margin-top:5px'>
             <div>Sort:</div>`;
         ['Standard', 'Best', 'Worst'].forEach(sort => {
-            HTMLContent += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
+            HTMLContent_sort += `<div class='button ${sort == bonbonSort ? 'cuphead' : ''}' style='width:75px' onclick="bonbonSort='${sort}';action();playSound('move')">${sort}</div>`
         })
-        HTMLContent += `</div>`
+        HTMLContent_sort += `</div>`
     }
-    return HTMLContent
+    return `
+    <div class='container' style='gap:10px'>
+        <div id='chart_${altStratLevel}' style='width:350px;margin:0'></div>
+            <table>
+                <tr>
+                    <td></td>
+                    ${altStratExtra ? `<td></td>` : ''}
+                    ${HTMLContent_minibossHeader}
+                    <td rowspan=20 style='width:15px'></td>
+                    <td class='${altStratLevel}'>${getImage(altStratLevel)}</td>
+                </tr>
+                ${bonbonRow('overall', '', cfg.fields.length)}
+                ${HTMLContent_extraRows}
+                <tr>
+                    <td colspan=20 class='gray clickable' onclick="altStratExtra=!altStratExtra;playSound('move');action()">${fontAwesome(altStratExtra ? 'close' : 'chevron-down')}</td>
+                </tr>
+            </table>
+        </div>
+        ${HTMLContent_sort}
+    </div>`
     function bonbonRow(field, label) {
         const stats = [
             { name: 'Mean', fn: miniboss => math.mean(miniboss[field].map(entry => parseFloat(entry.time))), fn_all: () => math.mean(allStrats.map(entry => parseFloat(entry.time))), class: altStratLevel, format: v => v.toFixed(2) },
@@ -700,9 +709,9 @@ function altStats() {
         return HTMLContent
     }
 }
-function commBestILsAllHelper() {
-    commBestILsAll = !commBestILsAll
-    document.getElementById('commBestILsAll_toggle').innerHTML = fontAwesome('toggle-' + (commBestILsAll ? 'on' : 'off'))
+function altStratsAllHelper() {
+    altStratsAll = !altStratsAll
+    document.getElementById('altStratsAll_toggle').innerHTML = fontAwesome('toggle-' + (altStratsAll ? 'on' : 'off'))
     playSound('move')
     action()
 }

@@ -21,7 +21,7 @@ const fileInfo = {
     as seen
     <span class="myekulColor clickable" style="text-decoration: underline">
     <a onclick="showTab('commBestSplits');playSound('category_select')">here</a></span>.</span>`,
-    rrc: `A powerful new file type, ${myekulColor('Run Recap .rrc')}. Designed exclusively for detailed analysis of Cuphead runs.
+    rrc: `A powerful new file type, ${myekulColor('Run Recap .rrc')}. Designed exclusively for the most detailed analysis of Cuphead runs.
     <br>
     <span class='dim'>
     This requires the

@@ -22,7 +22,6 @@ async function generate_rrc() {
     })
 }
 function rrcView() {
-    let HTMLContent = ''
     rrcCurrentAttempt = { scenes: runRecap_rrcFile.attempts[rrcAttemptIndex].scenes.map(s => ({ ...s })) }
     if (runRecapCategory.name == 'DLC') {
         const index = rrcCurrentAttempt.scenes.findIndex(scene => scene.name == "level_saltbaker")
@@ -33,7 +32,12 @@ function rrcView() {
     }
     rrcOrganize(rrcCurrentAttempt, rrcCurrentAttempt.scenes, true)
     if (rrcComparison != 'None') rrcOrganize(rrcComparisonAttempt, rrcComparisonCollection[rrcComparison])
-    HTMLContent += `
+    if (lastBossDone() && rrcComparison != 'None') {
+        if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime && rrcCurrentAttempt.scenes.length == runRecapCategory.scenes.length) {
+            chartEligible = true
+        }
+    }
+    return `
     ${classicView()}
     ${rrcComparisonDisplay()}
     ${rrcRTA()}
@@ -42,19 +46,12 @@ function rrcView() {
         ${lastBossDone() ? fancyScorecard() : ''}
         ${lastBossDone() ? `<div style='width:270px'></div>` : ''}
     </div>
-    </div>`
-    if (lastBossDone() && rrcComparison != 'None') {
-        if (rrcCurrentAttempt.scenes.at(-1)?.endTime < runRecapCategory.chartTime && rrcCurrentAttempt.scenes.length == runRecapCategory.scenes.length) {
-            chartEligible = true
-            HTMLContent += rrcChartSection()
-        }
-    }
-    HTMLContent += `
+    </div>
+    ${chartEligible?rrcChartSection():''}
     <div class='container' style='gap:10px;margin-top:15px'>
         <button class='button cuphead' onclick="rrcRaw()">Show raw</button>
         <button class='button cuphead' onclick="runRecapCopy()" style='width:165px'><i class="fa fa-clone"></i>&nbsp;Copy to clipboard</button>
     </div>`
-    return HTMLContent
 }
 function rrcSegments(scenes) {
     scenes.forEach((scene, index) => {
@@ -155,15 +152,6 @@ function rrcRTA() {
     </div>`
 }
 function rtaTable(title, field, sceneNames) {
-    let HTMLContent = `
-    <div class='border background1 shadow' style='padding:8px;position:relative;min-width:225px'>
-    <div class='font2 container' style='font-size:150%'>
-        <div class='container' style='min-width:165px;margin:0'>${title}</div>
-    </div>
-    <div class='container'><table>
-    <tr class='gray'>
-        <td colspan=10 style='font-size:10%'>&nbsp;</td>
-    <tr>`
     let deltaSum = 0
     let attemptField = field
     if (['map', 'scorecard'].includes(field)) attemptField = 'levels'
@@ -177,6 +165,7 @@ function rtaTable(title, field, sceneNames) {
         min = Math.min(...rrcCurrentAttempt[attemptField].filter(obj => obj.scorecardSegment).map(obj => obj.scorecardSegment))
         max = Math.max(...rrcCurrentAttempt[attemptField].filter(obj => obj.scorecardSegment).map(obj => obj.scorecardSegment))
     }
+    let HTMLContent_rows = ''
     rrcCurrentAttempt[attemptField].forEach((scene, index) => {
         const runNgun = cupheadRunNguns[scene.name]
         const level = cupheadBosses[scene.name] || cupheadRunNguns[scene.name]
@@ -185,41 +174,41 @@ function rtaTable(title, field, sceneNames) {
         const delta = (currentSegment - comparisonSegment) || 0
         deltaSum += delta
         const content = level ? getImage(runNgun ? 'runnguns/' + level.id : level.id, 21) : sceneNames[scene.name]
-        HTMLContent += `
+        HTMLContent_rows += `
         <tr class='${getRowColor(index)}'>
             <td class='${level ? 'container ' + level.id : ''}' style='text-align:left'>${content}</td>`
-        if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent += normalizedColorCell(currentSegment, min, max)
-        if (!(title == 'Scorecards' && scorecardMode == 'Star Skips')) HTMLContent += `<td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`
+        if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent_rows += normalizedColorCell(currentSegment, min, max)
+        if (!(title == 'Scorecards' && scorecardMode == 'Star Skips')) HTMLContent_rows += `<td style='padding:0 5px'>${currentSegment ? secondsToHMS(currentSegment, true) : ''}</td>`
         if (rrcComparison != 'None'
             && !(title == 'Scorecards' && scorecardMode == 'Star Skips')
             && !(title == 'Scorecards' && scorecardMode == 'Normalized' && ['Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison))) {
-            HTMLContent += `<td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>`
-            if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent += normalizedColorCell(comparisonSegment, min, max)
-            HTMLContent += `<td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>`
-            if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
+            HTMLContent_rows += `<td class='${redGreen(delta)}' style='font-size:80%'>${delta ? getDelta(delta.toFixed(2)) : ''}</td>`
+            if (title == 'Scorecards' && scorecardMode == 'Normalized') HTMLContent_rows += normalizedColorCell(comparisonSegment, min, max)
+            HTMLContent_rows += `<td class='dim' style='font-size:80%'>${comparisonSegment ? secondsToHMS(comparisonSegment, true) : ''}</td>`
+            if (rrcComparison == 'Top Bests' && !(field == 'levels' && scene.name == 'level_dice_palace_main')) HTMLContent_rows += `<td>${scene.topBest[thingToAnalyze] ? getPlayerIcon(players[scene.topBest[thingToAnalyze][0]], 21) : ''}</td>`
         }
         if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
-            HTMLContent += `
+            HTMLContent_rows += `
             <td>
                 <div class='myekulColor container' style='gap:3px;justify-content:left;padding:0 5px'>`
             for (let i = 0; i < scene.scorecard?.starSkips; i++) {
-                HTMLContent += fontAwesome('star')
+                HTMLContent_rows += fontAwesome('star')
             }
-            HTMLContent += `</div></td>`
+            HTMLContent_rows += `</div></td>`
             if (!['None', 'Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison)) {
-                HTMLContent += `
+                HTMLContent_rows += `
                 <td>
                     <div class='dim container' style='gap:3px;justify-content:left;padding:0 5px;font-size:80%'>`
                 for (let i = 0; i < rrcComparisonAttempt.levels[index].scorecard?.starSkips; i++) {
-                    HTMLContent += fontAwesome('star')
+                    HTMLContent_rows += fontAwesome('star')
                 }
-                HTMLContent += `</div></td>`
+                HTMLContent_rows += `</div></td>`
             }
         }
-        HTMLContent += `</tr>`
+        HTMLContent_rows += `</tr>`
     })
     if (title == 'Scorecards' && scorecardMode == 'Star Skips') {
-        HTMLContent += `
+        HTMLContent_rows += `
         <tr>
             <td></td>
             <td>${starSkipCount(rrcCurrentAttempt)}</td>
@@ -230,11 +219,11 @@ function rtaTable(title, field, sceneNames) {
         && !(title == 'Scorecards' && scorecardMode == 'Star Skips')
         && !(title == 'Scorecards' && ['Top Average', 'Top 3 Average', 'Top Bests'].includes(rrcComparison) && scorecardMode == 'Normalized')
     ) {
-        HTMLContent += `<tr><td colspan=10 class='${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</td></tr>`
+        HTMLContent_rows += `<tr><td colspan=10 class='${redGreen(deltaSum)}'>${getDelta(deltaSum.toFixed(2))}</td></tr>`
     }
-    HTMLContent += `</table></div>`
+    let HTMLContent_scorecardMode = ''
     if (title == 'Scorecards') {
-        HTMLContent += `
+        HTMLContent_scorecardMode += `
         <div style='position:absolute;left:255px;top:25px'>`
         const scorecardModes = [
             {
@@ -252,13 +241,26 @@ function rtaTable(title, field, sceneNames) {
         ]
         scorecardModes.forEach(mode => {
             if (!(mode.name == 'Normalized' && runRecapCategory.name != '1.1+' && runRecapExample)) {
-                HTMLContent += scorecardModeButton(mode.name, mode.icon)
+                HTMLContent_scorecardMode += scorecardModeButton(mode.name, mode.icon)
             }
         })
-        HTMLContent += `</div>`
+        HTMLContent_scorecardMode += `</div>`
     }
-    HTMLContent += `</div>`
-    return HTMLContent
+    return `
+    <div class='border background1 shadow' style='padding:8px;position:relative;min-width:225px'>
+        <div class='font2 container' style='font-size:150%'>
+            <div class='container' style='min-width:165px;margin:0'>${title}</div>
+        </div>
+        <div class='container'>
+            <table>
+                <tr class='gray'>
+                    <td colspan=10 style='font-size:10%'>&nbsp;</td>
+                </tr>
+                ${HTMLContent_rows}
+            </table>
+        </div>
+        ${HTMLContent_scorecardMode}
+    </div>`
 }
 function scorecardModeButton(mode, icon) {
     return `<button class='scorecardButton button container ${scorecardMode == mode ? 'selected' : ''}' onclick="changeScorecardMode('${mode}')">${icon}</button>`
@@ -346,19 +348,10 @@ function rrcSettings() {
     openModal(HTMLContent, 'RRC SETTINGS')
 }
 function rrcRaw() {
-    let HTMLContent = `
-    <table style='margin:0 auto'>
-        <tr class='gray'>
-            <th></th>
-            <th>IGT</th>
-            <th>RTA</th>
-            <th>HP</th>
-            <th>P</th>
-            <th>EX</th>
-        </tr>`
+    let HTMLContent_rows1 = ''
     rrcCurrentAttempt.bosses.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
-        HTMLContent += `
+        HTMLContent_rows += `
         <tr class='${getRowColor(index)}'>
             <td class='container ${level?.id}'>${getImage(level.id, 21)}</td>
             <td class='${level?.id}'>${scene.levelTime ? secondsToHMS(scene.levelTime, true) : ''}</td>
@@ -368,11 +361,10 @@ function rrcRaw() {
             <td>${index < rrcCurrentAttempt.bosses.length - 1 ? scene.scorecard.superMeter || scene.scorecard.coins : ''}</td>
         </tr>`
     })
-    HTMLContent += `</table>`
-    HTMLContent += `<table style='margin:0 auto'>`
+    let HTMLContent_rows2 = ''
     rrcCurrentAttempt.scenes.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
-        HTMLContent += `
+        HTMLContent_rows2 += `
         <tr class='${getRowColor(index)}'>
             <td class='dim' style='font-size:50%'>${index}</td>
             <td class='container ${level?.id}'>${level && level?.id != 'forestfollies' ? getImage(level.id, 21) : ''}</td>
@@ -382,7 +374,21 @@ function rrcRaw() {
             <td>${secondsToHMS(scene.endTime, true)}</td>
         </tr>`
     })
-    HTMLContent += `</table>`
+    let HTMLContent = `
+    <table style='margin:0 auto'>
+        <tr class='gray'>
+            <th></th>
+            <th>IGT</th>
+            <th>RTA</th>
+            <th>HP</th>
+            <th>P</th>
+            <th>EX</th>
+        </tr>
+        ${HTMLContent_rows1}
+    </table>
+    <table style='margin:0 auto'>
+        ${HTMLContent_rows2}
+    </table>`
     openModal(HTMLContent, 'RAW')
 }
 function rrcChangeIndex(index, dropdown) {
@@ -474,10 +480,10 @@ function read_rrc(content) {
         let sampleAttempt
         runRecap_rrcFile.attempts.forEach(attempt => {
             ['1.1+', 'Legacy', 'DLC L/S', 'DLC+Base L/S', 'DLC C/S', 'DLC+Base C/S'].forEach(categoryName => {
-                if ((commBestILs[categoryName].scenes.length == attempt.scenes.length) && lastBossDone(attempt)) {
+                if ((allCategories[categoryName].scenes.length == attempt.scenes.length) && lastBossDone(attempt)) {
                     let matched = true
                     attempt.scenes.forEach((scene, index) => {
-                        if (scene.name != commBestILs[categoryName].scenes[index]) matched = false
+                        if (scene.name != allCategories[categoryName].scenes[index]) matched = false
                     })
                     if (attempt.scenes.length > maxScenes && matched) {
                         maxScenes = attempt.scenes.length

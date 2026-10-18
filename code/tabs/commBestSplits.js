@@ -4,21 +4,14 @@ function generateCommBestSplits() {
     if (commBest[runRecapCategory.tabName]) {
         HTMLContent += splitBeforeAfter()
         if (commBest[runRecapCategory.tabName][cardinality]) {
-            HTMLContent += `
-            <div>
-                <div class='container' style='gap:30px'>
-                    <table class='shadow'>
-                        <tr>
-                            <th class='dim'>WR</th>
-                            <th colspan=5 class='gray'>Comm Best Splits</th>
-                        </tr>`
+            let HTMLContent_rows1 = ''
             splitInfo.forEach((split, index) => {
                 const thisSplit = commBest[runRecapCategory.tabName][cardinality][index]
                 const playerName = thisSplit.splitRunner
                 const player = allPlayers.find(player => player.name == playerName) || playerName
                 const wrSplit = runRecapCategory.topRuns[0][splitBefore ? 'splitBefore' : 'splitAfter'][index]
                 const url = commBest[runRecapCategory.tabName][cardinality][index].splitURL
-                HTMLContent += `
+                HTMLContent_rows1 += `
                 <tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
                     <td class='dim' style='font-size:70%'>${wrSplit ? secondsToHMS(wrSplit, true) : ''}</td>
                     <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
@@ -27,16 +20,10 @@ function generateCommBestSplits() {
                     <td>${getPlayerDisplay(player)}</td>
                 </tr>`
                 const nextIsle = splitInfo[index + 1]?.isle
-                if (nextIsle != split.isle) HTMLContent += `<tr style='height:16px'></tr>`
+                if (nextIsle != split.isle) HTMLContent_rows1 += `<tr style='height:16px'></tr>`
             })
-            HTMLContent += `</table>`
             // Segments
-            HTMLContent += `
-            <table class='shadow'>
-                <tr>
-                    <th class='dim'>WR</th>
-                    <th colspan=5 class='gray'>Comm Best Segments</th>
-                </tr>`
+            let HTMLContent_rows2 = ''
             let sum = 0
             splitInfo.forEach((split, index) => {
                 const thisSplit = commBest[runRecapCategory.tabName][cardinality][index]
@@ -46,7 +33,7 @@ function generateCommBestSplits() {
                 const wrSegment = runRecapCategory.topRuns[0][splitBefore ? 'segmentBefore' : 'segmentAfter'][index]
                 const url = commBest[runRecapCategory.tabName][cardinality][index].segmentURL
                 sum += bestSegment
-                HTMLContent += `
+                HTMLContent_rows2 += `
                 <tr class='${getRowColor(index)} ${url ? 'grow' : ''}' ${url ? `onclick="window.open('${url}', '_blank')"` : ''}>
                     <td class='dim' style='font-size:70%'>${wrSegment ? secondsToHMS(wrSegment, true) : ''}</td>
                     <td class='container ${split.id}'>${getImage(split.id, 24)}</td>
@@ -57,10 +44,25 @@ function generateCommBestSplits() {
                 const nextIsle = splitInfo[index + 1]?.isle
                 if (nextIsle != split.isle) {
                     const content = index > 0 ? secondsToHMS(sum, true) : ''
-                    HTMLContent += `<tr style='height:16px'><td></td><td></td><td class='dim' style='font-size:70%'>${content}</td></tr>`
+                    HTMLContent_rows2 += `<tr style='height:16px'><td></td><td></td><td class='dim' style='font-size:70%'>${content}</td></tr>`
                 }
             })
             HTMLContent += `
+            <div>
+                <div class='container' style='gap:30px'>
+                    <table class='shadow'>
+                        <tr>
+                            <th class='dim'>WR</th>
+                            <th colspan=5 class='gray'>Comm Best Splits</th>
+                        </tr>
+                        ${HTMLContent_rows1}
+                    </table>
+                    <table class='shadow'>
+                        <tr>
+                            <th class='dim'>WR</th>
+                            <th colspan=5 class='gray'>Comm Best Segments</th>
+                        </tr>
+                        ${HTMLContent_rows2}
                     </table>
                 </div>
             </div>
@@ -78,11 +80,11 @@ function generateCommBestSplits() {
 }
 function splitBeforeAfter() {
     return `
-        <div class='container' style='gap:10px;margin:15px 0'>
-            <div ${splitBefore ? '' : 'class="dim"'}>Split Before</div>
-            <button class='dim grow' style='font-size:130%' onclick="splitBeforeAfterHelper()">${fontAwesome('toggle-' + (splitBefore ? 'off' : 'on'))}</button>
-            <div ${!splitBefore ? '' : 'class="dim"'}>Split After</div>
-        </div>`
+    <div class='container' style='gap:10px;margin:15px 0'>
+        <div ${splitBefore ? '' : 'class="dim"'}>Split Before</div>
+        <button class='dim grow' style='font-size:130%' onclick="splitBeforeAfterHelper()">${fontAwesome('toggle-' + (splitBefore ? 'off' : 'on'))}</button>
+        <div ${!splitBefore ? '' : 'class="dim"'}>Split After</div>
+    </div>`
 }
 function splitBeforeAfterHelper() {
     splitBefore = !splitBefore

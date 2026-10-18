@@ -45,9 +45,9 @@ function generateRunViableILs() {
 // }
 // function determineShot1(player, categoryName) {
 //     const category = categoryName ? categoryName : runRecapCategory.name
-//     if (commBestILs[category + ' L/S'].extraPlayers?.includes(player.name)) {
+//     if (allCategories[category + ' L/S'].extraPlayers?.includes(player.name)) {
 //         return 'lobber'
-//     } else if (commBestILs[category + ' C/S'].extraPlayers?.includes(player.name)) {
+//     } else if (allCategories[category + ' C/S'].extraPlayers?.includes(player.name)) {
 //         return 'charge'
 //     }
 // }

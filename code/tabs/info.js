@@ -7,8 +7,8 @@ async function generateInfo() {
     // let endTimeNum = 0
     // let scoreCardNum = 0
     // let commBestSplitNum = 0
-    // for (const category in commBestILs) {
-    //     const categoryRef = commBestILs[category]
+    // for (const category in allCategories) {
+    //     const categoryRef = allCategories[category]
     //     if (categoryRef.topRuns) {
     //         for (let i = 0; i < categoryRef.topRuns?.length; i++) {
     //             endTimeNum += categoryRef.scenes.length
@@ -51,7 +51,7 @@ async function generateInfo() {
     //     </table>
     // </div>`
     document.getElementById('javaSav').innerHTML = javaSav
-    const flags = ['us', 'gb', 'de', 'it', 'gb/sct', 'ch', 'se', 'rs', 'cn', 'kr', 'jp', 'au', 'br']
+    const flags = ['us', 'gb', 'de', 'it', 'gb/sct', 'ch', 'se', 'rs', 'cn', 'kr', 'au', 'jp', 'br']
     let flagsContent = `<div class='container' style='gap:8px;margin:10px'>`
     flags.forEach(flag => {
         flagsContent += `<img src='https://speedrun.com/images/flags/${flag}.png' style='height:20px'>`

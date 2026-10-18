@@ -9,59 +9,61 @@ async function prepareLocalData() {
     ])
     alt = altData
     runViable = runViableData
-    commBest = commBestData
     vanilla = vanillaData
-    runViable['DLC+Base L/S DLC First'].unshift(...runViable['DLC L/S'])
-    runViable['DLC+Base C/S'].unshift(...runViable['DLC C/S'])
-    copyRunViable('1.1+', 'NMG', 3, 3) // Hilda Berg
-    copyRunViable('1.1+', 'NMG', 9, 9) // Grim Matchstick
-    copyRunViable('1.1+', 'NMG', 10, 10) // Rumor Honeybottoms
-    copyRunViable('1.1+', 'NMG', 14, 14) // Captain Brineybeard
-    copyRunViable('1.1+', 'DLC+Base L/S DLC First', 3, 9) // Hilda Berg
-    copyRunViable('1.1+', 'DLC+Base C/S', 3, 9) // Hilda Berg
-    copyRunViable('NMG', 'DLC+Base L/S', 0, 1) // The Root Pack
-    copyRunViable('NMG', 'DLC+Base L/S', 1, 2) // Ribby and Croaks
-    copyRunViable('NMG', 'DLC+Base L/S', 2, 0) // Goopy Le Grande
-    copyRunViable('NMG', 'DLC+Base L/S', 3, 3) // Hilda Berg
-    copyRunViable('NMG', 'DLC+Base L/S', 4, 4) // Cagney Carnation
-    copyRunViable('NMG', 'DLC+Base L/S DLC First', 4, 10) // Cagney Carnation
-    copyRunViable('NMG', 'DLC+Base L/S', 5, 5) // Baroness Von Bon Bon
-    copyRunViable('NMG', 'DLC+Base L/S DLC First', 5, 11) // Baroness Von Bon Bon
-    copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', 6, 12) // Wally Warbles
-    copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', 7, 13) // Djimmi The Great
-    copyRunViable('DLC L/S', 'DLC+Base L/S', 0, 8) // Glumstone The Giant
-    copyRunViable('DLC L/S', 'DLC+Base L/S', 1, 9) // Mortimer Freeze
-    copyRunViable('DLC L/S', 'DLC+Base L/S', 2, 10) // The Howling Aces
-    copyRunViable('DLC L/S', 'DLC+Base L/S', 4, 12) // Moonshine Mob
-    copyRunViable('DLC L/S', 'DLC+Base L/S', 5, 13) // Chef Saltbaker
-    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 12, 12) // Wally Warbles
-    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 13, 13) // Djimmi The Great
-    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 17, 17) // Dr. Kahl's Robot
-    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 21, 21) // Cala Maria
-    for (let i = 14; i < 25; i++) {
-        copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', i, i)
-    }
+    commBest = commBestData
+    runViable['DLC+Base L/S DLC First'] = { ...runViable['DLC L/S'], ...runViable['DLC+Base L/S DLC First'] }
+    runViable['DLC+Base C/S'] = { ...runViable['DLC C/S'], ...runViable['DLC+Base C/S'] }
+    copyRunViable('1.1+', 'NMG', 'hildaberg')
+    copyRunViable('1.1+', 'NMG', 'grimmatchstick')
+    copyRunViable('1.1+', 'NMG', 'rumorhoneybottoms')
+    copyRunViable('1.1+', 'NMG', 'captainbrineybeard')
+    copyRunViable('1.1+', 'DLC+Base L/S DLC First', 'hildaberg')
+    copyRunViable('1.1+', 'DLC+Base C/S', 'hildaberg')
+    copyRunViable('NMG', 'DLC+Base L/S', 'therootpack')
+    copyRunViable('NMG', 'DLC+Base L/S', 'ribbyandcroaks')
+    copyRunViable('NMG', 'DLC+Base L/S', 'goopylegrande')
+    copyRunViable('NMG', 'DLC+Base L/S', 'hildaberg')
+    copyRunViable('NMG', 'DLC+Base L/S', 'cagneycarnation')
+    copyRunViable('NMG', 'DLC+Base L/S DLC First', 'cagneycarnation')
+    copyRunViable('NMG', 'DLC+Base L/S', 'baronessvonbonbon')
+    copyRunViable('NMG', 'DLC+Base L/S DLC First', 'baronessvonbonbon')
+    copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', 'wallywarbles')
+    copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', 'djimmithegreat')
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 'glumstonethegiant')
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 'mortimerfreeze')
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 'thehowlingaces')
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 'moonshinemob')
+    copyRunViable('DLC L/S', 'DLC+Base L/S', 'chefsaltbaker')
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 'wallywarbles')
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 'djimmithegreat')
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 'drkahlsrobot')
+    copyRunViable('DLC+Base L/S', 'DLC+Base C/S', 'calamaria')
+        ;[
+            'beppitheclown', 'grimmatchstick', 'rumorhoneybottoms', 'drkahlsrobot',
+            'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'calamaria',
+            'phantomexpress', 'kingdice', 'thedevil'
+        ].forEach(boss => copyRunViable('DLC+Base L/S', 'DLC+Base L/S DLC First', boss))
     // scenes
     scenes['DLC+Base'] = scenes['DLC+Base L/S']
     for (const category in scenes) {
-        if (commBestILs[category]) commBestILs[category].scenes = scenes[category]
+        if (allCategories[category]) allCategories[category].scenes = scenes[category]
     }
-    commBestILs['Legacy'].scenes = [...commBestILs['1.1+'].scenes]
-    commBestILs['Legacy'].scenes[70] = 'level_dice_palace_chips'
-    commBestILs['Legacy'].scenes[72] = 'level_dice_palace_domino'
-    commBestILs['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
-    commBestILs['NMG'].scenes = commBestILs['1.1+'].scenes
-    commBestILs['DLC'].scenes = commBestILs['DLC L/S'].scenes
-    commBestILs['DLC+Base'].scenes = commBestILs['DLC+Base L/S'].scenes
+    allCategories['Legacy'].scenes = [...allCategories['1.1+'].scenes]
+    allCategories['Legacy'].scenes[70] = 'level_dice_palace_chips'
+    allCategories['Legacy'].scenes[72] = 'level_dice_palace_domino'
+    allCategories['Legacy'].scenes[74] = 'level_dice_palace_flying_memory'
+    allCategories['NMG'].scenes = allCategories['1.1+'].scenes
+    allCategories['DLC'].scenes = allCategories['DLC L/S'].scenes
+    allCategories['DLC+Base'].scenes = allCategories['DLC+Base L/S'].scenes
     // rrcData
     rrcData['DLC'] = rrcData['DLC L/S']
     rrcData['DLC+Base'] = rrcData['DLC+Base L/S']
     for (const category in rrcData) {
-        commBestILs[category].topRuns = rrcData[category]
-        const categoryScenes = commBestILs[category].scenes
-        commBestILs[category].rrcTopBests = new Array(categoryScenes.length).fill([])
+        allCategories[category].topRuns = rrcData[category]
+        const categoryScenes = allCategories[category].scenes
+        allCategories[category].rrcTopBests = new Array(categoryScenes.length).fill([])
         rrcData[category].forEach((rrc, index) => {
-            const currentRun = commBestILs[category].topRuns[index]
+            const currentRun = allCategories[category].topRuns[index]
             currentRun.rrc = []
             if (rrc.scenes) {
                 const savStarSkips = currentRun.starSkips
@@ -103,19 +105,19 @@ async function prepareLocalData() {
                 if (scene.name == 'win' || ['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial', 'level_devil', 'level_saltbaker'].includes(scene.name)) {
                     if (['level_devil', 'level_saltbaker'].includes(scene.name)) {
                         let endTime = scene.endTime
-                        if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') {
+                        if (scene.name == 'level_saltbaker' && allCategories[category].name == 'DLC+Base') {
                             endTime -= 8.45
                         }
                         currentRun.splitBefore.push(endTime)
                     } else if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
                         currentRun.splitBefore.push(null)
-                    } else if (currentRun.rrc[sceneIndex - 1].name != 'level_platforming_1_1F' && !(currentRun.rrc[sceneIndex - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
+                    } else if (currentRun.rrc[sceneIndex - 1].name != 'level_platforming_1_1F' && !(currentRun.rrc[sceneIndex - 1].name == 'level_saltbaker' && allCategories[category].name == 'DLC+Base')) {
                         currentRun.splitBefore.push(currentRun.rrc[sceneIndex - 1].endTime - 6.45)
                     }
                     if (['level_platforming_1_1F', 'level_mausoleum', 'level_chalice_tutorial'].includes(scene.name)) {
                         currentRun.segmentBefore.push(null)
                         nextNull = true
-                    } else if (currentRun.rrc[sceneIndex - 1].name != 'level_platforming_1_1F' && !(scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base')) {
+                    } else if (currentRun.rrc[sceneIndex - 1].name != 'level_platforming_1_1F' && !(scene.name == 'level_saltbaker' && allCategories[category].name == 'DLC+Base')) {
                         if (nextNull) {
                             currentRun.segmentBefore.push(null)
                             segmentSumBefore = segment
@@ -124,8 +126,8 @@ async function prepareLocalData() {
                             let result = segmentSumBefore
                             if (sceneIndex < currentRun.rrc.length - 1) {
                                 result -= segment
-                                if (currentRun.rrc[sceneIndex - 1].name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') result -= 2
-                                if (currentRun.rrc[sceneIndex - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') result += 2
+                                if (currentRun.rrc[sceneIndex - 1].name == 'level_saltbaker' && allCategories[category].name == 'DLC+Base') result -= 2
+                                if (currentRun.rrc[sceneIndex - 1].name == 'level_veggies' && allCategories[category].name == 'DLC+Base') result += 2
                             } else {
                                 result += 6.45
                             }
@@ -134,11 +136,11 @@ async function prepareLocalData() {
                         }
                     }
                     let splitAfter = scene.endTime
-                    if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') splitAfter -= 8.45
+                    if (scene.name == 'level_saltbaker' && allCategories[category].name == 'DLC+Base') splitAfter -= 8.45
                     if (scene.name != 'level_platforming_1_1F' && currentRun.rrc[sceneIndex - 1].name != 'level_saltbaker') {
                         currentRun.splitAfter.push(splitAfter)
-                        if (scene.name == 'level_saltbaker' && commBestILs[category].name == 'DLC+Base') segmentSumAfter -= 8.45
-                        if (currentRun.rrc[sceneIndex - 1].name == 'level_veggies' && commBestILs[category].name == 'DLC+Base') segmentSumAfter += 8.45
+                        if (scene.name == 'level_saltbaker' && allCategories[category].name == 'DLC+Base') segmentSumAfter -= 8.45
+                        if (currentRun.rrc[sceneIndex - 1].name == 'level_veggies' && allCategories[category].name == 'DLC+Base') segmentSumAfter += 8.45
                         currentRun.segmentAfter.push(segmentSumAfter)
                         segmentSumAfter = 0
                     }
@@ -150,14 +152,14 @@ async function prepareLocalData() {
     commBest['DLC+Base C/S'].before.unshift(...commBest['DLC C/S'].before)
     commBest['DLC+Base C/S'].after.unshift(...commBest['DLC C/S'].after);
     ['NMG', 'DLC L/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First'].forEach(category => {
-        const WR = commBestILs[category].topRuns[0]
+        const WR = allCategories[category].topRuns[0]
         commBest[category].after = []
         for (let i = 0; i < WR.splitAfter.length; i++) {
             commBest[category].after.push({
                 segment: WR.segmentAfter[i],
-                segmentRunner: commBestILs[category].topRuns[0].name,
+                segmentRunner: allCategories[category].topRuns[0].name,
                 split: WR.splitAfter[i],
-                splitRunner: commBestILs[category].topRuns[0].name
+                splitRunner: allCategories[category].topRuns[0].name
             })
         }
     })
@@ -214,19 +216,19 @@ function rrcComparisonCollectionPrepare() {
     }
 }
 function reconstructRRC(category, endTimes, playerIndex) {
-    const categoryScenes = commBestILs[category].scenes
+    const categoryScenes = allCategories[category].scenes
     bossIndex = 0
     winIndex = 0
     endTimes.forEach((endTime, index) => {
         const newScene = { name: categoryScenes[index], endTime: convertToSeconds(endTime) }
         if (cupheadBosses[newScene.name]) {
             if (!(newScene.name == 'level_dice_palace_main' && categoryScenes[index + 1] != 'win')) {
-                newScene.levelTime = commBestILs[category].topRuns[playerIndex].igt[bossIndex]
+                newScene.levelTime = allCategories[category].topRuns[playerIndex].igt[bossIndex]
                 bossIndex++
             }
         }
         if (newScene.name == 'win') {
-            const hasStarSkips = commBestILs[category].topRuns[playerIndex].starSkips
+            const hasStarSkips = allCategories[category].topRuns[playerIndex].starSkips
             if (hasStarSkips) {
                 newScene.starSkips = hasStarSkips[winIndex] * 2
             }
@@ -236,15 +238,15 @@ function reconstructRRC(category, endTimes, playerIndex) {
                 if (['slime', 'flying_blimp', 'flying_bird', 'flying_genie', 'clown', 'robot', 'pirate', 'train', 'dice_palace_main'].includes(categoryScenes[index - 1].slice(6))) {
                     newScene.parries = true
                 }
-                if (index == 4 && !commBestILs[category].topRuns[playerIndex].follies) newScene.parries = true
+                if (index == 4 && !allCategories[category].topRuns[playerIndex].follies) newScene.parries = true
                 if (index == 4) newScene.coins = true
-                if (index == 56 && commBestILs[category].topRuns[playerIndex].werner) newScene.parries = true
-                if (index == 62 && commBestILs[category].topRuns[playerIndex].cala) newScene.parries = true
-                if (index == 76 && commBestILs[category].topRuns[playerIndex].kd) newScene.hp = false
+                if (index == 56 && allCategories[category].topRuns[playerIndex].werner) newScene.parries = true
+                if (index == 62 && allCategories[category].topRuns[playerIndex].cala) newScene.parries = true
+                if (index == 76 && allCategories[category].topRuns[playerIndex].kd) newScene.hp = false
             }
             winIndex++
         }
-        commBestILs[category].topRuns[playerIndex].rrc.push(newScene)
+        allCategories[category].topRuns[playerIndex].rrc.push(newScene)
     })
 }
 function organizeAltStrats() {
@@ -311,7 +313,7 @@ function organizeAltStrats() {
     copyBulk('NMG', 'NMG P/S', plane)
     copyBulk('NMG', 'NMG R/S', plane)
     ALT_STRAT_CATEGORIES.forEach(categoryName => {
-        const category = commBestILs[categoryName]
+        const category = allCategories[categoryName]
         buttonID = category.className
         if (['dlc', 'dlcbase'].includes(buttonID) && category.shot1) {
             buttonID = category.className + (category.shot1?.charAt(0) || '') + (category.shot2?.charAt(0) || '')
@@ -327,7 +329,6 @@ function organizeAltStrats() {
     let sum = 0
     OTHER_CATEGORIES.forEach(categoryArray => {
         categoryArray.forEach((altStratCategory, index) => {
-            const category = commBestILs[altStratCategory]
             const altStrats = alt[altStratCategory]
             for (const boss in altStrats) {
                 for (const obj of altStrats[boss]) {
@@ -343,8 +344,13 @@ function organizeAltStrats() {
         `<div class='altStratNum dim' style='display:none'>${sum}</div>`
     )
 }
-function copyRunViable(copy, paste, copyIndex, pasteIndex) {
-    runViable[paste][pasteIndex] = { ...runViable[copy][copyIndex], copy: copy }
+function copyRunViable(copy, paste, boss) {
+    runViable[paste][boss] = { ...runViable[copy][boss], copy: copy }
+    if (vanilla[paste] && vanilla[copy]) {
+        if (vanilla[paste][boss] && vanilla[copy][boss]) {
+            vanilla[paste][boss] = { ...vanilla[copy][boss], copy: copy }
+        }
+    }
 }
 function copyBulk(copy, paste, bosses) {
     bosses.forEach(boss => {
@@ -389,9 +395,10 @@ function loadRunViableILs() {
         player.ILs = new Array(categories.length).fill(0)
     })
     const numRuns = runRecapCategory.topRuns.length
-    categories.forEach((category, categoryIndex) => {
-        const time = runViable[runRecapCategory.tabName][categoryIndex].time
-        const ILs = runViable[runRecapCategory.tabName][categoryIndex].ILs
+    categories.forEach(category => {
+        const runViableBoss = runViable[runRecapCategory.tabName][category.info.id]
+        const time = runViableBoss.time
+        const ILs = runViableBoss.ILs
         ILs.forEach(IL => {
             let playerName = IL.name
             const url = IL.url

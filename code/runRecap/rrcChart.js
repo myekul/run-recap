@@ -71,6 +71,10 @@ function rrcChart() {
     const chartData = rrcChartData();
     let interval = 420
     let numTicks = 4
+    if (runRecapCategory.name == 'Legacy') {
+        interval = 120
+        numTicks = 12
+    }
     if (runRecapCategory.name == 'NMG') {
         interval = 120
         numTicks = 15

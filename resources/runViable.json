@@ -1,7 +1,6 @@
 {
-    "1.1+": [
-        {
-            "name": "therootpack",
+    "1.1+": {
+        "therootpack": {
             "time": 33,
             "ILs": [
                 {
@@ -26,8 +25,7 @@
                 }
             ]
         },
-        {
-            "name": "ribbyandcroaks",
+        "ribbyandcroaks": {
             "time": 40,
             "ILs": [
                 {
@@ -40,8 +38,7 @@
                 }
             ]
         },
-        {
-            "name": "goopylegrande",
+        "goopylegrande": {
             "time": 21,
             "ILs": [
                 {
@@ -78,8 +75,7 @@
                 }
             ]
         },
-        {
-            "name": "hildaberg",
+        "hildaberg": {
             "time": 59,
             "ILs": [
                 {
@@ -100,8 +96,7 @@
                 }
             ]
         },
-        {
-            "name": "cagneycarnation",
+        "cagneycarnation": {
             "time": 29,
             "ILs": [
                 {
@@ -110,8 +105,7 @@
                 }
             ]
         },
-        {
-            "name": "baronessvonbonbon",
+        "baronessvonbonbon": {
             "time": 30,
             "ILs": [
                 {
@@ -120,8 +114,7 @@
                 }
             ]
         },
-        {
-            "name": "wallywarbles",
+        "wallywarbles": {
             "time": 46,
             "ILs": [
                 {
@@ -162,8 +155,7 @@
                 }
             ]
         },
-        {
-            "name": "djimmithegreat",
+        "djimmithegreat": {
             "time": 74,
             "ILs": [
                 {
@@ -172,8 +164,7 @@
                 }
             ]
         },
-        {
-            "name": "beppitheclown",
+        "beppitheclown": {
             "time": 37,
             "ILs": [
                 {
@@ -182,8 +173,7 @@
                 }
             ]
         },
-        {
-            "name": "grimmatchstick",
+        "grimmatchstick": {
             "time": 45,
             "ILs": [
                 {
@@ -192,8 +182,7 @@
                 }
             ]
         },
-        {
-            "name": "rumorhoneybottoms",
+        "rumorhoneybottoms": {
             "time": 36,
             "ILs": [
                 {
@@ -202,8 +191,7 @@
                 }
             ]
         },
-        {
-            "name": "drkahlsrobot",
+        "drkahlsrobot": {
             "time": 40,
             "ILs": [
                 {
@@ -212,8 +200,7 @@
                 }
             ]
         },
-        {
-            "name": "sallystageplay",
+        "sallystageplay": {
             "time": 43,
             "ILs": [
                 {
@@ -222,8 +209,7 @@
                 }
             ]
         },
-        {
-            "name": "wernerwerman",
+        "wernerwerman": {
             "time": 35,
             "ILs": [
                 {
@@ -232,8 +218,7 @@
                 }
             ]
         },
-        {
-            "name": "captainbrineybeard",
+        "captainbrineybeard": {
             "time": 36,
             "ILs": [
                 {
@@ -254,8 +239,7 @@
                 }
             ]
         },
-        {
-            "name": "calamaria",
+        "calamaria": {
             "time": 48,
             "ILs": [
                 {
@@ -264,8 +248,7 @@
                 }
             ]
         },
-        {
-            "name": "phantomexpress",
+        "phantomexpress": {
             "time": 56,
             "ILs": [
                 {
@@ -274,8 +257,7 @@
                 }
             ]
         },
-        {
-            "name": "kingdice",
+        "kingdice": {
             "time": 102,
             "ILs": [
                 {
@@ -284,8 +266,7 @@
                 }
             ]
         },
-        {
-            "name": "thedevil",
+        "thedevil": {
             "time": 38,
             "ILs": [
                 {
@@ -294,10 +275,9 @@
                 }
             ]
         }
-    ],
-    "Legacy": [
-        {
-            "name": "therootpack",
+    },
+    "Legacy": {
+        "therootpack": {
             "time": 25,
             "ILs": [
                 {
@@ -310,8 +290,7 @@
                 }
             ]
         },
-        {
-            "name": "ribbyandcroaks",
+        "ribbyandcroaks": {
             "time": 32,
             "ILs": [
                 {
@@ -324,8 +303,7 @@
                 }
             ]
         },
-        {
-            "name": "goopylegrande",
+        "goopylegrande": {
             "time": 17,
             "ILs": [
                 {
@@ -338,8 +316,7 @@
                 }
             ]
         },
-        {
-            "name": "hildaberg",
+        "hildaberg": {
             "time": 53,
             "ILs": [
                 {
@@ -348,8 +325,7 @@
                 }
             ]
         },
-        {
-            "name": "cagneycarnation",
+        "cagneycarnation": {
             "time": 21,
             "ILs": [
                 {
@@ -358,8 +334,7 @@
                 }
             ]
         },
-        {
-            "name": "baronessvonbonbon",
+        "baronessvonbonbon": {
             "time": 25,
             "ILs": [
                 {
@@ -376,8 +351,7 @@
                 }
             ]
         },
-        {
-            "name": "wallywarbles",
+        "wallywarbles": {
             "time": 33,
             "ILs": [
                 {
@@ -386,8 +360,7 @@
                 }
             ]
         },
-        {
-            "name": "djimmithegreat",
+        "djimmithegreat": {
             "time": 47,
             "ILs": [
                 {
@@ -396,8 +369,7 @@
                 }
             ]
         },
-        {
-            "name": "beppitheclown",
+        "beppitheclown": {
             "time": 26,
             "ILs": [
                 {
@@ -406,8 +378,7 @@
                 }
             ]
         },
-        {
-            "name": "grimmatchstick",
+        "grimmatchstick": {
             "time": 29,
             "ILs": [
                 {
@@ -424,8 +395,7 @@
                 }
             ]
         },
-        {
-            "name": "rumorhoneybottoms",
+        "rumorhoneybottoms": {
             "time": 26,
             "ILs": [
                 {
@@ -434,8 +404,7 @@
                 }
             ]
         },
-        {
-            "name": "drkahlsrobot",
+        "drkahlsrobot": {
             "time": 13,
             "ILs": [
                 {
@@ -456,8 +425,7 @@
                 }
             ]
         },
-        {
-            "name": "sallystageplay",
+        "sallystageplay": {
             "time": 34,
             "ILs": [
                 {
@@ -466,8 +434,7 @@
                 }
             ]
         },
-        {
-            "name": "wernerwerman",
+        "wernerwerman": {
             "time": 25,
             "ILs": [
                 {
@@ -476,8 +443,7 @@
                 }
             ]
         },
-        {
-            "name": "captainbrineybeard",
+        "captainbrineybeard": {
             "time": 26,
             "ILs": [
                 {
@@ -490,8 +456,7 @@
                 }
             ]
         },
-        {
-            "name": "calamaria",
+        "calamaria": {
             "time": 36,
             "ILs": [
                 {
@@ -508,8 +473,7 @@
                 }
             ]
         },
-        {
-            "name": "phantomexpress",
+        "phantomexpress": {
             "time": 50,
             "ILs": [
                 {
@@ -522,8 +486,7 @@
                 }
             ]
         },
-        {
-            "name": "kingdice",
+        "kingdice": {
             "time": 82,
             "ILs": [
                 {
@@ -532,8 +495,7 @@
                 }
             ]
         },
-        {
-            "name": "thedevil",
+        "thedevil": {
             "time": 25,
             "ILs": [
                 {
@@ -542,10 +504,9 @@
                 }
             ]
         }
-    ],
-    "NMG": [
-        {
-            "name": "therootpack",
+    },
+    "NMG": {
+        "therootpack": {
             "time": 35,
             "ILs": [
                 {
@@ -566,8 +527,7 @@
                 }
             ]
         },
-        {
-            "name": "ribbyandcroaks",
+        "ribbyandcroaks": {
             "time": 47,
             "ILs": [
                 {
@@ -592,8 +552,7 @@
                 }
             ]
         },
-        {
-            "name": "goopylegrande",
+        "goopylegrande": {
             "time": 26,
             "ILs": [
                 {
@@ -602,11 +561,7 @@
                 }
             ]
         },
-        {
-            "name": "hildaberg"
-        },
-        {
-            "name": "cagneycarnation",
+        "cagneycarnation": {
             "time": 35,
             "ILs": [
                 {
@@ -619,8 +574,7 @@
                 }
             ]
         },
-        {
-            "name": "baronessvonbonbon",
+        "baronessvonbonbon": {
             "time": 31,
             "ILs": [
                 {
@@ -633,8 +587,7 @@
                 }
             ]
         },
-        {
-            "name": "wallywarbles",
+        "wallywarbles": {
             "time": 50,
             "ILs": [
                 {
@@ -643,8 +596,7 @@
                 }
             ]
         },
-        {
-            "name": "djimmithegreat",
+        "djimmithegreat": {
             "time": 81,
             "ILs": [
                 {
@@ -653,8 +605,7 @@
                 }
             ]
         },
-        {
-            "name": "beppitheclown",
+        "beppitheclown": {
             "time": 57,
             "ILs": [
                 {
@@ -663,14 +614,9 @@
                 }
             ]
         },
-        {
-            "name": "grimmatchstick"
-        },
-        {
-            "name": "rumorhoneybottoms"
-        },
-        {
-            "name": "drkahlsrobot",
+        "grimmatchstick": {},
+        "rumorhoneybottoms": {},
+        "drkahlsrobot": {
             "time": 44,
             "ILs": [
                 {
@@ -679,8 +625,7 @@
                 }
             ]
         },
-        {
-            "name": "sallystageplay",
+        "sallystageplay": {
             "time": 47,
             "ILs": [
                 {
@@ -689,8 +634,7 @@
                 }
             ]
         },
-        {
-            "name": "wernerwerman",
+        "wernerwerman": {
             "time": 42,
             "ILs": [
                 {
@@ -699,11 +643,8 @@
                 }
             ]
         },
-        {
-            "name": "captainbrineybeard"
-        },
-        {
-            "name": "calamaria",
+        "captainbrineybeard": {},
+        "calamaria": {
             "time": 60,
             "ILs": [
                 {
@@ -712,8 +653,7 @@
                 }
             ]
         },
-        {
-            "name": "phantomexpress",
+        "phantomexpress": {
             "time": 58,
             "ILs": [
                 {
@@ -722,8 +662,7 @@
                 }
             ]
         },
-        {
-            "name": "kingdice",
+        "kingdice": {
             "time": 108,
             "ILs": [
                 {
@@ -732,8 +671,7 @@
                 }
             ]
         },
-        {
-            "name": "thedevil",
+        "thedevil": {
             "time": 47,
             "ILs": [
                 {
@@ -742,10 +680,9 @@
                 }
             ]
         }
-    ],
-    "DLC L/S": [
-        {
-            "name": "glumstonethegiant",
+    },
+    "DLC L/S": {
+        "glumstonethegiant": {
             "time": 45,
             "ILs": [
                 {
@@ -762,8 +699,7 @@
                 }
             ]
         },
-        {
-            "name": "mortimerfreeze",
+        "mortimerfreeze": {
             "time": 40,
             "ILs": [
                 {
@@ -796,8 +732,7 @@
                 }
             ]
         },
-        {
-            "name": "thehowlingaces",
+        "thehowlingaces": {
             "time": 43,
             "ILs": [
                 {
@@ -806,8 +741,7 @@
                 }
             ]
         },
-        {
-            "name": "estherwinchester",
+        "estherwinchester": {
             "time": 59,
             "ILs": [
                 {
@@ -820,8 +754,7 @@
                 }
             ]
         },
-        {
-            "name": "moonshinemob",
+        "moonshinemob": {
             "time": 35,
             "ILs": [
                 {
@@ -842,8 +775,7 @@
                 }
             ]
         },
-        {
-            "name": "chefsaltbaker",
+        "chefsaltbaker": {
             "time": 49,
             "ILs": [
                 {
@@ -860,10 +792,9 @@
                 }
             ]
         }
-    ],
-    "DLC C/S": [
-        {
-            "name": "glumstonethegiant",
+    },
+    "DLC C/S": {
+        "glumstonethegiant": {
             "time": 47,
             "ILs": [
                 {
@@ -876,8 +807,7 @@
                 }
             ]
         },
-        {
-            "name": "mortimerfreeze",
+        "mortimerfreeze": {
             "time": 38,
             "ILs": [
                 {
@@ -898,8 +828,7 @@
                 }
             ]
         },
-        {
-            "name": "thehowlingaces",
+        "thehowlingaces": {
             "time": 42,
             "ILs": [
                 {
@@ -908,8 +837,7 @@
                 }
             ]
         },
-        {
-            "name": "estherwinchester",
+        "estherwinchester": {
             "time": 59,
             "ILs": [
                 {
@@ -922,8 +850,7 @@
                 }
             ]
         },
-        {
-            "name": "moonshinemob",
+        "moonshinemob": {
             "time": 37,
             "ILs": [
                 {
@@ -940,8 +867,7 @@
                 }
             ]
         },
-        {
-            "name": "chefsaltbaker",
+        "chefsaltbaker": {
             "time": 49,
             "ILs": [
                 {
@@ -950,28 +876,9 @@
                 }
             ]
         }
-    ],
-    "DLC+Base L/S": [
-        {
-            "name": "goopylegrande"
-        },
-        {
-            "name": "therootpack"
-        },
-        {
-            "name": "ribbyandcroaks"
-        },
-        {
-            "name": "hildaberg"
-        },
-        {
-            "name": "cagneycarnation"
-        },
-        {
-            "name": "baronessvonbonbon"
-        },
-        {
-            "name": "wallywarbles",
+    },
+    "DLC+Base L/S": {
+        "wallywarbles": {
             "time": 47,
             "ILs": [
                 {
@@ -980,8 +887,7 @@
                 }
             ]
         },
-        {
-            "name": "djimmithegreat",
+        "djimmithegreat": {
             "time": 74,
             "ILs": [
                 {
@@ -990,17 +896,7 @@
                 }
             ]
         },
-        {
-            "name": "glumstonethegiant"
-        },
-        {
-            "name": "mortimerfreeze"
-        },
-        {
-            "name": "thehowlingaces"
-        },
-        {
-            "name": "estherwinchester",
+        "estherwinchester": {
             "time": 52,
             "ILs": [
                 {
@@ -1009,14 +905,7 @@
                 }
             ]
         },
-        {
-            "name": "moonshinemob"
-        },
-        {
-            "name": "chefsaltbaker"
-        },
-        {
-            "name": "beppitheclown",
+        "beppitheclown": {
             "time": 41,
             "ILs": [
                 {
@@ -1025,8 +914,7 @@
                 }
             ]
         },
-        {
-            "name": "grimmatchstick",
+        "grimmatchstick": {
             "time": 46,
             "ILs": [
                 {
@@ -1035,8 +923,7 @@
                 }
             ]
         },
-        {
-            "name": "rumorhoneybottoms",
+        "rumorhoneybottoms": {
             "time": 37,
             "ILs": [
                 {
@@ -1045,8 +932,7 @@
                 }
             ]
         },
-        {
-            "name": "drkahlsrobot",
+        "drkahlsrobot": {
             "time": 41,
             "ILs": [
                 {
@@ -1055,8 +941,7 @@
                 }
             ]
         },
-        {
-            "name": "sallystageplay",
+        "sallystageplay": {
             "time": 34,
             "ILs": [
                 {
@@ -1065,8 +950,7 @@
                 }
             ]
         },
-        {
-            "name": "wernerwerman",
+        "wernerwerman": {
             "time": 42,
             "ILs": [
                 {
@@ -1075,8 +959,7 @@
                 }
             ]
         },
-        {
-            "name": "captainbrineybeard",
+        "captainbrineybeard": {
             "time": 37,
             "ILs": [
                 {
@@ -1085,8 +968,7 @@
                 }
             ]
         },
-        {
-            "name": "calamaria",
+        "calamaria": {
             "time": 48,
             "ILs": [
                 {
@@ -1095,8 +977,7 @@
                 }
             ]
         },
-        {
-            "name": "phantomexpress",
+        "phantomexpress": {
             "time": 57,
             "ILs": [
                 {
@@ -1105,8 +986,7 @@
                 }
             ]
         },
-        {
-            "name": "kingdice",
+        "kingdice": {
             "time": 109,
             "ILs": [
                 {
@@ -1115,8 +995,7 @@
                 }
             ]
         },
-        {
-            "name": "thedevil",
+        "thedevil": {
             "time": 48,
             "ILs": [
                 {
@@ -1125,10 +1004,9 @@
                 }
             ]
         }
-    ],
-    "DLC+Base L/S DLC First": [
-        {
-            "name": "therootpack",
+    },
+    "DLC+Base L/S DLC First": {
+        "therootpack": {
             "time": 35,
             "ILs": [
                 {
@@ -1137,8 +1015,7 @@
                 }
             ]
         },
-        {
-            "name": "ribbyandcroaks",
+        "ribbyandcroaks": {
             "time": 46,
             "ILs": [
                 {
@@ -1147,8 +1024,7 @@
                 }
             ]
         },
-        {
-            "name": "goopylegrande",
+        "goopylegrande": {
             "time": 28,
             "ILs": [
                 {
@@ -1156,59 +1032,10 @@
                     "url": "https://youtu.be/c5-l2z3rrew"
                 }
             ]
-        },
-        {
-            "name": "hildaberg"
-        },
-        {
-            "name": "cagneycarnation"
-        },
-        {
-            "name": "baronessvonbonbon"
-        },
-        {
-            "name": "wallywarbles"
-        },
-        {
-            "name": "djimmithegreat"
-        },
-        {
-            "name": "beppitheclown"
-        },
-        {
-            "name": "grimmatchstick"
-        },
-        {
-            "name": "rumorhoneybottoms"
-        },
-        {
-            "name": "drkahlsrobot"
-        },
-        {
-            "name": "sallystageplay"
-        },
-        {
-            "name": "wernerwerman"
-        },
-        {
-            "name": "captainbrineybeard"
-        },
-        {
-            "name": "calamaria"
-        },
-        {
-            "name": "phantomexpress"
-        },
-        {
-            "name": "kingdice"
-        },
-        {
-            "name": "thedevil"
         }
-    ],
-    "DLC+Base C/S": [
-        {
-            "name": "therootpack",
+    },
+    "DLC+Base C/S": {
+        "therootpack": {
             "time": 36,
             "ILs": [
                 {
@@ -1233,8 +1060,7 @@
                 }
             ]
         },
-        {
-            "name": "ribbyandcroaks",
+        "ribbyandcroaks": {
             "time": 47,
             "ILs": [
                 {
@@ -1255,8 +1081,7 @@
                 }
             ]
         },
-        {
-            "name": "goopylegrande",
+        "goopylegrande": {
             "time": 29,
             "ILs": [
                 {
@@ -1269,11 +1094,7 @@
                 }
             ]
         },
-        {
-            "name": "hildaberg"
-        },
-        {
-            "name": "cagneycarnation",
+        "cagneycarnation": {
             "time": 34,
             "ILs": [
                 {
@@ -1290,8 +1111,7 @@
                 }
             ]
         },
-        {
-            "name": "baronessvonbonbon",
+        "baronessvonbonbon": {
             "time": 29,
             "ILs": [
                 {
@@ -1300,14 +1120,7 @@
                 }
             ]
         },
-        {
-            "name": "wallywarbles"
-        },
-        {
-            "name": "djimmithegreat"
-        },
-        {
-            "name": "beppitheclown",
+        "beppitheclown": {
             "time": 41,
             "ILs": [
                 {
@@ -1316,8 +1129,7 @@
                 }
             ]
         },
-        {
-            "name": "grimmatchstick",
+        "grimmatchstick": {
             "time": 44,
             "ILs": [
                 {
@@ -1326,8 +1138,7 @@
                 }
             ]
         },
-        {
-            "name": "rumorhoneybottoms",
+        "rumorhoneybottoms": {
             "time": 36,
             "ILs": [
                 {
@@ -1336,11 +1147,7 @@
                 }
             ]
         },
-        {
-            "name": "drkahlsrobot"
-        },
-        {
-            "name": "sallystageplay",
+        "sallystageplay": {
             "time": 29,
             "ILs": [
                 {
@@ -1349,8 +1156,7 @@
                 }
             ]
         },
-        {
-            "name": "wernerwerman",
+        "wernerwerman": {
             "time": 44,
             "ILs": [
                 {
@@ -1363,8 +1169,7 @@
                 }
             ]
         },
-        {
-            "name": "captainbrineybeard",
+        "captainbrineybeard": {
             "time": 38,
             "ILs": [
                 {
@@ -1373,11 +1178,7 @@
                 }
             ]
         },
-        {
-            "name": "calamaria"
-        },
-        {
-            "name": "phantomexpress",
+        "phantomexpress": {
             "time": 61,
             "ILs": [
                 {
@@ -1386,18 +1187,16 @@
                 }
             ]
         },
-        {
-            "name": "kingdice",
-            "time": 110,
+        "kingdice": {
+            "time": 109,
             "ILs": [
                 {
-                    "name": "*myekul",
-                    "url": "https://youtu.be/L90GJH7EAxA"
+                    "name": "*DaniStuff2345",
+                    "url": "https://youtu.be/i2YazJUzq_U"
                 }
             ]
         },
-        {
-            "name": "thedevil",
+        "thedevil": {
             "time": 47,
             "ILs": [
                 {
@@ -1406,5 +1205,5 @@
                 }
             ]
         }
-    ]
+    }
 }
