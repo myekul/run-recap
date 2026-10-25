@@ -1,5 +1,5 @@
 function mausCriteria() {
-    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || ['NMG Full Clear', 'DLC OG Charge'].includes(altStratOther)))
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || ['NMG 100%', 'DLC OG Charge'].includes(altStratOther)))
 }
 function altStatCriteria(level) {
     return level == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) || level == 'captainbrineybeard' && runRecapCategory.tabName == '1.1+'

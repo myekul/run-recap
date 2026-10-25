@@ -6,6 +6,7 @@
 - Clean up Baroness viable / nonviable
 - playerDisplay with allPlayers
 - submitIL Follies criteria
+- Vanilla localData copying
 
 - Duplicate URLs in Firebase cache
 

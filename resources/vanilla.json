@@ -26,9 +26,9 @@
             "url": "https://youtu.be/tfEUte2Da4s?t=10448"
         },
         "baronessvonbonbon": {
-            "time": 31.61,
-            "player": "myekul",
-            "url": "https://www.twitch.tv/videos/2859555343"
+            "time": "31.50",
+            "player": "Quincely0",
+            "url": "https://youtu.be/NgR0aLzuT6g"
         },
         "wallywarbles": {
             "time": 46.82,
@@ -108,9 +108,9 @@
             "url": "https://youtu.be/W2sOynctumk?t=21"
         },
         "goopylegrande": {
-            "time": 18.17,
+            "time": 17.16,
             "player": "Yuka",
-            "url": "https://youtu.be/HP_zMbG2B9I?t=32"
+            "url": "https://youtu.be/8_1dKjsIv3A?t=18"
         },
         "hildaberg": {
             "time": 54.98,
@@ -118,9 +118,9 @@
             "url": "https://youtu.be/IBkIwcsE3HI?t=299"
         },
         "cagneycarnation": {
-            "time": 23.24,
-            "player": "Yuka",
-            "url": "https://youtu.be/YUlYqmE-f7s?t=425"
+            "time": "23.10",
+            "player": "graven_",
+            "url": "https://youtu.be/nHvddQjJ4ak?t=39"
         },
         "baronessvonbonbon": {
             "time": 26.46,
@@ -188,6 +188,16 @@
             "time": 35.13,
             "player": "SBDWolf",
             "url": "https://www.twitch.tv/sbdwolf/clip/LachrymoseDifferentPastaHoneyBadger-d5IGUKvTWxM9jq_a?range=30d"
+        },
+        "cagneycarnation": {
+            "time": 35.95,
+            "player": "MarkinSws",
+            "url": "https://youtu.be/Q-L0DMM1R0Q"
+        },
+        "wallywarbles": {
+            "time": 51.86,
+            "player": "MarkinSws",
+            "url": "https://youtu.be/OYnAcD2nCD8"
         }
     },
     "DLC L/S": {
@@ -217,18 +227,28 @@
             "time": 37.66,
             "player": "myekul",
             "url": "https://youtu.be/UCLkF-T0jUo?t=30"
+        },
+        "chefsaltbaker": {
+            "time": 50,
+            "player": "DaniStuff2345",
+            "url": "https://youtu.be/Vj8oyrKbS4Q"
         }
     },
     "DLC+Base C/S": {
         "therootpack": {
-            "time": 36.44,
-            "player": "myekul",
-            "url": "https://youtu.be/yU4c2KVBnIY"
+            "time": 36.25,
+            "player": "DaniStuff2345",
+            "url": "https://youtu.be/YLZr-HFyrAM"
         },
         "baronessvonbonbon": {
             "time": 30.81,
             "player": "DaniStuff2345",
             "url": "https://youtu.be/FoGWOA7lasY"
+        },
+        "wernerwerman":{
+            "time": 43,
+            "player": "DaniStuff2345",
+            "url": "https://youtu.be/FxkAcdHQ2VQ"
         }
     }
 }

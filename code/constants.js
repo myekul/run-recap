@@ -6,7 +6,7 @@ const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Dem
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S']
 const OTHER_CATEGORIES = [
-    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Simple', '1.1+ Expert', '1.1+ NG+', 'Legacy Low%', 'Legacy Simple', 'NMG Full Clear', 'NMG P/S', 'NMG R/S', 'NMG Simple P/S', 'NMG Expert', 'OG Charge'],
+    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Simple', '1.1+ Expert', '1.1+ NG+', 'Legacy Low%', 'Legacy Simple', 'NMG 100%', 'NMG P/S', 'NMG R/S', 'NMG Simple P/S', 'NMG Expert', 'OG Charge'],
     ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%'],
 ]
 const BASE_SIMPLE = ['1.1+ Simple', 'Legacy Simple', 'NMG Simple P/S']
@@ -15,12 +15,12 @@ const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 
 
 const NO_FOLLIES = ['1.1+ Low%', '1.1+ NG+', 'Legacy Low%', 'NMG P/S', 'NMG Simple P/S']
 
-const ALL_RUNNGUNS = ['1.1+ All Flags', 'NMG Full Clear', '300%']
+const ALL_RUNNGUNS = ['1.1+ All Flags', 'NMG 100%', '300%']
 
 const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert']
 const DUPLICATE_FOLLIES_1_1 = ['1.1+ Simple', '1.1+ Expert', 'Legacy Simple']
-const DUPLICATE_FOLLIES_NMG = ['NMG Full Clear', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
-const DUPLICATE_MAUS = ['NMG Full Clear', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
+const DUPLICATE_FOLLIES_NMG = ['NMG 100%', 'NMG P/S', 'NMG R/S', 'NMG Expert', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
+const DUPLICATE_MAUS = ['NMG 100%', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S', ...MISC_DLC]
 const DUPLICATE_ESTHER = ['DLC C/S', 'DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge']
 
 const LOW_PERCENT = ['ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles', 'beppitheclown', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice']

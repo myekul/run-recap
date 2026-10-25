@@ -315,7 +315,7 @@
                 "time": 21.17,
                 "player": "myekul",
                 "url": "https://youtu.be/xI9m9qXCp3Q",
-                "viable": "It goes for a 4 bounce kill, which is risky and difficult."
+                "viable": "It goes for a 5 bounce kill, which is risky and difficult."
             },
             {
                 "name": "Sneeze",
@@ -348,10 +348,16 @@
                 "url": "https://youtu.be/j2tjzU8i0kI"
             },
             {
+                "name": "Quadless",
+                "time": 25.41,
+                "player": "Mulks",
+                "url": "https://youtu.be/pXn_k6kPA7E"
+            },
+            {
                 "title": "Other"
             },
             {
-                "name": "4 Bounce, 3 Parries",
+                "name": "5 Bounce, 3 Parries",
                 "time": 19.73,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/XmGHSQfkVdg"
@@ -900,9 +906,9 @@
             },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
-                "time": 35.41,
-                "player": "myekul",
-                "url": "https://youtu.be/FPELYv2Flp4"
+                "time": 35.15,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/iUdPZGJfj-o"
             },
             {
                 "name": "Gumball, Jawbreaker, Candy Corn",
@@ -2748,9 +2754,9 @@
             },
             {
                 "name": "4 Bounce",
-                "time": 17.28,
+                "time": 17.16,
                 "player": "Yuka",
-                "url": "https://youtu.be/SBDjd9nz68o"
+                "url": "https://youtu.be/8_1dKjsIv3A?t=18"
             },
             {
                 "title": "Parries"
@@ -2810,10 +2816,22 @@
         ],
         "cagneycarnation": [
             {
+                "title": "Final Phase Triples"
+            },
+            {
                 "name": "Lunge, Lunge",
                 "time": 21.96,
                 "player": "Yuka",
                 "url": "https://www.youtube.com/watch?v=PYMSFVo4CvQ&t=33s"
+            },
+            {
+                "title": "No Final Phase Triples"
+            },
+            {
+                "name": "Lunge, Lunge",
+                "time": 22.52,
+                "player": "graven_",
+                "url": "https://youtu.be/wDRbCJzP150"
             }
         ],
         "baronessvonbonbon": [
@@ -3099,9 +3117,9 @@
             },
             {
                 "name": "",
-                "time": 50.15,
+                "time": 50.09,
                 "player": "graven_",
-                "url": "https://youtu.be/2qnyNZmmrac"
+                "url": "https://youtu.be/2Nfy6k6Gpa8"
             },
             {
                 "name": "Bad Ghoul RNG",
@@ -3151,7 +3169,7 @@
                 "url": "https://youtu.be/wJPHS_n2q0Y?t=91"
             }
         ],
-        "kingdice2":[
+        "kingdice2": [
             {
                 "name": "3 HP",
                 "time": 14.97,
@@ -4742,15 +4760,15 @@
         "therootpack": [
             {
                 "name": "",
-                "time": 36.44,
-                "player": "myekul",
-                "url": "https://youtu.be/yU4c2KVBnIY"
+                "time": 36.25,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/YLZr-HFyrAM"
             },
             {
                 "name": "No Secret Phase",
-                "time": 37.43,
+                "time": 37.29,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/AlnfzrzQQYc"
+                "url": "https://youtu.be/s8EDEar7csY"
             }
         ],
         "ribbyandcroaks": [
@@ -5971,7 +5989,7 @@
             }
         ]
     },
-    "NMG Full Clear": {
+    "NMG 100%": {
         "wernerwerman": [
             {
                 "name": "Catapult",
@@ -5981,6 +5999,36 @@
             }
         ],
         "thedevil": [
+            {
+                "name": "Bubbles (Slowest)",
+                "time": 40.65,
+                "player": "myekul",
+                "url": "https://youtu.be/SGydeioFbsw"
+            },
+            {
+                "name": "Bubbles (Slowest)",
+                "time": 41.19,
+                "player": "myekul",
+                "url": "https://youtu.be/ef9nND7GZ3Y"
+            },
+            {
+                "name": "Clap Pinwheel",
+                "time": 41.21,
+                "player": "myekul",
+                "url": "https://youtu.be/mqpGv6yJ10M"
+            },
+            {
+                "name": "Bubbles (Slower)",
+                "time": 41.25,
+                "player": "myekul",
+                "url": "https://youtu.be/2TGQF69MKZk"
+            },
+            {
+                "name": "Ring Clap",
+                "time": "41.40",
+                "player": "myekul",
+                "url": "https://youtu.be/2SE9GKTSPn0"
+            },
             {
                 "name": "Clap Dragon",
                 "time": 41.65,
@@ -5994,28 +6042,22 @@
                 "url": "https://youtu.be/kX6loizVhd8"
             },
             {
-                "name": "Ring Clap",
-                "time": 41.85,
-                "player": "myekul",
-                "url": "https://youtu.be/jq8AVHG52Eg"
-            },
-            {
                 "name": "Clap Bubbles",
                 "time": 42.64,
                 "player": "myekul",
                 "url": "https://youtu.be/FH785XeSeNM"
             },
             {
-                "name": "Bubbles (Slower)",
-                "time": 43.18,
-                "player": "myekul",
-                "url": "https://youtu.be/YrTyNKTmGpI"
-            },
-            {
                 "name": "Clap Spider",
                 "time": 44.42,
                 "player": "myekul",
                 "url": "https://youtu.be/vKJUjP7KgsU"
+            },
+            {
+                "name": "Spider Clap",
+                "time": "44.60",
+                "player": "myekul",
+                "url": "https://youtu.be/mYZuDsTjs7w"
             },
             {
                 "name": "Spider",
@@ -7219,6 +7261,23 @@
                 "time": 57,
                 "player": "Jason2890",
                 "url": "https://youtu.be/SlQllQCXuoY"
+            }
+        ],
+        "kingdice": [
+            {
+                "title": "Full Clear"
+            },
+            {
+                "name": "Whetstone",
+                "time": "5:16",
+                "player": "Jason2890",
+                "url": "https://youtu.be/xf4FDAsaiZo"
+            },
+            {
+                "name": "Ms. Chalice",
+                "time": "5:30",
+                "player": "Jason2890",
+                "url": "https://youtu.be/NdlBKwOXwHg"
             }
         ],
         "thedevil": [
