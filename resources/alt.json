@@ -398,7 +398,7 @@
                 "title": "Parryless"
             },
             {
-                "name": "Gemini",
+                "name": "Gemini, Trollnado",
                 "time": "1:00.67",
                 "player": "Quincely0",
                 "url": "https://www.twitch.tv/videos/2809504164?t=00h00m11s"
@@ -668,12 +668,6 @@
                 "url": "https://youtu.be/xZ9e9EzJI0w"
             },
             {
-                "name": "Gumball, Candy Corn, Waffle",
-                "time": 32.95,
-                "player": "myekul",
-                "url": "https://youtu.be/ul8aajaIuQs"
-            },
-            {
                 "name": "Gumball, Candy Corn, Cupcake",
                 "time": 32.95,
                 "player": "lewzr",
@@ -714,12 +708,6 @@
                 "time": 34.93,
                 "player": "Misterbutter444",
                 "url": "https://youtu.be/-g2EcwDh5Ho?si=H8RO7sZWGBv4PkkX&t=1868"
-            },
-            {
-                "name": "Jawbreaker, Waffle, Gumball",
-                "time": "36.60",
-                "player": "Misterbutter444",
-                "url": "https://youtu.be/-g2EcwDh5Ho?si=p8uMs4hnlQ1VrBhW&t=1904"
             },
             {
                 "name": "Jawbreaker, Candy Corn, Waffle",
@@ -906,9 +894,15 @@
             },
             {
                 "name": "Gumball, Waffle, Jawbreaker",
-                "time": 35.15,
+                "time": 34.91,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/iUdPZGJfj-o"
+                "url": "https://youtu.be/3ruLkKSi72o"
+            },
+            {
+                "name": "Gumball, Candy Corn, Waffle",
+                "time": 32.56,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/MzLzxzVg3Kk"
             },
             {
                 "name": "Gumball, Jawbreaker, Candy Corn",
@@ -927,6 +921,12 @@
                 "time": 36.69,
                 "player": "myekul",
                 "url": "https://youtu.be/qI5r6jafRcU"
+            },
+            {
+                "name": "Jawbreaker, Waffle, Gumball",
+                "time": 36.22,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/kKp2aNqenDo"
             }
         ],
         "wallywarbles": [
@@ -3200,6 +3200,18 @@
                 "url": "https://youtu.be/HeUnU-24CGo"
             },
             {
+                "name": "Bubbles Clap",
+                "time": 32.57,
+                "player": "graven_",
+                "url": "https://youtu.be/CEQJMDmNISc"
+            },
+            {
+                "name": "Ring Dragon L",
+                "time": 33.52,
+                "player": "graven_",
+                "url": "https://youtu.be/jHSbak9PxwQ"
+            },
+            {
                 "name": "Dragon R Clap",
                 "time": 35.11,
                 "player": "Yuka",
@@ -4996,9 +5008,9 @@
             },
             {
                 "name": "Candy Corn, Waffle, Gumball",
-                "time": 29.95,
+                "time": 29.88,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/1yaxbJwL5F4"
+                "url": "https://youtu.be/NNRTSJyWrO4"
             },
             {
                 "name": "Candy Corn, Waffle, Cupcake",
@@ -5068,9 +5080,9 @@
             },
             {
                 "name": "Cupcake, Gumball, Waffle",
-                "time": 30.88,
+                "time": 30.59,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/MLU46yV2zSU"
+                "url": "https://youtu.be/GHMLA6n6LgM"
             },
             {
                 "name": "Cupcake, Gumball, Candy Corn",
@@ -5086,9 +5098,9 @@
             },
             {
                 "name": "Cupcake, Waffle, Gumball",
-                "time": 30.95,
+                "time": 30.68,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/72fEWwiIrls"
+                "url": "https://youtu.be/gsdjYTJEmtM"
             },
             {
                 "name": "Cupcake, Waffle, Candy Corn",
@@ -5140,9 +5152,9 @@
             },
             {
                 "name": "Jawbreaker, Waffle, Gumball",
-                "time": 34.31,
+                "time": 33.94,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/BCVu3gDqEio"
+                "url": "https://youtu.be/vyChKfH_rcA"
             },
             {
                 "name": "Jawbreaker, Waffle, Cupcake",
@@ -5158,9 +5170,9 @@
             },
             {
                 "name": "Jawbreaker, Gumball, Waffle",
-                "time": 34.39,
+                "time": 33.99,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/16gvOtT10u0"
+                "url": "https://youtu.be/pQzFIzhUNp0"
             },
             {
                 "name": "Jawbreaker, Gumball, Cupcake",
@@ -5986,84 +5998,6 @@
                 "time": 15.85,
                 "player": "Yuka",
                 "url": "https://youtu.be/vgp0RFk6uj4"
-            }
-        ]
-    },
-    "NMG 100%": {
-        "wernerwerman": [
-            {
-                "name": "Catapult",
-                "time": 36,
-                "player": "myekul",
-                "url": "https://youtu.be/huIKOogXP8s"
-            }
-        ],
-        "thedevil": [
-            {
-                "name": "Bubbles (Slowest)",
-                "time": 40.65,
-                "player": "myekul",
-                "url": "https://youtu.be/SGydeioFbsw"
-            },
-            {
-                "name": "Bubbles (Slowest)",
-                "time": 41.19,
-                "player": "myekul",
-                "url": "https://youtu.be/ef9nND7GZ3Y"
-            },
-            {
-                "name": "Clap Pinwheel",
-                "time": 41.21,
-                "player": "myekul",
-                "url": "https://youtu.be/mqpGv6yJ10M"
-            },
-            {
-                "name": "Bubbles (Slower)",
-                "time": 41.25,
-                "player": "myekul",
-                "url": "https://youtu.be/2TGQF69MKZk"
-            },
-            {
-                "name": "Ring Clap",
-                "time": "41.40",
-                "player": "myekul",
-                "url": "https://youtu.be/2SE9GKTSPn0"
-            },
-            {
-                "name": "Clap Dragon",
-                "time": 41.65,
-                "player": "myekul",
-                "url": "https://youtu.be/ozQy11l_Gis"
-            },
-            {
-                "name": "Clap Bubbles (Slower)",
-                "time": 41.68,
-                "player": "myekul",
-                "url": "https://youtu.be/kX6loizVhd8"
-            },
-            {
-                "name": "Clap Bubbles",
-                "time": 42.64,
-                "player": "myekul",
-                "url": "https://youtu.be/FH785XeSeNM"
-            },
-            {
-                "name": "Clap Spider",
-                "time": 44.42,
-                "player": "myekul",
-                "url": "https://youtu.be/vKJUjP7KgsU"
-            },
-            {
-                "name": "Spider Clap",
-                "time": "44.60",
-                "player": "myekul",
-                "url": "https://youtu.be/mYZuDsTjs7w"
-            },
-            {
-                "name": "Spider",
-                "time": 45.86,
-                "player": "myekul",
-                "url": "https://youtu.be/zUqA09XKs8g"
             }
         ]
     },
@@ -7163,6 +7097,186 @@
             }
         ]
     },
+    "100% NMG": {
+        "wernerwerman": [
+            {
+                "name": "Cherry Bombs (5)",
+                "time": 35.97,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/4LHpsMNlb5k"
+            },
+            {
+                "name": "Cherry Bombs (6)",
+                "time": 35.55,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ETjgfvK-OAo"
+            },
+            {
+                "name": "Catapult",
+                "time": 36,
+                "player": "myekul",
+                "url": "https://youtu.be/huIKOogXP8s"
+            },
+            {
+                "name": "Catapult, Charge",
+                "time": 39.32,
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=1722"
+            }
+        ],
+        "calamaria": [
+            {
+                "name": "Turtle, Ghosts, Seahorse",
+                "time": 35,
+                "player": "Spaceboy321",
+                "url": "https://youtu.be/weAra8Nr8nc"
+            },
+            {
+                "name": "Seahorse, Red Fish, Turtle",
+                "time": 45,
+                "player": "myekul",
+                "url": "https://youtu.be/Wa5IDX6vAA4?t=1932"
+            },
+            {
+                "name": "Ghosts, Turtle, Red Fish",
+                "time": 48,
+                "player": "myekul",
+                "url": "https://youtu.be/Kygbgz38VtE?t=2012"
+            },
+            {
+                "name": "Pufferfish, Ghosts, Turtle, Yellow Fish",
+                "time": 50.02,
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=2055"
+            }
+        ],
+        "kingdice": [
+            {
+                "name": "2-4-8",
+                "time": "1:40.27",
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/VV6laEPooy4"
+            },
+            {
+                "name": "All Minibosses",
+                "time": "4:47",
+                "player": "myekul",
+                "url": "https://youtu.be/Kygbgz38VtE?t=2427"
+            }
+        ],
+        "thedevil": [
+            {
+                "name": "Bubbles (Slowest)",
+                "time": 40.65,
+                "player": "myekul",
+                "url": "https://youtu.be/SGydeioFbsw"
+            },
+            {
+                "name": "Bubbles (Slowest)",
+                "time": 41.19,
+                "player": "myekul",
+                "url": "https://youtu.be/ef9nND7GZ3Y"
+            },
+            {
+                "name": "Clap Pinwheel",
+                "time": 41.21,
+                "player": "myekul",
+                "url": "https://youtu.be/mqpGv6yJ10M"
+            },
+            {
+                "name": "Bubbles (Slower)",
+                "time": 41.25,
+                "player": "myekul",
+                "url": "https://youtu.be/2TGQF69MKZk"
+            },
+            {
+                "name": "Ring Clap",
+                "time": "41.40",
+                "player": "myekul",
+                "url": "https://youtu.be/2SE9GKTSPn0"
+            },
+            {
+                "name": "Clap Dragon",
+                "time": 41.65,
+                "player": "myekul",
+                "url": "https://youtu.be/ozQy11l_Gis"
+            },
+            {
+                "name": "Clap Bubbles (Slower)",
+                "time": 41.68,
+                "player": "myekul",
+                "url": "https://youtu.be/kX6loizVhd8"
+            },
+            {
+                "name": "Clap Bubbles",
+                "time": 42.64,
+                "player": "myekul",
+                "url": "https://youtu.be/FH785XeSeNM"
+            },
+            {
+                "name": "Bubbles Clap",
+                "time": 43.91,
+                "player": "myekul",
+                "url": "https://youtu.be/IE5jYoZESyc?t=2842"
+            },
+            {
+                "name": "Clap Spider",
+                "time": 44.42,
+                "player": "myekul",
+                "url": "https://youtu.be/vKJUjP7KgsU"
+            },
+            {
+                "name": "Spider Clap",
+                "time": "44.60",
+                "player": "myekul",
+                "url": "https://youtu.be/mYZuDsTjs7w"
+            },
+            {
+                "name": "Spider",
+                "time": 45.86,
+                "player": "myekul",
+                "url": "https://youtu.be/zUqA09XKs8g"
+            },
+            {
+                "name": "Pinwheel Spider",
+                "time": 46.95,
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=2532"
+            }
+        ],
+        "funfairfever":[
+            {
+                "name": "",
+                "time": 47,
+                "player": "myekul",
+                "url": "https://youtu.be/Wa5IDX6vAA4?t=761"
+            }
+        ],
+        "funhousefrazzle":[
+            {
+                "name": "",
+                "time": 39.63,
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=1052"
+            }
+        ],
+        "ruggedridge":[
+            {
+                "name": "",
+                "time": "1:21.94",
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=1525"
+            }
+        ],
+        "perilouspiers":[
+            {
+                "name": "",
+                "time": "1:02",
+                "player": "myekul",
+                "url": "https://youtu.be/Wa5IDX6vAA4?t=1843"
+            }
+        ]
+    },
     "300%": {
         "therootpack": [
             {
@@ -7363,9 +7477,9 @@
         "rook": [
             {
                 "name": "",
-                "time": 18.92,
-                "player": "myekul",
-                "url": "https://youtu.be/ZcenkgyZJqA"
+                "time": 17.88,
+                "player": "Quincely0",
+                "url": "https://youtu.be/ymDf0ucclbI"
             }
         ],
         "queen": [
