@@ -47,22 +47,17 @@ function action() {
         document.getElementById('runRecap_player').innerHTML = playerDisplay()
     }
     const typeCriteria = [
-        { type: 'sav', criteria: runRecap_savFile },
-        { type: 'lss', criteria: runRecap_lssFile.pbSplits },
-        { type: 'rrc', criteria: runRecap_rrcFile.attempts }
+        { type: 'sav', criteria: runRecap_savFile?.levelDataManager?.levelObjects?.length > 0 },
+        { type: 'lss', criteria: runRecap_lssFile.pbSplits?.length > 0 },
+        { type: 'rrc', criteria: runRecap_rrcFile.attempts?.length > 0 }
     ]
     typeCriteria.forEach(({ type, criteria }) => {
-        if (criteria) {
-            document.getElementById(type + 'Button').classList.add('pulseSize')
-            document.getElementById(type + 'Button').style.backgroundColor = 'var(--cuphead)'
-        } else {
-            document.getElementById(type + 'Button').classList.remove('pulseSize')
-            document.getElementById(type + 'Button').style.backgroundColor = ''
-        }
+        const button = document.getElementById(type + 'Button')
+        button.classList.toggle('pulseSize', criteria)
+        button.style.backgroundColor = criteria ? 'var(--cuphead)' : ''
     });
     ['altStrats', 'runViableILs', 'vanillaILs', 'commBestSplits', 'theTop'].forEach(page => {
-        document.getElementById(page + 'Button').classList.remove('activeBanner')
-        if (page == globalTab) document.getElementById(globalTab + 'Button')?.classList.add('activeBanner')
+        document.getElementById(page + 'Button').classList.toggle('activeBanner', globalTab == page)
     })
     if (runRecapExample) {
         show('runRecap_example_div')
@@ -159,25 +154,18 @@ function action() {
     } else {
         hide('comparisonThumbnail')
     }
-    document.getElementById('boardTitle').classList.remove('grayedOut')
+    document.getElementById('boardTitle').classList.toggle('grayedOut', globalTab == 'altStrats' && altStratsAll)
     if (globalTab == 'altStrats') {
         document.querySelectorAll('.altStratNum').forEach(elem => { show(elem) })
         show('altStratsAll')
-        if (altStratsAll) document.getElementById('boardTitle').classList.add('grayedOut')
     } else {
         document.querySelectorAll('.altStratNum').forEach(elem => { hide(elem) })
         hide('altStratsAll')
     }
     const grayButtons = ['leaderboards', 'runViableILs', 'vanillaILs', 'commBestSplits', 'theTop', 'sav', 'lss', 'rrc', 'ballpit']
-    if (runRecapCategory.name == 'Other') {
-        grayButtons.forEach(page => {
-            document.getElementById(page + 'Button').classList.add('grayedOut')
-        })
-    } else {
-        grayButtons.forEach(page => {
-            document.getElementById(page + 'Button').classList.remove('grayedOut')
-        })
-    }
+    grayButtons.forEach(page => {
+        document.getElementById(page + 'Button').classList.toggle('grayedOut', runRecapCategory.name == 'Other')
+    })
 }
 document.querySelectorAll('select').forEach(elem => {
     elem.addEventListener('change', () => {
@@ -227,10 +215,8 @@ function categoryButtonClick(category, database) {
                 buttonID = 'dlcbaseFirst'
             }
         }
-        document.getElementById('allButtonDatabase')?.classList.remove('grayedOut')
-    } else {
-        document.getElementById('allButtonDatabase')?.classList.add('grayedOut')
     }
+    document.getElementById('allButtonDatabase')?.classList.toggle('grayedOut', !category)
     buttonID += 'Button'
     if (database) buttonID += 'Database'
     buttonClick(buttonID, buttonSection, 'selected')

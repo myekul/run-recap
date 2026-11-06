@@ -57,9 +57,9 @@
             },
             {
                 "name": "TwoTone Hop",
-                "time": 34.91,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/J3DOLwLluSY?t=4"
+                "time": 34.61,
+                "player": "Mulks",
+                "url": "https://youtu.be/w_vf0Awt7ak"
             },
             {
                 "name": "Acorn Maker Kill",
@@ -2832,14 +2832,20 @@
                 "time": 22.52,
                 "player": "graven_",
                 "url": "https://youtu.be/wDRbCJzP150"
+            },
+            {
+                "name": "Lunge, Pods",
+                "time": 22.72,
+                "player": "graven_",
+                "url": "https://youtu.be/z4WA-1s_-tg"
             }
         ],
         "baronessvonbonbon": [
             {
                 "name": "Waffle, Candy Corn, Cupcake",
-                "time": 25.33,
-                "player": "Yuka",
-                "url": "https://youtu.be/_Syd5_MMP00"
+                "time": "25.30",
+                "player": "graven_",
+                "url": "https://youtu.be/3U-CCBukoM8"
             },
             {
                 "name": "Waffle, Candy Corn, Gumball",
@@ -3132,9 +3138,9 @@
             },
             {
                 "name": "",
-                "time": 51.16,
-                "player": "Yuka",
-                "url": "https://youtu.be/_mMr0Npoii4"
+                "time": "50.70",
+                "player": "graven_",
+                "url": "https://youtu.be/NxRRTnJr2pk"
             }
         ],
         "kingdice": [
@@ -3148,9 +3154,9 @@
         "chipsbettigan": [
             {
                 "name": "",
-                "time": 10.93,
+                "time": "10.70",
                 "player": "graven_",
-                "url": "https://youtu.be/wJPHS_n2q0Y?t=16"
+                "url": "https://youtu.be/sY0y0UTgLn0"
             }
         ],
         "pipanddot": [
@@ -3322,9 +3328,9 @@
             },
             {
                 "name": "TwoTone Hop",
-                "time": 34.91,
-                "player": "HappyWolf",
-                "url": "https://youtu.be/J3DOLwLluSY?t=4"
+                "time": 34.61,
+                "player": "Mulks",
+                "url": "https://youtu.be/w_vf0Awt7ak"
             },
             {
                 "name": "Acorn Maker Kill",
@@ -3427,12 +3433,6 @@
         "goopylegrande": [
             {
                 "title": "Standard Strats"
-            },
-            {
-                "name": "Doubles",
-                "time": 27.49,
-                "player": "Quincely0",
-                "url": "https://youtu.be/jFegppA9nTc"
             },
             {
                 "name": "Transition Doubles",
@@ -4395,10 +4395,16 @@
                 "url": "https://youtu.be/eYCNjX6PrVE"
             },
             {
-                "name": "LDL",
+                "name": "LDL 2P",
                 "time": 51.34,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/rl9iJBaYxPM"
+            },
+            {
+                "name": "LDL 1P",
+                "time": 51.97,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/rnaIYg1TGk0"
             },
             {
                 "name": "LDS 1P",
@@ -4434,12 +4440,6 @@
                 "url": "https://youtu.be/RxvuqdW8hxk"
             },
             {
-                "name": "LSL 4P",
-                "time": 49.93,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/IxIEfCLBDmk"
-            },
-            {
                 "name": "LSL 3P",
                 "time": 49.84,
                 "player": "DaniStuff2345",
@@ -4453,10 +4453,28 @@
                 "url": "https://youtu.be/BQ_izsT3P5c"
             },
             {
-                "name": "DLS",
+                "name": "LDL",
+                "time": 50.29,
+                "player": "myekul",
+                "url": "https://youtu.be/e47OFe39QLA"
+            },
+            {
+                "name": "DLS 2P",
                 "time": "50.80",
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/Y93ZHSW0XN4"
+            },
+            {
+                "name": "DLS 1P",
+                "time": 51.44,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/5Z3fwoTyRAI"
+            },
+            {
+                "name": "S-LD",
+                "time": 51.99,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/KPEontdTXGQ"
             },
             {
                 "name": "L-LD",
@@ -4502,9 +4520,15 @@
             },
             {
                 "name": "L-LD",
-                "time": 51.23,
+                "time": 50.85,
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/4P_YzQSv_5Q"
+                "url": "https://youtu.be/5c0wpy3bKO4"
+            },
+            {
+                "name": "S-LS",
+                "time": 52.28,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/UIGN8hF5FYo"
             },
             {
                 "title": "2.5-cycle"
@@ -5906,16 +5930,6 @@
             }
         ]
     },
-    "1.1+ NG+": {
-        "thedevil": [
-            {
-                "name": "Bubbles Dragon",
-                "time": 37.94,
-                "player": "myekul",
-                "url": "https://youtu.be/pFYFx8x9Mx4"
-            }
-        ]
-    },
     "Legacy Low%": {
         "therootpack": [
             {
@@ -5998,6 +6012,20 @@
                 "time": 15.85,
                 "player": "Yuka",
                 "url": "https://youtu.be/vgp0RFk6uj4"
+            }
+        ],
+        "beppitheclown": [
+            {
+                "name": "Beppi's Kiss",
+                "time": 19.53,
+                "player": "Yuka",
+                "url": "https://youtu.be/e6JTPk6yrHY"
+            },
+            {
+                "name": "2-cycle",
+                "time": 20.16,
+                "player": "Yuka",
+                "url": "https://youtu.be/LUSaJ1zZ2mo"
             }
         ]
     },
@@ -6139,9 +6167,9 @@
         "ribbyandcroaks": [
             {
                 "name": "Punches, Tigers",
-                "time": 46,
-                "player": "Grondious",
-                "url": "https://www.twitch.tv/grondious/clip/PopularPeacefulEelStoneLightning"
+                "time": 46.67,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/4vJ11ZWWa7U"
             }
         ],
         "cagneycarnation": [
@@ -7097,31 +7125,13 @@
             }
         ]
     },
-    "100% NMG": {
+    "100% 1.1+": {
         "wernerwerman": [
             {
-                "name": "Cherry Bombs (5)",
-                "time": 35.97,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/4LHpsMNlb5k"
-            },
-            {
-                "name": "Cherry Bombs (6)",
-                "time": 35.55,
-                "player": "DaniStuff2345",
-                "url": "https://youtu.be/ETjgfvK-OAo"
-            },
-            {
-                "name": "Catapult",
-                "time": 36,
+                "name": "Charry Bombs (5)",
+                "time": 31.99,
                 "player": "myekul",
-                "url": "https://youtu.be/huIKOogXP8s"
-            },
-            {
-                "name": "Catapult, Charge",
-                "time": 39.32,
-                "player": "myekul",
-                "url": "https://youtu.be/FG5CLmHqYnI?t=1722"
+                "url": "https://youtu.be/qADIph_0U6I"
             }
         ],
         "calamaria": [
@@ -7150,6 +7160,109 @@
                 "url": "https://youtu.be/FG5CLmHqYnI?t=2055"
             }
         ],
+        "thedevil": [
+            {
+                "name": "Bubbles Dragon",
+                "time": 37.94,
+                "player": "myekul",
+                "url": "https://youtu.be/pFYFx8x9Mx4"
+            },
+            {
+                "name": "Ring Dragon",
+                "time": "39.30",
+                "player": "myekul",
+                "url": "https://youtu.be/VF_qyGhLZFY"
+            },
+            {
+                "name": "Clap Dragon",
+                "time": 43.65,
+                "player": "myekul",
+                "url": "https://youtu.be/RI1HSuNzLDw"
+            }
+        ],
+        "treetoptrouble": [
+            {
+                "name": "",
+                "time": 38.84,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/TEBNCgrrfEM"
+            }
+        ],
+        "funfairfever": [
+            {
+                "name": "",
+                "time": 47,
+                "player": "myekul",
+                "url": "https://youtu.be/Wa5IDX6vAA4?t=761"
+            }
+        ],
+        "funhousefrazzle": [
+            {
+                "name": "",
+                "time": "35.30",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/rL0zUYv7Xfg?t=1094"
+            }
+        ],
+        "ruggedridge": [
+            {
+                "name": "",
+                "time": "1:21.94",
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=1525"
+            }
+        ],
+        "perilouspiers": [
+            {
+                "name": "Octopus Skip (L/S/2/C)",
+                "time": 51.79,
+                "rta": 55.02,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/p00XFxruQ-o"
+            },
+            {
+                "name": "",
+                "time": "1:02",
+                "player": "myekul",
+                "url": "https://youtu.be/Wa5IDX6vAA4?t=1843"
+            }
+        ]
+    },
+    "100% NMG": {
+        "beppitheclown": [
+            {
+                "name": "",
+                "time": 53.41,
+                "player": "myekul",
+                "url": "https://youtu.be/khQxq0mCDsQ"
+            }
+        ],
+        "wernerwerman": [
+            {
+                "name": "Cherry Bombs (5)",
+                "time": 35.97,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/4LHpsMNlb5k"
+            },
+            {
+                "name": "Cherry Bombs (6)",
+                "time": 35.55,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/ETjgfvK-OAo"
+            },
+            {
+                "name": "Catapult",
+                "time": 36,
+                "player": "myekul",
+                "url": "https://youtu.be/huIKOogXP8s"
+            },
+            {
+                "name": "Catapult, Charge",
+                "time": 39.32,
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=1722"
+            }
+        ],
         "kingdice": [
             {
                 "name": "2-4-8",
@@ -7162,6 +7275,14 @@
                 "time": "4:47",
                 "player": "myekul",
                 "url": "https://youtu.be/Kygbgz38VtE?t=2427"
+            }
+        ],
+        "chipsbettigan": [
+            {
+                "name": "",
+                "time": 12.91,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/kyFxKw2PVds"
             }
         ],
         "thedevil": [
@@ -7244,36 +7365,12 @@
                 "url": "https://youtu.be/FG5CLmHqYnI?t=2532"
             }
         ],
-        "funfairfever":[
-            {
-                "name": "",
-                "time": 47,
-                "player": "myekul",
-                "url": "https://youtu.be/Wa5IDX6vAA4?t=761"
-            }
-        ],
-        "funhousefrazzle":[
+        "funhousefrazzle": [
             {
                 "name": "",
                 "time": 39.63,
                 "player": "myekul",
                 "url": "https://youtu.be/FG5CLmHqYnI?t=1052"
-            }
-        ],
-        "ruggedridge":[
-            {
-                "name": "",
-                "time": "1:21.94",
-                "player": "myekul",
-                "url": "https://youtu.be/FG5CLmHqYnI?t=1525"
-            }
-        ],
-        "perilouspiers":[
-            {
-                "name": "",
-                "time": "1:02",
-                "player": "myekul",
-                "url": "https://youtu.be/Wa5IDX6vAA4?t=1843"
             }
         ]
     },

@@ -280,6 +280,10 @@ function organizeAltStrats() {
         ['NMG', 'DLC+Base L/S DLC First', 'cagneycarnation'],
         ['NMG', 'DLC+Base L/S', 'baronessvonbonbon'],
         ['NMG', 'DLC+Base L/S DLC First', 'baronessvonbonbon'],
+        ['1.1+', '100% NMG', 'hildaberg'],
+        ['1.1+', '100% NMG', 'grimmatchstick'],
+        ['1.1+', '100% 1.1+', 'hildaberg'],
+        ['1.1+', '100% 1.1+', 'grimmatchstick'],
         ['1.1+ Low%', 'OG Charge', 'djimmithegreat'],
         ['DLC L/S', 'DLC OG Charge', 'mausoleum'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
@@ -302,6 +306,7 @@ function organizeAltStrats() {
     const dlcNoEsther = ['glumstonethegiant', 'mortimerfreeze', 'thehowlingaces', 'moonshinemob', 'chefsaltbaker']
     const dlcFirstRest = ['beppitheclown', 'grimmatchstick', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice', 'thedevil']
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
+    const oneHundredPercent = ['therootpack', 'ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles']
     copyBulk('1.1+', '1.1+ All Flags', bosses.slice(0, 19).map(boss => boss.id))
     copyBulk('1.1+ Low%', 'Legacy Low%', LOW_PERCENT)
     copyBulk('DLC L/S', 'DLC+Base L/S', dlcNoEsther)
@@ -312,6 +317,8 @@ function organizeAltStrats() {
     copyBulk('DLC+Base L/S', 'DLC+Base C/S', plane)
     copyBulk('NMG', 'NMG P/S', plane)
     copyBulk('NMG', 'NMG R/S', plane)
+    copyBulk('NMG', '100% NMG', oneHundredPercent)
+    copyBulk('1.1+', '100% 1.1+', oneHundredPercent)
     ALT_STRAT_CATEGORIES.forEach(categoryName => {
         const category = allCategories[categoryName]
         buttonID = category.className

@@ -1,5 +1,5 @@
 function mausCriteria() {
-    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || ['100% NMG', 'DLC OG Charge'].includes(altStratOther)))
+    return ['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (['Other'].includes(runRecapCategory.name) && (MISC_DLC.includes(altStratOther) || ['100% 1.1+', '100% NMG', 'DLC OG Charge'].includes(altStratOther)))
 }
 function altStatCriteria(level) {
     return level == 'baronessvonbonbon' && ['1.1+', 'DLC+Base C/S'].includes(runRecapCategory.tabName) || level == 'captainbrineybeard' && runRecapCategory.tabName == '1.1+'
@@ -372,7 +372,7 @@ function altStrats(query) {
     let HTMLContent_altStrats = ''
     altStratCategories.forEach((altStratCata, cataIndex) => {
         if (altStratCategories.length > 1) {
-            HTMLContent += `
+            HTMLContent_altStrats += `
             <tr>
                 <td colspan=10><div class='container gray' style='padding:6px 0'>${generateBoardTitle(cataNames[cataIndex])}</div></td>
             </tr>`
@@ -577,6 +577,7 @@ function userContributions(playerName) {
         altStratCategories.push(altStratCategory)
     }
     let num = 0
+    let HTMLContent_userContributions = ''
     altStratCategories.forEach((altStratCata, cataIndex) => {
         let strats = []
         for (const level in altStratCata) {

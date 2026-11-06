@@ -11,7 +11,7 @@ function modalSubmit() {
             bossSelectHTML += `</optgroup>`
         }
     })
-    if (runRecapCategory.name == 'Other' && ['1.1+ All Flags', '300%'].includes(altStratOther)) {
+    if (runRecapCategory.name == 'Other' && [ALL_RUNNGUNS].includes(altStratOther)) {
         const levels = altStratOther == '300%' ? OTHER_LEVELS : OTHER_LEVELS.slice(-5)
         bossSelectHTML += `<optgroup label='Other'>`
         levels.forEach(level => {
@@ -140,19 +140,14 @@ function handleAltStratDropdown() {
 }
 function checkSubmittable() {
     const button = document.getElementById('submitIL_uploadButton')
-    if (localStorage.getItem('username')
+    const submittable = localStorage.getItem('username')
         && document.getElementById('dropdown_submitIL_level').value != 'none'
         && document.getElementById('input_submitIL_time').value
         && !(document.getElementById('dropdown_submitIL_altStrat').value == 'other' && !document.getElementById('input_submitIL_other').value)
-        && document.getElementById('input_submitIL_url').value) {
-        button.classList.remove('grayedOut')
-        button.classList.add('pulseSize')
-        submitIL_readyToSubmit = true
-    } else {
-        button.classList.add('grayedOut')
-        button.classList.remove('pulseSize')
-        submitIL_readyToSubmit = false
-    }
+        && document.getElementById('input_submitIL_url').value
+    button.classList.toggle('grayedOut', !submittable)
+    button.classList.toggle('pulseSize', submittable)
+    submitIL_readyToSubmit = submittable
 }
 function submitIL() {
     if (submitIL_readyToSubmit) {
