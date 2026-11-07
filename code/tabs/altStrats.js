@@ -329,7 +329,7 @@ function altStratClick(level) {
 }
 function levelName(levelID) {
     const level = categoryLevels.find(level => level.info.id == levelID)
-    if (level) return category.info.name
+    if (level) return level.info.name
     const otherName = OTHER_LEVELS.find(otherLevel => levelID == otherLevel.toLowerCase().replaceAll(" ", ""))
     if (otherName) return otherName
     if (levelID == 'angelanddemon') return 'Angel & Demon'

@@ -283,7 +283,6 @@ function organizeAltStrats() {
         ['1.1+', '100% NMG', 'hildaberg'],
         ['1.1+', '100% NMG', 'grimmatchstick'],
         ['1.1+', '100% 1.1+', 'hildaberg'],
-        ['1.1+', '100% 1.1+', 'grimmatchstick'],
         ['Low% 1.1+', 'OG Charge', 'djimmithegreat'],
         ['DLC L/S', 'DLC OG Charge', 'mausoleum'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
