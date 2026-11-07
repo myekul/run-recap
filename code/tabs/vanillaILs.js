@@ -2,22 +2,21 @@ function generateVanillaILs() {
     let HTMLContent = ''
     if (commBest[runRecapCategory.tabName]) {
         HTMLContent += `<table class='shadow' style='margin:0 auto'>`
-        categories.forEach((category, categoryIndex) => {
-            let run
-            if (vanilla[runRecapCategory.tabName]) run = vanilla[runRecapCategory.tabName][category.info.id]
-            if (run) {
+        categoryLevels.forEach((level, levelIndex) => {
+            const IL = vanilla[runRecapCategory.tabName] ? vanilla[runRecapCategory.tabName][level.info.id] : null
+            if (IL) {
                 HTMLContent += `
-                <tr class='clickable ${getRowColor(categoryIndex)}' onclick="window.open('${run.url}', '_blank')">
-                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}' style='padding:0 3px'>${run.time}</td>
-                    <td>${getPlayerDisplay(allPlayers.find(player => player.name == run.player) || run.player, true)}</td>
-                    <td style='position:relative' class='${run.copy ? allCategories[run.copy]?.className ?? 'gray' : ''}'></td>
+                <tr class='clickable ${getRowColor(levelIndex)}' onclick="window.open('${IL.url}', '_blank')">
+                    <td class='${level.info.id}'><div class='container'>${getImage(level.info.id, 21)}</div></td>
+                    <td class='${level.info.id}' style='padding:0 3px'>${IL.time}</td>
+                    <td>${getPlayerDisplay(allPlayers.find(player => player.name == IL.player) || IL.player, true)}</td>
+                    <td style='position:relative' class='${IL.copy ? allCategories[IL.copy]?.className ?? 'gray' : ''}'></td>
                 </tr>`
             } else {
                 HTMLContent += `
-                <tr class='${getRowColor(categoryIndex)}'>
-                    <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                    <td class='${category.info.id}'></td>
+                <tr class='${getRowColor(levelIndex)}'>
+                    <td class='${level.info.id}'><div class='container'>${getImage(level.info.id, 21)}</div></td>
+                    <td class='${level.info.id}'></td>
                     <td></td>
                 </tr>`
             }

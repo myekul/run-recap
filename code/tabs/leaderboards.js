@@ -4,7 +4,7 @@ function generateLeaderboards() {
         const runs = runRecapCategory.runs.slice(0, 10)
         const newRuns = []
         runs.forEach((run, index) => {
-            newRuns.push({ run: run, playerIndex: index, categoryIndex: runRecapCategory.category })
+            newRuns.push({ run: run, playerIndex: index, levelIndex: runRecapCategory.category })
         })
         HTMLContent += `
         ${horiztonalCategories()}

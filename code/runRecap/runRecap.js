@@ -40,6 +40,17 @@ async function handleFile(event) {
                     }
                 }
                 changeCategory(category)
+                const fGradeLevels = categoryLevels.filter((level, levelIndex) => {
+                    const savLevel = getCupheadLevel(levelIndex)
+                    const time = savLevel?.bestTime
+                    if (!time || time == nullTime) return false
+                    const comparisonTime = savComparisonCollection[savComparison][levelIndex]
+                    return runRecapGrade(runRecapDelta(time, comparisonTime)).grade == 'F'
+                }).length
+                if (fGradeLevels > categoryLevels.length / 2) {
+                    savComparison = 'None'
+                    savComparisonText = 'None'
+                }
                 showTab('sav')
             }
         } catch (error) {
@@ -109,22 +120,22 @@ function runRecapGrade(delta) {
         Math.max(0, Math.min(index, grades.length - 1))
     ];
 }
-function runRecapDelta(runTime, comparisonTime) {
-    return Math.floor(runTime) - Math.floor(comparisonTime)
+function runRecapDelta(time, comparisonTime) {
+    return Math.floor(time) - Math.floor(comparisonTime)
 }
 function runRecap_chart(times, deltas, lss) {
     if (runRecap_savFile && !lss) {
         times = []
         deltas = []
-        categories.forEach((category, categoryIndex) => {
-            const level = getCupheadLevel(categoryIndex)
-            const runTime = level?.bestTime
-            category.runTime = runTime
-            const prevCategory = categories[categoryIndex - 1]
-            if (prevCategory) category.runTime += prevCategory.runTime
-            times.push(category.runTime)
-            const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
-            const delta = runRecapDelta(runTime, comparisonTime)
+        categoryLevels.forEach((level, levelIndex) => {
+            const savLevel = getCupheadLevel(levelIndex)
+            const time = savLevel?.bestTime
+            level.time = time
+            const prevCategory = categoryLevels[levelIndex - 1]
+            if (prevCategory) level.time += prevCategory.time
+            times.push(level.time)
+            const comparisonTime = savComparisonCollection[savComparison][levelIndex]
+            const delta = runRecapDelta(time, comparisonTime)
             deltas.push(delta)
         })
     }
@@ -145,7 +156,7 @@ function runRecap_chart(times, deltas, lss) {
             if (lss) {
                 colorClass = index >= getOffset() ? splitInfo[index].id : ''
             } else {
-                colorClass = categories[index].info.id
+                colorClass = categoryLevels[index].info.id
             }
             const color = colorClass ? getColorFromClass(colorClass) : ''
             // rows.push([split, deltas[index], `point { fill-color: ${color}; }`, getDelta(deltas[index])])
@@ -187,9 +198,9 @@ function runRecap_chart(times, deltas, lss) {
 function runRecapCopy() {
     let clipboardContent = ''
     if (globalTab == 'sav') {
-        categories.forEach((category, categoryIndex) => {
-            clipboardContent += `${getCupheadLevel(categoryIndex).bestTime.toString().split('.')[0] + '.' + getCupheadLevel(categoryIndex).bestTime.toString().split('.')[1].slice(0, 2)}${categoryIndex == categories.length - 1 ? '' : ', '}`
-        })
+        for (let i = 0; i < categoryLevels.length; i++) {
+            clipboardContent += `${getCupheadLevel(i).bestTime.toString().split('.')[0] + '.' + getCupheadLevel(i).bestTime.toString().split('.')[1].slice(0, 2)}${i == categoryLevels.length - 1 ? '' : ', '}`
+        }
     } else {
         const scenes = runRecap_rrcFile.attempts[rrcAttemptIndex].scenes
         clipboardContent = JSON.stringify(scenes)

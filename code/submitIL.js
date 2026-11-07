@@ -4,9 +4,9 @@ function modalSubmit() {
     isles.forEach(isle => {
         if (isle?.runRecapCategories?.length) {
             bossSelectHTML += `<optgroup label='${isle.name}'>`
-            isle.runRecapCategories.forEach(categoryIndex => {
-                const category = categories[categoryIndex]
-                bossSelectHTML += `<option value='${category.info.id}'>${category.info.name}</option>`
+            isle.runRecapCategories.forEach(levelIndex => {
+                const level = categoryLevels[levelIndex]
+                bossSelectHTML += `<option value='${level.info.id}'>${level.info.name}</option>`
             })
             bossSelectHTML += `</optgroup>`
         }

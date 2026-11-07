@@ -89,12 +89,12 @@ function databaseView(type, databaseIndex, player, time, categoryName) {
             .then(response => response.json())
             .then(data => {
                 runRecap_savFile = data
-                categories.forEach((category, categoryIndex) => {
-                    const level = getCupheadLevel(categoryIndex)
-                    level.bestTime = runRecap_database['sav'][databaseIndex].sav[categoryIndex]
-                    level.played = true
-                    level.completed = true
-                })
+                for (let i = 0; i < categoryLevels.length; i++) {
+                    const savLevel = getCupheadLevel(i)
+                    savLevel.bestTime = runRecap_database['sav'][databaseIndex].sav[i]
+                    savLevel.played = true
+                    savLevel.completed = true
+                }
                 if (!['theTop'].includes(globalTab)) {
                     showTab('sav')
                 } else {

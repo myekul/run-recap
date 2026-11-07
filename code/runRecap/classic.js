@@ -2,19 +2,18 @@ function classicView() {
     let HTMLContent_isles = ''
     assignIsles()
     if (globalTab == 'sav') {
-        const follies = getCupheadLevel(runNguns[0].levelID, true)
-        const treetop = getCupheadLevel(runNguns[1].levelID, true)
-        if (follies.bestTime != nullTime) {
-            HTMLContent_isles += `<div>`
-            if (follies.bestTime != nullTime && treetop.bestTime == nullTime) {
-                HTMLContent_isles += extraLevel('forestfollies', follies.bestTime)
+        HTMLContent_isles += `<div>`
+        runNguns.forEach(level => {
+            const levelObj = getCupheadLevel(level.levelID, true)
+            if (levelObj?.bestTime != nullTime) {
+                HTMLContent_isles += extraLevel(level.id, levelObj?.bestTime)
             }
-            const mausoleum = getCupheadLevel(mausoleumID, true)
-            if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
-                HTMLContent_isles += extraLevel('mausoleum', mausoleum.bestTime)
-            }
-            HTMLContent_isles += `</div>`
+        })
+        const mausoleum = getCupheadLevel(mausoleumID, true)
+        if (mausoleum.bestTime != nullTime && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
+            HTMLContent_isles += extraLevel('mausoleum', mausoleum.bestTime)
         }
+        HTMLContent_isles += `</div>`
     }
     isles.slice(0, 5).forEach((isle, index) => {
         HTMLContent_isles += isle.runRecapCategories.length ? isleHeader(isle) : ''
@@ -22,19 +21,6 @@ function classicView() {
             HTMLContent_isles += savBoss(object)
         })
         if (isle.runRecapCategories.length) HTMLContent_isles += `</table>`
-        // const levels = [['forestfollies', 'treetoptrouble'], ['funfairfever', 'funhousefrazzle'], ['ruggedridge', 'perilouspiers']]
-        // levels.forEach((levelPair, levelIndex) => {
-        //     if (index == levelIndex) {
-        //         HTMLContent += `<div style='padding-top:15px'>`
-        //         levelPair.forEach(level => {
-        //             const levelObj = getCupheadLevel(runNguns[level], true)
-        //             if (levelObj.bestTime != nullTime && !(level == 'forestfollies' && treetop.bestTime == nullTime)) {
-        //                 HTMLContent += extraLevel(level, levelObj.bestTime)
-        //             }
-        //         })
-        //         HTMLContent += `</div>`
-        //     }
-        // })
         if (isle.runRecapCategories.length) HTMLContent_isles += `</div>`
     })
     return `
@@ -46,40 +32,40 @@ function classicView() {
         ${HTMLContent_isles}
     </div>`
 }
-function savBoss(categoryIndex) {
-    const category = categories[categoryIndex]
-    let level
-    let runTime
+function savBoss(levelIndex) {
+    const category = categoryLevels[levelIndex]
+    let savLevel
+    let time
     if (globalTab == 'sav') {
-        level = getCupheadLevel(categoryIndex)
-        runTime = level?.bestTime
+        savLevel = getCupheadLevel(levelIndex)
+        time = savLevel?.bestTime
     } else {
-        runTime = rrcCurrentAttempt.bosses[categoryIndex]?.levelTime
+        time = rrcCurrentAttempt.bosses[levelIndex]?.levelTime
     }
-    const prevCategory = categories[categoryIndex - 1]
-    if (prevCategory) category.runTime += prevCategory.runTime
-    const done = runTime && runTime != nullTime
-    const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
-    const delta = runRecapDelta(runTime, comparisonTime)
+    const prevCategory = categoryLevels[levelIndex - 1]
+    if (prevCategory) category.time += prevCategory.time
+    const done = time && time != nullTime
+    const comparisonTime = savComparison != 'None' ? savComparisonCollection[savComparison][levelIndex] : ''
+    const delta = runRecapDelta(time, comparisonTime)
     const grade = done ? runRecapGrade(delta) : ''
     let comparisonContent = `<div>${secondsToHMS(comparisonTime)}</div>`
     if (savComparison == 'Top Bests') {
         comparisonContent += `<div class='container'>`
-        savComparisonCollection.topBestPlayers[categoryIndex].forEach(playerIndex => {
+        savComparisonCollection.topBestPlayers[levelIndex].forEach(playerIndex => {
             const player = players[playerIndex]
             comparisonContent += getPlayerIcon(player, 16)
         })
         comparisonContent += `</div>`
     }
-    let cellContent = done ? runRecapIL(runTime, categoryIndex) : runRecapInput(categoryIndex)
+    let cellContent = done ? runRecapIL(time, levelIndex) : runRecapInput(levelIndex)
     if (!done && globalTab == 'rrc') cellContent = '???'
     return `
-    <tr class='${getRowColor(categoryIndex)}'>
-        <td class='${grade.className}' style='text-align:left;width:24px'><span>${done ? deltaType ? '' : grade.grade : ''}</span></td>
+    <tr class='${getRowColor(levelIndex)}'>
+        ${savComparison != 'None' ? `<td class='${grade.className}' style='text-align:left;width:24px'><span>${done ? deltaType ? '' : grade.grade : ''}</span></td>` : ''}
         <td class='container ${category.info.id}' style='min-width:36px'>${getImage(category.info.id)}</td>
-        <td id='runRecap_${categoryIndex}' class='${done ? category.info.id : ''}' style='width:85px'>${cellContent}</td>
-        <td class='${redGreen(delta)}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>
-        <td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>
+        <td id='runRecap_${levelIndex}' class='${done ? category.info.id : ''}' style='width:85px'>${cellContent}</td>
+        ${savComparison != 'None' ? `<td class='${redGreen(delta)}' style='font-size:90%;width:28px'><span>${done ? getDelta(delta) : ''}</span></td>` : ''}
+        ${savComparison != 'None' ? `<td class='dim' style='font-size:90%;width:30px'>${done ? comparisonContent : ''}</td>` : ''}
     </tr>`
 }
 function extraLevel(name, time) {
@@ -100,15 +86,15 @@ function isleHeader(isle) {
                 <td colspan=2></td>
             </tr>`
 }
-function runRecapIL(runTime, categoryIndex) {
-    return `<div ${globalTab == 'sav' ? `class='grow' onclick="runRecapPlaceholder('${runTime}',${categoryIndex})"` : ''} style='font-size:130%'>${secondsToHMS(runTime, true)}</div>`
+function runRecapIL(time, levelIndex) {
+    return `<div ${globalTab == 'sav' ? `class='grow' onclick="runRecapPlaceholder('${time}',${levelIndex})"` : ''} style='font-size:130%'>${secondsToHMS(time, true)}</div>`
 }
-function runRecapInput(categoryIndex, value) {
-    return `<input id='input_runRecapIL_${categoryIndex}' type='text' placeholder='X:XX' ${value ? `value='${value}'` : ''} style='font-size:100%;width:45px' onblur="updateRunRecapIL(${categoryIndex})">`
+function runRecapInput(levelIndex, value) {
+    return `<input id='input_runRecapIL_${levelIndex}' type='text' placeholder='X:XX' ${value ? `value='${value}'` : ''} style='font-size:100%;width:45px' onblur="updateRunRecapIL(${levelIndex})">`
 }
-function runRecapPlaceholder(runTime, categoryIndex) {
-    document.getElementById('runRecap_' + categoryIndex).innerHTML = runRecapInput(categoryIndex, runTime)
-    const input = document.getElementById('input_runRecapIL_' + categoryIndex)
+function runRecapPlaceholder(time, levelIndex) {
+    document.getElementById('runRecap_' + levelIndex).innerHTML = runRecapInput(levelIndex, time)
+    const input = document.getElementById('input_runRecapIL_' + levelIndex)
     input.focus()
     input.setSelectionRange(0, input.value.length)
 }

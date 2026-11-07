@@ -74,16 +74,16 @@ function bossSelect() {
     isles.forEach(isle => {
         if (isle.runRecapCategories.length) {
             HTMLContent += `<table class='shadow'><tr class='background2'>`
-            isle.runRecapCategories.forEach(categoryIndex => {
-                const category = categories[categoryIndex]
-                HTMLContent += altStratHeader(category.info.id)
+            isle.runRecapCategories.forEach(levelIndex => {
+                const level = categoryLevels[levelIndex]
+                HTMLContent += altStratHeader(level.info.id)
             })
             HTMLContent += `</tr><tr>`
-            isle.runRecapCategories.forEach(categoryIndex => {
-                const category = categories[categoryIndex]
+            isle.runRecapCategories.forEach(levelIndex => {
+                const level = categoryLevels[levelIndex]
                 HTMLContent += `
-                    <td style='width:36px' class='grow ${category.info.id} ${category.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${category.info.id}')">
-                        <div>${getImage(category.info.id)}</div>
+                    <td style='width:36px' class='grow ${level.info.id} ${level.info.id == altStratLevel ? 'selected' : ''}' onclick="altStratClick('${level.info.id}')">
+                        <div>${getImage(level.info.id)}</div>
                     </td>`
             })
             HTMLContent += `</tr></table>`
@@ -210,16 +210,16 @@ function altStrat_topContributors(root, level) {
 function altStrat_bestTimes(root) {
     let viableCategory
     let HTMLContent_bestTimes = ''
-    categories.forEach((category, categoryIndex) => {
+    categoryLevels.forEach((level, levelIndex) => {
         let altGroup = []
         if (altStratsAll) {
             for (const cata in alt) {
-                if (alt[cata][category.info?.id]) {
-                    altGroup.push(...alt[cata][category.info.id].filter(IL => !IL.copy))
+                if (alt[cata][level.info?.id]) {
+                    altGroup.push(...alt[cata][level.info.id].filter(IL => !IL.copy))
                 }
             }
         } else {
-            altGroup = altStratCategory[category.info.id]
+            altGroup = altStratCategory[level.info.id]
         }
         if (altGroup) {
             let fastest = altGroup[0]
@@ -239,9 +239,9 @@ function altStrat_bestTimes(root) {
                 }
             })
             HTMLContent_bestTimes += `
-            <tr class='clickable ${getRowColor(categoryIndex)}' onclick="window.open('${fastest.url}', '_blank')">
-                <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                <td class='${category.info.id}' style='padding:0 3px'>${fastest.time}</td>
+            <tr class='clickable ${getRowColor(levelIndex)}' onclick="window.open('${fastest.url}', '_blank')">
+                <td class='${level.info.id}'><div class='container'>${getImage(level.info.id, 21)}</div></td>
+                <td class='${level.info.id}' style='padding:0 3px'>${fastest.time}</td>
                 <td>${getPlayerDisplay(allPlayers.find(player => player.name == fastest.player) || fastest.player, true)}</td>
                 <td style='position:relative' class='${fastest.copy ? allCategories[fastest.copy]?.className ?? 'gray' : ''}'>
                     ${viable && !altStratsAll ? `<div class='dim' style='position: absolute;margin-left: 10px;transform: translateY(-50%);' onmouseover="runViableToast('${fastest.viable}','${trueFastest.time}','${trueFastest.player}')">${fontAwesome('info-circle')}</div>` : ''}
@@ -249,9 +249,9 @@ function altStrat_bestTimes(root) {
             </tr>`
         } else {
             HTMLContent_bestTimes += `
-            <tr class='${getRowColor(categoryIndex)}'>
-                <td class='${category.info.id}'><div class='container'>${getImage(category.info.id, 21)}</div></td>
-                <td class='${category.info.id}'></td>
+            <tr class='${getRowColor(levelIndex)}'>
+                <td class='${level.info.id}'><div class='container'>${getImage(level.info.id, 21)}</div></td>
+                <td class='${level.info.id}'></td>
                 <td></td>
             </tr>`
         }
@@ -327,14 +327,14 @@ function altStratClick(level) {
     playSound('move')
     action()
 }
-function levelName(level) {
-    const category = categories.find(category => category.info.id == level)
-    if (category) return category.info.name
-    const otherName = OTHER_LEVELS.find(otherLevel => level == otherLevel.toLowerCase().replaceAll(" ", ""))
+function levelName(levelID) {
+    const level = categoryLevels.find(level => level.info.id == levelID)
+    if (level) return category.info.name
+    const otherName = OTHER_LEVELS.find(otherLevel => levelID == otherLevel.toLowerCase().replaceAll(" ", ""))
     if (otherName) return otherName
-    if (level == 'angelanddemon') return 'Angel & Demon'
-    if (level == 'mausoleum') return 'Mausoleum'
-    return OTHER_NAMES[level]
+    if (levelID == 'angelanddemon') return 'Angel & Demon'
+    if (levelID == 'mausoleum') return 'Mausoleum'
+    return OTHER_NAMES[levelID]
 }
 function altStrats(query) {
     if (!altStratsAll) {
@@ -434,13 +434,13 @@ function altStrats(query) {
     })
     let HTMLContent_tas = ''
     if (runRecapCategory.name == '1.1+' && categoryNames.includes(query) && !altStratsAll) {
-        const categoryIndex = categories.findIndex(category => category.info.id == query)
+        const levelIndex = categoryLevels.findIndex(level => level.info.id == query)
         let HTMLContent_tasRows = '';
         ['Main', 'Clean', 'Debug'].forEach((vid, vidIndex) => {
             HTMLContent_tasRows += `
             <tr>
                 <td colspan=2 class='background2 grow' style='font-size:90%'>
-                ${getAnchor(runRecapCategory.tasLinks[vidIndex] + '&t=' + runRecapCategory.tasTimestamps[categoryIndex] + 's')}
+                ${getAnchor(runRecapCategory.tasLinks[vidIndex] + '&t=' + runRecapCategory.tasTimestamps[levelIndex] + 's')}
                 <span class='dim'>${fontAwesome('video-camera')}</span> ${vid}</a>
                 </td>
             </tr>`
@@ -451,7 +451,7 @@ function altStrats(query) {
                 <td class='container gray' style='gap:3px;padding:3px;width:75px'>${fontAwesome('flask')}TAS</td>
             </tr>
             <tr>
-                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[categoryIndex]}</td>
+                <td class='${query}' style='padding:0 5px'>${runRecapCategory.tas[levelIndex]}</td>
             </tr>
             ${HTMLContent_tasRows}
         </table>`

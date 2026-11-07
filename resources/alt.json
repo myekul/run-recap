@@ -3123,9 +3123,9 @@
             },
             {
                 "name": "",
-                "time": 50.09,
+                "time": 49.47,
                 "player": "graven_",
-                "url": "https://youtu.be/2Nfy6k6Gpa8"
+                "url": "https://youtu.be/QjxEbKeQARc"
             },
             {
                 "name": "Bad Ghoul RNG",
@@ -5565,7 +5565,7 @@
             }
         ]
     },
-    "1.1+ All Flags": {
+    "All Flags 1.1+": {
         "treetoptrouble": [
             {
                 "name": "",
@@ -5613,7 +5613,7 @@
             }
         ]
     },
-    "1.1+ Low%": {
+    "Low% 1.1+": {
         "therootpack": [
             {
                 "name": "",
@@ -5930,7 +5930,7 @@
             }
         ]
     },
-    "Legacy Low%": {
+    "Low% Legacy": {
         "therootpack": [
             {
                 "name": "",
@@ -7126,6 +7126,51 @@
         ]
     },
     "100% 1.1+": {
+        "djimmithegreat": [
+            {
+                "title": "Nukeless"
+            },
+            {
+                "name": "Gems",
+                "time": "1:06.29",
+                "rta": "1:12.27",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/87sjqKOmTeY"
+            },
+            {
+                "title": "1 Nuke"
+            },
+            {
+                "name": "Gems",
+                "time": "1:05.62",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/Nds19oTMQYU"
+            }
+        ],
+        "grimmatchstick": [
+            {
+                "name": "",
+                "time": "42.60",
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/elHsEWL1X64"
+            }
+        ],
+        "rumorhoneybottoms": [
+            {
+                "name": "Middle",
+                "time": 32.95,
+                "rta": "35.60",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/cWEyHhfdQO0"
+            },
+            {
+                "name": "Orbs",
+                "time": 38.92,
+                "rta": 40.11,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/o1PdDwhs1SE"
+            }
+        ],
         "wernerwerman": [
             {
                 "name": "Charry Bombs (5)",
@@ -7136,28 +7181,18 @@
         ],
         "calamaria": [
             {
-                "name": "Turtle, Ghosts, Seahorse",
-                "time": 35,
-                "player": "Spaceboy321",
-                "url": "https://youtu.be/weAra8Nr8nc"
+                "name": "Seahorse, Ghosts, Pufferfish",
+                "time": "38.40",
+                "rta": "46.40",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/N3nxdUGYYEs"
             },
             {
-                "name": "Seahorse, Red Fish, Turtle",
-                "time": 45,
-                "player": "myekul",
-                "url": "https://youtu.be/Wa5IDX6vAA4?t=1932"
-            },
-            {
-                "name": "Ghosts, Turtle, Red Fish",
-                "time": 48,
-                "player": "myekul",
-                "url": "https://youtu.be/Kygbgz38VtE?t=2012"
-            },
-            {
-                "name": "Pufferfish, Ghosts, Turtle, Yellow Fish",
-                "time": 50.02,
-                "player": "myekul",
-                "url": "https://youtu.be/FG5CLmHqYnI?t=2055"
+                "name": "Ghosts, Seahorse",
+                "time": 39.05,
+                "rta": 47.36,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/ef7_9SwnthU"
             }
         ],
         "thedevil": [
@@ -7191,34 +7226,45 @@
         "funfairfever": [
             {
                 "name": "",
-                "time": 47,
-                "player": "myekul",
-                "url": "https://youtu.be/Wa5IDX6vAA4?t=761"
+                "time": 40.95,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/90TTzr6cwLs"
             }
         ],
         "funhousefrazzle": [
             {
-                "name": "",
-                "time": "35.30",
+                "name": "Whetstone",
+                "time": 33.32,
                 "player": "GamerAttack27",
-                "url": "https://youtu.be/rL0zUYv7Xfg?t=1094"
+                "url": "https://youtu.be/4MJVgQd6gFo"
             }
         ],
         "ruggedridge": [
             {
                 "name": "",
-                "time": "1:21.94",
-                "player": "myekul",
-                "url": "https://youtu.be/FG5CLmHqYnI?t=1525"
+                "time": "1:21.80",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/7O33RUokf3w"
             }
         ],
         "perilouspiers": [
             {
-                "name": "Octopus Skip (L/S/2/C)",
-                "time": 51.79,
-                "rta": 55.02,
+                "title": "Octopus Skip (SA2 / Coffee)"
+            },
+            {
+                "name": "",
+                "time": 47.73,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/vPZw6MIE3kA"
+            },
+            {
+                "name": "No Early Parries",
+                "time": 51.59,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/p00XFxruQ-o"
+                "url": "https://youtu.be/0a8UN06ebXw"
+            },
+            {
+                "title": "Standard Strats"
             },
             {
                 "name": "",
@@ -7261,6 +7307,32 @@
                 "time": 39.32,
                 "player": "myekul",
                 "url": "https://youtu.be/FG5CLmHqYnI?t=1722"
+            }
+        ],
+        "calamaria": [
+            {
+                "name": "Turtle, Ghosts, Seahorse",
+                "time": 35,
+                "player": "Spaceboy321",
+                "url": "https://youtu.be/weAra8Nr8nc"
+            },
+            {
+                "name": "Seahorse, Red Fish, Turtle",
+                "time": 45,
+                "player": "myekul",
+                "url": "https://youtu.be/Wa5IDX6vAA4?t=1932"
+            },
+            {
+                "name": "Ghosts, Turtle, Red Fish",
+                "time": 48,
+                "player": "myekul",
+                "url": "https://youtu.be/Kygbgz38VtE?t=2012"
+            },
+            {
+                "name": "Pufferfish, Ghosts, Turtle, Yellow Fish",
+                "time": 50.02,
+                "player": "myekul",
+                "url": "https://youtu.be/FG5CLmHqYnI?t=2055"
             }
         ],
         "kingdice": [
@@ -7363,6 +7435,12 @@
                 "time": 46.95,
                 "player": "myekul",
                 "url": "https://youtu.be/FG5CLmHqYnI?t=2532"
+            },
+            {
+                "name": "Dragon Clap",
+                "time": 48.25,
+                "player": "GamerAttack27",
+                "url": "https://youtu.be/Lua_2O-AF_8?t=2506"
             }
         ],
         "funhousefrazzle": [

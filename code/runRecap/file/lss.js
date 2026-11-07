@@ -41,10 +41,10 @@ function lssView() {
     // Offset for Follies, Mausoleum, Chalice Tutorial
     const splits = []
     const deltas = []
-    for (let index = 0; index < runRecap_lssFile.pbSplits.length && index < categories.length + getOffset(); index++) {
+    for (let index = 0; index < runRecap_lssFile.pbSplits.length && index < categoryLevels.length + getOffset(); index++) {
         const currentSegment = segmentComparison(currentRun, index, true)
         const comparisonSegment = segmentComparison(comparison, index)
-        const categoryIndex = index - getOffset()
+        const levelIndex = index - getOffset()
         const delta = currentSegment - comparisonSegment
         const trueDelta = Math.trunc(delta * 100) / 100
         const grade = runRecapGrade(trueDelta)
@@ -73,15 +73,15 @@ function lssView() {
         if (runRecap_savFile) {
             HTMLContent += `<td style='padding:0 20px'></td>`
             if (index >= getOffset()) {
-                const level = getCupheadLevel(categoryIndex)
-                const runTime = level?.bestTime
-                const comparisonTime = savComparisonCollection[savComparison][categoryIndex]
-                const delta = runRecapDelta(runTime, comparisonTime)
+                const savLevel = getCupheadLevel(levelIndex)
+                const time = savLevel?.bestTime
+                const comparisonTime = savComparisonCollection[savComparison][levelIndex]
+                const delta = runRecapDelta(time, comparisonTime)
                 const ILgrade = runRecapGrade(delta)
                 let comparisonContents = `<div class='container'>`
                 if (savComparison == 'Top Bests') {
                     comparisonContents += `<div class='container' style='padding-right:6px'>`
-                    savComparisonCollection.topBestPlayers[categoryIndex].forEach(playerIndex => {
+                    savComparisonCollection.topBestPlayers[levelIndex].forEach(playerIndex => {
                         const player = players[playerIndex]
                         comparisonContents += getPlayerIcon(player, 24)
                     })
@@ -91,26 +91,26 @@ function lssView() {
                 HTMLContent += `
                 <td class='${ILgrade.className}' style='padding:0 5px;text-align:left'><span>${ILgrade.grade}</span></td>
                 ${image}
-                <td class='${className}' style='padding:0 10px;font-size:120%'>${runTime == nullTime ? '-' : secondsToHMS(runTime, true)}</td>
-                <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${runTime == nullTime ? '-' : getDelta(delta)}</span></td>
+                <td class='${className}' style='padding:0 10px;font-size:120%'>${time == nullTime ? '-' : secondsToHMS(time, true)}</td>
+                <td class='${redGreen(delta)}' style='padding:0 5px;font-size:90%'><span>${time == nullTime ? '-' : getDelta(delta)}</span></td>
                 <td class='dim' style='padding:0 10px;font-size:90%'>${comparisonContents}</td>`
             } else if (index == 2) {
                 HTMLContent += `<td colspan=5></td>`
             } else {
                 const levelID = index == 0 ? runNguns[0].levelID : mausoleumID
-                const level = getCupheadLevel(levelID, true)
+                const savLevel = getCupheadLevel(levelID, true)
                 HTMLContent += `
-                <td>${level.bestTime != nullTime ? image : ''}</td>
-                <td>${level.bestTime != nullTime ? secondsToHMS(level.bestTime, true) : ''}</td>
+                <td>${savLevel.bestTime != nullTime ? image : ''}</td>
+                <td>${savLevel.bestTime != nullTime ? secondsToHMS(savLevel.bestTime, true) : ''}</td>
                 <td></td>
                 <td></td>`
             }
         }
         HTMLContent += `</tr>`
         if (index >= getOffset()) {
-            const category = categories[categoryIndex]
-            const nextCategory = categories[categoryIndex + 1]
-            if (nextCategory && category.info.isle != nextCategory?.info.isle) {
+            const level = categoryLevels[levelIndex]
+            const nextLevel = categoryLevels[levelIndex + 1]
+            if (nextLevel && level.info.isle != nextLevel?.info.isle) {
                 HTMLContent += `<tr style='height:20px'></tr>`
             }
         }
@@ -264,8 +264,8 @@ function read_lss(content) {
 }
 function runRecap_lss_splitInfo() {
     splitInfo = []
-    for (let index = 0; index < commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'].length && index < categories.length + getOffset(); index++) {
-        const categoryIndex = index - getOffset()
+    for (let index = 0; index < commBest[runRecapCategory.tabName][splitBefore ? 'before' : 'after'].length && index < categoryLevels.length + getOffset(); index++) {
+        const levelIndex = index - getOffset()
         if (index == 0) {
             splitInfo.push({ id: 'runnguns/forestfollies', name: 'Forest Follies', isle: null })
         } else if (index == 1 && ['DLC', 'DLC+Base'].includes(runRecapCategory.name)) {
@@ -273,9 +273,9 @@ function runRecap_lss_splitInfo() {
         } else if (index == 2 && runRecapCategory.shot1 == 'charge') {
             splitInfo.push({ id: 'other/chalicetutorial', name: 'Chalice Tutorial', isle: null })
         } else {
-            const category = categories[categoryIndex]
-            if (category) {
-                splitInfo.push({ id: category.info.id, name: category.name, isle: category.info.isle })
+            const level = categoryLevels[levelIndex]
+            if (level) {
+                splitInfo.push({ id: level.info.id, name: level.name, isle: level.info.isle })
             }
         }
     }

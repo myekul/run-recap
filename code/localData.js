@@ -263,16 +263,16 @@ function organizeAltStrats() {
     }
     const chunks = [
         ['1.1+', 'Legacy', 'forestfollies'],
-        ['1.1+', '1.1+ All Flags', 'forestfollies'],
+        ['1.1+', 'All Flags 1.1+', 'forestfollies'],
         ['1.1+', 'OG Charge', 'hildaberg'],
-        ['1.1+', '1.1+ Low%', 'hildaberg'],
+        ['1.1+', 'Low% 1.1+', 'hildaberg'],
         ['1.1+', 'NMG', 'hildaberg'],
         ['1.1+', 'NMG', 'grimmatchstick'],
         ['1.1+', 'NMG', 'rumorhoneybottoms'],
         ['1.1+', 'DLC+Base L/S', 'hildaberg'],
         ['1.1+', 'DLC+Base L/S DLC First', 'hildaberg'],
         ['1.1+ Simple', 'Legacy Simple', 'hildaberg'],
-        ['Legacy', 'Legacy Low%', 'hildaberg'],
+        ['Legacy', 'Low% Legacy', 'hildaberg'],
         ['NMG', 'DLC+Base L/S', 'goopylegrande'],
         ['NMG', 'DLC+Base L/S', 'therootpack'],
         ['NMG', 'DLC+Base L/S', 'ribbyandcroaks'],
@@ -284,7 +284,7 @@ function organizeAltStrats() {
         ['1.1+', '100% NMG', 'grimmatchstick'],
         ['1.1+', '100% 1.1+', 'hildaberg'],
         ['1.1+', '100% 1.1+', 'grimmatchstick'],
-        ['1.1+ Low%', 'OG Charge', 'djimmithegreat'],
+        ['Low% 1.1+', 'OG Charge', 'djimmithegreat'],
         ['DLC L/S', 'DLC OG Charge', 'mausoleum'],
         ['DLC Expert', '300%', 'glumstonethegiant'],
         ['DLC Expert', '300%', 'mortimerfreeze'],
@@ -307,8 +307,8 @@ function organizeAltStrats() {
     const dlcFirstRest = ['beppitheclown', 'grimmatchstick', 'rumorhoneybottoms', 'sallystageplay', 'wernerwerman', 'captainbrineybeard', 'phantomexpress', 'kingdice', 'thedevil']
     const plane = ['hildaberg', 'wallywarbles', 'djimmithegreat', 'drkahlsrobot', 'calamaria']
     const oneHundredPercent = ['therootpack', 'ribbyandcroaks', 'goopylegrande', 'cagneycarnation', 'baronessvonbonbon', 'wallywarbles']
-    copyBulk('1.1+', '1.1+ All Flags', bosses.slice(0, 19).map(boss => boss.id))
-    copyBulk('1.1+ Low%', 'Legacy Low%', LOW_PERCENT)
+    copyBulk('1.1+', 'All Flags 1.1+', bosses.slice(0, 19).map(boss => boss.id))
+    copyBulk('Low% 1.1+', 'Low% Legacy', LOW_PERCENT)
     copyBulk('DLC L/S', 'DLC+Base L/S', dlcNoEsther)
     copyBulk('DLC L/S', 'DLC+Base L/S DLC First', dlc)
     copyBulk('DLC C/S', 'DLC+Base C/S', dlc)
@@ -369,8 +369,8 @@ function copyDuplicate(copy, pasteArray, boss) {
         alt[category][boss] = alt[copy][boss].map(strat => ({ ...strat, copy: copy }))
     })
 }
-function organizeCategories() {
-    categories = []
+function organizeCategoryLevels() {
+    categoryLevels = []
     categoryNames = []
     bossesCopy = [...bosses]
     if (runRecapCategory.name == 'DLC' || (runRecapCategory.name == 'Other' && JUST_DLC.includes(altStratOther))) {
@@ -393,16 +393,16 @@ function organizeCategories() {
         bossesCopy.unshift(elem);
     }
     bossesCopy.forEach(boss => {
-        categories.push({ name: boss.name, info: boss, runs: [] })
+        categoryLevels.push({ name: boss.name, info: boss, runs: [] })
         categoryNames.push(boss.id)
     })
 }
 function loadRunViableILs() {
     players.forEach(player => {
-        player.ILs = new Array(categories.length).fill(0)
+        player.ILs = new Array(categoryLevels.length).fill(0)
     })
     const numRuns = runRecapCategory.topRuns.length
-    categories.forEach(category => {
+    categoryLevels.forEach(category => {
         const runViableBoss = runViable[runRecapCategory.tabName][category.info.id]
         const time = runViableBoss.time
         const ILs = runViableBoss.ILs
@@ -420,7 +420,7 @@ function loadRunViableILs() {
                 playerNames.add(player.name)
                 if (playerNames.size > initialSize) {
                     const playerCopy = { ...player }
-                    playerCopy.ILs = new Array(categories.length).fill(0)
+                    playerCopy.ILs = new Array(categoryLevels.length).fill(0)
                     players.push(playerCopy)
                     return true
                 }
@@ -431,32 +431,32 @@ function loadRunViableILs() {
     savComparisonCollection = {
         "Top Average": [],
         "Top 3 Average": [],
-        "Top Bests": new Array(categories.length).fill(Infinity),
-        topBestPlayers: new Array(categories.length).fill(null),
+        "Top Bests": new Array(categoryLevels.length).fill(Infinity),
+        topBestPlayers: new Array(categoryLevels.length).fill(null),
         "Theory Run": [],
         "Run Viable ILs": []
     }
     runRecapCategory.topRuns.forEach((run, index) => {
         savComparisonCollection['Player ' + (index)] = run.igt
     })
-    categories.forEach((category, categoryIndex) => {
+    categoryLevels.forEach((level, levelIndex) => {
         let topSum = 0
         let top3Sum = 0
         runRecapCategory.topRuns.forEach((run, index) => {
-            const time = run.igt[categoryIndex]
+            const time = run.igt[levelIndex]
             topSum += time
             if (index < 3) top3Sum += time
-            if (Math.floor(time) < savComparisonCollection['Top Bests'][categoryIndex]) {
-                savComparisonCollection['Top Bests'][categoryIndex] = Math.floor(time)
-                savComparisonCollection.topBestPlayers[categoryIndex] = [index]
-            } else if (Math.floor(time) == savComparisonCollection['Top Bests'][categoryIndex]) {
-                savComparisonCollection.topBestPlayers[categoryIndex].push(index)
+            if (Math.floor(time) < savComparisonCollection['Top Bests'][levelIndex]) {
+                savComparisonCollection['Top Bests'][levelIndex] = Math.floor(time)
+                savComparisonCollection.topBestPlayers[levelIndex] = [index]
+            } else if (Math.floor(time) == savComparisonCollection['Top Bests'][levelIndex]) {
+                savComparisonCollection.topBestPlayers[levelIndex].push(index)
             }
         })
         savComparisonCollection['Top Average'].push(topSum / numRuns)
         savComparisonCollection['Top 3 Average'].push(top3Sum / (numRuns > 3 ? 3 : numRuns))
-        savComparisonCollection['Theory Run'].push((top3Sum + categories[categoryIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
-        savComparisonCollection['Run Viable ILs'].push(category.runs[0].score)
+        savComparisonCollection['Theory Run'].push((top3Sum + categoryLevels[levelIndex].runs[0].score) / ((numRuns > 3 ? 3 : numRuns) + 1))
+        savComparisonCollection['Run Viable ILs'].push(level.runs[0].score)
     })
     if (runRecapCategory.name == '1.1+') savComparisonCollection['TAS'] = runRecapCategory.tas
     commSob = []

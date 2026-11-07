@@ -11,7 +11,7 @@ const rrcComparisonInfo = {
     'Top 3 Average': "Average of top 3 players' segment times in their PBs",
     'Top Bests': "Best of top players' segment times in their PBs"
 }
-const savComparisonOptions = ['Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS']
+const savComparisonOptions = ['None', 'Top Average', 'Top 3 Average', 'Top Bests', 'Theory Run', 'Run Viable ILs', 'TAS']
 const rrcComparisonOptions = ['None', 'Top Average', 'Top 3 Average', 'Top Bests']
 function comparisonPopup(type) {
     const comparisonInfo = type == 'sav' ? savComparisonInfo : rrcComparisonInfo

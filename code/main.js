@@ -65,7 +65,7 @@ function action() {
     } else {
         hide('runRecap_example_div')
         if (runRecap_savFile) {
-            if (getCupheadLevel(categories.length - 1).completed) {
+            if (getCupheadLevel(categoryLevels.length - 1).completed) {
                 show('upload_div')
             } else {
                 hide('upload_div')
@@ -194,7 +194,7 @@ function changeCategory(categoryName = runRecapCategory.tabName, forceHome) {
     updateBoardTitle()
     const musicID = ['DLC', 'DLC+Base'].includes(runRecapCategory.name) ? 'L6T3fpUGSmE' : 'cdvSNkW3Uyk'
     document.getElementById('musicDiv').href = `https://youtu.be/${musicID}`
-    organizeCategories()
+    organizeCategoryLevels()
     if (category > -1) prepareData()
     let HTMLContent = ''
     runRecapCategory.topRuns?.forEach((run, index) => {
@@ -255,8 +255,8 @@ function prepareData() {
 }
 
 function done() {
-    categories.forEach((category, categoryIndex) => {
-        assignRuns(category, categoryIndex)
+    categoryLevels.forEach((level, levelIndex) => {
+        assignRuns(level, levelIndex)
     })
     assignRuns(runRecapCategory)
     if (runRecapCategory.extraRuns || runRecapCategory.extraPlayers) {
@@ -295,8 +295,8 @@ function done() {
 function fullgamePlayer(playerIndex) {
     return runRecapCategory.players ? runRecapCategory.players[playerIndex] : players[playerIndex].name
 }
-function assignRuns(category, categoryIndex) {
-    category.runs.forEach(run => {
+function assignRuns(level, levelIndex) {
+    level.runs.forEach(run => {
         const runPlayer = run.player
         let thePlayer = ''
         for (const player of players) {
@@ -313,15 +313,14 @@ function assignRuns(category, categoryIndex) {
                 break;
             }
         }
-        if (categoryIndex != null) {
-            thePlayer.ILs ? thePlayer.ILs[categoryIndex] = run : ''
+        if (levelIndex != null) {
+            thePlayer.ILs ? thePlayer.ILs[levelIndex] = run : ''
         } else {
             if (!(runRecapCategory.extraRuns && !runRecapCategory.extraPlayers?.includes(thePlayer.name))) {
                 thePlayer.extra = run
             }
         }
-        const runTime = run.score
-        run.percentage = getScore(category, runTime)
+        run.percentage = getScore(level, run.score)
         run.playerName = thePlayer ? thePlayer.name : null
     })
 }

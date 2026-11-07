@@ -3,7 +3,7 @@ function generate_sav() {
     let HTMLContent = ''
     if (runRecap_savFile) {
         HTMLContent += classicView()
-        if (getCupheadLevel(categories.length - 1).completed) {
+        if (getCupheadLevel(categoryLevels.length - 1).completed) {
             HTMLContent += `
             <div class="container" style="margin-top:20px;gap:10px">
                 <button class='button cuphead' onclick="downloadJSON(runRecap_savFile)" style='width:135px'>${fontAwesome('download')}</i>&nbsp;Download .sav</button>
@@ -46,12 +46,12 @@ function processSavFile(playerIndex, display) {
                 runRecapTime = time
                 setRunRecapTime(runRecapTime)
                 document.getElementById('input_runRecap_time').value = time
-                categories.forEach((category, categoryIndex) => {
-                    const level = getCupheadLevel(categoryIndex)
-                    level.bestTime = runRecapCategory.topRuns[playerIndex].igt[categoryIndex]
-                    level.played = true
-                    level.completed = true
-                })
+                for (let i = 0; i < categoryLevels.length; i++) {
+                    const savLevel = getCupheadLevel(i)
+                    savLevel.bestTime = runRecapCategory.topRuns[playerIndex].igt[i]
+                    savLevel.played = true
+                    savLevel.completed = true
+                }
                 document.getElementById('primaryThumbnail').innerHTML = getThumbnail(runRecapCategory.runs[playerIndex].url)
                 rrcImport(runRecapCategory.topRuns[playerIndex].rrc)
                 lssPlayerIndex = playerIndex
@@ -71,19 +71,19 @@ function assignIsles() {
     isles.forEach(isle => {
         isle.runRecapCategories = []
     })
-    categories.forEach((category, categoryIndex) => {
-        isles[category.info.isle - 1].runRecapCategories.push(categoryIndex)
+    categoryLevels.forEach((level, levelIndex) => {
+        isles[level.info.isle - 1].runRecapCategories.push(levelIndex)
     })
     if (['DLC', 'DLC+Base'].includes(runRecapCategory.name) || (runRecapCategory.name == 'Other' && ['DLC+Base Simple C/S', '300%'].includes(altStratOther))) isles.unshift(isles.pop())
 }
 function getCupheadLevel(param, other) {
-    const id = other ? param : categories[param].info.levelID
+    const id = other ? param : categoryLevels[param].info.levelID
     return runRecap_savFile.levelDataManager.levelObjects.find(level => level.levelID == id)
 }
-function updateRunRecapIL(categoryIndex) {
+function updateRunRecapIL(levelIndex) {
     playSound('category_select')
-    const level = getCupheadLevel(categoryIndex)
-    let userInput = document.getElementById('input_runRecapIL_' + categoryIndex).value
+    const level = getCupheadLevel(levelIndex)
+    let userInput = document.getElementById('input_runRecapIL_' + levelIndex).value
     if (userInput?.includes(':')) userInput = convertToSeconds(userInput)
     if (!userInput) {
         userInput = nullTime

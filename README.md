@@ -11,7 +11,6 @@
 - Duplicate URLs in Firebase cache
 
 ### .sav
-- None comparison
 - Played as Chalice or Mugman
 
 ### .lss

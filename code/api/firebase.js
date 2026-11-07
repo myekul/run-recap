@@ -39,8 +39,8 @@ window.firebaseUtils = {
         let collectionName = 'runRecap'
         if (globalTab == 'sav') {
             let sav = []
-            categories.forEach((category, categoryIndex) => {
-                sav.push(getCupheadLevel(categoryIndex).bestTime)
+            categoryLevels.forEach((level, levelIndex) => {
+                sav.push(getCupheadLevel(levelIndex).bestTime)
             })
             obj = {
                 sav: sav,

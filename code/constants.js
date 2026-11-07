@@ -1,21 +1,22 @@
 const API_KEY = 'AIzaSyDg6FBho-vfAm67-UdGP-8IbVFdLV23unY'
 
 const CHESS = ['pawns', 'knight', 'bishop', 'rook', 'queen']
-const RUNNGUNS = ['forestfollies', 'treetoptrouble', 'funfairfever', 'funhousefrazzle', 'ruggedridge', 'perilouspiers']
+runNguns.sort((a, b) => a.order - b.order)
+const RUNNGUNS = runNguns.map(level => level.id.toLowerCase().replaceAll(" ", ""))
 const OTHER_LEVELS = ['Pawns', 'Knight', 'Bishop', 'Rook', 'Queen', 'Angel & Demon', 'Treetop Trouble', 'Funfair Fever', 'Funhouse Frazzle', 'Rugged Ridge', 'Perilous Piers']
 
 const ALT_STRAT_CATEGORIES = ['1.1+', 'Legacy', 'NMG', 'DLC L/S', 'DLC C/S', 'DLC+Base L/S', 'DLC+Base L/S DLC First', 'DLC+Base C/S']
 const OTHER_CATEGORIES = [
-    ['1.1+ All Flags', '1.1+ Low%', '1.1+ Simple', '1.1+ Expert', 'Legacy Low%', 'Legacy Simple', 'NMG P/S', 'NMG R/S', 'NMG Simple P/S', 'NMG Expert', 'OG Charge'],
-    ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '100% 1.1+', '100% NMG', '300%'],
+    ['1.1+ Simple', '1.1+ Expert', 'Legacy Simple', 'NMG P/S', 'NMG R/S', 'NMG Simple P/S', 'NMG Expert', 'Low% 1.1+', 'Low% Legacy', '100% 1.1+', '100% NMG', 'All Flags 1.1+', 'OG Charge'],
+    ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%'],
 ]
 const BASE_SIMPLE = ['1.1+ Simple', 'Legacy Simple', 'NMG Simple P/S']
 const DLCBASE_SIMPLE = ['DLC+Base Simple L/S', 'DLC+Base Simple C/S']
 const MISC_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC Expert', 'DLC+Base Simple L/S', 'DLC+Base Simple C/S', '300%']
 
-const NO_FOLLIES = ['1.1+ Low%', 'Legacy Low%', 'NMG P/S', 'NMG Simple P/S']
+const NO_FOLLIES = ['Low% 1.1+', 'Low% Legacy', 'NMG P/S', 'NMG Simple P/S']
 
-const ALL_RUNNGUNS = ['1.1+ All Flags', '100% 1.1+', '100% NMG', '300%']
+const ALL_RUNNGUNS = ['All Flags 1.1+', '100% 1.1+', '100% NMG', '300%']
 
 const JUST_DLC = ['DLC Low%', 'DLC C/T', 'DLC R/S', 'DLC P/S', 'DLC Charmless', 'DLC OG Charge', 'DLC Expert']
 const DUPLICATE_FOLLIES_1_1 = ['100% 1.1+', '1.1+ Simple', '1.1+ Expert', 'Legacy Simple']
@@ -40,18 +41,18 @@ const LOADOUTS_REPLACE = {
 }
 
 const LOADOUTS_ADDITION = {
-    '1.1+ All Flags': ['lobber', 'spread'],
-    '1.1+ Low%': ['peashooter'],
     '1.1+ Simple': ['lobber', 'spread'],
     '1.1+ Expert': ['lobber', 'spread'],
     'NMG Expert': ['lobber', 'spread'],
-    'Legacy Low%': ['peashooter'],
     'Legacy Simple': ['lobber', 'roundabout'],
     'OG Charge': ['charge'],
     'DLC Low%': ['peashooter'],
     'DLC Charmless': ['charge', 'twist-up'],
     'DLC OG Charge': ['charge'],
-    'DLC Expert': ['charge', 'spread']
+    'DLC Expert': ['charge', 'spread'],
+    'Low% 1.1+': ['peashooter'],
+    'Low% Legacy': ['peashooter'],
+    'All Flags 1.1+': ['lobber', 'spread'],
 }
 
 const IMG_LOCATION = {

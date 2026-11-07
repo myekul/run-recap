@@ -6,24 +6,24 @@ function generateRunViableILs() {
             <table class='shadow'>
                 <tr>
                     <td colspan=4></td>`
-        categories.forEach(category => {
-            HTMLContent += `<td class='${category.info.id}' style='width:36px'>${getImage(category.info.id)}</td>`
+        categoryLevels.forEach(level => {
+            HTMLContent += `<td class='${level.info.id}' style='width:36px'>${getImage(level.info.id)}</td>`
         })
         HTMLContent += `
         </tr>
         <tr>
             <td colspan=4></td>`
-        categories.forEach(category => {
-            HTMLContent += `<th class='cuphead'>${secondsToHMS(category.runs[0].score)}</th>`
+        categoryLevels.forEach(level => {
+            HTMLContent += `<th class='cuphead'>${secondsToHMS(level.runs[0].score)}</th>`
         })
         players.slice(0, 100).forEach((player, index) => {
             HTMLContent += `<tr class='${getRowColor(index)}'>`
             HTMLContent += bigPlayerDisplay(player)
-            categories.forEach((category, index2) => {
-                const run = player.ILs[index2]
-                if (run) {
-                    const debug = run.debug ? '*' : ''
-                    HTMLContent += `<td class='clickable'>${getAnchor(run.url)}${getTrophy(1)}${debug}<a></td>`
+            categoryLevels.forEach((level, levelIndex) => {
+                const IL = player.ILs[levelIndex]
+                if (IL) {
+                    const debug = IL.debug ? '*' : ''
+                    HTMLContent += `<td class='clickable'>${getAnchor(IL.url)}${getTrophy(1)}${debug}<a></td>`
                 } else {
                     HTMLContent += `<td></td>`
                 }
