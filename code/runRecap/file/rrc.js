@@ -351,7 +351,7 @@ function rrcRaw() {
     let HTMLContent_rows1 = ''
     rrcCurrentAttempt.bosses.forEach((scene, index) => {
         const level = cupheadBosses[scene.name]
-        HTMLContent_rows += `
+        HTMLContent_rows1 += `
         <tr class='${getRowColor(index)}'>
             <td class='container ${level?.id}'>${getImage(level.id, 21)}</td>
             <td class='${level?.id}'>${scene.levelTime ? secondsToHMS(scene.levelTime, true) : ''}</td>

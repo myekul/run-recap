@@ -12,9 +12,9 @@
             },
             {
                 "title": "therootpack",
-                "split": "1:59.50",
-                "splitRunner": "SBDWolf",
-                "splitURL": "https://www.youtube.com/live/C_Udqda-Hp0?si=-fZG4VYuU5U2fWtr&t=3712",
+                "split": "1:59.36",
+                "splitRunner": "Taylz",
+                "splitURL": "https://youtu.be/4qPNd79c8q8",
                 "segment": "1:02.86",
                 "segmentRunner": "lewzr",
                 "segmentURL": "https://youtu.be/U3yU8J89Nqo"
@@ -369,12 +369,12 @@
         "before": [
             {
                 "title": "forestfollies",
-                "split": "49.80",
-                "splitRunner": "Fintan0",
-                "splitURL": "https://youtu.be/DTAsZMs64LE",
-                "segment": "49.80",
-                "segmentRunner": "Fintan0",
-                "segmentURL": "https://youtu.be/DTAsZMs64LE"
+                "split": "49.51",
+                "splitRunner": "Yuka",
+                "splitURL": "https://youtu.be/fsl45HXSDGQ",
+                "segment": "49.51",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/fsl45HXSDGQ"
             },
             {
                 "title": "therootpack",
@@ -543,9 +543,9 @@
                 "split": "22:32.83",
                 "splitRunner": "Yuka",
                 "splitURL": "https://youtu.be/-6eqLqigR1A",
-                "segment": "58.1",
-                "segmentRunner": "Sublime",
-                "segmentURL": null
+                "segment": "56.06",
+                "segmentRunner": "Yuka",
+                "segmentURL": "https://youtu.be/fsl45HXSDGQ"
             }
         ],
         "after": [

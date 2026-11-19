@@ -158,9 +158,9 @@
             "url": "https://youtu.be/BaboSKgIVe8?t=1077"
         },
         "captainbrineybeard": {
-            "time": 26.66,
+            "time": 26.61,
             "player": "graven_",
-            "url": "https://youtu.be/ecmM2pg5JOE"
+            "url": "https://youtu.be/bXa9-7ixnz8"
         },
         "phantomexpress": {
             "time": 50.53,
@@ -178,7 +178,7 @@
             "url": "https://youtu.be/ecVRDt6VAEQ"
         }
     },
-    "NMG":{
+    "NMG": {
         "therootpack": {
             "time": 35.13,
             "player": "SBDWolf",
@@ -196,13 +196,33 @@
         }
     },
     "DLC L/S": {
+        "glumstonethegiant": {
+            "time": 45.44,
+            "player": "ExclamationMarkYT",
+            "url": "https://youtu.be/B6buflKXbnU"
+        },
+        "mortimerfreeze": {
+            "time": 40.67,
+            "player": "ExclamationMarkYT",
+            "url": "https://youtu.be/eZQqYJH2g78"
+        },
+        "thehowlingaces": {
+            "time": 43.91,
+            "player": "ExclamationMarkYT",
+            "url": "https://youtu.be/UNFQ7xvschI"
+        },
         "estherwinchester": {
             "time": "1:00.04",
             "player": "MarkinSws",
             "url": "https://youtu.be/SKxj-gOE_E4?t=33"
+        },
+        "moonshinemob": {
+            "time": 35.89,
+            "player": "MarkinSws",
+            "url": "https://youtu.be/mWTtc0R4GYI"
         }
     },
-     "DLC C/S": {
+    "DLC C/S": {
         "glumstonethegiant": {
             "time": 47.15,
             "player": "myekul",
@@ -240,7 +260,7 @@
             "player": "DaniStuff2345",
             "url": "https://youtu.be/FoGWOA7lasY"
         },
-        "wernerwerman":{
+        "wernerwerman": {
             "time": 43,
             "player": "DaniStuff2345",
             "url": "https://youtu.be/FxkAcdHQ2VQ"
