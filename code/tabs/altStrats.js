@@ -15,14 +15,11 @@ async function generateAltStrats() {
             HTMLContent += `<div class='button grade-a' style='width:40px;font-size:110%;margin:10px auto' onclick="playSound('category_select');altStratLevel=null;action()">${fontAwesome('reply')}</div>`
             if (altStratCategory[altStratLevel] || altStratsAll) {
                 HTMLContent += altStrats(altStratLevel)
-                if (runRecapCategory.name == '1.1+' && altStratLevel == 'kingdice') {
-                    ['mrwheezy', 'hopuspocus', 'pirouletta', 'kingdice2'].forEach(miniboss => {
-                        HTMLContent += altStrats(miniboss)
-                    })
-                }
-                if (runRecapCategory.name == 'Legacy' && altStratLevel == 'kingdice') {
-                    ['chipsbettigan', 'pipanddot', 'mrchimes', 'kingdice2'].forEach(miniboss => {
-                        HTMLContent += altStrats(miniboss)
+                if (altStratLevel == 'kingdice') {
+                    ['chipsbettigan', 'mrwheezy', 'pipanddot', 'hopuspocus', 'pirouletta', 'mrchimes', 'kingdice2'].forEach(miniboss => {
+                        if (altStratCategory[miniboss]) {
+                            HTMLContent += altStrats(miniboss)
+                        }
                     })
                 }
             } else {

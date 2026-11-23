@@ -304,6 +304,27 @@
                 "time": 42.96,
                 "player": "lewzr",
                 "url": "https://youtu.be/S10kNJalpxU"
+            },
+            {
+                "title": "Missed Regular Skip"
+            },
+            {
+                "name": "5 Flies, Bulls",
+                "time": 49.66,
+                "player": "Quincely0",
+                "url": "https://youtu.be/FSN57IWxhe4"
+            },
+            {
+                "name": "5 Flies, Snakes",
+                "time": 50.77,
+                "player": "Quincely0",
+                "url": "https://youtu.be/X5Mk5sm8Clw"
+            },
+            {
+                "name": "5 Flies, Tigers",
+                "time": 50.96,
+                "player": "Quincely0",
+                "url": "https://youtu.be/NF80It6e-SY"
             }
         ],
         "goopylegrande": [
@@ -311,56 +332,38 @@
                 "title": "Triples"
             },
             {
-                "name": "Sneeze Skip",
+                "name": "",
                 "time": 21.17,
                 "player": "myekul",
                 "url": "https://youtu.be/xI9m9qXCp3Q",
                 "viable": "It goes for a 5 bounce kill, which is risky and difficult."
             },
             {
-                "name": "Sneeze",
-                "time": 21.26,
-                "player": "myekul",
-                "url": "https://youtu.be/iuiomZgRXc8"
-            },
-            {
-                "title": "Doubles"
-            },
-            {
-                "name": "Sneeze Skip",
-                "time": 23.88,
-                "player": "Rayted",
-                "url": "https://youtu.be/0WReCyBNSvY"
-            },
-            {
-                "name": "Sneeze",
-                "time": 23.87,
-                "player": "myekul",
-                "url": "https://youtu.be/NdbEqD5U3cE"
-            },
-            {
-                "title": "Parryless"
-            },
-            {
-                "name": "Sneeze Skip",
+                "name": "Parryless",
                 "time": 23.94,
                 "player": "myekul",
                 "url": "https://youtu.be/j2tjzU8i0kI"
             },
             {
-                "name": "Quadless",
+                "name": "Parryless, Quadless",
                 "time": 25.41,
                 "player": "Mulks",
                 "url": "https://youtu.be/pXn_k6kPA7E"
-            },
-            {
-                "title": "Other"
             },
             {
                 "name": "5 Bounce, 3 Parries",
                 "time": 19.73,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/XmGHSQfkVdg"
+            },
+            {
+                "title": "Doubles"
+            },
+            {
+                "name": "",
+                "time": 23.87,
+                "player": "myekul",
+                "url": "https://youtu.be/NdbEqD5U3cE"
             }
         ],
         "hildaberg": [
@@ -935,9 +938,9 @@
             },
             {
                 "name": "Down Eggs",
-                "time": 46.44,
-                "player": "SBDWolf",
-                "url": "https://youtu.be/yP0lTtLRPzU"
+                "time": 46.32,
+                "player": "Quincely0",
+                "url": "https://youtu.be/VdAT94Qd--E"
             },
             {
                 "name": "Down Gun",
@@ -2642,9 +2645,15 @@
         "therootpack": [
             {
                 "name": "",
-                "time": 25.97,
+                "time": 25.88,
                 "player": "graven_",
-                "url": "https://youtu.be/510T0RT2nCo"
+                "url": "https://youtu.be/HNnIA8hcsbs"
+            },
+            {
+                "name": "All Doubles",
+                "time": 26.78,
+                "player": "Yuka",
+                "url": "https://youtu.be/pYe9Wvz3D_I"
             },
             {
                 "name": "No Potato EX, Onion Dash",
@@ -2653,31 +2662,10 @@
                 "url": "https://youtu.be/rTCbUDLpWwU"
             },
             {
-                "name": "All Doubles",
-                "time": 27.27,
-                "player": "Yuka",
-                "url": "https://youtu.be/-td9Yp7yDfk"
-            },
-            {
                 "name": "No Doubles/Triples",
                 "time": 28.81,
                 "player": "Yuka",
                 "url": "https://youtu.be/ZPR2PWzL9gI"
-            },
-            {
-                "title": "TAS Lobber"
-            },
-            {
-                "name": "",
-                "time": 25.95,
-                "player": "Yuka",
-                "url": "https://youtu.be/ebtFaKM2NlY"
-            },
-            {
-                "name": "All Doubles",
-                "time": 26.81,
-                "player": "Yuka",
-                "url": "https://youtu.be/Kpx2ADfrBd0"
             }
         ],
         "ribbyandcroaks": [
@@ -3075,6 +3063,16 @@
                 "time": "26.70",
                 "player": "Yuka",
                 "url": "https://youtu.be/eSAAQzFFlnE"
+            },
+            {
+                "title": "Parries"
+            },
+            {
+                "name": "Catapult",
+                "time": 23.97,
+                "rta": 24.70,
+                "player": "Yuka",
+                "url": "https://youtu.be/lMTJOLqiFBE"
             }
         ],
         "captainbrineybeard": [
@@ -3385,10 +3383,16 @@
                 "title": "Regular Skip"
             },
             {
+                "name": "6 Flies, Snakes",
+                "time": "45.90",
+                "player": "myekul",
+                "url": "https://youtu.be/glvIN2iIVtI"
+            },
+            {
                 "name": "7 Flies, Snakes",
-                "time": 46.64,
-                "player": "ExclamationMarkYT",
-                "url": "https://youtu.be/B2mk7bPkEmY"
+                "time": "46.20",
+                "player": "myekul",
+                "url": "https://youtu.be/gp-sDxB9pUo"
             },
             {
                 "name": "7 Flies, Tigers",
@@ -3398,21 +3402,21 @@
             },
             {
                 "name": "Punches, Snakes",
-                "time": 47.89,
-                "player": "Quincely0",
-                "url": "https://youtu.be/6lPCn0ScQEs"
+                "time": 47.99,
+                "player": "myekul",
+                "url": "https://youtu.be/K5vXtPt6hZk"
+            },
+            {
+                "name": "Punches, Tigers",
+                "time": 47.96,
+                "player": "myekul",
+                "url": "https://youtu.be/hBJZs0q_NOs"
             },
             {
                 "name": "Punches, Bulls",
                 "time": 48.25,
                 "player": "HappyWolf",
                 "url": "https://youtu.be/WRk_19zWiLE"
-            },
-            {
-                "name": "Punches, Tigers",
-                "time": 48.52,
-                "player": "Quincely0",
-                "url": "https://youtu.be/pN_4I4dbKUQ"
             },
             {
                 "title": "Super Skip"
@@ -3422,6 +3426,12 @@
                 "time": 46.77,
                 "player": "GamerAttack27",
                 "url": "https://youtu.be/cMFcjJugtJY"
+            },
+            {
+                "name": "Punches, 5 Flies, Snakes",
+                "time": 47.89,
+                "player": "Quincely0",
+                "url": "https://youtu.be/6lPCn0ScQEs"
             },
             {
                 "name": "Punches, 5 Flies, Tigers",
@@ -3612,7 +3622,24 @@
         ],
         "drkahlsrobot": [
             {
-                "title": "2 Nukes"
+                "title": "1 Nuke"
+            },
+            {
+                "name": "Blue Gem",
+                "time": 45.29,
+                "rta": 47.33,
+                "player": "myekul",
+                "url": "https://youtu.be/sJIXLOSLS08",
+                "viable": "It goes for 2 nukes, which loses RTA time."
+            },
+            {
+                "name": "Red Gem",
+                "time": 45.95,
+                "player": "myekul",
+                "url": "https://youtu.be/lbG4dsg7PWE"
+            },
+            {
+                "title": "2 Nuke"
             },
             {
                 "name": "Blue Gem",
@@ -3620,22 +3647,6 @@
                 "rta": 48.47,
                 "player": "Quincely0",
                 "url": "https://youtu.be/VAtge70sCE8"
-            },
-            {
-                "title": "1 Nuke"
-            },
-            {
-                "name": "Blue Gem",
-                "time": 45.43,
-                "rta": 47.66,
-                "player": "Quincely0",
-                "url": "https://youtu.be/LKzxv3ajCfQ"
-            },
-            {
-                "name": "Red Gem",
-                "time": 45,
-                "player": "Quincely0",
-                "url": "https://youtu.be/nlv-sKUku8U?si=_hKvJmVaABZ7YkHG&t=1050"
             }
         ],
         "sallystageplay": [
@@ -3746,7 +3757,8 @@
                 "name": "Ghosts, Turtle, Red Fish",
                 "time": "1:00.21",
                 "player": "Quincely0",
-                "url": "https://youtu.be/dJ_fXJd1sPk"
+                "url": "https://youtu.be/dJ_fXJd1sPk",
+                "viable": "It goes for 2 nukes and parries, which often loses RTA time."
             },
             {
                 "name": "Ghosts, Seahorse, Yellow Fish",
@@ -3854,9 +3866,23 @@
                 "url": "https://youtu.be/YPmF71uGG-o"
             }
         ],
+        "pirouletta": [
+            {
+                "name": "Charge",
+                "time": 14.49,
+                "player": "myekul",
+                "url": "https://youtu.be/2lSfGWQdc5k"
+            }
+        ],
         "thedevil": [
             {
                 "title": "Dragon"
+            },
+            {
+                "name": "Ring Dragon",
+                "time": "46.90",
+                "player": "myekul",
+                "url": "https://youtu.be/MsM2y54Zh60"
             },
             {
                 "name": "Pinwheel Dragon",
@@ -3865,22 +3891,10 @@
                 "url": "https://youtu.be/x0iCrcdcNyc"
             },
             {
-                "name": "Ring Dragon",
-                "time": 47.94,
-                "player": "myekul",
-                "url": "https://youtu.be/0VI9FLFTjYw"
-            },
-            {
                 "name": "Clap Dragon",
                 "time": 48.47,
                 "player": "myekul",
                 "url": "https://youtu.be/FNCyVws_SXw"
-            },
-            {
-                "name": "Ring Dragon",
-                "time": 48.58,
-                "player": "myekul",
-                "url": "https://youtu.be/oygY7jqJUKs"
             },
             {
                 "name": "Dragon Clap",
@@ -4460,9 +4474,9 @@
             },
             {
                 "name": "LDL",
-                "time": 50.29,
-                "player": "myekul",
-                "url": "https://youtu.be/e47OFe39QLA"
+                "time": 50.37,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/XLswHbYgiVg"
             },
             {
                 "name": "DLS 2P",
@@ -4487,6 +4501,30 @@
                 "time": 51.77,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/L1HiPDE_Ujg"
+            },
+            {
+                "name": "D-SD",
+                "time": 52.42,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/WeqrsqhZFSU"
+            },
+            {
+                "name": "LD-S",
+                "time": 52.69,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/UiW3tlUpacI"
+            },
+            {
+                "name": "L-SL",
+                "time": 52.89,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/qI8ZS13xZdI"
+            },
+            {
+                "name": "DL-S",
+                "time": 53.54,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/J0Ko6aM_sAg"
             },
             {
                 "title": "Baby Chargimate"
@@ -4538,6 +4576,12 @@
             },
             {
                 "title": "2.5-cycle"
+            },
+            {
+                "name": "S-L 8+3",
+                "time": 51.44,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/OSPUMGk_U30"
             },
             {
                 "name": "L-L 9+3",
@@ -4830,6 +4874,12 @@
                 "url": "https://youtu.be/uVCmcN7Npm4"
             },
             {
+                "name": "7 Flies, Bulls",
+                "time": 46.71,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/redCaMqURfw"
+            },
+            {
                 "name": "Punches, Tigers",
                 "time": 47.76,
                 "player": "DaniStuff2345",
@@ -4840,6 +4890,12 @@
                 "time": 48.02,
                 "player": "DaniStuff2345",
                 "url": "https://youtu.be/wPrrXcWnVPc"
+            },
+            {
+                "name": "Punches, Bulls",
+                "time": 47.92,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/I0POF6ZRASA"
             },
             {
                 "title": "Super Skip"
@@ -4885,7 +4941,7 @@
                 "url": "https://youtu.be/E6snRCk_0X8"
             },
             {
-                "name": "Seeds, Pods",
+                "name": "Seeds, Lunge",
                 "time": 34.87,
                 "player": "myekul",
                 "url": "https://youtu.be/nzQ7wNudfA8"
@@ -6843,6 +6899,15 @@
                 "url": "https://youtu.be/fSLf4i6vKfE"
             },
             {
+                "title": "4+1 M-Swaps"
+            },
+            {
+                "name": "LD-S 7+3",
+                "time": 56.48,
+                "player": "DaniStuff2345",
+                "url": "https://youtu.be/kOql88aYClY"
+            },
+            {
                 "title": "5+1 M-Swaps"
             },
             {
@@ -7188,6 +7253,13 @@
         ],
         "calamaria": [
             {
+                "name": "Ghosts, Seahorse",
+                "time": 37.04,
+                "rta": 46.02,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/jWHK4bYAtA0"
+            },
+            {
                 "name": "Seahorse, Ghosts, Pufferfish",
                 "time": "38.40",
                 "rta": "46.40",
@@ -7195,11 +7267,11 @@
                 "url": "https://youtu.be/N3nxdUGYYEs"
             },
             {
-                "name": "Ghosts, Seahorse",
-                "time": 39.05,
-                "rta": 47.36,
+                "name": "Yellow Fish, Seahorse",
+                "time": 39.18,
+                "rta": 47.96,
                 "player": "SBDWolf",
-                "url": "https://youtu.be/ef7_9SwnthU"
+                "url": "https://youtu.be/sqHi8MqQNeQ"
             }
         ],
         "thedevil": [
@@ -7236,6 +7308,12 @@
                 "time": 40.95,
                 "player": "SBDWolf",
                 "url": "https://youtu.be/90TTzr6cwLs"
+            },
+            {
+                "name": "No Smoke Bomb",
+                "time": 43.87,
+                "player": "SBDWolf",
+                "url": "https://youtu.be/7s-uq-HNvH4"
             }
         ],
         "funhousefrazzle": [
@@ -7249,7 +7327,13 @@
         "ruggedridge": [
             {
                 "name": "",
-                "time": "1:21.80",
+                "time": "1:09.95",
+                "player": "SBDWolf",
+                "url": "https://youtu.be/EIgEHoMFnbU"
+            },
+            {
+                "name": "No Floor Clip",
+                "time": "1:12.80",
                 "player": "SBDWolf",
                 "url": "https://youtu.be/7O33RUokf3w"
             }
@@ -7359,9 +7443,9 @@
         "chipsbettigan": [
             {
                 "name": "",
-                "time": 12.91,
+                "time": "12.90",
                 "player": "DaniStuff2345",
-                "url": "https://youtu.be/kyFxKw2PVds"
+                "url": "https://youtu.be/BVuaga_WlCg"
             }
         ],
         "thedevil": [
