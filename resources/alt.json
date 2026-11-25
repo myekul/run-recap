@@ -4286,17 +4286,32 @@
                 "title": "Standard Strats"
             },
             {
+                "name": "Left Cat, No Delay",
+                "time": 41.71,
+                "player": "myekul",
+                "url": "https://youtu.be/O_5xBeKCWmA",
+                "viable": "It blindly guesses the Phase 3 laser pattern, which is risky."
+            },
+            {
+                "name": "Right Cat, No Delay",
+                "time": 41.84,
+                "player": "myekul",
+                "url": "https://youtu.be/nlwL8abc-NM"
+            },
+            {
+                "title": "No Phase 2 Snipe"
+            },
+            {
+                "name": "Left Cat, Delay",
+                "time": 42.58,
+                "player": "myekul",
+                "url": "https://youtu.be/J8Ko-d3MMjo"
+            },
+            {
                 "name": "Bones, No Delay",
                 "time": 42.97,
                 "player": "myekul",
                 "url": "https://youtu.be/dqqT2n-83cw"
-            },
-            {
-                "name": "Left Cat, No Delay",
-                "time": 42.58,
-                "player": "myekul",
-                "url": "https://youtu.be/J8Ko-d3MMjo",
-                "viable": "It blindly guesses the Phase 3 laser pattern, which is risky."
             },
             {
                 "title": "Other"
@@ -4306,12 +4321,6 @@
                 "time": 42.26,
                 "player": "myekul",
                 "url": "https://youtu.be/zO_UJUw2zV4"
-            },
-            {
-                "name": "Phase 2 Snipe",
-                "time": 42.99,
-                "player": "myekul",
-                "url": "https://youtu.be/Xvi7cDHAJb0"
             }
         ],
         "moonshinemob": [

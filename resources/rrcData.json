@@ -7239,54 +7239,160 @@
         },
         {
             "name": "Quincely0",
-            "igt": [
-                50,
-                40,
-                46,
-                60,
-                42,
-                55
-            ],
-            "starSkips": [
-                0,
-                0.5,
-                0.5,
-                0,
-                0,
-                0
-            ],
-            "endTimes": [
-                "1.5",
-                "9.83",
-                "22.5",
-                "1:01.21",
-                "1:11.02",
-                "1:18.03",
-                "1:23.78",
-                "1:34.73",
-                "2:38.83",
-                "2:50.97",
-                "2:52.67",
-                "2:54.94",
-                "3:04.67",
-                "4:01.75",
-                "4:09.40",
-                "4:21.59",
-                "5:09.03",
-                "5:16.50",
-                "5:28.16",
-                "6:21.32",
-                "6:30.21",
-                "6:43.98",
-                "7:53.67",
-                "8:02.54",
-                "8:14.20",
-                "9:03.56",
-                "9:11.56",
-                "9:27.50",
-                "9:34.09",
-                "9:35.83",
-                "10:31.34"
+            "scenes": [
+                {
+                    "name": "cutscene_intro",
+                    "endTime": 1.547
+                },
+                {
+                    "name": "level_house_elder_kettle",
+                    "endTime": 10.047
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 22.982
+                },
+                {
+                    "endTime": 60.832,
+                    "name": "level_platforming_1_1F",
+                    "levelTime": 33.68
+                },
+                {
+                    "parries": 1,
+                    "hp": 1,
+                    "name": "win",
+                    "starSkips": 2,
+                    "endTime": 68.55799999999999,
+                    "coins": 5
+                },
+                {
+                    "name": "map_world_1",
+                    "endTime": 75.606
+                },
+                {
+                    "endTime": 81.46000000000001,
+                    "name": "shop"
+                },
+                {
+                    "endTime": 92.452,
+                    "name": "map_world_1"
+                },
+                {
+                    "endTime": 157.70499999999998,
+                    "name": "level_mausoleum"
+                },
+                {
+                    "endTime": 169.65800000000002,
+                    "name": "map_world_1"
+                },
+                {
+                    "endTime": 171.429,
+                    "name": "cutscene_dlc_intro"
+                },
+                {
+                    "endTime": 173.768,
+                    "name": "level_kitchen"
+                },
+                {
+                    "endTime": 183.494,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "endTime": 239.409,
+                    "name": "level_old_man",
+                    "levelTime": 48.85
+                },
+                {
+                    "starSkips": 2,
+                    "hp": 2,
+                    "parries": 3,
+                    "name": "win",
+                    "superMeter": 10,
+                    "endTime": 247.185
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 259.314
+                },
+                {
+                    "endTime": 310.559,
+                    "name": "level_snow_cult",
+                    "levelTime": 44.75
+                },
+                {
+                    "parries": 0,
+                    "superMeter": 8,
+                    "endTime": 317.403,
+                    "name": "win",
+                    "hp": 1,
+                    "starSkips": 2
+                },
+                {
+                    "endTime": 328.918,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "levelTime": 47.31,
+                    "name": "level_airplane",
+                    "endTime": 383.084
+                },
+                {
+                    "endTime": 391.086,
+                    "hp": 2,
+                    "superMeter": 9,
+                    "starSkips": 2,
+                    "parries": 2,
+                    "name": "win"
+                },
+                {
+                    "endTime": 404.812,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "endTime": 475.198,
+                    "levelTime": 62.09,
+                    "name": "level_flying_cowboy"
+                },
+                {
+                    "endTime": 483.94,
+                    "name": "win",
+                    "parries": 4,
+                    "hp": 1,
+                    "superMeter": 27
+                },
+                {
+                    "endTime": 495.53,
+                    "name": "map_world_DLC"
+                },
+                {
+                    "endTime": 542.519,
+                    "name": "level_rum_runners",
+                    "levelTime": 40.5
+                },
+                {
+                    "parries": 0,
+                    "name": "win",
+                    "hp": 1,
+                    "endTime": 550.482,
+                    "superMeter": 6
+                },
+                {
+                    "name": "map_world_DLC",
+                    "endTime": 565.926
+                },
+                {
+                    "endTime": 572.489,
+                    "name": "level_kitchen"
+                },
+                {
+                    "endTime": 574.218,
+                    "name": "cutscene_dlc_saltbaker_prebattle"
+                },
+                {
+                    "endTime": 629.547,
+                    "name": "level_saltbaker",
+                    "levelTime": 55.1
+                }
             ]
         }
     ],
